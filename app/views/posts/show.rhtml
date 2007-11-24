@@ -1,0 +1,30 @@
+<% @section = :blog %>
+<% @page_title = h(@post.title) %>
+
+<h2><%=h @post.title %></h2>
+
+<%= @post.body %>
+
+<p><em>by <%= user_link_with_avatar(@post.user) %> - <%= @post.published_at.to_date.to_s(:long) %></em></p>
+
+<% if @post.comments.empty? %>
+  <h3>No Comments</h3>
+<% else %>
+  <h3><%= pluralize @post.comments.count, 'Comment' %></h3>
+  <% for comment in @post.comments %>
+    <div id="comment-<%= comment.id %>">
+      <%=h comment.body %>
+      <p><em>by <%= user_link_with_avatar(comment.user) %> <%= time_ago_in_words comment.created_at %> ago</em></p>
+    </div>
+  <% end %>
+<% end %>
+
+<% if !current_user %>
+  <p> <%= link_to_login_with_return_to_current_page 'Login to leave a comment' %></p>
+<% else %>
+  <p>Add yours:</p>
+  <% form_tag post_comments_path(@post), :id => 'new-comment' do %>
+    <%= text_area_tag 'comment[body]', nil, :cols => '3', :rows => '40'  %>
+    <%= submit_tag 'Submit' %>
+  <% end %>
+<% end %>

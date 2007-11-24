@@ -1,0 +1,4 @@
+== TODO ==
+
+- Complete AccessibleFormBuilder#validation_message to respect field_order
+  (either inferred from output or explicit)

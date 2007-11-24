@@ -1,0 +1,10 @@
+<% @page_title = "Webjam: 3 minutes of piping hot web" %>
+<% @body_class = "home" %>
+
+<% content_for :top do %>
+  <h1><%= image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam" %></h1>
+<% end %>
+
+<h2>News</h2>
+
+<%= render :collection => @posts, :partial => 'posts/post' %>

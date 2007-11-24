@@ -1,0 +1,27 @@
+<h1>Editing comment</h1>
+
+<%= error_messages_for :comment %>
+
+<% form_for(:comment, :url => comment_path(@comment), :html => { :method => :put }) do |f| %>
+  <p>
+    <b>Post</b><br />
+    <%= f.text_field :post_id %>
+  </p>
+
+  <p>
+    <b>Body</b><br />
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <b>Created at</b><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

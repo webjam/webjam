@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby
+puts `mongrel_rails cluster::start -C #{File.dirname(__FILE__) + "/../shared/config/mongrel_cluster.yml"}

@@ -1,0 +1,66 @@
+<% @page_title = h(@user.nick_name) + " loves Webjam" %>
+
+<h1><strong><%=h @user.nick_name %></strong> loves the jam</h1>
+
+<% if @user == current_user then %>
+  <ul id="profile-menu">
+    <li><%= link_to '(Edit)', edit_current_user_path %></li>
+  </ul> <!-- // #profile-menu -->
+<% end %>
+
+<%= flash_notice %>
+
+<h2>Details</h2>
+<dl class="vcard" id="hcard-<%=h utf8_slugify(@user.nick_name) %>">
+  <dt class="fn"><%=h @user.full_name %></dt>
+  <% unless @user.website_url.blank? %>
+    <dd>Visit <%= link_to h(@user.website_display_name), @user.website_url, :class => "url", :rel => "me"  %></dd>
+  <% end %>
+
+  <dd class="avatar">
+    <% if @user.mugshot %>
+      <%= image_tag @user.mugshot.public_filename(:large), :class => 'photo' %>
+    <% else %>
+      <% if @user == current_user %>
+        <%= link_to avatar_image(@user, :large), new_current_mugshot_path, :class => 'photo' %>
+        <%= link_to 'Upload your mugshot', new_current_mugshot_path %>
+      <% else %>
+        <%= avatar_image(@user, :large) %>
+      <% end %>
+    <% end %>
+  </dd>
+</dl>
+
+<h2>Jams <span class="amp">&amp;</span> Awards</h2>
+<% for jam in @jams %>
+  
+<% end %>
+
+<h2>Events</h2>
+<% if @user.show_upcoming_rsvps? %>
+  <p><%=h @user.nick_name %> will be attending:</p>
+  <ul>
+  <% for event in @upcoming_events %>
+    <li><%= event %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<% if @user.show_past_rsvps? %>
+  <p><%=h @user.nick_name %> attended:</p>
+  <ul>
+  <% for event in @previous_events %>
+    <li><%= event %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<h2>Posts</h2>
+<% if !(recent_posts = @user.posts.recently_published).empty? %>
+  <p><%=h @user.nick_name %>'s recent posts are:</p>
+  <ul>
+    <% for post in recent_posts %>
+      <li><%= link_to h(post.title), post_path(post) %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,0 +1,23 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: backjam_development
+  username: root
+  password:
+  socket: 
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: backjam_test
+  username: root
+  password:
+  socket: 
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: backjam
+  host: localhost
+  username: root
+  password: 

@@ -1,0 +1,15 @@
+= AccessFormBuilder Plugin
+
+Author:: Tim Lucas (mailto:t.lucas@toolmantim.com)
+
+== Description
+
+AccessibleFormBuilder includes a form builder that tries to adhere accessible form best practices. Supports a few basics, including:
+* Labels for fields, marking their required status as well as any related validation messages
+* Overall object validation message in human-readable, sentence form
+
+Both +accessible_form_for+ and +accessible_fields_for+ are defined as drop-in replacements for the <tt>ActionView::Base</tt> methods +form_for+ and +fields_for+.
+
+== Further reading
+
+The best practices implemented here were taken from Derek Featherstone's http://simplyaccessible.org

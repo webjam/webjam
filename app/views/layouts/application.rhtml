@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-au" lang="en-au">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title><%= @page_title || (raise "No page title") %></title>
+	<%= stylesheet_link_tag 'reset', 'backjam' %>
+	<%= yield :head %>
+</head>
+<body <%= @body_class && %{class="#{@body_class}"} %> id="webjam-com-au"<%= @onload && " onload='#{@onload}'" %>>
+  <div id="page">
+    
+    <ul id="account-tools">
+      <% if current_user %>
+        <li class="profile"><%= user_login_link_with_avatar(current_user) %></li>
+        <li class="logout"><%= button_to 'Logout', session_path, :method => :delete %></li>
+      <% else %>
+        <li class="login"><%= link_to "<strong>Jammer?</strong> Login", new_session_path %></li>
+        <li class="register"><%= link_to "<strong>New peep?</strong>Register", new_user_path %></li>
+      <% end %>
+    </ul> <!-- // #account-tools -->
+    
+  <div id="wrapper">
+
+  <% if top = yield(:top) %>
+    <%= top %>
+  <% else %>
+    <p id="pagetitle"><a href="/"><%= image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam" %></a></p>
+	<% end %>
+	
+	<div id="upcoming-events">
+    <%= render :collection => @upcoming_events, :partial => 'layouts/event' %>
+  </div>
+  
+  <div id="maincontent">
+    <div id="content">
+      <%= yield :layout %>
+    </div> <!-- // #content -->
+      
+    <div id="other-content">
+  	  <ul id="main-nav">
+        <% for event in @upcoming_events %>
+          <li class="<%= class_for_section(event_section(event)) %>"><%= link_to event, event_path(event) %></li>
+          <% end %>
+          <li class="<%= class_for_section :about %>"><%= link_to "wtf is webjam?", about_path %></li>
+          <li class="<%= class_for_section :blog %>"><%= link_to "the blog", posts_path %></li>
+          <li class="<%= class_for_section :past_events %>"><%= link_to "past webjams", past_events_path %></li>
+          <li class="<%= class_for_section :contact %>"><%= link_to "get in touch", contact_path %></li>
+  	  </ul>
+	  </div> <!-- // #other-content -->
+  </div> <!-- // #maincontent -->
+  <div id="subcontent">
+
+    <div class="module" id="schwag">
+      <p>share the love. spread the Jam. get the t.</p>
+
+      <img alt="Webjam: The T-Shirt" class="tshirt" src="/images/webjam-tee3.jpg" title="Webjam: The T-Shirt"/>
+        <p>Limited edition longsleeve shirt with hot orange logo. Pick it up on the night!</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" id="order-tshirt" method="post">
+          <input type="hidden" name="cmd" value="_xclick" />
+          <input type="hidden" name="business" value="ansonparker@gmail.com" />
+          <input type="hidden" name="item_name" value="Webjam 3 T-Shirt" />
+          <input type="hidden" name="amount" value="25.00" />
+          <input type="hidden" name="no_shipping" value="1" />
+          <input type="hidden" name="no_note" value="1" />
+          <input type="hidden" name="currency_code" value="AUD" />
+          <input type="hidden" name="lc" value="AU" />
+          <input type="hidden" name="bn" value="PP-BuyNowBF" />
+          <input type="hidden" name="on0" value="Size" />
+          <select name="os0">
+            <option value="Standard Medium">Standard Medium</option>
+            <option value="Standard Large">Standard Large</option>
+            <option value="Standard X-Large">Standard X-Large</option>
+            <option value="Slim-fit Medium">Slim-fit Medium</option>
+            <option value="Slim-fit Large">Slim-fit Large</option>
+            <option value="Women's Size 12">Women's Size 12</option>
+          </select>
+          <input class="submit" type="submit" value="make me sexy!" />
+        </form>
+      </div> <!-- // #schwag -->
+
+    <div id="sponsorship">
+      <%= render :collection => @upcoming_events, :partial => 'layouts/event_sponsorship' %>
+    </div>
+
+  </div> <!-- // #subcontent -->
+    
+  <div id="footer">
+    <p>Webjam is brought to you by the letters W, W and W</p>
+    <p>Reach out and touch someone - <a href="mailto:contact@webjam.com.au">contact@webjam.com.au</a></p>
+  </div> <!-- // #footer -->
+</div> <!-- // #wrapper -->
+</div> <!-- // #page -->
+</body>
+</html>

@@ -1,0 +1,12 @@
+first:
+  id: 1
+  held_at: 2006-06-06 00:00:00
+  city: Sydney
+  jam_slots: 0
+  rsvp_slots: 0
+second:
+  id: 2
+  held_at: <%= 4.weeks.from_now.to_s :db %>
+  city: Sydney
+  jam_slots: 0
+  rsvp_slots: 0

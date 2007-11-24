@@ -1,0 +1,64 @@
+<% @page_title = "Edit your profile" %>
+
+<h2>Edit your profile</h2>
+
+<%= flash_notice %>
+
+<%= render :partial => 'shared/new_mugshot' %>
+
+<h3>Profile Details</h3>
+
+<% accessible_form_for :user, @user, :url => update_profile_details_current_user_path, :html => {:method => :put} do |f| %>
+<p>
+  <%= f.label :nick_name %>
+  <%= f.text_field :nick_name %>
+</p>
+  <p>
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>
+  </p>
+  <p>
+    <%= f.label :website_name %>
+    <%= f.text_field :website_name %>
+  </p>
+  <p>
+    <%= f.label :website_url %>
+    <%= f.text_field :website_url %>
+  </p>
+  <%= submit_tag 'Save profile details' %>
+<% end %>
+
+<h3>Privacy Settings</h3>
+
+<% accessible_form_for :user, @user, :url => update_privacy_current_user_path, :html => {:method => :put} do |f| %>
+  <p>
+    <%= f.check_box :show_upcoming_rsvps %>
+    <%= f.label :show_upcoming_rsvps, :value => "Show future webjam events I&rsquo;ve RSVP&rsquo;d to attend on my profile" %>
+  </p>
+  <p>
+    <%= f.check_box :show_past_rsvps %> 
+    <%= f.label :show_past_rsvps, :value => "Show past webjam events I&rsquo;ve attended on my profile" %>
+  </p>
+  <%= submit_tag 'Save privacy settings' %>
+<% end %>
+
+<h3>OpenID URLs</h3>
+
+<ul>
+<% for identity_url in @identity_urls %>
+  <li>
+    <%= link_to h(identity_url.url), identity_url.url %>
+    <%= button_to('(DELETE ICON)', identity_url_path(identity_url), :method => 'delete') unless @identity_urls.length == 1 %>
+  </li>
+<% end %>
+</ul>
+
+<p>Associate your WebJam account with all your OpenIDs URLs. You know you want to.</p>
+
+<% form_tag create_identity_urls_path do %>
+  <p><label for="openid_url">OpenID URL:</label> <%= text_field_tag 'openid_url' %> <%= submit_tag 'Add URL' %></p>
+<% end %>
+
+<h3>Password</h3>
+
+<p>Nah, just kidding, we don't do passwords! OpenID bruvva.</p>

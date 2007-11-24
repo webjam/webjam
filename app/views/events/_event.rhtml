@@ -1,0 +1,5 @@
+<%= event.held_at.to_date.to_s(:short) %>
+<h3><%= link_to h(event.city), event_path(event) %></h3>
+<p><%= event.held_at.to_s(:long_with_day_name) %></p>
+<p><%= pluralize(event.jams.count,"jammer") %></p>
+<p><%= pluralize(event.rsvps.count, "attendee") %></p>

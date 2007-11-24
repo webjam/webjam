@@ -1,0 +1,17 @@
+<% @page_title = "Add OpenID URL" %>
+
+<h1>Problem Adding OpenID URL</h1>
+
+<% if !@identity_url.errors.blank? %>
+  <p>OpenID URL <%=h @identity_url.url %> could not be added because <%= @identity_url.errors.full_messages.to_sentence %></p>
+<% elsif @verification_error %>
+  <p>There was an error authenticating the OpenID URL <%=h @identity_url.url %>: <%=h @verification_error %>.</p>
+<% end %>
+
+<h2>Try Again?</h2>
+<% form_tag create_identity_urls_path do %>
+  <p><label for="url">OpenID URL</label> <%= text_field_tag :openid_url, @identity_url.url %> <%= submit_tag 'Retry' %></p>
+<% end %>
+
+<h2>Give Up</h2>
+<p><%= link_to "Return to editing your profile", edit_current_user_path %></p>

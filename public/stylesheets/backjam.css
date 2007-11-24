@@ -1,0 +1,259 @@
+/****
+Webjam
+http://webjam.com.au
+20070812
+
+TOC
+- =Generic Rules
+	-- =Generic Text
+		 --- =Links
+		 --- =Headings
+		 --- =Body Text
+		 --- =Date, Times etc
+	-- =Generic Forms
+- =Structure
+	-- =Upcoming Events
+	-- =Main Content
+		 --- =Content
+		 		 ---- =hAtom
+		     ---- =Join Form
+				 ---- =Profile
+		 --- =Other Content
+		 	   ---- =Main Nav
+	-- =Sub Content
+		 --- =Schwag
+		 --- =Sponsors
+		 --- =Supporters
+	-- =Footer
+- =JS Enabled
+- =Tim's Rules
+
+****/
+
+
+/* - =Generic Rules - */
+
+	/* -- =Generic Text -- */
+
+		/* --- =Links --- */
+		a:link {color: #ccc;}
+		a:visited {color: #fff;}
+		a:hover, a:active, a:focus {color: #f03e00;}
+		
+		/* --- =Headings --- */
+		h1, h2, h3, h4, h5, h6 {margin: 0 0 0.5em;}
+		h1 {background: #0e0e0e; color: #666; font-size: 1.72em; font-weight: 300;}
+			h1 strong {background: #0e0e0e; color: #fff; font-weight: 300;}
+		h2 {font-size: 1.6em;}
+		h3 {font-size: 1.5em;}
+		h4 {font-size: 1.4em;}
+		h5 {font-size: 1.2em;}
+		h6 {font-size: 1.1em;}
+		
+		/* --- =Body Text --- */
+		#content p,
+		#content li,
+		#content ol,
+		#content ul {margin: 0 0 0.5em;}
+		#content p {font-size: 1.07em;}
+		#content ul {}
+			#content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
+		#content ol {}
+			#content ol li {font-size: 1.07em; list-style-position: inside; list-style-type: decimal;}
+			
+		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
+
+		/* --- =Dates, Times etc --- */
+		.date {font: 1em/1.6 Georgia, serif;}
+
+	/* -- =Generic Forms -- */
+
+	form {clear: both; float: left; padding: 1em 0;}
+		fieldset {margin: 0; padding: 0;}
+			fieldset fieldset {clear: both;}
+		form label {clear: both; display: block; float: left; font-weight: bold; margin: 0 0 0.4em 0; padding: 0.5em 0 0 0; width: auto;}
+			form label span {display: block; float: left; margin: 0.2em 0 0 0; width: 6em;}
+				form label span.note {clear:both; color: #565757; font: 0.86em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0.5em 0 0 7em; width: auto;}
+		input {background: #e6e5e5; color: #000; float: left; width: 14em;}
+		select {float: left; width: 10em;}
+			input.checkbox {margin: 0.4em 0; width: auto;}
+			fieldset.buttons input,
+			input.submit,
+			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 6.4em; width: auto;}
+			
+			form.button-to {display: inline; margin: 0; padding: 0;}
+
+
+/* - =Structure - */
+body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; color: #fff; font: 62.5%/1.3 "Trebuchet MS", Arial, Helvetica, sans-serif; margin:0; padding:0;}
+	body.home {}
+	
+#page {font-size: 1.4em; margin: 4em auto 0; position: relative; width: 70em;}
+
+	#account-tools {margin: 0 0 1.5em 0; position: absolute; right: 0; top: -2.3em;}
+		#account-tools li {background: #0e0e0e; float: left; font-size: 0.94em; line-height: 1; margin: 0 1em 0 0; text-align: center;}
+		#account-tools li.profile {position: relative;}
+			#account-tools a.user-avatar:link,
+			#account-tools a.user-avatar:visited {padding: 0.8em 1em 0.8em 1em;}
+				#account-tools a.user-avatar strong {display: inline; padding: 0 0.1em 0 25px;}
+				#account-tools a.user-avatar img {position: absolute; top: 0.4em;}
+			
+		#account-tools li.logout {}
+			#account-tools li.logout form.button-to input {background: #0e0e0e; border: 1px solid #ff5e29; border-bottom: none;  color: #fff; cursor: pointer; float: none; margin: 0; padding: 0.6em; width: auto;}
+			#account-tools li.logout form.button-to input:hover {background: #ff5e29; border: 1px solid #0e0e0e; border-bottom: none; color: #0e0e0e; cursor: pointer; float: none; margin: 0; padding: 0.6em; width: auto;}
+		
+		#account-tools li.login {}
+		#account-tools li.register {}
+		
+			#account-tools li a:link,
+			#account-tools li a:visited {background: #0e0e0e; border: 1px solid #ff5e29; border-bottom: none;  color: #fff; display: block; padding: 0 1em 0.4em 1em; text-decoration: none;}
+			#account-tools li a:hover,
+			#account-tools li a:active,
+			#account-tools li a:focus {background: #ff5e29; border: 1px solid #0e0e0e; border-bottom: none;  color: #0e0e0e;}
+				#account-tools li strong {background: transparent; display: block; color: #ff5e29; margin: 0.1em 0 0.1em 0; text-transform: lowercase;}
+				#account-tools li a:hover strong,
+				#account-tools li a:active strong,
+				#account-tools li a:focus strong {color: #0e0e0e;}
+
+	#wrapper {background: #0e0e0e; border: 1px solid #000; border-bottom: none; float: left; padding: 0 0 70px 0; position: relative; width: 70em;}
+
+	body.home h1,
+	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; height: 146px; margin: 0; text-align: center;}
+	#pagetitle {font-size: 1.8em;}
+		body.home h1 img,
+		#pagetitle img {border: none; font-size: 0.4em; height: 15.2em; max-height: 152px; width: 97em; max-width: 1033px;}
+	
+	/* -- =Upcoming Events -- */
+	#upcoming-events {background: #370e0c url('/images/bg-perth-upcoming.jpg') no-repeat 0 0; clear: both; float: left; margin: 0 0 2.5em; padding: 0 0 0 20em; width: 50em;}
+		#upcoming-events dl.vevent {border-left: 1px solid #320b10; float: left; font-size: 1em; margin: 0 2em; padding: 0 1em 0; position: relative; width: 12em;}
+			#upcoming-events .vevent dt.summary {font-size: 1em; font-weight: normal;}
+				#upcoming-events .vevent a.url {display: block; font-size: 1.3em; line-height: 1; margin: 0.2em 0 0; text-decoration: none; text-transform: lowercase;}
+			#upcoming-events .vevent dd {margin: 0;}
+				#upcoming-events .vevent dd.location {left: -9999em; position: absolute; top: -9999em;}
+				#upcoming-events .vevent dd.date-time {left: -2.3em; position: absolute; top: 0; width: 2.3em;}
+					#upcoming-events .vevent .dtstart {}
+						#upcoming-events .vevent .dtstart .date {display: block; font-size: 1.6em; line-height: 1.2; text-align: center;}
+						#upcoming-events .vevent .dtstart .month {display: block; line-height: 1; text-align: center;}
+					#upcoming-events .vevent dd.rsvp,
+					#upcoming-events .vevent dd.jammers {margin: 0 0 0.2em; position: relative; width: 8.4em;}
+						#upcoming-events .vevent dd.rsvp a,
+						#upcoming-events .vevent dd.jammers a {background: #ff5e28; color: #200d07; font-size: 0.7em; padding: 0.1em 0.3em 0.1em; position: absolute; text-align: center; text-decoration: none; text-transform: uppercase; top: 0.3em; right: 0; width: 5em;}
+						#upcoming-events .vevent dd.rsvp a.full,
+						#upcoming-events .vevent dd.jammers a.full {background: #232524; color: #7c7e7d;}
+
+	
+	/* -- =Main Content -- */
+	#maincontent {float: left; padding: 0 0 2em; width: 54em;}
+	
+		/* --- =Content --- */
+		#content {border: 1px solid #1a1a1a; border-bottom: none; border-top: none; float: right; margin: 0 1em 0 0; padding: 0 1em; width: 34em;}
+			
+			/* ---- =hAtom ---- */
+			.hentry {}
+				.hentry .entry-title {}
+					.hentry .entry-title .updated {}
+				.hentry .entry-content {}
+				.hentry .author {}
+					.hentry .vcard {}
+					.hentry .vcard .fn {}
+			
+			/* ---- =Join Form ---- */
+				#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
+					#openid-login label {background: #0e0e0e url('/images/bg-login-input.gif') no-repeat 100% 6px; color: #ff6200; margin: 0 0.4em 0 0.5em; padding: 0 8px 0.4em 0; width: 26em;}
+						#openid-login label img {float: left;}
+						#openid-login label input {border: none; float: right; height: 24px; margin: 6px 0 0 1em; padding: 6px 0 0 0; width: 19.3em;}
+					#openid-login input.submit {background: #ff6200 url('/images/bg-login-button.gif') no-repeat 0.7em center; font-size: 1.07em; font-weight: 700; height: 2.1em; margin: 6px 0 0 0.3em; padding: 0 0 0.2em 0.4em; width: 5em;}
+				#construct-openid {background: #0e0e0e url('/images/bg-openid-construct.jpg') no-repeat 0 0; margin: 1em 0 1em 0; padding: 0 0 0 135px;}
+					#construct-openid p {margin: 0 0 1em 0;}
+					#construct-openid select {margin: 0 2em 0 0;}
+					#construct-openid input {font-size: 1em; width: 12em;}
+
+			/* ---- =Profile ---- */
+			#profile-menu {float: right; width: 10em;}
+				#profile-menu li {display: inline; list-style-type: none;}
+					#profile-menu li a:link,
+					#profile-menu li a:visited {}
+					#profile-menu li a:hover,
+					#profile-menu li a:active
+					#profile-menu li a:focus {}
+					
+			dl.vcard {}
+				.vcard dt.fn {}
+				.vcard dd {}
+					.vcard dd a.url {}
+				
+					.vcard dd.avatar {background: #0e0e0e url('/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
+						.vcard dd.avatar a {display: block;}
+						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
+			
+
+		/* --- =Other Content --- */
+		#other-content {float: left; padding: 0 1em 2em; width: 14em;}
+		
+			/* ---- =Main Nav ---- */
+			#main-nav {float: left; margin: 0 1em 0 2em;}
+				#main-nav li {font-size: 1.2em; margin: 0 0 0.2em;}
+					#main-nav li a:link, 
+					#main-nav li a:visited {text-decoration: none;}
+					#main-nav li a:hover,
+					#main-nav li a:active,
+					#main-nav li a:focus {background: #0e0e0e; color: #f03e00; text-decoration: underline;} 
+					#main-nav li span {background: #0e0e0e; color: #f03e00;} 
+					
+					#main-nav li li {font-size: 0.8em;}
+						#main-nav li li a {background: #0e0e0e url('/images/bg-subnav.gif') no-repeat 0 2px; padding: 0 0 0 12px;}
+						#main-nav li li span {background: #0e0e0e url('/images/bg-subnav-active.gif') no-repeat 0 2px; padding: 0 0 0 12px;}
+						#main-nav li strong {font-size: 0.8em;}
+		
+	/* -- =Sub Content -- */			
+	#subcontent {float: right; padding: 0 1em 2em; width: 14em;}
+		#subcontent strong.title {}
+		#subcontent .module {margin: 0 0 2em 0;}
+			
+		/* --- =Schwag --- */
+		#schwag {}
+			#schwag img {}
+			#schwag p {}
+			#schwag form {}
+				#schwag form label {}
+				#schwag form input,
+			  #schwag form select {float: right; width: 15em;}
+					#schwag form input.submit {width: 9em;}
+			
+		/* --- =Sponsors --- */
+		#sponsors {}
+			.sponsorbadge {height: 50px; overflow: hidden; margin: 0.6em 0 0; text-indent: -9999em;}
+			.sponsorbadge a {background-image: url('../images/sponsor_default.gif'); display: block; height: 50px; width: 198px;}	
+				.sponsorbadge a:hover {background-position: 0 -50px;}
+
+				#sponsorcm a {	background-image: url('../images/sponsor_cm.gif'); }
+				#sponsorwd a {	background-image: url('../images/sponsor_wd.gif'); }
+				#sponsoral a {	background-image: url('../images/sponsor_al.gif'); }
+				#sponsorad a {	background-image: url('../images/sponsor_ad.gif'); }
+				#sponsorms a {	background-image: url('../images/sponsor_ms.gif'); }
+				#sponsorrs a {	background-image: url('../images/sponsor_rs.gif'); }
+				#sponsorwu a {	background-image: url('../images/sponsor_wu.gif'); }
+				#sponsorml a {	background-image: url('../images/sponsor_ml.gif'); }
+				#sponsorse a {	background-image: url('../images/sponsor_se.gif'); }
+				
+		/* --- =Supporters --- */
+		#supporters {}
+			#supporters ul {}
+				#supporters ul li {}
+					#supporters ul li a {}
+		
+	/* -- =Footer -- */		
+	#footer {background: transparent url('/images/bg-footer.gif') repeat-x 0 0; bottom: 15px; clear: both; color: #565757; font: 0.94em "Trebuchet MS", Arial, Helvetica, sans-serif; left: 0; margin: 0 auto; padding: 80px 0 0 0; position: absolute; right: 0; text-align: center;}
+		#footer p {margin: 0 0 0.4em 0;}
+		
+
+/* - =JS enabled - */
+
+html.js {}
+
+
+/* - =Tim's rules - need to be folded in - */
+
+li.current a {
+  color: #f66;
+}
