@@ -1,4 +1,6 @@
-RAILS_GEM_VERSION = '1.2.3' unless defined? RAILS_GEM_VERSION
+ENV["TZ"] = "UTC"
+
+RAILS_GEM_VERSION = '2.0.1' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')

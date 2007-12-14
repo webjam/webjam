@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20) do
+ActiveRecord::Schema.define do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -23,32 +23,11 @@ ActiveRecord::Schema.define(:version => 20) do
     t.datetime "held_at"
     t.datetime "published_at"
     t.string   "city"
-    t.integer  "jam_slots"
-    t.date     "jam_registration_starts_on"
-    t.integer  "rsvp_slots"
-    t.date     "rsvp_registration_starts_on"
   end
 
   create_table "identity_urls", :force => true do |t|
     t.integer "user_id"
     t.text    "url"
-  end
-
-  create_table "jam_proposals", :force => true do |t|
-    t.integer "user_id"
-    t.text    "title"
-    t.text    "description"
-  end
-
-  create_table "jams", :force => true do |t|
-    t.integer "event_id"
-    t.string  "title"
-    t.text    "description"
-  end
-
-  create_table "jams_users", :id => false, :force => true do |t|
-    t.integer "jam_id"
-    t.integer "user_id"
   end
 
   create_table "mugshots", :force => true do |t|
@@ -92,12 +71,6 @@ ActiveRecord::Schema.define(:version => 20) do
     t.datetime "updated_at"
     t.datetime "published_at"
     t.string   "permalink"
-  end
-
-  create_table "rsvps", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
-    t.datetime "created_at"
   end
 
   create_table "sessions", :force => true do |t|
