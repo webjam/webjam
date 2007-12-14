@@ -1,25 +1,10 @@
-<!--
-<div>
-  <h3><%=h event.city %></h3>
-  <p><%= time_to_event event %></p>
-  <p>RSVP: <%= event.rsvp_status %></p>
-  <p>Jammers: <%= event.jam_status %></p>
-</div>
--->
-
 <dl class="vevent">
-  <dt class="summary"><a class="url" href="http://webjam.com.au/events/perth/"><%=h event.city %></a><%= time_to_event event %></dt>
-  <dd class="location">The Velvet Lounge, Mt Lawley</dd>
+  <dt class="summary"><%= link_to h(event.location), event_path(event), :class => "url" %><%= time_to_event event %></dt>
+  <dd class="location"><%=h event.location %></dd>
   <dd class="date-time">
     <abbr class="dtstart" title="20070815">
       <span class="date">15</span>
       <span class="month">Aug</span>
     </abbr>
   </dd> <!-- // .date_time -->
-  <dd class="rsvp">
-    rsvp <%= event.rsvp_status %>
-  </dd>
-  <dd class="jammers">
-    jammers <%= event.jam_status %>
-  </dd>
 </dl>

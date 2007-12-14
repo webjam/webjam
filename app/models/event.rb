@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  belongs_to :location
   def self.find_upcoming(*options)
     with_scope(:find => {:conditions => ['held_at >= ?', Time.now.utc]}) { find(*options) }
   end
@@ -12,6 +13,6 @@ class Event < ActiveRecord::Base
     !upcoming?
   end
   def to_s
-    "#{city} (#{held_at.to_date.to_s(:short)})"
+    "#{location} (#{held_at.to_date.to_s(:short)})"
   end
 end

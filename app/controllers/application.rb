@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
     end
     
     def find_upcoming_events
-      @upcoming_events = Event.find_upcoming(:all, :order => 'held_at ASC')
+      @upcoming_events = Event.find_upcoming(:all, :order => 'held_at ASC', :include => :location)
     end
     
     def strip_permalinks

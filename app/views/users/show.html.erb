@@ -32,34 +32,3 @@
 </dl>
 
 <h2>Jams <span class="amp">&amp;</span> Awards</h2>
-
-<h2>Events</h2>
-
-<% if @user.show_upcoming_rsvps? %>
-  <p><%=h @user.nick_name %> will be attending:</p>
-  <ul>
-  <% for event in @upcoming_events %>
-    <li><%= event %></li>
-  <% end %>
-  </ul>
-<% end %>
-
-<% if @user.show_past_rsvps? %>
-  <p><%=h @user.nick_name %> attended:</p>
-  <ul>
-  <% for event in @previous_events %>
-    <li><%= event %></li>
-  <% end %>
-  </ul>
-<% end %>
-
-<h2>Posts</h2>
-
-<% if !(recent_posts = @user.posts.recently_published).empty? %>
-  <p><%=h @user.nick_name %>'s recent posts are:</p>
-  <ul>
-    <% for post in recent_posts %>
-      <li><%= link_to h(post.title), post_path(post) %></li>
-    <% end %>
-  </ul>
-<% end %>
