@@ -2,15 +2,3 @@
 <% @page_title = "Upcoming WebJam: #{h(@event)}" %>
 
 <h2><%=h @event %></h2>
-
-<% unless @event.jams_closed? %>
-  <p>Register to jam</p>
-<% else %>
-  <p>Jam slots are full!</p>
-<% end %>
-
-<% unless @event.rsvps_closed? %>
-  <p>RSVP to attend</p>
-<% else %>
-  <p>We're full up. No more RSVPs left.</p>
-<% end %>

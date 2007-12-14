@@ -32,11 +32,9 @@
 </dl>
 
 <h2>Jams <span class="amp">&amp;</span> Awards</h2>
-<% for jam in @jams %>
-  
-<% end %>
 
 <h2>Events</h2>
+
 <% if @user.show_upcoming_rsvps? %>
   <p><%=h @user.nick_name %> will be attending:</p>
   <ul>
@@ -56,6 +54,7 @@
 <% end %>
 
 <h2>Posts</h2>
+
 <% if !(recent_posts = @user.posts.recently_published).empty? %>
   <p><%=h @user.nick_name %>'s recent posts are:</p>
   <ul>

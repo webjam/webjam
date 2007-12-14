@@ -257,3 +257,7 @@ html.js {}
 li.current a {
   color: #f66;
 }
+
+h3 {
+  clear: left;
+}

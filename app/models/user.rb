@@ -1,12 +1,8 @@
 class User < ActiveRecord::Base
   has_one :mugshot, :dependent => :destroy
   has_many :temporary_mugshots, :class_name => 'Mugshot', :foreign_key => 'temp_user_id'
-  has_many :rsvps, :dependent => :destroy
-  has_many :events, :through => :rsvps
   has_many :posts # TODO: DEPENDENT?
-  has_many :jam_proposals, :dependent => :destroy
   has_many :identity_urls, :dependent => :destroy
-  has_and_belongs_to_many :jams # TODO: DEPENDENT?
   
   validates_presence_of :full_name, :nick_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
@@ -30,12 +26,8 @@ class User < ActiveRecord::Base
     save(false)
   end
   
-  def attending_event?(event)
-    events.include?(event)
-  end
-  
   def openid_sreg_fields=(fields)
-    fields.each_pair do |key,val|
+    fields && fields.each_pair do |key,val|
       self[attr_for_openid_sreg_field(key)] = val
     end
   end

@@ -4,9 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @upcoming_events = @user.events.find_upcoming(:all, :order => 'held_at ASC')
-    @previous_events = @user.events.find_past(:all, :order => 'held_at ASC')
-    @jams = []
+    # @upcoming_events = @user.events.find_upcoming(:all, :order => 'held_at ASC')
+    # @previous_events = @user.events.find_past(:all, :order => 'held_at ASC')
   end
   
   def new
