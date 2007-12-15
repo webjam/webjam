@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 3) do
+ActiveRecord::Schema.define(:version => 4) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 3) do
     t.text     "website_url"
     t.string   "website_name"
     t.string   "permalink"
+    t.boolean  "admin",                     :default => false, :null => false
   end
 
 end

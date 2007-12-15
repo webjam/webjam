@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-au" lang="en-au">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Webjam Admin <%= " - #{@page_title}" if @page_title %></title>
+  <%= stylesheet_link_tag 'reset', 'backjam' %>
+</head>
+<body>
+  <div id="page">
+    <div id="wrapper">
+      <p id="pagetitle"><a href="/"><%= image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam" %></a></p>
+      <div id="maincontent">
+        <div id="content">
+          <%= yield %>
+        </div> <!-- // #content -->
+        <div id="other-content">
+          <ul id="main-nav">
+            <li class="<%= class_for_section :home %>"><%= link_to "Admin", admin_path %></li>
+            <li class="<%= class_for_section :events %>"><%= link_to "Events", admin_events_path %></li>
+            <li class="<%= class_for_section :locations %>"><%= link_to "Locations", admin_locations_path %></li>
+            <li class="<%= class_for_section :posts %>"><%= link_to "Blog Posts", admin_posts_path %></li>
+          </ul>
+        </div> <!-- // #other-content -->
+      </div> <!-- // #maincontent -->
+    </div> <!-- // #wrapper -->
+  </div> <!-- // #page -->
+</body>

@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :login_required
   def create
     @post = Post.find_published(params[:post_id])
     @comment = @post.comments.build(params[:comment])

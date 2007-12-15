@@ -1,0 +1,8 @@
+<% @section = :posts -%>
+<% @page_title = "Blog posts" -%>
+
+<h2>Posts</h2>
+
+<% for post in @posts %>
+  <li><%= link_to h(post), [:admin, post] %></li>
+<% end %>

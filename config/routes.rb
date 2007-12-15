@@ -21,4 +21,9 @@ ActionController::Routing::Routes.draw do |map|
     m.contact 'contact', :action => 'contact'
     m.home '', :action => 'index'
   end
+  
+  map.namespace :admin do |admin|
+    admin.resources :locations, :events, :posts
+  end
+  map.admin 'admin', :controller => 'admin/home'
 end
