@@ -8,25 +8,36 @@
 
 <h3>Profile Details</h3>
 
-<% accessible_form_for :user, @user, :url => update_profile_details_current_user_path, :html => {:method => :put} do |f| %>
-<p>
-  <%= f.label :nick_name %>
-  <%= f.text_field :nick_name %>
-</p>
-  <p>
-    <%= f.label :full_name %>
-    <%= f.text_field :full_name %>
-  </p>
-  <p>
-    <%= f.label :website_name %>
-    <%= f.text_field :website_name %>
-  </p>
-  <p>
-    <%= f.label :website_url %>
-    <%= f.text_field :website_url %>
-  </p>
-  <%= submit_tag 'Save profile details' %>
+<%= error_messages_for :user %>
+<% form_for :user, :url => create_users_path, :id => 'register' do |f| -%>
+  <fieldset>
+  <label for="user_nick_name">
+      <span>Nick name:</span> 
+      <%= f.text_field :nick_name %> 
+      <span class="note">(what you want to be known as)</span>
+  </label>
+  <label for="user_full_name">
+    <span>Full name:</span>
+    <%= f.text_field :full_name %> 
+    <span class="note">(what name to put down on the door, who to give a prize to, etc)</span>
+  </label>
+  <label for="user_email">
+    <span>Email:</span>     
+    <%= f.text_field :email %>     
+    <span class="note">(verification, lost passwords, announcements, etc)</span>
+  </label>
+  <label for="user_website_name">
+     <span>Website Name:</span>     
+     <%= f.text_field :website_name %>     
+   </label>
+   <label for="user_website_url">
+      <span>Website URL:</span>     
+      <%= f.text_field :website_url %>     
+    </label>
+  </fieldset>
+  <%= submit_tag 'Save profile details', :class => "submit" %>
 <% end %>
+
 
 <h3>OpenID URLs</h3>
 
