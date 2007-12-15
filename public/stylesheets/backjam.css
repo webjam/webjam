@@ -124,7 +124,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		#pagetitle img {border: none; font-size: 0.4em; height: 15.2em; max-height: 152px; width: 97em; max-width: 1033px;}
 	
 	/* -- =Upcoming Events -- */
-	#upcoming-events {background: #370e0c url('/images/bg-perth-upcoming.jpg') no-repeat 0 0; clear: both; float: left; margin: 0 0 2.5em; padding: 0 0 0 20em; width: 50em;}
+	#upcoming-events {background: #370e0c url('/images/bg-perth-upcoming.jpg') no-repeat 0 0; clear: both; float: left; margin: 0; padding: 0 0 0 20em; width: 50em;}
 		#upcoming-events dl.vevent {border-left: 1px solid #320b10; float: left; font-size: 1em; margin: 0 2em; padding: 0 1em 0; position: relative; width: 12em;}
 			#upcoming-events .vevent dt.summary {font-size: 1em; font-weight: normal;}
 				#upcoming-events .vevent a.url {display: block; font-size: 1.3em; line-height: 1; margin: 0.2em 0 0; text-decoration: none; text-transform: lowercase;}
@@ -143,7 +143,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 
 	
 	/* -- =Main Content -- */
-	#maincontent {float: left; padding: 0 0 2em; width: 54em;}
+	#maincontent {float: left; padding: 2.5em 0 2em; width: 54em;}
 	
 		/* --- =Content --- */
 		#content {border: 1px solid #1a1a1a; border-bottom: none; border-top: none; float: right; margin: 0 1em 0 0; padding: 0 1em; width: 34em;}
@@ -156,6 +156,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				.hentry .author {}
 					.hentry .vcard {}
 					.hentry .vcard .fn {}
+			
+			/* ---- =About ---- */
+			body.about #content p {font: 300 1.6em/2 "Trebuchet MS", Arial, Helvetica, sans-serif;}
+				body.about #content p strong {font: 700 1em/2 Georgia, Verdana, Times, "Times New Roman", serif;}
 			
 			/* ---- =Join Form ---- */
 				#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
@@ -206,7 +210,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						#main-nav li strong {font-size: 0.8em;}
 		
 	/* -- =Sub Content -- */			
-	#subcontent {float: right; padding: 0 1em 2em; width: 14em;}
+	#subcontent {float: right; padding: 2.5em 1em 2em; width: 14em;}
 		#subcontent strong.title {}
 		#subcontent .module {margin: 0 0 2em 0;}
 			
