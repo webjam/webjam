@@ -20,10 +20,4 @@ class Post < ActiveRecord::Base
   def published?
     published_at
   end
-  # def published_at
-  #   
-  # end
-  # def published_at=(published_at)
-  #   
-  # end
 end
