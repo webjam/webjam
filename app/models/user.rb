@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
     "#{id}-#{permalink}"
   end
   
+  def to_s
+    nick_name
+  end
+  
   protected
     def attr_for_openid_sreg_field(field)
       {

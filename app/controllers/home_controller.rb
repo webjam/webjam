@@ -4,7 +4,6 @@ class HomeController < ApplicationController
     @posts = Post.find_published(:all, :order => 'published_at DESC')
   end
   def about
-    
   end
   def contact
     

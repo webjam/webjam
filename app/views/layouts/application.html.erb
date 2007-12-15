@@ -16,7 +16,7 @@
         <li class="logout"><%= button_to 'Logout', session_path, :method => :delete %></li>
       <% else %>
         <li class="login"><%= link_to "<strong>Jammer?</strong> Login", new_session_path %></li>
-        <li class="register"><%= link_to "<strong>New peep?</strong>Register", new_user_path %></li>
+        <li class="register"><%= link_to "<strong>New peep?</strong> Register", new_user_path %></li>
       <% end %>
     </ul> <!-- // #account-tools -->
     
@@ -47,7 +47,6 @@
           <li class="<%= class_for_section :about %>"><%= link_to "wtf is webjam?", about_path %></li>
           <li class="<%= class_for_section :blog %>"><%= link_to "the blog", posts_path %></li>
           <li class="<%= class_for_section :past_events %>"><%= link_to "past webjams", past_events_path %></li>
-          <li class="<%= class_for_section :contact %>"><%= link_to "get in touch", contact_path %></li>
       </ul>
     </div> <!-- // #other-content -->
   </div> <!-- // #maincontent -->

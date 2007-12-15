@@ -1,0 +1,12 @@
+<% content_for :subcontent do %>
+  <ul>
+    <li><%= link_to "Edit", edit_admin_post_path(@post) %></li>
+    <li><%= button_to "Delete", admin_post_path(@post), :method => :delete, :confirm => "Yo sure?" %></li>
+  </ul>
+<% end %>
+
+<h1><%=h @post %></h1>
+
+<p><%= @post.published_at %></p>
+
+<%= @post.body %>
