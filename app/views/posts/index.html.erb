@@ -1,4 +1,6 @@
 <% @section = :blog %>
 <% @page_title = "Blogging da Jam" %>
 
-<%= render :collection => @posts %>
+<div class="hfeed">
+  <%= render :collection => @posts %>
+</div> <!-- // .hfeed -->
