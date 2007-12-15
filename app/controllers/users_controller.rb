@@ -75,17 +75,6 @@ class UsersController < ApplicationController
     render :action => 'edit'
   end
   
-  def update_privacy
-    @user = current_user
-    @user.update_attributes(
-      :show_upcoming_rsvps => params[:user] && params[:user][:show_upcoming_rsvps] || false,
-      :show_past_rsvps => params[:user] && params[:user][:show_past_rsvps] || false
-    )
-    @user.save!
-    flash[:notice] = "Your privacy settings have been updated"
-    redirect_back_or_default edit_current_user_path
-  end
-
   def update_profile_details
     @user = current_user
     @user.update_attributes(params[:user])
