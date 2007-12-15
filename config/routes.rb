@@ -2,7 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts do |posts|
     posts.resources :comments, :name_prefix => 'post_'
   end
-  map.resources :jams, :rsvps, :comments
+  map.resources :comments
   
   map.resources :events, :collection => [:past]
 
