@@ -1,6 +1,7 @@
 module ApplicationHelper
-  def user_link_with_avatar(user)
-    link_to "#{avatar_image(user)}&nbsp;#{h(user.nick_name)}", user_path(user), :class => 'user-avatar'
+  def user_link_with_avatar(user, classes="")
+    classes += " user-avatar"
+    link_to "#{avatar_image(user)}&nbsp;#{h(user.nick_name)}", user_path(user), :class => classes.strip
   end
   def user_login_link_with_avatar(user)
     link_to "Hi #{avatar_image(user)}&nbsp;<strong>#{h(user.nick_name)}</strong>!", user_path(user), :class => 'user-avatar'
