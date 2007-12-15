@@ -15,7 +15,9 @@ TOC
 	-- =Upcoming Events
 	-- =Main Content
 		 --- =Content
-		 		 ---- =hAtom
+				 ---- =Posts
+		 		 		  ----- =hAtom
+							----- =Comments
 		     ---- =Join Form
 				 ---- =Profile
 		 --- =Other Content
@@ -148,18 +150,26 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		/* --- =Content --- */
 		#content {border: 1px solid #1a1a1a; border-bottom: none; border-top: none; float: right; margin: 0 1em 0 0; padding: 0 1em; width: 34em;}
 			
-			/* ---- =hAtom ---- */
-			.hentry {}
-				.hentry .entry-title {}
-					.hentry .entry-title .updated {}
-				.hentry .entry-content {}
-				.hentry .author {}
-					.hentry .vcard {}
-					.hentry .vcard .fn {}
+			/* ---- =Posts ---- */
+			
+				/* ----- =hAtom ----- */
+				.hentry {}
+					.hentry .entry-title {}
+						.hentry .entry-title .updated {}
+					.hentry .entry-content {}
+					.hentry .author {}
+						.hentry .vcard {}
+						.hentry .vcard .fn {}
+				
+				/* ----- =Comments ----- */
+				#comments {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
+					#comments p.blurb {font: 700 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0;}
+					#comments form {padding: 0;}
+				
 			
 			/* ---- =About ---- */
 			body.about #content p {font: 300 1.6em/2 "Trebuchet MS", Arial, Helvetica, sans-serif;}
-				body.about #content p strong {font: 700 1em/2 Georgia, Verdana, Times, "Times New Roman", serif;}
+				body.about #content p strong {font-weight: 700;}
 			
 			/* ---- =Join Form ---- */
 				#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
