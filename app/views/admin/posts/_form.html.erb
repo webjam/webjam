@@ -1,7 +1,7 @@
 <%= f.error_messages %>
 <fieldset>
   <label for="post_user_id">
-    <%= f.select :user_id, User.find(:all, :order => 'nick_name ASC').collect {|u| [h(u), u.id]} %>
+    Author <%= f.select :user_id, User.find(:all, :order => 'nick_name ASC').collect {|u| [h(u), u.id]} %>
   </label>
   <label for="post_title">
     Title <%= f.text_field :title %>
