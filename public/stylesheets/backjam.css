@@ -117,7 +117,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#account-tools li a:active strong,
 				#account-tools li a:focus strong {color: #0e0e0e;}
 
-	#wrapper {background: #0e0e0e; border: 1px solid #000; border-bottom: none; float: left; padding: 0 0 70px 0; position: relative; width: 70em;}
+	#wrapper {background: #0e0e0e url('/images/bg-footer.gif') repeat-x 0 100%; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
 	body.home h1,
 	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; height: 146px; margin: 0; text-align: center;}
@@ -257,8 +257,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					#supporters ul li a {}
 		
 	/* -- =Footer -- */		
-	#footer {background: transparent url('/images/bg-footer.gif') repeat-x 0 0; bottom: 15px; clear: both; color: #565757; font: 0.94em "Trebuchet MS", Arial, Helvetica, sans-serif; left: 0; margin: 0 auto; padding: 80px 0 0 0; position: absolute; right: 0; text-align: center;}
-		#footer p {margin: 0 0 0.4em 0;}
+	#footer {background: #0e0e0e; border: 1px solid #000; border-bottom: none; border-top: none; clear: both; color: #565757; margin: 0 auto; padding: 1em 0 1em 0; text-align: center; width: 70em;}
+		#footer p {font: 0.94em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0 0 0.4em 0;}
 		
 
 /* - =JS enabled - */
