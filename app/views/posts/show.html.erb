@@ -29,6 +29,9 @@
     <p><%= link_to_login_with_return_to_current_page 'Login to leave a comment' %></p>
   <% else %>
     <% form_tag post_comments_path(@post), :id => 'new-comment' do %>
+      <% if params[:no_body_error] %>
+        <p class="error">Don&rsquo;t forget to type something!</p>
+      <% end %>
       <fieldset>
         <label for="comment_body">
             Add yours:
@@ -39,3 +42,5 @@
     <% end %>
   <% end %>
 </div> <!-- // #comments -->
+
+<p>&nbsp;</p><p>&nbsp;</p>
