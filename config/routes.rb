@@ -3,25 +3,18 @@ ActionController::Routing::Routes.draw do |map|
     posts.resources :comments, :name_prefix => 'post_'
   end
   map.resources :comments
-  
   map.resources :events, :collection => [:past]
-
-  map.resource :session, :member => { :create => :any }
-
-  map.resource :user, :name_prefix => 'current_', :member => {:update_privacy => :put, :update_profile_details => :put}
+  map.resource  :session, :member => { :create => :any }
+  map.resource  :user, :name_prefix => 'current_', :member => {:update_privacy => :put, :update_profile_details => :put}
   map.resources :users, :collection => {:verify => :any, :details => :get, :create => :post}
-
-  map.resource :mugshot, :name_prefix => 'current_'
+  map.resource  :mugshot, :name_prefix => 'current_'
   map.resources :mugshots, :member => {:crop => :any}
-
   map.resources :identity_urls, :collection => {:create => :any}
-
-  map.with_options(:controller => 'home') do |m|
-    m.about 'about', :action => 'about'
+  map.with_options(:controller => 'pages') do |m|
+    m.about   'about',   :action => 'about'
     m.contact 'contact', :action => 'contact'
-    m.home '', :action => 'index'
+    m.home    '',        :action => 'home'
   end
-  
   map.namespace :admin do |admin|
     admin.resources :locations, :events, :posts
   end
