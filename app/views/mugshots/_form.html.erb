@@ -1,9 +1,11 @@
 <% accessible_form_for(:mugshot, @mugshot, :url => current_mugshot_path, :html => { :multipart => true }) do |f| -%>
-  <p>
-    <%= f.label :uploaded_data, :value => 'Image' %>
-    <%= f.file_field :uploaded_data %>
-  </p>
-  <p>
-    <%= submit_tag 'Upload new mugshot' %>
-  </p>
+  <fieldset>
+    <label for="mugshot_uploaded_data">
+      Image:
+      <%= f.file_field :uploaded_data %>
+    </label>
+  </fieldset>
+  <fieldset>
+    <%= submit_tag 'Upload new mugshot', :class => 'submit' %>
+  </fieldset>
 <% end %>

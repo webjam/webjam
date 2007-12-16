@@ -35,7 +35,9 @@
       <%= f.text_field :website_url %>     
     </label>
   </fieldset>
-  <%= submit_tag 'Save profile details', :class => "submit" %>
+  <fieldset>
+    <%= submit_tag 'Save profile details', :class => "submit" %>
+  </fieldset>
 <% end %>
 
 
@@ -53,10 +55,15 @@
 <p>Associate your WebJam account with all your OpenIDs URLs. You know you want to.</p>
 
 <% form_tag create_identity_urls_path do %>
-  <label for="openid_url">
-    OpenID URL:
-    <%= text_field_tag 'openid_url' %> <%= submit_tag 'Add URL' %>
-  </label>
+  <fieldset>
+    <label for="openid_url">
+      OpenID URL:
+      <%= text_field_tag 'openid_url' %>
+    </label>
+  </fieldset>
+  <fieldset>
+    <%= submit_tag 'Add URL', :class => "submit" %>
+  </fieldset>
 <% end %>
 
 <h3>Password</h3>
