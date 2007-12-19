@@ -77,14 +77,15 @@ TOC
 		fieldset {margin: 0; padding: 0;}
 			fieldset fieldset {clear: both;}
 		form label {clear: both; display: block; float: left; font-weight: bold; margin: 0 0 0.4em 0; padding: 0.5em 0 0 0; width: auto;}
-			form label span {display: block; float: left; margin: 0.2em 0 0 0; width: 6em;}
-				form label span.note {clear:both; color: #565757; font: 0.86em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0.5em 0 0 7em; width: auto;}
+			form label span {display: block; float: left; margin: 0.2em 0 0 0; width: 8em;}
+				form label span.note {clear:both; color: #565757; font: 0.86em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0.5em 0 0 9em; width: auto;}
 		input {background: #e6e5e5; color: #000; float: left; width: 14em;}
 		select {float: left; width: 10em;}
+		textarea {float: left; width: 27em;}
 			input.checkbox {margin: 0.4em 0; width: auto;}
 			fieldset.buttons input,
 			input.submit,
-			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 6.4em; width: auto;}
+			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 8.4em; width: auto;}
 			
 			form.button-to {display: inline; margin: 0; padding: 0;}
 
@@ -167,7 +168,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				/* ----- =Comments ----- */
 				#comments {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
 					#comments p.blurb {font: 700 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0;}
-					#comments form {padding: 0;}
+					#comments form {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
 					
 					/* ------ =hAtom ------ */
 					#comments .hentry {margin: 0 0 3em 0; padding: 0 0 0 65px; position: relative;}

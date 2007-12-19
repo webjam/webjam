@@ -36,10 +36,10 @@
       <% end %>
       <fieldset>
         <label for="comment_body">
-            Add yours:
-            <%= text_area_tag 'comment[body]', nil, :cols => '57', :rows => '3', :id => 'comment_body'  %>
+            <span>Add your own:</span>
+            <%= text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'comment_body'  %>
         </label>
-        <%= submit_tag 'Submit' %>
+        <%= submit_tag 'Add Comment', :class => 'submit' %>
       </fieldset>
     <% end %>
   <% end %>
