@@ -10,6 +10,17 @@ module ApplicationHelper
     raise(ArgumentError, "user can not be nil") if user.nil?
     image_tag(user.mugshot ? user.mugshot.public_filename(size) : "default_avatar_#{size || 'large'}.gif", :alt => h(user.nick_name))
   end
+  # I just know there's a better way to do this... Help?
+  def user_link_for_comment(user, classes="")
+    classes += " user-avatar"
+    link_to "#{comment_avatar(user)}&nbsp;#{h(user.nick_name)}", user_path(user), :class => classes.strip
+  end
+  def comment_avatar(user, size=:small)
+    raise(ArgumentError, "user can not be nil") if user.nil?
+    image_tag(user.mugshot ? user.mugshot.public_filename(size) : "default_avatar_#{size || 'large'}.gif", :alt => h(user.nick_name))
+  end
+  # end lameness ;)
+  
   def flash_notice
     %(<div class="notice">#{h flash[:notice]}</div>) if flash[:notice]
   end

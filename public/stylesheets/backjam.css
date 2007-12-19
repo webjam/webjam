@@ -52,6 +52,9 @@ TOC
 		h5 {font-size: 1.2em;}
 		h6 {font-size: 1.1em;}
 		
+		#wrapper p.title {background: #0e0e0e; color: #666; font-size: 1.5em; font-weight: 300;}
+			#wrapper p.title strong {background: #0e0e0e; color: #fff; font-weight: 300;}
+		
 		/* --- =Body Text --- */
 		#content p,
 		#content li,
@@ -165,6 +168,17 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#comments {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
 					#comments p.blurb {font: 700 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0;}
 					#comments form {padding: 0;}
+					
+					/* ------ =hAtom ------ */
+					#comments .hentry {margin: 0 0 3em 0; padding: 0 0 0 65px; position: relative;}
+						#comments .hentry .entry-title {background: green;}
+						#comments .hentry .updated {background: blue;}
+						#comments .comment-details {background: #0e0e0e; color: #ccc; font-size: 0.9em; margin: 0 0 0.4em 0;}
+							#comments .comment-details img {left: 0; position: absolute; top: 0;}
+						#comments .hentry .entry-content {}
+						#comments .hentry .author {}	
+							#comments .hentry .vcard {background: fuschia;}
+							#comments .hentry .vcard .fn {zbackground: grey;}
 				
 			
 			/* ---- =About ---- */
