@@ -178,7 +178,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						#comments .hentry .entry-content {}
 						#comments .hentry .author {}	
 							#comments .hentry .vcard {background: fuschia;}
-							#comments .hentry .vcard .fn {zbackground: grey;}
+							#comments .hentry .vcard .fn {}
 				
 			
 			/* ---- =About ---- */
