@@ -52,6 +52,9 @@ TOC
 		h5 {font-size: 1.2em;}
 		h6 {font-size: 1.1em;}
 		
+		#wrapper p.title {background: #0e0e0e; color: #666; font-size: 1.5em; font-weight: 300;}
+			#wrapper p.title strong {background: #0e0e0e; color: #fff; font-weight: 300;}
+		
 		/* --- =Body Text --- */
 		#content p,
 		#content li,
@@ -117,7 +120,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#account-tools li a:active strong,
 				#account-tools li a:focus strong {color: #0e0e0e;}
 
-	#wrapper {background: #0e0e0e; border: 1px solid #000; border-bottom: none; float: left; padding: 0 0 70px 0; position: relative; width: 70em;}
+	#wrapper {background: #0e0e0e url('/images/bg-footer.gif') repeat-x 0 100%; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
 	body.home h1,
 	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; height: 146px; margin: 0; text-align: center;}
@@ -165,6 +168,17 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#comments {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
 					#comments p.blurb {font: 700 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0;}
 					#comments form {padding: 0;}
+					
+					/* ------ =hAtom ------ */
+					#comments .hentry {margin: 0 0 3em 0; padding: 0 0 0 65px; position: relative;}
+						#comments .hentry .entry-title {background: green;}
+						#comments .hentry .updated {background: blue;}
+						#comments .comment-details {background: #0e0e0e; color: #ccc; font-size: 0.9em; margin: 0 0 0.4em 0;}
+							#comments .comment-details img {left: 0; position: absolute; top: 0;}
+						#comments .hentry .entry-content {}
+						#comments .hentry .author {}	
+							#comments .hentry .vcard {background: fuschia;}
+							#comments .hentry .vcard .fn {}
 				
 			
 			/* ---- =About ---- */
@@ -257,8 +271,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					#supporters ul li a {}
 		
 	/* -- =Footer -- */		
-	#footer {background: transparent url('/images/bg-footer.gif') repeat-x 0 0; bottom: 15px; clear: both; color: #565757; font: 0.94em "Trebuchet MS", Arial, Helvetica, sans-serif; left: 0; margin: 0 auto; padding: 80px 0 0 0; position: absolute; right: 0; text-align: center;}
-		#footer p {margin: 0 0 0.4em 0;}
+	#footer {background: #0e0e0e; border: 1px solid #000; border-bottom: none; border-top: none; clear: both; color: #565757; margin: 0 auto; padding: 1em 0 1em 0; text-align: center; width: 70em;}
+		#footer p {font: 0.94em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0 0 0.4em 0;}
 		
 
 /* - =JS enabled - */

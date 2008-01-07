@@ -4,24 +4,26 @@
 <div class="hentry">
   <h1 class="entry-title"><%=h @post.title %></h1>
 
-  <div id="entry-content">
+  <div class="entry-content">
     <%= @post.body %>
   </div> <!-- // .entry-content -->
 
-  <p><em>by <span class="author"><%= user_link_with_avatar(@post.user, "author") %></span> - <span class="updated"><%= @post.published_at.to_date.to_s(:long) %></span></em></p>
+  <p><em>by <%= user_link_with_avatar(@post.user, "author") %> - <span class="updated"><%= @post.published_at.to_date.to_s(:long) %></span></em></p>
 
 </div> <!-- // .hentry -->
 
-<div id="comments">
+<div class="hfeed" id="comments">
   <% if @post.comments.empty? %>
-    <p class="blurb"><strong>There are no comments yet!</strong></p>
+    <p class="title">There are no comments yet!</p>
   <% else %>
-    <p class="blurb"><strong><%= pluralize @post.comments.count, 'Comment' %></strong></p>
+    <p class="title"><%= pluralize @post.comments.count, 'Comment' %></p>
     <% for comment in @post.comments %>
-      <div id="comment-<%= comment.id %>">
-        <%=h comment.body %>
-        <p><em>by <%= user_link_with_avatar(comment.user) %> <%= time_ago_in_words comment.created_at %> ago</em></p>
-      </div>
+      <div class="hentry" id="comment-<%= comment.id %>">
+        <p class="comment-details"><em><%= user_link_for_comment(comment.user, "author") %> commented <%= time_ago_in_words comment.created_at %> ago:</em></p>
+        <div class="entry-content">
+          <%=h comment.body %>
+        </div> <!-- // .entry-content -->
+      </div> <!-- // .hentry #comment-<%= comment.id %> -->
     <% end %>
   <% end %>
 
