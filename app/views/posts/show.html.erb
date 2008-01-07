@@ -4,11 +4,11 @@
 <div class="hentry">
   <h1 class="entry-title"><%=h @post.title %></h1>
 
+  <p class="byline">by <%= user_link_with_avatar(@post.user, "author") %> - <span class="updated"><%= @post.published_at.to_date.to_s(:long) %></span></p>
+
   <div class="entry-content">
     <%= @post.body %>
   </div> <!-- // .entry-content -->
-
-  <p><em>by <%= user_link_with_avatar(@post.user, "author") %> - <span class="updated"><%= @post.published_at.to_date.to_s(:long) %></span></em></p>
 
 </div> <!-- // .hentry -->
 

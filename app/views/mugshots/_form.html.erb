@@ -1,8 +1,8 @@
 <% accessible_form_for(:mugshot, @mugshot, :url => current_mugshot_path, :html => { :multipart => true }) do |f| -%>
   <fieldset>
     <label for="mugshot_uploaded_data">
-      Image:
-      <%= f.file_field :uploaded_data %>
+      <span>Image:</span>
+      <%= f.file_field :uploaded_data, :class => 'file' %>
     </label>
   </fieldset>
   <fieldset>

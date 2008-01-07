@@ -73,7 +73,7 @@ TOC
 
 	/* -- =Generic Forms -- */
 
-	form {clear: both; float: left; padding: 1em 0;}
+	form {clear: both; float: left; padding: 0 0 2em 0; zpadding: 1em 0;}
 		fieldset {margin: 0; padding: 0;}
 			fieldset fieldset {clear: both;}
 		form label {clear: both; display: block; float: left; font-weight: bold; margin: 0 0 0.4em 0; padding: 0.5em 0 0 0; width: auto;}
@@ -158,8 +158,9 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			
 				/* ----- =hAtom ----- */
 				.hentry {}
-					.hentry .entry-title {}
-						.hentry .entry-title .updated {}
+					.hentry .entry-title {margin: 0 0 1em;}
+					#content .hentry .byline {display: block; float: right; font-size: 0.8em; margin: -2 0 1.5em 0; text-align: right;}
+						.hentry .byline .updated {}
 					.hentry .entry-content {}
 					.hentry .author {}
 						.hentry .vcard {}
@@ -205,6 +206,9 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					#profile-menu li a:hover,
 					#profile-menu li a:active
 					#profile-menu li a:focus {}
+			
+			#edit-mugshot {}
+					#edit-mugshot h4 {clear: both; margin: 2em 0 0 0;}
 					
 			dl.vcard {}
 				.vcard dt.fn {}
@@ -214,6 +218,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					.vcard dd.avatar {background: #0e0e0e url('/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
 						.vcard dd.avatar a {display: block;}
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
+						
 			
 
 		/* --- =Other Content --- */

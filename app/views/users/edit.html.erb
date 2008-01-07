@@ -52,12 +52,12 @@
 <% end %>
 </ul>
 
-<p>Associate your WebJam account with all your OpenIDs URLs. You know you want to.</p>
+<p>Associate your WebJam account with all your OpenID URLs. You know you want to.</p>
 
 <% form_tag create_identity_urls_path do %>
   <fieldset>
     <label for="openid_url">
-      OpenID URL:
+      <span>OpenID URL:</span>
       <%= text_field_tag 'openid_url' %>
     </label>
   </fieldset>

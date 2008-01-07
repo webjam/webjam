@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
     m.about   'about',   :action => 'about'
     m.contact 'contact', :action => 'contact'
     m.home    '',        :action => 'home'
+    m.about   'openid',   :action => 'openid'
   end
   map.namespace :admin do |admin|
     admin.resources :locations, :events, :posts

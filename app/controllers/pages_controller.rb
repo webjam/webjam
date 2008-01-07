@@ -8,4 +8,6 @@ class PagesController < ApplicationController
   def contact
     
   end
+  def openid
+  end
 end

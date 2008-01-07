@@ -1,3 +1,4 @@
+<div id="edit-mugshot">
 <% if !@mugshot.new_record? %>
   <h3>Your Mugshot</h3>
   <%= image_tag @mugshot.public_filename(:large) %>
@@ -8,3 +9,4 @@
   <h3>Add A Mugshot <%= avatar_image(current_user, :tiny) %></h3>
   <%= render :partial => 'mugshots/form' %>
 <% end %>
+</div> <!-- // #edit-mugshot -->
