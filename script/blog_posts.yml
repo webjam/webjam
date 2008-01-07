@@ -1,0 +1,500 @@
+--- 
+- :title: The Second Coming
+  :body: |
+    <p>We hope you're ready for some more fast-paced fun. Webjam 2 is coming on March 1st, 2007, and we want you!</p>
+    
+    <p>If you've done something cool on the web lately, show the rest of us. We're looking for 16 presenters to show us their sharpest recent web work, but they only get three minutes. Previous presenters are welcome - if they have something new to show!
+    Voting is back - winner gets bragging rights and a
+    yet-to-be-determined prize (more on that later). <a href="http://webjam.com.au/present/">Apply to present</a></p>
+    
+    <p>If you don't have a demo, come along to cheer, heckle or just party. There'll be booze, food and lots of your peers to hang with. Last time, there were dozens of people still partying hours
+    after the voting finished. <a href="http://webjam.com.au/attend/">Register to attend</a></p>
+    
+    <p>It will start at 6.30pm on March 1st, and it'll be in the same place as last time: Jam Bar at Hotel CBD on King Street</p>
+    
+    <p>Our site was a little ramshackle, so we're working on improving it - by replacing the whole thing, don't be scared if it looks a little different. In future, expect real posts with comments and subscription feeds. We'll also have speaker profiles and information to help you with your voting</p>
+
+  :author_id: 1
+  :permalink: the-second-coming
+  :id: 1
+  :published_at: 2007-02-11 18:05:00
+- :title: Arrrgggh! The Booty!
+  :body: |-
+    <p>Avast! Thanks to those landlubbers on yonder sidebar, we be having
+    plenty of booty to give ye poxy mongrels at the next Webjam. OK, 
+    enough of the pirate speak. Let's just say we're going to be burying
+    you under a mountain of prizes on March 1. LITERALLY. Here's the loot:</p>
+    
+    <p><strong>Presenters</strong></p>
+    
+    <p>1st Prize:</p>
+    <ul>
+    <li>1 license for VS 2005 Professional with MSDN Premium subscription (which includes Vista!) (about 5 grand worth)</li>
+    <li>1 MP3 Player</li>
+    </ul>
+    
+    <p>2nd Prize:</p>
+    <ul>
+    <li>1 Ticket to Web Directions 2007</li>
+    <li>1 Copy of Microsoft Expression Web</li>
+    </ul>
+    
+    <p>3rd Prize:</p>
+    <ul>
+    <li>1 Copy of Microsoft Expression Web</li>
+    </ul>
+    
+    <p><strong>Attendees</strong></p>
+    
+    <p>Like last time the audience will vote on their favourite idol, er, speaker. This will determine the podium placement.
+    Anyone who votes will be eligible to win voter prizes which will be drawn at random at the end of the night. We are pleased
+    to announce the top voter prize is a ticket to Web DU on March 22/23. We'll also have some other prizes for voters -- although we can't reveal what these are just yet. But trust us, they'll be... err.... appropriate.</p>
+    
+    <p>Gotta say a big thank you to <a href="http://www.microsoft.com/products/expression/en/default.mspx">Microsoft</a>  and <a href="http://webdu.com.au/">WebDU</a> for sorting us out with these great prizes.</p>
+    
+    <p>And yes, we realise the titles for the last two blog posts would make excellent (and classy) porn movies.</p>
+  :author_id: 1
+  :permalink: its-the-booty-post
+  :id: 2
+  :published_at: 2007-02-13 07:19:40
+- :title: How The F*#k Did They Do That?
+  :body: |
+    <p>This is the first of a semi-regular feature we're going to post on the Webjam blog linking up a bunch of crazy work we find that really pushes the web app envelope. The kind of stuff you gotta right mouse click on to make sure it's not Flash. So here's the first edition of HTFDTDT? We've picked up three items to feature -- feel free to add your own in the comments.</p>
+    
+    <p><a href="http://pipes.yahoo.com/">Yahoo! Pipes</a><br/>
+    Pipes has been getting a lot of exposure lately. <a href="http://radar.oreilly.com/archives/2007/02/pipes_and_filte.html">Tim O'Reilly</a> had been waiting 10 years for it. Yep, Yahoo! really dragged their heels heels on that one. Indeed, life must be tough for Tim, having to wait a decade for the rest of the world to catch up to his brain.</p>
+    
+    <p>Basically, Pipes lets you combine RSS feeds in interesting ways. There are a bunch of filtering rules, data extraction tools and various other widgets you can run feeds through. The brilliant thing about the project is the way you wire the processing of feeds together by dragging "wires" from each of the widgets... OK I'm going to give up on trying to describe this in words -- go take a look and be amazed. Very nice use of Canvas drawing for the wires.</p> 
+    
+    <p><a href="http://www.uselesspickles.com/triangles/demo.html">3D Rendering in JavaScript</a><br/>
+    OK, this is just sick in both senses of the word. It doesn't even use images to create the shaded polygons. Instead it uses some bizarre border-joint hack that only 3 people in America and <a href="http://dmitry.baranovskiy.com/">one Russian</a> know.</p>
+    
+    <p><a href="http://www.schillmania.com/">Schillmania</a><br/>
+    This guy has been doing amazing things with JavaScript long before the recent Web2.0-spurred resurgence in the language. Amongst other acheivements: <a href="http://www.schillmania.com/arkanoid/arkanoid.html">DHTML Arkanoid</a>, <a href="http://www.schillmania.com/projects/soundmanager2/">a Flash/Javascript sound manager</a> for playing audio in JavaScript apps and a <a href="http://www.schillmania.com/content/projects/35mm-photo-viewer/">photoviewing app</a>. All silky smooth in operation.</p>
+
+  :author_id: 1
+  :permalink: how-the-f--k-did-they-do-that-1
+  :id: 3
+  :published_at: 2007-02-14 07:19:40
+- :title: When One is Better than Two
+  :body: "<p>So the world is just so damn excited with <a href=\"http://www.google.com/url?sa=t&ct=res&cd=1&url=http%3A%2F%2Fwww.oreillynet.com%2Fpub%2Fa%2Foreilly%2Ftim%2Fnews%2F2005%2F09%2F30%2Fwhat-is-web-20.html&ei=aP3TRaPjBaTUgQP9rOiZDA&usg=__-ekhLnRyEUboxSQwdh2uwE8jXAw=&sig2=SlTa-vyT4M1FH2rWi0rAkw\">Web 2.0</a> and it's shimmering wonderfulnesslessness we have all but forsaken the Web 1.0 that got us here. So enthralled are we with divs and CSS-based layouts, the art of the transparent pixel and table is now but a nostalgic footnote for <a href=\"http://www.urbandictionary.com/define.php?term=OG\">OGs</a> to fondly remember over a glass of Tia Maria.</p>\r\n\
+    \r\n\
+    <p>So my question to you, is what do you most longingly remember from the pre-2.0 days? I mean going back to the '90s. Is it server-side image maps? Suck.com? Pick something from the litany of 90s memes and link it up in the comments or share some of your own experiences from the 1.0 era.</p> "
+  :author_id: 1
+  :permalink: when-one-is-better-than-two
+  :id: 4
+  :published_at: 2007-02-15 07:19:40
+- :title: Your Ideas Do Nothing For Me
+  :body: "<p>If you\x92re anything like me, you have a lot of ideas. I mean <strong>lots!</strong>\r\n\
+    You\x92ve got all kinds of kick-ass ideas about how to improve the sites you\x92ve been\r\n\
+    working on. Ajaxify <em>this</em>. Sprinkle some social shenanigans on <em>that</em>. \r\n\
+    Add folksonolicious semantical formatting to your API-O-Matic.</p>\r\n\
+    \r\n\
+    <p>These are all fantastic ideas, but I\x92m going to let you in on something \x97 those ideas\r\n\
+    aren't doing you any good. Zip. Nada. Nothing.</p>\r\n\
+    \r\n\
+    <p>And here\x92s why: <a href=\"http://www.brianoberkirch.com/?p=846\">your ideas don\x92t\r\n\
+    matter</a>. It is what you do with it that counts. The implementation is the \r\n\
+    important part.</p>\r\n\
+    \r\n\
+    <p>This is hard. It is very hard. But just do it. Stop reading random articles on the\r\n\
+    web and get to work. Take all your ideas and write them down. Nothing detailed.\r\n\
+    Just enough to remind you of it later. Now pick one. Any of them. Don\x92t take a lot\r\n\
+    of time over it. Dwelling on your ideas doesn\x92t get them done. Pick one and <a\r\n\
+    href=\"http://seoblackhat.com/2007/01/29/do-it-fucking-now/\">do it fucking now</a>\r\n\
+    (who doesn't want to take advice from an abusive Blackhat SEO who quotes Shakespeare?)</p>\r\n\
+    \r\n\
+    <p>This is what Webjam is about. Doing cool stuff. <a href=\"http://sethgodin.typepad.com/seths_blog/2007/01/creativity.html\">\r\n\
+    Summon up the courage</a>, do the hard work and unleash your ideas on the world.</p>"
+  :author_id: 2
+  :permalink: your-ideas-do-nothing
+  :id: 5
+  :published_at: 2007-02-16 07:19:40
+- :title: Webjam, The T-Shirt
+  :body: |-
+    <p>Our good friends at <a href="http://www.printtles.com.au/">Printtles</a> have come through for us once again and are printing up our limited edition Webjam 2 t-shirts as you read this very post! This batch is navy with a red logo, and quite the looker according to <em>the ladies</em>*.</p>
+    
+    <p>The tees are $25 a-piece (payment is handled through Paypal) and can be ordered from all good Webjam merchandise retailers. Purchase now to guarantee you get your size and as last time, you can pick it up on the night of the event. We may have a few extra to sell at the gig, but there are no guarantees. Order now to avoid bitter, bitter disappointment.</p>
+    
+    <p><small>* No ladies were actually consulted in the making of this post</small></p>
+  :author_id: 1
+  :permalink: webjam-the-t-shirt
+  :id: 7
+  :published_at: 2007-02-22 07:19:40
+- :title: Webjam 2 Booked Out!
+  :body: |-
+    <p>I hope you got your name on the list, folks! Because <strong>for the second time running</strong> we've had to close attendance a week early!</p>
+    <p>I'm a tad excited about that, but why shouldn't I be seeing as over 230 people have registered to come to another Webjam? Some of them are even from interstate! And I just love that. I'm thrilled that we have some interstate speakers coming (more on that shortly when we get the speakers list up - we're just waiting on one or two more confirmations), but we actually have people <strong>flying interstate to attend</strong>...</p>
+    <p>Bravo to them! Hit me up on Thursday and I'll buy you a beer (or a Bailey's, <a href="http://themaninblue.com/writing/perspective/2007/02/21/">for those so inclined</a>). You've earned it</p>
+    <p>If you're reading this and you've missed out this time, you can still show you care by hitting up the <a href="http://webjam.com.au/attend/">registration page</a> to get on our mailing list. While I, for one, welcome our new spam overlords, Webjam will never send any to you. We use the <a href="http://campaignmonitor.com/">kick-arse Campaign Monitor newsletter service</a> and those guys are <a href="http://campaignmonitor.com/anti-spam/">dead-set against spam</a></p>
+    <p>Get ready for a wild and funky night, everybody. This is shaping up to be an absolute ripper!</p>
+  :author_id: 2
+  :permalink: webjam2-booked-out
+  :id: 8
+  :published_at: 2007-02-24 01:59:11
+- :title: Thanks Jammers!
+  :body: "<p>Well, we made it through the second Webjam! It was a night of fantastic presentations, free booze (and for some, the resulting hang-over), and a fantastic turnout.</p>\r\n\
+    \r\n\
+    <p>A big thank you to the sponsors and supporters for their... errr.. support. We're grateful to all the many helpers, photographers, videographers and AV peeps that made it such a special event. If you want to see the visual evidence you can head on over to the <a href=\"http://www.flickr.com/groups/webjam/pool/\">Webjam group</a> on Flickr. If you have some photos from the night please do submit them to the group pool.</p>\r\n\
+    \r\n\
+    <p>Congratulations must go to the winning presenter, <a href=\"http://mrspeaker.net\">Earle Castledine</a>, for his talk on Web Sequins. Well done to <a href=\"http://www.themaninblue.com/\">Cameron Adams</a> & <a href=\"http://leftjustified.net/\">Andrew Krespanis</a> and <a href=\"http://www.toolmantim.com/\">Tim Lucas</a> for rounding out the podium positions. Those three really were the best losers on the night ;)</p>\r\n\
+    \r\n\
+    <p>We will be putting some video from the night up in the not too distant future, so keep an eye out for that, or subscribe to the <a href=\"http://feeds.feedburner.com/webjam\">RSS feed</a>.</p>\r\n\
+    \r\n\
+    <p>See you at Webjam 3!</p> "
+  :author_id: 1
+  :permalink: thanks-jammers
+  :id: 9
+  :published_at: 2007-03-01 20:27:11
+- :title: All quiet on the Webjam front? Hardly!
+  :body: "<p>Okay, Jammers, despite the ominous silence (which you may not have noticed), we've been incredibly busy bees behind the scenes. Immediately after the rollicking success of Webjam 2...</p>\r\n\
+    \r\n\
+    <h3>Wait, before we go on</h3>\r\n\
+    \t<p><strong><a href=\"http://www.youtube.com/view_play_list?p=2A4771898E127D49\">We have video!</a></strong> Highlights for me include:</p>\r\n\
+    \t<ul>\r\n\
+    \t  <li>Ben Duncan showing the new <a href=\"http://www.youtube.com/watch?v=R92cW01Ole0\">video web mail</a> he developed for <a href=\"http://atmail.com/\">@Mail</a></li>\r\n\
+    \t  <li><a href=\"http://www.arseiam.com/\">Arse</a> demoing his amazing <a href=\"http://www.youtube.com/watch?v=CJzxtPPbRKs\">game of evolution with a full physics engine</a>,</li>\r\n\
+    \t  <li>and nobody will ever forget Andre's <a href=\"http://www.youtube.com/watch?v=k8sBPEWx5Fo\">Introduction to IPv6</a></li>\r\n\
+    \t  </ul>\r\n\
+    \t\r\n\
+    \t<p>Big thanks to Irena Macri and Josh Ruscheinsky for doing the filming. And to <a href=\"http://news.com.au/\">NEWS.com.au</a> for loaning us their super-expensive uber-quality equipment for some of the filming. Josh also did the editing of all those videos you can see on YouTube</p>\r\n\
+    \t<p>I apologise for the lateness in announcing the footage, folks. That won't happen again</p>\r\n\
+    \t<h3>Back to your irregularly scheduled programming</h3>\r\n\
+    \t<p>The day after Webjam 2 saw hangovers a-plenty amongst the Sydney peeps, but folks still managed an awesome showing for Australia's first <a href=\"http://barcamp.org/BarCampSydney\">BarCamp</a>. We met lots of cool geeks doing some amazing stuff! Hopefully, we can convince a few of them onto stage at Webjam 3</p>\r\n\
+    \t\r\n\
+    <p>The next week saw us as <a href=\"http://2007.sxsw.com/interactive/\">SXSW</a> and we came back with lots of fresh exciting ideas and great new friends. Except that's not quite true, because we didn't all come back</p>\r\n\
+    \r\n\
+    <p>Anson stayed behind in the States. He's pursuing the 2.0 dream on behalf of his employer and it sounds like they'll be rocking your world shortly. That doesn't mean his involvement in Webjam is over. We view it more as... <em>gaining a territory</em>. After all, where could be better for a cutting-edge geek-out than San Francisco? (well, Sydney... obviously!) So, if you know peeps who can help with a venue, sponsorship or just some local knowledge in SF, email <a href=\"mailto:ciscokid@webjam.com.au\">ciscokid@webjam.com.au</a></p>\r\n\
+    \r\n\
+    <p>While Ans got thrown into the epicentre of 2.0, Webjam was gearing up for a conference-specific event. The <a href=\"http://webdu.com.au\">WebDU</a> crowd was amazing! 15 speakers stepped up to the plate, some at the very last minute, and rocked the mike. Big thanks to Geoff, Julie and the <a href=\"http://daemon.com.au/\">Daemon</a> crew for inviting us to deliver that for them. Special thanks to Erietta for making it easy. Hopefully, we'll be able to do more of that sort of thing in the future!</p>\r\n\
+    \r\n\
+    <h3>Now What?</h3>\r\n\
+    <p>Not an ideal fashion to bring everything up to date, I'd much rather have announced it all at the time, but we're working on improving that in future. Same with the website: we've been smashed by spam recently, so I've temporarily removed comments while we build something big, new and shiny. As always, send all comments, abuse, compliments and heckling to <a href=\"mailto:carnage@webjam.com.au\">carnage@webjam.com.au</a></p>\r\n\
+    \r\n\
+    <h3>Care for another?</h3>\r\n\
+    <p>The last item for now: <strong>there will be a Webjam 3</strong>. Thursday, June 7, 2007. Put it in your calendars, people. We'll be at the Jam Bar, CBD Hotel again, starting from 6pm. It is going to be absolutely huge! But, for that, we need your help</p>\r\n\
+    \r\n\
+    <p>We need presenters. We need sponsors. And we need a large crowd of webby geeks enjoying themselves, drinking, cheering and heckling! If you've done something cool lately, (and frankly, in this industry, who hasn't?) then we want you up on stage</p>\r\n\
+    \r\n\
+    <p>We're not proscriptive. You define cool. If it has something to do with the web or web technologies and you can show us it real fast (only 3 minutes!), then get ready to show your peers how it's done! Speaker registration will open soon</p>\r\n\
+    \r\n\
+    <p>We'll be opening attendee registration shortly too. Make sure you get in early, because it fills fast</p>\r\n\
+    \r\n\
+    <p>As for sponsors, you're welcome anytime. You're the ones who let us make events free! So, if you or your company can help out with prizes or a little funding, please contact us on <a href=\"mailto:welovesponsors@webjam.com.au\">welovesponsors@webjam.com.au</a></p>\r\n\
+    \r\n\
+    <h3>Enough!</h3>\r\n\
+    \r\n\
+    <p>I'm out. If I missed anything, <a href=\"mailto:lachlan@webjam.com.au\">let me know</a>. We'll see back here, much sooner, with a fresh post</p>\r\n\
+    \t"
+  :author_id: 2
+  :permalink: quiet-on-the-webjam-front
+  :id: 10
+  :published_at: 2007-04-25 07:50:44
+- :title: Jamming at ReMix07
+  :body: |-
+    <p>Webjam are stupidly excited to announce that we'll be running a Webjam at <a href="http://www.microsoft.com/australia/remix07/">ReMix07</a>!</p>
+    
+    <p>At <a href="http://www.crownpromenade.com.au/">the Crown Promenade Hotel in Melbourne</a> on June 25th &mdash; 26th, 2007, 
+    <a href="http://www.microsoft.com/australia/remix07/">ReMix07</a> is Microsoft's conference for cutting-edge web professionals designing and building next-generation experiences through <a href="http://www.silverlight.net/">Silverlight</a></p>
+    
+     <p>Webjam is dedicated to innovation and providing a platform to share the kick-arse work done by Australian web folks, so we'd be crazy to miss this conference but we're incredibly excited that Microsoft invited us to run a conference-specific Webjam. Conferences like this aren't just for platform/vendor-specific fanatics. They're about exposing your professional mindset to different technologies, methodologies and, best of all, philosophies </p>
+    
+    <h3>Give Me the Skinny!</h3>
+    <p>Venue constraints mean our first Melbourne Webjam will have to be restricted to conference attendees only, but given the tickets only cost $140 for both days, I'm hoping a bunch of Jammers can slip it into their budgets. And they've arranged some hotel deals for those who have to travel. Check out the <a href="http://www.microsoft.com/australia/remix07/information.aspx">info page</a> for more details</p>
+    
+    <p>To avoid confusion between registration for this and registration for Webjam 3, there will be no attendance registration for the ReMix07 Webjam. Speakers, on the other hand, can volunteer themselves to rock people's worlds by emailing <a href="mailto:remix07@webjam.com.au">remix07@webjam.com.au</a></p>
+    
+    <h3>Speakers</h3>
+    <p>Want to show 200 conference attendees what you're made of exactly 3 minutes or less? Step up to the plate by <a href="mailto:remix07@webjam.com.au">emailing us</a> your name and some details of what you want to present. It doesn't have to be Silverlight. It doesn't have to be Microsoft technology and it certainly doesn't have to be big fancy or extreme. But it <strong>does</strong> have to be cool!</p>
+    
+    <p>You have 3 weeks to register your presentation. Speakers will know if their applications have been accepted by Monday 4th of June</p>
+    
+    <h3>Rock on!</h3>
+    <p>This is going to be big and crazy! Webjam isn't about boring marketing presentations. Bring your sense of humour and your sense of wonder. SMS voting on the night will determine the most popular presentation. Victory will guarantee bragging rights, instant mini-kinda-web-fame and I, at least, will buy you a drink</p>
+    
+    <p>See you <a href="http://www.microsoft.com/australia/remix07/">there</a>, folks. This is going to be awesome!</p>
+  :author_id: 2
+  :permalink: webjam-at-remix07
+  :id: 11
+  :published_at: 2007-05-15 23:24:50
+- :title: Piping Hot Web
+  :body: |-
+    <p>Preparations for Webjam 3 have been rolling along a rapid pace and things are shaping up to be absolutely killer. We've got a couple of announcements for you, but first, if you haven't registered to attend this event, <a href="http://webjam.com.au/attend/">do it now</a>! We're nearly out of places</p>
+    
+    <p>Some of our best presentations so far (out of an amazing 46) have been hurled together at the last minute, fired by the inspiration of a deadline. So, we're still open for applications, because, well... because we can! <a href="http://webjam.com.au/present/">Sign up</a> soon to be part of the best cutting-edge webfest yet</p>
+    
+    <h3>Goodies for everybody</h3>
+    
+    <p>The Webjam team have been talking to some very cool people about arranging our typical little something-something for those who can make it on the night. So here's the deal:</p>
+    
+    <p>Stephen Collins of <a href="http://acidlabs.org/">acidlabs.org</a> is providing copies of <a href="http://cubiclecommando.com.au">Cubicle Commando</a>, autographed by one of the authors, <a href="http://www.eicolab.com.au/">Zern Liew</a> for random members of the SMS voting audience</p>
+    
+    <p>Brilliant local conference, <a href="http://webdirections.org">Web Directions</a>, is once again sponsoring our twin habits of geekdom and partying and offering a free ticket to the conference for the second placed presentation. <a href="http://www.webdirections.org/program/speakers/">Check out those speakers</a> and understand what a totally cool prize this is anybody interested in making red hot web</p>
+    
+    <p><a href="http://adobe.com/">Adobe</a> have become our new best friends by offering the first prize - a copy of <a href="http://www.adobe.com/ap/products/creativesuite/web/features/">Adobe Creative Suite 3 Web Premium</a> goes to the winner on the night! For those who aren't immediately clear on what that means, the winner gets Dreamweaver CS3, Flash CS3 Professional, Photoshop CS3 Extended, Illustrator CS3, Fireworks CS3, Acrobat 8 Professional, Contribute CS3, Bridge CS3, Version Cue CS3, and Device Central CS3. I'm not quite sure what the last 3 do, but the first 6 are certainly worth fighting for!</p>
+    
+    <p>I'm also pretty sure Adobe are going to become all of your new best friends too. They're shouting free drinks for the first 20 minutes of the night. That's right, Adobe are going to pay for you to quench your post-work thirst and set you up for the perfect night of webby geek partying. So make sure you've <a href="http://webjam.com.au/attend/">registered</a> and be at the Jam Bar, Level 4, CBD Hotel on Thursday June 7th. Presentations don't start until 6.30, but we couldn't bear the thought of you missing the free drinks. Bar opens at 6pm and so does the bar tab!</p>
+    
+    <p>See you there!</p>
+    
+    <p><strong>PS</strong> If anyone is thinking maybe they've changed their minds about presenting now that they've seen the prizes, here's <a href="http://webjam.com.au/present/">where you register</a> ;)</p>
+  :author_id: 1
+  :permalink: piping-hot-web
+  :id: 12
+  :published_at: 2007-06-06 10:12:14
+- :title: Webjam 3 is Booked Out
+  :body: |-
+    <p>We held out until we really couldn't postpone any longer. Attendance at Webjam 3 is officially closed. We are totally full up</p>
+    
+    <p>We're still taking presentations, because we just love you guys. We want yet another totally bumper crop this time - and, frankly, people keep asking!</p>
+    
+    <p>So, if you've missed out this time, the only way you can get in is by <a href="http://webjam.com.au/present/">presenting something</a>. If that's not your cup of tea, or your secret weapon is simply not quite ready, you can still <a href="http://webjam.com.au/attend/">register your interest</a> and we'll email you next time we're running an event. No spam, no random messages (well, no more random than my posts) - just news about Webjam 4</p>
+    
+    <p>Big thanks to everyone who has booked a place for Thursday night. The audience makes the night, every single time. Don't forget to be on time at 6pm so Adobe can buy you a round. See you on the 7th</p>
+    
+    <p>We can't wait!</p>
+  :author_id: 1
+  :permalink: webjam-3-booked-out
+  :id: 13
+  :published_at: 2007-06-06 10:12:26
+- :title: Webjam Wannabe Winners
+  :body: |-
+    <p>Webjam 3 was absolutely massive! We broke records in just about every area. We had more speakers than ever before - 18 registered and confirmed, with one extra done on the spur of the moment on the night!</p>
+    
+    <h3>Drinking</h3>
+    <p>Our friends at <a href="http://tangler.com">Tangler</a> and <a href="http://omnidrive.com">Omnidrive</a> generously ponied up a couple of hundred dollars for the bar to get the night rolling. That was quickly followed up by <a href="http://adobe.com">Adobe's</a> promised tab until the first of our 19 speakers. A trend had been set for the night, with <a href="http://thoughtworks.com">Thoughtworks</a>, <a href="http://digitaleskimo.net/">Digital Eskimo</a> and our regular supporters, <a href="http://directsms.com.au/">DirectSMS</a> all putting money on the bar during the night</p>
+    
+    <h3>Demoing</h3>
+    <p>We had lots of incredible presentations again this time. I can't wait for all the videos to be done so we can show everybody who missed out on attending the night. Huge thank yous to everybody who voted. And congratulations to all the voters who won copies of <a href="http://cubiclecommando.com.au/">Cubicle Commando</a>, supplied by our sponsor, <a href="http://acidlabs.org/">Acid Labs</a></p>
+    
+    <p>Big ups need to go to <a href="http://mrspeaker.net/">Mr Speaker</a>, winner of <a href="http://webjam.com.au/post/thanks-jammers.html">Webjam 2</a>, for coming placing second with his web app for removing negative energy from the user simply by the click of a Paypal button... He won a ticket to the shiny lovely <a href="http://www.webdirections.org/">Web Directions South</a> in September this year</p>
+    
+    <h3>Dancing</h3>
+    <p>The big winner on the night was obviously the crowd, because they chose Lachlan Hunt's <a href="http://lachy.id.au/log/2007/06/webjam3">presentation on the VIDEO element from HTML5</a> as the most popular presentation and were treated to a <a href="http://www.youtube.com/watch?v=NHFUU_1Y5Zs">victory dance</a> the likes of which I'm sure has never been seen before. Congratulations to Lachlan for winning a copy of <a href="http://www.adobe.com/ap/products/creativesuite/web/features/">Adobe CS3 Web Premium</a>. He definitely earned it!</p>
+    
+    <h3>What Next?</h3>
+    <p>Video of the night will be available soon. Huge thanks to all our sponsors, supporters and helper, without whom we would never be able to put these events on. And the same goes for all the awesome webby geeks who keep rocking up and rocking out!</p>
+    
+    <p>Oh, and if you're in Melbourne or headed that way for < a href="http://www.microsoft.com/australia/remix07/">Remix07</a> strap in and get ready for <a href="http://webjam.com.au/post/webjam-at-remix07.html">Webjam @ Remix07</a> which is in only 11 days! We're still taking presentations so just email <a href="mailto:mailto:remix07@webjam.com.au">remix07@webjam.com.au</a> and we'll sign you up!</p>
+  :author_id: 1
+  :permalink: webjam-wannabes
+  :id: 14
+  :published_at: 2007-06-14 21:36:30
+- :title: Featured on Viddler!
+  :body: |-
+    <p>Wow! Our videos from <a href="http://blog.viddler.com/cdevroe/webjam3-presentations/">Webjam 3 just got featured on Viddler</a>!</p>
+    
+    <p><a href="http://viddler.com/">Viddler</a> is a very cool, very usable and very innovative video sharing site that we got into a while back. Once we had the video clips from Webjam 2, <a href="http://www.youtube.com/view_play_list?p=2A4771898E127D49">we put them on YouTube</a>, because that's what you do, right? Only problem being that YouTube doesn't represent anything that Webjam stands for. It's ugly and the user experience sucks. Don't even get me started about the lack of RSS...</p>
+    
+    <p>We went hunting for some video sites that were pushing the boundaries and Viddler was the answer. It's clean, it's shiny and those comments inline with the video are just the coolest thing I've ever seen on a video site. Why aren't all the other video sites doing that?!</p>
+    
+    <p>Huge thanks must go again to Irena Macri and Josh Ruscheinsky for all their hard work filming and editing the footage! We started uploading the clips a couple of days ago and then the bomb hit. I got an email asking where the avatar was because <a href="http://www.viddler.com/explore/cdevroe/">Colin Devroe</a>, the Viddler Community Evangelist, was going to feature them.</p>
+    
+    <p>Colin went above and beyond in his post (thanks, Colin!), so I don't need to repeat all that here, <a href="http://blog.viddler.com/cdevroe/webjam3-presentations/">go check it out on Viddler!</a>
+  :author_id: 2
+  :permalink: viddler-featured
+  :id: 15
+  :published_at: 2007-07-18 18:14:00
+- :title: Webjam heads West!
+  :body: |-
+    <p>That's right, the next Webjam event will be held in Perth! There is an amazing amount of cool web stuff happening in Western Australia and we want to help them show it off. Webjam will held Wednesday, August 15th, at the Velvet Lounge in Mt Lawley. It starts at 6pm with presentations kicking off at 6.30pm</p>
+    
+    <p>Perth has an awesome active community of kick-arse webby geeks and we cannot wait to see them step up and show us their western mojo!</p>
+    
+    <p>If you're one of the aforementioned world-rocking web peeps in WA (or you have lots of frequent flyer points) then we want you strutting your 3 minute stuff on stage at the Velvet Lounge on the 15th. It's only 3 weeks away, but at a week a minute, you've got plenty of time to deliver a seriously cool bit of web kit</p>
+    
+    <p>For those who aren't familiar with the concept, Webjam gives 16-18 of you 3 minutes only to show a room full of your peers the coolest thing you've done on the web lately. It can be design, development, consulting, art. It can be commercial or public sector. As long as you think it's cool, we want to see it. <a href="http://webjam.com.au/present/">Apply to present now</a>, you know you want to!</p>
+    
+    <p>If your supa-secret project that will change the face of the web isn't quite ready yet, that's cool. We want you to come to. Somebody has to cheer, heckle, vote and drink  all the booze! <a href="http://webjam.com.au/attend/">RSVP</a> to let us know you're coming</p>
+    
+    <p>We run Idol-style SMS voting on the night to determine the winner. Unlike Idol, we're not making any money off your texts, so you only get one vote for each presentation, but everybody who votes goes into a draw for some yet-to-be-determined-but-undeniably awesome prize</p>
+    
+    <p>Speaking of prizes, Adobe are offering the winner on the night a copy of <a href="http://www.adobe.com/ap/products/creativesuite/web/features/">Adobe CS3 Web Premium</a>. Frankly, I'm brutally jealous. CS3 is glorious and it's a hell of a deal to get that for free!</p>
+    
+    <p>We're still open for other potential prize offerings. We'd love to have some other cool stuff to give away for presentation places and for our lucky voter prize. If you or your company have shiny prizes or just want to sponsor us some cash money money (we've got some spots free!), then you can email us at <a href="mailto:welovesponsors@webjam.com.au">welovesponsors@webjam.com.au</a></p>
+    
+    <p>Big ups to <a href="http://myles.eftos.id.au/">Myles Eftos</a>, wearing his <a href="http://www.webindustry.asn.au/">AWIA</a> hat, for helping us sort out the details and for letting me convince him that it was a good idea to cram it into the same week as the <a href="http://www.wawebawards.com.au/">WA Web Awards</a>. He's even declared the result to be <a href="http://forums.port80.asn.au/showthread.php?p=88721">WA Web Week</a>. So cool!</p>
+    
+    <p>Hold on to your hats, Perth, Webjam is coming to town and we can't wait to see you rock it!</p>
+  :author_id: 2
+  :permalink: webjam-heads-west
+  :id: 16
+  :published_at: 2007-07-23 20:31:00
+- :title: Perth's Plentiful Prizes
+  :body: |-
+    <p>Webjam Perth is coming up fast and the presenters and attendees are both pouring in, but we've got room for a few more, so here are a few reasons it's going to be a fantastic night!</p>
+    
+    <p>The winner on the night doesn't just get awesome street cred, Adobe are offering a copy of <a href="http://www.adobe.com/ap/products/creativesuite/web/features/">Adobe CS3 Web Premium</a>. That's valued at quite a few shiny pennies and is a prize worth some serious salivation</p>
+    
+    <p>For other placings and the audience participation prizes, the peeps at <a href="http://microsoft.com.au">Microsoft Australia</a> are offering 3 copies of <a href="http://www.microsoft.com/australia/windows/products/windowsvista/editions/ultimate/">Vista Ultimate</a> and the friendly folks from the <a href="http://www.crumpler.com.au/">Crumpler</a> store on Shafto Lane in Perth have provided a free bag to stash your favourite geek goodies in</p>
+    
+    <p>Lastly, Microsoft have also offered to shout drinks for everybody to lighten the suspense between the final presentation and the announcments of the prizes!</p>
+    
+    <p>It's going to be a hell of night, folks, so <a href="http://webjam.com.au/attend/">register to attend</a> or, even better, <a href="http://webjam.com.au/present/">sign up to present</a> and get yourself down to the Velvet Lounge next Wednesday for the big kick-off to WA Web Week!</p>
+  :author_id: 1
+  :permalink: perth-plentiful-prizes
+  :id: 17
+  :published_at: 2007-08-10 03:31:13
+- :title: Webjam Perth Rocks Out
+  :body: |-
+    <p>Webjam Perth was absolutely unbelievably ridiculously huge!</p> 
+    <p>15 fantastically clever geeks presented seriously cool demos and talks of all stripes.</p>
+    <p>A full list of presentations will be available soon, but some highlights of the evening that didn't make the prize pool were a sexy <a href="http://gmail.com/">Gmail</a> rip with some serious improvements called <a href="http://lichen-mail.org/">Lichen</a> from <a href="http://hourann.com/">Hourann Bosci</a>; a hot new type of standards-based text replacement from Myles Eftos called <a href="http://myles.eftos.id.au/presentations/canvas_text_replacement/">Canvas Text Replacement</a>; Kat Black talking up the awesome <a href="http://byteme.net.au/">ByteMe Festival</a> and Dan Bett showed us some very clever (and valuable!) use of SMS alerts for local farmers in the project known affectionately as '<a href="http://www.vegetableswa.com.au/evaporation/smsalerts.asp">vegeSMS</a>'</p>
+    <h3>The winners!</h3>
+    <p>If you want to see the full shambles we like to think of as a prize-giving 'ceremony' and observe precisely how unlike <a href="http://www.imdb.com/name/nm0993110/">Gretel Killeen</a> I am as a host, there is an embarrassing video embedded just below. If you want the straight skinny, more rambling text immediately after that</p>
+    
+    <p>
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="437" height="370" id="viddler"><param name="movie" value="http://www.viddler.com/player/8d06a7eb/" /><param name="allowScriptAccess" value="always" /><param name="allowFullScreen" value="true" /><embed src="http://www.viddler.com/player/8d06a7eb/" width="437" height="370" type="application/x-shockwave-flash" allowScriptAccess="always" allowFullScreen="true" name="viddler" ></embed></object> 
+    </p>
+    <p>The third place prize for the evening, a copy of <a href="http://www.microsoft.com/australia/windows/products/windowsvista/editions/ultimate/">Vista Ultimate</a> went to <a href="http://manwithnoblog.com/2007/08/17/we-came-we-saw-we-webjammed/">Gary Barber</a> for his presentation on <a href="http://manwithnoblog.com/presentations/webjam/">Western Web 3.0</a> (it'll make more sense with <a href="http://www.viddler.com/explore/sgreenhill/videos/16/ingroup/webjam/">video</a>).  Gary's cynicism about current web trends was a big hit. Second place went to <a href="http://nickcowie.com/">Nick Cowie</a> for his presentation on <a href="http://nickcowie.com/2007/websledge-the-improved-version/">why you need to build separate mobile sites</a>. His presentation hilariously slammed a number of people in the room (including attendees, sponsors and our own site) in order to make his point. I coined it 'web-sledging' and <a href="http://nickcowie.com/2007/the-great-websledge/">the term seems to have stuck</a>. Nick also won a copy of Vista Ultimate and received a cool new <a href="http://www.crumpler.com.au/">Crumpler</a> bag.</p>
+    <p>After massive issues with hooking up a Ubuntu laptop to our projector, what was to be our second presentation for the evening finally delivered in the last slot - and won! Less time to vote for the amazing <a href="http://scouta.com">Scouta</a> presentation didn't matter when they showed the room <a href="http://blog.scouta.com/2007/08/16/iccarus/">ICCARUS</a>!  This 3D visualisation of all the people, relationships, recommendations, and favourites in Scouta is absolutely mind-blowing. When describing it all I can say is - it doesn't look like a 'visualisation', it looks like an <em>actual galaxy</em>! It's so hot it even got <a href="http://www.techcrunch.com/2007/08/17/iccarus-three-dimensional-data-visualization/">TechCrunched</a> !</p>
+    <p>Well done to <a href="http://richardgiles.net/">Richard Giles</a> and <a href="http://entitycrisis.blogspot.com/">Simon Wittber</a> for their win. I hope the copy of <a href="http://www.adobe.com/ap/products/creativesuite/web/features/"> Adobe CS3 Web Premium</a> is useful to Scouta. If you want any technical details of how ICCARUS was built, <a href="http://entitycrisis.blogspot.com/2007/08/iccarus-wins-at-webjam.html">Simon has a blog post describing it</a>.</p>
+    <h3>Thank you!</h3>
+    <p>Thanks to our all our sponsors: <a href="http://www.adobe.com/au/">Adobe</a>, <a href="http://microsoft.com.au/">Microsoft</a>, <a href="http://www.crumpler.com.au/">Crumpler</a>, and <a href="http://canvasphotos.com.au/">Canvas Photos</a>. Special thanks to <a href="http://myles.eftos.id.au/blog/">Myles Eftos</a> for being our man on the ground, and to <a href="http://stewartgreenhill.com/blog/">Stewart Greenhill</a> for stepping up on the night and offering to supplement our video with his own. If anyone else has video of the night (or any Webjam night), add it to our new <a href="http://www.viddler.com/groups/webjam/">Webjam group on Viddler</a>, and tag appropriately.
+    
+    <p>Biggest thanks of all have to go to all the local Perth geeks who rocked out on the night, soaked up the experience and made it a night of total awesomeness! We'll be back - and it'll be even bigger and better. Thanks, Perth!</p>
+  :author_id: 2
+  :permalink: webjam-perth-rocks-out
+  :id: 19
+  :published_at: 2007-08-23 18:43:00
+- :title: Hatch Your Pet Projects
+  :body: |-
+    <p>Webjam has teamed up with the clever peeps at <a href="http://www.webdirections.org/">Web Directions</a> to run Sydney's next Webjam at their awesome <a href="http://www.webdirections.org/program/hatch-day/">Hatch Day</a> event!</p>
+    
+    <h2>What's a Hatch Day?</h2>
+    <p>It's a free full-day event for geeks to get together and build crazy cool stuff!</p>
+    
+    <p>Web Directions describe it as "a day of web creativity and idea sharing that falls somewhere between BarCamp and hard core coding weekends like RailsCamp." Given how cool both those events were, that means Hatch Day is going to rock!</p>
+    
+    <h2>Important details</h2>
+    <ul>
+    <li>It's free</li>
+    <li>It's open to anybody (no, you don't need to have attended the conference)</li>
+    <li>You don't have to have a team, a project or an idea - you can just share your expertise with others who do!</li>
+    <li>There <strong>are</strong> limited places, so <a href="http://hatchday.pbwiki.com/">Register now!</a>
+    </ul>
+    
+    <p>Other things to remember are that this is the week when clever web geeks rush to Sydney from all the country and the world. Don't miss the opportunity to meet cool talented webby geeks and <strike>eat</strike> pick their brains</p>
+    
+    <h2>How does Webjam fit in?</h2>
+    <p>We're running a Webjam at the end of the day to give everybody the chance to relax, have a drink, and see what everybody else has been working on all day. It's going to be one massive party! Teams do not have to present, but we'd love it if you did!</p>
+    <p>In true Webjam style, you can present any cool web stuff you've been working on lately - it's not limited to only Hatch Day projects! You still only get 3 minutes and it's still going to be fast-paced and fun. However, as part of our secret plan to convince you to make Hatch Day as awesome as possible, we'll only be taking presentations on the day from attendees</p>
+    
+    <p>As always, we're going to need some help to make this happen. We need sponsorship! If you or your company wants to be part of the massive party that ends the biggest week of web geekery in the country, contact us at <a href="mailto:welovesponsors@webjam.com.au">welovesponsors@webjam.com.au</a>. We're looking for kick-arse prizes to give to the best Jammers, and to the people who vote for them! And we're looking for money to pay for the party itself - wouldn't it be nice to eat and drink for free?</p>
+    <h2>Hatch Day is going to be magic!</h2>
+    <p>Come along on to the North Bondi Surf Life Saving Club (<a href="http://tinyurl.com/yv7raa">map</a>) on Saturday 29th of September and share your expertise, share your time and share the love!</p>
+  :author_id: 1
+  :permalink: hatch-your-pet-projects
+  :id: 21
+  :published_at: 2007-08-30 00:28:52
+- :title: Webjam will rock you
+  :body: |-
+    <p>Unfortunately, Web Directions have had to put <a href="http://www.webdirections.org/2007/09/05/hatch-day-on-hold/">the Hatch Day idea on hold</a>. Looks like that means they hope to do it at a later date, but it does means it won't be September 29. That could be a real downer but all is not lost...</p>
+    
+    <h3>Rock on!</h3>
+    
+    <p>The Webjam team has decided to go out on a very large limb and run our event anyway. At 6pm on a Saturday... At a newer larger venue... With heaps of people still hungover from the Web Directions closing party the night before... </p>
+    
+    <p>We're going to need bucketloads of support to make this work and that means all of you! Webjam is a community-driven event that showcases, celebrates and inspires every webby geek we can get our hands on and we need as much love as we can get to make this the biggest, wildest, hottest Webjam yet</p>
+    
+    <p><a href="http://webdirections.org">Web Directions</a> have already signed on as our first sponsor, but we'd love some more - nudge, nudge etc. What we really need though, is for you to sign up early and pass the word</p>
+    
+    <h3>We need speakers!</h3>
+    
+    <p>So you're one of the hardcore travelling to Sydney for Web Directions? Or you're one of the rocking locals? Or (best yet) you're crazy cool enough to make the trip to Sydney just for Webjam? Think what you've been working on is smoking hot? We want <strong>you</strong></p>
+    
+    <p>Webjam needs 15-18 rocking web peeps to take the stage for 3 minutes each and deliver the latest in shiny shiny from the sharp end of the web. There'll be sweet prizes for the best presentations and much love for all speakers. We've been taking applications since this morning and they're pouring in, so go <a href="http://webjam.com.au/present/">put your details down</a> to stake your claim on stage for Saturday, September 29</p>
+    
+    <h3>We need crowds!</h3>
+    <p>Webjam is one big geeky party. Everybody's welcome! Designers, developers, consultants, managers, the list goes on forever... If you're into the web, for work, for play, for something to do, then this is the party for you. And don't forget to bring your friends!</p>
+    
+    <p>Our new venue is <a href="http://www.barbroadway.com.au/">Bar Broadway</a> in Ultimo. It's on Broadway just across from UTS and right by Central Station. The bar upstairs will be open for Webjam from 6pm, but you're welcome to have a drink downstairs if you arrive early</p>
+    
+    <p>As always, our Idol-style SMS voting will be in action. You'll be able to vote once for each presentation to show your appreciation and maybe win a cool prize. The most popular presentations on the night get cool prizes too - it's win-win!</p>
+    
+    <p>We've got a bigger venue this time, but we're anticipating much bigger numbers, so <a href="http://webjam.com.au/attend/">register now</a> to make sure you get a place at the bar!</p>
+    
+    <h3>We need sponsors!</h3>
+    <p>It's impossible to run a free event like this without sponsorship. We'd love to talk to anybody who can help out with funding, awesome prizes, bar tabs or cool schwag. In return you get to support the leading edge of the Australian web community and have a whole heap of fun. Email us at <a href="mailto:welovesponsors@webjam.com.au">welovesponsors@webjam.com.au</a> to help make this event better than ever before</p>
+    
+    <h3>Want to make something special?</h3>
+    <p>It's <a href="http://www.viddler.com/explore/sgreenhill/videos/10/">inspiring</a>. It's <a href="http://www.viddler.com/explore/Webjam/videos/11/">fast</a>. It's <a href="http://www.viddler.com/explore/Webjam/vieos/13/">fun</a>. And it's <a href="http://www.viddler.com/explore/sgreenhill/videos/15/">utterly hilarious!</a> To make this the biggest and best Webjam yet you have to do a few things: <a href="http://webjam.com.au/present/">register your presentation</a>, <a href="http://webjam.com.au/attend/">register to attend</a> then go tell all your friends. Blog it. Twitter it. Flickr it. Even Facebook it if you're that way inclined. Tell people where to get their fresh serve of piping hot web!</p>
+    
+    <p>Share the love!</p>
+  :author_id: 2
+  :permalink: webjam-will-rock-you
+  :id: 22
+  :published_at: 2007-09-06 02:25:00
+- :title: Book Bonanza
+  :body: |
+    <p>The next Webjam is <a href="http://webjam.com.au/post/webjam-will-rock-you.html">tomorrow night</a> and there are some very cool prizes lined up!</p>
+    
+    <p><a href="http://sitepoint.com/">SitePoint</a> are offering great book deals for the winning places on the night, with vouchers worth $300, $150 and $50 for 1st, 2nd and 3rd respectively. Those vouchers can be used for any book in <a href="http://www.sitepoint.com/books/">SitePoint's sizeable stable</a>, including the Sitepoint kits, so the winner will be able to add significantly to their geek book collection!</p>
+    
+    <p>There are also a few other little items that can be added to the prize pool for presenters but the details are not available just yet. (Don't worry, they'll be awesome!)</p>
+    
+    <p>SitePoint are also bringing along a number of books that will be offered as voter prizes on the night, so make sure your name is down on the list of attendees and <a href="http://webjam.com.au/attend/">go RSVP</a>. That's not all they're doing for attendees, though... SitePoint is hiring and their staff will be handing out drink cards on night to anyone who discusses job options with them. Just look for the geeks in the bright orange shirts!</p>
+    
+    <p>A big thank you to SitePoint for offering all of that. And we also want to thank our other sponsors for making the larger event possible in our new venue. Big ups to <a href="http://redsquare.com/">Red Square</a> for always being so involved in supporting their local development community. Huge thanks to the <a href="http://mailbuild.com/">MailBuild</a> team who say they don't believe in sponsorship but sponsored us anyway. And to our frequent sponsors, <a href="http://webdirections.org">Web Directions</a>, for all their support, including contacting their conference speaker list this year - resulting in the likes of <a href="http://www.stuffandnonsense.co.uk/malarkey/more/heading_for_web_directions/">Andy Clarke</a> planning his 3 hot minutes on our stage</p>
+    
+    Lastly, much love for our awesome peeps at <a href="http://binalogue.com/">Binalogue</a> who help us tirelessly to make our events rock!</p>
+    
+
+  :author_id: 2
+  :permalink: book-bonanza
+  :id: 23
+  :published_at: 2007-09-27 16:59:00
+- :title: Time and Place
+  :body: |-
+    <p class="vevent">For everybody who only heard about it last night and for everybody who might have missed the full details: the latest (and greatest) <a class="summary url" href="http://webjam.com.au/">Webjam Sydney</a> starts at <abbr class="dtstart" title="20070929">6pm tonight</abbr>, at our new venue, the larger cooler <span class="class="location"><a href="http://www.barbroadway.com.au/">Bar Broadway</a> in Ultimo, Sydney</span>. It's just by Central Station, across from UTS</p>
+    
+    <p>See you there!</p>
+  :author_id: 2
+  :permalink: time-and-place
+  :id: 24
+  :published_at: 2007-09-28 20:46:00
+- :title: Jams == Kicked Out ++
+  :body: |-
+    <p>Webjam Sydney went completely and utterly off last night!</p>
+    
+    <p>16 rocking peeps stepped up and delivered incredible presentations that included topics like open source development, the advance of technology, mashing videos, the future of CSS, making your own wedding registry, getting funky with MathML, looking famous and even how to present at Webjam! There's a <a href="#presenters29sep">full list</a> at the end, but we're going to call out some highlights and the winners</p>
+    
+    <p><a href="http://nickcowie.com/">Nick Cowie</a> led off the night with his advice on how to rock a Webjam presentation and demonstrated it too. Word has it he'll be converting the presentation into an article soon. <a href="http://www.stuffandnonsense.co.uk/">Andy Clarke</a> spread word of his latest caper, CSS Eleven. <a href="http://my.opera.com/chaals/">Chaals McCathieNevile</a> demonstrated some of the <a href="http://dev.opera.com/articles/view/can-kestrels-do-math-mathml-support-in/">new features in  the latest alpha of Opera</a>. <a href="http://jamescrisp.org/">James Crisp</a> shared his <a href="http://yourweddingpresents.com/">awesome free wedding registry</a> with us and <a href="http://easy-reader.net/">Aaron Gustafson</a> showed off some hotness he calls FigureHandler (I'm sure he'll be blogging about it as soon as he gets back stateside, right, Aaron?)</p>
+    
+    <h2>The Winners</h2>
+    <p>3rd place and a $50 <a href="http://sitepoint.com/">SitePoint</a> book voucher went to the team from <a href="http://www.digitaleskimo.net/">Digital Eskimo</a>, Dave Gravina &amp; Grant Young for their <a href="http://raisethebar.org.au/">Raise the Bar</a> project, which is a community campaign focused on changing the liquor laws in NSW</p>
+    <p><a href="http://myles.eftos.id.au/">Myles Eftos</a> took out 2nd place with his incredible work on delivering in-browser debugging capabilities for Ruby on Rails developers. He won a $150 book voucher from SitePoint and a ticket to the <a href="http://webdirections.org/">Web Directions</a> 2008 conference of his choice</p>
+    
+    <p>The first placing for the night went to a Webjam stalwart, <a href="http://dmitry.baranovskiy.com/">Dmitry Baranovskiy</a>! Dmitry has presented at 3 previous Webjams and is a definite crowd favourite so it was awesome to see him totally dominate the voting with his fantastic new contribution to the <a href="http://microformats.org/">Microformats</a> community: <a href="http://microformatique.com/optimus/">Optimus - the Microformats Transformer</a>. Dmitry released it last week, but he unveiled a special new feature last night: validation. You can now validate microformats at any URL, meaning developers can check their own work. Even more importantly, you can programmatically check the validity of of a site's microformats before pulling them for a mashup. Optimus will utterly revolutionise microformats. Dmitry won $300 worth of books from SitePoint and an iPod Touch from the cool team at <a href="http://binalogue.com/">Binalogue</a></p>
+    
+    <h2>We love everybody!</h2>
+    <p>Huge thanks to everybody who made this amazing event possible. All our sponsors for covering the costs and providing the prizes. Not to mention the bar tab! A massive thank you to <a href="http://www.opera.com/">Opera</a> for paying for the first big run on drinks and then coming back and doing it again later!</p>
+    
+    <p>Thanks to all the volunteers who gave their time so generously: Leo Faber, Marcus Stenbeck, Danielle Szetho, Simon Wright. And to everybody who pitched in on the night like Andrew Krespanis, Ruth Ellison, and especially <a href="http://freelancing-gods.com/">Pat Allan</a> who offered his laptop for stage use when we were having technical difficulties (legend!)</p>
+    
+    <p>Lastly, thanks to everybody who came along and got into it, making this easily our best event ever. The vibe in the room, the feeling of community, sharing and inspiration absolutely made the night. We love you all. Keep rocking!</p>
+    
+    <h2>Stage Rocking Peeps</h2>
+    <p>16 amazing presentations. More details will be provided as we get them. Check them out</p>
+    <ol id="presenters29sep">
+    <li><strong><a href="http://nickcowie.com/">Nick Cowie</a>:</strong> "How to present at WebJam"</li> 
+    <li><strong><a href="http://ducknewmedia.com.au/">Myles Byrne</a>:</strong>	The Zen of HAML and SASS</li>
+    <li><strong><a href="http://silkcharm.blogspot.com/">Laurel Papworth</a>:</strong>	Social News Media sites</li>
+    <li><strong><a href="http://easy-reader.net/">Aaron Gustafson</a>:</strong>	FigureHandler</li>
+    <li><strong>Gavin Gorazdowski:</strong>	<a href="http://www.lookfamous.com.au/">www.lookfamous.com.au</a></li>
+    <li><strong><a href="http://blogs.atlassian.com/rebelutionary/">Mike Cannon-Brookes</a>:</strong>	A day in the life of <a href="http://www.atlassian.com/">Atlassian</a></li>
+    <li><strong><a href="http://dmitry.baranovskiy.com/">Dmitry Baranovskiy</a>:</strong> <a href="http://microformatique.com/optimus/">Optimus - Microformats Transformer</a></li>
+    <li><strong><a href="http://www.stuffandnonsense.co.uk/">Andy Clarke</a>:</strong> CSS Eleven</li>
+    <li><strong><a href="http://www.digitaleskimo.net/">Dave Gravina & Grant Young</a>:</strong> <a href="http://raisethebar.org.au/">Raise the Bar</a></li>
+    <li><strong><a href="http://myles.eftos.id.au/">Myles Eftos</a>:</strong> Debug Rails in your browser</li>
+    <li><strong>Jesse Desjardins:</strong> <a href="http://www.globalgossip.com/">Global Gossip's</a> <a href="http://www.mygossip.com/">MyGossip</a></li>
+    <li><strong>Silvia Pfeiffer:</strong>	<a href=http://www.vquence.com/">Vquence</a></li>
+    <li><strong><a href="http://my.opera.com/chaals/">Chaals McCathieNevile</a>:</strong>	<a href="http://dev.opera.com/articles/view/can-kestrels-do-math-mathml-support-in/">MathML in Opera Kestrel</a></li>
+    <li><strong><a href="http://jamescrisp.org/">James Crisp</a>:</strong>	<a href="http://yourweddingpresents.com/">YourWeddingPresents.com</a></li>
+    <li><strong><a href="http://atnan.com/">Nathan de Vries</a>:</strong> <a href="http://www.tilefile.org/">TileFile.org</a></li>
+    <li><strong>Rajesh Kumar:</strong> <a href="http://1site.com.au/">1site.com.au</a> (goes live next week)</li>
+    </ol>
+  :author_id: 2
+  :permalink: jams-kicked-out
+  :id: 25
+  :published_at: 2007-09-29 21:36:00

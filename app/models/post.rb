@@ -11,6 +11,9 @@ class Post < ActiveRecord::Base
   def self.recently_published
     find_published(:all, :limit => 5, :order => 'published_at DESC')
   end
+  def self.find_legacy(permalink)
+    find_by_permalink(permalink) || raise(ActiveRecord::RecordNotFound, "No legacy post with permalink #{permalink} found")
+  end
   def to_param
     "#{id}-#{permalink}"
   end

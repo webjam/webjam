@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require File.dirname(__FILE__) + '/../config/environment'
+
+require 'rubygems'
+require 'activerecord'
+require 'yaml'
+
+class Post < ActiveRecord::Base; end
+class User < ActiveRecord::Base; end
+
+raise "No user with id = 1 found" unless User.exists?(1)
+
+YAML.load(File.open("blog_posts.yml").read).each do |post|
+  Post.create :user_id => 1,
+              :title => post[:title],
+              :body  => post[:body],
+              :permalink => post[:permalink],
+              :published_at => (Time.parse(post[:published_at]) - 10.hours)
+end
