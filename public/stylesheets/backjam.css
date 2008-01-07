@@ -83,9 +83,9 @@ TOC
 		select {float: left; width: 10em;}
 		textarea {float: left; width: 27em;}
 			input.checkbox {margin: 0.4em 0; width: auto;}
-			fieldset.buttons input,
+/*			fieldset.buttons input,
 			input.submit,
-			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 8.4em; width: auto;}
+			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 8.4em; width: auto;}*/
 			
 			form.button-to {display: inline; margin: 0; padding: 0;}
 
