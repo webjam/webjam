@@ -3,6 +3,7 @@
 /* This is the container element for the cropper UI */
 
 #image_cropper {
+	float: none;
 	margin: 0 auto;
 	width: 400px;
 }

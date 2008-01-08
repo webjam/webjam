@@ -26,7 +26,7 @@ The param passed is the max zoom level for the cropping UI. -->
 
 <% @page_title = "Crop that mug" %>
 
-<% form_tag :action => 'crop' do -%>
+<% form_tag({:action => 'crop'}, :id => 'image_cropper') do -%>
 
 		<%= hidden_field_tag "crop_left", "0" %>
 		<%= hidden_field_tag "crop_top", "0" %>
@@ -38,7 +38,7 @@ The param passed is the max zoom level for the cropping UI. -->
 		<%= hidden_field_tag "crop_cancel", "false" %>
 
 	<!-- The dimensions and appearance of these elements are all defined in kropper.css -->
-	<div id="image_cropper">
+	<div>
 	    <div id="crop_header">Crop your image</div>
 	    <div id="crop_canvas">
 	        <div id="crop_loading_overlay">
