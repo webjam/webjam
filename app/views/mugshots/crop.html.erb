@@ -38,31 +38,29 @@ The param passed is the max zoom level for the cropping UI. -->
 		<%= hidden_field_tag "crop_cancel", "false" %>
 
 	<!-- The dimensions and appearance of these elements are all defined in kropper.css -->
-	<div>
-	    <div id="crop_header">Crop your image</div>
-	    <div id="crop_canvas">
-	        <div id="crop_loading_overlay">
-				<h2>loading...</h2>
-				<p>(If this message doesn't disappear automatically, please make sure your browser has Javascript turned on.)</p>
-			</div>
-	        <div id="crop_overlay"></div>
-	        <div id="crop_stencil"></div>
-	        <div id="image_dragger"></div>
-			<%= image_tag(@mugshot.public_filename, :id => "uncropped_image" ) %>
-	    </div>
-	    <div id="crop_footer">
-	    	<div id="zoom_slider">
-	        	<div id="zoom_slider_handle"></div>
-	    	</div>
-			<div id="crop_buttons">
-				<%= submit_tag "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crop Image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;", :id => "crop_submit_btn" %>
-				<input type="button" value="Cancel" id="crop_cancel_btn" onclick="this.form.crop_cancel.value='true';this.form.submit();" />
-				<input type="button" value="&nbsp;Reset&nbsp;" id="crop_reset_btn" />
-			</div>
-		</div>
-	    <div id="crop_subfooter">
-	        	<a href="http://kropper.captchr.com">kropper v1.0: an open-source image cropper for Rails apps</a>
-		</div>
-	</div>
+    <div id="crop_header">Crop your image</div>
+    <div id="crop_canvas">
+      <div id="crop_loading_overlay">
+  		  <h2>loading...</h2>
+  		  <p>(If this message doesn't disappear automatically, please make sure your browser has Javascript turned on.)</p>
+  	  </div>
+      <div id="crop_overlay"></div>
+      <div id="crop_stencil"></div>
+      <div id="image_dragger"></div>
+  	  <%= image_tag(@mugshot.public_filename, :id => "uncropped_image" ) %>
+  	  <input type="button" value="&nbsp;Reset&nbsp;" id="crop_reset_btn" />
+    </div>
+    <div id="crop_footer">
+    	<div id="zoom_slider">
+        	<div id="zoom_slider_handle"></div>
+    	</div>
+  	  <div id="crop_buttons">
+  		  <%= submit_tag "Crop Image", :id => "crop_submit_btn" %>
+  		  <input type="button" value="Cancel" id="crop_cancel_btn" onclick="this.form.crop_cancel.value='true';this.form.submit();" />
+  	  </div>
+    </div>
+    <div id="crop_subfooter">
+      <a href="http://kropper.captchr.com">kropper v1.0: an open-source image cropper for Rails apps</a>
+    </div>
 
 <% end -%>

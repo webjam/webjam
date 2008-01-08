@@ -43,7 +43,7 @@
 
 #crop_loading_overlay h2 {
 	font: normal 18px/31px Helvetica, Arial;
-	color: #333;
+	color: #fff;
 	padding: 140px 30px 10px;
 }
 
@@ -110,10 +110,13 @@
 }
 
 #crop_buttons {
-	padding: 30px 10px 15px;
+	padding: 30px 10px 30px;
 }
 
 #crop_reset_btn {
+	left: 10px;
+	position: relative;
+	top: 365px;
 }
 
 #crop_submit_btn {
