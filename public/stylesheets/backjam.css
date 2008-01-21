@@ -60,7 +60,7 @@ TOC
 		#content li,
 		#content ol,
 		#content ul {margin: 0 0 0.5em;}
-		#content p {font-size: 1.07em;}
+		#content p {font-size: 1.07em; line-height: 1.5; margin: 0 0 1em 0;}
 		#content ul {}
 			#content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
 		#content ol {}

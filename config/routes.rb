@@ -19,6 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :identity_urls, :collection => {:create => :any}
   map.with_options(:controller => 'pages') do |m|
     m.about   'about',   :action => 'about'
+    m.archiveflat   'archive-flat',   :action => 'archive-flat' #temporary flat files to build out front-end code
     m.contact 'contact', :action => 'contact'
     m.home    '',        :action => 'home'
     m.about   'openid',   :action => 'openid'
