@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     @post = Post.find_published(params[:id])
   end
   def index
-    @posts = Post.find_published(:all, :order => 'published_at DESC', :limit => 5)
+    @posts = Post.find_all_for_archive
   end
   def legacy
     post = Post.find_legacy(params[:permalink])
