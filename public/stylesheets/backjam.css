@@ -158,8 +158,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			
 				/* ----- =hAtom ----- */
 				.hentry {}
-					.hentry .entry-title {margin: 0 0 1em;}
-					#content .hentry .byline {display: block; float: right; font-size: 0.8em; margin: -2 0 1.5em 0; text-align: right;}
+					.hentry .entry-title {background: #0e0e0e; color: #fff; margin: 0 0 1em;}
+					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; font-size: 0.8em; list-style-type: none; margin: 0; overflow: auto; }
+						.hentry .byline li {float: left; width: auto;}
+						.hentry .byline li.comments {float: right;}
 						.hentry .byline .updated {}
 					.hentry .entry-content {}
 					.hentry .author {}
@@ -183,7 +185,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 							#comments .hentry .vcard .fn {}
 							
 			/* ---- =Archives ---- */
-			
 			body.archive #content ul li {background: #0e0e0e; color: #a2a2a2; list-style-type: none;}
 				body.archive #content ul li a:link {text-decoration: none;}
 			ul.year {float: left; padding: 0 0 0 4.2em; position: relative; width: auto;}
