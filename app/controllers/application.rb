@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :find_upcoming_events
 
-  helper SectionsHelper, UnicodeTranslitHelper
+  helper :all
   
   protected
     TLD_LENGTH = 2

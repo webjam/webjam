@@ -11,6 +11,18 @@ class Post < ActiveRecord::Base
   def self.recently_published
     find_published(:all, :limit => 5, :order => 'published_at DESC')
   end
+  def self.find_all_for_archive
+    find_by_sql %(
+      SELECT posts.*,
+             (SELECT COUNT(*)
+              FROM comments
+              WHERE comments.commentable_id = posts.id AND
+                    comments.commentable_type = 'Post') as comments_count
+      FROM   posts
+      WHERE  posts.published_at IS NOT NULL
+      ORDER BY posts.published_at
+    )
+  end
   def self.find_legacy(permalink)
     find_by_permalink(permalink) || raise(ActiveRecord::RecordNotFound, "No legacy post with permalink #{permalink} found")
   end

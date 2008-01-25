@@ -45,7 +45,8 @@
         <% for event in @upcoming_events %>
           <li class="<%= class_for_section(event_section(event)) %>"><%= link_to event, event_path(event) %></li>
           <% end %>
-          <li class="<%= class_for_section :about %>"><%= link_to "home", home_path %></li>
+          <li class="<%= class_for_section :home %>"><%= link_to "home", home_path %></li>
+          <li class="<%= class_for_section :blog %>"><%= link_to "blog", posts_path %></li>
           <li class="<%= class_for_section :about %>"><%= link_to "wtf is webjam?", about_path %></li>
       </ul>
     </div> <!-- // #other-content -->

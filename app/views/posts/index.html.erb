@@ -1,6 +1,49 @@
 <% @section = :blog %>
-<% @page_title = "Blogging da Jam" %>
+<% @page_title = "Blog Archive" %>
+<% @body_class = "archive" %>
 
-<div class="hfeed">
-  <%= render :collection => @posts %>
-</div> <!-- // .hfeed -->
+<h1>posts age like wine. <strong>blog archive</strong></h1>
+
+<% first_year, first_month = @posts.first.published_at.year, @posts.first.published_at.month -%>
+<% last_year, last_month   = @posts.last.published_at.year,  @posts.last.published_at.month  -%>
+
+<% post_by_year_and_month = @posts.group_by {|p| [p.published_at.year, p.published_at.month]} -%>
+
+<% (first_year..last_year).to_a.reverse.each do |year| -%>
+  <ul class="xoxo year" id="year-<%= year %>">
+    <li>
+      <h2><a href="#year-<%= year %>"><%= year %></a></h2>
+      <% (1..12).to_a.reverse.each do |month| -%>
+        <% next if (year == last_year) && (month > last_month) # start from the last month -%>
+        <% next if (year == first_year) && (month < first_month) # finish on the first month -%>
+        <ul class="month" id="<%= month_name(month).downcase %>-<%= year %>">
+          <li>
+            <h3><a href="#<%= month_name(month).downcase %>-<%= year %>"><%= month_name(month) %></a></h3>
+            <% if posts = post_by_year_and_month[[year, month]] -%>
+              <ul class="posts">
+                <% for post in posts -%>
+                  <li>
+                    <%= link_to h(post.title), post %>
+                    (<%= link_to post.comments_count, post_path(:id => post, :anchor => "comments"), :class => ((post.comments_count.to_i == 0) ? "no-comments" : "comments") %>)<%=
+                      if posts.length == 1
+                        # Nothing
+                      elsif post == posts[posts.length-1-1]
+                        "; and "
+                      elsif post == posts.last
+                        "."
+                      else
+                        "; "
+                      end
+                    -%>
+                  </li>
+                <% end -%>
+              </ul> <!-- .posts -->
+            <% else -%>
+              <p>Nada. We posted zip.</p>
+            <% end -%>
+          </li>
+        </ul> <!-- #<%= month_name(month).downcase %>-<%= year %> -->
+      <% end -%>
+    </li>
+  </ul>
+<% end -%>

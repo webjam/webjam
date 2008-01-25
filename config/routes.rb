@@ -22,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
     m.archiveflat   'archive-flat',   :action => 'archive-flat' #temporary flat files to build out front-end code
     m.contact 'contact', :action => 'contact'
     m.home    '',        :action => 'home'
-    m.about   'openid',   :action => 'openid'
+    m.open_id   'openid',   :action => 'openid'
   end
   map.namespace :admin do |admin|
     admin.resources :locations, :events, :posts

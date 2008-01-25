@@ -204,7 +204,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 										ul.year ul.month li h3 a:active,
 										ul.year ul.month li h3 a:focus {background: #0e0e0e; color: #ff5e29; text-decoration: underline;}
 								#content ul.year ul.month li p {float: left; font: 100 1em/1.5 "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0.4em 0 0 1em; width: auto;}
-								#content ul.month ul.posts {float: left; margin: 0;}
+								#content ul.month ul.posts {float: left; margin: 0; width: 26em;}
 									#content ul.month ul.posts li {display: inline; float: none; font: 100 0.935em/1.5 "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 0 0.2em 0 0; text-transform: lowercase;}
 										ul.month ul.posts li a:link,
 										ul.month ul.posts li a:visited {background: #0e0e0e; color: #fff; text-decoration: none;}
