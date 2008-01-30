@@ -60,7 +60,7 @@ TOC
 		#content li,
 		#content ol,
 		#content ul {margin: 0 0 0.5em;}
-		#content p {font-size: 1.07em; line-height: 1.5; margin: 0 0 1em 0;}
+		#content p {font-size: 1.07em; line-height: 1.5; margin: 0 0 2em 0;}
 		#content ul {}
 			#content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
 		#content ol {}
@@ -158,10 +158,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			
 				/* ----- =hAtom ----- */
 				.hentry {}
-					.hentry .entry-title {background: #0e0e0e; color: #fff; margin: 0 0 1em;}
-					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; font-size: 0.8em; list-style-type: none; margin: 0; overflow: auto; }
-						.hentry .byline li {float: left; width: auto;}
-						.hentry .byline li.comments {float: right;}
+					.hentry .entry-title {background: #0e0e0e; color: #fff; margin: 0 0 0.4em;}
+					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; font-size: 0.8em; list-style-type: none; margin: 0 0 2em 0; padding: 0.2em 0; overflow: auto; }
+						#content .hentry .byline li {float: left; list-style-type: none; width: auto;}
+						#content .hentry .byline li.comments {float: right; background: #0e0e0e url('/images/icon-comments-full.gif') no-repeat 0 1px; padding: 0 0 0 20px;}
 						.hentry .byline .updated {}
 					.hentry .entry-content {}
 					.hentry .author {}
