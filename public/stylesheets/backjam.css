@@ -167,10 +167,12 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					.hentry .author {}
 						.hentry .vcard {}
 						.hentry .vcard .fn {}
-					#content .hentry .entry-footer {background: gold; border: 1px solid #292a2a; border-left: none; border-right: none; font-size: 0.8em;}
+					#content .hentry .entry-footer {background: gold; border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; width: 42em;}
 						#content .hentry .entry-footer li {background: blue; float: left; list-style-type: none;}
-							#content .hentry .entry-footer li ul {background: red; float: right; width: 20em;}
-								#content .hentry .entry-footer li li {background: green; display: inline; padding: 0 0.2em 0 0;}
+							#content .hentry .entry-footer li.tags {background: red; float: right; width: 20em;}
+								#content .hentry .entry-footer li.tags span {display: block; float: left; margin: 0 0.2em 0 0; width: auto;}
+								#content .hentry .entry-footer li.tags ul {}
+								#content .hentry .entry-footer li.tags ul li {background: green; display: inline; padding: 0 0.2em 0 0;}
 				
 				/* ----- =Comments ----- */
 				#comments {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
