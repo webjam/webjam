@@ -157,9 +157,9 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			/* ---- =Posts ---- */
 			
 				/* ----- =hAtom ----- */
-				.hentry {zborder-bottom: 1px solid #292a2a;}
+				.hentry {border-bottom: 1px solid #292a2a; float: left; width: auto;}
 					.hentry .entry-title {background: #0e0e0e; color: #fff; margin: 0 0 0.4em;}
-					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; font-size: 0.8em; list-style-type: none; margin: 0 0 2em 0; padding: 0.2em 0; overflow: auto; }
+					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; font-size: 0.8em; list-style-type: none; margin: 0 0 2em 0; overflow: auto; padding: 0.2em 0;}
 						#content .hentry .byline li {float: left; list-style-type: none; width: auto;}
 						#content .hentry .byline li.comments {float: right; background: #0e0e0e url('/images/icon-comments-full.gif') no-repeat 0 1px; padding: 0 0 0 20px;}
 						.hentry .byline .updated {}
@@ -167,15 +167,17 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					.hentry .author {}
 						.hentry .vcard {}
 						.hentry .vcard .fn {}
-					#content .hentry .entry-footer {background: gold; border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; width: 42em;}
-						#content .hentry .entry-footer li {background: blue; float: left; list-style-type: none;}
-							#content .hentry .entry-footer li.tags {background: red; float: right; width: 20em;}
-								#content .hentry .entry-footer li.tags span {display: block; float: left; margin: 0 0.2em 0 0; width: auto;}
+					#content .hentry .entry-footer {border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; font-weight: 100; margin: 0 0 0.08em 0; padding: 0.2em 0 0.2em 0; width: 43em;}
+						#content .hentry .entry-footer li {float: left; list-style-type: none;}
+							#content .hentry .entry-footer li.post-date {background: #0e0e0e url('/images/icon-post.jpg') no-repeat 0 2px; color: #fff; padding: 0 0 0 20px;}
+							#content .hentry .entry-footer li.tags {background: #0e0e0e url('/images/icon-tag.jpg') no-repeat 0 1px; color: #fff; float: right; padding: 0 0 0 5.2em; position: relative; width: 16em;}
+								#content .hentry .entry-footer li.tags span {zdisplay: block; left: 20px; position: absolute; top: 0; width: 3.1em;}
 								#content .hentry .entry-footer li.tags ul {}
-								#content .hentry .entry-footer li.tags ul li {background: green; display: inline; padding: 0 0.2em 0 0;}
+								#content .hentry .entry-footer li.tags ul li {display: inline; font-size: 1em; margin: 0; padding: 0 0.2em 0 0;}
+									#content .hentry .entry-footer li.tags ul li a {text-decoration: none;}
 				
 				/* ----- =Comments ----- */
-				#comments {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
+				#comments {clear: both; padding: 2em 0 0 0;}
 					#comments p.blurb {font: 700 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0;}
 					#comments form {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
 					
