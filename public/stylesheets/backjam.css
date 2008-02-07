@@ -9,6 +9,7 @@ TOC
 		 --- =Links
 		 --- =Headings
 		 --- =Body Text
+		 --- =Avatars
 		 --- =Date, Times etc
 	-- =Generic Forms
 - =Structure
@@ -67,6 +68,13 @@ TOC
 			#content ol li {font-size: 1.07em; list-style-position: inside; list-style-type: decimal;}
 			
 		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
+		
+		/* --- =Avatars --- */
+		li.profile {position: relative;}
+		a.user-avatar:link,
+		a.user-avatar:visited {padding: 0.8em 1em 0.8em 1em;}
+		a.user-avatar strong {display: inline; padding: 0 0.1em 0 25px;}
+		a.user-avatar img {position: absolute; top: 0.4em;}
 
 		/* --- =Dates, Times etc --- */
 		.date {font: 1em/1.6 Georgia, serif;}
@@ -98,11 +106,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 
 	#account-tools {margin: 0 0 1.5em 0; position: absolute; right: 0; top: -2.3em;}
 		#account-tools li {background: #0e0e0e; float: left; font-size: 0.94em; line-height: 1; margin: 0 1em 0 0; text-align: center;}
-		#account-tools li.profile {position: relative;}
-			#account-tools a.user-avatar:link,
-			#account-tools a.user-avatar:visited {padding: 0.8em 1em 0.8em 1em;}
-				#account-tools a.user-avatar strong {display: inline; padding: 0 0.1em 0 25px;}
-				#account-tools a.user-avatar img {position: absolute; top: 0.4em;}
 			
 		#account-tools li.logout {}
 			#account-tools li.logout form.button-to input {background: #0e0e0e; border: 1px solid #ff5e29; border-bottom: none;  color: #fff; cursor: pointer; float: none; margin: 0; padding: 0.6em; width: auto;}
