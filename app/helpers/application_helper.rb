@@ -15,7 +15,7 @@ module ApplicationHelper
     classes += " user-avatar vcard"
     link_to "#{comment_avatar(user)}&nbsp;<span class='fn nickname'>#{h(user.nick_name)}</span>", user_path(user), :class => classes.strip
   end
-  def comment_avatar(user, size=:small)
+  def comment_avatar(user, size=:medium)
     raise(ArgumentError, "user can not be nil") if user.nil?
     image_tag(user.mugshot ? user.mugshot.public_filename(size) : "default_avatar_#{size || 'large'}.gif", :alt => h(user.nick_name), :class => 'photo')
   end

@@ -182,13 +182,14 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					#comments form {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}
 					
 					/* ------ =hAtom ------ */
-					#comments .hentry {margin: 0 0 3em 0; padding: 0 0 0 65px; position: relative;}
+					#comments .hentry {border: none; margin: 0 0 3em 0; min-height: 100px; padding: 0 0 0 100px; position: relative;}
 						#comments .hentry .entry-title {background: green;}
 						#comments .hentry .updated {background: blue;}
 						#comments .comment-details {background: #0e0e0e; color: #ccc; font-size: 0.9em; margin: 0 0 0.4em 0;}
 							#comments .comment-details img {left: 0; position: absolute; top: 0;}
 						#comments .hentry .entry-content {}
-						#comments .hentry .author {}	
+						#comments .hentry .author {}
+							#comments .hentry .author img.photo {height: 82px; width: 82px;}
 							#comments .hentry .vcard {background: fuschia;}
 							#comments .hentry .vcard .fn {}
 							

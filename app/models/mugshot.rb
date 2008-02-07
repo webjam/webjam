@@ -3,7 +3,7 @@ class Mugshot < ActiveRecord::Base
   has_attachment :min_size => 100.bytes,
                  :max_size => 8048.kilobytes,
                  :resize_to => '1200x1200>',
-                 :thumbnails => { :large => '200x200', :medium => '100x100', :small => '50x50', :tiny => '25x25' },
+                 :thumbnails => { :large => '140x140', :medium => '82x82', :small => '50x50', :tiny => '16x16' },
                  :processor => "ImageScience",
                  :storage => :file_system
   can_be_cropped
