@@ -4,11 +4,26 @@
 <div class="hentry">
   <h1 class="entry-title"><%=h @post.title %></h1>
 
-  <p class="byline">by <%= user_link_with_avatar(@post.user, "author") %> - <span class="updated"><%= @post.published_at.to_date.to_s(:long) %></span></p>
+  <ul class="byline">
+      <li>Posted by <%= user_link_with_avatar(@post.user, "author") %> on <span class="updated"><%= @post.published_at.to_date.to_s(:long) %></span></li>
+      <li class="comments"><a href="#comments">12 comments</a></li>
+  </ul> <!-- // .byline -->
 
   <div class="entry-content">
     <%= @post.body %>
   </div> <!-- // .entry-content -->
+  
+  <ul class="entry-footer">
+      <li class="post-date">Posted <span class="published"><%= @post.published_at.to_date.to_s(:long) %></li>
+      <li class="tags"><span>Tagged</span>
+          <ul>
+              <li><a href="#" rel="tag">Sydney</a>,</li>
+              <li><a href="#" rel="tag">winners</a>,</li>
+              <li><a href="#" rel="tag">wrap-up</a>, and</li>
+              <li><a href="#" rel="tag">something else</a></li>
+          </ul> <!-- // .tags -->
+      </li>
+  </ul> <!-- // .entry-footer -->
 
 </div> <!-- // .hentry -->
 
@@ -16,7 +31,7 @@
   <% if @post.comments.empty? %>
     <p class="title">There are no comments yet!</p>
   <% else %>
-    <p class="title"><%= pluralize @post.comments.count, 'Comment' %></p>
+<!--    <p class="title"><%= pluralize @post.comments.count, 'Comment' %></p> -->
     <% for comment in @post.comments %>
       <div class="hentry" id="comment-<%= comment.id %>">
         <p class="comment-details"><em><%= user_link_for_comment(comment.user, "author") %> commented <%= time_ago_in_words comment.created_at %> ago:</em></p>
@@ -44,5 +59,3 @@
     <% end %>
   <% end %>
 </div> <!-- // #comments -->
-
-<p>&nbsp;</p><p>&nbsp;</p>
