@@ -1,7 +1,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: backjam_development
+  database: webjam_development
   username: root
   password:
   socket: 
@@ -9,7 +9,7 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: backjam_test
+  database: webjam_development
   username: root
   password:
   socket: 
@@ -17,7 +17,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: backjam
+  database: webjam
   host: localhost
   username: root
   password: 
