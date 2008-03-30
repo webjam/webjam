@@ -1,11 +1,6 @@
 <% @page_title = "Jammer? Login!" %>
 <% @body_class = "login" %>
 
-<% content_for :head do %>
-  <%= javascript_include_tag 'openid-register' %>
-<% end %>
-
-
 <h1><strong>Log in</strong> to ya Webjam account</h1>
 
 <% if @openid_url_not_found %>

@@ -18,15 +18,35 @@
 	}();
 
 	var openIdProviders = {
-		"Wordpress blog": "http://<username>.wordpress.com/",
-		"Technorati username": "http://technorati.com/people/<username>/",
-		"AIM username": "http://openid.aol.com/<username>",
-		"Live Journal username": "http://<username>.livejournal.com/"
+		"Wordpress": "http://<username>.wordpress.com/",
+		"Blogger": "http://<username>.blogger.com",
+		"Flickr": "http://www.flickr.com/photos/<username>",
+		"Technorati": "http://technorati.com/people/<username>/",
+		"AOL": "http://openid.aol.com/<username>",
+		"Live Journal": "http://<username>.livejournal.com/"
 	}
 
 	var	explanationParagraph = function() {
 		var p = document.createElement("p");
-		p.innerHTML = 'Alternatively, pick one of your logins so we may construct your <a href="http://openid.net/">OpenID</a> for you.'
+		
+		var providerNames = [];
+		for (providerName in openIdProviders) {
+			providerNames.push(providerName);
+		}
+		
+		var providersInSentenceForm = "";
+		for (var i=0; i < providerNames.length; i=i+1) {
+			if (i == 0) {
+				providersInSentenceForm = providersInSentenceForm + providerNames[i];
+			} else if (i == (providerNames.length - 1)) {
+				providersInSentenceForm = providersInSentenceForm + " or " + providerNames[i];
+			} else {
+				providersInSentenceForm = providersInSentenceForm + ", " + providerNames[i];
+			}
+		}
+		
+		p.innerHTML = 'If you use ' + providersInSentenceForm + ' you probably already have an OpenID and you didn&rsquo;t even know it. If you want to register your own see <a href="http://openid.net/get/">openid.net</a> for a list of reputable OpenID providers.'
+		p.className = "explanation";
 		return p;
 	}
 			
@@ -36,11 +56,12 @@
 
 		The fieldset that's generated looks like:
 			<fieldset class="contruct-openid">
+				<p class="explanation">...</p>
 				<select>
 					<option>Wordpress</option>
 					<option>...</option>
 				</select>
-				<p>http://<input type="text" value="" />.wordpress.com</p>
+				<p class="input">http://<input type="text" value="" />.wordpress.com</p>
 			</fieldset>
 	*/
 	var initOpenIDHelper = function(urlInput) {
@@ -51,35 +72,60 @@
 		
 		var fieldset = document.createElement("fieldset");
 		fieldset.className = "contruct-openid";
-
 		fieldset.appendChild(explanationParagraph());
 		
 		var service = document.createElement("select");
+		fieldset.appendChild(service);
+		
+		var option = document.createElement("option");
+		option.value = "";
+		option.appendChild(document.createTextNode("Choose a service"));
+		service.appendChild(option);		
+		
 		for (var serviceName in openIdProviders) {
 			var option = document.createElement("option");
 			option.value = serviceName;
 			option.appendChild(document.createTextNode(serviceName));
 			service.appendChild(option);
 		}
-		fieldset.appendChild(service);
 		
-		form.appendChild(fieldset);
+		var inputParagraph = document.createElement("p");
+		inputParagraph.className = "input";
+
+		var preInputText = document.createTextNode("http://");
+		inputParagraph.appendChild(preInputText);
 		
-		var showUsernameInput = function() {
-			var username = document.createElement("input");
-			username.type = "text";
-			form.appendChild(username);
-			
-			addEvent(username, "keyup", function() {
-				var urlTemplate = openIdProviders[service.value];
-				urlInput.value = urlInput.value ? urlTemplate.replace("<username>", username.value) : urlTemplate;
-				return true;
-			});
-			
-			return true;
+		var input = document.createElement("input");
+		input.type = "text";
+		input.value = "";
+		inputParagraph.appendChild(input);
+
+		var postInputText = document.createTextNode(".somewhere.com");
+		inputParagraph.appendChild(postInputText);
+
+		var updateUrlInput = function() {
+			var urlTemplate = openIdProviders[service.value];
+			urlInput.value = urlTemplate.replace("<username>", input.value);
 		}
 		
-		addEvent(fieldset, "change", showUsernameInput);
+		addEvent(input, "keyup", updateUrlInput);
+		
+		addEvent(service, "change", function() {
+			if (service.value == "" && inputParagraph.parentNode) {
+				inputParagraph.parentNode.removeChild(inputParagraph);
+			}
+
+			var urlTemplate = openIdProviders[service.value];
+			
+			preInputText.data = urlTemplate.split("<username>")[0];
+			postInputText.data = urlTemplate.split("<username>")[1];
+
+			fieldset.appendChild(inputParagraph);
+			
+			updateUrlInput();
+		});
+		
+		form.appendChild(fieldset);
 	}
 	
 	// An input field is an OpenID URL if it has the id or a class name "openid_url"
