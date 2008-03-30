@@ -70,11 +70,11 @@ TOC
 		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
 		
 		/* --- =Avatars --- */
-		li.profile {position: relative;}
-		a.user-avatar:link,
-		a.user-avatar:visited {padding: 0.8em 1em 0.8em 1em;}
-		a.user-avatar strong {display: inline; padding: 0 0.1em 0 25px;}
-		a.user-avatar img {position: absolute; top: 0.4em;}
+		
+		span.user-avatar {position: relative;}
+			span.user-avatar a.vcard {padding: 0 0 0 18px; text-decoration: none;}		
+				span.user-avatar a.vcard img {left: 0; position: absolute; top: 1px;}
+
 
 		/* --- =Dates, Times etc --- */
 		.date {font: 1em/1.6 Georgia, serif;}
@@ -94,6 +94,7 @@ TOC
 /*			fieldset.buttons input,
 			input.submit,
 			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 8.4em; width: auto;}*/
+			input.submit {margin: 0.4em 0 0 10.2em; width: 14.3em;}
 			
 			form.button-to {display: inline; margin: 0; padding: 0;}
 
@@ -190,7 +191,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						#comments .hentry .updated {background: blue;}
 						#comments .comment-details {background: #0e0e0e; color: #ccc; font-size: 0.9em; margin: 0 0 0.4em 0;}
 							#comments .comment-details img {left: 0; position: absolute; top: 0;}
-						#comments .hentry .entry-content {}
+						#comments .hentry .entry-content {margin: 0 0 0 0.8em;}
 						#comments .hentry .author {}
 							#comments .hentry .author img.photo {height: 82px; width: 82px;}
 							#comments .hentry .vcard {background: fuschia;}
@@ -238,10 +239,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			
 			/* ---- =Join Form ---- */
 				#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
-					#openid-login label {background: #0e0e0e url('/images/bg-login-input.gif') no-repeat 100% 6px; color: #ff6200; margin: 0 0.4em 0 0.5em; padding: 0 8px 0.4em 0; width: 26em;}
+					#openid-login label {background: #0e0e0e url('/images/bg-login-input.gif') no-repeat 100% 6px; color: #ff6200; margin: 0 0.4em 0 0.4em; padding: 0 8px 0.4em 0; width: 24.5em;}
 						#openid-login label img {float: left;}
 						#openid-login label input {border: none; float: right; height: 24px; margin: 6px 0 0 1em; padding: 6px 0 0 0; width: 19.3em;}
-					#openid-login input.submit {background: #ff6200 url('/images/bg-login-button.gif') no-repeat 0.7em center; font-size: 1.07em; font-weight: 700; height: 2.1em; margin: 6px 0 0 0.3em; padding: 0 0 0.2em 0.4em; width: 5em;}
+					#openid-login input.submit {font-size: 1.07em; font-weight: 700; height: 2.1em; margin: 6px 0 0 1.2em; padding: 0 0 0.2em 0; width: 5em;}
 				#construct-openid {background: #0e0e0e url('/images/bg-openid-construct.jpg') no-repeat 0 0; margin: 1em 0 1em 0; padding: 0 0 0 135px;}
 					#construct-openid p {margin: 0 0 1em 0;}
 					#construct-openid select {margin: 0 2em 0 0;}

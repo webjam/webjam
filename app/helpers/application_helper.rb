@@ -1,8 +1,15 @@
 module ApplicationHelper
+ # def user_link_with_avatar(user, classes="")
+ #   classes += " user-avatar"
+ #   link_to "<span class='vcard'>#{avatar_image(user)}&nbsp;<span class='fn nickname'>#{h(user.nick_name)}</span></span>", user_path(user), :class => classes.strip
+ # end
+
   def user_link_with_avatar(user, classes="")
-    classes += " user-avatar vcard"
-    link_to "#{avatar_image(user)}&nbsp;<span class='fn nickname'>#{h(user.nick_name)}</span>", user_path(user), :class => classes.strip
+    render :partial => "shared/user_avatar",
+           :locals => {:user => user, :classes => classes}
   end
+  
+  
   def user_login_link_with_avatar(user)
     link_to "Hi #{avatar_image(user)}&nbsp;<strong class='fn nickname'>#{h(user.nick_name)}</strong>!", user_path(user), :class => 'user-avatar vcard'
   end
