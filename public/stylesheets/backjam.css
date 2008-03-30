@@ -94,6 +94,7 @@ TOC
 /*			fieldset.buttons input,
 			input.submit,
 			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 8.4em; width: auto;}*/
+			input.submit {margin: 0.4em 0 0 10.2em; width: 14.3em;}
 			
 			form.button-to {display: inline; margin: 0; padding: 0;}
 
@@ -190,7 +191,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						#comments .hentry .updated {background: blue;}
 						#comments .comment-details {background: #0e0e0e; color: #ccc; font-size: 0.9em; margin: 0 0 0.4em 0;}
 							#comments .comment-details img {left: 0; position: absolute; top: 0;}
-						#comments .hentry .entry-content {}
+						#comments .hentry .entry-content {margin: 0 0 0 0.8em;}
 						#comments .hentry .author {}
 							#comments .hentry .author img.photo {height: 82px; width: 82px;}
 							#comments .hentry .vcard {background: fuschia;}
