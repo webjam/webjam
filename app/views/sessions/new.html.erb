@@ -22,17 +22,6 @@
     </label>
     <%= submit_tag 'Login', :class => "submit" %>
   </fieldset>
-  <fieldset id="construct-openid">
-    <p>Alternatively, pick one of your logins so we may construct your <a href="http://openid.net/">OpenID</a> for you.</p>
-    <select name="site" id="siteselect" onchange="return loginChanged();">
-  		<option value="wordpress">Wordpress blog</option>
-  		<option value="livejournal">Livejournal username</option>
-  		<option value="vox">Vox username</option>
-  		<option value="technorati">Technorati username</option>
-  		<option value="aim">AIM</option>
-  	</select>
-  	<input id="login" name="login" onkeyup="return loginChanged();" type="text">
-	</fieldset>
 <% end %>
 
 <p>Don't have a Webjam account? <%= link_to "Register one!", new_user_path %></p>
