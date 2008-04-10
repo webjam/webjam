@@ -71,10 +71,11 @@ TOC
 		
 		/* --- =Avatars --- */
 		
-		span.user-avatar {position: relative;}
-			span.user-avatar a.vcard {padding: 0 0 0 18px; text-decoration: none;}		
-				span.user-avatar a.vcard img {left: 0; position: absolute; top: 1px;}
-
+		.user-avatar {position: relative;}
+			.user-avatar .vcard {padding: 0 0 0 18px; text-decoration: none;}	
+			zli.profile .user-avatar {display: block; line-height: 1; padding: 0.6em 1em 2em 0em;}	
+				.user-avatar .vcard img {left: 0; position: absolute; top: 1px;}
+				zli.profile .user-avatar .vcard img {left: 2px; top: 2px;}
 
 		/* --- =Dates, Times etc --- */
 		.date {font: 1em/1.6 Georgia, serif;}
@@ -113,6 +114,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			#account-tools li.logout form.button-to input:hover {background: #ff5e29; border: 1px solid #0e0e0e; border-bottom: none; color: #0e0e0e; cursor: pointer; float: none; margin: 0; padding: 0.6em; width: auto;}
 		
 		#account-tools li.login {}
+		#account-tools li.profile {}
+			#account-tools li.profile a {padding: 2em 0 0 0;}
 		#account-tools li.register {}
 		
 			#account-tools li a:link,
