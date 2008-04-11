@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
     m.about   'about',   :action => 'about'
     m.contact 'contact', :action => 'contact'
     m.home    '',        :action => 'home'
-    m.open_id   'openid',   :action => 'openid'
+    m.open_id   'single-sign-on',   :action => 'single-sign-on'
   end
   map.namespace :admin do |admin|
     admin.resources :locations, :events, :posts
