@@ -25,12 +25,18 @@
 		"AOL": "http://openid.aol.com/<username>",
 		"Live Journal": "http://<username>.livejournal.com"
 	}
+	
+	var openIdProviderNames = [];
+	for (var s in openIdProviders) {
+		openIdProviderNames.push(s);
+	}
+	
 
 	var	explanationParagraph = function() {
 		var p = document.createElement("p");
 		
 		var providerNames = [];
-		for (providerName in openIdProviders) {
+		for (var providerName in openIdProviders) {
 			providerNames.push(providerName);
 		}
 		
@@ -57,11 +63,16 @@
 		The input is replaced with something like:
 			<span class="contruct-openid">
 				<input class="hidden" type="hidden" value="http://ablog.wordpress.com" />
+				<span class="service-images">
+					<a onclick=".."><img src="https://www.blogger.com/img/openid-inputicon.gif" width="16" height="16" /></a>
+					<a onclick=".."><img src="https://www.blogger.com/img/openid-inputicon.gif" width="16" height="16" /></a>
+					<!- ... ->
+				</ul>
 				<select>
 					<option>Wordpress</option>
 					<option>...</option>
 				</select>
-				<input class="text" type="text" value="ablog" />
+				<label>Account <input class="text" type="text" value="ablog" /></label>
 				<em class="preview">http://ablog.wordpress.com</em>
 			</span>
 			
@@ -87,6 +98,31 @@
 		surroundingSpan.appendChild(hiddenUrlInput);
 		
 		var service = document.createElement("select");
+
+		var serviceImagesSpan = document.createElement("span");
+		serviceImagesSpan.className = "service-images";
+		for (var i=0; i < openIdProviderNames.length; i=i+1) {
+			this.i = i;
+			var a  = document.createElement("a");
+			var img = document.createElement("img");
+			img.src = "https://www.blogger.com/img/openid-inputicon.gif";
+			img.width = "16";
+			img.height = "16";
+			img.alt = serviceName;
+			img.href = "#";
+			img.serviceIndex = i;
+			a.appendChild(img);
+			addEvent(a, "click", function(event) {
+				var event = (event) ? event : ((window.event) ? window.event : null);
+				if (event) {
+					service.selectedIndex = event.target.serviceIndex;
+					updateUrl();
+				}
+			});
+			serviceImagesSpan.appendChild(a);
+		}
+		surroundingSpan.appendChild(serviceImagesSpan);
+		
 		surroundingSpan.appendChild(service);
 		
 		var option = document.createElement("option");
@@ -106,11 +142,16 @@
 		
 		service.appendChild(optGroup);
 		
+		var inputLabel = document.createElement("label");
+		var inputLabelText = document.createTextNode("URL ");
+		inputLabel.appendChild(inputLabelText);
+		surroundingSpan.appendChild(inputLabel);
+		
 		var newInput = document.createElement("input");
 		newInput.type = "text";
 		newInput.className = "text";
 		newInput.value = "";
-		surroundingSpan.appendChild(newInput);
+		inputLabel.appendChild(newInput);
 
 		var previewEm = document.createElement("em");
 		previewEm.style.className = "preview";
@@ -120,6 +161,8 @@
 		var updateUrl = function() {
 			if (service.value == "") {
 				hiddenUrlInput.value = newInput.value;
+				previewEm.style.display = "none";
+				inputLabelText.data = "Address "
 			} else {
 				var urlTemplate = openIdProviders[service.value];
 				if (newInput.value == "") {
@@ -129,20 +172,13 @@
 				}
 				hiddenUrlInput.value = urlTemplate.replace("<username>", replaceUsername);
 				previewEm.innerHTML = hiddenUrlInput.value;
+				previewEm.style.display = "block";
+				inputLabelText.data = "Username "
 			}
 		}
 		
 		addEvent(newInput, "keyup", updateUrl);
-		
-		addEvent(service, "change", function() {
-			if (service.value == "") {
-				previewEm.style.display = "none";
-			} else {
-				previewEm.style.display = "block";
-			}
-			
-			updateUrl();
-		});
+		addEvent(service, "change", updateUrl);
 		
 		urlInput.parentNode.replaceChild(surroundingSpan, urlInput);
 	}
