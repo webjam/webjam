@@ -91,11 +91,11 @@
 		
 		var option = document.createElement("option");
 		option.value = "";
-		option.appendChild(document.createTextNode("OpenID URL"));
+		option.appendChild(document.createTextNode("My own OpenID URL"));
 		service.appendChild(option);
 		
 		var optGroup = document.createElement("optgroup");
-		optGroup.label = "OpenID Enabled Services";
+		optGroup.label = "Account with an OpenID Enabled Service";
 		
 		for (var serviceName in openIdProviders) {
 			var option = document.createElement("option");
