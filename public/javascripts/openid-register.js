@@ -18,19 +18,25 @@
 	}();
 
 	var openIdProviders = {
-		"Wordpress": "http://<username>.wordpress.com/",
+		"Wordpress": "http://<username>.wordpress.com",
 		"Blogger": "http://<username>.blogger.com",
 		"Flickr": "http://www.flickr.com/photos/<username>",
-		"Technorati": "http://technorati.com/people/<username>/",
+		"Technorati": "http://technorati.com/people/<username>",
 		"AOL": "http://openid.aol.com/<username>",
-		"Live Journal": "http://<username>.livejournal.com/"
+		"Live Journal": "http://<username>.livejournal.com"
 	}
+	
+	var openIdProviderNames = [];
+	for (var s in openIdProviders) {
+		openIdProviderNames.push(s);
+	}
+	
 
 	var	explanationParagraph = function() {
 		var p = document.createElement("p");
 		
 		var providerNames = [];
-		for (providerName in openIdProviders) {
+		for (var providerName in openIdProviders) {
 			providerNames.push(providerName);
 		}
 		
@@ -51,81 +57,130 @@
 	}
 			
 	/*
-		Appends a fieldset to the input's form with some helpers for constructing OpenID URLs for common
-    services.
+		Replaces the OpenID URL input with some helpers for constructing OpenID
+    URLs for common services.
 
-		The fieldset that's generated looks like:
-			<fieldset class="contruct-openid">
-				<p class="explanation">...</p>
+		The input is replaced with something like:
+			<span class="contruct-openid">
+				<input class="hidden" type="hidden" value="http://ablog.wordpress.com" />
+				<span class="service-images">
+					<a onclick=".."><img src="https://www.blogger.com/img/openid-inputicon.gif" width="16" height="16" /></a>
+					<a onclick=".."><img src="https://www.blogger.com/img/openid-inputicon.gif" width="16" height="16" /></a>
+					<!- ... ->
+				</ul>
 				<select>
 					<option>Wordpress</option>
 					<option>...</option>
 				</select>
-				<p class="input">http://<input type="text" value="" />.wordpress.com</p>
-			</fieldset>
+				<label>Account <input class="text" type="text" value="ablog" /></label>
+				<em class="preview">http://ablog.wordpress.com</em>
+			</span>
+			
+		A pragraph is also placed as the first child of the containing form:
+			<p class="explanation">If you use WordPress...</p>
 	*/
 	var initOpenIDHelper = function(urlInput) {
 		var form = urlInput;
 		while (form.tagName != "FORM") {
 			form = form.parentNode;
 		}
+
+		form.insertBefore(explanationParagraph(), form.firstChild);
 		
-		var fieldset = document.createElement("fieldset");
-		fieldset.className = "contruct-openid";
-		fieldset.appendChild(explanationParagraph());
+		var surroundingSpan = document.createElement("span");
+		surroundingSpan.className = "construct-openid";
+		
+		var hiddenUrlInput = document.createElement("input");
+		hiddenUrlInput.type = "hidden";
+		hiddenUrlInput.className = "hidden";
+		hiddenUrlInput.name = urlInput.name;
+		hiddenUrlInput.value = urlInput.value;
+		surroundingSpan.appendChild(hiddenUrlInput);
 		
 		var service = document.createElement("select");
-		fieldset.appendChild(service);
+
+		var serviceImagesSpan = document.createElement("span");
+		serviceImagesSpan.className = "service-images";
+		for (var i=0; i < openIdProviderNames.length; i=i+1) {
+			this.i = i;
+			var a  = document.createElement("a");
+			var img = document.createElement("img");
+			img.src = "https://www.blogger.com/img/openid-inputicon.gif";
+			img.width = "16";
+			img.height = "16";
+			img.alt = serviceName;
+			img.href = "#";
+			img.serviceIndex = i;
+			a.appendChild(img);
+			addEvent(a, "click", function(event) {
+				var event = (event) ? event : ((window.event) ? window.event : null);
+				if (event) {
+					service.selectedIndex = event.target.serviceIndex;
+					updateUrl();
+				}
+			});
+			serviceImagesSpan.appendChild(a);
+		}
+		surroundingSpan.appendChild(serviceImagesSpan);
+		
+		surroundingSpan.appendChild(service);
 		
 		var option = document.createElement("option");
 		option.value = "";
-		option.appendChild(document.createTextNode("Choose a service"));
-		service.appendChild(option);		
+		option.appendChild(document.createTextNode("My own OpenID URL"));
+		service.appendChild(option);
+		
+		var optGroup = document.createElement("optgroup");
+		optGroup.label = "Account with an OpenID Enabled Service";
 		
 		for (var serviceName in openIdProviders) {
 			var option = document.createElement("option");
 			option.value = serviceName;
 			option.appendChild(document.createTextNode(serviceName));
-			service.appendChild(option);
+			optGroup.appendChild(option);
 		}
 		
-		var inputParagraph = document.createElement("p");
-		inputParagraph.className = "input";
-
-		var preInputText = document.createTextNode("http://");
-		inputParagraph.appendChild(preInputText);
+		service.appendChild(optGroup);
 		
-		var input = document.createElement("input");
-		input.type = "text";
-		input.value = "";
-		inputParagraph.appendChild(input);
-
-		var postInputText = document.createTextNode(".somewhere.com");
-		inputParagraph.appendChild(postInputText);
-
-		var updateUrlInput = function() {
-			var urlTemplate = openIdProviders[service.value];
-			urlInput.value = urlTemplate.replace("<username>", input.value);
-		}
+		var inputLabel = document.createElement("label");
+		var inputLabelText = document.createTextNode("URL ");
+		inputLabel.appendChild(inputLabelText);
+		surroundingSpan.appendChild(inputLabel);
 		
-		addEvent(input, "keyup", updateUrlInput);
-		
-		addEvent(service, "change", function() {
-			if (service.value == "" && inputParagraph.parentNode) {
-				inputParagraph.parentNode.removeChild(inputParagraph);
+		var newInput = document.createElement("input");
+		newInput.type = "text";
+		newInput.className = "text";
+		newInput.value = "";
+		inputLabel.appendChild(newInput);
+
+		var previewEm = document.createElement("em");
+		previewEm.style.className = "preview";
+		previewEm.style.display = "none";
+		surroundingSpan.appendChild(previewEm);
+
+		var updateUrl = function() {
+			if (service.value == "") {
+				hiddenUrlInput.value = newInput.value;
+				previewEm.style.display = "none";
+				inputLabelText.data = "Address "
+			} else {
+				var urlTemplate = openIdProviders[service.value];
+				if (newInput.value == "") {
+					var replaceUsername = "(username)";
+				} else {
+					var replaceUsername = newInput.value;
+				}
+				hiddenUrlInput.value = urlTemplate.replace("<username>", replaceUsername);
+				previewEm.innerHTML = hiddenUrlInput.value;
+				previewEm.style.display = "block";
+				inputLabelText.data = "Username "
 			}
-
-			var urlTemplate = openIdProviders[service.value];
-			
-			preInputText.data = urlTemplate.split("<username>")[0];
-			postInputText.data = urlTemplate.split("<username>")[1];
-
-			fieldset.appendChild(inputParagraph);
-			
-			updateUrlInput();
-		});
+		}
 		
-		form.appendChild(fieldset);
+		addEvent(newInput, "keyup", updateUrl);
+		addEvent(service, "change", updateUrl);
+		
+		urlInput.parentNode.replaceChild(surroundingSpan, urlInput);
 	}
 	
 	// An input field is an OpenID URL if it has the id or a class name "openid_url"
