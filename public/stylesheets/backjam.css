@@ -261,10 +261,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 							body.js span.construct-openid select {clear: both; margin: 0.4em 0 0.4em 0;}
 							body.js #openid-login span.construct-openid label {background: transparent; margin: 0; padding: 0;}
 								body.js #openid-login span.construct-openid label input {float: left; margin: 0.2em 0 0.2em 0; width: 20.5em;}
-							body.js span.construct-openid em {clear: left; font-weight: 100;}
+							body.js span.construct-openid em {clear: left; font-weight: 100; padding: 0.3em 0 0 0;}
 						
-			
-			
 
 			/* ---- =Profile ---- */
 			#profile-menu {float: right; width: 10em;}
