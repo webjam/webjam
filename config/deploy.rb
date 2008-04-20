@@ -3,7 +3,7 @@ set :deploy_to, "/home/webjam/apps/webjam"
 set :user, "deploy"
 
 set :scm, :git
-set :repository, "git@git.toolmantim.com:backjam.git"
+set :repository, "git@git.webjam.com.au:backjam.git"
 set :deploy_via, :copy
 
 role :app, "59.167.241.232"
