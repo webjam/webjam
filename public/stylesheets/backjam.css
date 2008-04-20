@@ -245,11 +245,26 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					#openid-login label {background: #0e0e0e url('/images/bg-login-input.gif') no-repeat 100% 6px; color: #ff6200; margin: 0 0.4em 0 0.4em; padding: 0 8px 0.4em 0; width: 24.5em;}
 						#openid-login label img {float: left;}
 						#openid-login label input {border: none; float: right; height: 24px; margin: 6px 0 0 1em; padding: 6px 0 0 0; width: 19.3em;}
-					#openid-login input.submit {font-size: 1.07em; font-weight: 700; height: 2.1em; margin: 6px 0 0 1.2em; padding: 0 0 0.2em 0; width: 5em;}
+					#openid-login input.submit {font-size: 1.07em; font-weight: 700; height: 2.1em; margin: 6px 1em 0 1.2em; padding: 0 0 0.2em 0; width: 5em;}
 				#construct-openid {background: #0e0e0e url('/images/bg-openid-construct.jpg') no-repeat 0 0; margin: 1em 0 1em 0; padding: 0 0 0 135px;}
 					#construct-openid p {margin: 0 0 1em 0;}
 					#construct-openid select {margin: 0 2em 0 0;}
 					#construct-openid input {font-size: 1em; width: 12em;}
+
+				body.js #openid-login {padding: 5.3em 0 2em 0; position: relative;}
+					body.js #openid-login #openid-url-label {position: static; width: 24.3em;}
+					body.js p.explanation {}
+						body.js span.construct-openid {display: block; float: none; left: 120px; position: absolute; top: -4.9em; width: auto;}
+							body.js span.service-images {display: block; float: none; margin: 0 0 0.4em 0; width: 10em;}
+								body.js span.service-images a {border: none;}
+									body.js span.service-images a img {border: 1px solid #fcfcfc; border-bottom-color: #303030; border-right-color: #303030; margin: 2px;}
+							body.js span.construct-openid select {clear: both; margin: 0.4em 0 0.4em 0;}
+							body.js #openid-login span.construct-openid label {background: transparent; margin: 0; padding: 0;}
+								body.js #openid-login span.construct-openid label input {float: left; margin: 0.2em 0 0.2em 0; width: 20.5em;}
+							body.js span.construct-openid em {clear: left; font-weight: 100;}
+						
+			
+			
 
 			/* ---- =Profile ---- */
 			#profile-menu {float: right; width: 10em;}

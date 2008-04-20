@@ -1,8 +1,11 @@
 /*
 	Adds a fieldset to help people enter common OpenID services they may not know about.
 */
+
+
 (function() {
 	var addEvent = function() {
+	
 	  if (window.addEventListener) {
 	    return function(el, type, fn) {
 	      el.addEventListener(type, fn, false);
@@ -16,7 +19,7 @@
 	    };
 	  }
 	}();
-
+	
 	var openIdProviders = {
 		"Wordpress": "http://<username>.wordpress.com",
 		"Blogger": "http://<username>.blogger.com",
@@ -51,7 +54,7 @@
 			}
 		}
 		
-		p.innerHTML = 'If you use ' + providersInSentenceForm + ' you probably already have an OpenID and you didn&rsquo;t even know it. If you want to register your own see <a href="http://openid.net/get/">openid.net</a> for a list of reputable OpenID providers.'
+		p.innerHTML = 'If you use ' + providersInSentenceForm + ' you probably already have an OpenID and you didn&rsquo;t even know it. If you want to register your own, see <a href="http://openid.net/get/">openid.net</a> for a list of reputable OpenID providers.'
 		p.className = "explanation";
 		return p;
 	}
@@ -76,7 +79,7 @@
 				<em class="preview">http://ablog.wordpress.com</em>
 			</span>
 			
-		A pragraph is also placed as the first child of the containing form:
+		A paragraph is also placed as the first child of the containing form:
 			<p class="explanation">If you use WordPress...</p>
 	*/
 	var initOpenIDHelper = function(urlInput) {
@@ -143,7 +146,7 @@
 		service.appendChild(optGroup);
 		
 		var inputLabel = document.createElement("label");
-		var inputLabelText = document.createTextNode("URL ");
+		var inputLabelText = document.createTextNode("Enter your OpenID URL");
 		inputLabel.appendChild(inputLabelText);
 		surroundingSpan.appendChild(inputLabel);
 		
@@ -162,7 +165,7 @@
 			if (service.value == "") {
 				hiddenUrlInput.value = newInput.value;
 				previewEm.style.display = "none";
-				inputLabelText.data = "Address "
+				inputLabelText.data = "Enter your address "
 			} else {
 				var urlTemplate = openIdProviders[service.value];
 				if (newInput.value == "") {
@@ -173,7 +176,7 @@
 				hiddenUrlInput.value = urlTemplate.replace("<username>", replaceUsername);
 				previewEm.innerHTML = hiddenUrlInput.value;
 				previewEm.style.display = "block";
-				inputLabelText.data = "Username "
+				inputLabelText.data = "Enter your username "
 			}
 		}
 		
@@ -190,6 +193,9 @@
 	}
 		
 	addEvent(window, 'load', function() {
+		// making sexy unobtrusive CSS possible since 2006
+		document.body.className = (document.body.className +' '||'') + 'js';
+		
 		var inputs = document.getElementsByTagName("input");
 		for (var i = 0; i<inputs.length; i=i+1) {
 			if (isOpenIdUrlInput(inputs[i])) initOpenIDHelper(inputs[i]);
