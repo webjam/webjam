@@ -34,6 +34,9 @@
 		openIdProviderNames.push(s);
 	}
 	
+	var icoForService = function(serviceName) {
+	  return "/images/openid-logos/id-" + serviceName.toLowerCase().replace(/ +/,"") + ".ico"
+	}
 
 	var	explanationParagraph = function() {
 		var p = document.createElement("p");
@@ -105,20 +108,19 @@
 		var serviceImagesSpan = document.createElement("span");
 		serviceImagesSpan.className = "service-images";
 		for (var i=0; i < openIdProviderNames.length; i=i+1) {
-			this.i = i;
 			var a  = document.createElement("a");
 			var img = document.createElement("img");
-			img.src = "https://www.blogger.com/img/openid-inputicon.gif";
+			img.src = icoForService(openIdProviderNames[i]);
 			img.width = "16";
 			img.height = "16";
-			img.alt = serviceName;
+			img.alt = openIdProviderNames[i];
 			img.href = "#";
 			img.serviceIndex = i;
 			a.appendChild(img);
 			addEvent(a, "click", function(event) {
 				var event = (event) ? event : ((window.event) ? window.event : null);
 				if (event) {
-					service.selectedIndex = event.target.serviceIndex;
+					service.selectedIndex = event.target.serviceIndex + 1;
 					updateUrl();
 				}
 			});
