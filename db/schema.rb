@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(:version => 20080621175528) do
     t.datetime "updated_at"
   end
 
-  create_table "rsvp", :force => true do |t|
+  create_table "rsvps", :force => true do |t|
     t.integer  "event_id",   :limit => 11
     t.integer  "user_id",    :limit => 11
     t.datetime "created_at"
