@@ -168,14 +168,15 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				/* ----- =hAtom ----- */
 				.hentry {border-bottom: 1px solid #292a2a; float: left; width: auto;}
 					.hentry .entry-title {background: #0e0e0e; color: #fff; margin: 0 0 0.4em;}
-					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; font-size: 0.8em; list-style-type: none; margin: 0 0 2em 0; overflow: auto; padding: 0.2em 0;}
-						#content .hentry .byline li {float: left; list-style-type: none; width: auto;}
-						#content .hentry .byline li.comments {float: right; background: #0e0e0e url('/images/icon-comments-full.gif') no-repeat 0 1px; padding: 0 0 0 20px;}
+					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; float: left; font-size: 0.8em; list-style-type: none; margin: 0 0 2em 0; padding: 0.5em 0 0.2em; width: auto;}
+						#content .hentry .byline li {float: left; list-style-type: none; width: 31.9em;}
+						#content .hentry .byline li.comments {background: #0e0e0e url('/images/icon-comments-full.gif') no-repeat 0 1px; padding: 0 0 0 20px; width: auto;}
 						.hentry .byline .updated {}
 					.hentry .entry-content {}
 					.hentry .author {}
 						.hentry .vcard {}
-						.hentry .vcard .fn {}
+						  .hentry .vcard img {top: -4px;}
+						.hentry .vcard .fn {padding: 0 0 0 10px;}
 					#content .hentry .entry-footer {border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; font-weight: 100; margin: 0 0 0.08em 0; padding: 0.2em 0 0.2em 0; width: 43em;}
 						#content .hentry .entry-footer li {float: left; list-style-type: none;}
 							#content .hentry .entry-footer li.post-date {background: #0e0e0e url('/images/icon-post.jpg') no-repeat 0 2px; color: #fff; padding: 0 0 0 20px;}
