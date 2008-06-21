@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :strip_permalinks
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_nick_name(params[:path_info])
     # @upcoming_events = @user.events.find_upcoming(:all, :order => 'held_at ASC')
     # @previous_events = @user.events.find_past(:all, :order => 'held_at ASC')
   end

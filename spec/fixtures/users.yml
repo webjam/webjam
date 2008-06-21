@@ -1,9 +1,0 @@
-tim:
-  id: 1
-  nick_name: toolmantim
-  full_name: Tim Lucas
-  email: t.lucas@toolmantim.com
-  created_at: <%= 5.days.ago.to_s :db %>
-  website_url: http://toolmantim.com
-  website_name: 
-  permalink: toolmantim
