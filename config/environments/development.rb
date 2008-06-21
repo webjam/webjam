@@ -15,3 +15,12 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+config.after_initialize do
+  OpenIdAuthentication.class_eval do
+    protected
+      def authenticate_with_open_id(identity_url = params[:openid_url], options = {}, &block) #:doc:
+        yield OpenIdAuthentication::Result[:successful], identity_url, nil
+      end
+  end
+end
