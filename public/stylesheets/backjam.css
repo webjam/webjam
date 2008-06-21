@@ -13,7 +13,6 @@ TOC
 		 --- =Date, Times etc
 	-- =Generic Forms
 - =Structure
-	-- =Upcoming Events
 	-- =Main Content
 		 --- =Content
 				 ---- =Posts
@@ -44,7 +43,7 @@ TOC
 		h1 {background: #0e0e0e; color: #666; font-size: 1.72em; font-weight: 300;}
 			h1 strong {background: #0e0e0e; color: #fff; font-weight: 300;}
 		h2 {font-size: 2.572em;}
-		h3 {font-size: 1.5em;}
+		h3 {font-size: 1.143em;}
 		h4 {font-size: 1.4em;}
 		h5 {font-size: 1.2em;}
 		h6 {font-size: 1.1em;}
@@ -66,12 +65,9 @@ TOC
 		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
 		
 		/* --- =Avatars --- */
-		
 		.user-avatar {position: relative;}
 			.user-avatar .vcard {padding: 0 0 0 18px; text-decoration: none;}	
-/*      li.profile .user-avatar {display: block; line-height: 1; padding: 0.6em 1em 2em 0em;} */
 				.user-avatar .vcard img {left: 0; position: absolute; top: -4px;}
-/*        li.profile .user-avatar .vcard img {left: 2px; top: 2px;}*/
 				.user-avatar .vcard .fn {padding: 0 0 0 10px;}
 
 		/* --- =Dates, Times etc --- */
@@ -89,11 +85,7 @@ TOC
 		select {float: left; width: 10em;}
 		textarea {float: left; width: 27em;}
 			input.checkbox {margin: 0.4em 0; width: auto;}
-/*			fieldset.buttons input,
-			input.submit,
-			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 8.4em; width: auto;}*/
 			input.submit {margin: 0.4em 0 0 10.2em; width: 14.3em;}
-			
 			form.button-to {display: inline; margin: 0; padding: 0;}
 
 
@@ -135,31 +127,22 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 	#pagetitle {font-size: 1.8em;}
 		body.home h1 img,
 		#pagetitle img {border: none; font-size: 0.4em; height: 15.2em; max-height: 152px; width: 97em; max-width: 1033px;}
-	
-	/* -- =Upcoming Events -- */
-	#upcoming-events {background: #370e0c url('/images/bg-perth-upcoming.jpg') no-repeat 0 0; clear: both; float: left; margin: 0; padding: 0 0 0 20em; width: 50em;}
-		#upcoming-events dl.vevent {border-left: 1px solid #320b10; float: left; font-size: 1em; margin: 0 2em; padding: 0 1em 0; position: relative; width: 12em;}
-			#upcoming-events .vevent dt.summary {font-size: 1em; font-weight: normal;}
-				#upcoming-events .vevent a.url {display: block; font-size: 1.3em; line-height: 1; margin: 0.2em 0 0; text-decoration: none; text-transform: lowercase;}
-			#upcoming-events .vevent dd {margin: 0;}
-				#upcoming-events .vevent dd.location {left: -9999em; position: absolute; top: -9999em;}
-				#upcoming-events .vevent dd.date-time {left: -2.3em; position: absolute; top: 0; width: 2.3em;}
-					#upcoming-events .vevent .dtstart {}
-						#upcoming-events .vevent .dtstart .date {display: block; font-size: 1.6em; line-height: 1.2; text-align: center;}
-						#upcoming-events .vevent .dtstart .month {display: block; line-height: 1; text-align: center;}
-					#upcoming-events .vevent dd.rsvp,
-					#upcoming-events .vevent dd.jammers {margin: 0 0 0.2em; position: relative; width: 8.4em;}
-						#upcoming-events .vevent dd.rsvp a,
-						#upcoming-events .vevent dd.jammers a {background: #ff5e28; color: #200d07; font-size: 0.7em; padding: 0.1em 0.3em 0.1em; position: absolute; text-align: center; text-decoration: none; text-transform: uppercase; top: 0.3em; right: 0; width: 5em;}
-						#upcoming-events .vevent dd.rsvp a.full,
-						#upcoming-events .vevent dd.jammers a.full {background: #232524; color: #7c7e7d;}
-
+		
 	
 	/* -- =Main Content -- */
 	#maincontent {float: left; padding: 0; width: auto;}
 	
 		/* --- =Content --- */
-		#content {border-left: 1px solid #1a1a1a; float: right; margin: 0 1em 0 0; padding: 2em 1em 1em; width: 42em;}
+		#content {border-left: 1px solid #1a1a1a; float: right; margin: 0 1em 0 0; padding: 2em 0 1em; width: 42em;}
+		
+		  #content .event {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
+		    #content .event .event-details {overflow: auto;}
+		
+    		  #content .event-details h2 {float: left; margin: 0 0.4em 0 0; width: auto;}
+    		  #content .event-details h3 {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
+    		  #content .event-details a.details {float: right; width: auto;}
+    		
+    		#content .event .column {float: left; margin: 0 1em 0 0; width: 19em;}
 			
 			/* ---- =Posts ---- */
 			
@@ -280,8 +263,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					.vcard dd.avatar {background: #0e0e0e url('/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
 						.vcard dd.avatar a {display: block;}
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
-						
-			
 
 		/* --- =Other Content --- */
 		#other-content {float: left; padding: 2em 1em 1em; width: 22em;}
@@ -314,14 +295,3 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 /* - =JS enabled - */
 
 html.js {}
-
-
-/* - =Tim's rules - need to be folded in - */
-
-li.current a {
-  color: #f66;
-}
-
-h3 {
-  clear: left;
-}
