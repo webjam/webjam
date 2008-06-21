@@ -41,6 +41,14 @@
     </div> <!-- // #content -->
       
     <div id="other-content">
+      <div id="wtf">
+        <h2><strong>Webjam</strong>? WTF?</h2>
+
+        <p><strong>18 presenters</strong> with <strong>3 minutes</strong> each to show off their <strong>hot web work</strong>.</p>
+        <p>You <strong>vote</strong> for the big winner and they get to take home <strong>cool booty</strong>.</p>
+        <p>Oh, and sometimes there are <strong>free drinks</strong> too.</p>
+      </div> <!-- // // #wtf -->
+      
       <ul id="main-nav">
         <% for event in @upcoming_events %>
           <li class="<%= class_for_section(event_section(event)) %>"><%= link_to event, event_path(event) %></li>

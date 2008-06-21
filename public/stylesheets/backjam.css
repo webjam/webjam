@@ -238,8 +238,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 										
 			
 			/* ---- =About ---- */
-			body.about #content p {font: 300 1.6em/2 "Trebuchet MS", Arial, Helvetica, sans-serif;}
-				body.about #content p strong {font-weight: 700;}
+			#wtf p {font: 300 1.2em/1.2 "Trebuchet MS", Arial, Helvetica, sans-serif;}
+				#wtf p strong {font-weight: 700;}
 			
 			/* ---- =Join Form ---- */
 				#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
