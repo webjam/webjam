@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080621164332) do
+ActiveRecord::Schema.define(:version => 20080621164611) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -76,6 +76,13 @@ ActiveRecord::Schema.define(:version => 20080621164332) do
     t.datetime "updated_at"
     t.datetime "published_at"
     t.string   "permalink"
+  end
+
+  create_table "rsvp", :force => true do |t|
+    t.integer  "event_id",   :limit => 11
+    t.integer  "user_id",    :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sessions", :force => true do |t|

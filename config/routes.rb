@@ -29,4 +29,5 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.admin 'admin', :controller => 'admin/home'
   map.legacy_post 'post/:permalink.html', :controller => "posts", :action => "legacy" 
+  map.connect '*path_info', :controller => 'users', :action => 'show'
 end
