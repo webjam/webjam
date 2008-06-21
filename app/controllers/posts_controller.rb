@@ -7,8 +7,9 @@ class PostsController < ApplicationController
     @posts = Post.find_all_for_archive
   end
   
-  def index_for_year
-    @posts = Post.published.find_all_by_year(params[:year])
+  def index_by_year
+    @posts = Post.published.find_all_for_archive_by_year(params[:year].to_i)
+    render :template => 'posts/index'
   end
   
   def legacy

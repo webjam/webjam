@@ -15,9 +15,6 @@ ActionController::Routing::Routes.draw do |map|
                 :year => /\d{4}/,
                 :conditions => { :method => :post }
 
-  map.resources :posts do |posts|
-    posts.resources :comments, :name_prefix => 'post_'
-  end
   map.resources :comments
 #  map.resources :events, :collection => [:past]
   map.resource  :session, :member => { :create => :any }
