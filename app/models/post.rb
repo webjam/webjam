@@ -40,14 +40,15 @@ class Post < ActiveRecord::Base
   def self.find_legacy(permalink)
     find_by_permalink(permalink) || raise(ActiveRecord::RecordNotFound, "No legacy post with permalink #{permalink} found")
   end
-  def to_param
-    permalink
-  end
   
   def to_s
     title
   end
   def published?
     published_at
+  end
+  
+  def before_save
+    self.year = published_at.year
   end
 end
