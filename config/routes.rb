@@ -5,11 +5,11 @@ ActionController::Routing::Routes.draw do |map|
                 :controller => 'posts', 
                 :action => 'index_by_year',
                 :year => /\d{4}/
-  map.post 'news/:year/:post_name',
+  map.post 'news/:year/:permalink',
                 :controller => 'posts',
                 :action => 'show',
                 :year => /\d{4}/
-  map.post_comments 'news/:year/:post_name/comments',
+  map.post_comments 'news/:year/:permalink/comments',
                 :controller => 'comments',
                 :action => 'create',
                 :year => /\d{4}/,

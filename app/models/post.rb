@@ -1,7 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments, :as => :commentable
-  has_permalink :title
 
   validates_presence_of :title, :body
   
@@ -23,12 +22,19 @@ class Post < ActiveRecord::Base
       ORDER BY posts.published_at
     )
   end
+  
+  def self.find_for_year(year)
+    start_year = Time.utc(year)
+    published.all :conditions => {:published_at => (start_year..(start_year + 1.year))}
+  end
+  
   def self.find_legacy(permalink)
     find_by_permalink(permalink) || raise(ActiveRecord::RecordNotFound, "No legacy post with permalink #{permalink} found")
   end
   def to_param
-    "#{id}-#{permalink}"
+    permalink
   end
+  
   def to_s
     title
   end
