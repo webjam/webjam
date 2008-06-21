@@ -126,6 +126,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#account-tools li a:focus strong {color: #0e0e0e;}
 				
 				#account-tools li a.user-avatar .vcard img {left: 3px; top: 3px;}
+				#account-tools li a.user-avatar .vcard .fn {padding: 0;}
 
 	#wrapper {background: #0e0e0e url('/images/bg-footer.gif') repeat-x 0 100%; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
