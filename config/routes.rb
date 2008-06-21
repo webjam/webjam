@@ -18,10 +18,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :identity_urls, :collection => {:create => :any}
   map.with_options(:controller => 'pages') do |m|
-    m.about   'about',   :action => 'about'
     m.contact 'contact', :action => 'contact'
     m.home    '',        :action => 'home'
     m.open_id   'single-sign-on',   :action => 'single-sign-on'
+    # temporary static files to build front-end
+    m.statichome   'statichome',   :action => 'statichome'
   end
   map.namespace :admin do |admin|
     admin.resources :locations, :events, :posts

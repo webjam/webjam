@@ -7,7 +7,7 @@ class PagesController < ApplicationController
       @posts = Post.find_published(:all, :order => 'published_at DESC', :limit => 1)
     end
   end
-  def about
+  def statichome
   end
   def contact
   end
