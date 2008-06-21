@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
   
-  rescue_from ActiveRecord::RecordNotFound, NotFound do
+  rescue_from ActiveRecord::RecordNotFound, NotFoundError do
     render :file => File.join(RAILS_ROOT, "public", "404.html"), :status => :not_found
   end
   
