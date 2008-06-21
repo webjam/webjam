@@ -26,7 +26,10 @@ ActionController::Routing::Routes.draw do |map|
     m.open_id   'single-sign-on',   :action => 'single-sign-on'
   end
   map.namespace :admin do |admin|
-    admin.resources :locations, :events, :posts
+    admin.resources :events do |event|
+      event.resources :rsvps
+    end
+    admin.resources :locations, :posts
   end
   map.admin 'admin', :controller => 'admin/home'
   map.legacy_post 'post/:permalink.html', :controller => "posts", :action => "legacy" 
