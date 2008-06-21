@@ -5,7 +5,3 @@
 <% content_for :top do %>
   <h1><%= image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam" %></h1>
 <% end %>
-
-<div class="hfeed">
-<%= render :collection => @posts, :partial => 'posts/post' %>
-</div> <!-- // .hfeed -->

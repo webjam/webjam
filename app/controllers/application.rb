@@ -6,8 +6,6 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   before_filter :login_from_cookie
 
-  before_filter :find_upcoming_events
-
   helper :all
   
   protected
@@ -33,10 +31,6 @@ class ApplicationController < ActionController::Base
     
     def render_404
       render :file => "#{RAILS_ROOT}/public/404.html", :status => :not_found
-    end
-    
-    def find_upcoming_events
-      @upcoming_events = Event.find_upcoming(:all, :order => 'held_at ASC', :include => :location)
     end
     
     def strip_permalinks

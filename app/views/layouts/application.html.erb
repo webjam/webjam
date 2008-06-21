@@ -29,27 +29,11 @@
     <p id="pagetitle"><a href="/"><%= image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam" %></a></p>
   <% end %>
   
-  <% unless @upcoming_events.empty? %>
-    <div id="upcoming-events">
-      <%= render :collection => @upcoming_events, :partial => 'layouts/event' %>
-    </div>
-  <% end %>
-  
   <div id="maincontent">
     <div id="content">
       <%= yield :layout %>
     </div> <!-- // #content -->
       
-    <div id="other-content">
-      <ul id="main-nav">
-        <% for event in @upcoming_events %>
-          <li class="<%= class_for_section(event_section(event)) %>"><%= link_to event, event_path(event) %></li>
-          <% end %>
-          <li class="<%= class_for_section :home %>"><%= link_to "home", home_path %></li>
-          <li class="<%= class_for_section :blog %>"><%= link_to "blog", posts_path %></li>
-          <li class="<%= class_for_section :about %>"><%= link_to "wtf is webjam?", about_path %></li>
-      </ul>
-    </div> <!-- // #other-content -->
   </div> <!-- // #maincontent -->
   <div id="subcontent">
 
