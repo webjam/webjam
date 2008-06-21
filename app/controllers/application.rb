@@ -43,4 +43,8 @@ class ApplicationController < ActionController::Base
       params[:id] = params[:id].split('-').first if params[:id]
       true
     end
+    
+    def iphone_request?
+      params[:no_iphone].nil? && request.headers['User-Agent'].include?("iPhone")
+    end
 end
