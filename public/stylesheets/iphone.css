@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Lucida Grande";
+}
+
+body {
+  background: #000 url(../images/webjam-logo-iphone.png) no-repeat center 20px;
+  color: #fff;
+  padding: 150px 15px 12px 15px;
+}
+
+a, a:active {
+  color: #8EC0F1;
+}
