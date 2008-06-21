@@ -22,7 +22,7 @@ TOC
 		     ---- =Join Form
 				 ---- =Profile
 		 --- =Other Content
-		 	   ---- =Main Nav
+		 	   ---- =WTF
 	-- =Footer
 - =JS Enabled
 - =Tim's Rules
@@ -40,10 +40,10 @@ TOC
 		a:hover, a:active, a:focus {color: #f03e00;}
 		
 		/* --- =Headings --- */
-		h1, h2, h3, h4, h5, h6 {margin: 0 0 0.5em;}
+		h1, h2, h3, h4, h5, h6 {font-family: Futura, Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
 		h1 {background: #0e0e0e; color: #666; font-size: 1.72em; font-weight: 300;}
 			h1 strong {background: #0e0e0e; color: #fff; font-weight: 300;}
-		h2 {font-size: 1.6em;}
+		h2 {font-size: 2.572em;}
 		h3 {font-size: 1.5em;}
 		h4 {font-size: 1.4em;}
 		h5 {font-size: 1.2em;}
@@ -98,7 +98,7 @@ TOC
 
 
 /* - =Structure - */
-body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; color: #fff; font: 62.5%/1.3 "Trebuchet MS", Arial, Helvetica, sans-serif; margin:0; padding:0;}
+body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; color: #fff; font: 62.5%/1.3 "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0; padding: 0;}
 	body.home {}
 	
 #page {font-size: 1.4em; margin: 4em auto 0; position: relative; width: 70em;}
@@ -235,11 +235,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 										ul.posts li a.comments:hover,
 										ul.posts li a.comments:active,
 										ul.posts li a.comments:focus {}
-										
-			
-			/* ---- =About ---- */
-			#wtf p {font: 300 1.2em/1.2 "Trebuchet MS", Arial, Helvetica, sans-serif;}
-				#wtf p strong {font-weight: 700;}
 			
 			/* ---- =Join Form ---- */
 				#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
@@ -292,6 +287,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		#other-content {float: left; padding: 0 1em 2em; width: 22em;}
 		
 		  #other-content .item {margin: 0 0 1em 0;}
+		  
+      /* ---- =WTF ---- */
+  		#wtf p {font: 300 1.2em/1.2 Helvetica, Arial, sans-serif;}
+				#wtf p strong {font-weight: 700;}
 		
 			/* ---- =Main Nav ---- */
 			#main-nav {float: left; margin: 0 1em 0 2em;}
