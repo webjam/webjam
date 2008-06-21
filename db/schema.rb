@@ -77,20 +77,21 @@ ActiveRecord::Schema.define(:version => 20080621175528) do
     t.datetime "updated_at"
     t.datetime "published_at"
     t.string   "permalink"
+    t.integer  "year",         :limit => 11
   end
 
   create_table "presentation_proposals", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
+    t.integer  "user_id",     :limit => 11
+    t.integer  "event_id",    :limit => 11
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "rsvps", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "user_id"
+  create_table "rsvp", :force => true do |t|
+    t.integer  "event_id",   :limit => 11
+    t.integer  "user_id",    :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,8 +102,8 @@ ActiveRecord::Schema.define(:version => 20080621175528) do
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "nick_name"

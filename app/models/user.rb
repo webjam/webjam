@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
   
   validates_presence_of :full_name, :nick_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
-
-  has_permalink :nick_name
+  validates_uniqueness_of :nick_name
 
   def remember_token?
     remember_token_expires_at && Time.now.utc < remember_token_expires_at 
@@ -43,7 +42,7 @@ class User < ActiveRecord::Base
   end
   
   def to_param
-    "#{id}-#{permalink}"
+    nick_name
   end
   
   def to_s
