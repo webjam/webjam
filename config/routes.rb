@@ -3,8 +3,9 @@ ActionController::Routing::Routes.draw do |map|
     posts.resources :comments, :name_prefix => 'post_'
   end
   map.resources :comments
-#  map.resources :events, :collection => [:past]
   map.resource  :session, :member => { :create => :any }
+
+  map.event ":id", :controller => "events", :action => "show", :requirements => {:id => /webjam\d+/}
   
   map.with_options(:controller => "users") do |user|
     user.update_profile_details_current_user 'account/update_profile_details', :conditions => {:method => :put}, :action => "update_profile_details"

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  NotFound = StandardError
+  
   include ExceptionNotifiable
 
   session :session_key => '_backjam_session_id'
@@ -7,6 +9,10 @@ class ApplicationController < ActionController::Base
   before_filter :login_from_cookie
 
   helper :all
+  
+  rescue_from ActiveRecord::RecordNotFound, NotFound do
+    render :file => File.join(RAILS_ROOT, "public", "404.html"), :status => :not_found
+  end
   
   protected
     TLD_LENGTH = 2
