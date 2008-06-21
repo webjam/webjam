@@ -1,6 +1,6 @@
 class RsvpMigrate < ActiveRecord::Migration
   def self.up
-    create_table :rsvp do |t|
+    create_table :rsvps do |t|
       t.integer :event_id
       t.integer :user_id
       t.timestamps
@@ -8,6 +8,6 @@ class RsvpMigrate < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :rsvp
+    drop_table :rsvps
   end
 end
