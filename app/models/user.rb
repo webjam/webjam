@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :temporary_mugshots, :class_name => 'Mugshot', :foreign_key => 'temp_user_id'
   has_many :posts # TODO: DEPENDENT?
   has_many :identity_urls, :dependent => :destroy
+  has_many :rsvps
+  has_many :events, :through => :rsvps
   
   validates_presence_of :full_name, :nick_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
@@ -46,6 +48,10 @@ class User < ActiveRecord::Base
   
   def to_s
     nick_name
+  end
+
+  def rsvped?(event)
+    events.include?(event)   
   end
   
   protected
