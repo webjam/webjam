@@ -1,5 +1,5 @@
 # This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of ActiveRecord to incrementally modify your database, and
+# please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your database schema. If you need
@@ -9,11 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 4) do
+ActiveRecord::Schema.define(:version => 20080621114622) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "commentable_id"
+    t.integer  "user_id",          :limit => 11
+    t.integer  "commentable_id",   :limit => 11
     t.string   "commentable_type"
     t.text     "body"
     t.datetime "created_at"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(:version => 4) do
     t.datetime "held_at"
     t.datetime "published_at"
     t.text     "description"
-    t.integer  "location_id"
+    t.integer  "location_id",  :limit => 11
   end
 
   create_table "identity_urls", :force => true do |t|
-    t.integer "user_id"
+    t.integer "user_id", :limit => 11
     t.text    "url"
   end
 
@@ -38,15 +38,15 @@ ActiveRecord::Schema.define(:version => 4) do
   end
 
   create_table "mugshots", :force => true do |t|
-    t.integer  "temp_user_id"
-    t.integer  "user_id"
-    t.integer  "parent_id"
+    t.integer  "temp_user_id", :limit => 11
+    t.integer  "user_id",      :limit => 11
+    t.integer  "parent_id",    :limit => 11
     t.string   "content_type"
     t.string   "filename"
     t.string   "thumbnail"
-    t.integer  "size"
-    t.integer  "width"
-    t.integer  "height"
+    t.integer  "size",         :limit => 11
+    t.integer  "width",        :limit => 11
+    t.integer  "height",       :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -55,23 +55,19 @@ ActiveRecord::Schema.define(:version => 4) do
     t.binary  "server_url"
     t.string  "handle"
     t.binary  "secret"
-    t.integer "issued"
-    t.integer "lifetime"
+    t.integer "issued",     :limit => 11
+    t.integer "lifetime",   :limit => 11
     t.string  "assoc_type"
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.string  "nonce"
-    t.integer "created"
-  end
-
-  create_table "open_id_authentication_settings", :force => true do |t|
-    t.string "setting"
-    t.binary "value"
+    t.integer "timestamp",  :limit => 11, :null => false
+    t.string  "server_url"
+    t.string  "salt",                     :null => false
   end
 
   create_table "posts", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",      :limit => 11
     t.string   "title"
     t.text     "body"
     t.datetime "created_at"
