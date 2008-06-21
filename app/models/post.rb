@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments, :as => :commentable
 
-  validates_presence_of :title, :body
+  validates_presence_of :title, :body, :permalink
   
   named_scope :published, :conditions => 'published_at IS NOT NULL'
   named_scope :recently_published, 
