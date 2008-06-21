@@ -6,6 +6,10 @@ class Event < ActiveRecord::Base
   end
 
   def full?
-    rsvps.size >= rsvp_limit
+    self.rsvps.size >= self.rsvp_limit
   end 
+
+  def to_param
+    self.tag
+  end
 end

@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource  :session, :member => { :create => :any }
 
   map.event ":id", :controller => "events", :action => "show", :requirements => {:id => /webjam\d+/}
-  map.rsvp ":event/rsvp", :controller => "rsvps", :action => "create", :conditions => { :method => :post }, :requirements => {:event => /webjam\d+/}
+  map.event_rsvps ":event/rsvps", :controller => "rsvps", :action => "create", :conditions => { :method => :post }, :requirements => {:event => /webjam\d+/}
   
   map.with_options(:controller => "users") do |user|
     user.update_profile_details_current_user 'account/update_profile_details', :conditions => {:method => :put}, :action => "update_profile_details"
@@ -30,5 +30,5 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.admin 'admin', :controller => 'admin/home'
   map.legacy_post 'post/:permalink.html', :controller => "posts", :action => "legacy" 
-  map.connect '*path_info', :controller => 'users', :action => 'show'
+  map.user '*path_info', :controller => 'users', :action => 'show'
 end

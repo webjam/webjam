@@ -4,7 +4,7 @@
 
 <% unless @event.full? or current_user.rsvped?(@event) %>
  <p>
-  <% form_tag rsvp_path(:event => @event.tag) do |form| %>
+  <% form_tag event_rsvps_path(@event) do |form| %>
    <%= submit_tag 'RSVP!' %>
   <% end %>
  </p>
