@@ -20,7 +20,7 @@ config.after_initialize do
   OpenIdAuthentication.class_eval do
     protected
       def authenticate_with_open_id(identity_url = params[:openid_url], options = {}, &block) #:doc:
-        yield OpenIdAuthentication::Result[:successful], identity_url, nil
+        yield OpenIdAuthentication::Result[:successful], normalize_url(identity_url), nil
       end
   end
 end
