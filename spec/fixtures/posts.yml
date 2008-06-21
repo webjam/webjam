@@ -1,9 +1,0 @@
-first:
-  id: 1
-  user_id: 1
-  title: Hey hey
-  body: This is my _first_ post
-  created_at: <%= 1.day.ago.to_s :db %>
-  updated_at: <%= 1.day.ago.to_s :db %>
-  published_at: <%= 1.day.ago.to_s :db %>
-  permalink: hey-hey
