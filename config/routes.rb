@@ -1,4 +1,20 @@
 ActionController::Routing::Routes.draw do |map|
+  # super friendly post urls
+  map.posts 'news', :controller => 'posts', :action => 'index'
+  map.posts_year 'news/:year', 
+                :controller => 'posts', 
+                :action => 'index_by_year',
+                :year => /\d{4}/
+  map.post 'news/:year/:post_name',
+                :controller => 'posts',
+                :action => 'show',
+                :year => /\d{4}/
+  map.post_comments 'news/:year/:post_name/comments',
+                :controller => 'comments',
+                :action => 'create',
+                :year => /\d{4}/,
+                :conditions => { :method => :post }
+
   map.resources :posts do |posts|
     posts.resources :comments, :name_prefix => 'post_'
   end
