@@ -41,22 +41,46 @@
     </div> <!-- // #content -->
       
     <div id="other-content">
-      <div id="wtf">
-        <h2><strong>Webjam</strong>? WTF?</h2>
+      <div class="item" id="wtf">
+        <h2>WTF?</h2>
 
         <p><strong>18 presenters</strong> with <strong>3 minutes</strong> each to show off their <strong>hot web work</strong>.</p>
         <p>You <strong>vote</strong> for the big winner and they get to take home <strong>cool booty</strong>.</p>
         <p>Oh, and sometimes there are <strong>free drinks</strong> too.</p>
-      </div> <!-- // // #wtf -->
+      </div> <!-- // .item #wtf -->
       
-      <ul id="main-nav">
+      <div class="item" id="news">
+        <h2>News</h2>
+        <ul>
+          <li>
+            <a href="/posts/19-webjam-will-rock-you">Webjam will rock you</a> (<a href="/posts/19-webjam-will-rock-you#comments" class="no-comments">0</a>);
+          </li>
+          <li>
+            <a href="/posts/20-book-bonanza">Book Bonanza</a> (<a
+  href="/posts/20-book-bonanza#comments" class="no-comments">0</a>);
+          </li>
+          <li>
+            <a href="/posts/21-time-and-place">Time and Place</a> (<a
+  href="/posts/21-time-and-place#comments" class="no-comments">0</a>); and 
+          </li>
+          <li>
+            <a href="/posts/22-jams-kicked-out">Jams == Kicked Out ++</a> (<a
+  href="/posts/22-jams-kicked-out#comments" class="no-comments">0</a>). 
+          </li>
+          <li>
+            <a href="/posts/16-perth-plentiful-prizes">Perth's Plentiful Prizes</a> (<a href="/posts/16-perth-plentiful-prizes#comments" class="no-comments">0</a>); 
+          </li>
+        </ul>
+      </div> <!-- // .item #posts --> 
+      
+      <!-- <ul id="main-nav">
         <% for event in @upcoming_events %>
           <li class="<%= class_for_section(event_section(event)) %>"><%= link_to event, event_path(event) %></li>
           <% end %>
           <li class="<%= class_for_section :home %>"><%= link_to "home", home_path %></li>
           <li class="<%= class_for_section :blog %>"><%= link_to "blog", posts_path %></li>
           <li class="<%= class_for_section :about %>"><%= link_to "wtf is webjam?", about_path %></li>
-      </ul>
+      </ul> -->
     </div> <!-- // #other-content -->
   </div> <!-- // #maincontent -->
 </div> <!-- // #wrapper -->

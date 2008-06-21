@@ -291,6 +291,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		/* --- =Other Content --- */
 		#other-content {float: left; padding: 0 1em 2em; width: 22em;}
 		
+		  #other-content .item {margin: 0 0 1em 0;}
+		
 			/* ---- =Main Nav ---- */
 			#main-nav {float: left; margin: 0 1em 0 2em;}
 				#main-nav li {font-size: 1.2em; margin: 0 0 0.2em;}
