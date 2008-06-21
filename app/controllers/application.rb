@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  NotFoundError = StandardError
+  class NotFound < StandardError; end
   
   include ExceptionNotifiable
 
@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
   
-  rescue_from ActiveRecord::RecordNotFound, NotFoundError do
+  rescue_from ActiveRecord::RecordNotFound, NotFound do
     render :file => File.join(RAILS_ROOT, "public", "404.html"), :status => :not_found
   end
   

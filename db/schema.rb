@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20080621175528) do
     t.string   "timezone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rsvp_limit"
+    t.integer  "rsvp_limit", :limit => 11
   end
 
   create_table "identity_urls", :force => true do |t|
