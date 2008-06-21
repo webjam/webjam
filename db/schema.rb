@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080621164611) do
+ActiveRecord::Schema.define(:version => 20080621175528) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -78,9 +78,18 @@ ActiveRecord::Schema.define(:version => 20080621164611) do
     t.string   "permalink"
   end
 
-  create_table "rsvps", :force => true do |t|
-    t.integer  "event_id"
-    t.integer  "user_id"
+  create_table "presentation_proposals", :force => true do |t|
+    t.integer  "user_id",     :limit => 11
+    t.integer  "event_id",    :limit => 11
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rsvp", :force => true do |t|
+    t.integer  "event_id",   :limit => 11
+    t.integer  "user_id",    :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -91,8 +100,8 @@ ActiveRecord::Schema.define(:version => 20080621164611) do
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "nick_name"
