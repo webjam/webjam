@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080621161323) do
+ActiveRecord::Schema.define(:version => 20080621164611) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -17,6 +17,15 @@ ActiveRecord::Schema.define(:version => 20080621161323) do
     t.string   "commentable_type"
     t.text     "body"
     t.datetime "created_at"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.string   "tag"
+    t.datetime "held_at"
+    t.string   "timezone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "identity_urls", :force => true do |t|
@@ -69,14 +78,21 @@ ActiveRecord::Schema.define(:version => 20080621161323) do
     t.string   "permalink"
   end
 
+  create_table "rsvp", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id"
     t.text     "data"
     t.datetime "updated_at"
   end
 
-  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
 
   create_table "users", :force => true do |t|
     t.string   "nick_name"
