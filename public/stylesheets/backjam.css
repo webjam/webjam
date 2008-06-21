@@ -74,8 +74,9 @@ TOC
 		.user-avatar {position: relative;}
 			.user-avatar .vcard {padding: 0 0 0 18px; text-decoration: none;}	
 			zli.profile .user-avatar {display: block; line-height: 1; padding: 0.6em 1em 2em 0em;}	
-				.user-avatar .vcard img {left: 0; position: absolute; top: 1px;}
+				.user-avatar .vcard img {left: 0; position: absolute; top: -4px;}
 				zli.profile .user-avatar .vcard img {left: 2px; top: 2px;}
+				.user-avatar .vcard .fn {padding: 0 0 0 10px;}
 
 		/* --- =Dates, Times etc --- */
 		.date {font: 1em/1.6 Georgia, serif;}
@@ -128,7 +129,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#account-tools li a:active strong,
 				#account-tools li a:focus strong {color: #0e0e0e;}
 				
-				#account-tools li a .user-avatar .vcard img {left: 3px; top: 3px;}
+				#account-tools li a.user-avatar .vcard img {left: 3px; top: 3px;}
 
 	#wrapper {background: #0e0e0e url('/images/bg-footer.gif') repeat-x 0 100%; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
@@ -158,10 +159,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 
 	
 	/* -- =Main Content -- */
-	#maincontent {float: left; padding: 2.5em 0 2em; width: 54em;}
+	#maincontent {float: left; padding: 2.5em 0 2em; width: auto;}
 	
 		/* --- =Content --- */
-		#content {border: 1px solid #1a1a1a; border-bottom: none; border-top: none; float: right; margin: 0 1em 0 0; padding: 0 1em; width: 34em;}
+		#content {border-left: 1px solid #1a1a1a; float: right; margin: 0 1em 0 0; padding: 0 1em; width: 42em;}
 			
 			/* ---- =Posts ---- */
 			
@@ -177,7 +178,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						.hentry .vcard {}
 						  .hentry .vcard img {top: -4px;}
 						.hentry .vcard .fn {padding: 0 0 0 10px;}
-					#content .hentry .entry-footer {border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; font-weight: 100; margin: 0 0 0.08em 0; padding: 0.2em 0 0.2em 0; width: 43em;}
+					#content .hentry .entry-footer {border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; font-weight: 100; margin: 0 0 0.08em 0; padding: 0.2em 0 0 0; width: 43em;}
 						#content .hentry .entry-footer li {float: left; list-style-type: none;}
 							#content .hentry .entry-footer li.post-date {background: #0e0e0e url('/images/icon-post.jpg') no-repeat 0 2px; color: #fff; padding: 0 0 0 20px;}
 							#content .hentry .entry-footer li.tags {background: #0e0e0e url('/images/icon-tag.jpg') no-repeat 0 1px; color: #fff; float: right; padding: 0 0 0 5.2em; position: relative; width: 16em;}
@@ -291,7 +292,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			
 
 		/* --- =Other Content --- */
-		#other-content {float: left; padding: 0 1em 2em; width: 14em;}
+		#other-content {float: left; padding: 0 1em 2em; width: 22em;}
 		
 			/* ---- =Main Nav ---- */
 			#main-nav {float: left; margin: 0 1em 0 2em;}
@@ -307,43 +308,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						#main-nav li li a {background: #0e0e0e url('/images/bg-subnav.gif') no-repeat 0 2px; padding: 0 0 0 12px;}
 						#main-nav li li span {background: #0e0e0e url('/images/bg-subnav-active.gif') no-repeat 0 2px; padding: 0 0 0 12px;}
 						#main-nav li strong {font-size: 0.8em;}
-		
-	/* -- =Sub Content -- */			
-	#subcontent {float: right; padding: 2.5em 1em 2em; width: 14em;}
-		#subcontent strong.title {}
-		#subcontent .module {margin: 0 0 2em 0;}
-			
-		/* --- =Schwag --- */
-		#schwag {}
-			#schwag img {}
-			#schwag p {}
-			#schwag form {}
-				#schwag form label {}
-				#schwag form input,
-			  #schwag form select {float: right; width: 15em;}
-					#schwag form input.submit {width: 9em;}
-			
-		/* --- =Sponsors --- */
-		#sponsors {}
-			.sponsorbadge {height: 50px; overflow: hidden; margin: 0.6em 0 0; text-indent: -9999em;}
-			.sponsorbadge a {background-image: url('../images/sponsor_default.gif'); display: block; height: 50px; width: 198px;}	
-				.sponsorbadge a:hover {background-position: 0 -50px;}
-
-				#sponsorcm a {	background-image: url('../images/sponsor_cm.gif'); }
-				#sponsorwd a {	background-image: url('../images/sponsor_wd.gif'); }
-				#sponsoral a {	background-image: url('../images/sponsor_al.gif'); }
-				#sponsorad a {	background-image: url('../images/sponsor_ad.gif'); }
-				#sponsorms a {	background-image: url('../images/sponsor_ms.gif'); }
-				#sponsorrs a {	background-image: url('../images/sponsor_rs.gif'); }
-				#sponsorwu a {	background-image: url('../images/sponsor_wu.gif'); }
-				#sponsorml a {	background-image: url('../images/sponsor_ml.gif'); }
-				#sponsorse a {	background-image: url('../images/sponsor_se.gif'); }
-				
-		/* --- =Supporters --- */
-		#supporters {}
-			#supporters ul {}
-				#supporters ul li {}
-					#supporters ul li a {}
 		
 	/* -- =Footer -- */		
 	#footer {background: #0e0e0e; border: 1px solid #000; border-bottom: none; border-top: none; clear: both; color: #565757; margin: 0 auto; padding: 1em 0 1em 0; text-align: center; width: 70em;}
