@@ -9,11 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD:db/schema.rb
-ActiveRecord::Schema.define(:version => 20080621174530) do
-=======
 ActiveRecord::Schema.define(:version => 20080621175528) do
->>>>>>> 27bbb62f3ef9d19dcebe22856bad46d1217ed7da:db/schema.rb
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -93,7 +89,7 @@ ActiveRecord::Schema.define(:version => 20080621175528) do
     t.datetime "updated_at"
   end
 
-  create_table "rsvp", :force => true do |t|
+  create_table "rsvps", :force => true do |t|
     t.integer  "event_id",   :limit => 11
     t.integer  "user_id",    :limit => 11
     t.datetime "created_at"
