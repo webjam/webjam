@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  NotFound = StandardError
+  NotFoundError = StandardError
   
   include ExceptionNotifiable
 
