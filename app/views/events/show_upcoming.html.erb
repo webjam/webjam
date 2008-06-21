@@ -2,7 +2,7 @@
 
 <h1><%=h @event.name %> - Upcoming</h1>
 
-<% unless current_user.rsvped?(@event) %>
+<% unless @event.full? or current_user.rsvped?(@event) %>
  <p>
   <% form_tag rsvp_path(:event => @event.tag) do |form| %>
    <%= submit_tag 'RSVP!' %>
