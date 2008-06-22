@@ -41,12 +41,16 @@ TOC
 		
 		/* --- =Headings --- */
 		h1, h2, h3, h4, h5, h6 {font-family: Futura, Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
-		h1 {font-size: 1.72em;}
-		h2 {font-size: 2.572em;}
-		h3 {font-size: 1.143em;}
-		h4 {font-size: 1.4em;}
-		h5 {font-size: 1.2em;}
-		h6 {font-size: 1.1em;}
+		h1,
+		body.home h2,
+		#wtf h2 {font-size: 2.572em;}
+		h2 {font-size: 2.2em;}
+		h3 {font-size: 1.8em;}
+    	body.home h3,
+    	body.event h2.date {font-size: 1.143em;}	
+/*    h4 {font-size: 1.4em;}
+    h5 {font-size: 1.2em;}
+    h6 {font-size: 1.1em;}*/
 		
 		#wrapper p.title {background: #0e0e0e; color: #666; font-size: 1.5em; font-weight: 300;}
 			#wrapper p.title strong {background: #0e0e0e; color: #fff; font-weight: 300;}
@@ -131,6 +135,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		body.home h1 img,
 		#pagetitle img {border: none; font-size: 0.4em; height: 15.2em; max-height: 152px; width: 97em; max-width: 1033px;}
 		
+		#phat-number {font: 100 10.286em/1.2 Futura, Helvetica, Arial, sans-serif; left: 2.29em; position: absolute; top: -0.12em;}
+		
 	
 	/* -- =Main Content -- */
 	#maincontent {}
@@ -141,12 +147,11 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		  #content .item {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
 		  #content .item.last {border: none; padding: 1.45em 1em 0 1em;}
 		    #content .item .item-details {overflow: auto; margin: 0 0 1em 0;}
-		
-		      #content h1 span {left: -9999px; position: absolute; top: -9999px;}
-		        #content h1 strong {font-size: 5.979em; left: 2.28em; position: absolute; top: -0.17em;}
-		      #content .item-details h2 {margin: 0 0.4em 0 0;}
-    		  body.home #content .item-details h2 {float: left; width: auto;}
-    		  #content .item-details h3 {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
+
+    		  body.home #content .item-details h2,
+    		  body.event #content h1 {float: left; margin: 0 0.4em 0 0; width: auto;}
+    		  body.home #content .item-details h3,
+    		  body.event #content h2.date {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
     		  #content .item-details a.details,
     		  #content .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
