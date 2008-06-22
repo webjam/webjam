@@ -1,0 +1,47 @@
+- @section = :blog
+- @page_title = "Blog Archive"
+- @body_class = "archive"
+
+%h1
+  posts age like wine. <strong>blog archive</strong>
+    
+- first_year, first_month = @posts.first.published_at.year, @posts.first.published_at.month
+- last_year, last_month   = @posts.last.published_at.year,  @posts.last.published_at.month
+
+- post_by_year_and_month = @posts.group_by {|p| [p.published_at.year, p.published_at.month]}
+
+- (first_year..last_year).to_a.reverse.each do |year|
+  %ul.xoxo.year{ :id => "year-#{year}"}
+    %li
+      %h2
+        %a{ :href => "#year-<%= year %>" }
+          = year
+
+      - (1..12).to_a.reverse.each do |month|
+        - next if (year == last_year) && (month > last_month) # start from the last month -%>
+        - next if (year == first_year) && (month < first_month) # finish on the first month -%>
+        %ul.month{ :id => "#{month_name(month).downcase}-#{year}" }
+          %li
+            %h3
+              %a{ :href => "##{month_name(month).downcase}-#{year}" }
+                = month_name(month)
+                
+            - if posts = post_by_year_and_month[[year, month]]
+              %ul.posts
+                - for post in posts
+                  %li
+                    = link_to h(post.title), post_path(:year => post.year, :permalink => post.permalink)
+                    (
+                    = link_to post.comments_count, post_path(:permalink => post.permalink, :year => post.year, :anchor => "comments"), :class => ((post.comments_count.to_i == 0) ? "no-comments" : "comments")
+                    )
+                    - if posts.length == 1
+                    - elsif post == posts[posts.length-1-1]
+                      ; and
+                    - elsif post == posts.last
+                      .
+                    - else
+                      ;
+
+            - else
+              %p
+                Nada. We posted zip.

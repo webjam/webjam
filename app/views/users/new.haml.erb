@@ -1,0 +1,25 @@
+- @page_title = "Join the Jammers - register a Webjam account"
+- @body_class = "register"
+
+- content_for :head do
+  = javascript_include_tag 'openid-register'
+
+%h1
+  so you wanna <strong>join Webjam?</strong>
+    
+%p
+  We believe single sign-on is an important part of the future of the web. We've implemented
+  %a{ :href => "http://openid.net" }
+    OpenID
+  because it's a strong and increasingly popular decentralised system for single sign-on. It's the new cool mojo that means you don't need to remember a bunch of passwords all over the web. You just give us your OpenID and we'll give you an account.
+  %a.willis{ :href => "/single-sign-on" }
+    What u talkin' 'bout, Willis?
+
+= error_messages_for :identity_url
+
+- form_for(:identity_url, :url => verify_users_path, :id => 'register') do |f|
+  %fieldset#openid-login
+    %label#openid-url-label{ :for => "openid_url" }
+      = image_tag '/images/openid-logo.jpg', :size => '100x32', :alt => "OpenID", :id => "openid-logo"
+      = text_field_tag 'openid_url', @identity_url.url, :id => 'openid_url'
+    = submit_tag 'Verify', :class => "submit" 

@@ -1,0 +1,13 @@
+%h3
+  = link_to h(post.title), post_path(post)
+
+= post.body
+
+%p
+  %em
+    = time_ago_in_words post.published_at
+    ago by
+    = user_link_with_avatar(post.user, "author")
+
+    - if !post.comments.empty?
+      = "(#{pluralize(post.comments.count, 'comment')})"

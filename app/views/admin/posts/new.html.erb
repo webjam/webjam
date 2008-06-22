@@ -1,8 +1,0 @@
-<% @section = :posts -%>
-<% @page_title = "New blog post" -%>
-
-<h1>New blog post</h1>
-
-<% form_for [:admin, @post] do |f| %>
-  <%= render :partial => 'form', :locals => {:f => f} %>
-<% end %>

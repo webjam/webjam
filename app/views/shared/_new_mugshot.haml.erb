@@ -1,0 +1,16 @@
+#edit-mugshot
+
+  - if !@mugshot.new_record?
+    %h3
+      Your Mugshot
+    = image_tag @mugshot.public_filename(:large)
+    = button_to "Delete current mug", current_mugshot_path, :method => :delete, :confirm => "Delete your current mugshot?"
+    %h4
+      Replace your mugshot
+    = render :partial => 'mugshots/form'
+
+  - else
+    %h3
+      Add A Mugshot
+      = avatar_image(current_user, :tiny)
+    = render :partial => 'mugshots/form'

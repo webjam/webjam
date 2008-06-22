@@ -1,0 +1,5 @@
+%span.user-avatar
+  %a.vcard.author{ :href => user_path(user) }
+    = avatar_image(user)
+    %span.fn.nickname
+      = user.nick_name

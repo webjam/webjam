@@ -1,0 +1,66 @@
+- @section = :blog
+- @page_title = h(@post.title)
+
+.hentry
+  %h1.entry-title
+    =h @post.title
+  %ul.byline
+    %li
+      Posted by
+      = user_link_with_avatar(@post.user, "author")
+      on
+      %span.updated
+        = @post.published_at.to_date.to_s(:long)
+    %li.comments
+      %a{ :href => "#comments" }
+        12 comments
+
+  .entry-content
+    = @post.body
+
+  %ul.entry-footer
+    %li.post-date
+      Posted
+      %span.published
+        = @post.published_at.to_date.to_s(:long)
+    /
+      <li class="tags"><span>Tagged</span>
+      <ul>
+      <li><a href="#" rel="tag">Sydney</a>,</li>
+      <li><a href="#" rel="tag">winners</a>,</li>
+      <li><a href="#" rel="tag">wrap-up</a>, and</li>
+      <li><a href="#" rel="tag">something else</a></li>
+      </ul>
+
+#comments.hfeed
+  - if @post.comments.empty?
+    %p.title
+      There are no comments yet!
+  - else
+  /
+    <p class="title"><%= pluralize @post.comments.count, 'Comment' %></p>
+  - for comment in @post.comments
+    .hentry{:id => "comment-#{comment.id}"}
+      %p.comment-details
+        %em
+          = user_link_for_comment(comment.user, "author")
+          commented
+          = time_ago_in_words comment.created_at
+          ago:
+      .entry-content
+        =h comment.body
+  
+  - if !current_user
+    %p
+      = link_to_login_with_return_to_current_page 'Login to leave a comment'
+  - else
+    - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink), :id => 'new-comment' do
+      - if params[:no_body_error]
+        %p.error
+          Don?t forget to type something!
+      %fieldset
+        %label{ :for => "comment_body" }
+          %span
+            Add your own:
+          = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'comment_body'
+        = submit_tag 'Add Comment', :class => 'submit'

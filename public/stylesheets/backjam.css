@@ -10,10 +10,9 @@ TOC
 		 --- =Headings
 		 --- =Body Text
 		 --- =Avatars
-		 --- =Date, Times etc
+		 --- =Feeds etc
 	-- =Generic Forms
 - =Structure
-	-- =Upcoming Events
 	-- =Main Content
 		 --- =Content
 				 ---- =Posts
@@ -22,11 +21,8 @@ TOC
 		     ---- =Join Form
 				 ---- =Profile
 		 --- =Other Content
-		 	   ---- =Main Nav
-	-- =Sub Content
-		 --- =Schwag
-		 --- =Sponsors
-		 --- =Supporters
+		 	   ---- =WTF
+		 	   ---- =Latest
 	-- =Footer
 - =JS Enabled
 - =Tim's Rules
@@ -44,11 +40,11 @@ TOC
 		a:hover, a:active, a:focus {color: #f03e00;}
 		
 		/* --- =Headings --- */
-		h1, h2, h3, h4, h5, h6 {margin: 0 0 0.5em;}
+		h1, h2, h3, h4, h5, h6 {font-family: Futura, Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
 		h1 {background: #0e0e0e; color: #666; font-size: 1.72em; font-weight: 300;}
 			h1 strong {background: #0e0e0e; color: #fff; font-weight: 300;}
-		h2 {font-size: 1.6em;}
-		h3 {font-size: 1.5em;}
+		h2 {font-size: 2.572em;}
+		h3 {font-size: 1.143em;}
 		h4 {font-size: 1.4em;}
 		h5 {font-size: 1.2em;}
 		h6 {font-size: 1.1em;}
@@ -57,28 +53,29 @@ TOC
 			#wrapper p.title strong {background: #0e0e0e; color: #fff; font-weight: 300;}
 		
 		/* --- =Body Text --- */
-		#content p,
-		#content li,
-		#content ol,
-		#content ul {margin: 0 0 0.5em;}
-		#content p {font-size: 1.07em; line-height: 1.5; margin: 0 0 2em 0;}
-		#content ul {}
-			#content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
-		#content ol {}
-			#content ol li {font-size: 1.07em; list-style-position: inside; list-style-type: decimal;}
+/*    #content p,
+    #content li,
+    #content ol,
+    #content ul {margin: 0 0 0.5em;}
+    #content p {font-size: 1.143em; line-height: 1.5; margin: 0 0 2em 0;}
+    #content ul {}
+      #content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
+    #content ol {}
+      #content ol li {font-size: 1.07em; list-style-position: inside; list-style-type: decimal;}*/
 			
 		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
 		
 		/* --- =Avatars --- */
-		
 		.user-avatar {position: relative;}
 			.user-avatar .vcard {padding: 0 0 0 18px; text-decoration: none;}	
-			zli.profile .user-avatar {display: block; line-height: 1; padding: 0.6em 1em 2em 0em;}	
-				.user-avatar .vcard img {left: 0; position: absolute; top: 1px;}
-				zli.profile .user-avatar .vcard img {left: 2px; top: 2px;}
+				.user-avatar .vcard img {left: 0; position: absolute; top: -4px;}
+				.user-avatar .vcard .fn {padding: 0 0 0 10px;}
 
-		/* --- =Dates, Times etc --- */
-		.date {font: 1em/1.6 Georgia, serif;}
+		/* --- =Feeds etc --- */
+		.item h2 {position: relative;}
+      .item h2 .feed {background: #333 url('/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
+      
+      #latest h2 .feed {left: 5.8em; top: 0.6em;}
 
 	/* -- =Generic Forms -- */
 
@@ -92,16 +89,12 @@ TOC
 		select {float: left; width: 10em;}
 		textarea {float: left; width: 27em;}
 			input.checkbox {margin: 0.4em 0; width: auto;}
-/*			fieldset.buttons input,
-			input.submit,
-			form.button-to input {background: #ff6200; border: none; clear: both; color: #000; cursor: pointer; float: none; margin: 1em 0 0 8.4em; width: auto;}*/
 			input.submit {margin: 0.4em 0 0 10.2em; width: 14.3em;}
-			
 			form.button-to {display: inline; margin: 0; padding: 0;}
 
 
 /* - =Structure - */
-body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; color: #fff; font: 62.5%/1.3 "Trebuchet MS", Arial, Helvetica, sans-serif; margin:0; padding:0;}
+body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; color: #fff; font: 62.5%/1.3 "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0; padding: 0;}
 	body.home {}
 	
 #page {font-size: 1.4em; margin: 4em auto 0; position: relative; width: 70em;}
@@ -128,55 +121,86 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#account-tools li a:active strong,
 				#account-tools li a:focus strong {color: #0e0e0e;}
 				
-				#account-tools li a .user-avatar .vcard img {left: 3px; top: 3px;}
+				#account-tools li a.user-avatar .vcard img {left: 3px; top: 3px;}
+				#account-tools li a.user-avatar .vcard .fn {padding: 0;}
 
-	#wrapper {background: #0e0e0e url('/images/bg-footer.gif') repeat-x 0 100%; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
+	#wrapper {background: #181818; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
 	body.home h1,
-	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; height: 146px; margin: 0; text-align: center;}
+	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; border-bottom: 1px solid #7C1315; height: 146px; margin: 0; text-align: center;}
 	#pagetitle {font-size: 1.8em;}
 		body.home h1 img,
 		#pagetitle img {border: none; font-size: 0.4em; height: 15.2em; max-height: 152px; width: 97em; max-width: 1033px;}
-	
-	/* -- =Upcoming Events -- */
-	#upcoming-events {background: #370e0c url('/images/bg-perth-upcoming.jpg') no-repeat 0 0; clear: both; float: left; margin: 0; padding: 0 0 0 20em; width: 50em;}
-		#upcoming-events dl.vevent {border-left: 1px solid #320b10; float: left; font-size: 1em; margin: 0 2em; padding: 0 1em 0; position: relative; width: 12em;}
-			#upcoming-events .vevent dt.summary {font-size: 1em; font-weight: normal;}
-				#upcoming-events .vevent a.url {display: block; font-size: 1.3em; line-height: 1; margin: 0.2em 0 0; text-decoration: none; text-transform: lowercase;}
-			#upcoming-events .vevent dd {margin: 0;}
-				#upcoming-events .vevent dd.location {left: -9999em; position: absolute; top: -9999em;}
-				#upcoming-events .vevent dd.date-time {left: -2.3em; position: absolute; top: 0; width: 2.3em;}
-					#upcoming-events .vevent .dtstart {}
-						#upcoming-events .vevent .dtstart .date {display: block; font-size: 1.6em; line-height: 1.2; text-align: center;}
-						#upcoming-events .vevent .dtstart .month {display: block; line-height: 1; text-align: center;}
-					#upcoming-events .vevent dd.rsvp,
-					#upcoming-events .vevent dd.jammers {margin: 0 0 0.2em; position: relative; width: 8.4em;}
-						#upcoming-events .vevent dd.rsvp a,
-						#upcoming-events .vevent dd.jammers a {background: #ff5e28; color: #200d07; font-size: 0.7em; padding: 0.1em 0.3em 0.1em; position: absolute; text-align: center; text-decoration: none; text-transform: uppercase; top: 0.3em; right: 0; width: 5em;}
-						#upcoming-events .vevent dd.rsvp a.full,
-						#upcoming-events .vevent dd.jammers a.full {background: #232524; color: #7c7e7d;}
-
+		
 	
 	/* -- =Main Content -- */
-	#maincontent {float: left; padding: 2.5em 0 2em; width: 54em;}
+	#maincontent {}
 	
 		/* --- =Content --- */
-		#content {border: 1px solid #1a1a1a; border-bottom: none; border-top: none; float: right; margin: 0 1em 0 0; padding: 0 1em; width: 34em;}
+		#content {border-left: 1px solid #333; margin: 0 0 0 23.2em; padding: 0.4em 0 1em;}
+		
+		  #content .event {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
+		  #content .event.first {border: none; padding: 1.45em 1em 0 1em;}
+		    #content .event .event-details {overflow: auto; margin: 0 0 1em 0;}
+		
+    		  #content .event-details h2 {float: left; margin: 0 0.4em 0 0; width: auto;}
+    		  #content .event-details h3 {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
+    		  #content .event-details a.details,
+    		  #content .event .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
+    		  
+    		  #content .event-details a.details {background: #181818 url('/images/bg-details.gif') no-repeat center right; color: #e71d25; margin: 1.6em 0.6em 0 0;}
+    		  
+    		  #content .event .button {text-align: center; text-decoration: none;}
+    		  #content .event a.rsvp:link,
+    		  #content .event a.rsvp:visited {background: #ec1c26; color: #fff;}
+    		  #content .event a.rsvp:hover,
+    		  #content .event a.rsvp:active,
+    		  #content .event a.rsvp:focus {background: #fff; color: #ec1c26;}
+    		  
+    		  #content .event span.closed {background: #4d4d4d; color: #fff;}
+    		
+    		#content .event .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
+    		
+    		  #content dl.registration {margin: 0.26em 0 0 2.5em;}
+    		    dl.registration dt {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
+    		    dl.registration dd {font-size: 0.812em;}
+    		      #content dl.registration dd p {margin: 0 0 0.6em 0;}
+    		        dl.registration dd p strong {display: block;}
+    		        
+    		#content .event .slideshow {background: #808080; height: 215px; margin: 0 0 0.4em 0;}
+    		
+    		.event .sponsors {font-size: 0.625em; margin: 4em 0 2em 0;}
+    		  .event .sponsors {padding: 0 0 0 9em; position: relative;}
+    		    #content .event .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
+    		    #content .event .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
+    		    
+    		      .event .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
+    		      .event .sponsors a:link,
+    		      .event .sponsors a:visited {}
+    		      .event .sponsors a:hover,
+    		      .event .sponsors a:active,
+    		      .event .sponsors a:focus {background-position: 0 100%;}
+    		      
+    		      .sponsors a.directSMS {background-image: url('/images/sponsors/directSMS.jpg');}
+
 			
 			/* ---- =Posts ---- */
 			
 				/* ----- =hAtom ----- */
+				.hfeed {padding: 1em;}
+				
 				.hentry {border-bottom: 1px solid #292a2a; float: left; width: auto;}
 					.hentry .entry-title {background: #0e0e0e; color: #fff; margin: 0 0 0.4em;}
-					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; font-size: 0.8em; list-style-type: none; margin: 0 0 2em 0; overflow: auto; padding: 0.2em 0;}
-						#content .hentry .byline li {float: left; list-style-type: none; width: auto;}
-						#content .hentry .byline li.comments {float: right; background: #0e0e0e url('/images/icon-comments-full.gif') no-repeat 0 1px; padding: 0 0 0 20px;}
+					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; float: left; font-size: 0.8em; list-style-type: none; margin: 0 0 2em 0; padding: 0.5em 0 0.2em; width: auto;}
+						#content .hentry .byline li {float: left; list-style-type: none; width: 31.9em;}
+						#content .hentry .byline li.comments {background: #0e0e0e url('/images/icon-comments-full.gif') no-repeat 0 1px; padding: 0 0 0 20px; width: auto;}
 						.hentry .byline .updated {}
 					.hentry .entry-content {}
 					.hentry .author {}
 						.hentry .vcard {}
-						.hentry .vcard .fn {}
-					#content .hentry .entry-footer {border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; font-weight: 100; margin: 0 0 0.08em 0; padding: 0.2em 0 0.2em 0; width: 43em;}
+						  .hentry .vcard img {top: -4px;}
+						.hentry .vcard .fn {padding: 0 0 0 10px;}
+					#content .hentry .entry-footer {border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; font-weight: 100; margin: 0 0 0.08em 0; padding: 0.2em 0 0 0; width: 43em;}
 						#content .hentry .entry-footer li {float: left; list-style-type: none;}
 							#content .hentry .entry-footer li.post-date {background: #0e0e0e url('/images/icon-post.jpg') no-repeat 0 2px; color: #fff; padding: 0 0 0 20px;}
 							#content .hentry .entry-footer li.tags {background: #0e0e0e url('/images/icon-tag.jpg') no-repeat 0 1px; color: #fff; float: right; padding: 0 0 0 5.2em; position: relative; width: 16em;}
@@ -236,11 +260,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 										ul.posts li a.comments:hover,
 										ul.posts li a.comments:active,
 										ul.posts li a.comments:focus {}
-										
-			
-			/* ---- =About ---- */
-			body.about #content p {font: 300 1.6em/2 "Trebuchet MS", Arial, Helvetica, sans-serif;}
-				body.about #content p strong {font-weight: 700;}
 			
 			/* ---- =Join Form ---- */
 				#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
@@ -286,80 +305,42 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					.vcard dd.avatar {background: #0e0e0e url('/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
 						.vcard dd.avatar a {display: block;}
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
-						
-			
 
 		/* --- =Other Content --- */
-		#other-content {float: left; padding: 0 1em 2em; width: 14em;}
+		#other-content {float: left; font: 300 1.143em/1.2 Helvetica, Arial, sans-serif; padding: 2em 1em 1em; width: 18em;}
 		
-			/* ---- =Main Nav ---- */
-			#main-nav {float: left; margin: 0 1em 0 2em;}
-				#main-nav li {font-size: 1.2em; margin: 0 0 0.2em;}
-					#main-nav li a:link, 
-					#main-nav li a:visited {text-decoration: none;}
-					#main-nav li a:hover,
-					#main-nav li a:active,
-					#main-nav li a:focus {background: #0e0e0e; color: #f03e00; text-decoration: underline;} 
-					#main-nav li span {background: #0e0e0e; color: #f03e00;} 
-					
-					#main-nav li li {font-size: 0.8em;}
-						#main-nav li li a {background: #0e0e0e url('/images/bg-subnav.gif') no-repeat 0 2px; padding: 0 0 0 12px;}
-						#main-nav li li span {background: #0e0e0e url('/images/bg-subnav-active.gif') no-repeat 0 2px; padding: 0 0 0 12px;}
-						#main-nav li strong {font-size: 0.8em;}
-		
-	/* -- =Sub Content -- */			
-	#subcontent {float: right; padding: 2.5em 1em 2em; width: 14em;}
-		#subcontent strong.title {}
-		#subcontent .module {margin: 0 0 2em 0;}
-			
-		/* --- =Schwag --- */
-		#schwag {}
-			#schwag img {}
-			#schwag p {}
-			#schwag form {}
-				#schwag form label {}
-				#schwag form input,
-			  #schwag form select {float: right; width: 15em;}
-					#schwag form input.submit {width: 9em;}
-			
-		/* --- =Sponsors --- */
-		#sponsors {}
-			.sponsorbadge {height: 50px; overflow: hidden; margin: 0.6em 0 0; text-indent: -9999em;}
-			.sponsorbadge a {background-image: url('../images/sponsor_default.gif'); display: block; height: 50px; width: 198px;}	
-				.sponsorbadge a:hover {background-position: 0 -50px;}
-
-				#sponsorcm a {	background-image: url('../images/sponsor_cm.gif'); }
-				#sponsorwd a {	background-image: url('../images/sponsor_wd.gif'); }
-				#sponsoral a {	background-image: url('../images/sponsor_al.gif'); }
-				#sponsorad a {	background-image: url('../images/sponsor_ad.gif'); }
-				#sponsorms a {	background-image: url('../images/sponsor_ms.gif'); }
-				#sponsorrs a {	background-image: url('../images/sponsor_rs.gif'); }
-				#sponsorwu a {	background-image: url('../images/sponsor_wu.gif'); }
-				#sponsorml a {	background-image: url('../images/sponsor_ml.gif'); }
-				#sponsorse a {	background-image: url('../images/sponsor_se.gif'); }
-				
-		/* --- =Supporters --- */
-		#supporters {}
-			#supporters ul {}
-				#supporters ul li {}
-					#supporters ul li a {}
+		  #other-content .item {margin: 0 0 1em 0;}
+		  
+		  /* ---- =Latest ---- */
+		  #latest h3 {font: 700 1em/1.2 Helvetica, Arial, sans-serif; text-transform: capitalize;}
+		  #latest p {}
+		  #latest ul {}
+		    #latest ul li {background: #181818 url('/images/bg-more.gif') no-repeat 100% 6px; float: left; margin: 0 1em 0 0; padding: 0 12px 0 0; width: auto;}
+		    #latest ul li.first {background: none; border-right: 1px solid #fff; padding: 0 1em 0 0;}
+		    #latest ul li.more {clear: both; margin: 1em 0 0 0;}
+		  
+      /* ---- =WTF ---- */
+  		#wtf p {margin: 0 0 1em 0;}
 		
 	/* -- =Footer -- */		
-	#footer {background: #0e0e0e; border: 1px solid #000; border-bottom: none; border-top: none; clear: both; color: #565757; margin: 0 auto; padding: 1em 0 1em 0; text-align: center; width: 70em;}
-		#footer p {font: 0.94em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0 0 0.4em 0;}
+    #footer {background: #333; color: #fff; clear: both; font-family: Helvetica, Arial, sans-serif; overflow: hidden;}
+      #footer .column {border-left: 1px solid #181818; float: left; padding: 2.2em 1.8em 2000px 1.8em; margin: 0 0 -1940px 0; width: 19.6em;}
+      #footer .column.first {border: none;}
+      
+        #footer h2 {font-size: 1.714em; margin: 0 0 1em 0;}
+      
+        #news ul {}
+          #news ul li {list-style-position: inside; list-style-type: disc; margin: 0 0 0.2em 0;}
+          #news ul li.more {list-style-type: none; margin: 1em 0 0 0;}
+            #news ul li.more a {background: #333 url('/images/bg-footer-more.gif') no-repeat 100% 4px; padding: 0 10px 0 0;}
+            
+        #previous ul {}
+          #previous ul li {float: left; margin: 0 2.05em 0.4em 0; width: auto;}
+        
+        #about {}
+          #about p {margin: 0 0 1em 0;}
 		
 
 /* - =JS enabled - */
 
 html.js {}
-
-
-/* - =Tim's rules - need to be folded in - */
-
-li.current a {
-  color: #f66;
-}
-
-h3 {
-  clear: left;
-}

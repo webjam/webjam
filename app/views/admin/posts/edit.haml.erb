@@ -1,0 +1,9 @@
+- @section = :posts
+- @page_title = "Edit post #{h(@post)}"
+
+%h1
+  Edit
+  =h @post
+
+- form_for [:admin, @post] do |f|
+  = render :partial => 'form', :locals => {:f => f}

@@ -1,7 +1,20 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :posts do |posts|
-    posts.resources :comments, :name_prefix => 'post_'
-  end
+  # super friendly post urls
+  map.posts 'news', :controller => 'posts', :action => 'index'
+  map.posts_year 'news/:year', 
+                :controller => 'posts', 
+                :action => 'index_by_year',
+                :year => /\d{4}/
+  map.post 'news/:year/:permalink',
+                :controller => 'posts',
+                :action => 'show',
+                :year => /\d{4}/
+  map.post_comments 'news/:year/:permalink/comments',
+                :controller => 'comments',
+                :action => 'create',
+                :year => /\d{4}/,
+                :conditions => { :method => :post }
+
   map.resources :comments
   map.resource  :session, :member => { :create => :any }
 
@@ -21,10 +34,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :identity_urls, :collection => {:create => :any}
   map.with_options(:controller => 'pages') do |m|
-    m.about   'about',   :action => 'about'
     m.contact 'contact', :action => 'contact'
     m.home    '',        :action => 'home'
     m.open_id   'single-sign-on',   :action => 'single-sign-on'
+    # temporary static files to build front-end
+    m.statichome   'statichome',   :action => 'statichome'
   end
   map.namespace :admin do |admin|
     admin.resources :events do |event|
