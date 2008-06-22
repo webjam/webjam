@@ -52,15 +52,15 @@ TOC
 			#wrapper p.title strong {background: #0e0e0e; color: #fff; font-weight: 300;}
 		
 		/* --- =Body Text --- */
-		#content p,
-		#content li,
-		#content ol,
-		#content ul {margin: 0 0 0.5em;}
-		#content p {font-size: 1.143em; line-height: 1.5; margin: 0 0 2em 0;}
-		#content ul {}
-			#content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
-		#content ol {}
-			#content ol li {font-size: 1.07em; list-style-position: inside; list-style-type: decimal;}
+/*    #content p,
+    #content li,
+    #content ol,
+    #content ul {margin: 0 0 0.5em;}
+    #content p {font-size: 1.143em; line-height: 1.5; margin: 0 0 2em 0;}
+    #content ul {}
+      #content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
+    #content ol {}
+      #content ol li {font-size: 1.07em; list-style-position: inside; list-style-type: decimal;}*/
 			
 		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
 		
@@ -162,7 +162,23 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		    dl.registration dd {font-size: 0.812em;}
     		      #content dl.registration dd p {margin: 0 0 0.6em 0;}
     		        dl.registration dd p strong {display: block;}
+    		        
+    		#content .event .slideshow {background: #808080; height: 215px; margin: 0 0 0.4em 0;}
     		
+    		.event .sponsors {font-size: 0.625em; margin: 4em 0 2em 0;}
+    		  .event .sponsors {padding: 0 0 0 9em; position: relative;}
+    		    #content .event .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
+    		    #content .event .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
+    		    
+    		      .event .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -999px; width: 95px;}
+    		      .event .sponsors a:link,
+    		      .event .sponsors a:visited {}
+    		      .event .sponsors a:hover,
+    		      .event .sponsors a:active,
+    		      .event .sponsors a:focus {background-position: 0 100%;}
+    		      
+    		      .sponsors a.directSMS {background-image: url('/images/sponsors/directSMS.jpg');}
+
 			
 			/* ---- =Posts ---- */
 			
