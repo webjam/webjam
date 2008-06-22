@@ -56,13 +56,11 @@ jQuery.fn.autoshow = function(options) {
 	}
 
 	var pause = function() {
-		console.log('pause');
 		pause_state = 1;
 		clearTimeout(timer);
 	}
 
 	var resume = function() {
-		console.log('resume');
 		pause_state = 0;
 		change();
 	}
