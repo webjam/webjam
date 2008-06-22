@@ -2,7 +2,7 @@
 - @page_title = "Webjam 8 rocked my world!"
 - @body_class = "event"
 .item
-  .event-details
+  .item-details
     %h1 Webjam 8
     %h2 Perth, 15 Aug 08
     
@@ -25,7 +25,7 @@
           Applications are closed.
  
 .item
-  .event-details
+  .item-details
     %h2 Meet our sponsors
   %ul.sponsors
     %li.proud Proudly sponsored by
@@ -37,16 +37,34 @@
       %a.directSMS{ :href => "#" } iBurst
 
 .item
-  .event-details
+  .item-details
     %h2 What you&apos;re in for
 
-  .slideshow
-    %p fast moving slideshow goes here
+    .slideshow
+      %ul
+        %li
+          %img{ :title => "Black & White", :src => "/images/temp/lightning.jpg", :alt => "Lightning" }/
+        %li
+          %img{ :title => "Fusce quam mi, sagittis nec, adipiscing at, sodales quis", :src => "/images/temp/lotus.jpg", :alt => "Lotus" }/
+        %li
+          %img{ :title => "Suspendisse volutpat posuere dui. Suspendisse sit amet lorem et risus faucibus pellentesque.", :src => "/images/temp/mojave.jpg", :alt => "Mojave" }/
+        %li
+          %img{ :title => "Proin erat nisi", :src => "/images/temp/pier.jpg", :alt => "Pier" }/
+        %li
+          %img{ :title => "Caption text from title", :src => "/images/temp/sea-mist.jpg", :alt => "Sea Mist" }/
+        %li
+          %img{ :title => "Flowing Rock Caption", :src => "/images/temp/flowing-rock.jpg", :alt => "Flowing Rock" }/
+        %li
+          %img{ :title => "Stones - from Apple images", :src => "/images/temp/stones.jpg", :alt => "Stones" }/
+        %li
+          %img{ :title => "Apple nature desktop images", :src => "/images/temp/grass-blades.jpg", :alt => "Grass Blades" }/
+        %li
+          %img{ :title => "Ut rutrum, lectus eu pulvinar elementum, lacus urna vestibulum ipsum", :src => "/images/temp/ladybug.jpg", :alt => "Ladybug" }/
 
   %p 18 presenters. 345 attendees. Alcohol.
 
 .item.last
-  .event-details
+  .item-details
     %h2 The deets
 
   .map
