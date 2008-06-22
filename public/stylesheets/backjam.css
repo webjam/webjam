@@ -22,6 +22,7 @@ TOC
 				 ---- =Profile
 		 --- =Other Content
 		 	   ---- =WTF
+		 	   ---- =Latest
 	-- =Footer
 - =JS Enabled
 - =Tim's Rules
@@ -186,6 +187,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			/* ---- =Posts ---- */
 			
 				/* ----- =hAtom ----- */
+				.hfeed {padding: 1em;}
+				
 				.hentry {border-bottom: 1px solid #292a2a; float: left; width: auto;}
 					.hentry .entry-title {background: #0e0e0e; color: #fff; margin: 0 0 0.4em;}
 					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; float: left; font-size: 0.8em; list-style-type: none; margin: 0 0 2em 0; padding: 0.5em 0 0.2em; width: auto;}
@@ -308,6 +311,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		
 		  #other-content .item {margin: 0 0 1em 0;}
 		  
+		  /* ---- =Latest ---- */
 		  #latest h3 {font: 700 1em/1.2 Helvetica, Arial, sans-serif; text-transform: capitalize;}
 		  #latest p {}
 		  #latest ul {}
