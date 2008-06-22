@@ -309,8 +309,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
   		#wtf p {font: 300 1.2em/1.2 Helvetica, Arial, sans-serif; margin: 0 0 1em 0;}
 		
 	/* -- =Footer -- */		
-    #footer {background: #333; color: #fff; clear: both; font-family: Helvetica, Arial, sans-serif; overflow: auto;}
-      #footer .column {border-left: 1px solid #181818; float: left; padding: 2.2em 1.8em 4em 1.8em; width: 19.6em;}
+    #footer {background: #333; color: #fff; clear: both; font-family: Helvetica, Arial, sans-serif; overflow: hidden;}
+      #footer .column {border-left: 1px solid #181818; float: left; padding: 2.2em 1.8em 2000px 1.8em; margin: 0 0 -1940px 0; width: 19.6em;}
       #footer .column.first {border: none;}
       
         #footer h2 {font-size: 1.714em; margin: 0 0 1em 0; position: relative;}
@@ -318,7 +318,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
       
         #news ul {}
           #news ul li {list-style-position: inside; list-style-type: disc; margin: 0 0 0.2em 0;}
-          #news ul li.more {list-style-type: none;}
+          #news ul li.more {list-style-type: none; margin: 1em 0 0 0;}
             #news ul li.more a {background: #333 url('/images/bg-footer-more.gif') no-repeat 100% 4px; padding: 0 10px 0 0;}
             
         #previous ul {}
