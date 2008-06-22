@@ -44,8 +44,8 @@ TOC
 		h1,
 		body.home h2,
 		#wtf h2 {font-size: 2.572em;}
-		h2 {font-size: 2.2em;}
-		h3 {font-size: 1.8em;}
+		h2 {font-size: 1.714em;}
+		h3 {font-size: 1.45em;}
     	body.home h3,
     	body.event h2.date {font-size: 1.143em;}	
 /*    h4 {font-size: 1.4em;}
@@ -135,7 +135,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		body.home h1 img,
 		#pagetitle img {border: none; font-size: 0.4em; height: 15.2em; max-height: 152px; width: 97em; max-width: 1033px;}
 		
-		#phat-number {font: 100 10.286em/1.2 Futura, Helvetica, Arial, sans-serif; left: 2.29em; position: absolute; top: -0.12em;}
+		#phat-digits {font: 100 10.286em/1.2 Futura, Helvetica, Arial, sans-serif; left: 2.29em; position: absolute; top: -0.12em;}
 		
 	
 	/* -- =Main Content -- */
@@ -152,6 +152,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  body.event #content h1 {float: left; margin: 0 0.4em 0 0; width: auto;}
     		  body.home #content .item-details h3,
     		  body.event #content h2.date {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
+    		  
     		  #content .item-details a.details,
     		  #content .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
@@ -176,12 +177,16 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		        
     		#content .item .slideshow {height: 215px; margin: 0 0 0.4em 0;}
     		
-    		.item .sponsors {font-size: 0.625em; margin: 4em 0 2em 0;}
-    		  .item .sponsors {padding: 0 0 0 9em; position: relative;}
+    		.item .sponsors {font-size: 0.625em; margin: 0 0 2em 0; position: relative;}
+    		  body.home .item .sponsors {margin: 4em 0 2em 0; padding: 0 0 0 9em;}
+    		  
     		    #content .item .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
     		    #content .item .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
+    		    #content .item .sponsors li.moar {}
     		    
     		      .item .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
+    		      .item .sponsors li.moar a {background: #181818 url('/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; font-size: 1.6em; margin: 0.8em 0 0 3.8em; padding: 0 16px 0 0; text-indent: 0; width: auto;}
+    		      
     		      .item .sponsors a:link,
     		      .item .sponsors a:visited {}
     		      .item .sponsors a:hover,
@@ -189,6 +194,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		      .item .sponsors a:focus {background-position: 0 100%;}
     		      
     		      .sponsors a.directSMS {background-image: url('/images/sponsors/directSMS.jpg');}
+    		  
+    		    .item .map {background: #808080; height: 215px;}
 
 			
 			/* ---- =Posts ---- */
