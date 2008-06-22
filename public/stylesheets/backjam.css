@@ -41,8 +41,7 @@ TOC
 		
 		/* --- =Headings --- */
 		h1, h2, h3, h4, h5, h6 {font-family: Futura, Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
-		h1 {background: #0e0e0e; color: #666; font-size: 1.72em; font-weight: 300;}
-			h1 strong {background: #0e0e0e; color: #fff; font-weight: 300;}
+		h1 {font-size: 1.72em;}
 		h2 {font-size: 2.572em;}
 		h3 {font-size: 1.143em;}
 		h4 {font-size: 1.4em;}
