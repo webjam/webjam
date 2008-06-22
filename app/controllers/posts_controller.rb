@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.find_all_for_archive
+    @posts = Post.published.find_all_for_archive
   end
   
   def index_by_year
