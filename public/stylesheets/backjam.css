@@ -120,7 +120,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#account-tools li a.user-avatar .vcard img {left: 3px; top: 3px;}
 				#account-tools li a.user-avatar .vcard .fn {padding: 0;}
 
-	#wrapper {background: #0e0e0e url('/images/bg-footer.gif') repeat-x 0 100%; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
+	#wrapper {background: #181818; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
 	body.home h1,
 	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; border-bottom: 1px solid #7C1315; height: 146px; margin: 0; text-align: center;}
@@ -130,19 +130,34 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		
 	
 	/* -- =Main Content -- */
-	#maincontent {float: left; padding: 0; width: auto;}
+	#maincontent {}
 	
 		/* --- =Content --- */
-		#content {border-left: 1px solid #1a1a1a; float: right; margin: 0 1em 0 0; padding: 2em 0 1em; width: 42em;}
+		#content {border-left: 1px solid #333; margin: 0 0 0 23.2em; padding: 2em 0 1em;}
 		
 		  #content .event {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
+		  #content .event.first {border: none; padding: 1.45em 1em 0 1em;}
 		    #content .event .event-details {overflow: auto;}
 		
     		  #content .event-details h2 {float: left; margin: 0 0.4em 0 0; width: auto;}
     		  #content .event-details h3 {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
-    		  #content .event-details a.details {float: right; width: auto;}
+    		  #content .event-details a.details,
+    		  #content .event .button {display: block; float: right; font-size: 0.9em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
+    		  
+    		  #content .event-details a.details {background: /*#181818*/blue url('/images/bg-details.gif') no-repeat center right; color: #e71d25; zpadding: 0 8px 0 0;}
+    		  
+    		  #content .event .button {text-align: center; text-decoration: none;}
+    		  #content .event a.rsvp:link,
+    		  #content .event a.rsvp:visited {background: #ec1c26; color: #fff;}
+    		  #content .event a.rsvp:hover,
+    		  #content .event a.rsvp:active,
+    		  #content .event a.rsvp:focus {background: #fff; color: #ec1c26;}
+    		  
+    		  #content .event span.closed {background: #4d4d4d; color: #fff;}
     		
-    		#content .event .column {float: left; margin: 0 1em 0 0; width: 19em;}
+    		#content .event .column {background: green; float: left; margin: 0 1em 0 0; width: 19em;}
+    		
+    		  #content .event .button {}
 			
 			/* ---- =Posts ---- */
 			
@@ -288,8 +303,9 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						#main-nav li strong {font-size: 0.8em;}
 		
 	/* -- =Footer -- */		
-	#footer {background: #0e0e0e; border: 1px solid #000; border-bottom: none; border-top: none; clear: both; color: #565757; margin: 0 auto; padding: 1em 0 1em 0; text-align: center; width: 70em;}
-		#footer p {font: 0.94em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0 0 0.4em 0;}
+    #footer {background: #333; color: #fff; clear: both; overflow: auto;}
+      #footer .column {border-left: 1px solid #181818; float: left; padding: 2em 0 4em 0; width: 23.2em;}
+      #footer .column.first {border: none;}
 		
 
 /* - =JS enabled - */
