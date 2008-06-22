@@ -1,8 +1,0 @@
-<% @section = :posts -%>
-<% @page_title = "Edit post #{h(@post)}" -%>
-
-<h1>Edit &ldquo;<%=h @post %>&rdquo;</h1>
-
-<% form_for [:admin, @post] do |f| %>
-  <%= render :partial => 'form', :locals => {:f => f} %>
-<% end %>

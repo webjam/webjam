@@ -1,0 +1,69 @@
+- @page_title = "Edit your profile"
+
+%h2
+  Edit your profile
+
+= flash_notice
+
+= render :partial => 'shared/new_mugshot'
+
+%h3
+  Profile Details
+
+= error_messages_for :user
+
+- form_for :user, :url => update_profile_details_current_user_path, :html => {:method => :put} do |f|
+  %fieldset
+    %label{ :for => "user_nick_name" }
+      %span
+        Nick name:
+      = f.text_field :nick_name
+      %span.note
+        (what you want to be known as)
+    %label{ :for => "user_full_name" }
+      %span
+        Full name:
+      = f.text_field :full_name
+      %span.note
+        (what name to put down on the door, who to give a prize to, etc)
+    %label{ :for => "user_email" }
+      %span
+        Email:
+      = f.text_field :email
+      %span.note
+        (verification, announcements, etc)
+    %label{ :for => "user_website_name" }
+      %span
+        Website Name:
+      = f.text_field :website_name
+    %label{ :for => "user_website_url" }
+      %span
+        Website URL:
+      = f.text_field :website_url
+  %fieldset
+    = submit_tag 'Save profile details', :class => "submit"
+
+%h3
+  OpenID URLs
+%ul
+  - for identity_url in @identity_urls
+  %li
+    = link_to h(identity_url.url), identity_url.url
+    = button_to('(DELETE ICON)', identity_url_path(identity_url), :method => 'delete') unless @identity_urls.length == 1
+
+%p
+  Associate your WebJam account with all your OpenID URLs. You know you want to.
+
+- form_tag create_identity_urls_path do
+  %fieldset
+    %label{ :for => "openid_url" }
+      %span
+        OpenID URL:
+      = text_field_tag 'openid_url'
+  %fieldset
+    = submit_tag 'Add URL', :class => "submit"
+
+%h3
+  Password
+%p
+  Nah, just kidding, we don't do passwords! OpenID bruvva.

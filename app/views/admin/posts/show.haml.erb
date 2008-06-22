@@ -1,0 +1,27 @@
+- @section = :posts
+- @page_title = "Post: #{h(@post)}"
+
+
+- content_for :subcontent do
+  %ul
+    %li= link_to "Edit", edit_admin_post_path(@post)
+    %li= button_to "Delete", admin_post_path(@post), :method => :delete, :confirm => "Yo sure?"
+
+%h1
+  Post:
+  =h @post
+
+%p
+  %strong
+    Permalink:
+  = link_to post_path(:year => @post.year, :permalink => @post.permalink), post_path(:year => @post.year, :permalink => @post.permalink)
+
+%p
+  %strong
+    Published:
+  = @post.published_at || "Not yet"
+
+%p
+  %strong
+    Body:
+  = @post.body

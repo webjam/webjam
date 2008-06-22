@@ -1,0 +1,40 @@
+- @page_title = "Join the Jammers - register a Webjam account"
+- @body_class = "register"
+
+- content_for :head do
+  = javascript_include_tag 'openid-register'
+
+%h1
+  so you wanna <strong>join Webjam?</strong>
+    
+%p
+  Successfully verified OpenID URL:
+  %strong
+    =h @identity_url.url
+
+%p
+  To complete the registration process, give us some of your deets.
+
+= error_messages_for :user
+
+- form_for :user, :url => create_users_path, :id => 'register' do |f|
+  %fieldset
+    %label{ :for => "user_nick_name" }
+      %span
+        Nick name:
+      = f.text_field :nick_name
+      %span.note
+        (what you want to be known as)
+    %label{ :for => "user_full_name" }
+      %span
+        Full name:
+      = f.text_field :full_name
+      %span.note
+        (what name to put down on the door, who to give a prize to, etc)
+    %label{ :for => "user_email" }
+      %span
+        Email:
+      = f.text_field :email
+      %span.note
+        (verification, announcements, etc)
+  = submit_tag 'Register', :class => "submit"

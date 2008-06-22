@@ -1,8 +1,0 @@
-<% @section = :locations -%>
-<% @page_title = "Locations" -%>
-
-<h2>Locations</h2>
-
-<% for location in @locations %>
-  <li><%= link_to h(location), [:admin, location] %></li>
-<% end %>
