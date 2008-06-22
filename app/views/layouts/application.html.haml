@@ -3,41 +3,32 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }/
     %title
-      - @page_title || (raise "No page title")
-    - stylesheet_link_tag 'reset', 'backjam'
-    - auto_discovery_link_tag :atom, "TODO", :title => "Webjam"
-    - yield :head
+      = @page_title || (raise "No page title")
+    = stylesheet_link_tag 'reset', 'backjam'
+    = auto_discovery_link_tag :atom, "TODO", :title => "Webjam"
+    = yield :head
 
   %body#webjam-com-au{:class => @body_class, :onload => @onload}
     #page
       %ul#account-tools
         - if current_user
-        %li.profile
-          - user_login_link_with_avatar(current_user)
-        %li.logout
-          - button_to 'Logout', session_path, :method => :delete 
-        - else 
-        %li.login
-          - link_to "
-          %strong
-            Jammer?
-          Login", new_session_path 
-        %li.register
-          - link_to "
-          %strong
-            New peep?
-          Register", new_user_path 
-        - end 
-      /
-        \// #account-tools
+          %li.profile
+            = user_login_link_with_avatar(current_user)
+          %li.logout
+            = button_to 'Logout', session_path, :method => :delete 
+          - else 
+          %li.login
+            = link_to "<strong>Jammer?</strong> Login", new_session_path 
+          %li.register
+            = link_to "<strong>New peep?</strong> Register", new_user_path
+
       #wrapper
         - if top = yield(:top) 
-        - top 
+          = top 
         - else 
-        %p#pagetitle
-          %a{ :href => "/" }
-            - image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam" 
-        - end 
+          %p#pagetitle
+            %a{ :href => "/" }
+              = image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam" 
         #maincontent
           #other-content
             #wtf.item
@@ -70,16 +61,10 @@
                 %li.more
                   %a{ :href => "/2008/" }
                     News archive
-            /
-              \// .item #latest
-          /
-            \// #other-content
+
           #content
-            - yield :layout 
-          /
-            \// #content
-        /
-          \// #maincontent
+            = yield :layout 
+
         #footer
           .column.first
             #news.item
@@ -126,10 +111,7 @@
                 %li.more
                   %a{ :href => "/2008/" }
                     More news
-            /
-              \// .item #news
-          /
-            \// .column
+
           .column
             #previous.item
               %h2
@@ -159,10 +141,7 @@
                 %li
                   %a{ :href => "/webjam1/" }
                     Webjam 1
-            /
-              \// .item #news
-          /
-            \// .column
+
           .column
             #about.item
               %h2
@@ -173,11 +152,3 @@
                 Reach out and touch someone -
                 %a{ :href => "mailto:contact@webjam.com.au" }
                   contact@webjam.com.au
-          /
-            \// .column
-        /
-          \// #footer
-      /
-        \// #wrapper
-    /
-      \// #page
