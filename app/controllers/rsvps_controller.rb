@@ -3,13 +3,14 @@ class RsvpsController < ApplicationController
 
   def create
     @event = Event.find_by_tag(params[:event])
-    render :text => 'full' and return if @event.full?
-    if @rsvp = Rsvp.create({:event_id => @event.id, :user_id => current_user})
-      #render :thank_you
-      render :text => 'hawt'
+    raise NotFound unless @event
+    if @event.full?
+      redirect_to event_path(:id => @event, :event_full => true)
+    end
+    if current_user.rsvps.create(:event => @event)
+      redirect_to event_path(@event)
     else
-      render :text => 'nawt'
-      #render :new
+      redirect_to event_path(:id => @event, :already_rsvpd => true)
     end
   end
 end

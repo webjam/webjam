@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080621175528) do
+ActiveRecord::Schema.define(:version => 20080622112409) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(:version => 20080621175528) do
     t.string   "timezone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rsvp_limit", :limit => 11
+    t.integer  "rsvp_limit",   :limit => 11
+    t.datetime "published_at"
   end
 
   create_table "identity_urls", :force => true do |t|
@@ -64,9 +65,9 @@ ActiveRecord::Schema.define(:version => 20080621175528) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",  :limit => 11,                 :null => false
+    t.integer "timestamp",  :limit => 11, :null => false
     t.string  "server_url"
-    t.string  "salt",                     :default => "", :null => false
+    t.string  "salt",                     :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -95,6 +96,8 @@ ActiveRecord::Schema.define(:version => 20080621175528) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "rsvps", ["event_id", "user_id"], :name => "index_rsvps_on_event_id_and_user_id", :unique => true
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id"

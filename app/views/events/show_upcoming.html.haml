@@ -5,6 +5,10 @@
   (Upcoming)
 
 - if logged_in?
-  - if @event.not.full? && current_user.not.rsvped?(@event)
+  - if current_user.rsvped?(@event)
+    You&rsquo;ve RSVPed
+  - elsif @event.full?
+    FULL
+  - else
     - form_tag event_rsvps_path(@event) do |form|
       = submit_tag 'RSVP!'
