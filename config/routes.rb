@@ -39,6 +39,7 @@ ActionController::Routing::Routes.draw do |map|
     # temporary static files to build front-end
     m.statichome   'statichome',   :action => 'statichome'
     m.staticevent   'staticevent',   :action => 'staticevent'
+    m.vote_vis 'votestream', :action => "votestream"
   end
   map.namespace :admin do |admin|
     admin.resources :locations, :events, :posts
