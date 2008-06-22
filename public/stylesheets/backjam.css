@@ -170,7 +170,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		    #content .event .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
     		    #content .event .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
     		    
-    		      .event .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -999px; width: 95px;}
+    		      .event .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
     		      .event .sponsors a:link,
     		      .event .sponsors a:visited {}
     		      .event .sponsors a:hover,
@@ -313,8 +313,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
       #footer .column {border-left: 1px solid #181818; float: left; padding: 2.2em 1.8em 4em 1.8em; width: 19.6em;}
       #footer .column.first {border: none;}
       
-        #footer h2 {font-size: 1.714em;}
-          #footer .feed {background: #333 url('/images/icon-feed.gif') no-repeat 0 0; height: 18px; text-indent: -9999px; width: 18px;}
+        #footer h2 {font-size: 1.714em; margin: 0 0 1em 0; position: relative;}
+          #footer .feed {background: #333 url('/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
       
         #news ul {}
           #news ul li {list-style-position: inside; list-style-type: disc; margin: 0 0 0.2em 0;}
