@@ -2,4 +2,3 @@ log/*
 public/mugshots
 .DS_Store
 config/database.yml
-

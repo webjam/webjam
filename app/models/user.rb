@@ -3,11 +3,12 @@ class User < ActiveRecord::Base
   has_many :temporary_mugshots, :class_name => 'Mugshot', :foreign_key => 'temp_user_id'
   has_many :posts # TODO: DEPENDENT?
   has_many :identity_urls, :dependent => :destroy
+  has_many :rsvps
+  has_many :events, :through => :rsvps
   
   validates_presence_of :full_name, :nick_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
-
-  has_permalink :nick_name
+  validates_uniqueness_of :nick_name
 
   def remember_token?
     remember_token_expires_at && Time.now.utc < remember_token_expires_at 
@@ -41,11 +42,15 @@ class User < ActiveRecord::Base
   end
   
   def to_param
-    "#{id}-#{permalink}"
+    nick_name
   end
   
   def to_s
     nick_name
+  end
+
+  def rsvped?(event)
+    events.include?(event)   
   end
   
   protected
