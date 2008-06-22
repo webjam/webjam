@@ -15,9 +15,28 @@ test:
   socket: 
 
 production:
-  adapter: mysql
-  encoding: utf8
-  database: webjam
-  host: localhost
-  username: root
-  password: 
+    adapter: mysql
+    encoding: utf8
+    database: webjam
+    host: 127.0.0.1
+    port: 3306
+    username: webjam_prod
+    password: cREs5usa
+
+staging:
+    adapter: mysql
+    encoding: utf8
+    database: webjam
+    host: 127.0.0.1
+    port: 3306
+    username: webjam_staging
+    password: pRehaYe4
+    
+edge:
+    adapter: mysql
+    encoding: utf8
+    database: webjam
+    host: 127.0.0.1
+    port: 3306
+    username: webjam_edge
+    password: Z4n6xAhA
