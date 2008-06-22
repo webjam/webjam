@@ -56,7 +56,7 @@ TOC
 		#content li,
 		#content ol,
 		#content ul {margin: 0 0 0.5em;}
-		#content p {font-size: 1.07em; line-height: 1.5; margin: 0 0 2em 0;}
+		#content p {font-size: 1.143em; line-height: 1.5; margin: 0 0 2em 0;}
 		#content ul {}
 			#content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
 		#content ol {}
@@ -137,14 +137,14 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		
 		  #content .event {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
 		  #content .event.first {border: none; padding: 1.45em 1em 0 1em;}
-		    #content .event .event-details {overflow: auto;}
+		    #content .event .event-details {overflow: auto; margin: 0 0 1em 0;}
 		
     		  #content .event-details h2 {float: left; margin: 0 0.4em 0 0; width: auto;}
     		  #content .event-details h3 {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
     		  #content .event-details a.details,
-    		  #content .event .button {display: block; float: right; font-size: 0.9em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
+    		  #content .event .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
-    		  #content .event-details a.details {background: #181818 url('/images/bg-details.gif') no-repeat center right; color: #e71d25; margin: 1.8em 0.6em 0 0;}
+    		  #content .event-details a.details {background: #181818 url('/images/bg-details.gif') no-repeat center right; color: #e71d25; margin: 1.6em 0.6em 0 0;}
     		  
     		  #content .event .button {text-align: center; text-decoration: none;}
     		  #content .event a.rsvp:link,
@@ -157,7 +157,12 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		
     		#content .event .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
     		
-    		  #content .event .button {}
+    		  #content dl.registration {margin: 0.26em 0 0 2.5em;}
+    		    dl.registration dt {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
+    		    dl.registration dd {font-size: 0.812em;}
+    		      #content dl.registration dd p {margin: 0 0 0.6em 0;}
+    		        dl.registration dd p strong {display: block;}
+    		
 			
 			/* ---- =Posts ---- */
 			
