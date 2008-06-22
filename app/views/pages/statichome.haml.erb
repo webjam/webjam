@@ -1,81 +1,81 @@
-<% @section = :statichome %>
-<% @page_title = "Webjam brings you the latest in piping hot web" %>
-<% @body_class = "home" %>
+- @section = :statichome
+- @page_title = "Webjam brings you the latest in piping hot web"
+- @body_class = "home"
+.event
+  .event-details
+    %h2 Webjam 8
+    %h3 Perth, 15 Aug 08
+    %a.details{ :href => "/webjam8/" } Details
+    
+  .column
+    %p This is some clever text that’ll hype the next webjam. This is some clever text that’ll hype the next webjam. This is some clever text that’ll hype the next webjam.
 
-<div class="event">
-  <div class="event-details">
-    <h2>Webjam 8</h2>
-    <h3>Perth, 15 Aug 08</h3>
-    <a class="details" href="/webjam8/">Details</a>
-  </div> <!-- // .event-details -->
-  <div class="column">
-    <p>This is some clever text that’ll hype the next webjam. This is some clever text that’ll hype the next webjam. This is some clever text that’ll hype the next webjam.</p>
-  </div> <!-- // .column -->
-  <div class="column">
-    <dl class="registration">
-      <dt><a class="button rsvp" href="#">RSVP</a></dt>
-      <dd><p><strong>Want to attend? </strong>Only 76 spots, get on it.</p></dd>
-      <dt><span class="button closed">Too late</span></dt>
-      <dd><p><strong>Want to present? </strong>Applications are closed.</p></dd>
-    </dl>
-  </div> <!-- // .column -->
-</div> <!-- // .event -->
-<div class="event">
-  <div class="event-details">
-    <h2>Webjam 7</h2>
-    <h3>Sydney, 21 Jun 08</h3>
-    <a class="details" href="/webjam7/">Rewind</a>
-  </div> <!-- // .event-details -->
-  <div class="slideshow">
-    <p>fast moving slideshow goes here</p>
-  </div> <!-- // .slideshow -->
-  <p>18 presenters. 345 attendees. Alcohol.</p>
-  <ul class="sponsors">
-    <li class="proud">Proudly sponsored by</li>
-    <li><a class="directSMS" href="#">DirectSMS</a></li>
-    <li><a class="directSMS" href="#">SegPub</a></li>
-    <li><a class="directSMS" href="#">iBurst</a></li>
-  </ul> <!-- // .sponsors -->
-</div> <!-- // .event -->
-<div class="event">
-  <div class="event-details">
-    <h2>Webjam 6</h2>
-    <h3>Melbourne, 01 May 08</h3>
-    <a class="details" href="/webjam6/">Rewind</a>
-  </div> <!-- // .event-details -->
-</div> <!-- // .event -->
-<div class="event">
-  <div class="event-details">
-    <h2>Webjam 5</h2>
-    <h3>Melbourne, 01 May 08</h3>
-    <a class="details" href="/webjam6/">Rewind</a>
-  </div> <!-- // .event-details -->
-</div> <!-- // .event -->
-<div class="event">
-  <div class="event-details">
-    <h2>Webjam 4</h2>
-    <h3>Melbourne, 01 May 08</h3>
-    <a class="details" href="/webjam6/">Rewind</a>
-  </div> <!-- // .event-details -->
-</div> <!-- // .event -->
-<div class="event">
-  <div class="event-details">
-    <h2>Webjam 3</h2>
-    <h3>Melbourne, 01 May 08</h3>
-    <a class="details" href="/webjam6/">Rewind</a>
-  </div> <!-- // .event-details -->
-</div> <!-- // .event -->
-<div class="event">
-  <div class="event-details">
-    <h2>Webjam 2</h2>
-    <h3>Melbourne, 01 May 08</h3>
-    <a class="details" href="/webjam6/">Rewind</a>
-  </div> <!-- // .event-details -->
-</div> <!-- // .event -->
-<div class="event first">
-  <div class="event-details">
-    <h2>Webjam 1</h2>
-    <h3>Melbourne, 01 May 08</h3>
-    <a class="details" href="/webjam6/">Rewind</a>
-  </div> <!-- // .event-details -->
-</div> <!-- // .event -->
+  .column
+    %dl.registration
+      %dt
+        %a.button.rsvp{ :href => "#" } RSVP
+      %dd
+        %p
+          %strong Want to attend?
+          Only 76 spots, get on it.
+      %dt
+        %span.button.closed Too late
+      %dd
+        %p
+          %strong Want to present?
+          Applications are closed.
+ 
+.event
+  .event-details
+    %h2 Webjam 7
+    %h3 Sydney, 21 Jun 08
+    %a.details{ :href => "/webjam7/" } Rewind
+
+  .slideshow
+    %p fast moving slideshow goes here
+
+  %p 18 presenters. 345 attendees. Alcohol.
+  %ul.sponsors
+    %li.proud Proudly sponsored by
+    %li
+      %a.directSMS{ :href => "#" } DirectSMS
+    %li
+      %a.directSMS{ :href => "#" } SegPub
+    %li
+      %a.directSMS{ :href => "#" } iBurst
+
+.event
+  .event-details
+    %h2 Webjam 6
+    %h3 Melbourne, 01 May 08
+    %a.details{ :href => "/webjam6/" } Rewind
+
+.event
+  .event-details
+    %h2 Webjam 5
+    %h3 Melbourne, 01 May 08
+    %a.details{ :href => "/webjam5/" } Rewind
+
+.event
+  .event-details
+    %h2 Webjam 4
+    %h3 Melbourne, 01 May 08
+    %a.details{ :href => "/webjam4/" } Rewind
+
+.event
+  .event-details
+    %h2 Webjam 3
+    %h3 Melbourne, 01 May 08
+    %a.details{ :href => "/webjam3/" } Rewind
+
+.event
+  .event-details
+    %h2 Webjam 2
+    %h3 Melbourne, 01 May 08
+    %a.details{ :href => "/webjam2/" } Rewind
+    
+.event
+  .event-details
+    %h2 Webjam 1
+    %h3 Melbourne, 01 May 08
+    %a.details{ :href => "/webjam1/" } Rewind
