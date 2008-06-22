@@ -6,7 +6,7 @@ class PagesController < ApplicationController
       
     end
   end
-  def about
+  def statichome
   end
   def contact
   end
