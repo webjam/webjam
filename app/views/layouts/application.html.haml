@@ -1,0 +1,183 @@
+!!! Strict
+%html{ "xml:lang" => "en-au", :lang => "en-au", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }/
+    %title
+      - @page_title || (raise "No page title")
+    - stylesheet_link_tag 'reset', 'backjam'
+    - auto_discovery_link_tag :atom, "TODO", :title => "Webjam"
+    - yield :head
+
+  %body#webjam-com-au{:class => @body_class, :onload => @onload}
+    #page
+      %ul#account-tools
+        - if current_user
+        %li.profile
+          - user_login_link_with_avatar(current_user)
+        %li.logout
+          - button_to 'Logout', session_path, :method => :delete 
+        - else 
+        %li.login
+          - link_to "
+          %strong
+            Jammer?
+          Login", new_session_path 
+        %li.register
+          - link_to "
+          %strong
+            New peep?
+          Register", new_user_path 
+        - end 
+      /
+        \// #account-tools
+      #wrapper
+        - if top = yield(:top) 
+        - top 
+        - else 
+        %p#pagetitle
+          %a{ :href => "/" }
+            - image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam" 
+        - end 
+        #maincontent
+          #other-content
+            #wtf.item
+              %h2
+                WTF?
+              %p
+                18 presenters with 3 minutes each to show off their hot web work.
+              %p
+                You vote for the big winner and they get to take home cool booty.
+              %p
+                Oh, and sometimes there are free drinks too.
+            /
+              \// .item #wtf
+            #latest.item
+              %h2
+                Latest News
+                %a.feed{ :href => "#", :title => "Subscribe!" }
+                  Subscribe!
+              %h3
+                Webjam will rock you
+              %p
+                This is an excerpt from the article. How to do that? Auto or editorial? We're going to need bucketloads of support to make this work and that means all of you! Webjam is a community-driven event that showcases, celebrates and inspires every webby geek we can get our hands on and we need as much love as we can get to make this the biggest, wildest, hottest Webjam yet.
+              %ul
+                %li.first
+                  %a{ :href => "/posts/20-book-bonanza" }
+                    Read more...
+                %li
+                  %a{ :href => "/posts/20-book-bonanza#comments" }
+                    34 comments
+                %li.more
+                  %a{ :href => "/2008/" }
+                    News archive
+            /
+              \// .item #latest
+          /
+            \// #other-content
+          #content
+            - yield :layout 
+          /
+            \// #content
+        /
+          \// #maincontent
+        #footer
+          .column.first
+            #news.item
+              %h2
+                News
+                %a.feed{ :href => "#", :title => "Subscribe!" }
+                  Subscribe!
+              %ul
+                %li
+                  %a{ :href => "/posts/19-webjam-will-rock-you" }
+                    Webjam will rock you
+                  (
+                  %a.no-comments{ :href => "/posts/19-webjam-will-rock-you#comments" }
+                    0
+                  )
+                %li
+                  %a{ :href => "/posts/20-book-bonanza" }
+                    Book Bonanza
+                  (
+                  %a.no-comments{ :href => "/posts/20-book-bonanza#comments" }
+                    0
+                  )
+                %li
+                  %a{ :href => "/posts/21-time-and-place" }
+                    Time and Place
+                  (
+                  %a.no-comments{ :href => "/posts/21-time-and-place#comments" }
+                    0
+                  )
+                %li
+                  %a{ :href => "/posts/22-jams-kicked-out" }
+                    Jams == Kicked Out ++
+                  (
+                  %a.no-comments{ :href => "/posts/22-jams-kicked-out#comments" }
+                    0
+                  )
+                %li
+                  %a{ :href => "/posts/16-perth-plentiful-prizes" }
+                    Perth's Plentiful Prizes
+                  (
+                  %a.no-comments{ :href => "/posts/16-perth-plentiful-prizes#comments" }
+                    0
+                  )
+                %li.more
+                  %a{ :href => "/2008/" }
+                    More news
+            /
+              \// .item #news
+          /
+            \// .column
+          .column
+            #previous.item
+              %h2
+                Previous Jams
+              %ul
+                %li
+                  %a{ :href => "/webjam8/" }
+                    Webjam 8
+                %li
+                  %a{ :href => "/webjam7/" }
+                    Webjam 7
+                %li
+                  %a{ :href => "/webjam6/" }
+                    Webjam 6
+                %li
+                  %a{ :href => "/webjam5/" }
+                    Webjam 5
+                %li
+                  %a{ :href => "/webjam4/" }
+                    Webjam 5
+                %li
+                  %a{ :href => "/webjam3/" }
+                    Webjam 3
+                %li
+                  %a{ :href => "/webjam2/" }
+                    Webjam 2
+                %li
+                  %a{ :href => "/webjam1/" }
+                    Webjam 1
+            /
+              \// .item #news
+          /
+            \// .column
+          .column
+            #about.item
+              %h2
+                About
+              %p
+                Webjam is brought to you by the letters W, W and W
+              %p
+                Reach out and touch someone -
+                %a{ :href => "mailto:contact@webjam.com.au" }
+                  contact@webjam.com.au
+          /
+            \// .column
+        /
+          \// #footer
+      /
+        \// #wrapper
+    /
+      \// #page
