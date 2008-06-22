@@ -5,6 +5,8 @@
     %title
       = @page_title || (raise "No page title")
     = stylesheet_link_tag 'reset', 'backjam'
+    = javascript_include_tag 'jquery', 'webjam', 'autoshow', :cache => true
+
     = auto_discovery_link_tag :atom, "TODO", :title => "Webjam"
     = yield :head
 

@@ -167,7 +167,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		      #content dl.registration dd p {margin: 0 0 0.6em 0;}
     		        dl.registration dd p strong {display: block;}
     		        
-    		#content .item .slideshow {background: #808080; height: 215px; margin: 0 0 0.4em 0;}
+    		#content .item .slideshow {height: 215px; margin: 0 0 0.4em 0;}
     		
     		.item .sponsors {font-size: 0.625em; margin: 4em 0 2em 0;}
     		  .item .sponsors {padding: 0 0 0 9em; position: relative;}
