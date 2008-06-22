@@ -285,7 +285,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
 
 		/* --- =Other Content --- */
-		#other-content {float: left; padding: 2em 1em 1em; width: 22em;}
+		#other-content {float: left; padding: 2em 1em 1em; width: 21em;}
 		
 		  #other-content .item {margin: 0 0 1em 0;}
 		  
