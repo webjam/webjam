@@ -10,7 +10,7 @@ TOC
 		 --- =Headings
 		 --- =Body Text
 		 --- =Avatars
-		 --- =Date, Times etc
+		 --- =Feeds etc
 	-- =Generic Forms
 - =Structure
 	-- =Main Content
@@ -70,8 +70,11 @@ TOC
 				.user-avatar .vcard img {left: 0; position: absolute; top: -4px;}
 				.user-avatar .vcard .fn {padding: 0 0 0 10px;}
 
-		/* --- =Dates, Times etc --- */
-		.date {font: 1em/1.6 Georgia, serif;}
+		/* --- =Feeds etc --- */
+		.item h2 {position: relative;}
+      .item h2 .feed {background: #333 url('/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
+      
+      #latest h2 .feed {left: 5.8em; top: 0.6em;}
 
 	/* -- =Generic Forms -- */
 
@@ -301,20 +304,26 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
 
 		/* --- =Other Content --- */
-		#other-content {float: left; padding: 2em 1em 1em; width: 21em;}
+		#other-content {float: left; font: 300 1.143em/1.2 Helvetica, Arial, sans-serif; padding: 2em 1em 1em; width: 18em;}
 		
 		  #other-content .item {margin: 0 0 1em 0;}
 		  
+		  #latest h3 {font: 700 1em/1.2 Helvetica, Arial, sans-serif; text-transform: capitalize;}
+		  #latest p {}
+		  #latest ul {}
+		    #latest ul li {background: #181818 url('/images/bg-more.gif') no-repeat 100% 6px; float: left; margin: 0 1em 0 0; padding: 0 12px 0 0; width: auto;}
+		    #latest ul li.first {background: none; border-right: 1px solid #fff; padding: 0 1em 0 0;}
+		    #latest ul li.more {clear: both; margin: 1em 0 0 0;}
+		  
       /* ---- =WTF ---- */
-  		#wtf p {font: 300 1.2em/1.2 Helvetica, Arial, sans-serif; margin: 0 0 1em 0;}
+  		#wtf p {margin: 0 0 1em 0;}
 		
 	/* -- =Footer -- */		
     #footer {background: #333; color: #fff; clear: both; font-family: Helvetica, Arial, sans-serif; overflow: hidden;}
       #footer .column {border-left: 1px solid #181818; float: left; padding: 2.2em 1.8em 2000px 1.8em; margin: 0 0 -1940px 0; width: 19.6em;}
       #footer .column.first {border: none;}
       
-        #footer h2 {font-size: 1.714em; margin: 0 0 1em 0; position: relative;}
-          #footer .feed {background: #333 url('/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
+        #footer h2 {font-size: 1.714em; margin: 0 0 1em 0;}
       
         #news ul {}
           #news ul li {list-style-position: inside; list-style-type: disc; margin: 0 0 0.2em 0;}
