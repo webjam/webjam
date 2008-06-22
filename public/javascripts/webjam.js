@@ -12,6 +12,8 @@ function startup() {
 	if ( num_slides > 1) {
 		$('.slideshow li').hide();
 		$('.slideshow').autoshow();
+
+		$("h2").click( function() {alert("fuck yeah!")});
 		}
 	}
 	
