@@ -170,7 +170,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		    #content .event .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
     		    #content .event .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
     		    
-    		      .event .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -999px; width: 95px;}
+    		      .event .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
     		      .event .sponsors a:link,
     		      .event .sponsors a:visited {}
     		      .event .sponsors a:hover,
@@ -309,9 +309,23 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
   		#wtf p {font: 300 1.2em/1.2 Helvetica, Arial, sans-serif; margin: 0 0 1em 0;}
 		
 	/* -- =Footer -- */		
-    #footer {background: #333; color: #fff; clear: both; overflow: auto;}
-      #footer .column {border-left: 1px solid #181818; float: left; padding: 2em 0 4em 0; width: 23.2em;}
+    #footer {background: #333; color: #fff; clear: both; font-family: Helvetica, Arial, sans-serif; overflow: hidden;}
+      #footer .column {border-left: 1px solid #181818; float: left; padding: 2.2em 1.8em 2000px 1.8em; margin: 0 0 -1940px 0; width: 19.6em;}
       #footer .column.first {border: none;}
+      
+        #footer h2 {font-size: 1.714em; margin: 0 0 1em 0; position: relative;}
+          #footer .feed {background: #333 url('/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
+      
+        #news ul {}
+          #news ul li {list-style-position: inside; list-style-type: disc; margin: 0 0 0.2em 0;}
+          #news ul li.more {list-style-type: none; margin: 1em 0 0 0;}
+            #news ul li.more a {background: #333 url('/images/bg-footer-more.gif') no-repeat 100% 4px; padding: 0 10px 0 0;}
+            
+        #previous ul {}
+          #previous ul li {float: left; margin: 0 2.05em 0.4em 0; width: auto;}
+        
+        #about {}
+          #about p {margin: 0 0 1em 0;}
 		
 
 /* - =JS enabled - */
