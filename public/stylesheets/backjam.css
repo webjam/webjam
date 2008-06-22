@@ -139,27 +139,27 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		/* --- =Content --- */
 		#content {border-left: 1px solid #333; margin: 0 0 0 23.2em; padding: 0.4em 0 1em;}
 		
-		  #content .event {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
-		  #content .event.first {border: none; padding: 1.45em 1em 0 1em;}
-		    #content .event .event-details {overflow: auto; margin: 0 0 1em 0;}
+		  #content .item {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
+		  #content .item.last {border: none; padding: 1.45em 1em 0 1em;}
+		    #content .item .event-details {overflow: auto; margin: 0 0 1em 0;}
 		
     		  #content .event-details h2 {float: left; margin: 0 0.4em 0 0; width: auto;}
     		  #content .event-details h3 {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
     		  #content .event-details a.details,
-    		  #content .event .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
+    		  #content .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
     		  #content .event-details a.details {background: #181818 url('/images/bg-details.gif') no-repeat center right; color: #e71d25; margin: 1.6em 1.6em 0 0;}
     		  
-    		  #content .event .button {text-align: center; text-decoration: none;}
-    		  #content .event a.rsvp:link,
-    		  #content .event a.rsvp:visited {background: #ec1c26; color: #fff;}
-    		  #content .event a.rsvp:hover,
-    		  #content .event a.rsvp:active,
-    		  #content .event a.rsvp:focus {background: #fff; color: #ec1c26;}
+    		  #content .item .button {text-align: center; text-decoration: none;}
+    		  #content .item a.rsvp:link,
+    		  #content .item a.rsvp:visited {background: #ec1c26; color: #fff;}
+    		  #content .item a.rsvp:hover,
+    		  #content .item a.rsvp:active,
+    		  #content .item a.rsvp:focus {background: #fff; color: #ec1c26;}
     		  
-    		  #content .event span.closed {background: #4d4d4d; color: #fff;}
+    		  #content .item span.closed {background: #4d4d4d; color: #fff;}
     		
-    		#content .event .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
+    		#content .item .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
     		
     		  #content dl.registration {margin: 0.26em 0 0 2.5em;}
     		    dl.registration dt {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
@@ -167,19 +167,19 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		      #content dl.registration dd p {margin: 0 0 0.6em 0;}
     		        dl.registration dd p strong {display: block;}
     		        
-    		#content .event .slideshow {background: #808080; height: 215px; margin: 0 0 0.4em 0;}
+    		#content .item .slideshow {background: #808080; height: 215px; margin: 0 0 0.4em 0;}
     		
-    		.event .sponsors {font-size: 0.625em; margin: 4em 0 2em 0;}
-    		  .event .sponsors {padding: 0 0 0 9em; position: relative;}
-    		    #content .event .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
-    		    #content .event .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
+    		.item .sponsors {font-size: 0.625em; margin: 4em 0 2em 0;}
+    		  .item .sponsors {padding: 0 0 0 9em; position: relative;}
+    		    #content .item .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
+    		    #content .item .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
     		    
-    		      .event .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
-    		      .event .sponsors a:link,
-    		      .event .sponsors a:visited {}
-    		      .event .sponsors a:hover,
-    		      .event .sponsors a:active,
-    		      .event .sponsors a:focus {background-position: 0 100%;}
+    		      .item .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
+    		      .item .sponsors a:link,
+    		      .item .sponsors a:visited {}
+    		      .item .sponsors a:hover,
+    		      .item .sponsors a:active,
+    		      .item .sponsors a:focus {background-position: 0 100%;}
     		      
     		      .sponsors a.directSMS {background-image: url('/images/sponsors/directSMS.jpg');}
 
