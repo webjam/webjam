@@ -142,6 +142,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		  #content .item.last {border: none; padding: 1.45em 1em 0 1em;}
 		    #content .item .item-details {overflow: auto; margin: 0 0 1em 0;}
 		
+		      #content h1 span {left: -9999px; position: absolute; top: -9999px;}
+		        #content h1 strong {font-size: 5.979em; left: 2.28em; position: absolute; top: -0.17em;}
 		      #content .item-details h2 {margin: 0 0.4em 0 0;}
     		  body.home #content .item-details h2 {float: left; width: auto;}
     		  #content .item-details h3 {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
