@@ -37,10 +37,11 @@ ActionController::Routing::Routes.draw do |map|
     m.contact 'contact', :action => 'contact'
     m.home    '',        :action => 'home'
     m.open_id   'single-sign-on',   :action => 'single-sign-on'
+    m.vote_vis 'votestream', :action => "votestream"
     # temporary static files to build front-end
     m.statichome   'statichome',   :action => 'statichome'
     m.staticevent   'staticevent',   :action => 'staticevent'
-    m.vote_vis 'votestream', :action => "votestream"
+    m.staticpostevent   'staticpostevent',   :action => 'staticpostevent'
   end
   map.namespace :admin do |admin|
     admin.resources :events do |event|
