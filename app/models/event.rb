@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   end
 
   def full?
-    self.rsvps.size >= self.rsvp_limit
+    self.rsvps.size >= (self.rsvp_limit || 0)
   end 
 
   def to_param

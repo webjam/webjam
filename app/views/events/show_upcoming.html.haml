@@ -4,6 +4,7 @@
   =h @event.name
   (Upcoming)
 
-- unless @event.full? || current_user.rsvped?(@event)
-  - form_tag event_rsvps_path(@event) do |form|
-    = submit_tag 'RSVP!'
+- if logged_in?
+  - if @event.not.full? && current_user.not.rsvped?(@event)
+    - form_tag event_rsvps_path(@event) do |form|
+      = submit_tag 'RSVP!'
