@@ -133,7 +133,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 	#maincontent {}
 	
 		/* --- =Content --- */
-		#content {border-left: 1px solid #333; margin: 0 0 0 23.2em; padding: 2em 0 1em;}
+		#content {border-left: 1px solid #333; margin: 0 0 0 23.2em; padding: 0.4em 0 1em;}
 		
 		  #content .event {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
 		  #content .event.first {border: none; padding: 1.45em 1em 0 1em;}
@@ -144,7 +144,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  #content .event-details a.details,
     		  #content .event .button {display: block; float: right; font-size: 0.9em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
-    		  #content .event-details a.details {background: /*#181818*/blue url('/images/bg-details.gif') no-repeat center right; color: #e71d25; zpadding: 0 8px 0 0;}
+    		  #content .event-details a.details {background: #181818 url('/images/bg-details.gif') no-repeat center right; color: #e71d25; margin: 1.8em 0.6em 0 0;}
     		  
     		  #content .event .button {text-align: center; text-decoration: none;}
     		  #content .event a.rsvp:link,
@@ -155,7 +155,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  
     		  #content .event span.closed {background: #4d4d4d; color: #fff;}
     		
-    		#content .event .column {background: green; float: left; margin: 0 1em 0 0; width: 19em;}
+    		#content .event .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
     		
     		  #content .event .button {}
 			
@@ -286,21 +286,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		  
       /* ---- =WTF ---- */
   		#wtf p {font: 300 1.2em/1.2 Helvetica, Arial, sans-serif; margin: 0 0 1em 0;}
-		
-			/* ---- =Main Nav ---- */
-			#main-nav {float: left; margin: 0 1em 0 2em;}
-				#main-nav li {font-size: 1.2em; margin: 0 0 0.2em;}
-					#main-nav li a:link, 
-					#main-nav li a:visited {text-decoration: none;}
-					#main-nav li a:hover,
-					#main-nav li a:active,
-					#main-nav li a:focus {background: #0e0e0e; color: #f03e00; text-decoration: underline;} 
-					#main-nav li span {background: #0e0e0e; color: #f03e00;} 
-					
-					#main-nav li li {font-size: 0.8em;}
-						#main-nav li li a {background: #0e0e0e url('/images/bg-subnav.gif') no-repeat 0 2px; padding: 0 0 0 12px;}
-						#main-nav li li span {background: #0e0e0e url('/images/bg-subnav-active.gif') no-repeat 0 2px; padding: 0 0 0 12px;}
-						#main-nav li strong {font-size: 0.8em;}
 		
 	/* -- =Footer -- */		
     #footer {background: #333; color: #fff; clear: both; overflow: auto;}
