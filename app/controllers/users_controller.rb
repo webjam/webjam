@@ -3,9 +3,9 @@ class UsersController < ApplicationController
   before_filter :strip_permalinks
 
   def show
+    raise NotFound unless params[:path_info].length == 1
     @user = User.find_by_nick_name(params[:path_info])
-    # @upcoming_events = @user.events.find_upcoming(:all, :order => 'held_at ASC')
-    # @previous_events = @user.events.find_past(:all, :order => 'held_at ASC')
+    raise NotFound unless @user
   end
   
   def new

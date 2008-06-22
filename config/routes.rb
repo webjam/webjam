@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.event ":id", :controller => "events", :action => "show", :requirements => {:id => /webjam\d+/}
   map.event_rsvps ":event/rsvps", :controller => "rsvps", :action => "create", :conditions => { :method => :post }, :requirements => {:event => /webjam\d+/}
+  map.event_proposals ":event/proposals", :controller => "proposals", :action => "create", :conditions => { :method => :post }, :requirements => {:event => /webjam\d+/}
   
   map.with_options(:controller => "users") do |user|
     user.update_profile_details_current_user 'account/update_profile_details', :conditions => {:method => :put}, :action => "update_profile_details"
@@ -39,9 +40,13 @@ ActionController::Routing::Routes.draw do |map|
     # temporary static files to build front-end
     m.statichome   'statichome',   :action => 'statichome'
     m.staticevent   'staticevent',   :action => 'staticevent'
+    m.vote_vis 'votestream', :action => "votestream"
   end
   map.namespace :admin do |admin|
-    admin.resources :locations, :events, :posts
+    admin.resources :events do |event|
+      event.resources :rsvps
+    end
+    admin.resources :locations, :posts
   end
   map.admin 'admin', :controller => 'admin/home'
   map.legacy_post 'post/:permalink.html', :controller => "posts", :action => "legacy" 
