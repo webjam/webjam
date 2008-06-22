@@ -38,6 +38,7 @@ ActionController::Routing::Routes.draw do |map|
     m.open_id   'single-sign-on',   :action => 'single-sign-on'
     # temporary static files to build front-end
     m.statichome   'statichome',   :action => 'statichome'
+    m.staticevent   'staticevent',   :action => 'staticevent'
   end
   map.namespace :admin do |admin|
     admin.resources :locations, :events, :posts
