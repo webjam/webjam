@@ -2,6 +2,10 @@
 - @page_title = "Webjam brings you the latest in piping hot web"
 - @body_class = "home"
 
+- content_for :other_content do
+  = render :partial => 'shared/other_content/wtf'
+  = render :partial => 'shared/other_content/latest_news'
+
 - for event in @upcoming_events
   = render :partial => "pages/events/upcoming", :locals => {:event => event}
 

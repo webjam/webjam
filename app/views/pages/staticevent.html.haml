@@ -3,6 +3,10 @@
 - @body_class = "event"
 - @event_num = 8
 
+- content_for :other_content do
+  = render :partial => 'shared/other_content/wtf'
+  = render :partial => 'shared/other_content/shirt'
+
 .item
   .item-details
     %h1 Webjam 8
