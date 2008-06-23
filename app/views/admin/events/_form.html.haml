@@ -1,0 +1,24 @@
+= f.error_messages
+
+%fieldset
+  %label{ :for => "event_name" }
+    Name
+    = f.text_field :name
+  %label{ :for => "event_tag" }
+    Tag
+    = f.text_field :tag
+  %label{ :for => "event_held_at" }
+    Held at (DateTime)
+    = f.text_field :held_at
+  %label{ :for => "event_timezone" }
+    Timezone
+    = f.text_area :timezone
+  %label{ :for => "event_rsvp_limit" }
+    RSVP limit
+    = f.text_field :rsvp_limit
+  %label{ :for => "event_published_at" }
+    Published at (DateTime)
+    = f.text_field :published_at
+
+%fieldset
+  = submit_tag "Save", :class => "submit"
