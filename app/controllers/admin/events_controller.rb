@@ -20,10 +20,11 @@ class Admin::EventsController < Admin::BaseController
     redirect_to [:admin, @event]
   end
   def destroy
-    Event.find(params[:id]).destroy
+    Event.find_by_tag(params[:id]).destroy
     redirect_to admin_events_path
   end
   def show
     @event = Event.find_by_tag(params[:id])
+    raise NotFound unless @event
   end
 end
