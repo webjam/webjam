@@ -1,0 +1,14 @@
+- @section = :events
+- @page_title = "Events"
+
+%h1
+  Events
+
+- content_for :subcontent do
+  %ul
+    %li
+      = link_to "New event", new_admin_event_path
+
+- for event in @events
+  %li
+    = link_to h(event.name), [:admin, event]

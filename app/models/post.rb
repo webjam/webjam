@@ -5,10 +5,6 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :body, :permalink
   
   named_scope :published, :conditions => 'published_at IS NOT NULL'
-  named_scope :recently_published, 
-              :conditions => 'published_at IS NOT NULL',
-              :limit => 5,
-              :order => 'published_at DESC'
 
   def self.find_all_for_archive
     find(:all,
