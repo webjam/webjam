@@ -10,5 +10,6 @@
       = link_to "New post", new_admin_post_path
 
 - for post in @posts
-  %li
-    = link_to h(post), [:admin, post]
+  %ul
+    %li
+      = link_to h(post), [:admin, post]
