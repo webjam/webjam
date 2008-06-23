@@ -77,8 +77,9 @@ TOC
 		/* --- =Feeds etc --- */
 		.item h2 {position: relative;}
       .item h2 .feed {background: #333 url('/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
+      body.home #latest h2 .feed {top: 0.6em;}
       
-      #latest h2 .feed {left: 5.8em; top: 0.4em;}
+      #latest h2 .feed {left: 5.7em; top: 0.4em;}
 
 	/* -- =Generic Forms -- */
 
