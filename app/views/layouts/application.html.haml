@@ -113,30 +113,10 @@
               %h2
                 Previous Jams
               %ul
-                %li
-                  %a{ :href => "/webjam8/" }
-                    Webjam 8
-                %li
-                  %a{ :href => "/webjam7/" }
-                    Webjam 7
-                %li
-                  %a{ :href => "/webjam6/" }
-                    Webjam 6
-                %li
-                  %a{ :href => "/webjam5/" }
-                    Webjam 5
-                %li
-                  %a{ :href => "/webjam4/" }
-                    Webjam 5
-                %li
-                  %a{ :href => "/webjam3/" }
-                    Webjam 3
-                %li
-                  %a{ :href => "/webjam2/" }
-                    Webjam 2
-                %li
-                  %a{ :href => "/webjam1/" }
-                    Webjam 1
+                - for event in @footer_previous_events
+                  %li
+                    %a{ :href => event_path(event) }
+                      = event.name
 
           .column
             #about.item
