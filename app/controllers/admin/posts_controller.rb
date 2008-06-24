@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::BaseController
   def index
-    @posts = Post.find(:all, :order => 'created_at DESC')
+    @posts = Post.find(:all, :order => 'published_at DESC')
   end
   def new
     @post = Post.new
