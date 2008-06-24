@@ -1,11 +1,10 @@
 - @section = :posts
 - @page_title = "Blog posts"
 
-%h1
-  Posts
+%h1 Posts
 
-- content_for :subcontent do
-  %ul
+- content_for :other_content do
+  %ul.actions
     %li
       = link_to "New post", new_admin_post_path
 

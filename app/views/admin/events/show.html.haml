@@ -2,7 +2,7 @@
 - @page_title = "Event: #{h(@event.name)}"
 
 
-- content_for :subcontent do
+- content_for :other_content do
   %ul
     %li= link_to "Edit", edit_admin_event_path(@event)
     %li= button_to "Delete", admin_event_path(@event), :method => :delete, :confirm => "Yo sure?"
@@ -12,36 +12,29 @@
   =h @event.name
 
 %p
-  %strong
-    Permalink:
+  %strong Permalink:
   = link_to event_path(event), event_path(event)
 
 %p
-  %strong
-    Name:
+  %strong Name:
   = @post.name
 
 %p
-  %strong
-    Tag:
+  %strong Tag:
   = @post.tag
 
 %p
-  %strong
-    Held At:
+  %strong Held At:
   = @post.held_at
 
 %p
-  %strong
-    Timezone:
+  %strong Timezone:
   = @post.timezone
 
 %p
-  %strong
-    RSVP limit:
+  %strong RSVP limit:
   = @post.rsvp_limit
 
 %p
-  %strong
-    Published:
+  %strong Published:
   = @post.published_at || "Not yet"
