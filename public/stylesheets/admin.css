@@ -2,3 +2,5 @@
 
   #content ul {font-size: 1.2em;}
     #content ul li {margin: 0 0 0.4em 0;}
+    
+    #subcontent {float: right; width: 10em; padding: 1em;}

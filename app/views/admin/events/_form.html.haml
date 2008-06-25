@@ -5,14 +5,17 @@
     Name
     = f.text_field :name
   %label{ :for => "event_tag" }
-    Tag
+    Tag (permalink and flickr tag)
     = f.text_field :tag
   %label{ :for => "event_held_at" }
     Held at (DateTime)
     = f.text_field :held_at
+  %label{ :for => "event_location" }
+    Location (Sydney, etc)
+    = f.text_field :location
   %label{ :for => "event_timezone" }
     Timezone
-    = f.text_area :timezone
+    = f.time_zone_select :timezone, TimeZone.all
   %label{ :for => "event_rsvp_limit" }
     RSVP limit
     = f.text_field :rsvp_limit

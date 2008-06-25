@@ -18,4 +18,8 @@ class Event < ActiveRecord::Base
   def to_param
     self.tag
   end
+  
+  def local_held_at
+    held_at.in_time_zone(self.timezone)
+  end
 end

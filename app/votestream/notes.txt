@@ -1,0 +1,23 @@
+- for cross-domain and simplicity we'll just use JSON-P polling
+- use a cookie to track vote counts and emulate real event
+- provide a param to define callback
+- provide a param to reset vote count
+
+We need to be able to run the vis at Webjam on our MBP, we need to be able to authenticate via HTTP basic to the official stream (/live-stream.js).
+
+<script type="text/javascript" src="http://votestream.webjam.com.au/mock-steam.js?callback=updateVotestream">
+</script>
+
+- mongrel serves vote count state in cookie (list of 18 vote counts)
+- mongrel returns response of:
+
+callbackFunctionName([{"name":"Elvis","code":"1","votes":"8"},...]);
+
+Desktop clients just wanting the JS leave off the callback param.
+
+Client API:
+
+vs = new WebjamVotestream("callbackFunctionName");
+vs.poll();
+vs.stop();
+vs.resetCount();
