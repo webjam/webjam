@@ -17,6 +17,11 @@ class ApplicationController < ActionController::Base
   protected
     TLD_LENGTH = 2
     
+    before_filter :protect_da_alpha
+    def protect_da_alpha
+      authenticate_or_request_with_http_basic {|u, p| u == "alpha" && p == "alpha"}
+    end
+    
     before_filter :remove_trailing_slashes
     def remove_trailing_slashes
       if (uri = request.request_uri).length > 1 and uri[-1,1] == '/'
