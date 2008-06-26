@@ -1,6 +1,7 @@
 set :stages, %w(staging production edge)
 set :default_stage, "edge"
 require 'capistrano/ext/multistage'
+$:.unshift File.dirname(__FILE__)+'/../vendor/capistrano/capistrano_rsync_with_remote_cache/lib'
 
 # Common stuff goes here, like perms, servers, and restart stuff
 
@@ -9,6 +10,7 @@ set :ssh_options, { :forward_agent => true } # this is so we don't need a appdep
 set :application, "webjam"
 
 set :scm, :git
+set :deploy_via, :rsync_with_remote_cache
 set :repository, "git@github.com:toolmantim/webjam.git"
 
 role :app, "208.75.86.29"
