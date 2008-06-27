@@ -2,7 +2,7 @@
 - @page_title = "Event: #{h(@event.name)}"
 
 
-- content_for :subcontent do
+- content_for :other_content do
   %ul
     %li= link_to "Edit", edit_admin_event_path(@event)
     %li= button_to "Delete", admin_event_path(@event), :method => :delete, :confirm => "Yo sure?"
@@ -35,7 +35,7 @@
   %strong
     Location:
   = @event.location
-
+  
 %p
   %strong
     Timezone:

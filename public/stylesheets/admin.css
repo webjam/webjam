@@ -1,3 +1,11 @@
+#other-content {font-size: 1.5em; padding: 1em; width: 14em;}
+  
+  #main-nav {}
+    #main-nav li {margin: 0 0 0.2em 0;}
+
+  #other-content ul.actions {margin: 2em 0 0 0;}
+
+
 #content {padding: 1em;}
 
   #content ul {font-size: 1.2em;}

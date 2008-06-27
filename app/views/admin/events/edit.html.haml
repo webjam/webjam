@@ -1,8 +1,7 @@
 - @section = :events
 - @page_title = "Edit event"
 
-%h1
-  Edit event
+%h1 Edit event
 
 - form_for [:admin, @event] do |f|
   = render :partial => 'form', :locals => {:f => f}

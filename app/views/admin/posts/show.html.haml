@@ -2,7 +2,7 @@
 - @page_title = "Post: #{h(@post)}"
 
 
-- content_for :subcontent do
+- content_for :other_content do
   %ul
     %li= link_to "Edit", edit_admin_post_path(@post)
     %li= button_to "Delete", admin_post_path(@post), :method => :delete, :confirm => "Yo sure?"
