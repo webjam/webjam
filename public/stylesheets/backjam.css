@@ -322,11 +322,22 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
 
 		/* --- =Other Content --- */
-		#other-content {float: left; font: 300 1.143em/1.2 Helvetica, Arial, sans-serif; padding: 1.6em 0 1em 0; width: 20.3em;}
+		#other-content {float: left; font: 300 1.143em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; padding: 1.6em 0 1em 0; width: 20.3em;}
 		
 		  #other-content .item {border-bottom: 1px solid #333; margin: 0 0 1em 0; padding: 0 1em 1em 1em;}
 		  
 		  #other-content .last {border:none;}
+		  
+		  #other-content #summary {font-size: 0.875em;}
+		    #summary p {margin: 0 0 1em 0;}
+		    #summary h2 {font: 300 1em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; margin: 1em 0 0.1em 0;}
+		    
+		    #summary ol {padding: 0 0 0 1.5em;}
+		      #summary ol li {list-style-type: decimal;}
+		        #summary ol li a {}
+		    #summary ul {padding: 0 0 0 1em;}
+		      #summary ul li {list-style-type: disc; padding: 0 0 0 0.5em;}
+		        #summary ul li a {}
 		  
       /* ---- =WTF ---- */
       #wtf {}

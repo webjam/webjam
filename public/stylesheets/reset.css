@@ -33,6 +33,7 @@ body {
 }
 ol, ul {
 	list-style: none;
+/*  list-style-position: inside;*/
 }
 /* tables still need 'cellspacing="0"' in the markup */
 table {
