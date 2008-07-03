@@ -39,6 +39,8 @@ TOC
 		a:visited {color: #fff;}
 		a:hover, a:active, a:focus {color: #f03e00;}
 		
+		#content a.details {background: #181818 url('/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
+		
 		/* --- =Headings --- */
 		h1, h2, h3, h4, h5, h6 {font-family: Futura, Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
 		h1,
@@ -157,7 +159,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  #content .item-details a.details,
     		  #content .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
-    		  #content .item-details a.details {background: #181818 url('/images/bg-details.gif') no-repeat center right; color: #e71d25; margin: 1.6em 1.6em 0 0;}
+    		  #content .item-details a.details {margin: 1.6em 1.6em 0 0;}
     		  
     		  #content .item .button {text-align: center; text-decoration: none;}
     		  #content .item a.rsvp:link,
@@ -179,11 +181,16 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		#content .item .slideshow {height: 215px; margin: 0 0 0.4em 0;}
     		
     		.item .sponsors {font-size: 0.625em; margin: 0 0 2em 0; position: relative;}
-    		  body.home .item .sponsors {margin: 4em 0 2em 0; padding: 0 0 0 9em;}
+    		  body.home .item .sponsors {margin: 4em 0 2em 0; padding: 0 0 0 9em;} 
     		  
     		    #content .item .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
     		    #content .item .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
     		    #content .item .sponsors li.moar {}
+    		 
+    		 body.complete #sponsors .item-details {float: left; margin: 0; width: auto;}
+    		 body.complete #sponsors h2,
+    		 body.complete #sponsors ul.sponsors li {margin: 0;}
+    		 
     		    
     		      .item .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
     		      .item .sponsors li.moar a {background: #181818 url('/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; font-size: 1.6em; margin: 0.8em 0 0 3.8em; padding: 0 16px 0 0; text-indent: 0; width: auto;}
