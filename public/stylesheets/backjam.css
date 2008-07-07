@@ -190,7 +190,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		 body.complete #sponsors .item-details {float: left; margin: 0; width: auto;}
     		 body.complete #sponsors h2,
     		 body.complete #sponsors ul.sponsors li {margin: 0;}
-    		 
     		    
     		      .item .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
     		      .item .sponsors li.moar a {background: #181818 url('/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; font-size: 1.6em; margin: 0.8em 0 0 3.8em; padding: 0 16px 0 0; text-indent: 0; width: auto;}
@@ -204,6 +203,17 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		      .sponsors a.directSMS {background-image: url('/images/sponsors/directSMS.jpg');}
     		  
     		    .item .map {background: #808080; height: 215px;}
+    		    
+    	body.complete .media {}
+    	  .media .item-details {}
+    	    .media .item-details h2 {float: left; margin: 0 1em 0 0; width: auto;}
+    	    .media .item-details p {line-height: 2.8;}
+    	  .media ul {}
+    	    .media li {float: left; margin: 0 1em 1em 0; width: auto;}
+        	  #videos li {margin: 0 1.16em 1em 0;}
+        	  #words li {float: none; font-size: 0.95em; list-style-type: disc; margin: 0 0 0.3em 0.7em;}
+        	    #words li a {font-size: 1.053em; margin: 0 0.3em 0 0; text-transform: capitalize;}
+    	    
 
 			
 			/* ---- =Posts ---- */
