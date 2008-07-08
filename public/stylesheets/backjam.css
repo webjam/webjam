@@ -206,18 +206,23 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		
     	body.complete #winners {}
     	  #content #winners .item-details {margin: 0;}
-    	    #winners dl {min-height: 200px; padding: 0 0 0 300px; position: relative;}
-    	      #winners dt {font-size: 1.5em;}  
+    	    #winners dl {float: left; margin: 0 0.5em 0 0; min-height: 100px; padding: 0 0 0 105px; position: relative; width: 14.3em;}
+    	    #winners dl.first {float: none; margin: 0; min-height: 200px; padding: 0 0 0 315px; width: auto;}
+    	    
+    	      #winners dl dt {font-weight: 700;}
+    	      #winners dl.first dt {font-size: 1.5em; font-weight: 300;}  
+    	      
     	      #winners dd {}
     	      #winners dd.place,
     	      #winners dd.prize {}
     	      #winners dd.place strong,
     	      #winners dd.prize strong {font-weight: 700;}
-    	      #winners dd.img {background: #ccc; height: 176px; left: 5px; position: absolute; top: 5px; width: 288px;}
+    	      #winners dd.img {background: #ccc; height: 90px; left: 5px; position: absolute; top: 3px; width: 90px;}
+    	        #winners dl.first dd.img {height: 176px; top: 5px; width: 300px;}
     	      
-    	        #winners dd p {margin: 1em 0 0 0;}
-    	        #winners dd.place p,
-    	        #winners dd.prize p {margin: 0;}
+    	        #winners dl.first dd p {margin: 1em 0 0 0;}
+    	        #winners dl.first dd.place p,
+    	        #winners dl.first dd.prize p {margin: 0;}
     		
     	body.complete .media {}
     	  .media .item-details {}
