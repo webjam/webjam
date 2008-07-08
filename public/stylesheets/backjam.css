@@ -203,12 +203,34 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		      .sponsors a.directSMS {background-image: url('/images/sponsors/directSMS.jpg');}
     		  
     		    .item .map {background: #808080; height: 215px;}
-    		    
+    		
+    	body.complete #winners {}
+    	  #content #winners .item-details {margin: 0;}
+    	    #winners dl {float: left; margin: 0 0.5em 0 0; min-height: 100px; padding: 0 0 0 105px; position: relative; width: 14.3em;}
+    	    #winners dl.first {float: none; margin: 0; min-height: 200px; padding: 0 0 0 315px; width: auto;}
+    	    
+    	      #winners dl dt {font-weight: 700;}
+    	      #winners dl.first dt {font-size: 1.5em; font-weight: 300;}  
+    	      
+    	      #winners dd {}
+    	      #winners dd.place,
+    	      #winners dd.prize {}
+    	      #winners dd.place strong,
+    	      #winners dd.prize strong {font-weight: 700;}
+    	      #winners dd.img {background: #ccc; height: 90px; left: 5px; position: absolute; top: 3px; width: 90px;}
+    	        #winners dl.first dd.img {height: 176px; top: 5px; width: 300px;}
+    	      
+    	        #winners dl.first dd p {margin: 1em 0 0 0;}
+    	        #winners dl.first dd.place p,
+    	        #winners dl.first dd.prize p {margin: 0;}
+    		
     	body.complete .media {}
     	  .media .item-details {}
     	    .media .item-details h2 {float: left; margin: 0 1em 0 0; width: auto;}
     	    .media .item-details p {line-height: 2.8;}
     	  .media ul {}
+    	    #words ul {margin: 0 0 1em 0;}
+    	  
     	    .media li {float: left; margin: 0 1em 1em 0; width: auto;}
         	  #videos li {margin: 0 1.16em 1em 0;}
         	  #words li {float: none; font-size: 0.95em; list-style-type: disc; margin: 0 0 0.3em 0.7em;}
