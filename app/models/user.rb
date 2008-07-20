@@ -54,6 +54,11 @@ class User < ActiveRecord::Base
   end
   alias_method :rsvped?, :rsvp_for
   
+  def proposal_for(event)
+    proposals.detect {|prop| prop.event == event}
+  end
+  alias_method :proposed_for?, :proposal_for
+  
   protected
     def attr_for_openid_sreg_field(field)
       {
