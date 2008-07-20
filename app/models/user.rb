@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :identity_urls, :dependent => :destroy
   has_many :rsvps
   has_many :events, :through => :rsvps
+  has_many :presentation_proposals
   
   validates_presence_of :full_name, :nick_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
@@ -55,7 +56,7 @@ class User < ActiveRecord::Base
   alias_method :rsvped?, :rsvp_for
   
   def proposal_for(event)
-    proposals.detect {|prop| prop.event == event}
+    presentation_proposals.detect {|prop| prop.event == event}
   end
   alias_method :proposed_for?, :proposal_for
   
