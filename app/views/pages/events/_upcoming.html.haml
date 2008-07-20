@@ -6,15 +6,31 @@
 
   .column
     %dl.registration
-      %dt
-        %a.button.rsvp{ :href => "#" } RSVP
-      %dd
-        %p
-          %strong Want to attend?
-          Only 76 spots, get on it.
-      %dt
-        %span.button.closed Too late
-      %dd
-        %p
-          %strong Want to present?
-          Applications are closed.
+      - if event.full?
+        %dt
+          %span.button.closed Too late
+        %dd
+          %p
+            %strong Want to attend?
+            Sorry, all full up!
+      - else
+        %dt
+          %a.button.rsvp{ :href => event_path(event) } Attend
+        %dd
+          %p
+            %strong Want to attend?
+            = "Only #{pluralize(event.rsvps_left, "spot")}, get on it."
+      - if event.not.proposals_open?
+        %dt
+          %span.button.closed Too late
+        %dd
+          %p
+            %strong Want to present?
+            Sorry, no more are being accepted.
+      - else
+        %dt
+          %a.button.rsvp{ :href => event_path(event) } Present
+        %dd
+          %p
+            %strong Want to present?
+            Submit your proposal!
