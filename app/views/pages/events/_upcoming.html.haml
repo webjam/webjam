@@ -1,11 +1,8 @@
 .item
-  .item-details
-    %h2 Webjam 8
-    %h3 Perth, 15 Aug 08
-    %a.details{ :href => "/webjam8/" } Details
-  
+  = render :partial => "pages/events/title", :locals => {:link_name => "Details", :event => event}
+    
   .column
-    %p This is some clever text that’ll hype the next webjam. This is some clever text that’ll hype the next webjam. This is some clever text that’ll hype the next webjam.
+    = event.hype
 
   .column
     %dl.registration

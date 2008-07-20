@@ -1,8 +1,5 @@
 .item
-  .item-details
-    %h2= event.name
-    %h3= "#{event.location} #{event.local_held_at.to_date.to_s(:long_ordinal)}"
-    %a.details{ :href => event_path(event) } Rewind
+  = render :partial => "pages/events/title", :locals => {:link_name => "Rewind", :event => event}
 
   .slideshow
     %ul

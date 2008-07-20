@@ -48,5 +48,10 @@
 
 %p
   %strong
+    Hype (used on homepage and event page):
+  =h @event.hype
+
+%p
+  %strong
     Published:
   = @event.published_at || "Not yet"

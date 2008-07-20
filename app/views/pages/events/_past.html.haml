@@ -1,5 +1,2 @@
 .item
-  .item-details
-    %h2= event.name
-    %h3= event.held_at + "** Melbourne, 01 May 08"
-    %a.details{ :href => event_path(event) } Rewind
+  = render :partial => "pages/events/title", :locals => {:link_name => "Rewind", :event => event}

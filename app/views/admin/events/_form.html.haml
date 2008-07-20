@@ -19,6 +19,9 @@
   %label{ :for => "event_rsvp_limit" }
     RSVP limit
     = f.text_field :rsvp_limit
+  %label{ :for => "event_hype" }
+    Hype (used on the homepage and event page)
+    = f.text_area :hype
   %label{ :for => "event_published_at" }
     Published at (DateTime)
     = f.text_field :published_at
