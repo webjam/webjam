@@ -19,7 +19,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resource  :session, :member => { :create => :any }
 
   map.event ":id", :controller => "events", :action => "show", :requirements => {:id => /webjam\d+/}
-  map.event_rsvps ":event/rsvps", :controller => "rsvps", :action => "create", :conditions => { :method => :post }, :requirements => {:event => /webjam\d+/}
+  map.event_rsvps ":event_id/rsvps", :controller => "rsvps", :action => "create", :conditions => { :method => :post }, :requirements => {:event_id => /webjam\d+/}
+  map.event_rsvp ":event_id/rsvps/:id", :controller => "rsvps", :action => "destroy", :conditions => { :method => :delete }, :requirements => {:event_id => /webjam\d+/}
   
   map.with_options(:controller => "presentation_proposals", :requirements => {:event => /webjam\d+/}) do |proposals|
     proposals.event_presentation_proposals ":event/proposals", :action => "create", :conditions => { :method => :post }
