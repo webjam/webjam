@@ -1,23 +1,45 @@
 .item
-  .item-details
-    %h2 Webjam 8
-    %h3 Perth, 15 Aug 08
-    %a.details{ :href => "/webjam8/" } Details
-  
+  = render :partial => "pages/events/title", :locals => {:link_name => "Details", :event => event}
+    
   .column
-    %p This is some clever text that’ll hype the next webjam. This is some clever text that’ll hype the next webjam. This is some clever text that’ll hype the next webjam.
+    = event.hype
 
   .column
     %dl.registration
-      %dt
-        %a.button.rsvp{ :href => "#" } RSVP
-      %dd
-        %p
-          %strong Want to attend?
-          Only 76 spots, get on it.
-      %dt
-        %span.button.closed Too late
-      %dd
-        %p
-          %strong Want to present?
-          Applications are closed.
+      - if event.full?
+        %dt
+          %span.button.closed Too late
+        %dd
+          %p
+            %strong Want to attend?
+            Sorry, all full up!
+      - elsif rsvp = current_user.rsvp_for(event)
+        %dt
+          - form_tag event_rsvp_path(event, rsvp), :method => :delete, :class => "button rsvp" do |form|
+            = submit_tag 'UNRSVP'
+        %dd
+          %p
+            %strong Want to attend?
+            You&rsquo;re coming!
+      - else
+        %dt
+          - form_tag event_rsvps_path(event), :class => "button rsvp" do |form|
+            = submit_tag 'Attend'
+        %dd
+          %p
+            %strong Want to attend?
+            = "Only #{pluralize(event.rsvps_left, "spot")}, get on it."
+      - if event.not.proposals_open?
+        %dt
+          %span.button.closed Too late
+        %dd
+          %p
+            %strong Want to present?
+            Sorry, no more are being accepted.
+      - else
+        %dt
+          = link_to "Present", new_event_presentation_proposal_path(event), :class => "button rsvp"
+        %dd
+          %p
+            %strong Want to present?
+            Submit your proposal!

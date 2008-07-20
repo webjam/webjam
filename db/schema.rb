@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080623080959) do
+ActiveRecord::Schema.define(:version => 20080720051316) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(:version => 20080623080959) do
     t.string   "timezone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rsvp_limit",   :limit => 11
+    t.integer  "rsvp_limit",         :limit => 11
     t.datetime "published_at"
     t.string   "location"
+    t.text     "hype"
+    t.datetime "proposals_close_at"
   end
 
   create_table "identity_urls", :force => true do |t|

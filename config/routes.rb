@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  EVENT_TAG = /webjam\d+/
+
   # super friendly post urls
   map.posts 'news', :controller => 'posts', :action => 'index'
   map.posts_year 'news/:year', 
@@ -18,12 +20,13 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :comments
   map.resource  :session, :member => { :create => :any }
 
-  map.event ":id", :controller => "events", :action => "show", :requirements => {:id => /webjam\d+/}
-  map.event_rsvps ":event/rsvps", :controller => "rsvps", :action => "create", :conditions => { :method => :post }, :requirements => {:event => /webjam\d+/}
+  map.event ":id", :controller => "events", :action => "show", :requirements => {:id => EVENT_TAG}
+  map.event_rsvps ":event_id/rsvps", :controller => "rsvps", :action => "create", :conditions => { :method => :post }, :requirements => {:event_id => EVENT_TAG}
+  map.event_rsvp ":event_id/rsvps/:id", :controller => "rsvps", :action => "destroy", :conditions => { :method => :delete }, :requirements => {:event_id => EVENT_TAG}
   
-  map.with_options(:controller => "presentation_proposals", :requirements => {:event => /webjam\d+/}) do |proposals|
-    proposals.event_presentation_proposals ":event/proposals", :action => "create", :conditions => { :method => :post }
-    proposals.new_event_presentation_proposal ":event/proposals/new", :action => "new", :conditions => { :method => :get }
+  map.with_options(:controller => "presentation_proposals", :requirements => {:event_id => EVENT_TAG}) do |proposals|
+    proposals.event_presentation_proposals ":event_id/proposals", :action => "create", :conditions => { :method => :post }
+    proposals.new_event_presentation_proposal ":event_id/proposals/new", :action => "new", :conditions => { :method => :get }
   end
   
   map.with_options(:controller => "users") do |user|

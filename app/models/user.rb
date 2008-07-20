@@ -49,9 +49,15 @@ class User < ActiveRecord::Base
     nick_name
   end
 
-  def rsvped?(event)
-    events.include?(event)   
+  def rsvp_for(event)
+    rsvps.detect {|rsvp| rsvp.event == event}
   end
+  alias_method :rsvped?, :rsvp_for
+  
+  def proposal_for(event)
+    proposals.detect {|prop| prop.event == event}
+  end
+  alias_method :proposed_for?, :proposal_for
   
   protected
     def attr_for_openid_sreg_field(field)
