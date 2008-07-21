@@ -6,7 +6,10 @@
 
   .column
     %dl.registration
-      - if event.full?
+      / RSVPs
+      - if logged_in? && (rsvp = current_user.rsvp_for(event))
+        / Don't show nuthin if you've RSVP'd already
+      - elsif event.full?
         %dt
           %span.button.closed Too late
         %dd
@@ -20,14 +23,6 @@
           %p
             %strong Want to attend?
             There&rsquo;s still spots
-      - elsif rsvp = current_user.rsvp_for(event)
-        %dt
-          - form_tag event_rsvp_path(event, rsvp), :method => :delete, :class => "button rsvp" do |form|
-            = submit_tag 'UNRSVP'
-        %dd
-          %p
-            %strong Want to attend?
-            You&rsquo;re coming!
       - else
         %dt
           - form_tag event_rsvps_path(event), :class => "button rsvp" do |form|
@@ -37,7 +32,11 @@
             %strong Want to attend?
             = "Only #{pluralize(event.rsvps_left, "spot")}, get on it."
 
-      - if event.not.proposals_open?
+      / Proposals
+      / TODO: If they've submitted a proposal
+      - if logged_in? && (proposal = current_user.proposal_for(event))
+        / Don't show nuthin if you've submitted a proposal
+      - elsif event.not.proposals_open?
         %dt
           %span.button.closed Too late
         %dd
