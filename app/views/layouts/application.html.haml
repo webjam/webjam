@@ -35,10 +35,14 @@
           %span#phat-digits
             = @event_num
         #maincontent
-          #other-content
-            = yield :other_content
-          #content
-            = yield :layout 
+          - if other_content = yield(:other_content)
+            #other-content
+              = other_content
+            #content
+              = yield :layout
+          -else
+            #content.full
+              =yield :layout
         #footer
           .column.first
             #news.item
