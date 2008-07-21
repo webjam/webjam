@@ -19,7 +19,7 @@
             = user_login_link_with_avatar(current_user)
           %li.logout
             = button_to 'Logout', session_path, :method => :delete 
-          - else 
+        - else 
           %li.login
             = link_to "<strong>Jammer?</strong> Login", new_session_path 
           %li.register

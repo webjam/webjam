@@ -3,31 +3,35 @@
 
 - content_for :head do
   = javascript_include_tag 'openid-register'
+  
+- content_for :other_content do
+  = render :partial => 'shared/other_content/login'
 
-%h1
-  %strong
-    Log in
-  to ya Webjam account
+.item.last
+  %h1
+    %strong
+      Log in
+    to ya Webjam account
 
-- if @openid_url_not_found 
-  %p.error
-    No registered jammers with OpenID
-    =h @openid_url
-    found. Do you wanna
-    = link_to "register", new_user_path(:openid_url => @openid_url)
-    instead?
+  - if @openid_url_not_found 
+    %p.error
+      No registered jammers with OpenID
+      =h @openid_url
+      found. Do you wanna
+      = link_to "register", new_user_path(:openid_url => @openid_url)
+      instead?
 
-- elsif @authentication_error
-  %p.error
-    There was an authentication error: <%=h @authentication_error %>
+  - elsif @authentication_error
+    %p.error
+      There was an authentication error: <%=h @authentication_error %>
 
-- form_tag(create_session_path, :id => 'login') do |f|
-  %fieldset#openid-login
-    %label#openid-url-label{ :for => "openid_url" }
-      = image_tag '/images/openid-logo.jpg', :size => '100x32', :alt => "OpenID"
-      = text_field_tag 'openid_url', @openid_url, :id => 'openid_url'
-    = submit_tag 'Login', :class => "submit"
+  - form_tag(create_session_path, :id => 'login') do |f|
+    %fieldset#openid-login
+      %label#openid-url-label{ :for => "openid_url" }
+        = image_tag '/images/openid-form-logo.gif', :size => '100x32', :alt => "OpenID"
+        = text_field_tag 'openid_url', @openid_url, :id => 'openid_url'
+      = submit_tag 'Login', :class => "submit"
 
-%p
-  Don't have a Webjam account?
-  = link_to "Register one!", new_user_path
+  %p
+    Don't have a Webjam account?
+    = link_to "Register one!", new_user_path
