@@ -2,6 +2,10 @@
 - @page_title = "Webjam brings you the latest in piping hot web"
 - @body_class = "home"
 
+- content_for :top do
+  %h1
+    = image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam"
+
 - content_for :other_content do
   = render :partial => 'shared/other_content/wtf'
   = render :partial => 'shared/other_content/latest_news'

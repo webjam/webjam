@@ -133,7 +133,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 	#wrapper {background: #181818; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
 	body.home h1,
-	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; border-bottom: 1px solid #7C1315; height: 146px; margin: 0; text-align: center;}
+	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; border-bottom: 1px solid #7C1315; height: 146px; font-size: 1.8em; margin: 0; text-align: center;}
 	#pagetitle {font-size: 1.8em;}
 		body.home h1 img,
 		#pagetitle img {border: none; font-size: 0.4em; height: 15.2em; max-height: 152px; width: 97em; max-width: 1033px;}
