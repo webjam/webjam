@@ -16,7 +16,7 @@
         #other-content
           %ul#main-nav
             %li{ :class => class_for_section(:home) }
-              = link_to "Admin", admin_path
+              = link_to "Admin Home", admin_path
             %li{ :class => class_for_section(:events) }
               = link_to "Events", admin_events_path
             %li{ :class => class_for_section(:locations) }
@@ -24,9 +24,10 @@
             %li{ :class => class_for_section(:posts) }
               = link_to "Blog Posts", admin_posts_path
           
-          = yield :other_content
+          
         
         #maincontent
           #content
+            = yield :section_menu
             = yield
           

@@ -6,8 +6,18 @@
   #other-content ul.actions {margin: 2em 0 0 0;}
 
 
-#content {padding: 1em;}
+#content {overflow: auto; padding: 1em;}
 
   #content ul {font-size: 1.2em;}
     #content ul li {margin: 0 0 0.4em 0;}
     
+  #content ul.actions {border-left: 2px solid #fcfcfc; float: left; line-height: 2; width: auto;}
+      #content ul.actions li {border-right: 2px solid #fcfcfc; float: left; margin: 0 1em 0 0; padding: 0 1em 0 0; width: auto;}
+        #content ul.actions li a,
+        #content ul.actions li input {padding: 0.2em 1em 0.2em 1em;}
+      
+        #content ul.actions li form.button-to {}
+          #content ul.actions li form.button-to div {}
+            #content ul.actions li form.button-to div input {float: none; width: auto;}
+            
+  #content h1 {clear: both; margin: 1.4em 0 0.5em 0;}

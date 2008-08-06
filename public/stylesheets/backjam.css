@@ -65,6 +65,7 @@ TOC
       #content ul li {font-size: 1.07em; list-style-position: inside; list-style-type: circle;}
     #content ol {}
       #content ol li {font-size: 1.07em; list-style-position: inside; list-style-type: decimal;}*/
+    #content strong {font-weight: 700;}
 			
 		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
 		
