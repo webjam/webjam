@@ -2,8 +2,8 @@
 - @page_title = "Post: #{h(@post)}"
 
 
-- content_for :other_content do
-  %ul
+- content_for :section_menu do
+  %ul.actions
     %li= link_to "Edit", edit_admin_post_path(@post)
     %li= button_to "Delete", admin_post_path(@post), :method => :delete, :confirm => "Yo sure?"
 
@@ -11,17 +11,14 @@
   Post:
   =h @post
 
-%p
-  %strong
-    Permalink:
-  = link_to post_path(:year => @post.year, :permalink => @post.permalink), post_path(:year => @post.year, :permalink => @post.permalink)
-
-%p
-  %strong
-    Published:
-  = @post.published_at || "Not yet"
-
-%p
-  %strong
-    Body:
-  = @post.body
+%ul
+  %li
+    %strong Permalink:
+    = link_to post_path(:year => @post.year, :permalink => @post.permalink), post_path(:year => @post.year, :permalink => @post.permalink)
+  %li
+    %strong Published:
+    = @post.published_at || "Not yet"
+  %li
+    %strong Body:
+  %li
+    = @post.body
