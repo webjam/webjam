@@ -3,11 +3,13 @@
 
 %h1 Events
 
-- content_for :other_content do
-  %ul
+- content_for :section_menu do
+  %ul.actions
     %li
       = link_to "New event", new_admin_event_path
 
-- for event in @events
-  %li
-    = link_to h(event.name), [:admin, event]
+- if @events[0]
+  %ul
+    - for event in @events
+      %li
+        = link_to h(event.name), [:admin, event]

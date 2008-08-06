@@ -10,24 +10,21 @@
     #page
       #wrapper
         %p#pagetitle
-          %a{ :href => "/" }
+          %a{ :href => "/admin/" }
             = image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam"
 
         #other-content
           %ul#main-nav
             %li{ :class => class_for_section(:home) }
-              = link_to "Admin", admin_path
+              = link_to "Admin Home", admin_path
             %li{ :class => class_for_section(:events) }
               = link_to "Events", admin_events_path
             %li{ :class => class_for_section(:locations) }
               = link_to "Locations", admin_locations_path
             %li{ :class => class_for_section(:posts) }
               = link_to "Blog Posts", admin_posts_path
-          
-          = yield :other_content
-        
+
         #maincontent
           #content
-            #subcontent
-              = yield :subcontent
+            = yield :section_menu
             = yield

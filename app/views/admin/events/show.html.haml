@@ -2,8 +2,8 @@
 - @page_title = "Event: #{h(@event.name)}"
 
 
-- content_for :other_content do
-  %ul
+- content_for :section_menu do
+  %ul.actions
     %li= link_to "Edit", edit_admin_event_path(@event)
     %li= button_to "Delete", admin_event_path(@event), :method => :delete, :confirm => "Yo sure?"
 
@@ -11,52 +11,34 @@
   Event:
   =h @event.name
 
-%p
-  %strong
-    Permalink:
-  = link_to event_path(@event), event_path(@event)
-
-%p
-  %strong
-    Name:
-  = @event.name
-
-%p
-  %strong
-    Tag:
-  = @event.tag
-
-%p
-  %strong
-    Held At:
-  = @event.held_at
-
-%p
-  %strong
-    Location:
-  = @event.location
-  
-%p
-  %strong
-    Timezone:
-  = @event.timezone
-
-%p
-  %strong
-    RSVP limit:
-  = @event.rsvp_limit
-
-%p
-  %strong
-    Proposals close at:
-  = @event.proposals_close_at
-
-%p
-  %strong
-    Hype (used on homepage and event page):
-  =h @event.hype
-
-%p
-  %strong
-    Published:
-  = @event.published_at || "Not yet"
+%ul
+  %li
+    %strong Permalink:
+    = link_to event_path(@event), event_path(@event)
+  %li
+    %strong Name:
+    =h @event.name
+  %li
+    %strong Tag:
+    =h @event.tag
+  %li
+    %strong Held At:
+    =h @event.held_at
+  %li
+    %strong Location
+    =h @event.location
+  %li
+    %strong Timezone:
+    =h @event.timezone
+  %li
+    %strong RSVP limit:
+    =h @event.rsvp_limit
+  %li
+    %strong Proposals close at:
+     = @event.proposals_close_at
+  %li
+    %strong Hype (used on homepage and event page):
+    =h @event.hype
+  %li
+    %strong Published:
+    =h @event.published_at || "Not yet"
