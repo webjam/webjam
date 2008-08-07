@@ -165,21 +165,32 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  #content .item-details a.details {margin: 1.6em 1.6em 0 0;}
     		  
     		  #content .item .button {text-align: center; text-decoration: none;}
-    		  #content .item a.rsvp:link,
-    		  #content .item a.rsvp:visited {background: #ec1c26; color: #fff;}
-    		  #content .item a.rsvp:hover,
-    		  #content .item a.rsvp:active,
-    		  #content .item a.rsvp:focus {background: #fff; color: #ec1c26;}
+    		  #content .item .button:link,
+    		  #content .item .button:visited {background: #ec1c26; color: #fff;}
+    		  #content .item .button:hover,
+    		  #content .item .button:active,
+    		  #content .item .button:focus {background: #fff; color: #ec1c26;}
     		  
-    		  #content .item span.closed {background: #4d4d4d; color: #fff;}
+    		  #content .item .rsvp input {background: #ec1c26; color: #fff; border: none; width: 5.8em;}
+    		  
+    		  #content .item .login {width: 11em;}
+    		  
+    		  #content .item li.option form.button {padding: 0; width: auto;}
+    		  
+    		  #content .item span.closed,
+    		  #content .item span.closed:hover,
+    		  #content .item span.closed:active,
+    		  #content .item span.closed:focus {background: #4d4d4d; color: #fff;}
     		
     		#content .item .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
     		
-    		  #content dl.registration {margin: 0.26em 0 0 2.5em;}
-    		    dl.registration dt {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
-    		    dl.registration dd {font-size: 0.812em;}
-    		      #content dl.registration dd p {margin: 0 0 0.6em 0;}
-    		        dl.registration dd p strong {display: block;}
+    		  #content ul.registration {margin: 0.26em 0 0 2.5em;}
+    		    ul.registration li {font-size: 0.812em;}
+    		    ul.registration li.option {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
+    		      ul.registration li.option form input {width: auto;}
+    		      
+    		      #content ul.registration li p {margin: 0 0 0.6em 0;}
+    		        ul.registration li p strong {display: block;}
     		        
     		#content .item .slideshow {height: 215px; margin: 0 0 0.4em 0;}
     		
