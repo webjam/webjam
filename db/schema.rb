@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(:version => 20080810015431) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",  :limit => 11,                 :null => false
+    t.integer "timestamp",  :limit => 11, :null => false
     t.string  "server_url"
-    t.string  "salt",                     :default => "", :null => false
+    t.string  "salt",                     :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(:version => 20080810015431) do
     t.boolean  "admin",                                   :default => false, :null => false
     t.string   "mugshot_file_name"
     t.string   "mugshot_content_type"
-    t.integer  "mugshot_file_size",        :limit => 11
+    t.integer  "mugshot_file_size",         :limit => 11
   end
 
 end
