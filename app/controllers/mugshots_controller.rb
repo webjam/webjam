@@ -25,11 +25,16 @@ class MugshotsController < ApplicationController
 
   def destroy    
     # If there's no mugshot to destroy
-    if !(@mugshot = current_user.mugshot)
+    unless current_user.mugshot?
       redirect_back_or_default user_path(current_user)
     end
-    @mugshot.destroy
-    flash[:notice] = "Mugshot deleted"
+
+    current_user.mugshot.delete
+    
+    if current_user.save
+      flash[:notice] = "Mugshot deleted"
+    end
+    
     redirect_to edit_current_user_path
   end
 
