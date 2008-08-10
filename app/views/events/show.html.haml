@@ -1,5 +1,31 @@
 - @page_title = h(@event.name)
+- @body_class = "event"
 
-%h1
-  =h @event.name
-  (Past)
+- content_for :other_content do
+  %div.item#summary
+    %p This is some clever text about how cool this event was. This is some clever text about the webjam. This is some clever text about the webjam. This is some clever text about the webjam. 
+
+    %h2 Place-getters:
+    %ol
+      %li This presentation won
+      %li This presentation came second
+      %li This presentation was third
+
+    %h2 Presenters:
+    %ul
+      %li This is a presentation
+      %li This is a presentation
+      %li This is a presentation
+      %li This is a presentation
+      %li This is a presentation
+      %li This is a presentation
+      %li This is a presentation
+      %li This is a presentation
+      %li This is a presentation
+
+.item
+  .item-details
+    %h1
+      =h @event.name
+    %h2.date 
+      = "#{@event.local_held_at.to_date.to_s(:long_ordinal)}"

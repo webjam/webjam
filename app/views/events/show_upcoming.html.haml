@@ -1,8 +1,16 @@
 - @page_title = h(@event.name)
+- @body_class = "event complete"
 
-%h1
-  =h @event.name
-  (Upcoming)
+- content_for :other_content do
+  = render :partial => 'shared/other_content/wtf'
+  = render :partial => 'shared/other_content/shirt'
+  
+.item
+  .item-details
+    %h1
+      =h @event.name
+    %h2.date 
+      = "#{@event.local_held_at.to_date.to_s(:long_ordinal)}"
 
 - if logged_in?
   - if current_user.rsvped?(@event)
