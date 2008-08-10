@@ -30,7 +30,11 @@ class Post < ActiveRecord::Base
         ),
       :order => "posts.published_at")
   end
-  
+ 
+  def self.latest
+    first(:order => "published_at DESC", :include => :comments)
+  end 
+
   def self.find_legacy(permalink)
     find_by_permalink(permalink) || raise(ActiveRecord::RecordNotFound, "No legacy post with permalink #{permalink} found")
   end
@@ -38,6 +42,7 @@ class Post < ActiveRecord::Base
   def to_s
     title
   end
+
   def published?
     published_at
   end
