@@ -54,7 +54,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :events do |event|
       event.resources :rsvps
     end
-    admin.resources :locations, :posts
+    admin.resources :posts
   end
   map.admin 'admin', :controller => 'admin/home'
   map.legacy_post 'post/:permalink.html', :controller => "posts", :action => "legacy" 
