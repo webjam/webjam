@@ -10,8 +10,8 @@ module Spec
         @expected_from = expected_from
         @sym = sym
         @method_block = method_block
-        @return_block = lambda {}
-        @received_count = 0
+        @return_block = nil
+        @actual_received_count = 0
         @expected_received_count = expected_received_count
         @args_expectation = ArgumentExpectation.new([AnyArgsConstraint.new])
         @consecutive = false
@@ -20,7 +20,7 @@ module Spec
         @order_group = expectation_ordering
         @at_least = nil
         @at_most = nil
-        @args_to_yield = nil
+        @args_to_yield = []
       end
       
       def expected_args
@@ -29,17 +29,18 @@ module Spec
 
       def and_return(*values, &return_block)
         Kernel::raise AmbiguousReturnError unless @method_block.nil?
-        if values.size == 0
-          value = nil
-        elsif values.size == 1
-          value = values[0]
+        case values.size
+          when 0 then value = nil
+          when 1 then value = values[0]
         else
           value = values
           @consecutive = true
-          @expected_received_count = values.size if @expected_received_count != :any &&
+          @expected_received_count = values.size if !ignoring_args? &&
                                                     @expected_received_count < values.size
         end
         @return_block = block_given? ? return_block : lambda { value }
+        # Ruby 1.9 - see where this is used below
+        @ignore_args = !block_given?
       end
       
       # :call-seq:
@@ -62,7 +63,8 @@ module Spec
       end
       
       def and_yield(*args)
-        @args_to_yield = args
+        @args_to_yield << args
+        self
       end
   
       def matches(sym, args)
@@ -70,28 +72,35 @@ module Spec
       end
       
       def invoke(args, block)
+        if @expected_received_count == 0
+          @actual_received_count += 1
+          @error_generator.raise_expectation_error @sym, @expected_received_count, @actual_received_count, *args
+        end
+        
         @order_group.handle_order_constraint self
 
         begin
-          if @exception_to_raise.class == Class
-            @exception_instance_to_raise = @exception_to_raise.new
-          else 
-            @exception_instance_to_raise = @exception_to_raise
-          end
           Kernel::raise @exception_to_raise unless @exception_to_raise.nil?
           Kernel::throw @symbol_to_throw unless @symbol_to_throw.nil?
-
+          
+          
           if !@method_block.nil?
-            return invoke_method_block(args)
-          elsif !@args_to_yield.nil?
-            return invoke_with_yield(block)
-          elsif @consecutive
-            return invoke_consecutive_return_block(args, block)
+            default_return_val = invoke_method_block(args)
+          elsif @args_to_yield.size > 0
+            default_return_val = invoke_with_yield(block)
           else
+            default_return_val = nil
+          end
+          
+          if @consecutive
+            return invoke_consecutive_return_block(args, block)
+          elsif @return_block
             return invoke_return_block(args, block)
+          else
+            return default_return_val
           end
         ensure
-          @received_count += 1
+          @actual_received_count += 1
         end
       end
       
@@ -109,25 +118,34 @@ module Spec
         if block.nil?
           @error_generator.raise_missing_block_error @args_to_yield
         end
-        if block.arity > -1 && @args_to_yield.length != block.arity
-          @error_generator.raise_wrong_arity_error @args_to_yield, block.arity
+        value = nil
+        @args_to_yield.each do |args_to_yield_this_time|
+          if block.arity > -1 && args_to_yield_this_time.length != block.arity
+            @error_generator.raise_wrong_arity_error args_to_yield_this_time, block.arity
+          end
+          value = block.call(*args_to_yield_this_time)
         end
-        block.call(*@args_to_yield)
+        value
       end
       
       def invoke_consecutive_return_block(args, block)
         args << block unless block.nil?
         value = @return_block.call(*args)
         
-        index = [@received_count, value.size-1].min
+        index = [@actual_received_count, value.size-1].min
         value[index]
       end
       
       def invoke_return_block(args, block)
         args << block unless block.nil?
-        value = @return_block.call(*args)
-    
-        value
+        # Ruby 1.9 - when we set @return_block to return values
+        # regardless of arguments, any arguments will result in
+        # a "wrong number of arguments" error
+        if @ignore_args
+          @return_block.call()
+        else
+          @return_block.call(*args)
+        end
       end
     end
     
@@ -137,17 +155,49 @@ module Spec
         @sym == sym and not @args_expectation.check_args(args)
       end
        
-      def verify_messages_received        
-        return if @expected_received_count == :any
-        return if (@at_least) && (@received_count >= @expected_received_count)
-        return if (@at_most) && (@received_count <= @expected_received_count)
-        return if @expected_received_count == @received_count
+      def verify_messages_received   
+        return if expected_messages_received?
     
-        begin
-          @error_generator.raise_expectation_error(@sym, @expected_received_count, @received_count, *@args_expectation.args)
-        rescue => error
-          error.backtrace.insert(0, @expected_from)
-          Kernel::raise error
+        generate_error
+      rescue Spec::Mocks::MockExpectationError => error
+        error.backtrace.insert(0, @expected_from)
+        Kernel::raise error
+      end
+      
+      def expected_messages_received?
+        ignoring_args? || matches_exact_count? ||
+           matches_at_least_count? || matches_at_most_count?
+      end
+      
+      def ignoring_args?
+        @expected_received_count == :any
+      end
+      
+      def matches_at_least_count?
+        @at_least && @actual_received_count >= @expected_received_count
+      end
+      
+      def matches_at_most_count?
+        @at_most && @actual_received_count <= @expected_received_count
+      end
+      
+      def matches_exact_count?
+        @expected_received_count == @actual_received_count
+      end
+      
+      def similar_messages
+        @similar_messages ||= []
+      end
+
+      def advise(args, block)
+        similar_messages << args
+      end
+      
+      def generate_error
+        if similar_messages.empty?
+          @error_generator.raise_expectation_error(@sym, @expected_received_count, @actual_received_count, *@args_expectation.args)
+        else
+          @error_generator.raise_unexpected_message_args_error(self, *@similar_messages.first)
         end
       end
 
@@ -215,9 +265,14 @@ module Spec
         def set_expected_received_count(relativity, n)
           @at_least = (relativity == :at_least)
           @at_most = (relativity == :at_most)
-          @expected_received_count = 1 if n == :once
-          @expected_received_count = 2 if n == :twice
-          @expected_received_count = n if n.kind_of? Numeric
+          @expected_received_count = case n
+            when Numeric
+              n
+            when :once
+              1
+            when :twice
+              2
+          end
         end
       
     end
@@ -232,11 +287,5 @@ module Spec
       end
     end
     
-    class MethodStub < BaseExpectation
-      def initialize(message, expectation_ordering, expected_from, sym, method_block)
-        super(message, expectation_ordering, expected_from, sym, method_block, 0)
-        @expected_received_count = :any
-      end
-    end
   end
 end

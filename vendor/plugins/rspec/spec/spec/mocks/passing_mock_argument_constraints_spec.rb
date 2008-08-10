@@ -5,6 +5,7 @@ module Spec
     describe "mock argument constraints", :shared => true do
       before(:each) do
         @mock = Mock.new("test mock")
+        Kernel.stub!(:warn)
       end
       
       after(:each) do
@@ -48,6 +49,11 @@ module Spec
       it "should match no args against any_args" do
         @mock.should_receive(:random_call).with(:any_args)
         @mock.random_call("a string")
+      end
+      
+      it "should match no args against no_args" do
+        @mock.should_receive(:random_call).with(:no_args)
+        @mock.random_call
       end
     end
 
@@ -103,6 +109,12 @@ module Spec
         @mock.should_receive(:random_call).with(no_args)
         @mock.random_call()
       end
+      
+      it "should match hash with hash_including same hash" do
+        @mock.should_receive(:random_call).with(hash_including(:a => 1))
+        @mock.random_call(:a => 1)
+      end
+        
     end
     
     describe Methods, "handling non-constraint arguments" do

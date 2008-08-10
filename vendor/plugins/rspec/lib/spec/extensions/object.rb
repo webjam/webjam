@@ -3,4 +3,4 @@ class Object
     options = Hash === args.last ? args.pop : {}
     return args, options
   end
-end  
+end
