@@ -9,6 +9,7 @@ TAGS:
 webjam
 webjam8
 webjam8:pres=2
+webjam:user=lachlanhardy
 
 
 TODO for launch:
@@ -50,3 +51,6 @@ sign in forms in safari
 make reversed hover states for sponsors
 
 posts created_at may be null? 
+
+lame column sizing on Edit profile page
+

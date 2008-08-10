@@ -1,16 +1,12 @@
-#edit-mugshot
+- if @user.mugshot?
+  %h2 Your Mugshot
+  = image_tag @user.mugshot.url(:large)
+  = button_to "Delete current mug", current_mugshot_path, :method => :delete, :confirm => "Delete your current mugshot?"
+  %h3 Replace your mugshot
+  = render :partial => 'mugshots/form'
 
-  - if @user.mugshot?
-    %h3
-      Your Mugshot
-    = image_tag @user.mugshot.url(:large)
-    = button_to "Delete current mug", current_mugshot_path, :method => :delete, :confirm => "Delete your current mugshot?"
-    %h4
-      Replace your mugshot
-    = render :partial => 'mugshots/form'
-
-  - else
-    %h3
-      Add A Mugshot
-      = avatar_image(current_user, :tiny)
-    = render :partial => 'mugshots/form'
+- else
+  %h2 
+    Add A Mugshot
+    = avatar_image(current_user, :tiny)
+  = render :partial => 'mugshots/form'

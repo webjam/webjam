@@ -355,6 +355,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			/* ---- =Profile ---- */
 			
 			body.profile #content {float: left; padding: 2em; width: 66em;}
+			  #content .column {zbackground: red; float: left; margin: 1em 0 0 5em; width: 24em;}
+			    #content .column form {width: 22em;}
+			
+			  body.profile h2 {clear: both;}
 			
 			#profile-menu {float: right; width: 10em;}
 				#profile-menu li {display: inline; list-style-type: none;}
@@ -363,9 +367,6 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					#profile-menu li a:hover,
 					#profile-menu li a:active
 					#profile-menu li a:focus {}
-			
-			#edit-mugshot {}
-					#edit-mugshot h4 {clear: both; margin: 2em 0 0 0;}
 					
 			dl.vcard {}
 				.vcard dt.fn {float: left; width: auto;}
