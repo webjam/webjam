@@ -1,4 +1,3 @@
-
 URLS:
 webjam.com.au/webjam8
 webjam.com.au/webjam8/pres-2
@@ -10,43 +9,27 @@ webjam
 webjam8
 webjam8:pres=2
 
-
 TODO for launch:
 
 Polling
-
 wire up Events
   - wire up slideshow
   - mapping
   - event details
   - post-event description
-
 Design presentation page
-
 Re-design profile page - Lachlan
-
 mugshot uploads - Lachie
-
 custom error page
-
 Adding sponsor links and images (with hover state)
-
 Add presentation proposal (edit?)
-
-Add comments on blog posts
-
 wire up blog
 
-
 Last: cross-browser testing
-
 
 BUGS:
 
 form error messages suck
-
 sign in forms in safari
-
 make reversed hover states for sponsors
-
 posts created_at may be null? 
