@@ -1,5 +1,7 @@
-- @page_title = h(@event.name)
-- @body_class = "event complete"
+- @section = :staticevent
+- @page_title =h @event.name
+- @body_class = "event"
+- @event_num = @event.number
 
 - content_for :other_content do
   = render :partial => 'shared/other_content/wtf'
@@ -11,14 +13,62 @@
       =h @event.name
     %h2.date 
       = "#{@event.local_held_at.to_date.to_s(:long_ordinal)}"
+    
+  .column
+    = @event.hype
 
-- if logged_in?
-  - if current_user.rsvped?(@event)
-    You&rsquo;ve RSVPed
-  - elsif @event.full?
-    FULL
-  - else
-    - form_tag event_rsvps_path(@event) do |form|
-      = submit_tag 'RSVP!'
+  = render :partial => "shared/event_regsistration_column", :locals => {:event => @event}
+ 
+.item
+  .item-details
+    %h2 Meet our sponsors
+  %ul.sponsors
+    %li
+      %a.directSMS{ :href => "#" } DirectSMS
+    %li
+      %a.directSMS{ :href => "#" } SegPub
+    %li
+      %a.directSMS{ :href => "#" } iBurst
+    %li.moar
+      %a{ :href => "mailto:welovesponsors@webjam.com.au"} Want your logo here? Get in touch
 
-  = link_to "Submit a proposal", new_event_presentation_proposal_path(@event)
+.item
+  .item-details
+    %h2 What you&apos;re in for
+
+  .slideshow
+    %ul
+      %li
+        %img{ :title => "Black & White", :src => "/images/temp/lightning.jpg", :alt => "Lightning" }/
+      %li
+        %img{ :title => "Fusce quam mi, sagittis nec, adipiscing at, sodales quis", :src => "/images/temp/lotus.jpg", :alt => "Lotus" }/
+      %li
+        %img{ :title => "Suspendisse volutpat posuere dui. Suspendisse sit amet lorem et risus faucibus pellentesque.", :src => "/images/temp/mojave.jpg", :alt => "Mojave" }/
+      %li
+        %img{ :title => "Proin erat nisi", :src => "/images/temp/pier.jpg", :alt => "Pier" }/
+      %li
+        %img{ :title => "Caption text from title", :src => "/images/temp/sea-mist.jpg", :alt => "Sea Mist" }/
+      %li
+        %img{ :title => "Flowing Rock Caption", :src => "/images/temp/flowing-rock.jpg", :alt => "Flowing Rock" }/
+      %li
+        %img{ :title => "Stones - from Apple images", :src => "/images/temp/stones.jpg", :alt => "Stones" }/
+      %li
+        %img{ :title => "Apple nature desktop images", :src => "/images/temp/grass-blades.jpg", :alt => "Grass Blades" }/
+      %li
+        %img{ :title => "Ut rutrum, lectus eu pulvinar elementum, lacus urna vestibulum ipsum", :src => "/images/temp/ladybug.jpg", :alt => "Ladybug" }/
+
+  %p 18 presenters. 345 attendees. Alcohol.
+
+.item.last
+  .item-details
+    %h2 The deets
+  .column
+    .map
+      %p map goes here
+  .column
+    %dl
+      %dt Bar Broadway
+      %dd Cnr Broadway &amp; Harris
+      %dd Doors open 6.00pm
+      %dd Presentations start 6.30pm
+      %dd 15 August 2008
