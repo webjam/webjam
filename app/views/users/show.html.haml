@@ -2,13 +2,13 @@
 
 %h1
   %strong
-    <%=h @user.nick_name %>
+    = @user.nick_name
   loves the jam
 
 - if @user == current_user
   %ul#profile-menu
     %li
-      <%= link_to '(Edit)', edit_current_user_path %>
+      = link_to '(Edit)', edit_current_user_path
 
 = flash_notice
 
