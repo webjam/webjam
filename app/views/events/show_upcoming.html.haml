@@ -8,11 +8,7 @@
   = render :partial => 'shared/other_content/shirt'
   
 .item
-  .item-details
-    %h1
-      =h @event.name
-    %h2.date 
-      = "#{@event.local_held_at.to_date.to_s(:long_ordinal)}"
+  = render :partial => "shared/event_title", :locals => {:event => @event}
     
   .column
     = @event.hype
