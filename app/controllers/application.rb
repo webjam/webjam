@@ -44,6 +44,11 @@ class ApplicationController < ActionController::Base
     def set_previous_events_for_footer
       @footer_previous_events = Event.published.past(:order => "held_at DESC")
     end
+
+    before_filter :set_latest_news_for_footer
+    def set_latest_news_for_footer
+      @footer_latest_news = Post.published.latest(5)
+    end
     
     def render_404
       render :file => "#{RAILS_ROOT}/public/404.html", :status => :not_found
