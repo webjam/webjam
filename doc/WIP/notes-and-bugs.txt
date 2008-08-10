@@ -18,11 +18,10 @@ wire up Events
   - mapping
   - event details
   - post-event description
-Design presentation page
-Re-design profile page - Lachlan
+build flat presentation page - Lachlan
 custom error page
 Adding sponsor links and images (with hover state)
-Add presentation proposal (edit?)
+Add presentation proposal (edit?) - Tim
 wire up blog
 fix ui profile form flashes
 
