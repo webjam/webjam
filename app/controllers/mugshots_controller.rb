@@ -23,10 +23,10 @@ class MugshotsController < ApplicationController
     end
   end
 
-  def destroy    
+  def destroy
     # If there's no mugshot to destroy
     unless current_user.mugshot?
-      redirect_back_or_default user_path(current_user)
+      redirect_to user_path(current_user)
     end
 
     current_user.mugshot.delete
