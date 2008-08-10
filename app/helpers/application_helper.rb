@@ -13,7 +13,8 @@ module ApplicationHelper
   
   def avatar_image(user, size=:tiny)
     raise(ArgumentError, "user can not be nil") if user.nil?
-    image_tag(user.mugshot ? user.mugshot.public_filename(size) : "default_avatar_#{size || 'large'}.gif", :alt => h(user.nick_name), :class => 'photo')
+    # image_tag(user.mugshot ? user.mugshot.url(size) : "default_avatar_#{size || 'large'}.gif", :alt => h(user.nick_name), :class => 'photo')
+    image_tag(user.mugshot.url(size), :alt => h(user.nick_name), :class => 'photo')
   end
   
   

@@ -1,9 +1,9 @@
 #edit-mugshot
 
-  - if !@mugshot.new_record?
+  - if @user.mugshot?
     %h3
       Your Mugshot
-    = image_tag @mugshot.public_filename(:large)
+    = image_tag @user.mugshot.url(:large)
     = button_to "Delete current mug", current_mugshot_path, :method => :delete, :confirm => "Delete your current mugshot?"
     %h4
       Replace your mugshot

@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :mugshot, :dependent => :destroy
-  has_many :temporary_mugshots, :class_name => 'Mugshot', :foreign_key => 'temp_user_id'
+
   has_many :posts # TODO: DEPENDENT?
   has_many :identity_urls, :dependent => :destroy
   has_many :rsvps
@@ -10,6 +9,15 @@ class User < ActiveRecord::Base
   validates_presence_of :full_name, :nick_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
   validates_uniqueness_of :nick_name
+  
+  has_attached_file :mugshot,
+                    :styles => { 
+                                 :large  => '140x140>',
+                                 :medium => '82x82>',
+                                 :small  => '50x50>',
+                                 :tiny   => '16x16>'
+                               },
+                      :default_url => "/images/default_avatar_:style.gif"
 
   def remember_token?
     remember_token_expires_at && Time.now.utc < remember_token_expires_at 

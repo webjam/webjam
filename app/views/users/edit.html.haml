@@ -47,9 +47,9 @@
   OpenID URLs
 %ul
   - for identity_url in @identity_urls
-  %li
-    = link_to h(identity_url.url), identity_url.url
-    = button_to('(DELETE ICON)', identity_url_path(identity_url), :method => 'delete') unless @identity_urls.length == 1
+    %li
+      = link_to h(identity_url.url), identity_url.url
+      = button_to('(DELETE ICON)', identity_url_path(identity_url), :method => 'delete') unless @identity_urls.length == 1
 
 %p
   Associate your WebJam account with all your OpenID URLs. You know you want to.

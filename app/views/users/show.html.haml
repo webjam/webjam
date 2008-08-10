@@ -18,8 +18,8 @@
   %dt.fn
     =h @user.full_name
   %dd.avatar
-    - if @user.mugshot
-      = image_tag @user.mugshot.public_filename(:large), :class => 'photo'
+    - if @user.mugshot?
+      = image_tag @user.mugshot.url(:large), :class => 'photo'
     - else
       - if @user == current_user
         = link_to avatar_image(@user, :large), new_current_mugshot_path, :class => 'photo'

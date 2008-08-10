@@ -3,14 +3,16 @@ class MugshotsController < ApplicationController
 
   def new
     @user = current_user
-    @mugshot = current_user.mugshot || Mugshot.new
   end
   
   def create
-    Mugshot.transaction do
-      @mugshot = current_user.temporary_mugshots.build(params[:mugshot])
-      if @mugshot.save
-        redirect_to crop_mugshot_path(@mugshot)
+    User.transaction do
+      @user = current_user
+      
+      @user.mugshot = params[:uploaded_mugshot_data]
+      
+      if @user.save
+        redirect_to user_path(@user)
       else
         render :action => 'new'
       end

@@ -1,0 +1,8 @@
+-form_tag(current_mugshot_path, :multipart => true) do |f|
+  %fieldset
+    %label{:for => "mugshot_uploaded_data"}
+      %span Image:
+      = file_field_tag :uploaded_mugshot_data, :class => 'file'
+
+  %fieldset
+    = submit_tag 'Upload new mugshot', :class => 'submit'
