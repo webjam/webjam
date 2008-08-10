@@ -4,6 +4,10 @@ class Event < ActiveRecord::Base
   has_many :users, :through => :rsvps
 
   validates_presence_of :name, :tag, :held_at, :timezone, :location, :hype, :proposals_close_at
+  
+  # tag needs to start with webjam to be used with the routes setup
+  # this is a bit belts-n-braces though:
+  validates_format_of :tag, :with => /^webjam\d+$/, :message => "must start with 'webjam'"
 
   named_scope :published, :conditions => "published_at IS NOT NULL"
   named_scope :upcoming, :conditions => ["held_at >= ?", Time.now]
