@@ -1,2 +1,3 @@
 .item
-  = render :partial => "pages/events/title", :locals => {:link_name => "Rewind", :event => event}
+  = render :partial => "shared/event_title", :locals => {:event => event}
+  %a.details{ :href => event_path(event) } Rewind
