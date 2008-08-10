@@ -2,12 +2,13 @@
   %h2
     Latest News
     %a.feed{ :href => "#", :title => "Subscribe!" } Subscribe!
-  %h3 Webjam will rock you
-  %p This is an excerpt from the article. How to do that? Auto or editorial? We're going to need bucketloads of support to make this work and that means all of you! Webjam is a community-driven event that showcases, celebrates and inspires every webby geek we can get our hands on and we need as much love as we can get to make this the biggest, wildest, hottest Webjam yet.
-  %ul
-    %li.first
-      %a{ :href => "/posts/20-book-bonanza" } Read more...
-    %li
-      %a{ :href => "/posts/20-book-bonanza#comments" } 34 comments
-    %li.more
-      %a{ :href => "/2008/" } News archive
+  - if @latest_post
+    %h3= @latest_post.title
+    %p= @latest_post.body[0..100]
+    %ul
+      %li.first
+        %a{ :href => post_path(@latest_post.year, @latest_post.permalink) } Read more...
+      %li
+        %a{ :href => "#{post_path(@latest_post.year, @latest_post.permalink)}#comments" }= "#{@latest_post.comments.size} comments"
+      %li.more
+        %a{ :href => "/#{Time.now.year}/" } News archive
