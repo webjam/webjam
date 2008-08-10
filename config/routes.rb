@@ -25,8 +25,9 @@ ActionController::Routing::Routes.draw do |map|
   map.event_rsvp ":event_id/rsvps/:id", :controller => "rsvps", :action => "destroy", :conditions => { :method => :delete }, :requirements => {:event_id => EVENT_TAG}
   
   map.with_options(:controller => "presentation_proposals", :requirements => {:event_id => EVENT_TAG}) do |proposals|
-    proposals.event_presentation_proposals ":event_id/proposals", :action => "create", :conditions => { :method => :post }
-    proposals.new_event_presentation_proposal ":event_id/proposals/new", :action => "new", :conditions => { :method => :get }
+    proposals.event_presentation_proposal ":event_id/proposal", :action => "edit", :conditions => { :method => :get }
+    proposals.event_presentation_proposal ":event_id/proposal", :action => "update", :conditions => { :method => :post }
+    proposals.event_presentation_proposal ":event_id/proposal", :action => "destroy", :conditions => { :method => :delete }
   end
   
   map.with_options(:controller => "users") do |user|

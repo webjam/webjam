@@ -1,20 +1,8 @@
 - @page_title = "Submit a presentation proposal for #{h(@event.name)}"
 
+%h2=h @page_title
 
-- form_for @proposal, :presentation_proposal, :url => event_presentation_proposals_path do |f|
-
+- form_for @proposal, :presentation_proposal, :url => event_presentation_proposal_path do |f|
   = f.error_messages
-
-  %fieldset
-
-    %label{ :for => "presentation_proposal_title" }
-      %span
-        Title
-      = f.text_field :title
-
-    %label{ :for => "presentation_proposal_title" }
-      %span
-        Description
-      = f.text_area :description
-
-    = submit_tag 'Submit', :class => 'submit'
+  = render :partial => "form", :locals => {:f => f}
+  = submit_tag 'Submit', :class => 'submit'
