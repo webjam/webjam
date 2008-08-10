@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080810015431) do
+ActiveRecord::Schema.define(:version => 20080810052927) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(:version => 20080810015431) do
     t.datetime "proposals_close_at"
   end
 
+  create_table "flickr_photos", :force => true do |t|
+    t.string   "flickrid"
+    t.string   "server"
+    t.string   "farm"
+    t.string   "secret"
+    t.string   "title"
+    t.string   "owner"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "identity_urls", :force => true do |t|
     t.integer "user_id", :limit => 11
     t.text    "url"
@@ -40,6 +51,20 @@ ActiveRecord::Schema.define(:version => 20080810015431) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mugshots", :force => true do |t|
+    t.integer  "temp_user_id", :limit => 11
+    t.integer  "user_id",      :limit => 11
+    t.integer  "parent_id",    :limit => 11
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size",         :limit => 11
+    t.integer  "width",        :limit => 11
+    t.integer  "height",       :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -111,7 +136,7 @@ ActiveRecord::Schema.define(:version => 20080810015431) do
     t.boolean  "admin",                                   :default => false, :null => false
     t.string   "mugshot_file_name"
     t.string   "mugshot_content_type"
-    t.integer  "mugshot_file_size",        :limit => 11
+    t.integer  "mugshot_file_size",         :limit => 11
   end
 
 end
