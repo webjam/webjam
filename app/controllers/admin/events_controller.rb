@@ -4,6 +4,7 @@ class Admin::EventsController < Admin::BaseController
   end
   def new
     @event = Event.new
+    @event.tag ||= 'webjam'
   end
   def create
     @event = Event.new(params[:event])
