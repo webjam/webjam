@@ -23,15 +23,17 @@ wire up Events
 
 Design presentation page
 
-Re-design profile page
+Re-design profile page - Lachlan
 
 Blog excerpts for left column
 
 Blog listing for the footer
 
-mugshot uploads
+mugshot uploads - Lachie
 
 custom error page
+
+Adding sponsor links and images (with hover state)
 
 
 BUGS:
