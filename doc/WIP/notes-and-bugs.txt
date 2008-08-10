@@ -11,14 +11,34 @@ webjam8
 webjam8:pres=2
 
 
+TODO for launch:
+
+Polling
+
+wire up Events
+  - wire up slideshow
+  - mapping
+  - event details
+  - post-event description
+
+Design presentation page
+
+Re-design profile page
+
+Blog excerpts for left column
+
+Blog listing for the footer
+
+mugshot uploads
+
+custom error page
+
 
 BUGS:
 
 form error messages suck
 
 sign in forms in safari
-
-can't upload mugshot
 
 make reversed hover states for sponsors
 
