@@ -32,4 +32,8 @@ class Event < ActiveRecord::Base
   def local_held_at
     held_at.in_time_zone(self.timezone)
   end
+  
+  def number
+    tag[/(\d+)$/, 1]
+  end
 end
