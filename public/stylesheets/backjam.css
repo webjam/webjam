@@ -25,7 +25,6 @@ TOC
 		 	   ---- =Latest
 	-- =Footer
 - =JS Enabled
-- =Tim's Rules
 
 ****/
 
@@ -354,6 +353,9 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 						
 
 			/* ---- =Profile ---- */
+			
+			body.profile #content {float: left; padding: 2em; width: 66em;}
+			
 			#profile-menu {float: right; width: 10em;}
 				#profile-menu li {display: inline; list-style-type: none;}
 					#profile-menu li a:link,
@@ -366,11 +368,11 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 					#edit-mugshot h4 {clear: both; margin: 2em 0 0 0;}
 					
 			dl.vcard {}
-				.vcard dt.fn {}
+				.vcard dt.fn {float: left; width: auto;}
 				.vcard dd {}
 					.vcard dd a.url {}
 				
-					.vcard dd.avatar {background: #0e0e0e url('/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
+					.vcard dd.avatar {background: #181818 url('/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
 						.vcard dd.avatar a {display: block;}
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
 

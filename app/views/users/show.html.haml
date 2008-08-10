@@ -1,4 +1,5 @@
 - @page_title = h(@user.nick_name) + " loves Webjam"
+- @body_class = "profile"
 
 %h1
   %strong
@@ -12,15 +13,10 @@
 
 = flash_notice
 
-%h2
-  Details
+%h2 Details
 %dl.vcard{ :id => "hcard-#{h utf8_slugify(@user.nick_name)}" }
   %dt.fn
     =h @user.full_name
-  - unless @user.website_url.blank?
-    %dd
-      Visit
-      = link_to h(@user.website_display_name), @user.website_url, :class => "url", :rel => "me"
   %dd.avatar
     - if @user.mugshot
       = image_tag @user.mugshot.public_filename(:large), :class => 'photo'
@@ -30,5 +26,10 @@
         = link_to 'Upload your mugshot', new_current_mugshot_path
       - else
         = avatar_image(@user, :large)
+  - unless @user.website_url.blank?
+    %dd
+      Visit
+      = link_to h(@user.website_display_name), @user.website_url, :class => "url", :rel => "me"
+  
 /
   <h2>Jams <span class="amp">&amp;</span> Awards</h2>
