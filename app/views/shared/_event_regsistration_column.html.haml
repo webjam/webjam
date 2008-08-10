@@ -3,7 +3,8 @@
     / RSVPs
     - if logged_in? && (rsvp = current_user.rsvp_for(event))
       %dt
-        %span.button.closed You&rsquo;ve RSVP'd
+        - form_tag event_rsvp_path(event, rsvp), :class => "button rsvp", :method => :delete do |form|
+          = submit_tag 'Pike'
       %dd
         %p
           %strong Want to attend?
