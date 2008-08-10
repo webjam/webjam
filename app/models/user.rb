@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
                                  :small  => '50x50>',
                                  :tiny   => '16x16>'
                                },
-                      :default_url => "/images/default_avatar_:style.gif"
+                      :default_url => "/images/default_avatar_:style.gif",
+                      :whiny_thumbnails => true
 
   def remember_token?
     remember_token_expires_at && Time.now.utc < remember_token_expires_at 
