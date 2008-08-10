@@ -35,6 +35,15 @@ custom error page
 
 Adding sponsor links and images (with hover state)
 
+Add presentation proposal (edit?)
+
+Add comments on blog posts
+
+wire up blog
+
+
+Last: cross-browser testing
+
 
 BUGS:
 
