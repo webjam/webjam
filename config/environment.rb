@@ -73,4 +73,7 @@ ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy
 ExceptionNotifier.sender_address = %("Application Error" <app.error@toolmantim.com>)
 ExceptionNotifier.email_prefix = "[WEBCONSERVE] "
 
+# Load the application config - reads from application.yml
+APPLICATION_CONFIG = ApplicationConfig.new
+
 require 'core_ext/object'
