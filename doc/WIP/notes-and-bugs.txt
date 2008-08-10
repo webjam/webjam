@@ -45,6 +45,3 @@ sign in forms in safari
 make reversed hover states for sponsors
 
 posts created_at may be null? 
-
-Events has no created_at field... fun!
-
