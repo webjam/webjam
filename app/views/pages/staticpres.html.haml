@@ -1,0 +1,14 @@
+- @section = :staticpres
+- @page_title = "Presentation title - Webjam"
+- @body_class = "presentation"
+- @event_num = 8
+
+- content_for :other_content do
+  
+  = render :partial => 'shared/other_content/shirt'
+  
+- content_for :full_title do
+  %h1
+    %strong Optimus
+    by Dmitry Baranovskiy
+

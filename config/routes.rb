@@ -46,9 +46,7 @@ ActionController::Routing::Routes.draw do |map|
     m.open_id   'single-sign-on',   :action => 'single-sign-on'
     m.vote_vis 'votestream', :action => "votestream"
     # temporary static files to build front-end
-    m.statichome   'statichome',   :action => 'statichome'
-    m.staticevent   'staticevent',   :action => 'staticevent'
-    m.staticpostevent   'staticpostevent',   :action => 'staticpostevent'
+    m.statichome   'staticpres',   :action => 'staticpres'
   end
   map.namespace :admin do |admin|
     admin.resources :events do |event|

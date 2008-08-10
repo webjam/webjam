@@ -34,6 +34,9 @@
               = image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam"
           %span#phat-digits
             = @event_num
+        - if full_title = yield(:full_title)
+          #full-title
+            = full_title
         #maincontent
           - if other_content = yield(:other_content)
             #other-content

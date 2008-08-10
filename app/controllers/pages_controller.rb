@@ -7,8 +7,6 @@ class PagesController < ApplicationController
       render :action => "home_iphone", :layout => "iphone"
     end
   end
-  def statichome
-  end
   def contact
   end
   def openid
