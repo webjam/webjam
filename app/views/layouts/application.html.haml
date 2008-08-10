@@ -50,45 +50,15 @@
                 News
                 %a.feed{ :href => "#", :title => "Subscribe!" }
                   Subscribe!
-              %ul
-                %li
-                  %a{ :href => "/posts/19-webjam-will-rock-you" }
-                    Webjam will rock you
-                  (
-                  %a.no-comments{ :href => "/posts/19-webjam-will-rock-you#comments" }
-                    0
-                  )
-                %li
-                  %a{ :href => "/posts/20-book-bonanza" }
-                    Book Bonanza
-                  (
-                  %a.no-comments{ :href => "/posts/20-book-bonanza#comments" }
-                    0
-                  )
-                %li
-                  %a{ :href => "/posts/21-time-and-place" }
-                    Time and Place
-                  (
-                  %a.no-comments{ :href => "/posts/21-time-and-place#comments" }
-                    0
-                  )
-                %li
-                  %a{ :href => "/posts/22-jams-kicked-out" }
-                    Jams == Kicked Out ++
-                  (
-                  %a.no-comments{ :href => "/posts/22-jams-kicked-out#comments" }
-                    0
-                  )
-                %li
-                  %a{ :href => "/posts/16-perth-plentiful-prizes" }
-                    Perth's Plentiful Prizes
-                  (
-                  %a.no-comments{ :href => "/posts/16-perth-plentiful-prizes#comments" }
-                    0
-                  )
-                %li.more
-                  %a{ :href => "/2008/" }
-                    More news
+              - if @footer_latest_news.any?
+                %ul
+                  - @footer_latest_news.each do |post|
+                    %li
+                      %a{ :href => post_path(post.year, post.permalink) }= post.title
+                      %a.no-comments{ :href => "#{post_path(post.year, post.permalink)}#comments" }= "(#{post.comments.size})"
+                  %li.more
+                    %a{ :href => "/#{Time.now.year}/" }
+                      More news
 
           .column
             #previous.item
