@@ -5,6 +5,10 @@ class MugshotsController < ApplicationController
     @user = current_user
   end
   
+  def show
+    @user = current_user
+  end
+  
   def create
     User.transaction do
       @user = current_user
@@ -19,7 +23,7 @@ class MugshotsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy    
     # If there's no mugshot to destroy
     if !(@mugshot = current_user.mugshot)
       redirect_back_or_default user_path(current_user)
