@@ -31,8 +31,8 @@ class Post < ActiveRecord::Base
       :order => "posts.published_at")
   end
  
-  def self.latest
-    first(:order => "published_at DESC", :include => :comments)
+  def self.latest(limit = 1)
+    all(:order => "published_at DESC", :include => :comments, :limit => limit)
   end 
 
   def self.find_legacy(permalink)
