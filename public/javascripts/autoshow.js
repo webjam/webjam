@@ -62,7 +62,7 @@ jQuery.fn.autoshow = function(options) {
 
 	var resume = function() {
 		pause_state = 0;
-		change();
+		timer = setTimeout(change, settings.timeout);
 	}
 	
 	if ( settings.type == 'sequence' ) {
