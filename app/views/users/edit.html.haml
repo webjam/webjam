@@ -34,24 +34,22 @@
       = submit_tag 'Save profile details', :class => "submit"
 
 .column
-  = render :partial => 'shared/new_mugshot'
+  .item
+    = render :partial => 'shared/new_mugshot'
+  .item
+    %h2 OpenID URLs
+    %ul
+      - for identity_url in @identity_urls
+        %li
+          = link_to h(identity_url.url), identity_url.url
+          = button_to('(DELETE ICON)', identity_url_path(identity_url), :method => 'delete') unless @identity_urls.length == 1
 
-  %h2 OpenID URLs
-  %ul
-    - for identity_url in @identity_urls
-      %li
-        = link_to h(identity_url.url), identity_url.url
-        = button_to('(DELETE ICON)', identity_url_path(identity_url), :method => 'delete') unless @identity_urls.length == 1
+    %p Associate your WebJam account with all your OpenID URLs. You know you want to.
 
-  %p Associate your WebJam account with all your OpenID URLs. You know you want to.
-
-  - form_tag create_identity_urls_path do
-    %fieldset
-      %label{ :for => "openid_url" }
-        %span OpenID URL:
-        = text_field_tag 'openid_url'
-    %fieldset
-      = submit_tag 'Add URL', :class => "submit"
-
-  %h2 Password
-  %p Nah, just kidding, we don't do passwords! OpenID bruvva.
+    - form_tag create_identity_urls_path do
+      %fieldset
+        %label{ :for => "openid_url" }
+          %span OpenID URL:
+          = text_field_tag 'openid_url'
+      %fieldset
+        = submit_tag 'Add URL', :class => "submit"
