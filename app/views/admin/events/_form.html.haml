@@ -1,29 +1,31 @@
 = f.error_messages
 
+
+
 %fieldset
   %label{ :for => "event_name" }
-    Name
+    Name *
     = f.text_field :name
   %label{ :for => "event_tag" }
-    Tag (permalink and flickr tag)
+    Tag (permalink and flickr tag) *
     = f.text_field :tag
   %label{ :for => "event_held_at" }
-    Held at (DateTime)
+    Held at (DateTime) *
     = f.text_field :held_at
   %label{ :for => "event_location" }
-    Location (Sydney, etc)
+    Location (Sydney, etc) *
     = f.text_field :location
   %label{ :for => "event_timezone" }
-    Timezone
+    Timezone *
     = f.time_zone_select :timezone, TimeZone.all
   %label{ :for => "event_rsvp_limit" }
     RSVP limit
     = f.text_field :rsvp_limit
   %label{ :for => "event_proposals_close_at" }
-    Proposals close at
+    Proposals close at (DateTime) *
     = f.text_field :proposals_close_at
   %label{ :for => "event_hype" }
-    Hype (used on the homepage and event page)
+    Hype (used on the homepage and event page) *
     = f.text_area :hype
   %label{ :for => "event_published_at" }
     Published at (DateTime)
