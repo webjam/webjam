@@ -2,7 +2,12 @@
   %dl.registration
     / RSVPs
     - if logged_in? && (rsvp = current_user.rsvp_for(event))
-      / Don't show nuthin if you've RSVP'd already
+      %dt
+        %span.button.closed You&rsquo;ve RSVP'd
+      %dd
+        %p
+          %strong Want to attend?
+          You&rsquo;ve RSVP'd!
     - elsif event.full?
       %dt
         %span.button.closed Too late
