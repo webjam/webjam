@@ -20,11 +20,11 @@ wire up Events
   - post-event description
 Design presentation page
 Re-design profile page - Lachlan
-mugshot uploads - Lachie
 custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?)
 wire up blog
+fix ui profile form flashes
 
 Last: cross-browser testing
 
