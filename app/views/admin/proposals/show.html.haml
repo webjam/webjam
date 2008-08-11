@@ -1,0 +1,30 @@
+- @section = :events
+- @page_title = "proposal for #{h(@event.name)}"
+
+- content_for :section_menu do
+  %ul.actions
+    %li= link_to @event.name, admin_event_path(@event)
+    %li= link_to 'Proposals', admin_event_proposals_path(@event)
+    %li= link_to 'Create jam', new_admin_event_jam_path(@event,:proposal_id=>@proposal)
+
+%h1
+  = @page_title
+  
+%ul
+  %li
+    %strong
+      Title:
+    =@proposal.title
+    
+  %li
+    %strong
+      Description:
+    =@proposal.description
+    
+  %li
+    %strong
+      Proposed by:
+    =@proposal.user.full_name
+    
+  
+    

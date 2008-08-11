@@ -5,6 +5,11 @@ class Admin::JamsController < Admin::BaseController
     @jams = @event.jams.find(:all, :order => 'created_at DESC')
   end
   
+  def show
+    @jam = @event.jams.find(params[:id])
+    raise NotFound unless @jam
+  end
+  
   def new
     @proposal = @event.presentation_proposals.find(params[:proposal_id])
     raise NotFound unless @proposal
@@ -21,7 +26,22 @@ class Admin::JamsController < Admin::BaseController
   def create
     @jam = @event.jams.build(params[:jam])
     @jam.save!
-    redirect_to [:admin,@event]
+    redirect_to [:admin,@event,@jam]
+  end
+  
+  def update
+    @jam = @event.jams.find(params[:id])
+    raise NotFound unless @jam
+    
+    @jam.attributes = params[:jam]
+    @jam.save!
+    
+    redirect_to [:admin, @event, @jam]
+  end
+  
+  def destroy
+    @event.jams.find(params[:id]).destroy
+    redirect_to admin_event_jams_path(@event)
   end
 
   private

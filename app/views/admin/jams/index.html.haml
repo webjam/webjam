@@ -1,6 +1,9 @@
 - @section = :events
 - @page_title = "jams for #{h(@event.name)}"
 
+- content_for :section_menu do
+  %ul.actions
+    %li= link_to @event.name, admin_event_path(@event)
 
 %h1
   = @page_title
@@ -9,6 +12,8 @@
 %ul
   -@jams.each do |jam|
     %li
-      = jam.title
-      %span.user
+      .title
+      = link_to jam.title, admin_event_jam_path(@event,jam)
+      .user
+        proposed by
         =jam.user.full_name

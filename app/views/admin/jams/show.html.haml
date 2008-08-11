@@ -1,0 +1,26 @@
+- @section = :events
+- @page_title = "#{@jam.title} : #{h(@event.name)}"
+
+- content_for :section_menu do
+  %ul.actions
+    %li= link_to @event.name, admin_event_path(@event)
+    %li= link_to "Jams", admin_event_jams_path(@event)
+    %li= link_to "Edit", edit_admin_event_jam_path(@event,@jam)
+    %li= button_to "Delete", admin_event_jam_path(@event,@jam), :method => :delete, :confirm => "Yo sure?"
+    %li= link_to 'Original proposal', admin_event_proposal_path(@event,@jam.presentation_proposal)
+
+  
+%h1
+  Jam:
+  =@jam.title
+  
+%ul
+  %li
+    %strong Description:
+    =@jam.description
+
+  %li
+    %strong Proposing user:
+    =@jam.user.full_name
+
+  

@@ -3,6 +3,11 @@ class Admin::ProposalsController < Admin::BaseController
   def index
     @proposals = @event.presentation_proposals.find(:all, :order => 'created_at DESC')
   end
+  
+  def show
+    @proposal = @event.presentation_proposals.find(params[:id])
+    raise NotFound unless @proposal
+  end
 
   private
   def load_event
