@@ -2,7 +2,7 @@
 - @page_title = "new jam for #{h(@event.name)}"
 
 
-%h1 New event
+%h1= @page_title
 
 - form_for [:admin, @event, @jam] do |f|
   = render :partial => 'form', :locals => {:f => f}

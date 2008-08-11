@@ -1,1 +1,21 @@
-form form from
+%fieldset
+  %label{:for => 'jam_title'}
+    Title *
+    =f.text_field :title
+    
+  %label{:for => 'jam_description'}
+    Description *
+    =f.text_area :description
+
+  %label
+    Proposing user
+    =@jam.user.full_name
+    =f.hidden_field :user_id
+    
+  -if @jam.presentation_proposal
+    %label
+      = link_to 'Original proposal', admin_event_proposal_path(@event,@jam.presentation_proposal_id)
+      =f.hidden_field :presentation_proposal_id
+      
+  %fieldset
+    = submit_tag "Create", :class => "submit"

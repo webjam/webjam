@@ -10,12 +10,18 @@ class Admin::JamsController < Admin::BaseController
     raise NotFound unless @proposal
     @jam = @event.jams.build
     
-    # I want to do this explicitly here so that it won't incur overhead normally
-    # @jam.setup_from_proposal(@proposal))
+    # I want to do this explicitly here (rather than via callback) so that it won't normally be used
+    @jam.setup_from_proposal(@proposal)
   end
   
   def edit
     @jam = @event.jams.find(params[:id])
+  end
+  
+  def create
+    @jam = @event.jams.build(params[:jam])
+    @jam.save!
+    redirect_to [:admin,@event]
   end
 
   private

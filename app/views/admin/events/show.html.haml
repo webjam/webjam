@@ -7,6 +7,7 @@
     %li= link_to "Edit", edit_admin_event_path(@event)
     %li= button_to "Delete", admin_event_path(@event), :method => :delete, :confirm => "Yo sure?"
     %li= link_to "Proposals", admin_event_proposals_path(@event)
+    %li= link_to "Jams", admin_event_jams_path(@event)
     %li= link_to "RSVPs"
 
 %h1
