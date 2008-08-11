@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080810052927) do
+ActiveRecord::Schema.define(:version => 20080811000007) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -49,22 +49,18 @@ ActiveRecord::Schema.define(:version => 20080810052927) do
     t.text    "url"
   end
 
-  create_table "locations", :force => true do |t|
-    t.string   "name"
+  create_table "jams", :force => true do |t|
+    t.integer  "user_id",                  :limit => 11
+    t.integer  "event_id",                 :limit => 11
+    t.integer  "presentation_proposal_id", :limit => 11
+    t.string   "title"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "mugshots", :force => true do |t|
-    t.integer  "temp_user_id", :limit => 11
-    t.integer  "user_id",      :limit => 11
-    t.integer  "parent_id",    :limit => 11
-    t.string   "content_type"
-    t.string   "filename"
-    t.string   "thumbnail"
-    t.integer  "size",         :limit => 11
-    t.integer  "width",        :limit => 11
-    t.integer  "height",       :limit => 11
+  create_table "locations", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,9 +75,9 @@ ActiveRecord::Schema.define(:version => 20080810052927) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",  :limit => 11, :null => false
+    t.integer "timestamp",  :limit => 11,                 :null => false
     t.string  "server_url"
-    t.string  "salt",                     :null => false
+    t.string  "salt",                     :default => "", :null => false
   end
 
   create_table "posts", :force => true do |t|
