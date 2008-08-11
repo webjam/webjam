@@ -249,7 +249,12 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
         	  #words li {float: none; font-size: 0.95em; list-style-type: disc; margin: 0 0 0.3em 0.7em;}
         	    #words li a {font-size: 1.053em; margin: 0 0.3em 0 0; text-transform: capitalize;}
     	    
-
+      /* ---- =Presentation ---- */
+      #title {border-bottom: 1px solid #333; padding: 0 2em 0.5em 0; text-align: right;}
+        #title p {background: #ec1c26; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
+          #title h1 {background: #181818; color: #4d4d4d; display: inline;}
+          #title h1 strong {background: #181818; color: #fff;}
+      
 			
 			/* ---- =Posts ---- */
 			
