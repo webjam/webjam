@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   has_many :rsvps
   has_many :presentation_proposals
+  has_many :jams
   has_many :users, :through => :rsvps
 
   validates_presence_of :name, :tag, :held_at, :timezone, :location, :hype, :proposals_close_at

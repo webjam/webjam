@@ -3,12 +3,10 @@ class Admin::ProposalsController < Admin::BaseController
   def index
     @proposals = @event.presentation_proposals.find(:all, :order => 'created_at DESC')
   end
-  # def destroy
-  #     Rsvp.find(params[:id]).destroy
-  #     redirect_to admin_event_rsvps_path(@event)
-  #   end
+
   private
   def load_event
     @event = Event.find_by_tag(params[:event_id])
+    raise NotFound unless @event
   end
 end
