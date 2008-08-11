@@ -1,0 +1,19 @@
+- @section = :events
+- @page_title = "proposals for #{h(@event.name)}"
+
+%h1
+  = @page_title
+  
+%ul#proposals
+  -@event.presentation_proposals.each do |proposal|
+    %li
+      .title
+        %h3
+          = proposal.title
+      .user
+        = proposal.user.full_name
+      .description
+        =proposal.description
+      .actions
+        =link_to 'create jam'
+    

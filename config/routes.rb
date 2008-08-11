@@ -51,7 +51,7 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.namespace :admin do |admin|
     admin.resources :events do |event|
-      event.resources :rsvps
+      event.resources :rsvps, :proposals, :jams
     end
     admin.resources :posts
   end
