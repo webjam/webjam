@@ -4,6 +4,31 @@
 - @event_num = 8
 
 - content_for :other_content do
+  .item
+    %dl.vcard
+      %dt.fn
+        %span.firstname Dmitry 
+        %span.lastname Baranovskiy
+      %dd.nickname
+        %a{ :href => "/dmitrybaranovsk" } dmitrybaranovsk
+      %dd.url 
+        %a{ :href =>"#" } thisisadomain.com
+      %dd.url 
+        %a{ :href => "#" } thisanotherdomain.com
+      %dd.img
+        %img{ :alt => " ", :height => "140", :src => "/images/default-avatar-largest.gif", :width => "140" }
+      %dd.facets
+        %ul
+          %li
+            %a{ :href => "http://twitter.com/dmitrybaranovsk" } twitter
+          %li
+            %a{ :href => "http://flickr.com/dmitrybaranovsk" } flickr
+          %li
+            %a{ :href => "http://github.com/dmitrybaranovsk" } github
+          %li
+            %a{ :href => "http://ma.gnolia.com/dmitrybaranovsk" } ma.gnolia  
+      %dd.contact
+        %a.button{ :href => "#" } Contact
   
   = render :partial => 'shared/other_content/shirt'
   
