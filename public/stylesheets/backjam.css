@@ -159,16 +159,16 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  body.event #content h2.date {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
     		  
     		  #content .item-details a.details,
-    		  #content .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
+    		  .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
     		  #content .item-details a.details {margin: 1.6em 1.6em 0 0;}
     		  
-    		  #content .item .button {text-align: center; text-decoration: none;}
-    		  #content .item .button:link,
-    		  #content .item .button:visited {background: #ec1c26; color: #fff;}
-    		  #content .item .button:hover,
-    		  #content .item .button:active,
-    		  #content .item .button:focus {background: #fff; color: #ec1c26;}
+    		  .item .button {text-align: center; text-decoration: none;}
+    		  .item .button:link,
+    		  .item .button:visited {background: #ec1c26; color: #fff;}
+    		  .item .button:hover,
+    		  .item .button:active,
+    		  .item .button:focus {background: #fff; color: #ec1c26;}
     		  
     		  #content .item .rsvp input {background: #ec1c26; color: #fff; border: none; width: 5.8em;}
     		  
@@ -249,7 +249,29 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
         	  #words li {float: none; font-size: 0.95em; list-style-type: disc; margin: 0 0 0.3em 0.7em;}
         	    #words li a {font-size: 1.053em; margin: 0 0.3em 0 0; text-transform: capitalize;}
     	    
-
+      /* ---- =Presentation ---- */
+      #title {border-bottom: 1px solid #333; padding: 1px 2em 0.5em 0; text-align: right;}
+        #title p {background: #ec1c26; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
+          #title h1 {background: #181818; color: #4d4d4d; display: inline;}
+          #title h1 strong {background: #181818; color: #fff;}
+      
+      body.presentation dl.vcard {font-size: 0.875em; padding: 0 0 0 150px; position: relative;}
+        body.presentation dt.fn {}
+          body.presentation span.firstname {} 
+          body.presentation span.lastname {}
+        body.presentation dd {margin: 0 0 1em 0;}
+        body.presentation dd.nickname {}
+          body.presentation dd.nickname a {}
+        body.presentation dd.url {margin: 0;}
+          body.presentation a {}
+        body.presentation dd.img {left: 0; position: absolute; top: 0;}
+          body.presentation dd.img img {}
+        body.presentation dd.facets {margin: 1em 0 0 0;}
+          body.presentation dd.facets ul {}
+            body.presentation dd.facets ul li {display: inline;}
+              body.presentation dd.facets ul li a {}
+        body.presentation dd.contact .button {float: none; margin: 1em 0 0 0; width: 100%;}
+                
 			
 			/* ---- =Posts ---- */
 			
