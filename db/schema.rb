@@ -75,9 +75,9 @@ ActiveRecord::Schema.define(:version => 20080811000007) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",  :limit => 11,                 :null => false
+    t.integer "timestamp",  :limit => 11, :null => false
     t.string  "server_url"
-    t.string  "salt",                     :default => "", :null => false
+    t.string  "salt",                     :null => false
   end
 
   create_table "posts", :force => true do |t|
