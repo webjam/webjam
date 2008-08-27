@@ -18,7 +18,9 @@ wire up Events
   - mapping
   - event details
   - post-event description
+
 build flat presentation page - Lachlan
+build new profile page
 custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim
