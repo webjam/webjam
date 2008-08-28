@@ -271,7 +271,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
             body.presentation dd.facets ul li {display: inline;}
               body.presentation dd.facets ul li a {}
         body.presentation dd.contact .button {float: none; margin: 1em 0 0 0; width: 100%;}
-                
+         
+        body.presentation .item .video {background: #808080; color: #4d4d4d; height: 370px; margin: 0 0 1.45em 0; text-align: center; width: 450px;} /* TODO: add real styles when video player added */       
 			
 			/* ---- =Posts ---- */
 			
