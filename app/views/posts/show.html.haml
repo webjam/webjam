@@ -43,7 +43,7 @@
     .hentry{:id => "comment-#{comment.id}"}
       %p.comment-details
         %em
-          = user_link_for_comment(comment.user, "author")
+          = user_link_for_comment(comment.user)
           wrote
           = time_ago_in_words comment.created_at
           ago:
