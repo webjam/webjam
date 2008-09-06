@@ -121,12 +121,13 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			#account-tools li a:hover,
 			#account-tools li a:active,
 			#account-tools li a:focus {background: #ff5e29; border: 1px solid #0e0e0e; border-bottom: none;  color: #0e0e0e;}
-				#account-tools li strong {background: transparent; color: #ff5e29; display: block; margin: 0.1em 0 0.1em 30px; text-transform: lowercase;}
+				#account-tools li strong {background: transparent; color: #ff5e29; display: block; margin: 0.1em 0 0.1em 0; text-transform: lowercase;}
 				#account-tools li a:hover strong,
 				#account-tools li a:active strong,
 				#account-tools li a:focus strong {color: #0e0e0e;}
 				
         #account-tools li a.user-avatar .vcard img {top: 3px;}
+        #account-tools li a.user-avatar .vcard span.fn {margin: 0 0 0 30px;}
 
 	#wrapper {background: #0d0e0e; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
