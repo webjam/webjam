@@ -25,8 +25,8 @@ Add Viddler player mojo (preferably API shizzle)
 custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim
-wire up blog
 fix ui profile form flashes
+latest news partial needs to work on all pages
 
 Build hotted up active version for events!
 
