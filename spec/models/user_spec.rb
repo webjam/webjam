@@ -14,26 +14,38 @@ describe User, "#openid_sreg_fields=" do
     end
   end
   describe "passed an rseg response" do
+    before do
+      @response = mock("sreg response")
+      @response.stub!(:data).and_return({:key_1 => :value_1, :key_2 => :value_2 })
+    end
     it "calls data on the response" do
-      pending
+      @response.should_receive(:data).and_return({})
+      User.new(:openid_sreg_fields => @response)
     end
     it "calls self.class.attr_for_openid_sreg_field for each data field" do
-      pending
+      User.should_receive(:attr_for_openid_sreg_field).ordered.with(:key_1)
+      User.should_receive(:attr_for_openid_sreg_field).ordered.with(:key_2)
+      User.new(:openid_sreg_fields => @response)
     end
     it "sets the attributes" do
-      pending
+      u = User.new
+      User.stub!(:attr_for_openid_sreg_field).with(:key_1).ordered.and_return(:attr_1)
+      User.stub!(:attr_for_openid_sreg_field).with(:key_2).ordered.and_return(:attr_2)
+      u.should_receive(:[]=).ordered.with(:attr_1, :value_1)
+      u.should_receive(:[]=).ordered.with(:attr_2, :value_2)
+      u.openid_sreg_fields = @response
     end
   end
 end
 
 describe User, ".attr_for_openid_sreg_field(field)" do
   it "maps nickname to nick_name" do
-    pending
+    User.attr_for_openid_sreg_field("nickname").should == "nick_name"
   end
   it "maps email to email" do
-    pending
+    User.attr_for_openid_sreg_field("email").should == "email"
   end
   it "maps fullname to full_name" do
-    pending
+    User.attr_for_openid_sreg_field("fullname").should == "full_name"
   end
 end
