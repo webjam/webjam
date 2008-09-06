@@ -17,5 +17,6 @@ YAML.load(File.open(File.dirname(__FILE__) + "/blog_posts.yml").read).each do |p
               :title => post[:title],
               :body  => post[:body],
               :permalink => post[:permalink],
-              :published_at => (Time.parse(post[:published_at]) - 10.hours)
+              :published_at => (Time.parse(post[:published_at]) - 10.hours),
+              :year => (Time.parse(post[:published_at]) - 10.hours).year
 end
