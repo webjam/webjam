@@ -9,10 +9,11 @@ require 'yaml'
 class Post < ActiveRecord::Base; end
 class User < ActiveRecord::Base; end
 
-raise "No user with id = 1 found" unless User.exists?(1)
+lacho = User.find_by_nick_name("lachlanhardy")
+raise "Lachlan doesnt exist! Odd eh." unless lacho
 
 YAML.load(File.open(File.dirname(__FILE__) + "/blog_posts.yml").read).each do |post|
-  Post.create :user_id => 1,
+  Post.create :user => lacho,
               :title => post[:title],
               :body  => post[:body],
               :permalink => post[:permalink],
