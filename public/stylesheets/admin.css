@@ -21,3 +21,5 @@
             #content ul.actions li form.button-to div input {float: none; width: auto;}
             
   #content h1 {clear: both; margin: 1.4em 0 0.5em 0;}
+  
+  #content input.submit {margin: 0.4em 0 0 0;}
