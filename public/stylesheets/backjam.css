@@ -171,7 +171,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  .item .button:focus {background: #fff; color: #ec1c26;}
     		  
     		  #content .item form.button {float: none; left: -0.6em; padding: 0; position: relative;}
-    		    #content .item form.button input {padding: 0.1em 0.6em; text-transform: uppercase;}
+    		    #content .item form.button input {padding: 0.1em 0.6em; text-transform: uppercase; cursor: pointer;}
     		  
     		  #content .item .rsvp input {background: #ec1c26; color: #fff; border: none; width: 5.8em;}
     		  
