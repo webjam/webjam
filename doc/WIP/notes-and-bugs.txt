@@ -20,7 +20,7 @@ wire up Events
   - post-event description
 
 build flat presentation page - Lachlan
-build new profile page
+Add Viddler player mojo (preferably API shizzle)
 custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim

@@ -16,13 +16,12 @@ module ApplicationHelper
     image_tag(user.mugshot.url(size), :alt => h(user.nick_name), :class => 'photo')
   end
   
-  
-  # I just know there's a better way to do this... Help?
-  def user_link_for_comment(user, classes="")
-    classes += " user-avatar vcard"
-    link_to "#{avatar_image(user, :medium)}&nbsp;<span class='fn nickname'>#{h(user.nick_name)}</span>", user_path(user), :class => classes.strip
+  def user_link_for_comment(user)
+    %(<span class="user-avatar vcard">
+        #{link_to avatar_image(user, :tiny), user_path(user)}
+        #{link_to h(user.nick_name), user_path(user), :class => "fn nickname"}
+      </span>)
   end
-  # end lameness ;)
   
   def flash_notice
     %(<div class="notice">#{h flash[:notice]}</div>) if flash[:notice]

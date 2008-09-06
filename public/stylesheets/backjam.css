@@ -130,7 +130,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				#account-tools li a.user-avatar .vcard img {left: 3px; top: 3px;}
 				#account-tools li a.user-avatar .vcard .fn {padding: 0;}
 
-	#wrapper {background: #181818; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
+	#wrapper {background: #0d0e0e; border: 1px solid #000; border-bottom: none; float: left; position: relative; width: 70em;}
 
 	body.home h1,
 	#pagetitle {background: #0e0e0e url('/images/bg-perth.jpg') no-repeat 0 0; border-bottom: 1px solid #7C1315; height: 146px; font-size: 1.8em; margin: 0; text-align: center;}
@@ -271,7 +271,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
             body.presentation dd.facets ul li {display: inline;}
               body.presentation dd.facets ul li a {}
         body.presentation dd.contact .button {float: none; margin: 1em 0 0 0; width: 100%;}
-                
+         
+        body.presentation .item .video {background: #808080; color: #4d4d4d; height: 370px; margin: 0 0 1.45em 0; text-align: center; width: 450px;} /* TODO: add real styles when video player added */       
 			
 			/* ---- =Posts ---- */
 			
@@ -298,21 +299,16 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 									#content .hentry .entry-footer li.tags ul li a {text-decoration: none;}
 				
 				/* ----- =Comments ----- */
-				#comments {clear: both; padding: 1.5em 0 0 0; width: 46em;}
-					#comments p.blurb {font: 700 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0;}
-					#comments .add-comment {clear: left;border-top: 1px solid #292a2a; margin: .75em 0 0 0; padding: .75em 0 0 0;}
-					
-					/* ------ =hAtom ------ */
-					#comments .hentry {border: none; min-height: 100px; padding: .75em 0 .75em 100px; position: relative;}
-						#comments .hentry .entry-title {background: green;}
-						#comments .hentry .updated {background: blue;}
-						#comments .comment-details {background: #0e0e0e; color: #ccc; font-size: 0.9em; margin: 0 0 0.4em 0;}
-							#comments .comment-details img {left: -92px; position: absolute; top: 0;}
-						#comments .hentry .entry-content {margin: 0 0 0 0.8em;}
-						#comments .hentry .author {}
-							#comments .hentry .author img.photo {height: 82px; width: 82px;}
-							#comments .hentry .vcard {}
-							#comments .hentry .vcard .fn {}
+				#comments {clear: both; padding: 2em 0 0 0;}
+				
+					.comment {background: #181919; color: #fff; margin: 0 0 1.5em 0; padding: 1em 0 0 0;}
+            .comment p {margin: 0 1em 1em 1em;}
+            .comment p.comment-details {background: #0d0e0e url('/images/bg-comment-details.gif') no-repeat scroll 1em 0;  color: #fff; line-height: 2.8; margin: 0; padding: 0;}
+              p.comment-details a.permalink {float: left; display: block; width: 2em;}
+              
+              p.comment-details .vcard {padding: 0 0 0 30px;}
+                p.comment-details .vcard img {position: absolute; top: -2px;}
+                p.comment-details .vcard .url {margin: 0 0 0 30px;}
 							
 			/* ---- =Archives ---- */
 			body.archive #content ul li {background: #0e0e0e; color: #a2a2a2; list-style-type: none;}
