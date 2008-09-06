@@ -16,13 +16,6 @@ module ApplicationHelper
     image_tag(user.mugshot.url(size), :alt => h(user.nick_name), :class => 'photo')
   end
   
-  def user_link_for_comment(user)
-    %(<span class="user-avatar vcard">
-        #{link_to avatar_image(user, :tiny), user_path(user)}
-        #{link_to h(user.nick_name), user_path(user), :class => "fn nickname"}
-      </span>)
-  end
-  
   def flash_notice
     %(<div class="notice">#{h flash[:notice]}</div>) if flash[:notice]
   end

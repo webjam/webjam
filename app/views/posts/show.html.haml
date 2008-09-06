@@ -32,40 +32,42 @@
       <li><a href="#" rel="tag">something else</a></li>
       </ul>
 
-#comments.hfeed
-  %h2
-    Comments
+#comments.item.hfeed
+  .item-details
+    %h2 Comments
+
   - if @post.comments.empty?
     %p.title
       There are no comments yet!
-  - else
-  /
-    <p class="title"><%= pluralize @post.comments.count, 'Comment' %></p>
-  - for comment in @post.comments
-    .hentry{:id => "comment-#{comment.id}"}
+
+  - @post.comments.each_with_index do |comment, index|
+    .hentry.comment{:id => "comment-#{comment.id}"}
+      .entry-content=h comment.body
       %p.comment-details
-        %em
-          = user_link_for_comment(comment.user)
-          wrote
-          = time_ago_in_words comment.created_at
-          ago:
-      .entry-content
-        =h comment.body
+        %a.permalink{ :href => "comment-#{comment.id}"}= index + 1
+        %span.user-avatar.vcard
+          %a{ :href => user_path(comment.user) }
+            = avatar_image(comment.user, :tiny)
+          %a.url{ :href => user_path(comment.user) }<
+            %span.fn.nickname=h comment.user.nick_name
+        = time_ago_in_words comment.created_at
   
-  .add-comment
-    %h3
+.item#comment-form
+  .item-details
+    %h2
       Add your own
-    - if !current_user
-      %p
-        = link_to_login_with_return_to_current_page 'Login to leave a comment'
-    - else
-      - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink), :id => 'new-comment' do
-        - if params[:no_body_error]
-          %p.error
-            Don?t forget to type something!
-        %fieldset
-          %label{ :for => "comment_body" }
-            %span
-              Add your own:
-            = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'comment_body'
-          = submit_tag 'Add Comment', :class => 'submit'
+  - if !current_user
+    %p
+      = link_to_login_with_return_to_current_page 'Login to leave a comment'
+  - else
+    - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink), :id => 'new-comment' do
+      - if params[:no_body_error]
+        %p.error
+          Don?t forget to type something!
+      %fieldset
+        %label{ :for => "new_comment" }
+          %span Add your own:
+          = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'new_comment'
+          %span.note (HTML is welcome, but please be nice!)
+      %fieldset
+        %input.submit{ :type => "submit", :value => "Add comment"}
