@@ -19,6 +19,7 @@ wire up Events
   - event details
   - post-event description
 
+add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
 custom error page
