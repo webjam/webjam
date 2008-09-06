@@ -42,7 +42,7 @@
 
   - @post.comments.each_with_index do |comment, index|
     .hentry.comment{:id => "comment-#{comment.id}"}
-      .entry-content=h comment.body
+      .entry-content= sanitize simple_format(comment.body), :tags => %w(strong em a code pre blockquote span q abbr acronym br img ul ol li del), :attributes => %w(href class cite rel rev title src alt)
       %p.comment-details
         %a.permalink{ :href => "comment-#{comment.id}"}= index + 1
         %span.user-avatar.vcard
@@ -63,7 +63,7 @@
     - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink), :id => 'new-comment' do
       - if params[:no_body_error]
         %p.error
-          Don?t forget to type something!
+          Don&rsquo;t forget to type something!
       %fieldset
         %label{ :for => "new_comment" }
           %span Add your own:
