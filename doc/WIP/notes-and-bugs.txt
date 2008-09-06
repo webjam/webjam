@@ -27,6 +27,7 @@ Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim
 wire up blog
 fix ui profile form flashes
+swap body.home column borders
 
 Last: cross-browser testing
 
