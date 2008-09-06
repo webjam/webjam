@@ -1,19 +1,7 @@
 - @page_title = "Submit a presentation proposal for #{h(@event.name)}"
 
 - content_for :other_content do
-  %div.item.last
-    %p Thanks for volunteering! 
-    %p Here are a few tips to make sure you can make the best of your presentation:
-    %ul
-      %li 3 minutes is shorter than you think; practice!
-      %li Everybody loves demos. We want to see things, not just hear about them.
-      %li Sometimes slideshows are unavoidable, that's okay, but try for some live components.
-      %li Yes, we have internet available - ADSL speeds over wireless.
-      %li We provide one Macbook Pro with 3Gb RAM for your use when presenting. If you need more RAM, Windows, or some special program, then please bring your own.
-    %p 
-      You can contact the Webjam team with any questions by emailing
-      %a{ :href => "mailto:questions@webjam.com.au" } questions@webjam.com.au
-
+  = render :partial => 'shared/other_content/proposal_help'
 
 .item.last
   %h2=h @page_title

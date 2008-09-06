@@ -37,7 +37,7 @@
   %dl.registration
     - if logged_in? && (proposal = current_user.proposal_for(event))
       %dt
-        = link_to "Present", event_presentation_proposal_path(event), :class => "button rsvp"
+        = link_to "Edit", event_presentation_proposal_path(event), :class => "button rsvp"
       %dd
         %p
           %strong You&rsquo;ve applied to present.
@@ -51,7 +51,7 @@
           Sorry, no more are being accepted.
     - elsif !logged_in?
       %dt
-        = link_to "Login to present", new_session_path(:return_to => event_path(event)), :class => "button rsvp"
+        = link_to "Present", new_session_path(:return_to => event_path(event)), :class => "button rsvp"
       %dd
         %p
           %strong Want to present?

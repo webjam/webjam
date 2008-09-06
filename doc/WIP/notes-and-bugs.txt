@@ -38,3 +38,9 @@ make reversed hover states for sponsors
 lame column sizing on Edit profile page
 validate microformats
 
+
+TODO later:
+tie RSVPs to Proposals? how?
+
+
+

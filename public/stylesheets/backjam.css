@@ -188,7 +188,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		
     		#content .item .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
     		
-    		  dl.registration {clear: both; margin: 0.26em 0 1.4em 2.5em;}
+    		  dl.registration {clear: both; margin: 0 0 1em 0;}
     		    dl.registration dt {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
               dl.registration dt form input {width: auto;}
     		    dl.registration dd {font-size: 0.857em;}
@@ -196,6 +196,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		        dl.registration dd p strong {display: block; font-size: 1.083em;}
     		        
     		#content .item .slideshow {height: 215px; margin: 0 0 0.4em 0;}
+    		  #content .slideshow ul li {list-style-type: none; margin: 0;}
     		
     		.item .sponsors {font-size: 0.625em; margin: 0 0 2em 0; position: relative;}
     		  body.home .item .sponsors {margin: 4em 0 2em 0; padding: 0 0 0 9em;} 
@@ -209,7 +210,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		 body.complete #sponsors ul.sponsors li {margin: 0;}
     		    
     		      .item .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
-    		      .item .sponsors li.moar a {background: #181818 url('/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; font-size: 1.6em; margin: 0.8em 0 0 3.8em; padding: 0 16px 0 0; text-indent: 0; width: auto;}
+    		      .item .sponsors li.moar a {background: #0d0e0e url('/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; font-size: 1.6em; margin: 0.8em 0 0 3.8em; padding: 0 16px 0 0; text-indent: 0; width: auto;}
     		      
     		      .item .sponsors a:link,
     		      .item .sponsors a:visited {}
@@ -256,8 +257,8 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
       /* ---- =Presentation ---- */
       #title {border-bottom: 1px solid #333; padding: 1px 2em 0.5em 0; text-align: right;}
         #title p {background: #ec1c26; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
-          #title h1 {background: #181818; color: #4d4d4d; display: inline;}
-          #title h1 strong {background: #181818; color: #fff;}
+          #title h1 {background: #0d0e0e; color: #4d4d4d; display: inline;}
+          #title h1 strong {background: #0d0e0e; color: #fff;}
       
       body.presentation dl.vcard {font-size: 0.875em; padding: 0 0 0 150px; position: relative;}
         body.presentation dt.fn {}
@@ -360,11 +361,11 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			
 			/* ---- =Join Form ---- */
 				#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
-					#openid-login label {background: #181818 url('/images/bg-login-input.gif') no-repeat 100% 6px; color: #ff6200; margin: 0 0.4em 0 0.4em; padding: 0 8px 0.4em 0; width: 24.5em;}
+					#openid-login label {background: #0d0e0e url('/images/bg-login-input.gif') no-repeat 100% 6px; color: #ff6200; margin: 0 0.4em 0 0.4em; padding: 0 8px 0.4em 0; width: 24.5em;}
 						#openid-login label img {float: left; margin: 0.3em 0 0 0; width: auto;}
 						#openid-login label input {border: none; float: right; height: 24px; margin: 6px 0 0 1em; padding: 6px 0 0 0; width: 19.3em;}
 					#openid-login input.submit {font-size: 1.07em; font-weight: 700; height: 2.1em; margin: 6px 1em 0 1.2em; padding: 0 0 0.2em 0; width: 5em;}
-				#construct-openid {background: #181818 url('/images/bg-openid-construct.jpg') no-repeat 0 0; margin: 1em 0 1em 0; padding: 0 0 0 135px;}
+				#construct-openid {background: #0d0e0e url('/images/bg-openid-construct.jpg') no-repeat 0 0; margin: 1em 0 1em 0; padding: 0 0 0 135px;}
 					#construct-openid p {margin: 0 0 1em 0;}
 					#construct-openid select {margin: 0 2em 0 0;}
 					#construct-openid input {font-size: 1em; width: 12em;}
@@ -389,12 +390,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 			    body.profile #content .item {border: none; padding: 0 1em 1em 1em;}
 			      body.profile .item form.button-to {margin: 0 0 1em 0;}
 			        body.profile .item p {margin: 1em 0; width: 24em;}
-			        
 			
 			  body.profile h2,
 			  body.profile h3 {clear: both;}
 			  
-			
 			#profile-menu {float: right; width: 10em;}
 				#profile-menu li {display: inline; list-style-type: none;}
 					#profile-menu li a:link,
@@ -408,7 +407,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				.vcard dd {}
 					.vcard dd a.url {}
 				
-					.vcard dd.avatar {background: #181818 url('/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
+					.vcard dd.avatar {background: #0d0e0e url('/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
 						.vcard dd.avatar a {display: block;}
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
 
@@ -443,14 +442,14 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
   		  #latest h3 {font: 700 1em/1.2 Helvetica, Arial, sans-serif; text-transform: capitalize;}
   		  #latest p {}
   		  #latest ul {}
-  		    #latest ul li {background: #181818 url('/images/bg-more.gif') no-repeat 100% 6px; float: left; margin: 0 1em 0 0; padding: 0 12px 0 0; width: auto;}
+  		    #latest ul li {background: #0d0e0e url('/images/bg-more.gif') no-repeat 100% 6px; float: left; list-style-type: none; margin: 0 1em 0 0; padding: 0 12px 0 0; width: auto;}
   		    #latest ul li.first {background: none; border-right: 1px solid #fff; padding: 0 1em 0 0;}
   		    #latest ul li.more {clear: both; margin: 1em 0 0 0;}
 		
 		
 	/* -- =Footer -- */		
     #footer {background: #333; color: #fff; clear: both; font-family: Helvetica, Arial, sans-serif; overflow: hidden;}
-      #footer .column {border-left: 1px solid #181818; float: left; padding: 2.2em 1.8em 2000px 1.8em; margin: 0 0 -1940px 0; width: 19.6em;}
+      #footer .column {border-left: 1px solid #0d0e0e; float: left; padding: 2.2em 1.8em 2000px 1.8em; margin: 0 0 -1940px 0; width: 19.6em;}
       #footer .column.first {border: none;}
       
         #footer h2 {font-size: 1.714em; margin: 0 0 1em 0;}
