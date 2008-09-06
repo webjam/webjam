@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   class NotFound < StandardError; end
   
-  include ExceptionNotifiable
+  # include ExceptionNotifiable
 
   session :session_key => '_backjam_session_id'
   
