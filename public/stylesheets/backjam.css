@@ -36,9 +36,9 @@ TOC
 		/* --- =Links --- */
 		a:link {color: #ccc;}
 		a:visited {color: #fff;}
-		a:hover, a:active, a:focus {color: #f03e00;}
+		a:hover, a:active, a:focus {color: #f03e00; text-decoration: none;}
 		
-		#content a.details {background: #181818 url('/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
+		#content a.details {background: #0d0e0e url('/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
 		
 		/* --- =Headings --- */
 		h1, h2, h3, h4, h5, h6 {font-family: Futura, Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
@@ -91,7 +91,7 @@ TOC
 		form label {clear: both; display: block; float: left; font-weight: bold; margin: 0 0 0.4em 0; padding: 0.5em 0 0 0; width: auto;}
 			form label span {display: block; float: left; margin: 0.2em 0 0 0; width: 8em;}
 				form label span.note {clear:both; color: #565757; font: 0.86em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0.5em 0 0 9em; width: auto;}
-		input {background: #e6e5e5; color: #000; float: left; width: 14em;}
+		input {background: #e6e5e5; color: #000; float: left; font: 1em/1.3 "Trebuchet MS", Arial, Helvetica, sans-serif; width: 14em;}
 		select {float: left; width: 10em;}
 		textarea {float: left; width: 27em;}
 			input.checkbox {margin: 0.4em 0; width: auto;}
@@ -148,7 +148,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		#content {border-left: 1px solid #333; margin: 0 0 0 23.2em; padding: 0.4em 0 1em;}
 		#content.full {border: none; margin: 0;}
 		
-		  #content .item {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em;}
+		  #content .item {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em; position: relative;}
 		  #content.full .item {margin: 0 auto 0 auto; width: 34em;}
 		  #content .item.last {border: none; padding: 1.45em 1em 0 1em;}
 		    #content .item .item-details {overflow: auto; margin: 0 0 1em 0;}
@@ -158,10 +158,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  body.home #content .item-details h3,
     		  body.event #content h2.date {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
     		  
-    		  #content .item-details a.details,
+    		  #content a.details,
     		  .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
-    		  #content .item-details a.details {margin: 1.6em 1.6em 0 0;}
+    		  #content .item a.details {position: absolute; right: 1em; top: 1.4em;}
     		  
     		  .item .button {text-align: center; text-decoration: none;}
     		  .item .button:link,
@@ -169,6 +169,9 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  .item .button:hover,
     		  .item .button:active,
     		  .item .button:focus {background: #fff; color: #ec1c26;}
+    		  
+    		  #content .item form.button {float: none; left: -0.6em; padding: 0; position: relative;}
+    		    #content .item form.button input {padding: 0.1em 0.6em; text-transform: uppercase;}
     		  
     		  #content .item .rsvp input {background: #ec1c26; color: #fff; border: none; width: 5.8em;}
     		  
@@ -183,13 +186,12 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		
     		#content .item .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
     		
-    		  #content ul.registration {margin: 0.26em 0 0 2.5em;}
-    		    ul.registration li {font-size: 0.812em;}
-    		    ul.registration li.option {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
-    		      ul.registration li.option form input {width: auto;}
-    		      
-    		      #content ul.registration li p {margin: 0 0 0.6em 0;}
-    		        ul.registration li p strong {display: block;}
+    		  dl.registration {clear: both; margin: 0.26em 0 1.4em 2.5em;}
+    		    dl.registration dt {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
+              dl.registration dt form input {width: auto;}
+    		    dl.registration dd {font-size: 0.857em;}
+    		      dl.registration dd p {margin: 0 0 0.6em 0;}
+    		        dl.registration dd p strong {display: block; font-size: 1.083em;}
     		        
     		#content .item .slideshow {height: 215px; margin: 0 0 0.4em 0;}
     		

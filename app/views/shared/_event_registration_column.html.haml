@@ -8,7 +8,7 @@
       %dd
         %p
           %strong Want to attend?
-          You&rsquo;ve RSVP'd!
+          You&rsquo;ve RSVP&rsquo;d!
     - elsif event.full?
       %dt
         %span.button.closed Too late
@@ -18,7 +18,7 @@
           Sorry, all full up!
     - elsif !logged_in?
       %dt
-        = link_to "Login to RSVP", new_session_path(:return_to => event_path(event)), :class => "button rsvp"
+        = link_to "RSVP", new_session_path(:return_to => event_path(event)), :class => "button rsvp"
       %dd
         %p
           %strong Want to attend?
@@ -32,8 +32,9 @@
           %strong Want to attend?
           = "Only #{pluralize(event.rsvps_left, "spot")}, get on it."
 
-    / Proposals
-    / TODO: If they've submitted a proposal
+  / Proposals
+  / TODO: If they've submitted a proposal
+  %dl.registration
     - if logged_in? && (proposal = current_user.proposal_for(event))
       %dt
         = link_to "Present", event_presentation_proposal_path(event), :class => "button rsvp"
