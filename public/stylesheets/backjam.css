@@ -159,7 +159,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  body.event #content h2.date {float: left; letter-spacing: 0.1em; padding: 1.3em 0 0; text-transform: uppercase; width: auto;}
     		  
     		  #content a.details,
-    		  .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.1em 0.3em; text-transform: uppercase; width: 5.1em;}
+    		  .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.18em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
     		  #content .item a.details {position: absolute; right: 1em; top: 1.4em;}
     		  
@@ -171,7 +171,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		  .item .button:focus {background: #fff; color: #ec1c26;}
     		  
     		  #content .item form.button {float: none; left: -0.6em; padding: 0; position: relative;}
-    		    #content .item form.button input {padding: 0.1em 0.6em; text-transform: uppercase;}
+    		    #content .item form.button input {letter-spacing: 0.1em; padding: 0.1em 0.6em; text-transform: uppercase;}
     		  
     		  #content .item .rsvp input {background: #ec1c26; color: #fff; border: none; width: 5.8em;}
     		  
