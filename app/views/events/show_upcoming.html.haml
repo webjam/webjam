@@ -60,7 +60,8 @@
     %h2 The deets
   .column
     .map
-      %p map goes here
+      = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
+      %a{ :href => @event.map_url } View larger version
   .column
     %dl
       %dt Bar Broadway

@@ -34,6 +34,14 @@
   %label{ :for => "event_hype" }
     Hype (used on the homepage and event page) *
     = f.text_area :hype
+
+  %label{ :for => "event_map_iframe_url" }
+    Map iframe URL *
+    = f.text_field :map_iframe_url
+
+  %label{ :for => "event_map_url" }
+    Map URL (for linking to bigger version) *
+    = f.text_field :map_url
     
   %label{ :for => "event_published_at" }
     Published at (DateTime)

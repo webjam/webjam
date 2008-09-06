@@ -4,7 +4,7 @@ class Event < ActiveRecord::Base
   has_many :jams
   has_many :users, :through => :rsvps
 
-  validates_presence_of :name, :tag, :held_at, :timezone, :location, :hype, :proposals_close_at
+  validates_presence_of :name, :tag, :held_at, :timezone, :location, :hype, :proposals_close_at, :map_iframe_url, :map_url
   
   # tag needs to start with webjam to be used with the routes setup
   # this is a bit belts-n-braces though:
