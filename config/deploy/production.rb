@@ -9,6 +9,7 @@ set :rails_env, "production"
 
 task :after_update_code, :roles => :app do
   link_database_config
+  link_mugshots
   install_remote_gems
   set_remote_permissions
 end

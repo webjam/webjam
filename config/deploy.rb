@@ -41,6 +41,11 @@ def link_database_config
   sudo "ln -s #{deploy_to}/../config/application.yml #{release_path}/config/application.yml"
 end
 
+def link_mugshots
+  sudo "sh -c \"if [ ! -d #{deploy_to}/shared/mugshots ]; then mkdir #{deploy_to}/shared/mugshots; fi;\""
+  sudo "ln -s #{deploy_to}/shared/mugshots #{release_path}/public/mugshots"
+end
+
 def install_remote_gems
   rake = fetch(:rake, "rake")
   rails_env = fetch(:rails_env, "production")
