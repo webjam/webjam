@@ -19,7 +19,7 @@ wire up Events
   - event details
   - post-event description
 
-build flat presentation page - Lachlan
+integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
 custom error page
 Adding sponsor links and images (with hover state)
