@@ -60,6 +60,6 @@ class ApplicationController < ActionController::Base
     end
     
     def iphone_request?
-      params[:no_iphone].nil? && request.headers['User-Agent'].include?("iPhone")
+      params[:no_iphone].nil? && request.headers['User-Agent'] && request.headers['User-Agent'].include?("iPhone")
     end
 end
