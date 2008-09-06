@@ -1,7 +1,6 @@
 set :stages, %w(staging production edge)
 set :default_stage, "edge"
 require 'capistrano/ext/multistage'
-$:.unshift File.dirname(__FILE__)+'/../vendor/capistrano/capistrano_rsync_with_remote_cache/lib'
 
 # Common stuff goes here, like perms, servers, and restart stuff
 
@@ -10,7 +9,7 @@ set :ssh_options, { :forward_agent => true } # this is so we don't need a appdep
 set :application, "webjam"
 
 set :scm, :git
-set :deploy_via, :rsync_with_remote_cache
+set :deploy_via, :remote_cache
 set :repository, "git@github.com:toolmantim/webjam.git"
 
 role :app, "208.75.86.29"
@@ -31,14 +30,15 @@ def set_remote_permissions
   CMD
 end
 
-before "deploy:update_code" do
-  sudo <<-CMD
-  sh -c "chown -R $USER /srv/webjam/edge/shared/cached-copy"
-  CMD
-end
+# before "deploy:update_code" do
+#   sudo <<-CMD
+#   sh -c "chown -R $USER /srv/webjam/edge/shared/cached-copy"
+#   CMD
+# end
 
 def link_database_config
   sudo "ln -s #{deploy_to}/../config/database.yml #{release_path}/config/database.yml"
+  sudo "ln -s #{deploy_to}/../config/application.yml #{release_path}/config/application.yml"
 end
 
 def install_remote_gems
