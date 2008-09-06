@@ -51,7 +51,7 @@
           Sorry, no more are being accepted.
     - elsif !logged_in?
       %dt
-        = link_to "Login to present", new_session_path(:return_to => event_path(event)), :class => "button rsvp"
+        = link_to "Present", new_session_path(:return_to => event_path(event)), :class => "button rsvp"
       %dd
         %p
           %strong Want to present?
