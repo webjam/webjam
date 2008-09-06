@@ -30,11 +30,11 @@ def set_remote_permissions
   CMD
 end
 
-# before "deploy:update_code" do
-#   sudo <<-CMD
-#   sh -c "chown -R $USER /srv/webjam/edge/shared/cached-copy"
-#   CMD
-# end
+before "deploy:update_code" do
+  sudo <<-CMD
+  sh -c "chown -R $USER /srv/webjam/edge/shared/cached-copy"
+  CMD
+end
 
 def link_database_config
   sudo "ln -s #{deploy_to}/../config/database.yml #{release_path}/config/database.yml"
