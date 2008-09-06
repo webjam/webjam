@@ -128,9 +128,17 @@
           %span.fn.nickname lachlanhardy
       wrote less than a minute ago
 
-.item#comments
+.item#comment-form
   .item-details
-    %h2 Props 
+    %h2 Give Props
+  %form
+    %fieldset
+      %label{ :for => "new_comment" }
+        %span Comment goes here:
+        %textarea#new_comment 
+        %span.note (HTML is welcome, but please be nice!)
+    %fieldset
+      %input.submit{ :type => "submit", :value => "Make comment"}
 
     
     
