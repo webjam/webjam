@@ -148,6 +148,10 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 		#content {border-left: 1px solid #333; margin: 0 0 0 23.2em; padding: 0.4em 0 1em;}
 		#content.full {border: none; margin: 0;}
 		
+		/* TODO - remove these two lines once we add past events to db */
+		body.home #content {border: none;}
+		body.home #other-content {border-right: 1px solid #333;}
+		
 		  #content .item {border-bottom: 1px solid #333; overflow: auto; padding: 1.45em 1em; position: relative;}
 		  #content.full .item {margin: 0 auto 0 auto; width: 34em;}
 		  #content .item.last {border: none; padding: 1.45em 1em 0 1em;}
@@ -186,7 +190,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
     		
     		#content .item .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
     		
-    		  dl.registration {clear: both; margin: 0 0 1em 0;}
+    		  dl.registration {clear: both; margin: 0 0 1em 0; padding: 0 0 0 1em;}
     		    dl.registration dt {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
               dl.registration dt form input {width: auto;}
     		    dl.registration dd {font-size: 0.857em;}
