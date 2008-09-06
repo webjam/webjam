@@ -23,7 +23,10 @@
       %li
         %img{ :title => "Ut rutrum, lectus eu pulvinar elementum, lacus urna vestibulum ipsum", :src => "/images/temp/ladybug.jpg", :alt => "Ladybug" }/
 
-  %p 18 presenters. 345 attendees. Alcohol.
+  %p
+    = pluralize(@event.number_of_presenters, "presenter") + "."
+    = pluralize(@event.rsvps.count, "attendee") + "."
+    Alcohol.
   %ul.sponsors
     %li.proud Proudly sponsored by
     %li
