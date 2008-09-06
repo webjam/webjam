@@ -301,8 +301,7 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
 				
 				/* ----- =Comments ----- */
 				#comments {clear: both; padding: 2em 0 0 0;}
-					/*#comments p.blurb {font: 700 1.4em "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0;}
-					         #comments form {border-top: 1px solid #1a1a1a; margin: 1em 0 0 0; padding: 1em 0 0 0;}*/
+				
 					.comment {background: #181919; color: #fff; margin: 0 0 1.5em 0; padding: 1em 0 0 0;}
             .comment p {margin: 0 1em 1em 1em;}
             .comment p.comment-details {background: #0d0e0e url('/images/bg-comment-details.gif') no-repeat scroll 1em 0;  color: #fff; line-height: 2.8; margin: 0; padding: 0;}
@@ -311,6 +310,15 @@ body {background: #2a2e2f url('/images/bg-body.gif') no-repeat center center; co
               p.comment-details .vcard {padding: 0 0 0 30px;}
                 p.comment-details .vcard img {position: absolute; top: -2px;}
                 p.comment-details .vcard .url {margin: 0 0 0 30px;}
+          #comment-form {}
+           #content #comment-form div.item-details {margin: 0;}
+            #comment-form form {width: 100%;}
+                #comment-form fieldset {}
+                  #comment-form label{width: 100%;}
+                    #comment-form label span {left: -9999px; position: absolute; top: -9999px;}
+                    #comment-form textarea {font-size: 1.6em; height: 10em; width: 100%;} 
+                    #comment-form label span.note {margin: 0.5em 0 0 0; position: static;}
+                  #comment-form input.submit{margin: 1.6em 0 0 0.4em;}
 							
 			/* ---- =Archives ---- */
 			body.archive #content ul li {background: #0e0e0e; color: #a2a2a2; list-style-type: none;}
