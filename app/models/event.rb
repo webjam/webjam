@@ -41,4 +41,10 @@ class Event < ActiveRecord::Base
   def number
     tag[/(\d+)$/, 1]
   end
+  
+  def number_of_presenters
+    presenters = 0
+    jams.each {|jam| presenters += jam.number_of_presenters}
+    presenters
+  end
 end

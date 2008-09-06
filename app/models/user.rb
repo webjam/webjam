@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :rsvps
   has_many :events, :through => :rsvps
   has_many :presentation_proposals
+  has_and_belongs_to_many :jams
   
   validates_presence_of :full_name, :nick_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
