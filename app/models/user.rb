@@ -37,9 +37,9 @@ class User < ActiveRecord::Base
     save(false)
   end
   
-  def openid_sreg_fields=(fields)
-    fields && fields.each_pair do |key,val|
-      self[attr_for_openid_sreg_field(key)] = val
+  def openid_sreg_fields=(sreg_response)
+    sreg_response && sreg_response.data.each_pair do |key,val|
+      self[self.class.attr_for_openid_sreg_field(key)] = val
     end
   end
   
@@ -69,12 +69,11 @@ class User < ActiveRecord::Base
   end
   alias_method :proposed_for?, :proposal_for
   
-  protected
-    def attr_for_openid_sreg_field(field)
-      {
-        "nickname" => "nick_name",
-        "email"    => "email",
-        "fullname" => "full_name"
-      }[field]
-    end
+  def self.attr_for_openid_sreg_field(field)
+    {
+      "nickname" => "nick_name",
+      "email"    => "email",
+      "fullname" => "full_name"
+    }[field]
+  end
 end
