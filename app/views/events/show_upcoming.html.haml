@@ -60,8 +60,8 @@
     %h2 The deets
   .column
     .map
-      %iframe#map{ :frameborder => "0", :height => "350", :marginheight => "0", :marginwidth => "0", :scrolling => "no", :width => "425" }
-      %a{ :href => "#" }
+      = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
+      %a{ :href => @event.map_url } View larger version
   .column
     %dl
       %dt Bar Broadway

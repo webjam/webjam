@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080906072004) do
+ActiveRecord::Schema.define(:version => 20080906074141) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20080906072004) do
     t.string   "location"
     t.text     "hype"
     t.datetime "proposals_close_at"
+    t.string   "map_iframe_url"
+    t.string   "map_url"
   end
 
   create_table "flickr_photos", :force => true do |t|

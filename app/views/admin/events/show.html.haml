@@ -43,5 +43,12 @@
     %strong Hype (used on homepage and event page):
     =h @event.hype
   %li
+    %strong Map:
+    =h @event.map_iframe_url
+    = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url} if @event.map_iframe_url?
+  %li
+    %strong Map URL:
+    %a{ :href => @event.map_url }=h @event.map_url
+  %li
     %strong Published:
     =h @event.published_at || "Not yet"
