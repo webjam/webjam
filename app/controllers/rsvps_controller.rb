@@ -10,7 +10,6 @@ class RsvpsController < ApplicationController
     if current_user.rsvps.create!(:event => @event)
       redirect_to event_path(@event)
     else
-      raise "whatwhat?"
       redirect_to event_path(:id => @event, :already_rsvpd => true)
     end
   end
