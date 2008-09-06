@@ -1,7 +1,10 @@
   - @section = :blog
 - @page_title = h(@post.title)
 
-.hentry
+- content_for :other_content do
+  = render :partial => 'shared/other_content/upcoming_events'
+
+.hentry.item
   %h1.entry-title
     =h @post.title
   %ul.byline
@@ -37,8 +40,7 @@
     %h2 Comments
 
   - if @post.comments.empty?
-    %p.title
-      There are no comments yet!
+    %p.title There are no comments yet!
 
   - @post.comments.each_with_index do |comment, index|
     .hentry.comment{:id => "comment-#{comment.id}"}
@@ -52,10 +54,10 @@
             %span.fn.nickname=h comment.user.nick_name
         = time_ago_in_words comment.created_at
   
-.item#comment-form
+.item.last#comment-form
   .item-details
     %h2
-      Add your own
+      Add yours
   - if !current_user
     %p
       = link_to_login_with_return_to_current_page 'Login to leave a comment'
@@ -66,8 +68,9 @@
           Don&rsquo;t forget to type something!
       %fieldset
         %label{ :for => "new_comment" }
-          %span Add your own:
+          %span Comment goes here:
           = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'new_comment'
           %span.note (HTML is welcome, but please be nice!)
       %fieldset
         %input.submit{ :type => "submit", :value => "Add comment"}
+        

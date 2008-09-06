@@ -60,7 +60,7 @@
                       %a{ :href => post_path(post.year, post.permalink) }= post.title
                       %a.no-comments{ :href => "#{post_path(post.year, post.permalink)}#comments" }= "(#{post.comments.size})"
                   %li.more
-                    %a{ :href => "/news/#{Time.now.year}" }
+                    %a{ :href => "/news/" }
                       More news
 
           .column

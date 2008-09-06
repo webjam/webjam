@@ -25,9 +25,9 @@ Add Viddler player mojo (preferably API shizzle)
 custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim
-wire up blog
 fix ui profile form flashes
 swap body.home column borders
+latest news partial needs to work on all pages
 
 Last: cross-browser testing
 
@@ -42,6 +42,6 @@ validate microformats
 
 TODO later:
 tie RSVPs to Proposals? how?
-
+Build hotted up active version for events!
 
 
