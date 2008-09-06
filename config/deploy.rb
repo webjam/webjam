@@ -1,6 +1,7 @@
 set :stages, %w(staging production edge)
 set :default_stage, "edge"
 require 'capistrano/ext/multistage'
+require 'open-uri'
 
 # Common stuff goes here, like perms, servers, and restart stuff
 
@@ -52,10 +53,22 @@ def install_remote_gems
   sudo "sh -c \"cd #{current_release}; #{rake} RAILS_ENV=#{rails_env} gems:install\""
 end
 
+def prestart_application
+  puts "About to prestart the application..."
+  2.times do
+    if site_username && site_password
+      s = open(site_url, :http_basic_authentication=>[site_username,site_password])
+    else
+      open(site_url)
+    end
+  end
+end
+
 namespace :deploy do
   desc "Custom restart task for passenger"
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{deploy_to}/current/tmp/restart.txt"
+    prestart_application
   end
 
   desc "Custom start task for passenger"
