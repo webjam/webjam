@@ -13,7 +13,7 @@ lacho = User.find_by_nick_name("lachlanhardy")
 raise "Lachlan doesnt exist! Odd eh." unless lacho
 
 YAML.load(File.open(File.dirname(__FILE__) + "/blog_posts.yml").read).each do |post|
-  Post.create :user => lacho,
+  Post.create :user_id => lacho.id,
               :title => post[:title],
               :body  => post[:body],
               :permalink => post[:permalink],
