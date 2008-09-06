@@ -71,19 +71,14 @@ TOC
 			
 		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
 		
-		/* --- =Avatars --- */
-/*    .user-avatar {position: relative;}
-      .user-avatar .vcard {padding: 0 0 0 18px; text-decoration: none;} 
-        .user-avatar .vcard img {left: 0; position: absolute; top: -4px;}
-        .user-avatar .vcard .fn {padding: 0;}*/
-      
-      .user-avatar {position: relative;}
-        .user-avatar img {position: absolute; top: -2px;}
-          .user-avatar .url {margin: 0 0 0 30px;}
+		/* --- =Avatars --- */      
+    .user-avatar {position: relative;}
+      .user-avatar img {position: absolute; top: -2px;}
+        .user-avatar .url {margin: 0 0 0 30px;}
 
 		/* --- =Feeds etc --- */
 		.item h2 {position: relative;}
-      .item h2 .feed {background: url('/stylesheets/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
+      .item h2 .feed {background: url('/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
       
       #latest h2 .feed {left: 5.7em; top: 0.4em;}
 
