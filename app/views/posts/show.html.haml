@@ -47,12 +47,15 @@
       .entry-content= sanitize simple_format(comment.body), :tags => %w(strong em a code pre blockquote span q abbr acronym br img ul ol li del), :attributes => %w(href class cite rel rev title src alt)
       %p.comment-details
         %a.permalink{ :href => "comment-#{comment.id}"}= index + 1
-        %span.user-avatar.vcard
-          %a{ :href => user_path(comment.user) }
-            = avatar_image(comment.user, :tiny)
-          %a.url{ :href => user_path(comment.user) }<
-            %span.fn.nickname=h comment.user.nick_name
+        = user_link_with_avatar(@post.user, "author")
+        / %span.user-avatar.vcard
+        /           %a{ :href => user_path(comment.user) }
+        /             = avatar_image(comment.user, :tiny)
+        /           %a.url{ :href => user_path(comment.user) }<
+        /             %span.fn.nickname=h comment.user.nick_name
+        wrote
         = time_ago_in_words comment.created_at
+        ago.
   
 .item.last#comment-form
   .item-details
@@ -70,7 +73,7 @@
         %label{ :for => "new_comment" }
           %span Comment goes here:
           = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'new_comment'
-          %span.note (HTML is welcome, but please be nice!)
+          %span.note (Nice HTML is welcome, but please keep the naughty stuff to yourself!)
       %fieldset
         %input.submit{ :type => "submit", :value => "Add comment"}
         

@@ -5,7 +5,6 @@ module ApplicationHelper
   end
 
   def user_login_link_with_avatar(user)
-    # link_to "Hi #{avatar_image(user)}&nbsp;<strong class='fn nickname'>#{h(user.nick_name)}</strong>!", user_path(user), :class => 'user-avatar vcard'
     render :partial => "shared/user_login_avatar",
            :locals => {:user => user}
   end
