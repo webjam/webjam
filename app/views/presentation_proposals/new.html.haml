@@ -1,8 +1,12 @@
 - @page_title = "Submit a presentation proposal for #{h(@event.name)}"
 
-%h2=h @page_title
+- content_for :other_content do
+  = render :partial => 'shared/other_content/proposal_help'
 
-- form_for @proposal, :presentation_proposal, :url => event_presentation_proposal_path do |f|
-  = f.error_messages
-  = render :partial => "form", :locals => {:f => f}
-  = submit_tag 'Submit', :class => 'submit'
+.item.last
+  %h2=h @page_title
+
+  - form_for @proposal, :presentation_proposal, :url => event_presentation_proposal_path do |f|
+    = f.error_messages
+    = render :partial => "form", :locals => {:f => f}
+    = submit_tag 'Submit', :class => 'submit'
