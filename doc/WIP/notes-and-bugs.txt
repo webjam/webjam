@@ -28,6 +28,8 @@ Add presentation proposal (edit?) - Tim
 wire up blog
 fix ui profile form flashes
 
+Build hotted up active version for events!
+
 Last: cross-browser testing
 
 BUGS:

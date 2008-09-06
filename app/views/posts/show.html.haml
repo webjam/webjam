@@ -37,8 +37,7 @@
     %h2 Comments
 
   - if @post.comments.empty?
-    %p.title
-      There are no comments yet!
+    %p.title There are no comments yet!
 
   - @post.comments.each_with_index do |comment, index|
     .hentry.comment{:id => "comment-#{comment.id}"}
@@ -55,7 +54,7 @@
 .item#comment-form
   .item-details
     %h2
-      Add your own
+      Add yours
   - if !current_user
     %p
       = link_to_login_with_return_to_current_page 'Login to leave a comment'
@@ -66,8 +65,9 @@
           Don&rsquo;t forget to type something!
       %fieldset
         %label{ :for => "new_comment" }
-          %span Add your own:
+          %span Comment goes here:
           = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'new_comment'
           %span.note (HTML is welcome, but please be nice!)
       %fieldset
         %input.submit{ :type => "submit", :value => "Add comment"}
+        
