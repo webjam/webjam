@@ -21,8 +21,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resource  :session, :member => { :create => :any }
 
   map.event ":id", :controller => "events", :action => "show", :requirements => {:id => EVENT_TAG}
-  map.event_rsvps ":event_id/rsvps", :controller => "rsvps", :action => "create", :conditions => { :method => :post }, :requirements => {:event_id => EVENT_TAG}
-  map.event_rsvp ":event_id/rsvps/:id", :controller => "rsvps", :action => "destroy", :conditions => { :method => :delete }, :requirements => {:event_id => EVENT_TAG}
+
+  map.with_options(:controller => "rsvps", :requirements => {:event_id => EVENT_TAG}, :path_prefix => ":event_id", :name_prefix => "event_") do |rsvps|
+    rsvps.rsvp "rsvp", :action => "show", :conditions => { :method => :get }
+    rsvps.rsvp "rsvp", :action => "destroy", :conditions => { :method => :delete }
+    rsvps.rsvp "rsvp", :action => "update" # put and post
+  end
   
   map.with_options(:controller => "presentation_proposals", :requirements => {:event_id => EVENT_TAG}) do |proposals|
     proposals.event_presentation_proposal ":event_id/proposal", :action => "edit", :conditions => { :method => :get }
