@@ -43,5 +43,7 @@ validate microformats
 TODO later:
 tie RSVPs to Proposals? how?
 Build hotted up active version for events!
+Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
+
 
 
