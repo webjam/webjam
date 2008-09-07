@@ -26,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
     rsvps.rsvp "rsvp", :action => "show", :conditions => { :method => :get }
     rsvps.rsvp "rsvp", :action => "destroy", :conditions => { :method => :delete }
     rsvps.rsvp "rsvp", :action => "update" # put and post
+    rsvps.rsvp_pike "rsvp/pike", :action => "pike", :conditions => {:method => :get}
   end
   
   map.with_options(:controller => "presentation_proposals", :requirements => {:event_id => EVENT_TAG}) do |proposals|

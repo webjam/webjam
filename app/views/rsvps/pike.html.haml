@@ -1,0 +1,11 @@
+- @page_title = "You&rsquo;ve RSVP&rsquo;d for #{h(@event.name)}"
+
+- content_for :other_content do
+  %p Something about you having RSVP'd
+
+.item.last
+  %h2
+    Woot! You&rsquo;ve RSVP&rsquo;d for
+    %a{:href => event_path(@event)}=h @event.name
+
+    = button_to "I can no longer attend", event_rsvp_path(@event), :method => :delete
