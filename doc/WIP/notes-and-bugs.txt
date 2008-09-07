@@ -34,7 +34,6 @@ Last: cross-browser testing
 BUGS:
 
 form error messages suck
-sign in forms in safari
 make reversed hover states for sponsors
 lame column sizing on Edit profile page
 validate microformats
