@@ -52,7 +52,12 @@ class UsersController < ApplicationController
     @user.save!
     session[:verified_openid_details] = nil
     self.current_user = @user
-    redirect_to user_path(@user)
+    if session[:return_to_path]
+      redirect_to session[:return_to_path]
+      session[:return_to_path] = nil
+    else
+      redirect_to user_path(@user)
+    end
   rescue ActiveRecord::RecordInvalid
     render :action => 'details'
   end

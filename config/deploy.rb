@@ -3,6 +3,9 @@ set :default_stage, "edge"
 require 'capistrano/ext/multistage'
 require 'open-uri'
 
+require File.join(File.dirname(__FILE__), "..", "lib", "application_config")
+APPLICATION_CONFIG = ApplicationConfig.new
+
 # Common stuff goes here, like perms, servers, and restart stuff
 
 set :ssh_options, { :forward_agent => true } # this is so we don't need a appdeploy key
@@ -61,6 +64,22 @@ def prestart_application
     else
       open(site_url)
     end
+  end
+end
+
+task :announce_to_campfire do
+  begin
+    if APPLICATION_CONFIG.jeeves_campfire_password.nil?
+      puts "Jeeves can't announce to campfire. Set jeeves_campfire_password in config/application.yml to github@webjam.com.au's password"
+    else
+      require File.join(File.dirname(__FILE__), "deploy", "tinder", "lib", "tinder")
+      campfire = Tinder::Campfire.new 'webjam'
+      campfire.login 'github@webjam.com.au', APPLICATION_CONFIG.jeeves_campfire_password
+      room = Tinder::Room.new(campfire, "176805")
+      room.speak "[cap #{rails_env} deploy] Release the hounds!"
+    end
+  rescue Tinder::Error => e
+    puts e.message + " - Is jeeves_campfire_password in config/application.yml set to github@webjam.com.au's password?"
   end
 end
 

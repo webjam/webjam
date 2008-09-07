@@ -3,7 +3,7 @@
 - content_for :other_content do
   = render :partial => 'shared/other_content/proposal_help'
 
-.item.last
+.item
   %h2 Update your presentation proposal
 
   - form_for @proposal, :presentation_proposal, :url => event_presentation_proposal_path, :html => {:method => :post} do |f|
@@ -11,6 +11,8 @@
     = render :partial => "form", :locals => {:f => f}
     = submit_tag 'Update', :class => 'submit'
   
+.item.last
+  %h2 Don&rsquo;t want to present anymore?
 
   - form_tag event_presentation_proposal_path, :method => :delete do
     = submit_tag 'Delete my proposal', :class => 'submit'

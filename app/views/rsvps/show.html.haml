@@ -1,0 +1,20 @@
+- @page_title = "You&rsquo;ve RSVP&rsquo;d for #{h(@event.name)}"
+
+- content_for :other_content do
+  %p Something about you having RSVP'd
+
+.item.last
+  %h2
+    Woot! You&rsquo;ve RSVP&rsquo;d for
+    %a{:href => event_path(@event)}=h @event.name
+
+  %ul
+    %li All the event details (time/date/place/link to map)
+    %li
+      %a{:href => event_rsvp_pike_path(@event)} A link to pike
+    %li A link to an ics file with the event details?
+    %li A link to the news RSS feed
+    %li
+      %a{:href => edit_current_user_path} Invitation to fill out your profile?
+    %li Reminder to take pictures/video at the event and tag them appropriately on Viddler/Flickr.
+    %li Encourage them to tweet/blog about the upcoming Webjam.
