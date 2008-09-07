@@ -3,18 +3,50 @@
 - content_for :other_content do
   %p Something about you having RSVP'd
 
-.item.last
+.item
   %h2
-    Woot! You&rsquo;ve RSVP&rsquo;d for
+    Woot!
+
+  %p
+    You&rsquo;ve RSVP&rsquo;d for
     %a{:href => event_path(@event)}=h @event.name
 
-  %ul
-    %li All the event details (time/date/place/link to map)
-    %li
-      %a{:href => event_rsvp_pike_path(@event)} A link to pike
-    %li A link to an ics file with the event details?
-    %li A link to the news RSS feed
-    %li
-      %a{:href => edit_current_user_path} Invitation to fill out your profile?
-    %li Reminder to take pictures/video at the event and tag them appropriately on Viddler/Flickr.
-    %li Encourage them to tweet/blog about the upcoming Webjam.
+  %p
+    If for some reason you can&rsquo;t make it
+    %a{:href => event_rsvp_pike_path(@event)} tell us
+    and you&rsquo;ll free up your ticket for someone else to attend.
+
+.item
+  %h2
+    %a{:href => event_path(@event)}=h @event.name
+    Details
+  
+  %p All the event details (time/date/place/link to map)
+  %p A link to an ics file with the event details?
+
+.item
+  %h2 Present!
+  %p Call to submit a presentation proposal.
+  %p Info about what it takes to present.
+
+.item
+  %h2 Photos, Videos &amp; Blog Posts
+  %p Reminder to take pictures/video at the event and tag them appropriately
+  
+.item
+  %h2 Tweets
+  %p Call to spread the fine word!
+  %p Reminder for the tag
+  
+.item
+  %h2 Tell a Friend
+  %p Call to tell a friend. Harp on about "The more people the better, the more presenters the better, community driven event!"
+
+.item
+  %h2 Customise your profile
+  %p
+    %a{:href => edit_current_user_path} Customise yo.
+
+.item.last
+  %h2 Get the latest news
+  %p A link to the blog and RSS feed
