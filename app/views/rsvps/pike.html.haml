@@ -5,7 +5,9 @@
 
 .item.last
   %h2
-    Woot! You&rsquo;ve RSVP&rsquo;d for
-    %a{:href => event_path(@event)}=h @event.name
-
-    = button_to "I can no longer attend", event_rsvp_path(@event), :method => :delete
+    Not able to make it to
+    = h(@event.name) + "?"
+  = button_to "I can no longer attend", event_rsvp_path(@event), :method => :delete
+  %p
+    Alternatively,
+    %a{:href => event_path(@event)} check out the event details

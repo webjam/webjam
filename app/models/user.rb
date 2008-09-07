@@ -59,6 +59,10 @@ class User < ActiveRecord::Base
   def to_s
     nick_name
   end
+  
+  def to_recipient
+    %("#{self.full_name}" <#{self.email}>)
+  end
 
   def rsvp_for(event)
     rsvps.detect {|rsvp| rsvp.event == event}
