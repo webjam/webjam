@@ -50,5 +50,8 @@
     %strong Map URL:
     %a{ :href => @event.map_url }=h @event.map_url
   %li
+    %strong Campaign Monitor RSVP List ID
+    =h @event.campaign_monitor_list_id
+  %li
     %strong Published:
     =h @event.published_at || "Not yet"
