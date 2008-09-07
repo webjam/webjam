@@ -28,45 +28,20 @@ describe RsvpObserver, "#send_thankyou_email" do
 end
 
 describe RsvpObserver, "#subscribe_to_campaign_monitor" do
-  it "calls campaign_monitor_list" do
-    pending
-  end
-  describe "if theres no list" do
+  describe "if event has no campaign_monitor_list_id" do
     it "does not subscribe the user" do
       pending
     end
   end
-  describe "if theres a list" do
-    it "calls campaign_subscriber" do
-      pending
-    end
-    it "calls the subscriber's add_and_resubscribe" do
-      pending
-    end
-  end
-end
-
-describe RsvpObserver, "#campaign_monitor_list" do
   describe "if campaign_monitor_client returns nil" do
     it "does not subscribe the user" do
       pending
     end
   end
-  describe "if the event has no list id" do
-    it "does not subscribe the user" do
+  describe "if theres a campaign_monitor_list_id and campaign_monitor_client" do
+    it "calls add_subscriber on the client with the list id, email and name" do
       pending
     end
-  end
-  describe "if campaign_monitor_client returns the a client" do
-    it "returns the client's list with matching list id" do
-      pending
-    end
-  end
-end
-
-describe RsvpObserver, "#campaign_subscriber" do
-  it "returns a new CampaignMonitor::Subscriber with the username and email" do
-    pending
   end
 end
 
