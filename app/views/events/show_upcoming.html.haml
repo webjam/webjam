@@ -43,7 +43,7 @@
     = pluralize(@event.rsvps.count, "attendee") + "."
     Alcohol.
 
-.item.last
+%div{:class => @event.posts.empty? ? "item last" : "item"}
   .item-details
     %h2 The deets
   .column
@@ -57,3 +57,7 @@
       %dd Doors open 6.00pm
       %dd Presentations start 6.30pm
       %dd 15 August 2008
+      
+- unless @event.posts.empty?
+  .item.last
+    = render :partial => "related_posts"
