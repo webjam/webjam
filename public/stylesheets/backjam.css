@@ -364,7 +364,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 										ul.month ul.posts li a:active,
 										ul.month ul.posts li a:focus {background: #0e0e0e; color: #fff; text-decoration: underline;}
 										
-										#content ul.posts li a.comments {background: #0e0e0e url('/stylesheets/images/icon-comments.gif') no-repeat 0 4px; padding: 0 0 0 20px;}
+										#content ul.posts li a.comments {background: #0e0e0e url('/images/icon-comments.gif') no-repeat 0 4px; padding: 0 0 0 20px;}
 										ul.posts li a.comments:link,
 										ul.posts li a.comments:visited {}
 										ul.posts li a.comments:hover,
