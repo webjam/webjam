@@ -40,6 +40,11 @@ class ApplicationController < ActionController::Base
      end
     end
     
+    before_filter :set_next_events_for_header
+    def set_next_events_for_header
+      @header_next = Event.all(:order => "held_at ASC", :conditions => ["held_at >= ? AND published_at IS NOT NULL", Time.now], :limit => 1)
+    end
+    
     before_filter :set_previous_events_for_footer
     def set_previous_events_for_footer
       @footer_previous_events = Event.published.past(:order => "held_at DESC")

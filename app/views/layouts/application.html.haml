@@ -13,6 +13,19 @@
 
   %body#webjam-com-au{:class => @body_class, :onload => @onload}
     #page
+      %ol.next-events
+        - if @header_next.empty?
+          %li
+            Nothing coming up!
+        - else
+          - @header_next.each_with_index do |event, index|
+            %li
+              - if index == 0
+                Next event: 
+              - else
+                then&hellip;
+              %a{ :href => event_path(event) }
+                = event.name
       %ul#account-tools
         - if current_user
           %li.profile
