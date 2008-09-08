@@ -53,7 +53,6 @@ tidy up contributors copy
 promote sponsorship opportunities more
 change jammer/new peep to login/register
 why do I have to create a Webjam account to attend? needs explanation
-move "Register one!" to top of page
 change "good-looking" copy
 change 'blog archive' to 'news archive'
 show current count more prominently on events, home and when logged out
@@ -81,5 +80,5 @@ Build hotted up active version for events!
 Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
 
 Confirm our website identity with Yahoo! ?? (for better registration)
-
+Merge registration and login into one process.
 
