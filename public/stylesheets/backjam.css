@@ -160,7 +160,9 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		  #content a.details,
     		  .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.18em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
-    		  #content .item a.details {position: absolute; right: 1em; top: 1.4em;}
+    		  #content .item a.details {position: absolute; right: 1em; top: 1.2em;}
+    		  #content #winners a.details,
+    		  #content .item p a.details {position: static; width: auto;}
     		  
     		  .item .button {text-align: center; text-decoration: none;}
     		  .item .button:link,
@@ -362,8 +364,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 										ul.posts li a.comments:active,
 										ul.posts li a.comments:focus {}
 			
-			/* ---- =Join Form ---- */
-			
+			/* ---- =Login Form ---- */			
 			#login {}
 			  #login span {margin: 0.2em 0 0 0;}
 			    #login span span {margin: 0; width: auto;}
@@ -375,29 +376,6 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			    
 			    #login input.submit {margin: 0.4em 0 0 0;}
 			
-			
-				/*#openid-login {border: 1px solid #303030; padding: 0.6em 0;}
-				          #openid-login label {background: #0d0e0e url('/stylesheets/images/bg-login-input.gif') no-repeat 100% 6px; color: #ff6200; margin: 0 0.4em 0 0.4em; padding: 0 8px 0.4em 0; width: 24.5em;}
-				            #openid-login label img {float: left; margin: 0.3em 0 0 0; width: auto;}
-				            #openid-login label input {border: none; float: right; height: 24px; margin: 6px 0 0 1em; padding: 6px 0 0 0; width: 19.3em;}
-				          #openid-login input.submit {font-size: 1.07em; font-weight: 700; height: 2.1em; margin: 6px 1em 0 1.2em; padding: 0 0 0.2em 0; width: 5em;}
-				        #construct-openid {background: #0d0e0e url('/stylesheets/images/bg-openid-construct.jpg') no-repeat 0 0; margin: 1em 0 1em 0; padding: 0 0 0 135px;}
-				          #construct-openid p {margin: 0 0 1em 0;}
-				          #construct-openid select {margin: 0 2em 0 0;}
-				          #construct-openid input {font-size: 1em; width: 12em;}
-
-				        body.js #openid-login {padding: 5.3em 0 2em 0; position: relative;}
-				          body.js #openid-login #openid-url-label {position: static; width: 24.3em;}
-				          body.js p.explanation {margin: 0 0 1em 0;}
-				            body.js span.construct-openid {display: block; float: none; left: 120px; position: absolute; top: -4.9em; width: auto;}
-				              body.js span.service-images {display: block; float: none; margin: 0 0 0.4em 0; width: 10em;}
-				                body.js span.service-images a {border: none;}
-				                  body.js span.service-images a img {border: 1px solid #fcfcfc; border-bottom-color: #303030; border-right-color: #303030; margin: 2px;}
-				              body.js span.construct-openid select {clear: both; display: block; margin: 0.4em 0 0.4em 0; width: 14em;}
-				              body.js #openid-login span.construct-openid label {background: transparent; margin: 0; padding: 0;}
-				                body.js #openid-login span.construct-openid label input {float: left; margin: 0.4em 0 0.2em 0.1em; width: 20.5em;}
-				              body.js span.construct-openid em {clear: left; font-weight: 100; padding: 0.3em 0 0 0;}
-				            */
 
 			/* ---- =Profile ---- */
 			
