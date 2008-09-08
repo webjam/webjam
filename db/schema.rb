@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080906074141) do
+ActiveRecord::Schema.define(:version => 20080907133532) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20080906074141) do
     t.string   "owner"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "event_id",      :limit => 11
+    t.datetime "posted_before"
   end
 
   create_table "identity_urls", :force => true do |t|
@@ -138,6 +140,16 @@ ActiveRecord::Schema.define(:version => 20080906074141) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "tweets", :force => true do |t|
+    t.string   "body"
+    t.string   "username"
+    t.integer  "twitter_identifier", :limit => 11
+    t.integer  "event_id",           :limit => 11
+    t.datetime "posted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "nick_name"

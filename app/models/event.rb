@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
   has_many :presentation_proposals
   has_many :jams
   has_many :users, :through => :rsvps
+  has_many :flickr_photos
+  has_many :tweets
 
   validates_presence_of :name, :tag, :held_at, :timezone, :location, :hype, :proposals_close_at, :map_iframe_url, :map_url
   
