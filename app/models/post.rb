@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  belongs_to :event
   has_many :comments, :as => :commentable
 
   validates_presence_of :title, :body, :permalink

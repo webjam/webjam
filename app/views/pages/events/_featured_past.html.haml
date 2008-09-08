@@ -8,15 +8,13 @@
         %li
           %img{ :title => fp.title, :src => fp.url, :alt => fp.title }
 
-  %p
-    = pluralize(event.number_of_presenters, "presenter") + "."
-    = pluralize(event.rsvps.count, "attendee") + "."
-    Alcohol.
-  %ul.sponsors
-    %li.proud Proudly sponsored by
-    %li
-      %a.directSMS{ :href => "#" } DirectSMS
-    %li
-      %a.directSMS{ :href => "#" } SegPub
-    %li
-      %a.directSMS{ :href => "#" } iBurst
+  = event.hype
+-#
+-#  %ul.sponsors
+-#    %li.proud Proudly sponsored by
+-#    %li
+-#      %a.directSMS{ :href => "#" } DirectSMS
+-#    %li
+-#      %a.directSMS{ :href => "#" } SegPub
+-#    %li
+-#      %a.directSMS{ :href => "#" } iBurst
