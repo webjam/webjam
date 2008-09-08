@@ -52,4 +52,8 @@ class Post < ActiveRecord::Base
   def before_save
     self.year = published_at.year
   end
+  
+  def <=>(other)
+    self.published_at <=> other.published_at
+  end
 end
