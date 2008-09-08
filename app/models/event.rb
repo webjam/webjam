@@ -62,4 +62,8 @@ class Event < ActiveRecord::Base
       return self
     end
   end
+
+  def <=>(other)
+    self.held_at <=> other.held_at
+  end
 end

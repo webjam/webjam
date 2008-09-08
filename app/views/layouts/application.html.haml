@@ -84,7 +84,7 @@
               %h2
                 The Jams
               %ul
-                - for event in @footer_previous_events
+                - for event in @footer_events.sort.reverse
                   %li
                     %a{ :href => event_path(event) }
                       = event.name
@@ -94,8 +94,13 @@
               %h2
                 About
               %p
-                Webjam is brought to you by the letters W, W and W
+                18 presenters with 3 minutes each to show off their hot web work.
               %p
-                Reach out and touch someone -
-                %a{ :href => "mailto:contact@webjam.com.au" }
-                  contact@webjam.com.au
+                You vote for the big winner via SMS and they get to take home cool booty.
+              %p
+                Big props to
+                %a{:href => contributors_path} all the contributors
+                who&rsquo;ve pitched in to help make Webjam what it is.
+              %p
+                Feedback? Want to help? Want to sponsor an event? Shoot an email to
+                %a{ :href => "mailto:contact@webjam.com.au" } contact@webjam.com.au

@@ -9,7 +9,7 @@
 #content {overflow: auto; padding: 1em;}
 
   #content ul {font-size: 1.2em;}
-    #content ul li {margin: 0 0 0.4em 0;}
+    #content ul li {list-style-type: none; margin: 0 0 0.4em 0;}
     
   #content ul.actions {border-left: 2px solid #fcfcfc; float: left; line-height: 2; width: auto;}
       #content ul.actions li {border-right: 2px solid #fcfcfc; float: left; margin: 0 1em 0 0; padding: 0 1em 0 0; width: auto;}

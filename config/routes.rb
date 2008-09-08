@@ -50,6 +50,7 @@ ActionController::Routing::Routes.draw do |map|
     m.contact 'contact', :action => 'contact'
     m.home    '',        :action => 'home'
     m.open_id   'single-sign-on',   :action => 'single-sign-on'
+    m.contributors 'contributors', :action => "contributors"
     m.vote_vis 'votestream', :action => "votestream"
     # temporary static files to build front-end
     m.statichome   'staticpres',   :action => 'staticpres'

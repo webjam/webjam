@@ -2,8 +2,6 @@ class ApplicationController < ActionController::Base
   class NotFound < StandardError; end
   
   include ExceptionNotifiable
-
-  session :session_key => '_backjam_session_id'
   
   include AuthenticatedSystem
   before_filter :login_from_cookie
@@ -45,9 +43,9 @@ class ApplicationController < ActionController::Base
       @header_next = Event.all(:order => "held_at ASC", :conditions => ["held_at >= ? AND published_at IS NOT NULL", Time.now], :limit => 1)
     end
     
-    before_filter :set_previous_events_for_footer
-    def set_previous_events_for_footer
-      @footer_previous_events = Event.published.past(:order => "held_at DESC")
+    before_filter :set_footer_events
+    def set_footer_events
+      @footer_events = Event.published.all
     end
 
     before_filter :set_latest_news_for_footer

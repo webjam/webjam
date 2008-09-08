@@ -11,4 +11,6 @@ class PagesController < ApplicationController
   end
   def openid
   end
+  def contributors
+  end
 end
