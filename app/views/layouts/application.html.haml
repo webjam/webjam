@@ -24,9 +24,9 @@
             = button_to 'Logout', session_path, :method => :delete 
         - else 
           %li.login
-            = link_to "<strong>Jammer?</strong> Login", new_session_path 
+            = link_to "<strong>Jammer?</strong> Login", new_session_path, :title => 'Log in' 
           %li.register
-            = link_to "<strong>New peep?</strong> Register", new_user_path
+            = link_to "<strong>New peep?</strong> Register", new_user_path, :title => 'Register'
 
       #wrapper
         - if top = yield(:top) 
