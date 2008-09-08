@@ -16,7 +16,10 @@
       %ul#account-tools
         - if current_user
           %li.profile
-            = user_login_link_with_avatar(current_user)
+            %a.url{ :href => user_path(current_user) }
+              %span.fn.nickname
+                Hi 
+                =h current_user.nick_name
           %li.logout
             = button_to 'Logout', session_path, :method => :delete 
         - else 
