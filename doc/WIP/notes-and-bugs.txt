@@ -40,12 +40,7 @@ weird line breaks in news archive, fix punctuations, suggests single line only
 show countdown of attendee spots left available
 use active states on tabs
 create active state for master nav
-change 'deets' to 'details'
 default mugshot looks like an alien...
-upload mugshot (scratch the 'new')
-replace 'mug' with 'mugshot'
-scrap delete confirmation
-check mugshot form layout - center it maybe?
 what is the OpenID URL bit about? more explanation needed
 add see your profile link to edit page
 improve profile form submission flash
@@ -75,6 +70,8 @@ rogue border at bottom blog post
 
 
 TODO later:
+
+make mugshot form layout look good
 tie RSVPs to Proposals? how?
 Build hotted up active version for events!
 Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
