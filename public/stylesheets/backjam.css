@@ -96,6 +96,11 @@ TOC
 			input.checkbox {margin: 0.4em 0; width: auto;}
 			input.submit {margin: 0.4em 0 0 8em; width: 14.3em;}
 			form.button-to {display: inline; margin: 0; padding: 0;}
+			
+	/* -- =Error messages -- */
+	.errorExplanation {}
+	  .errorExplanation h2 {color: red;}
+	  .errorExplanation li {color: red;}
 
 
 /* - =Structure - */
