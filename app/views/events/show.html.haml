@@ -53,11 +53,7 @@
 
 - unless @event.posts.empty?
   .item.last
-    %h2 Read more&hellip;
-    - for post in @event.posts
-      %h3
-        %a{:href => post_path(post.year, post.permalink)}=h post.title
-
+    = render :partial => "related_posts"
 -#
 -#.item#sponsors
 -#  .item-details

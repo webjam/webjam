@@ -13,42 +13,39 @@ class FlickrPhoto < ActiveRecord::Base
     "http://farm#{farm}.static.flickr.com/#{server}/#{flickrid}_#{secret}.jpg"
   end
   
-  ## this method gets info about a certain photo
-  def self.posted_date_for_image(id)
-    puts "checking posted date for image"
-    response = request("flickr.photos.getInfo", "photo_id" => id.to_s)
-    # why can't I make //photo/dates@posted work?
-    Time.at(REXML::XPath.match(response, "//photo/dates@posted")[0].attributes["posted"].to_i)
-  end
-  
-  def self.retrieve_by_tags_newer_than(event_id, tags, earliest_date, arguments={})
-    arguments["tags"] = tags.join(",")
-    arguments["min_upload_date"] = earliest_date.to_i + 1
+  def self.fetch(event)
+    posted_before = Time.at(0) # default to beginning of time, aka. 1970
+    latest_photo = event.flickr_photos.find(:first, :order => "posted_before DESC")
+    if latest_photo
+      posted_before = latest_photo.posted_before
+    end
+    arguments = Hash.new
+    arguments["tags"] = [event.tag]
+    arguments["min_upload_date"] = posted_before.to_i + 1
     arguments["sort"] = "date-posted-asc"
-    retrieve(event_id, arguments)
+    retrieve(event, arguments)
   end
 
   private
   
   ## search on flickr and add to db.
-  def self.retrieve(event_id, arguments={})
-    puts "beginning retrieve"
+  def self.retrieve(event, arguments={})
+    logger.info("FlickrPhoto::retrieve About to start retrieve")
     response = request("flickr.photos.search",arguments)
     # we need to grab the last looked up photo and get it's load date.
     lastphoto = REXML::XPath.match(response, "//photo[last()]")
     unless lastphoto[0]
-      puts "No images retrieved, stopping"
+      # no images retrieved, do nothing
+      logger.info("FlickrPhoto::retrieve No images found for event #{event.name}")
       return
     end
     lastphotoid = lastphoto[0].attributes['id']
     # we will use this latest load date to set the loaded before in the db,
     # to determine where to start the next load.
     latest_load_date = posted_date_for_image(lastphotoid)
-    
     # now stash them in DB.
     photo_ids = REXML::XPath.match(response, "//photo").collect do |photoelem|
       id = photoelem.attributes['id'].to_i
-      puts "Found image, id: #{id}"
       fp = FlickrPhoto.new
       fp.flickrid = id
       fp.server = photoelem.attributes['server']
@@ -57,7 +54,8 @@ class FlickrPhoto < ActiveRecord::Base
       fp.title = photoelem.attributes['title']
       fp.owner = photoelem.attributes['owner']
       fp.posted_before = latest_load_date
-      fp.event_id = event_id
+      fp.event_id = event.id
+      logger.info("FlickrPhoto::retrieve About to save image #{fp.title} (flickr id: #{fp.flickrid}) for event #{event.name}")
       fp.save!
     end # /attribute::id   a.value
   end
@@ -77,6 +75,13 @@ class FlickrPhoto < ActiveRecord::Base
     else
       raise "Request status neither ok nor fail. Tried to fetch #{call_uri}."
     end
+  end
+  
+  ## this method gets info about a certain photo
+  def self.posted_date_for_image(id)
+    response = request("flickr.photos.getInfo", "photo_id" => id.to_s)
+    # why can't I make //photo/dates@posted work?
+    Time.at(REXML::XPath.match(response, "//photo/dates@posted")[0].attributes["posted"].to_i)
   end
   
 end
