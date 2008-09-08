@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   
   named_scope :published, :conditions => 'published_at IS NOT NULL'
 
+  before_save :set_year
+
   def self.find_all_for_archive
     find(:all,
       :select => %(
@@ -49,11 +51,11 @@ class Post < ActiveRecord::Base
     published_at
   end
   
-  def before_save
-    self.year = published_at.year
-  end
-  
   def <=>(other)
     self.published_at <=> other.published_at
+  end
+  
+  def set_year
+    self.year = published_at.year if published_at
   end
 end
