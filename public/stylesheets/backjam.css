@@ -78,7 +78,7 @@ TOC
 
 		/* --- =Feeds etc --- */
 		.item h2 {position: relative;}
-      .item h2 .feed {background: url('/images/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
+      .item h2 .feed {background: url('/images/icons/icon-feed.gif') no-repeat 0 0; display: block; height: 18px; left: 3em; position: absolute; text-indent: -9999px; top: 0.4em; width: 18px;}
       
       #latest h2 .feed {left: 5.7em; top: 0.4em;}
 
@@ -96,6 +96,11 @@ TOC
 			input.checkbox {margin: 0.4em 0; width: auto;}
 			input.submit {margin: 0.4em 0 0 8em; width: 14.3em;}
 			form.button-to {display: inline; margin: 0; padding: 0;}
+			
+	/* -- =Error messages -- */
+	.errorExplanation {}
+	  .errorExplanation h2 {color: red;}
+	  .errorExplanation li {color: red;}
 
 
 /* - =Structure - */
@@ -301,7 +306,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 					.hentry .entry-title {background: #0e0e0e; color: #fff; margin: 0 0 0.4em;}
 					#content .hentry ul.byline {border-bottom: 1px solid #292a2a; border-top: 1px solid #525353; float: left; font-size: 0.8em; list-style-type: none; margin: 0 1em 2em 0; padding: 0.5em 0 0.2em; width: 100%;}
 						#content .hentry .byline li, #content .hentry .entry-footer li {float: left; list-style-type: none;}
-						#content .hentry .byline li.comments {background: #0e0e0e url('/stylesheets/images/icon-comments-full.gif') no-repeat 0 1px; padding: 0 0 0 20px; float:right; width: auto;}
+						#content .hentry .byline li.comments {background: #0e0e0e url('/images/icons/icon-comments-full.gif') no-repeat 0 1px; padding: 0 0 0 20px; float:right; width: auto;}
 						.hentry .byline .updated {}
 					.hentry .entry-content {clear: both; padding: 0 0 1.5em .2em;}
 					.hentry .author {}
@@ -309,8 +314,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 						  .hentry .vcard img {top: -4px;}
 						.hentry .vcard .fn {}
 					#content .hentry .entry-footer {border: 1px solid #292a2a; border-left: none; border-right: none; float: left; font-size: 0.8em; font-weight: 100; margin: 0 0 0.08em 0; padding: 0.5em 0 0 0; width: 100%;}
-							#content .hentry .entry-footer li.post-date {background: #0e0e0e url('/stylesheets/images/icon-post.jpg') no-repeat 0 2px; color: #fff; padding: 0 0 0 20px;}
-							#content .hentry .entry-footer li.tags {background: #0e0e0e url('/stylesheets/images/icon-tag.jpg') no-repeat 0 1px; color: #fff; float: right; padding: 0 0 0 5.2em; position: relative; width: 16em;}
+							#content .hentry .entry-footer li.post-date {background: #0e0e0e url('/images/icons/icon-post.jpg') no-repeat 0 2px; color: #fff; padding: 0 0 0 20px;}
+							#content .hentry .entry-footer li.tags {background: #0e0e0e url('/images/icons/icon-tag.jpg') no-repeat 0 1px; color: #fff; float: right; padding: 0 0 0 5.2em; position: relative; width: 16em;}
 								#content .hentry .entry-footer li.tags span {left: 20px; position: absolute; top: 0; width: 3.1em;}
 								#content .hentry .entry-footer li.tags ul {}
 								#content .hentry .entry-footer li.tags ul li {display: inline; font-size: 1em; margin: 0; padding: 0 0.2em 0 0;}
@@ -370,7 +375,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 										ul.month ul.posts li a:active,
 										ul.month ul.posts li a:focus {background: #0e0e0e; color: #fff; text-decoration: underline;}
 										
-										#content ul.posts li a.comments {background: #0e0e0e url('/images/icon-comments.gif') no-repeat 0 4px; padding: 0 0 0 20px;}
+										#content ul.posts li a.comments {background: #0e0e0e url('/images/icons/icon-comments.gif') no-repeat 0 4px; padding: 0 0 0 20px;}
 										ul.posts li a.comments:link,
 										ul.posts li a.comments:visited {}
 										ul.posts li a.comments:hover,
@@ -380,12 +385,16 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			/* ---- =Login Form ---- */			
 			#login {}
 			  #login span {margin: 0.2em 0 0 0;}
-			    #login span span {margin: 0; width: auto;}
+			    #login label span {margin: 0; width: auto;}
 			    
 			    #login span span.service-images {margin: 0 0 0.5em 0; width: 10em;}
 			      #login span span.service-images a {display: block; float: left; margin: 0 0.4em 0 0; width: auto;}
 			      
-			    #login span select {margin: 0 0 1em 0;}
+			    #login span select {clear: both; margin: 0 0 1em 0; width: 18.4em;}
+			    
+			      #login label .construct-openid input {clear: both;}
+			      #login span em {background: #0d0e0e; clear: both; color: #aaa;}
+			        #login span em strong {background: #0d0e0e; color: #fff;}
 			    
 			    #login input.submit {margin: 0.4em 0 0 0;}
 			

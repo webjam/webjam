@@ -40,16 +40,7 @@ weird line breaks in news archive, fix punctuations, suggests single line only
 show countdown of attendee spots left available
 use active states on tabs
 create active state for master nav
-change 'ya' to 'your'
-longer select for login action - text is cut off
-login text: "or, otherwise, just sign in with the one you've got"
-change accenting for login demo url
-change 'deets' to 'details'
 default mugshot looks like an alien...
-upload mugshot (scratch the 'new')
-replace 'mug' with 'mugshot'
-scrap delete confirmation
-check mugshot form layout - center it maybe?
 what is the OpenID URL bit about? more explanation needed
 add see your profile link to edit page
 improve profile form submission flash
@@ -57,7 +48,6 @@ tidy up contributors copy
 promote sponsorship opportunities more
 change jammer/new peep to login/register
 why do I have to create a Webjam account to attend? needs explanation
-move "Register one!" to top of page
 change "good-looking" copy
 change 'blog archive' to 'news archive'
 show current count more prominently on events, home and when logged out
@@ -80,10 +70,12 @@ rogue border at bottom blog post
 
 
 TODO later:
+
+make mugshot form layout look good
 tie RSVPs to Proposals? how?
 Build hotted up active version for events!
 Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
 
 Confirm our website identity with Yahoo! ?? (for better registration)
-
+Merge registration and login into one process.
 

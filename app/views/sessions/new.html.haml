@@ -11,6 +11,10 @@
   %h1
     %strong Log in
     to your Webjam account
+    
+  %p
+    Don't have a Webjam account yet?
+    = link_to "Register one!", new_user_path
 
   - if @openid_url_not_found 
     %p.error
@@ -31,7 +35,3 @@
         = text_field_tag 'openid_url', @openid_url, :id => 'openid_url'
     %fieldset
       = submit_tag 'Login', :class => "submit"
-
-  %p
-    Don't have a Webjam account?
-    = link_to "Register one!", new_user_path
