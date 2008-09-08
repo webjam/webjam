@@ -57,7 +57,7 @@
 			}
 		}
 		
-		p.innerHTML = 'If you use ' + providersInSentenceForm + ' you probably already have an OpenID and you didn&rsquo;t even know it. If you want to register your own, see <a href="http://openid.net/get/">openid.net</a> for a list of reputable OpenID providers.'
+		p.innerHTML = 'If you use ' + providersInSentenceForm + ' you probably already have an OpenID and you didn&rsquo;t even know it. If you want to register your own, see <a href="http://openid.net/get/">openid.net</a> for a list of reputable OpenID providers. Or just sign in with one you&rsquo;ve already got!'
 		p.className = "explanation";
 		return p;
 	}
@@ -177,9 +177,9 @@
 			} else {
 				var urlTemplate = openIdProviders[service.value];
 				if (newInput.value == "") {
-					var replaceUsername = "(username)";
+					var replaceUsername = "<strong>(username)</strong>";
 				} else {
-					var replaceUsername = newInput.value;
+					var replaceUsername = "<strong>"+ newInput.value + "</strong>";
 				}
 				hiddenUrlInput.value = urlTemplate.replace("<username>", replaceUsername);
 				previewEm.innerHTML = hiddenUrlInput.value;

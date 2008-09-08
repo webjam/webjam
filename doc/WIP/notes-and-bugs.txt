@@ -40,10 +40,6 @@ weird line breaks in news archive, fix punctuations, suggests single line only
 show countdown of attendee spots left available
 use active states on tabs
 create active state for master nav
-change 'ya' to 'your'
-longer select for login action - text is cut off
-login text: "or, otherwise, just sign in with the one you've got"
-change accenting for login demo url
 change 'deets' to 'details'
 default mugshot looks like an alien...
 upload mugshot (scratch the 'new')
