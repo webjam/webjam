@@ -6,6 +6,10 @@ class Tweet < ActiveRecord::Base
   
   has_one :event
   
+  def url
+    "http://twitter.com/#{username}/statuses/#{twitter_identifier}"
+  end
+  
   def self.retrieve(event)
     tag = event.tag
     
