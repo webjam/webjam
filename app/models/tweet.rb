@@ -6,6 +6,8 @@ class Tweet < ActiveRecord::Base
   
   has_one :event
   
+  named_scope :latest_5, lambda { {:order => "posted_at DESC", :limit => 5} }
+  
   def url
     "http://twitter.com/#{username}/statuses/#{twitter_identifier}"
   end

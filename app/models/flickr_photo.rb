@@ -7,6 +7,7 @@ class FlickrPhoto < ActiveRecord::Base
   has_one :event
   
   named_scope :featured, :conditions => {:featured => true}
+  named_scope :latest_5, lambda { {:order => "created_at DESC", :limit => 5} }
 
   ## Build a URL
   def url
