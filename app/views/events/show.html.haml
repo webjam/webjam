@@ -3,30 +3,29 @@
 - @body_class = "event"
 - @event_num = @event.number
 
-- content_for :other_content do
-  %div.item#summary
-    %p This is some clever text about how cool this event was. This is some clever text about the webjam. This is some clever text about the webjam. This is some clever text about the webjam. 
+-# content_for :other_content do
+-#  %div.item#summary
+-#    %p This is some clever text about how cool this event was. This is some clever text about the webjam. This is some clever text about the webjam. This is some clever text about the webjam. 
+-#
+-#    %h2 Place-getters:
+-#    %ol
+-#      %li This presentation won
+-#      %li This presentation came second
+-#      %li This presentation was third
+-#
+-#    %h2 Presenters:
+-#    %ul
+-#      %li This is a presentation
+-#      %li This is a presentation
+-#      %li This is a presentation
+-#      %li This is a presentation
+-#      %li This is a presentation
+-#      %li This is a presentation
+-#      %li This is a presentation
+-#      %li This is a presentation
+-#      %li This is a presentation  
 
-    %h2 Place-getters:
-    %ol
-      %li This presentation won
-      %li This presentation came second
-      %li This presentation was third
-
-    %h2 Presenters:
-    %ul
-      %li This is a presentation
-      %li This is a presentation
-      %li This is a presentation
-      %li This is a presentation
-      %li This is a presentation
-      %li This is a presentation
-      %li This is a presentation
-      %li This is a presentation
-      %li This is a presentation
-  
-
-.item
+.item.last
   = render :partial => "shared/event_title", :locals => {:event => @event}
     
   .slideshow
@@ -50,180 +49,180 @@
       %li
         %img{ :title => "Ut rutrum, lectus eu pulvinar elementum, lacus urna vestibulum ipsum", :src => "/images/temp/ladybug.jpg", :alt => "Ladybug" }/
 
-  %h3 Jams == Kicked Out ++
-  %p 
-    16 rocking peeps stepped up and delivered incredible presentations that included topics like open source development, the advance of technology, mashing videos, the future of CSS, making your own wedding registry, getting funky with MathML, looking famous and even how to present at Webjam! There's a full list at the end, but we're going to call out some highlights and the winners.
-    %a.details{ :href => "#"} Read more
+  = @event.hype
 
-.item#sponsors
-  .item-details
-    %h2 Thanks to our sponsors
-  %ul.sponsors
-    %li
-      %a.directSMS{ :href => "#" } DirectSMS
-    %li
-      %a.directSMS{ :href => "#" } SegPub
-    %li
-      %a.directSMS{ :href => "#" } iBurst
+  - # TODO: Show event's blog posts
 
-.item#winners
-  .item-details
-    %h2 The winners
-  %dl.first
-    %dt Dmitry rocks out with Optimus
-    %dd.img
-      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
-    %dd.place
-      %p
-        %strong 1st place:
-        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
-    %dd.prize
-      %p
-        %strong Prizes:
-        iPod Touch from Whoever, 10 books from Sitepoint. 
-    %dd
-      %p 
-        Dmitry did something really cool with microformats. Dmitry did something really cool with microformats.
-        %a.details{ :href => "#" } Check it out
-        
-  %dl
-    %dt Dmitry rocks out with Optimus
-    %dd.img
-      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
-    %dd.place
-      %p
-        %strong 2nd place:
-        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
-    %dd.prize
-      %p
-        %strong Prize:
-        iPod Touch from Binalogue. 
-    %dd
-      %p 
-        %a.details{ :href => "#" } Check it out
-              
-  %dl
-    %dt Dmitry rocks out with Optimus
-    %dd.img
-      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
-    %dd.place
-      %p
-        %strong 3rd place:
-        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
-    %dd.prize
-      %p
-        %strong Prize:
-        5 books from Sitepoint. 
-    %dd
-      %p 
-        %a.details{ :href => "#" } Check it out
-      
-
-.item.media#photos
-  .item-details
-    %h2 Photos
-    %p 
-      Add your photos. Tag them on
-      %a{ :href => "http://flickr.com/"} Flickr
-      with &#8220;
-      %a{ :href => "http://flickr.com/photos/tags/webjam8/" } webjam8
-      &#8221;
-  %ul
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
-    %li
-      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
-        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}        
-
-.item.media#videos
-  .item-details
-    %h2 Videos
-    %p 
-      Add your photos. Tag them on 
-      %a{ :href => "http://viddler.com/"} Viddler
-      with &#8220;
-      %a{ :href => "http://flickr.com/photos/tags/webjam8/" } webjam8
-      &#8221;
-  %ul
-    %li
-      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
-        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
-    %li
-      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
-        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
-    %li
-      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
-        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
-    %li
-      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
-        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
-    %li
-      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
-        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
-
-.item.media.last#words
-  .item-details
-    %h2 Words
-    %p 
-      Add your posts. Tag them with &#8220;
-      %a{ :href => "http://technorati/tag/webjam8/" } webjam8
-      &#8221;
-  %ul
-    %li
-      %a{ :href => "#" } This is a blog post.
-      By Janet Whoever. 23 June 2008
-    %li
-      %a{ :href => "#" } This is a blog post.
-      By Janet Whoever. 23 June 2008
-    %li
-      %a{ :href => "#" } This is a blog post.
-      By Janet Whoever. 23 June 2008
-    %li
-      %a{ :href => "#" } This is a blog post.
-      By Janet Whoever. 23 June 2008            
-    %li
-      %a{ :href => "#" } This is a blog post.
-      By Janet Whoever. 23 June 2008
+-#
+-#.item#sponsors
+-#  .item-details
+-#    %h2 Thanks to our sponsors
+-#  %ul.sponsors
+-#    %li
+-#      %a.directSMS{ :href => "#" } DirectSMS
+-#    %li
+-#      %a.directSMS{ :href => "#" } SegPub
+-#    %li
+-#      %a.directSMS{ :href => "#" } iBurst
+-#
+-#.item#winners
+-#  .item-details
+-#    %h2 The winners
+-#  %dl.first
+-#    %dt Dmitry rocks out with Optimus
+-#    %dd.img
+-#      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
+-#    %dd.place
+-#      %p
+-#        %strong 1st place:
+-#        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
+-#    %dd.prize
+-#      %p
+-#        %strong Prizes:
+-#        iPod Touch from Whoever, 10 books from Sitepoint. 
+-#    %dd
+-#      %p 
+-#        Dmitry did something really cool with microformats. Dmitry did something really cool with microformats.
+-#        %a.details{ :href => "#" } Check it out
+-#        
+-#  %dl
+-#    %dt Dmitry rocks out with Optimus
+-#    %dd.img
+-#      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
+-#    %dd.place
+-#      %p
+-#        %strong 2nd place:
+-#        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
+-#    %dd.prize
+-#      %p
+-#        %strong Prize:
+-#        iPod Touch from Binalogue. 
+-#    %dd
+-#      %p 
+-#        %a.details{ :href => "#" } Check it out
+-#              
+-#  %dl
+-#    %dt Dmitry rocks out with Optimus
+-#    %dd.img
+-#      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
+-#    %dd.place
+-#      %p
+-#        %strong 3rd place:
+-#        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
+-#    %dd.prize
+-#      %p
+-#        %strong Prize:
+-#        5 books from Sitepoint. 
+-#    %dd
+-#      %p 
+-#        %a.details{ :href => "#" } Check it out
+-#      
+-#
+-#.item.media#photos
+-#  .item-details
+-#    %h2 Photos
+-#    %p 
+-#      Add your photos. Tag them on
+-#      %a{ :href => "http://flickr.com/"} Flickr
+-#      with &#8220;
+-#      %a{ :href => "http://flickr.com/photos/tags/webjam8/" } webjam8
+-#      &#8221;
+-#  %ul
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
+-#    %li
+-#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
+-#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}        
+-#
+-#.item.media#videos
+-#  .item-details
+-#    %h2 Videos
+-#    %p 
+-#      Add your photos. Tag them on 
+-#      %a{ :href => "http://viddler.com/"} Viddler
+-#      with &#8220;
+-#      %a{ :href => "http://flickr.com/photos/tags/webjam8/" } webjam8
+-#      &#8221;
+-#  %ul
+-#    %li
+-#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
+-#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
+-#    %li
+-#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
+-#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
+-#    %li
+-#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
+-#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
+-#    %li
+-#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
+-#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
+-#    %li
+-#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
+-#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
+-#
+-#.item.media.last#words
+-#  .item-details
+-#    %h2 Words
+-#    %p 
+-#      Add your posts. Tag them with &#8220;
+-#      %a{ :href => "http://technorati/tag/webjam8/" } webjam8
+-#      &#8221;
+-#  %ul
+-#    %li
+-#      %a{ :href => "#" } This is a blog post.
+-#      By Janet Whoever. 23 June 2008
+-#    %li
+-#      %a{ :href => "#" } This is a blog post.
+-#      By Janet Whoever. 23 June 2008
+-#    %li
+-#      %a{ :href => "#" } This is a blog post.
+-#      By Janet Whoever. 23 June 2008
+-#    %li
+-#      %a{ :href => "#" } This is a blog post.
+-#      By Janet Whoever. 23 June 2008            
+-#    %li
+-#      %a{ :href => "#" } This is a blog post.
+-#      By Janet Whoever. 23 June 2008

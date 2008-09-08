@@ -3,7 +3,10 @@
 %fieldset
   %label{ :for => "post_user_id" }
     Author
-    = f.select :user_id, User.find(:all, :order => 'nick_name ASC').collect {|u| [h(u), u.id]}
+    = f.select :user_id, User.find(:all, :order => 'nick_name ASC').collect {|u| [h(u), u.id]}, :include_blank => true
+  %label{ :for => "post_event_id" }
+    Event
+    = f.select :event_id, Event.all(:order => 'name DESC').collect {|e| [h(e.name), e.id]}, :include_blank => true
   %label{ :for => "post_title" }
     Title
     = f.text_field :title

@@ -13,6 +13,18 @@
 
 %ul
   %li
+    %strong Author:
+    - if @post.user
+      = link_to h(@post.user), user_path(@post.user)
+    - else
+      None
+  %li
+    %strong Event:
+    - if @post.event
+      = link_to h(@post.event.name), admin_event_path(@post.event)
+    - else
+      None
+  %li
     %strong Permalink:
     = link_to post_path(:year => @post.year, :permalink => @post.permalink), post_path(:year => @post.year, :permalink => @post.permalink)
   %li
