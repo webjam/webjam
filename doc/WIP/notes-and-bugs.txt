@@ -55,6 +55,8 @@ Send unlogged in users to custom login/registration page with explanation about 
 
 BUGS:
 
+"Unsure whether you need to say 'do you want to register instead?' 2 lines beneath 'dont have a webjam account? register one!'. It's left there"
+
 weird line breaks in news archive, fix punctuation (stupid HAML newlines - needs helper?)
 form error messages suck
 make reversed hover states for sponsors
