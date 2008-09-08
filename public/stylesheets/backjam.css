@@ -398,6 +398,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			    
 			    #login input.submit {margin: 0.4em 0 0 0;}
 			
+			p.error {padding: 1em;background-color:#281700;}
+			
 
 			/* ---- =Profile ---- */
 			
