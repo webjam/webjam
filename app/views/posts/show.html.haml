@@ -16,7 +16,8 @@
         = @post.published_at.to_date.to_s(:long)
     %li.comments
       %a{ :href => "#comments" }
-        = @post.comments.length
+        = "#{@post.comments.length} comments"
+        
 
   .entry-content
     = @post.body
