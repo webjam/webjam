@@ -46,17 +46,15 @@
 %div{:class => @event.posts.empty? ? "item last" : "item"}
   .item-details
     %h2 The deets
-  .column
-    .map
-      = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
-      %a{ :href => @event.map_url } View larger version
-  .column
-    %dl
-      %dt Bar Broadway
-      %dd Cnr Broadway &amp; Harris
-      %dd Doors open 6.00pm
-      %dd Presentations start 6.30pm
-      %dd 15 August 2008
+  .map
+    = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
+    %a{ :href => @event.map_url } View larger version
+  %dl
+    %dt Bar Broadway
+    %dd Cnr Broadway &amp; Harris
+    %dd Doors open 6.00pm
+    %dd Presentations start 6.30pm
+    %dd 15 August 2008
       
 - unless @event.posts.empty?
   .item.last
