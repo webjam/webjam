@@ -13,6 +13,7 @@ webjam:user=lachlanhardy
 TODO for launch:
 
 Polling
+add sponsors structure to events
 make upcoming events other_content module
 add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
