@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080907133532) do
+ActiveRecord::Schema.define(:version => 20080908020549) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20080907133532) do
     t.datetime "updated_at"
     t.integer  "event_id",      :limit => 11
     t.datetime "posted_before"
+    t.boolean  "featured",                    :default => false
   end
 
   create_table "identity_urls", :force => true do |t|

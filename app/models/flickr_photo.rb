@@ -5,6 +5,8 @@ require "cgi"
 class FlickrPhoto < ActiveRecord::Base
   
   has_one :event
+  
+  named_scope :featured, :conditions => {:featured => true}
 
   ## Build a URL
   def url
