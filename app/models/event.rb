@@ -55,6 +55,10 @@ class Event < ActiveRecord::Base
   end
   
   def previous_event
-    Event.find(:first, :conditions => ["held_at < ?", held_at], :order => "held_at DESC")
+    if event = Event.find(:first, :conditions => ["held_at < ?", held_at], :order => "held_at DESC")
+      return event
+    else
+      return self
+    end
   end
 end
