@@ -26,7 +26,6 @@ custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim
 fix ui profile form flashes
-latest news partial needs to work on all pages
 
 Last: cross-browser testing
 
@@ -36,7 +35,7 @@ use "re-launch" phrasing in copy
 mention random voter prize in WTF
 no home link (add that master nav we talked about?)
 tshirt linkage
-weird line breaks in news archive, fix punctuations, suggests single line only
+suggests single line only for archive
 show countdown of attendee spots left available
 use active states on tabs
 create active state for master nav
@@ -44,12 +43,10 @@ default mugshot looks like an alien...
 what is the OpenID URL bit about? more explanation needed
 add see your profile link to edit page
 improve profile form submission flash
-tidy up contributors copy
 promote sponsorship opportunities more
 change jammer/new peep to login/register
 why do I have to create a Webjam account to attend? needs explanation
 change "good-looking" copy
-change 'blog archive' to 'news archive'
 show current count more prominently on events, home and when logged out
 add info about what owning an account entails - contact from WJ, benefits etc
 why doesn't it remember URL for login?
@@ -58,6 +55,7 @@ Send unlogged in users to custom login/registration page with explanation about 
 
 BUGS:
 
+weird line breaks in news archive, fix punctuation (stupid HAML newlines - needs helper?)
 form error messages suck
 make reversed hover states for sponsors
 lame column sizing on Edit profile page
