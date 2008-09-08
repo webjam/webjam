@@ -3,6 +3,9 @@ class Event < ActiveRecord::Base
   has_many :presentation_proposals
   has_many :jams
   has_many :users, :through => :rsvps
+  has_many :flickr_photos
+  has_many :tweets
+  has_many :posts
 
   validates_presence_of :name, :tag, :held_at, :timezone, :location, :hype, :proposals_close_at, :map_iframe_url, :map_url
   
@@ -50,5 +53,13 @@ class Event < ActiveRecord::Base
     presenters = 0
     jams.each {|jam| presenters += jam.number_of_presenters}
     presenters
+  end
+  
+  def previous_event
+    if event = Event.find(:first, :conditions => ["held_at < ?", held_at], :order => "held_at DESC")
+      return event
+    else
+      return self
+    end
   end
 end

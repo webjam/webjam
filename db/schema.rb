@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080907170558) do
+ActiveRecord::Schema.define(:version => 20080908023215) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -45,6 +45,9 @@ ActiveRecord::Schema.define(:version => 20080907170558) do
     t.string   "owner"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "event_id",      :limit => 11
+    t.datetime "posted_before"
+    t.boolean  "featured",                    :default => false
   end
 
   create_table "identity_urls", :force => true do |t|
@@ -73,6 +76,20 @@ ActiveRecord::Schema.define(:version => 20080907170558) do
     t.datetime "updated_at"
   end
 
+  create_table "mugshots", :force => true do |t|
+    t.integer  "temp_user_id", :limit => 11
+    t.integer  "user_id",      :limit => 11
+    t.integer  "parent_id",    :limit => 11
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size",         :limit => 11
+    t.integer  "width",        :limit => 11
+    t.integer  "height",       :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "open_id_authentication_associations", :force => true do |t|
     t.binary  "server_url"
     t.string  "handle"
@@ -83,9 +100,9 @@ ActiveRecord::Schema.define(:version => 20080907170558) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",  :limit => 11, :null => false
+    t.integer "timestamp",  :limit => 11,                 :null => false
     t.string  "server_url"
-    t.string  "salt",                     :null => false
+    t.string  "salt",                     :default => "", :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -97,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20080907170558) do
     t.datetime "published_at"
     t.string   "permalink"
     t.integer  "year",         :limit => 11
+    t.integer  "event_id",     :limit => 11
   end
 
   create_table "presentation_proposals", :force => true do |t|
@@ -125,6 +143,16 @@ ActiveRecord::Schema.define(:version => 20080907170558) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "tweets", :force => true do |t|
+    t.string   "body"
+    t.string   "username"
+    t.integer  "twitter_identifier", :limit => 11
+    t.integer  "event_id",           :limit => 11
+    t.datetime "posted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "nick_name"

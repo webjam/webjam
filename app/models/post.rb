@@ -1,10 +1,13 @@
 class Post < ActiveRecord::Base
   belongs_to :user
+  belongs_to :event
   has_many :comments, :as => :commentable
 
   validates_presence_of :title, :body, :permalink
   
   named_scope :published, :conditions => 'published_at IS NOT NULL'
+
+  before_save :set_year
 
   def self.find_all_for_archive
     find(:all,
@@ -48,7 +51,11 @@ class Post < ActiveRecord::Base
     published_at
   end
   
-  def before_save
-    self.year = published_at.year
+  def <=>(other)
+    self.published_at <=> other.published_at
+  end
+  
+  def set_year
+    self.year = published_at.year if published_at
   end
 end

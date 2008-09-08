@@ -185,6 +185,15 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		  #content .item span.closed:hover,
     		  #content .item span.closed:active,
     		  #content .item span.closed:focus {background: #4d4d4d; color: #fff;}
+    		  
+    		  #content .item span.long,
+    		  #content .item span.long:hover,
+    		  #content .item span.long:active,
+    		  #content .item span.long:focus {
+    		    font-size: 0.8em;
+    		    width: 6.375em; /* (1 / 0.8em .button font size) * .button value */
+    		    padding: 0.225em 0.375em; /* (1 / 0.8em .button font size) * .button value */
+    		  } 
     		
     		#content .item .column {float: left; margin: 0 0.5em 0 0; width: 21.5em;}
     		
@@ -195,7 +204,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		      dl.registration dd p {margin: 0 0 0.6em 0;}
     		        dl.registration dd p strong {display: block; font-size: 1.083em;}
     		        
-    		#content .item .slideshow {height: 215px; margin: 0 0 0.4em 0;}
+    		#content .item .slideshow {height: 370px; overflow:hidden; margin: 0 0 0.4em 0;}
     		  #content .slideshow ul li {list-style-type: none; margin: 0;}
     		
     		.item .sponsors {font-size: 0.625em; margin: 0 0 2em 0; position: relative;}
@@ -357,7 +366,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 										ul.month ul.posts li a:active,
 										ul.month ul.posts li a:focus {background: #0e0e0e; color: #fff; text-decoration: underline;}
 										
-										#content ul.posts li a.comments {background: #0e0e0e url('/stylesheets/images/icon-comments.gif') no-repeat 0 4px; padding: 0 0 0 20px;}
+										#content ul.posts li a.comments {background: #0e0e0e url('/images/icon-comments.gif') no-repeat 0 4px; padding: 0 0 0 20px;}
 										ul.posts li a.comments:link,
 										ul.posts li a.comments:visited {}
 										ul.posts li a.comments:hover,
@@ -398,7 +407,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 					
 			dl.vcard {}
 				.vcard dt.fn {float: left; width: auto;}
-				.vcard dd {}
+				.vcard dd {clear:left}
 					.vcard dd a.url {}
 				
 					.vcard dd.avatar {background: #0d0e0e url('/stylesheets/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}

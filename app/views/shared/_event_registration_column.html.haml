@@ -3,7 +3,9 @@
     / RSVPs
     - if logged_in? && current_user.rsvp_for(event)
       %dt
-        %span.button.closed Attend
+        %span.button.closed.long
+          = pluralize(event.rsvps_left, "spot")
+          left
       %dd
         %p
           %strong You&rsquo;re attending!
@@ -36,11 +38,14 @@
   %dl.registration
     - if logged_in? && (proposal = current_user.proposal_for(event))
       %dt
-        %span.button.closed Present
+        %span.button.closed.long
+          = pluralize(event.held_at.to_date - Time.now.to_date, "day")
+          of <abbr title="preparation">prep</abbr> left
       %dd
         %p
           %strong Proposal submitted!
-          %a{:href => event_presentation_proposal_path(event)} Edit your proposal
+          We&rsquo;ll email to confirm.
+          %a{:href => event_presentation_proposal_path(event)} Edit it
     - elsif event.not.proposals_open?
       %dt
         %span.button.closed Too late

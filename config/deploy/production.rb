@@ -9,6 +9,13 @@ set :rails_env, "production"
 
 set :site_url, "http://www.webjam.com.au"
 
+set :site_username, "alpha"
+set :site_password, "alpha"
+
+task :before_update_code, :roles => :app do
+  set_remote_permissions
+end
+
 task :after_update_code, :roles => :app do
   link_database_config
   link_mugshots

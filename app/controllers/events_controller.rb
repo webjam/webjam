@@ -2,6 +2,10 @@ class EventsController < ApplicationController
   def show
     @event = Event.find_by_tag(params[:id])
     raise NotFound unless @event
-    render :action => (@event.upcoming? ? "show_upcoming" : "show")
+    if @event.upcoming?
+      render :action => "show_upcoming"
+    else
+      render :action => "show"
+    end
   end
 end

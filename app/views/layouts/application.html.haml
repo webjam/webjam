@@ -16,14 +16,17 @@
       %ul#account-tools
         - if current_user
           %li.profile
-            = user_login_link_with_avatar(current_user)
+            %a.url{ :href => user_path(current_user) }
+              %span.fn.nickname
+                Hi 
+                =h current_user.nick_name
           %li.logout
             = button_to 'Logout', session_path, :method => :delete 
         - else 
           %li.login
-            = link_to "<strong>Jammer?</strong> Login", new_session_path 
+            = link_to "<strong>Jammer?</strong> Login", new_session_path, :title => 'Log in' 
           %li.register
-            = link_to "<strong>New peep?</strong> Register", new_user_path
+            = link_to "<strong>New peep?</strong> Register", new_user_path, :title => 'Register'
 
       #wrapper
         - if top = yield(:top) 
