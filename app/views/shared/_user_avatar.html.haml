@@ -1,5 +1,6 @@
-%span.user-avatar
-  %a.vcard.author{ :href => user_path(user) }
-    = avatar_image(user)
-    %span.fn.nickname
-      = user.nick_name
+/ TODO add author class as appropriate
+%span.user-avatar.vcard 
+  %a{ :href => user_path(user) }
+    = avatar_image(user, :tiny)
+  %a.url{ :href => user_path(user) }
+    %span.fn.nickname=h user.nick_name

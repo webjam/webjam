@@ -1,0 +1,26 @@
+= campaign_monitor
+
+This library provides access to the Campaign Monitor API (http://www.campaignmonitor.com/api)
+
+== Pre-requisites
+
+An account with Campaign Monitor and the API Key. Accounts are free and can be obtained from
+http://www.campaignmonitor.com
+
+== Resources
+
+Install
+
+* gem install campaign_monitor
+
+Home Page
+
+* http://github.com/jordanbrock/campaign-monitor-ruby/wikis
+
+Bugtracking
+
+* http://jordanbrock.lighthouseapp.com/projects/13212/home
+
+Git Repository
+
+* http://github.com/jordanbrock/campaign-monitor-ruby

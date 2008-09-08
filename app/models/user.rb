@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
                                  :large  => '140x140>',
                                  :medium => '82x82>',
                                  :small  => '50x50>',
-                                 :tiny   => '16x16>'
+                                 :tiny   => '25x25>'
                                },
                       :default_url => "/images/default_avatar_:style.gif",
                       :whiny_thumbnails => true
@@ -58,6 +58,10 @@ class User < ActiveRecord::Base
   
   def to_s
     nick_name
+  end
+  
+  def to_recipient
+    %("#{self.full_name}" <#{self.email}>)
   end
 
   def rsvp_for(event)

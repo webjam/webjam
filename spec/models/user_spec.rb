@@ -49,3 +49,9 @@ describe User, ".attr_for_openid_sreg_field(field)" do
     User.attr_for_openid_sreg_field("fullname").should == "full_name"
   end
 end
+
+describe User, "#to_recipient" do
+  it "returns a string formatted \"Full Name\" <email>" do
+    User.new(:full_name => "Morris Iemma", :email => "morris@hotmail.com").to_recipient.should == %("Morris Iemma" <morris@hotmail.com>)
+  end
+end

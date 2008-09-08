@@ -26,13 +26,14 @@ ActiveRecord::Schema.define(:version => 20080908020549) do
     t.string   "timezone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rsvp_limit",         :limit => 11
+    t.integer  "rsvp_limit",               :limit => 11
     t.datetime "published_at"
     t.string   "location"
     t.text     "hype"
     t.datetime "proposals_close_at"
     t.string   "map_iframe_url"
     t.string   "map_url"
+    t.string   "campaign_monitor_list_id"
   end
 
   create_table "flickr_photos", :force => true do |t|
@@ -75,20 +76,6 @@ ActiveRecord::Schema.define(:version => 20080908020549) do
     t.datetime "updated_at"
   end
 
-  create_table "mugshots", :force => true do |t|
-    t.integer  "temp_user_id", :limit => 11
-    t.integer  "user_id",      :limit => 11
-    t.integer  "parent_id",    :limit => 11
-    t.string   "content_type"
-    t.string   "filename"
-    t.string   "thumbnail"
-    t.integer  "size",         :limit => 11
-    t.integer  "width",        :limit => 11
-    t.integer  "height",       :limit => 11
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "open_id_authentication_associations", :force => true do |t|
     t.binary  "server_url"
     t.string  "handle"
@@ -99,9 +86,9 @@ ActiveRecord::Schema.define(:version => 20080908020549) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",  :limit => 11,                 :null => false
+    t.integer "timestamp",  :limit => 11, :null => false
     t.string  "server_url"
-    t.string  "salt",                     :default => "", :null => false
+    t.string  "salt",                     :null => false
   end
 
   create_table "posts", :force => true do |t|

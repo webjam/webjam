@@ -78,7 +78,10 @@
 					<option>Wordpress</option>
 					<option>...</option>
 				</select>
-				<label>Account <input class="text" type="text" value="ablog" /></label>
+				<label>
+				  <span>Your OpenID URL</span>
+				  <input class="text" type="text" value="ablog" />
+				</label>
 				<em class="preview">http://ablog.wordpress.com</em>
 			</span>
 			
@@ -90,6 +93,7 @@
 		while (form.tagName != "FORM") {
 			form = form.parentNode;
 		}
+		form.id = "login";
 
 		form.insertBefore(explanationParagraph(), form.firstChild);
 		
@@ -148,8 +152,10 @@
 		service.appendChild(optGroup);
 		
 		var inputLabel = document.createElement("label");
+		var inputSpan = document.createElement("span");
 		var inputLabelText = document.createTextNode("Enter your OpenID URL");
-		inputLabel.appendChild(inputLabelText);
+		inputSpan.appendChild(inputLabelText);
+		inputLabel.appendChild(inputSpan);
 		surroundingSpan.appendChild(inputLabel);
 		
 		var newInput = document.createElement("input");
@@ -186,6 +192,7 @@
 		addEvent(service, "change", updateUrl);
 		
 		urlInput.parentNode.replaceChild(surroundingSpan, urlInput);
+		$("#labeltext").remove();
 	}
 	
 	// An input field is an OpenID URL if it has the id or a class name "openid_url"

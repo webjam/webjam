@@ -25,16 +25,15 @@ Add Viddler player mojo (preferably API shizzle)
 custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim
-wire up blog
 fix ui profile form flashes
 swap body.home column borders
+latest news partial needs to work on all pages
 
 Last: cross-browser testing
 
 BUGS:
 
 form error messages suck
-sign in forms in safari
 make reversed hover states for sponsors
 lame column sizing on Edit profile page
 validate microformats
@@ -42,6 +41,8 @@ validate microformats
 
 TODO later:
 tie RSVPs to Proposals? how?
+Build hotted up active version for events!
+Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
 
 
 

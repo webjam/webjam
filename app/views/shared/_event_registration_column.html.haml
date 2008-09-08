@@ -1,14 +1,13 @@
 .column
   %dl.registration
     / RSVPs
-    - if logged_in? && (rsvp = current_user.rsvp_for(event))
+    - if logged_in? && current_user.rsvp_for(event)
       %dt
-        - form_tag event_rsvp_path(event, rsvp), :class => "button rsvp", :method => :delete do |form|
-          = submit_tag 'Pike'
+        %span.button.closed Attend
       %dd
         %p
-          %strong Want to attend?
-          You&rsquo;ve RSVP&rsquo;d!
+          %strong You&rsquo;re attending!
+          %a{:href => event_rsvp_pike_path(event)} Changed your mind?
     - elsif event.full?
       %dt
         %span.button.closed Too late
@@ -18,14 +17,14 @@
           Sorry, all full up!
     - elsif !logged_in?
       %dt
-        = link_to "RSVP", new_session_path(:return_to => event_path(event)), :class => "button rsvp"
+        = link_to "Attend", new_session_path(:return_to => event_rsvp_path(event)), :class => "button rsvp"
       %dd
         %p
           %strong Want to attend?
           There&rsquo;s still spots
     - else
       %dt
-        - form_tag event_rsvps_path(event), :class => "button rsvp" do |form|
+        - form_tag event_rsvp_path(event), :class => "button rsvp" do |form|
           = submit_tag 'Attend'
       %dd
         %p
@@ -37,11 +36,11 @@
   %dl.registration
     - if logged_in? && (proposal = current_user.proposal_for(event))
       %dt
-        = link_to "Edit", event_presentation_proposal_path(event), :class => "button rsvp"
+        %span.button.closed Present
       %dd
         %p
-          %strong You&rsquo;ve applied to present.
-          Edit your presentation proposal.
+          %strong Proposal submitted!
+          %a{:href => event_presentation_proposal_path(event)} Edit your proposal
     - elsif event.not.proposals_open?
       %dt
         %span.button.closed Too late
@@ -51,7 +50,7 @@
           Sorry, no more are being accepted.
     - elsif !logged_in?
       %dt
-        = link_to "Present", new_session_path(:return_to => event_path(event)), :class => "button rsvp"
+        = link_to "Present", new_session_path(:return_to => event_presentation_proposal_path(event)), :class => "button rsvp"
       %dd
         %p
           %strong Want to present?
@@ -62,4 +61,4 @@
       %dd
         %p
           %strong Want to present?
-          Submit your proposal!
+          Submit a proposal!

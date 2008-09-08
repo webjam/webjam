@@ -36,6 +36,10 @@ class Event < ActiveRecord::Base
     self.tag
   end
   
+  def event_email_address
+    "#{self.tag}@webjam.com.au"
+  end
+  
   def local_held_at
     held_at.in_time_zone(self.timezone)
   end
