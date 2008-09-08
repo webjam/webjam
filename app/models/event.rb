@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   has_many :users, :through => :rsvps
   has_many :flickr_photos
   has_many :tweets
+  has_many :posts
 
   validates_presence_of :name, :tag, :held_at, :timezone, :location, :hype, :proposals_close_at, :map_iframe_url, :map_url
   

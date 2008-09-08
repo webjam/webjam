@@ -25,7 +25,7 @@
 -#      %li This is a presentation
 -#      %li This is a presentation  
 
-.item.last
+%div{:class => @event.posts.empty? ? "item last" : "item"}
   = render :partial => "shared/event_title", :locals => {:event => @event}
     
   .slideshow
@@ -51,7 +51,12 @@
 
   = @event.hype
 
-  - # TODO: Show event's blog posts
+- unless @event.posts.empty?
+  .item.last
+    %h2 Read more&hellip;
+    - for post in @event.posts
+      %h3
+        %a{:href => post_path(post.year, post.permalink)}=h post.title
 
 -#
 -#.item#sponsors
