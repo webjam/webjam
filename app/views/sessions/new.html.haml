@@ -20,7 +20,8 @@
     %p.error
       No registered jammers with OpenID
       =h @openid_url
-      found. Do you wanna
+      found.<br />
+      Do you wanna
       = link_to "register", new_user_path(:openid_url => @openid_url)
       instead?
 
