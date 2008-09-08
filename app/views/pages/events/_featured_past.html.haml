@@ -4,24 +4,9 @@
 
   .slideshow
     %ul
-      %li
-        %img{ :title => "Black & White", :src => "/images/temp/lightning.jpg", :alt => "Lightning" }/
-      %li
-        %img{ :title => "Fusce quam mi, sagittis nec, adipiscing at, sodales quis", :src => "/images/temp/lotus.jpg", :alt => "Lotus" }/
-      %li
-        %img{ :title => "Suspendisse volutpat posuere dui. Suspendisse sit amet lorem et risus faucibus pellentesque.", :src => "/images/temp/mojave.jpg", :alt => "Mojave" }/
-      %li
-        %img{ :title => "Proin erat nisi", :src => "/images/temp/pier.jpg", :alt => "Pier" }/
-      %li
-        %img{ :title => "Caption text from title", :src => "/images/temp/sea-mist.jpg", :alt => "Sea Mist" }/
-      %li
-        %img{ :title => "Flowing Rock Caption", :src => "/images/temp/flowing-rock.jpg", :alt => "Flowing Rock" }/
-      %li
-        %img{ :title => "Stones - from Apple images", :src => "/images/temp/stones.jpg", :alt => "Stones" }/
-      %li
-        %img{ :title => "Apple nature desktop images", :src => "/images/temp/grass-blades.jpg", :alt => "Grass Blades" }/
-      %li
-        %img{ :title => "Ut rutrum, lectus eu pulvinar elementum, lacus urna vestibulum ipsum", :src => "/images/temp/ladybug.jpg", :alt => "Ladybug" }/
+      - event.flickr_photos.featured.each do |fp|
+        %li
+          %img{ :title => fp.title, :src => fp.url, :alt => fp.title }
 
   %p
     = pluralize(event.number_of_presenters, "presenter") + "."
