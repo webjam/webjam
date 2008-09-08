@@ -3,7 +3,9 @@
     / RSVPs
     - if logged_in? && current_user.rsvp_for(event)
       %dt
-        %span.button.closed Attend
+        %span.button.closed.long
+          = pluralize(event.rsvps_left, "spot")
+          left
       %dd
         %p
           %strong You&rsquo;re attending!
@@ -36,7 +38,9 @@
   %dl.registration
     - if logged_in? && (proposal = current_user.proposal_for(event))
       %dt
-        %span.button.closed Present
+        %span.button.closed.long
+          = pluralize(event.held_at.to_date - Time.now.to_date, "day")
+          Away
       %dd
         %p
           %strong Proposal submitted!

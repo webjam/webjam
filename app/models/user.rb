@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_many :posts # TODO: DEPENDENT?
   has_many :identity_urls, :dependent => :destroy
   has_many :rsvps
