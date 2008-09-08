@@ -43,6 +43,11 @@ class ApplicationController < ActionController::Base
       @header_next = Event.all(:order => "held_at ASC", :conditions => ["held_at >= ? AND published_at IS NOT NULL", Time.now], :limit => 1)
     end
     
+    before_filter :set_latest_blog_post_fo_shizzle
+    def set_latest_blog_post_fo_shizzle
+      @latest_post = Post.published.latest
+    end
+    
     before_filter :set_footer_events
     def set_footer_events
       @footer_events = Event.published.all
