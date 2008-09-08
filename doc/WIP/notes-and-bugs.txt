@@ -26,7 +26,6 @@ custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim
 fix ui profile form flashes
-latest news partial needs to work on all pages
 
 Last: cross-browser testing
 
@@ -44,7 +43,6 @@ default mugshot looks like an alien...
 what is the OpenID URL bit about? more explanation needed
 add see your profile link to edit page
 improve profile form submission flash
-tidy up contributors copy
 promote sponsorship opportunities more
 change jammer/new peep to login/register
 why do I have to create a Webjam account to attend? needs explanation
@@ -57,7 +55,7 @@ Send unlogged in users to custom login/registration page with explanation about 
 
 BUGS:
 
-weird line breaks in news archive, fix punctuations (stupid HAML newlines - need helper?)
+weird line breaks in news archive, fix punctuation (stupid HAML newlines - needs helper?)
 form error messages suck
 make reversed hover states for sponsors
 lame column sizing on Edit profile page
