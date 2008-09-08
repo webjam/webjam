@@ -30,6 +30,42 @@ latest news partial needs to work on all pages
 
 Last: cross-browser testing
 
+Lisa's feedback:
+too red, maybe a different highlight colour? Orange?
+use "re-launch" phrasing in copy
+mention random voter prize in WTF
+no home link (add that master nav we talked about?)
+tshirt linkage
+weird line breaks in news archive, fix punctuations, suggests single line only
+show countdown of attendee spots left available
+use active states on tabs
+create active state for master nav
+change 'ya' to 'your'
+longer select for login action - text is cut off
+login text: "or, otherwise, just sign in with the one you've got"
+change accenting for login demo url
+change 'deets' to 'details'
+default mugshot looks like an alien...
+upload mugshot (scratch the 'new')
+replace 'mug' with 'mugshot'
+scrap delete confirmation
+check mugshot form layout - center it maybe?
+what is the OpenID URL bit about? more explanation needed
+add see your profile link to edit page
+improve profile form submission flash
+tidy up contributors copy
+promote sponsorship opportunities more
+change jammer/new peep to login/register
+why do I have to create a Webjam account to attend? needs explanation
+move "Register one!" to top of page
+change "good-looking" copy
+change 'blog archive' to 'news archive'
+show current count more prominently on events, home and when logged out
+add info about what owning an account entails - contact from WJ, benefits etc
+why doesn't it remember URL for login?
+Send unlogged in users to custom login/registration page with explanation about why they need to have an account to attend etc
+
+
 BUGS:
 
 form error messages suck
@@ -37,11 +73,17 @@ make reversed hover states for sponsors
 lame column sizing on Edit profile page
 validate microformats
 
+FF2 on XP:
+registration alignment
+scrollbar at foot of blog post
+rogue border at bottom blog post
+
 
 TODO later:
 tie RSVPs to Proposals? how?
 Build hotted up active version for events!
 Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
 
+Confirm our website identity with Yahoo! ?? (for better registration)
 
 
