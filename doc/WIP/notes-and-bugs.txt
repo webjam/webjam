@@ -13,12 +13,12 @@ webjam:user=lachlanhardy
 TODO for launch:
 
 Polling
-wire up Events
-  - wire up slideshow
-  - mapping
-  - event details
-  - post-event description
-
+add sponsors structure to events
+fix mapping iframe layout
+fix pike layout
+add content for rsvp
+add titles to images in slideshow
+make upcoming events other_content module
 add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
@@ -26,7 +26,6 @@ custom error page
 Adding sponsor links and images (with hover state)
 Add presentation proposal (edit?) - Tim
 fix ui profile form flashes
-swap body.home column borders
 latest news partial needs to work on all pages
 
 Last: cross-browser testing
