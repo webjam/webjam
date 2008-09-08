@@ -2,8 +2,6 @@ class ApplicationController < ActionController::Base
   class NotFound < StandardError; end
   
   include ExceptionNotifiable
-
-  session :session_key => '_backjam_session_id'
   
   include AuthenticatedSystem
   before_filter :login_from_cookie

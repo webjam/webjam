@@ -10,6 +10,10 @@ RAILS_GEM_VERSION = '2.1.0' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+# Load the application config - reads from application.yml
+require File.join(File.dirname(__FILE__), '../lib/application_config')
+APPLICATION_CONFIG = ApplicationConfig.new
+
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -49,8 +53,8 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_rails_session',
-    :secret      => '390aee73c13cc70d55800f294844fad0ea969ec1b691f6c7183428c7a02b9c8a28b50c473dcd5f22f5f0fd2afc0efe1c05676edd8e487fada27a6169686ec0f9'
+    :session_key => '_webjam_session',
+    :secret      => APPLICATION_CONFIG.session_secret || '390aee73c13cc70d55800f294844fad0ea969ec1b691f6c7183428c7a02b9c8a28b50c473dcd5f22f5f0fd2afc0efe1c05676edd8e487fada27a6169686ec0f9'
   }
 
   # Use the database for sessions instead of the cookie-based default,
@@ -73,8 +77,5 @@ Date::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
 ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy@gmail.com)
 ExceptionNotifier.sender_address = %("Application Error" <app.error@toolmantim.com>)
 ExceptionNotifier.email_prefix = "[WEBCONSERVE] "
-
-# Load the application config - reads from application.yml
-APPLICATION_CONFIG = ApplicationConfig.new
 
 require 'core_ext/object'
