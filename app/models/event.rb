@@ -53,4 +53,8 @@ class Event < ActiveRecord::Base
     jams.each {|jam| presenters += jam.number_of_presenters}
     presenters
   end
+  
+  def previous_event
+    Event.find(:first, :conditions => ["held_at < ?", held_at], :order => "held_at DESC")
+  end
 end
