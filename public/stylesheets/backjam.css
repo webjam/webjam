@@ -420,7 +420,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 					
 			dl.vcard {}
 				.vcard dt.fn {float: left; width: auto;}
-				.vcard dd {}
+				.vcard dd {clear:left}
 					.vcard dd a.url {}
 				
 					.vcard dd.avatar {background: #0d0e0e url('/stylesheets/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
