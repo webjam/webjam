@@ -11,6 +11,7 @@ class Tweet < ActiveRecord::Base
   end
   
   def self.retrieve(event)
+    logger.info("Tweet::retrieve about to retrieve tweets for event #{event.name}")
     tag = event.tag
     
     since_id = 0
@@ -26,6 +27,7 @@ class Tweet < ActiveRecord::Base
       tweet = Tweet.new(:body=> result["text"], :username => result["from_user"],
         :twitter_identifier => result["id"].to_i, :posted_at => Time.parse(result["created_at"]),
         :event_id => event.id)
+      logger.info("FlickrPhoto::retrieve About to save tweet #{tweet.body} by #{tweet.username} for event #{event.name}")
       tweet.save!
     end
   end
