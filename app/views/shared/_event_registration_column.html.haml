@@ -40,11 +40,12 @@
       %dt
         %span.button.closed.long
           = pluralize(event.held_at.to_date - Time.now.to_date, "day")
-          Away
+          of <abbr title="preparation">prep</abbr> left
       %dd
         %p
           %strong Proposal submitted!
-          %a{:href => event_presentation_proposal_path(event)} Edit your proposal
+          We&rsquo;ll email to confirm.
+          %a{:href => event_presentation_proposal_path(event)} Edit it
     - elsif event.not.proposals_open?
       %dt
         %span.button.closed Too late
