@@ -13,12 +13,7 @@ webjam:user=lachlanhardy
 TODO for launch:
 
 Polling
-wire up Events
-  - wire up slideshow
-  - mapping
-  - event details
-  - post-event description
-
+make upcoming events other_content module
 add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
