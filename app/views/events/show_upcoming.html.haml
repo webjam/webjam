@@ -31,7 +31,6 @@
 .item
   .item-details
     %h2 What you&apos;re in for
-
   .slideshow
     %ul
       - @event.previous_event.flickr_photos.featured.each do |fp|
@@ -57,7 +56,7 @@
     = "Doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
     %dd
     = @event.local_held_at.to_date.to_s(:long_ordinal)
-/ 
+ 
 - unless @event.posts.empty?
   .item.last
     = render :partial => "related_posts"
