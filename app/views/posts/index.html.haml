@@ -37,9 +37,10 @@
                     - for post in posts
                       %li
                         = link_to h(post.title), post_path(:year => post.year, :permalink => post.permalink)
-                        (
-                        = link_to post.comments_count, post_path(:permalink => post.permalink, :year => post.year, :anchor => "comments"), :class => ((post.comments_count.to_i == 0) ? "no-comments" : "comments")
-                        )
+                        - unless post.comments_count.to_i == 0
+                          (
+                          %a{:href => post_path(:permalink => post.permalink, :year => post.year, :anchor => "comments"), :class => (post.comments_count.to_i == 0) ? "no-comments" : "comments"}>= post.comments_count
+                          )
                         - if posts.length == 1
                           = ""
                         - elsif post == posts[posts.length-1-1]
