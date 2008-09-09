@@ -38,9 +38,9 @@ class ApplicationController < ActionController::Base
      end
     end
     
-    before_filter :set_next_events_for_header
-    def set_next_events_for_header
-      @header_next = Event.all(:order => "held_at ASC", :conditions => ["held_at >= ? AND published_at IS NOT NULL", Time.now], :limit => 1)
+    before_filter :set_upcoming_events
+    def set_upcoming_events
+      @upcoming_events = Event.all(:order => "held_at ASC", :conditions => ["held_at >= ? AND published_at IS NOT NULL", Time.now])
     end
     
     before_filter :set_latest_blog_post_fo_shizzle

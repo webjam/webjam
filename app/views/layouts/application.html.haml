@@ -13,19 +13,10 @@
 
   %body#webjam-com-au{:class => @body_class, :onload => @onload}
     #page
-      %ol.next-events
-        - if @header_next.empty?
-          %li
-            Nothing coming up!
-        - else
-          - @header_next.each_with_index do |event, index|
-            %li
-              - if index == 0
-                Next event: 
-              - else
-                then&hellip;
-              %a{ :href => event_path(event) }
-                = event.name
+      %ol.primary-nav
+        %li
+          %a{ :href => '/', :rel => 'home' }
+            Home
       %ul#account-tools
         - if current_user
           %li.profile
@@ -46,7 +37,7 @@
           = top 
         - else 
           %p#pagetitle
-            %a{ :href => "/" }
+            %a{ :href => "/", :rel => 'home' }
               = image_tag 'webjam-logo.png', :size => '1033x152', :alt => "Webjam"
           %span#phat-digits
             = @event_num
