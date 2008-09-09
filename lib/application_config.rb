@@ -1,3 +1,5 @@
+require 'yaml'
+
 class ApplicationConfig
   attr_reader :flickr_api_key,
               :jeeves_campfire_password,
