@@ -72,6 +72,7 @@ Rails::Initializer.run do |config|
 end
 
 Time::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
+Time::DATE_FORMATS[:time_12hr] = "%I:%M%p"
 Date::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
 
 ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy@gmail.com)
