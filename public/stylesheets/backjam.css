@@ -101,6 +101,9 @@ TOC
 	.errorExplanation {}
 	  .errorExplanation h2 {color: red;}
 	  .errorExplanation li {color: red;}
+	  
+	/* -- = Generic layout -- */
+	#content .clear-off {clear: both; margin: 3em 0 0.5em 0;}
 
 
 /* - =Structure - */
