@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    redirect_to home_path, :status => 302
+    @users = User.paginate(:page => params[:page], :order => "nick_name ASC", :per_page => 50)
   end
   
   def new
