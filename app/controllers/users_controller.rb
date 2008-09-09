@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   before_filter :strip_permalinks
 
   def show
-    raise NotFound unless params[:path_info].length == 1
-    @user = User.find_by_nick_name(params[:path_info])
+    @user = User.find_by_nick_name(params[:id])
     raise NotFound unless @user
   end
   

@@ -40,7 +40,7 @@ ActionController::Routing::Routes.draw do |map|
     user.update_privacy_current_user 'account/update_privacy', :conditions => {:method => :put}, :action => "update_profile_details"
     user.edit_current_user 'account', :conditions => {:method => :get}, :action => "edit"
   end  
-  map.resources :users, :collection => {:verify => :any, :details => :get, :create => :post}
+  map.resources :users, :as => "people", :collection => {:verify => :any, :details => :get, :create => :post}
   
   map.resource  :mugshot, :name_prefix => 'current_'
   map.resources :mugshots, :member => {:crop => :any}
@@ -62,8 +62,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :posts
   end
   map.admin 'admin', :controller => 'admin/home'
-  map.legacy_post 'post/:permalink.html', :controller => "posts", :action => "legacy" 
-  map.user '*path_info', :controller => 'users', :action => 'show'
+  map.legacy_post 'post/:permalink.html', :controller => "posts", :action => "legacy"
   
   map.root :home
 end
