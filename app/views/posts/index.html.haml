@@ -39,7 +39,7 @@
                         = link_to h(post.title), post_path(:year => post.year, :permalink => post.permalink)
                         - unless post.comments_count.to_i == 0
                           (
-                          %a{:href => post_path(:permalink => post.permalink, :year => post.year, :anchor => "comments"), :class => (post.comments_count.to_i == 0) ? "no-comments" : "comments"}>= post.comments_count
+                          %a{:href => post_path(:permalink => post.permalink, :year => post.year, :anchor => "comments"), :class => "comments"}>= post.comments_count
                           )
                         - if posts.length == 1
                           = ""
