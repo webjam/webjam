@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def show
     @post = Post.published.find_by_permalink(params[:permalink])
+    raise NotFound unless @post
   end
   
   def index
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
   
   def index_by_year
     @posts = Post.published.find_all_for_archive_by_year(params[:year].to_i)
+    raise NotFound if @posts.empty?
     render :template => 'posts/index'
   end
   

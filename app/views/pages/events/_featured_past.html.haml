@@ -1,14 +1,13 @@
-.item
-  = render :partial => "shared/event_title", :locals => {:event => event}
-  %a.details{ :href => event_path(event) } Rewind
+= render :partial => "shared/event_title", :locals => {:event => event}
+%a.details{ :href => event_path(event) } Rewind
 
-  .slideshow
-    %ul
-      - event.flickr_photos.featured.each do |fp|
-        %li
-          %img{ :title => fp.title, :src => fp.url, :alt => fp.title }
+.slideshow
+  %ul
+    - event.flickr_photos.featured.each do |fp|
+      %li
+        %img{ :title => fp.title, :src => fp.url, :alt => fp.title }
 
-  = event.hype
+= event.hype
 -#
 -#  %ul.sponsors
 -#    %li.proud Proudly sponsored by

@@ -18,6 +18,33 @@ describe RsvpObserver, "#after_save" do
   end
 end
 
+describe RsvpObserver, "#after_destroy" do
+  it "calls unsubscribe_from_campaign_monitor" do
+    observer = RsvpObserver.instance
+    rsvp = mock("rsvp")
+    observer.should_receive(:unsubscribe_from_campaign_monitor).with(rsvp)
+    observer.after_destroy(rsvp)
+  end
+end
+
+describe RsvpObserver, "#unsubscribe_to_campaign_monitor" do
+  describe "if event has no campaign_monitor_list_id" do
+    it "does not unsubscribe the user" do
+      pending
+    end
+  end
+  describe "if campaign_monitor_client returns nil" do
+    it "does not unsubscribe the user" do
+      pending
+    end
+  end
+  describe "if theres a campaign_monitor_list_id and campaign_monitor_client" do
+    it "calls remove_subscriber on the client with the list id and email" do
+      pending
+    end
+  end
+end
+
 describe RsvpObserver, "#send_thankyou_email" do
   it "calls EventRsvpMailer.deliver_rsvp_thankyou" do
     observer = RsvpObserver.instance
