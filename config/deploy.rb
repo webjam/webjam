@@ -36,7 +36,7 @@ end
 
 before "deploy:update_code" do
   sudo <<-CMD
-  sh -c "chown -R $USER /srv/webjam/edge/shared/cached-copy"
+  sh -c "if [ -d #{deploy_to}/shared/cached-copy ]; then chown -R $USER #{deploy_to}/shared/cached-copy; fi;"
   CMD
 end
 
