@@ -14,7 +14,7 @@ TODO for launch:
 
 Polling
 add sponsors structure to events
-fix mapping iframe layout
+wire up event details DL
 fix pike layout
 add content for rsvp
 add titles to images in slideshow

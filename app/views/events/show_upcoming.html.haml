@@ -43,12 +43,13 @@
     = pluralize(@event.rsvps.count, "attendee") + "."
     Alcohol.
 
-%div{:class => @event.posts.empty? ? "item last" : "item"}
+%div{:class => @event.posts.empty? ? "item last" : "item", :id => "event-details"}
   .item-details
     %h2 The deets
   .map
     = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
     %a{ :href => @event.map_url } View larger version
+/
   %dl
     %dt Bar Broadway
     %dd Cnr Broadway &amp; Harris
