@@ -109,9 +109,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 	
 #page {font-size: 1.4em; margin: 4em auto 0; position: relative; width: 70em;}
 
-	ol.next-events {position:absolute; top:-1.8em; left:.1em; display: block; list-style:none; color: #eee;}
-		ol.next-events li:first-child {background-color:#373D3F;}
-		ol.next-events li {display:inline;float:left; padding: 0.2em 1em 0.4em 1em;}
+	ol.primary-nav {position:absolute; top:-1.8em; left:.1em; display: block; list-style:none; color: #eee;}
+		ol.primary-nav li {background-color:#373D3F;display:inline;float:left;padding: 0.2em 1em 0.4em 1em}
 
 	#account-tools {margin: 0 0 1.5em 0; position: absolute; right: 0; top: -2.3em;}
 		#account-tools li {background: #0e0e0e; float: left; font-size: 0.94em; line-height: 2; margin: 0 1em 0 0; text-align: center;}
@@ -433,6 +432,25 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 						.vcard dd.avatar a {display: block;}
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
 
+	/* --- =Upcoming events sidebar fo shizznitz--- */
+	#other-content #upcoming-events {border-bottom:none}
+		#upcoming-events ol {margin-top:-1em}
+		#upcoming-events ol, #upcoming-events ol li {list-style:none;padding:0;margin:0}
+			#upcoming-events ol li {position:relative;min-height:5em;border-bottom:1px solid #333;padding:1em 0}
+			#upcoming-events li.last {border-bottom:none}
+				#upcoming-events dl {width:13em}
+					#upcoming-events dt {font-family:Futura,Helvetica,Arial,sans-serif;font-size:1.45em;}
+						#upcoming-events a.summary {text-decoration:none}
+				#upcoming-events dd.when {position:absolute;top:1.1em;right:0;width:5em;background-color:#333}
+					dd.when a {padding-top:.5em;display:block;text-decoration:none;height:4em;text-align:center;color:#0D0E0E;font-family:Futura,Helvetica,Arial,sans-serif}
+					li.next-event dd.when a:link, li.next-event dd.when a:visited {background-color:#f03e00}
+					dd.when a:link, dd.when a:visited {background-color:#ccc}
+					li.next-event dd.when a:hover, li.next-event dd.when a:active, li.next-event dd.when a:focus, dd.when a:hover, dd.when a:active, dd.when a:focus {background-color:#F09464;}
+						dd.when strong.dd {display:block;font-weight:300;font-size:1.714em}
+						dd.when span.mon {text-transform:uppercase}
+		
+		
+		
 		/* --- =Other Content --- */
 		#other-content {float: left; font: 300 1.143em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; padding: 2em 0 1em 0; width: 20.3em;}
 		

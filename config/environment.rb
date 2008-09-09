@@ -74,6 +74,8 @@ end
 Time::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
 Time::DATE_FORMATS[:time_12hr] = "%I:%M%p"
 Date::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
+Date::DATE_FORMATS[:dd] = "%d"
+Date::DATE_FORMATS[:mon] = "%b"
 
 ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy@gmail.com)
 ExceptionNotifier.sender_address = %("Application Error" <app.error@toolmantim.com>)
