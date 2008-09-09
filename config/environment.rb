@@ -68,7 +68,7 @@ Rails::Initializer.run do |config|
   # config.active_record.schema_format = :sql
 
   # Activate observers that should always be running
-  config.active_record.observers = :rsvp_observer
+  # config.active_record.observers = :rsvp_observer
 end
 
 Time::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
