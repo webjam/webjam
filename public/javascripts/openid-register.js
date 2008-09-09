@@ -179,7 +179,7 @@
 				if (newInput.value == "") {
 					var replaceUsername = "<strong>(username)</strong>";
 				} else {
-					var replaceUsername = "<strong>"+ newInput.value + "</strong>";
+					var replaceUsername = newInput.value;
 				}
 				hiddenUrlInput.value = urlTemplate.replace("<username>", replaceUsername);
 				previewEm.innerHTML = hiddenUrlInput.value;
