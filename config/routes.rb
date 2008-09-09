@@ -47,13 +47,12 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :identity_urls, :collection => {:create => :any}
   map.with_options(:controller => 'pages') do |m|
-    m.contact 'contact', :action => 'contact'
-    m.home    '',        :action => 'home'
-    m.open_id   'single-sign-on',   :action => 'single-sign-on'
-    m.contributors 'contributors', :action => "contributors"
-    m.vote_vis 'votestream', :action => "votestream"
-    # temporary static files to build front-end
-    m.statichome   'staticpres',   :action => 'staticpres'
+    m.home         '',               :action => 'home'
+    m.about        'about',          :action => 'about'
+    m.contact      'contact',        :action => 'contact'
+    m.open_id      'single-sign-on', :action => 'single-sign-on'
+    m.contributors 'contributors',   :action => "contributors"
+    m.vote_vis     'votestream',     :action => "votestream"
   end
   map.namespace :admin do |admin|
     admin.resources :events do |event|

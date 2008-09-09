@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     raise NotFound unless @user
   end
   
+  def index
+    redirect_to home_path, :status => 301
+  end
+  
   def new
     @identity_url = IdentityUrl.new(:url => params[:openid_url])
   end
