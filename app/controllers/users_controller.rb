@@ -29,6 +29,8 @@ class UsersController < ApplicationController
         redirect_to details_users_path
       end
     end
+  rescue OpenIdAuthentication::InvalidOpenId
+    render :action => 'new'
   end
   
   def details
