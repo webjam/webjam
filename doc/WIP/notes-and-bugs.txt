@@ -12,6 +12,7 @@ webjam:user=lachlanhardy
 
 TODO for launch:
 
+FAVICON!!!
 Polling
 add sponsors structure to events
 wire up event details DL
