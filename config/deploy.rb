@@ -14,7 +14,7 @@ set :application, "webjam"
 
 set :scm, :git
 set :deploy_via, :remote_cache
-set :repository, "git@github.com:toolmantim/webjam.git"
+set :repository, "git@github.com:webjam/webjam.git"
 
 role :app, "208.75.86.29"
 role :web, "208.75.86.29"
