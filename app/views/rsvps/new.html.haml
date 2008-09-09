@@ -1,10 +1,12 @@
 - @page_title = "RSVP for #{h(@event.name)}"
 
-- content_for :other_content do
-  %p Thanks for coming along!
+- content_for :other_content do 
+  .item.last
+    %p Thanks for coming along!
 
 .item.last
-  %h2= @page_title
+  .item-details
+    %h2= @page_title
 
   - form_tag event_rsvp_path(@event) do |form|
     = submit_tag 'Put me down!'

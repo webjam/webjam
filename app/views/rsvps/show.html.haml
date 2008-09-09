@@ -1,7 +1,8 @@
 - @page_title = "You&rsquo;ve RSVP&rsquo;d for #{h(@event.name)}"
 
 - content_for :other_content do
-  %p Thanks for signing up. Get ready to party on down, Webjam-style!
+  .item.last
+    %p You're in. Get ready to party on down, Webjam-style!
 
 .item
   %h2
@@ -9,19 +10,33 @@
 
   %p
     You&rsquo;ve RSVP&rsquo;d for
-    %a{:href => event_path(@event)}=h @event.name
+    %a{:href => event_path(@event)}=h @event.name + "."
+    You&rsquo;ll be one of at least 
+    = pluralize(@event.rsvps.count, "attendee") + "."
 
   %p
-    If for some reason you can&rsquo;t make it
-    %a{:href => event_rsvp_pike_path(@event)} tell us
-    and you&rsquo;ll free up your ticket for someone else to attend.
-/
-/ .item
-/   %h2 When &amp; Where
-/   
-/   %p All the event details (time/date/place/link to map)
-/   %p A link to an ics file with the event details?
-/ 
+    If for some reason you can&rsquo;t make it, you can always
+    %a{:href => event_rsvp_pike_path(@event)} tell us now
+    or from the
+    %a{:href => event_path(@event)} event page
+    anytime and you&rsquo;ll free up your ticket for someone else to attend.
+
+.item#event-details
+  .item-details
+    %h2 When <span class="amp">&amp;</span> Where
+  .map
+    = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
+    %a{ :href => @event.map_url } View larger version
+  %dl
+    %dd
+    = @event.location
+    %dd 
+    = "Doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
+    %dd
+    = @event.local_held_at.to_date.to_s(:long_ordinal)  
+  
+  /  %p TODO - A link to an ics file with the event details 
+ 
 / .item
 /   %h2 Present!
 /   %p Call to submit a presentation proposal.

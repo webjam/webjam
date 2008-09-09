@@ -15,7 +15,6 @@ TODO for launch:
 FAVICON!!!
 Polling
 add sponsors structure to events
-wire up event details DL
 fix pike layout
 add content for rsvp
 add titles to images in slideshow
