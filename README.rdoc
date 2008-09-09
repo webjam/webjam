@@ -1,13 +1,18 @@
-== Webjam
+== Webjam.com.au
 
-The webjam.com.au site.
+18 presenters giving tech demos, 3 minutes, you vote for the winner.
 
-== Contributors
+This is the magical rubies that runs the site.
 
- * Simon Wright
- * Phil Oye
- * Dylan Egan
- * John Barton
- * Lincoln Stoll (server setup)
- * Lachie Cox
- * Cameron Adams
+The list of most awesome contributors can be found on the site:
+http://webjam.com.au/contributors
+
+Things we'd love to see contributed:
+ * More integration with other services
+ * Improved usability / design
+ * More community stuff
+ * General funk.
+ 
+To be added as a collaborator just ping Lachlan or Tim.
+
+
