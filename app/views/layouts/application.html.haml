@@ -61,11 +61,12 @@
                 %a.feed{ :href => "#", :title => "Subscribe!" }
                   Subscribe!
               - if @footer_latest_news.any?
-                %ul
+                %ul.posts
                   - @footer_latest_news.each do |post|
                     %li
                       %a{ :href => post_path(post.year, post.permalink) }= post.title
-                      %a.no-comments{ :href => "#{post_path(post.year, post.permalink)}#comments" }= "(#{post.comments.size})"
+                      - unless post.comments.size == 0
+                        %a.comments{ :href => "#{post_path(post.year, post.permalink)}#comments" }= "(#{post.comments.size})"
                   %li.more
                     %a{ :href => "/news/" }
                       More news

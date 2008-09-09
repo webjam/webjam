@@ -31,25 +31,24 @@
 .item
   .item-details
     %h2 What you&apos;re in for
-
   .slideshow
     %ul
       - @event.previous_event.flickr_photos.featured.each do |fp|
         %li
           %img{ :title => fp.title, :src => fp.url, :alt => fp.title }
-
   %p
-    = pluralize(@event.number_of_presenters, "presenter") + "."
-    = pluralize(@event.rsvps.count, "attendee") + "."
-    Alcohol.
+    So far we have
+    = pluralize(@event.number_of_presenters, "presenter") + " and"
+    = pluralize(@event.rsvps.count, "attendee") + ", "
+    but we need more. We need <strong>you</strong>. Hadn't you better
+    %a{ :href => "#" + @event.tag} sign up?
 
 %div{:class => @event.posts.empty? ? "item last" : "item", :id => "event-details"}
   .item-details
-    %h2 The deets
+    %h2 The details
   .map
     = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
     %a{ :href => @event.map_url } View larger version
-
   %dl
     %dd
     = @event.location
@@ -57,7 +56,7 @@
     = "Doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
     %dd
     = @event.local_held_at.to_date.to_s(:long_ordinal)
-/ 
+ 
 - unless @event.posts.empty?
   .item.last
     = render :partial => "related_posts"

@@ -12,4 +12,7 @@ class PagesController < ApplicationController
   end
   def contributors
   end
+  def about
+    redirect_to home_path, :status => 301
+  end
 end

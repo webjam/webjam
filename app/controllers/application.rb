@@ -23,8 +23,7 @@ class ApplicationController < ActionController::Base
     before_filter :remove_trailing_slashes
     def remove_trailing_slashes
       if (uri = request.request_uri).length > 1 and uri[-1,1] == '/'
-        headers['Status'] = '301 Moved Permanently'
-        redirect_to uri.chop
+        redirect_to uri.chop, :status => 301
         return false
       end
     end
@@ -32,8 +31,7 @@ class ApplicationController < ActionController::Base
     before_filter :no_www
     def no_www
      if (bad_subdirs = ["ww", "www"]).any? {|s| [s]==request.subdomains(TLD_LENGTH)}
-        headers['Status'] = '301 Moved Permanently'
-        redirect_to :host => request.domain(TLD_LENGTH)
+        redirect_to :host => request.domain(TLD_LENGTH), :status => 301
        return false
      end
     end

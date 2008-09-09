@@ -3,9 +3,12 @@ class UsersController < ApplicationController
   before_filter :strip_permalinks
 
   def show
-    raise NotFound unless params[:path_info].length == 1
-    @user = User.find_by_nick_name(params[:path_info])
+    @user = User.find_by_nick_name(params[:id])
     raise NotFound unless @user
+  end
+  
+  def index
+    @users = User.paginate(:page => params[:page], :order => "nick_name ASC", :per_page => 50)
   end
   
   def new
@@ -29,6 +32,8 @@ class UsersController < ApplicationController
         redirect_to details_users_path
       end
     end
+  rescue OpenIdAuthentication::InvalidOpenId
+    render :action => 'new'
   end
   
   def details

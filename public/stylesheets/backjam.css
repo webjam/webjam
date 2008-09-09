@@ -238,6 +238,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		      .sponsors a.directSMS {background-image: url('/stylesheets/images/sponsors/directSMS.jpg');}
     		    
     		    #event-details {}
+    		      #content #event-details .item-details {margin: 0;}
     		      #event-details .map {float: left; width: auto;}
     		        #event-details .map iframe {height: 300px; width: 425px;}
     		        #event-details .map a {display: block;}
@@ -431,6 +432,9 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 					.vcard dd.avatar {background: #0d0e0e url('/stylesheets/images/bg-profile-avatar.jpg') no-repeat center top; float: right; padding: 15px 0 0 0; text-align: center;}
 						.vcard dd.avatar a {display: block;}
 						.vcard dd.avatar img {border: 1px solid #373737; margin: 0 0 0.4em 0; padding: 0.7em;}
+						
+			body.contributors {}
+			  body.contributors h2 {margin: 1em 0 0.5em 0;}
 
 	/* --- =Upcoming events sidebar fo shizznitz--- */
 	#other-content #upcoming-events {border-bottom:none}

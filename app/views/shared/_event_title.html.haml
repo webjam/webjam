@@ -1,3 +1,4 @@
 .item-details
-  %h2=h event.name
+  %h2{ :id => event.tag}
+    =h event.name
   %h3= "#{event.location}, #{event.local_held_at.to_date.to_s(:long_ordinal)}"

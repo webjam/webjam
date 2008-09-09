@@ -1,0 +1,17 @@
+- @section = :blog
+- @page_title = "Webjam Peeps"
+- @body_class = "peeps"
+
+- content_for :other_content do
+  = render :partial => 'shared/other_content/latest_news'
+  = render :partial => 'shared/other_content/shirt'
+  
+.item.last
+  %h1
+    Webjam Peeps
+  %ul
+    - for user in @users
+      %li
+        = user_link_with_avatar(user)
+
+= will_paginate @users

@@ -27,6 +27,8 @@ class SessionsController < ApplicationController
         end
       end
     end
+  rescue OpenIdAuthentication::InvalidOpenId
+    render :action => 'new'
   end
 
   def destroy
