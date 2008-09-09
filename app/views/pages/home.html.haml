@@ -11,10 +11,12 @@
   = render :partial => 'shared/other_content/latest_news'
 
 - for event in @upcoming_events
-  = render :partial => "pages/events/upcoming", :locals => {:event => event}
+  .item
+    = render :partial => "pages/events/upcoming", :locals => {:event => event}
 
 - @past_events.each_with_index do |event, index|
-  - if index == 0
-    = render :partial => "pages/events/featured_past", :locals => {:event => event}
-  - else
-    = render :partial => "pages/events/past", :locals => {:event => event}
+  %div{:class => @past_events.last == event ? "item last" : "item"}
+    - if index == 0
+      = render :partial => "pages/events/featured_past", :locals => {:event => event}
+    - else
+      = render :partial => "pages/events/past", :locals => {:event => event}
