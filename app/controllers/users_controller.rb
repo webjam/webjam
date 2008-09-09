@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    redirect_to home_path, :status => 301
+    redirect_to home_path, :status => 302
   end
   
   def new
