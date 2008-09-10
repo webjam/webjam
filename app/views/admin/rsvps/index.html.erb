@@ -1,9 +1,0 @@
-- @section = :rsvps
-- @page_title = "Event #{@event.name} rsvps"
-
-%h1 RSVPs
-
-- for rsvp in @rsvps
-  %li
-    = link_to h(rsvp.user.nick_name), [:admin, @event, rsvp], :method => :delete
-- end
