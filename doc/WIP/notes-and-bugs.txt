@@ -27,7 +27,7 @@ fix ui profile form flashes
 what you're in for" should should featured images from across all webjams
 add "directions" to "address" events
 remove hacky static address in rsvp email
-
+make author list for blog posts only consist of admins
 
 
 Last: cross-browser testing
