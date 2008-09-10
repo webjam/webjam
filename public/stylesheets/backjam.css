@@ -41,7 +41,7 @@ TOC
 		#content a.details {background: #0d0e0e url('/stylesheets/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
 		
 		/* --- =Headings --- */
-		h1, h2, h3, h4, h5, h6 {font-family: Futura, Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
+		h1, h2, h3, h4, h5, h6 {font-family: Futura, "Franklin Gothic Medium", Calibri, "URW Gothic L", Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
 		h1,
 		body.home #content h2 {font-size: 2.572em;}
 		h2 {font-size: 1.714em;}
