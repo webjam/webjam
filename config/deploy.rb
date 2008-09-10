@@ -76,7 +76,7 @@ task :announce_to_campfire do
       campfire = Tinder::Campfire.new 'webjam'
       campfire.login 'github@webjam.com.au', APPLICATION_CONFIG.jeeves_campfire_password
       room = Tinder::Room.new(campfire, "176805")
-      room.speak "[cap #{rails_env} deploy] Release the hounds!"
+      room.speak "[cap #{rails_env} deploy] #{Etc.getlogin} has released the hounds!"
     end
   rescue Tinder::Error => e
     puts e.message + " - Is jeeves_campfire_password in config/application.yml set to github@webjam.com.au's password?"
