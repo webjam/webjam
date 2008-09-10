@@ -31,11 +31,12 @@
 .item
   .item-details
     %h2 What you&apos;re in for
-  .slideshow
-    %ul
-      - @event.previous_event.flickr_photos.featured.each do |fp|
-        %li
-          %img{ :title => fp.title, :src => fp.url, :alt => fp.title }
+  - unless @event.previous_event.flickr_photos.featured.each.empty?
+    .slideshow
+      %ul
+        - @event.previous_event.flickr_photos.featured.each do |fp|
+          %li
+            %img{ :title => fp.title, :src => fp.url, :alt => fp.title }
   %p
     So far we have
     = pluralize(@event.number_of_presenters, "presenter") + " and"
