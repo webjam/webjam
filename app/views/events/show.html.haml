@@ -4,8 +4,7 @@
 - @event_num = @event.number
 
 - content_for :other_content do
-  = render :partial => 'shared/other_content/wtf'
-  = render :partial => 'shared/other_content/latest_news'
+  = default_other_content
 
 -# content_for :other_content do
 -#  %div.item#summary
