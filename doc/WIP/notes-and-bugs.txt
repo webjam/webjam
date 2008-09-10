@@ -12,19 +12,21 @@ webjam:user=lachlanhardy
 
 TODO for launch:
 
-Hook up feeds and Feedburner.
+Hook up Feedburner.
 FAVICON!!!
 Polling
 add sponsors structure to events
 add content for rsvp
 add titles to images in slideshow
-make upcoming events other_content module
 add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
 custom error page
 Adding sponsor links and images (with hover state)
 fix ui profile form flashes
+what you're in for" should should featured images from across all webjams
+
+
 
 Last: cross-browser testing
 
