@@ -16,7 +16,7 @@ FAVICON!!!
 Polling
 add sponsors structure to events
 add content for rsvp
-add titles to images in slideshow
+add name instead of 'owner' to titles in slideshow
 add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
