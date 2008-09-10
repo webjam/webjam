@@ -6,4 +6,6 @@
 %ul
   - for rsvp in @rsvps
     %li
-      = link_to h(rsvp.user.nick_name), [:admin, @event, rsvp], :method => :delete
+      %a{:href => user_path(rsvp)}
+        =h rsvp.user.nick_name
+        = "(#{h rsvp.user.full_name})"
