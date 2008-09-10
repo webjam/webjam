@@ -81,4 +81,7 @@ ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy
 ExceptionNotifier.sender_address = %("Application Error" <app.error@toolmantim.com>)
 ExceptionNotifier.email_prefix = "[WEBCONSERVE] "
 
+# we need to set the key as a constant first, so CM list works.
+CAMPAIGN_MONITOR_API_KEY = APPLICATION_CONFIG.campaign_monitor_api_key
+
 require 'core_ext/object'
