@@ -8,7 +8,8 @@ class ApplicationConfig
               :feed_url,
               :protected_domains,
               :protection_username,
-              :protection_password
+              :protection_password,
+              :excitement_notification_recipients
   
   def initialize
     y = YAML::load(File.open(File.dirname(__FILE__) + '/../config/application.yml'))
@@ -21,5 +22,6 @@ class ApplicationConfig
     @protected_domains = [] unless @protected_domains
     @protection_username = y['protection_username']
     @protection_password = y['protection_password']
+    @excitement_notification_recipients = y['excitement_notification_recipients']
   end
 end

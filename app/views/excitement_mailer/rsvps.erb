@@ -1,0 +1,11 @@
+We have had 10 (or so - I'm a modulus of an ID. RSVP's are only open for one event, right?) more RSVP's for event <%= @event.name %> since I last mailed you.
+
+The people who have RSVP'd are:
+
+<% @rsvps.each do |rsvp|  %>
+  <%= rsvp.user.full_name %> <%= rsvp.user.email %>
+<% end %>
+
+I hope you're as excited as I am.
+
+You're happy, busy Webjam site.
