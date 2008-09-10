@@ -77,7 +77,7 @@ Date::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
 Date::DATE_FORMATS[:dd] = "%d"
 Date::DATE_FORMATS[:mon] = "%b"
 
-ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy@gmail.com)
+ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy@gmail.com lstoll@lstoll.net)
 ExceptionNotifier.sender_address = %("Application Error" <app.error@toolmantim.com>)
 ExceptionNotifier.email_prefix = "[WEBCONSERVE] "
 
