@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   EVENT_TAG = /webjam\d+/
 
   # super friendly post urls
+  map.posts_with_format 'news.:format', :controller => 'posts', :action => 'index'
   map.posts 'news', :controller => 'posts', :action => 'index'
   map.posts_year 'news/:year', 
                 :controller => 'posts', 

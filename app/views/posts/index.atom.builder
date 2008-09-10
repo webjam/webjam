@@ -2,7 +2,7 @@ atom_feed(:language => "en-AU") do |feed|
   feed.title "Webjam"
   feed.updated @posts.first.published_at
   for post in @posts
-    feed.entry(post, :published => post.published_at) do |entry|
+    feed.entry(post, :published => post.published_at, :url => post_url(:year => post.year, :permalink => post.permalink)) do |entry|
       entry.title post.title
       entry.content post.body, :type => 'html'
       entry.author do |author|

@@ -6,6 +6,11 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.published.find_all_for_archive
+    respond_to do |format|
+      format.html
+      format.atom
+    end
+    
   end
   
   def index_by_year
