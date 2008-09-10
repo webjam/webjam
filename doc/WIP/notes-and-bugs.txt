@@ -39,7 +39,6 @@ show countdown of attendee spots left available
 use active states on tabs
 create active state for master nav
 default mugshot looks like an alien...
-what is the OpenID URL bit about? more explanation needed
 add see your profile link to edit page
 improve profile form submission flash
 promote sponsorship opportunities more
