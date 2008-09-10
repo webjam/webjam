@@ -17,7 +17,10 @@ class ApplicationController < ActionController::Base
     
     before_filter :protect_da_alpha
     def protect_da_alpha
-      authenticate_or_request_with_http_basic {|u, p| u == "alpha" && p == "alpha"}
+      if APPLICATION_CONFIG.protected_domains.index(request.domain)
+        authenticate_or_request_with_http_basic {|u, p| 
+          u == APPLICATION_CONFIG.protection_username && p == APPLICATION_CONFIG.protection_password}
+      end
     end
     
     before_filter :remove_trailing_slashes

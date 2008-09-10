@@ -5,7 +5,10 @@ class ApplicationConfig
               :jeeves_campfire_password,
               :campaign_monitor_api_key,
               :session_secret,
-              :feed_url
+              :feed_url,
+              :protected_domains,
+              :protection_username,
+              :protection_password
   
   def initialize
     y = YAML::load(File.open(File.dirname(__FILE__) + '/../config/application.yml'))
@@ -14,5 +17,9 @@ class ApplicationConfig
     @campaign_monitor_api_key = y['campaign_monitor_api_key']
     @session_secret = y['session_secret']
     @feed_url = y['feed_url'] ? y['feed_url'] : "/news.atom"
+    @protected_domains = y['protected_domains']
+    @protected_domains = [] unless @protected_domains
+    @protection_username = y['protection_username']
+    @protection_password = y['protection_password']
   end
 end

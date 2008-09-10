@@ -4,3 +4,6 @@ campaign_monitor_api_key: CAMPAIGN_MONITOR_API_KEY_HERE
 session_secret: SOME_RANDOM_STRING_OF_128_CHARS
 # If not set, defaults to built in.
 feed_url: http://feeburner.com
+protected_domains: [edge.webjam.com.au, staging.webjam.com.au]
+protection_username: supersecret
+protection_password: supersecret
