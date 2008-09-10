@@ -55,12 +55,10 @@
     = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
     %a{ :href => @event.map_url } View larger version
   %dl
-    %dd
-    = @event.location
-    %dd 
-    = "Doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
-    %dd
-    = @event.local_held_at.to_date.to_s(:long_ordinal)
+    %dt= @event.address
+    %dd= @event.location
+    %dd= "Doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
+    %dd= @event.local_held_at.to_date.to_s(:long_ordinal)
  
 - unless @event.posts.empty?
   .item.last
