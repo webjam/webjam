@@ -19,6 +19,10 @@
     Location (Sydney, etc) *
     = f.text_field :location
     
+  %label{ :for => "event_address" }
+    Address (Bar Broadway, Sydney etc.) *
+    = f.text_field :address
+    
   %label{ :for => "event_timezone" }
     Timezone *
     = f.time_zone_select :timezone, TimeZone.all, :default => 'Sydney'
