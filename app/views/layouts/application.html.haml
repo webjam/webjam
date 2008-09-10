@@ -8,7 +8,7 @@
     = stylesheet_link_tag 'reset', 'backjam'
     = javascript_include_tag 'jquery', 'webjam', 'autoshow', :cache => true
 
-    = auto_discovery_link_tag :atom, "TODO", :title => "Webjam"
+    = auto_discovery_link_tag :atom, APPLICATION_CONFIG.feed_url, :title => "Webjam"
     = yield :head
 
   %body#webjam-com-au{:class => @body_class, :onload => @onload}
@@ -59,7 +59,7 @@
             #news.item
               %h2
                 News
-                %a.feed{ :href => "#", :title => "Subscribe!" }
+                %a.feed{ :href => APPLICATION_CONFIG.feed_url, :title => "Subscribe!" }
                   Subscribe!
               - if @footer_latest_news.any?
                 %ul.posts

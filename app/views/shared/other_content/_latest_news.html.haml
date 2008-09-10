@@ -1,7 +1,7 @@
 #latest.item.last
   %h2
     Latest News
-    %a.feed{ :href => "#", :title => "Subscribe!" } Subscribe!
+    %a.feed{ :href => APPLICATION_CONFIG.feed_url, :title => "Subscribe!" } Subscribe!
   - if @latest_post
     %h3= @latest_post.title
     %p= @latest_post.body[0..100]
