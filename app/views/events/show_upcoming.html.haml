@@ -6,6 +6,7 @@
 - content_for :other_content do
   = render :partial => 'shared/other_content/wtf'
   = render :partial => 'shared/other_content/shirt'
+  = render :partial => 'shared/other_content/latest_news'
   
 .item
   = render :partial => "shared/event_title", :locals => {:event => @event}
@@ -18,15 +19,19 @@
 .item
   .item-details
     %h2 Meet our sponsors
-  %ul.sponsors
-    %li
-      %a.directSMS{ :href => "#" } DirectSMS
-    %li
-      %a.directSMS{ :href => "#" } SegPub
-    %li
-      %a.directSMS{ :href => "#" } iBurst
-    %li.moar
-      %a{ :href => "mailto:welovesponsors@webjam.com.au"} Want your logo here? Get in touch
+  /  
+    %ul.sponsors
+      %li
+        %a.directSMS{ :href => "#" } DirectSMS
+      %li
+        %a.directSMS{ :href => "#" } SegPub
+      %li
+        %a.directSMS{ :href => "#" } iBurst
+  %p
+    %strong Want your logo here? 
+  %p.moar
+    Webjam is a free event for the incredible web community we love and are proud to be a part of. We can't run it without sponsorship. This time we're offering 3 tiers, so even small businesses can show their support at the event.
+    %a{ :href => "mailto:welovesponsors@webjam.com.au"} Get in touch.
 
 .item
   .item-details
@@ -51,13 +56,11 @@
     = render :partial => "shared/map", :locals => {:src => @event.map_iframe_url}
     %a{ :href => @event.map_url } View larger version
   %dl
-    %dd
-    = @event.location
-    %dd 
-    = "Doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
-    %dd
-    = @event.local_held_at.to_date.to_s(:long_ordinal)
+    %dt= @event.address
+    %dd= @event.location
+    %dd= "Doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
+    %dd= @event.local_held_at.to_date.to_s(:long_ordinal)
  
 - unless @event.posts.empty?
-  .item.last
+  .item.last#related-posts
     = render :partial => "related_posts"

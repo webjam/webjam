@@ -3,8 +3,7 @@
 - @body_class = "archive"
 
 - content_for :other_content do
-  = render :partial => 'shared/other_content/latest_news'
-  = render :partial => 'shared/other_content/shirt'
+  = default_other_content
   
 .item.last
   %h1
