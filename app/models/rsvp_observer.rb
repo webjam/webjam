@@ -18,7 +18,8 @@ class RsvpObserver < ActiveRecord::Observer
   end
   def unsubscribe_from_campaign_monitor(rsvp)
     if (list_id = rsvp.event.campaign_monitor_list_id) && (client = campaign_monitor_client)
-      client.remove_subscriber(list_id, rsvp.user.email)
+      list = CampaignMonitor::List.new(list_id)
+      list.remove_subscriber(rsvp.user.email)
     end
   end
   def campaign_monitor_client
