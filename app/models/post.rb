@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :body, :permalink
   
-  named_scope :published, :conditions => 'published_at IS NOT NULL'
+  named_scope :published, :conditions => ["published_at < ?", Time.now.utc]
 
   before_save :set_year
 
