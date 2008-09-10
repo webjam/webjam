@@ -31,7 +31,7 @@
 
 %div{:class => @event.posts.empty? ? "item last" : "item"}
   = render :partial => "shared/event_title", :locals => {:event => @event}
-  - unless @event.previous_event.flickr_photos.featured.each.empty?
+  - unless @event.previous_event.flickr_photos.featured.empty?
     .slideshow
       %ul
         - @event.previous_event.flickr_photos.featured.each do |fp|

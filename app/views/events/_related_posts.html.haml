@@ -1,5 +1,6 @@
 .item-details
   %h2 Related bloggings&hellip;
-- for post in @event.posts.sort.reverse
-  %h3
-    %a{:href => post_path(post.year, post.permalink)}=h post.title
+- unless @event.posts
+  - for post in @event.posts.sort.reverse
+    %h3
+      %a{:href => post_path(post.year, post.permalink)}=h post.title
