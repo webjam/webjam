@@ -1,7 +1,7 @@
 URLS:
 webjam.com.au/webjam8
 webjam.com.au/webjam8/pres-2
-webjam.com.au/lachlanhardy
+webjam.com.au/people/lachlanhardy
 webjam.com.au/news/2008/wasnt-webjam8-great
 
 TAGS:
@@ -10,9 +10,8 @@ webjam8
 webjam8:pres=2
 webjam:user=lachlanhardy
 
-TODO for launch:
+TODO immediately:
 
-Hook up Feedburner.
 FAVICON!!!
 Polling
 add sponsors structure to events
@@ -55,9 +54,6 @@ Send unlogged in users to custom login/registration page with explanation about 
 
 BUGS:
 
-"Unsure whether you need to say 'do you want to register instead?' 2 lines beneath 'dont have a webjam account? register one!'. It's left there"
-
-weird line breaks in news archive, fix punctuation (stupid HAML newlines - needs helper?)
 form error messages suck
 make reversed hover states for sponsors
 lame column sizing on Edit profile page
@@ -67,6 +63,9 @@ FF2 on XP:
 registration alignment
 scrollbar at foot of blog post
 rogue border at bottom blog post
+
+IE6:
+Top tabs look weird
 
 
 TODO later:
