@@ -61,5 +61,5 @@
     %dd= @event.local_held_at.to_date.to_s(:long_ordinal)
  
 - unless @event.posts.empty?
-  .item.last
+  .item.last#related-posts
     = render :partial => "related_posts"

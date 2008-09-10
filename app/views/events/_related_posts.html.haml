@@ -1,6 +1,7 @@
 .item-details
   %h2 Related bloggings&hellip;
-- if @event.posts.empty?
-  - for post in @event.posts.sort.reverse
-    %h3
-      %a{:href => post_path(post.year, post.permalink)}=h post.title
+- unless @event.posts.empty?
+  %ul
+    - for post in @event.posts.sort.reverse
+      %li
+        %a{:href => post_path(post.year, post.permalink)}=h post.title

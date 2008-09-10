@@ -255,6 +255,12 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		        #event-details dt {margin: 0 0 0.5em 0;}
     		          #event-details dt strong {display: block; font-size: 1.25em; margin: 0 0 1em 0;}
     		        #event-details dd {margin: 0 0 0.5em 0;}
+    		    
+    		    #related-posts {}
+    		      #content #related-posts .item-details {margin: 0;}
+    		      #related-posts ul {font-size: 1.25em;}
+    		        #related-posts ul li {list-style-type: none;}
+    		        
     		
     	body.complete #winners {}
     	  #content #winners .item-details {margin: 0;}
