@@ -12,10 +12,10 @@ webjam:user=lachlanhardy
 
 TODO for launch:
 
+Hook up feeds and Feedburner.
 FAVICON!!!
 Polling
 add sponsors structure to events
-fix pike layout
 add content for rsvp
 add titles to images in slideshow
 make upcoming events other_content module
@@ -24,7 +24,6 @@ integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
 custom error page
 Adding sponsor links and images (with hover state)
-Add presentation proposal (edit?) - Tim
 fix ui profile form flashes
 
 Last: cross-browser testing
@@ -32,15 +31,12 @@ Last: cross-browser testing
 Lisa's feedback:
 too red, maybe a different highlight colour? Orange?
 use "re-launch" phrasing in copy
-mention random voter prize in WTF
-no home link (add that master nav we talked about?)
 tshirt linkage
 suggests single line only for archive
 show countdown of attendee spots left available
 use active states on tabs
 create active state for master nav
 default mugshot looks like an alien...
-what is the OpenID URL bit about? more explanation needed
 add see your profile link to edit page
 improve profile form submission flash
 promote sponsorship opportunities more
