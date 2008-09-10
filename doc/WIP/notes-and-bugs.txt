@@ -31,8 +31,6 @@ Last: cross-browser testing
 Lisa's feedback:
 too red, maybe a different highlight colour? Orange?
 use "re-launch" phrasing in copy
-mention random voter prize in WTF
-no home link (add that master nav we talked about?)
 tshirt linkage
 suggests single line only for archive
 show countdown of attendee spots left available

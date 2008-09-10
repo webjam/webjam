@@ -118,8 +118,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 	
 #page {font-size: 1.4em; margin: 4em auto 0; position: relative; width: 70em;}
 
-	ol.primary-nav {position:absolute; top:-1.8em; left:.1em; display: block; list-style:none; color: #eee;}
-		ol.primary-nav li {background-color:#373D3F;display:inline;float:left;padding: 0.2em 1em 0.4em 1em}
+	ul.primary-nav {background-color:#373D3F; color: #eee; position:absolute; top:-1.8em; left: 0.1em; display: block; list-style:none; }
+		ul.primary-nav li {display:block; float:left; padding: 0.2em 1em 0.4em 1em}
 
 	#account-tools {margin: 0 0 1.5em 0; position: absolute; right: 0; top: -2.3em;}
 		#account-tools li {background: #0e0e0e; float: left; font-size: 0.94em; line-height: 2; margin: 0 1em 0 0; text-align: center;}

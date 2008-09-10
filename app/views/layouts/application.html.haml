@@ -13,10 +13,11 @@
 
   %body#webjam-com-au{:class => @body_class, :onload => @onload}
     #page
-      %ol.primary-nav
+      %ul.primary-nav
         %li
-          %a{ :href => '/', :rel => 'home' }
-            Home
+          %a{:href => '/', :rel => 'home'} Home
+        %li
+          %a{:href => '/people/'} People
       %ul#account-tools
         - if current_user
           %li.profile
