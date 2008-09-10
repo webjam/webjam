@@ -35,7 +35,7 @@ class Post < ActiveRecord::Base
   end
  
   def self.latest(limit = 1)
-    posts = all(:order => "published_at DESC", :conditions => ["published_at < ?", Time.now], :include => :comments, :limit => limit)
+    posts = all(:order => "published_at DESC", :conditions => ["published_at < ?", Time.now.utc], :include => :comments, :limit => limit)
     limit == 1 ? posts.first : posts
   end 
 
