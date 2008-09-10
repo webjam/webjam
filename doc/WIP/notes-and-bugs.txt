@@ -25,6 +25,8 @@ custom error page
 Adding sponsor links and images (with hover state)
 fix ui profile form flashes
 what you're in for" should should featured images from across all webjams
+add "directions" to "address" events
+remove hacky static address in rsvp email
 
 
 

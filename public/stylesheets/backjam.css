@@ -42,7 +42,7 @@ TOC
 		#content a.details {background: #0d0e0e url('/stylesheets/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
 		
 		/* --- =Headings --- */
-		h1, h2, h3, h4, h5, h6 {font-family: Futura, Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
+		h1, h2, h3, h4, h5, h6 {font-family: Futura, "Franklin Gothic Medium", Calibri, "URW Gothic L", Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
 		h1,
 		body.home #content h2 {font-size: 2.572em;}
 		h2 {font-size: 1.714em;}
@@ -252,7 +252,16 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		      #event-details .map {float: left; width: auto;}
     		        #event-details .map iframe {height: 300px; width: 425px;}
     		        #event-details .map a {display: block;}
-    		      #event-details dl {float: left; margin: 0 0 0 1em; width: auto;}
+    		      #event-details dl {float: left; margin: 0 0 0 1em; width: 13em;}
+    		        #event-details dt {margin: 0 0 0.5em 0;}
+    		          #event-details dt strong {display: block; font-size: 1.25em; margin: 0 0 1em 0;}
+    		        #event-details dd {margin: 0 0 0.5em 0;}
+    		    
+    		    #related-posts {}
+    		      #content #related-posts .item-details {margin: 0;}
+    		      #related-posts ul {font-size: 1.25em;}
+    		        #related-posts ul li {list-style-type: none;}
+    		        
     		
     	body.complete #winners {}
     	  #content #winners .item-details {margin: 0;}
