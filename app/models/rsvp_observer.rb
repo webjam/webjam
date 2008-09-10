@@ -18,6 +18,8 @@ class RsvpObserver < ActiveRecord::Observer
   end
   def unsubscribe_from_campaign_monitor(rsvp)
     if (list_id = rsvp.event.campaign_monitor_list_id) && (client = campaign_monitor_client)
+      # we need to set the key as a constant first, so the list picks it up.
+      CAMPAIGN_MONITOR_API_KEY = APPLICATION_CONFIG.campaign_monitor_api_key
       list = CampaignMonitor::List.new(list_id)
       list.remove_subscriber(rsvp.user.email)
     end
