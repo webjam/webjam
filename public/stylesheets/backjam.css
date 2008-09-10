@@ -69,7 +69,13 @@ TOC
     
     #content p {font-size: 1.143em; line-height: 1.5; margin: 0 0 1em 0;}
 			
-		.amp {background: #0e0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
+		.amp {background: #0d0e0e; color: #666; font: italic 100 1.25em Baskerville, "Goudy Old Style", "Palatino", Georgia, "Book Antiqua", serif; position: relative; top: 2px;}
+		
+		.tag {background: #0d0e0e; color: #F03E00; font: italic 100 1em "Trebuchet MS", Arial, Helvetica, sans-serif;}
+		
+		p.note {background: #0d0e0e; color: #666; font: italic 100 1.25em "Trebuchet MS", Arial, Helvetica, sans-serif;}
+		  p.note a:link,
+		  p.note a:visited {background: #0d0e0e; color: #aaa;}
 		
 		/* --- =Avatars --- */      
     .user-avatar {position: relative;}

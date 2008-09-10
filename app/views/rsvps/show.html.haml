@@ -37,24 +37,36 @@
   
   /  %p TODO - A link to an ics file with the event details 
  
-/ .item
-/   %h2 Present!
-/   %p Call to submit a presentation proposal.
-/   %p Info about what it takes to present.
-/ 
-/ .item
-/   %h2 Photos, Videos &amp; Blog Posts
-/   %p Reminder to take pictures/video at the event and tag them appropriately
-/   
-/ .item
-/   %h2 Tweets
-/   %p Call to spread the fine word!
-/   %p Reminder for the tag
-/   
-/ .item
-/   %h2 Tell a Friend
-/   %p Call to tell a friend. Harp on about "The more people the better, the more presenters the better, community driven event!"
-/ 
+.item
+  %h2 Present!
+  %p Why not submit your own proposal? 3 minutes is the shortest, funnest presentation you'll ever do. And you might <strong>win</strong>!
+  %p
+    = link_to "Sign up here!", event_presentation_proposal_path(@event)
+
+.item
+  %h2 Photos, Videos <span class="amp">&amp;</span> Blog Posts
+  %p Webjam is all about the people who come to it. Share your photos, videos and blog posts with the rest of the Webjam community by tagging them appropriately.
+  %p
+    The tag for this event is
+    %span{:class => "tag", :rel => "tag"}= @event.tag
+  %p.note We check <a href="http://flickr.com/">Flickr</a>, <a href="http://viddler.com/">Viddler</a>, and <a href="http://technorati.com/">Technorati</a> so far. If you think we should check others, you can <a href="mailto:features@webjam.com.au">request them</a> or <a href="http://github.com/webjam/webjam/">add them yourself</a>.
+  
+.item
+  %h2 Tweets
+  %p Webjam loves <a href="http://twitter.com/">Twitter</a> too. You can share your tweets with the rest of the Webjam community by tagging them inline.
+  %p
+    The tag for this event is
+    %span{:class => "tag", :rel => "tag"}= "##{@event.tag}"
+
+.item.last
+  %h2 Tell your friends!
+  %p 
+    The more people come, the more fun you'll have. You'll meet new people and catch up with old friends and colleagues in the community. If your friends are into what's hot on the web, tell them to 
+    %a{:href => event_path(@event)} come along.
+    Or better yet, maybe they should be
+    %a{:href => "#{event_presentation_proposal_path(@event)}"} presenting that thing 
+    they were showing you last week?
+  
 / .item
 /   %h2 Customise your profile
 /   %p
