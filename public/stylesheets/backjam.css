@@ -512,6 +512,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 	    /* ---- =Latest ---- */
 	    #latest {}
   		  #latest h3 {font: 700 1em/1.2 Helvetica, Arial, sans-serif; text-transform: capitalize;}
+			#latest h3 a {text-decoration:none;color:#fff}
+			#latest h3 a:hover, #latest h3 a:active, #latest h3 a:focus {color:#ccc}
   		  #latest p {}
   		  #latest ul {}
   		    #latest ul li {background: #0d0e0e url('/stylesheets/images/bg-more.gif') no-repeat 100% 6px; float: left; list-style-type: none; margin: 0 1em 0 0; padding: 0 12px 0 0; width: auto;}
