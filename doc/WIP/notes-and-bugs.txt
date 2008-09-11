@@ -16,7 +16,7 @@ FAVICON!!!
 Polling
 add sponsors structure to events
 add content for rsvp
-add titles to images in slideshow
+add name instead of 'owner' to titles in slideshow
 add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
@@ -27,6 +27,7 @@ what you're in for" should should featured images from across all webjams
 add "directions" to "address" events
 remove hacky static address in rsvp email
 make author list for blog posts only consist of admins
+Ensure editing for proposal descriptions works
 
 
 Last: cross-browser testing
@@ -54,6 +55,7 @@ Send unlogged in users to custom login/registration page with explanation about 
 
 BUGS:
 
+Proposals can't be made into jams. Doh!
 form error messages suck
 make reversed hover states for sponsors
 lame column sizing on Edit profile page
