@@ -24,7 +24,7 @@
 		"Wordpress": "http://<username>.wordpress.com",
 		"Blogger": "http://<username>.blogger.com",
 		"Flickr": "http://www.flickr.com/photos/<username>",
-		"Technorati": "http://technorati.com/people/<username>",
+		"Technorati": "http://technorati.com/people/technorati/<username>",
 		"AOL": "http://openid.aol.com/<username>",
 		"Live Journal": "http://<username>.livejournal.com"
 	}
