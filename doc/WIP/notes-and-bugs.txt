@@ -27,6 +27,7 @@ what you're in for" should should featured images from across all webjams
 add "directions" to "address" events
 remove hacky static address in rsvp email
 make author list for blog posts only consist of admins
+Ensure editing for proposal descriptions works
 
 
 Last: cross-browser testing
@@ -54,6 +55,7 @@ Send unlogged in users to custom login/registration page with explanation about 
 
 BUGS:
 
+Proposals can't be made into jams. Doh!
 form error messages suck
 make reversed hover states for sponsors
 lame column sizing on Edit profile page
