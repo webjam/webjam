@@ -44,7 +44,7 @@
             %img{ :title => "#{fp.title} by #{fp.owner}", :src => fp.url, :alt => fp.title }
   %p
     So far we have
-    = pluralize(@event.number_of_presenters.count, "presenter") + " and"
+    = pluralize(@event.number_of_presenters, "presenter") + " and"
     = pluralize(@event.rsvps.count, "attendee") + ", "
     but we need more. We need <strong>you</strong>. Hadn't you better
     %a{ :href => "#" + @event.tag} sign up?
