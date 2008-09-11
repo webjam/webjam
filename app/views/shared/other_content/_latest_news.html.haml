@@ -3,7 +3,9 @@
     Latest News
     %a.feed{ :href => APPLICATION_CONFIG.feed_url, :title => "Subscribe!" } Subscribe!
   - if @latest_post
-    %h3= @latest_post.title
+    %h3
+      %a{ :href => post_path(@latest_post.year, @latest_post.permalink) }
+        = @latest_post.title
     %p= @latest_post.body[0..100]
     %ul
       %li.first
