@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     @openid_url = params[:openid_url]
-    session[:return_to_path] = params[:return_to]
+    session[:return_to_path] ||= params[:return_to]
   end
 
   def create

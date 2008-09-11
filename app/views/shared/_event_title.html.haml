@@ -1,4 +1,5 @@
-.item-details
+.item-details.vevent
   %h2{ :id => event.tag}
-    =h event.name
+    %a.summary.url{ :href => event_path(event) }
+      =h event.name
   %h3= "#{event.location}, #{event.local_held_at.to_date.to_s(:long_ordinal)}"

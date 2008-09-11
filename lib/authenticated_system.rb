@@ -87,9 +87,9 @@ module AuthenticatedSystem
     # to the passed default.
     def redirect_back_or_default(default)
       if params[:return_to]
-        redirect_to_url(params[:return_to])
+        redirect_to(params[:return_to])
       elsif session[:return_to]
-        redirect_to_url(session[:return_to])
+        redirect_to(session[:return_to])
         session[:return_to] = nil
       else
         redirect_to(default)

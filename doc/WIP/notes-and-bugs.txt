@@ -80,3 +80,21 @@ Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
 Confirm our website identity with Yahoo! ?? (for better registration)
 Merge registration and login into one process.
 
+
+DYLAN'S TOTO:
+I haven't looked above. I should. Here are some things I've been thinking about:
+•	layout of upcoming events thing
+•	funkiness with front page top event in windows FF2 around the rego things
+•	news archives weird borders left cols
+•	admin is ugly
+•	microformats:
+	⁃	hcard
+	⁃	hcalendar
+	⁃	hatom
+•	RDF
+•	profile page = gross and should not be
+•	valid markup?
+•	valid css?
+•	Browser testing -- Chrome, IE6, IE7, IE8, FF2, FF3, Opera, Iphone and Saruman's Wizard Crystal Globe
+•	sitemap
+•	custom 404 page
