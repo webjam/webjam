@@ -5,6 +5,8 @@
 
 .item.last
   %h2=h @page_title
+  
+  %p Tell us about your ideal for a 3 minute preso. You&rsquo;ll be able to come back later and edit the proposal from the event page.
 
   - form_for @proposal, :presentation_proposal, :url => event_presentation_proposal_path do |f|
     = f.error_messages
