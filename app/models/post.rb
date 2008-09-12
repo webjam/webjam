@@ -52,7 +52,6 @@ class Post < ActiveRecord::Base
   end
   
   def <=>(other)
-    puts "OTHER #{other.published_at} SELF #{self.published_at}"
     self.published_at <=> other.published_at
   end
   
