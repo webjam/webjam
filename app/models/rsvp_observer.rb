@@ -29,10 +29,11 @@ class RsvpObserver < ActiveRecord::Observer
     end
   end
   def send_excitement_email_if_required(rsvp)
-    if rsvp.id % 10 == 0
+    ENV["RAILS_ENV"] == "development" ? thresh = 1 : thresh = 10
+    if rsvp.id % thresh == 0
       # this is some kind of tenth signup. send email with list.
       event = rsvp.event
-      rsvps = Rsvp.find(:all, :conditions => ["id < ? AND event = ?", rsvp.id, event.id], :limit => 10)
+      rsvps = Rsvp.find(:all, :conditions => ["id <= ? AND event_id = ?", rsvp.id, event.id], :limit => 10, :order => 'id DESC')
       ExcitementMailer.deliver_rsvps(event, rsvps)
     end
   end
