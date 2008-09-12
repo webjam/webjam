@@ -4,7 +4,7 @@ class RsvpObserver < ActiveRecord::Observer
   def after_create(rsvp)
     send_thankyou_email(rsvp)
     subscribe_to_campaign_monitor(rsvp)
-    send_excitment_email_if_requred(rsvp)
+    send_excitement_email_if_required(rsvp)
   end
   def after_destroy(rsvp)
     unsubscribe_from_campaign_monitor(rsvp)
