@@ -57,7 +57,7 @@
 			}
 		}
 		
-		p.innerHTML = 'If you use ' + providersInSentenceForm + ' you probably already have an OpenID and you didn&rsquo;t even know it. If you want to register your own, see <a href="http://openid.net/get/">openid.net</a> for a list of reputable OpenID providers. Or just sign in with one you&rsquo;ve already got!'
+		p.innerHTML = 'If you use ' + providersInSentenceForm + ' you probably already have an OpenID and you didn&rsquo;t even know it. (Unfortunately, that list does not include Blogger accounts at Blogspot domains, but you can use your blogspot.com URL directly in the \"My own OpenID URL\" field.)<br><br>If you want to register your own, see <a href="http://openid.net/get/">openid.net</a> for a list of reputable OpenID providers. Or just sign in with one you&rsquo;ve already got!'
 		p.className = "explanation";
 		return p;
 	}
