@@ -65,8 +65,15 @@ class ApplicationController < ActionController::Base
       params[:id] = params[:id].split('-').first if params[:id]
       true
     end
-    
-    def iphone_request?
-      params[:no_iphone].nil? && request.headers['User-Agent'] && request.headers['User-Agent'].include?("iPhone")
+
+    helper_method :mobile_request?
+    def mobile_request?
+      mobile_user_agent_patterns.any? {|r| request.headers['User-Agent'] =~ r}
+    end
+    def mobile_user_agent_patterns
+      [
+        /iPhone/,
+        # Blackberry and other such devices
+      ]
     end
 end
