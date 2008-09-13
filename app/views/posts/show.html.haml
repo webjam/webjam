@@ -1,5 +1,6 @@
-  - @section = :blog
+- @section = :blog
 - @page_title = h(@post.title)
+- @mobile_version_path = formatted_post_path(@post.year, @post.permalink, :mobile)
 
 - content_for :other_content do
   = default_other_content

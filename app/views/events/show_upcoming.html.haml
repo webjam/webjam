@@ -2,6 +2,7 @@
 - @page_title =h @event.name
 - @body_class = "event"
 - @event_num = @event.number
+- @mobile_version_path = formatted_event_path(@event, :mobile)
 
 - content_for :other_content do
   = render :partial => 'shared/other_content/wtf'

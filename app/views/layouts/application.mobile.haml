@@ -10,4 +10,4 @@
     = yield :layout
   %footer
     %p
-      %a{:href => home_path("redirect-to-mobile" => "no")} Regular site
+      %a{:href => @regular_version_path || home_path("redirect-to-mobile" => "no")} Regular site
