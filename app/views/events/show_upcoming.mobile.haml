@@ -1,0 +1,18 @@
+- @page_title =h @event.name
+
+%p
+  \~ 18 presenters,
+  = pluralize(@event.rsvps.count, "attendee") + ","
+  and a whole lot of awesome geekery.
+
+= @event.hype
+
+
+%h2 Related news
+
+- unless @event.posts.empty?
+  .item.last#related-posts
+    %ul
+      - for post in @event.posts
+        %li
+          %a{:href => formatted_post_path(post.year, post.permalink, :mobile)}= post.title

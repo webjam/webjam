@@ -8,10 +8,10 @@ ActionController::Routing::Routes.draw do |map|
                 :controller => 'posts', 
                 :action => 'index_by_year',
                 :year => /\d{4}/
-  map.post 'news/:year/:permalink',
-                :controller => 'posts',
-                :action => 'show',
-                :year => /\d{4}/
+  map.with_options(:controller => 'posts', :action => 'show', :year => /\d{4}/) do |post|
+    post.post           'news/:year/:permalink'
+    post.formatted_post 'news/:year/:permalink.:format'
+  end
   map.post_comments 'news/:year/:permalink/comments',
                 :controller => 'comments',
                 :action => 'create',
@@ -21,7 +21,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :comments
   map.resource  :session, :member => { :create => :any }
 
-  map.event ":id", :controller => "events", :action => "show", :requirements => {:id => EVENT_TAG}
+  map.with_options(:controller => "events", :action => "show", :requirements => {:id => EVENT_TAG}) do |event|
+    event.event ":id"
+    event.formatted_event ":id.:format"
+  end
 
   map.with_options(:controller => "rsvps", :requirements => {:event_id => EVENT_TAG}, :path_prefix => ":event_id", :name_prefix => "event_") do |rsvps|
     rsvps.rsvp "rsvp", :action => "show", :conditions => { :method => :get }
@@ -49,6 +52,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :identity_urls, :collection => {:create => :any}
   map.with_options(:controller => 'pages') do |m|
     m.home         '',               :action => 'home'
+    m.formatted_home 'home.:format', :action => "home"
     m.about        'about',          :action => 'about'
     m.contact      'contact',        :action => 'contact'
     m.open_id      'single-sign-on', :action => 'single-sign-on'

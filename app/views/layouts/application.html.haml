@@ -12,6 +12,15 @@
     = yield :head
 
   %body#webjam-com-au{:class => @body_class, :onload => @onload}
+    - if mobile_request?
+      #mobile
+        %p
+          %a{:href => formatted_home_path(:mobile)} We have an mobile-friendly version of the site for all you cool kids.
+      / #mobile-hidden
+      /   %p
+      /     %a{:href => formatted_home_path(:mobile)} (mobile icon)
+      /     %a{:href => '#'} (? icon)
+      /   %p.info
     #page
       %ul.primary-nav
         %li

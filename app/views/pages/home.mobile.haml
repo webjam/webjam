@@ -1,0 +1,6 @@
+%h2 Upcoming Events
+
+%ul
+  - for event in @upcoming_events
+    %li
+      %a{:href => formatted_event_path(event, :mobile)}=h event.name

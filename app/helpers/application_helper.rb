@@ -1,11 +1,11 @@
 module ApplicationHelper
   def user_link_with_avatar(user, classes="")
-    render :partial => "shared/user_avatar",
+    render :partial => "shared/user_avatar.html.haml",
            :locals => {:user => user, :classes => classes}
   end
 
   def user_login_link_with_avatar(user)
-    render :partial => "shared/user_login_avatar",
+    render :partial => "shared/user_login_avatar.html.haml",
            :locals => {:user => user}
   end
   
