@@ -51,8 +51,10 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :identity_urls, :collection => {:create => :any}
   map.with_options(:controller => 'pages') do |m|
-    m.home         '',               :action => 'home'
-    m.formatted_home 'home.:format', :action => "home"
+    m.with_options(:action => 'home') do |home|
+      home.home ''
+      home.formatted_home 'home.:format'
+    end
     m.about        'about',          :action => 'about'
     m.contact      'contact',        :action => 'contact'
     m.open_id      'single-sign-on', :action => 'single-sign-on'
