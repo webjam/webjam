@@ -7,7 +7,9 @@
     %title
       = @page_title
   %body
+    #header
+      %a.home{:href => formatted_home_path(:mobile)} Home
     = yield :layout
   %footer
-    %p
+    %p.regular-site
       %a{:href => @regular_version_path || home_path("redirect-to-mobile" => "no")} Regular site

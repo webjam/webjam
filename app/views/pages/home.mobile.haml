@@ -1,9 +1,18 @@
 - @page_title = "Webjam"
 - @regular_version_path = home_path("redirect-to-mobile" => "no")
 
+%p 18 presenters. 3 minutes. You vote.
+
 %h2 Upcoming Events
 
 %ul
   - for event in @upcoming_events
+    %li
+      %a{:href => formatted_event_path(event, :mobile)}=h event.name
+
+%h2 Past Events
+
+%ul
+  - for event in @past_events
     %li
       %a{:href => formatted_event_path(event, :mobile)}=h event.name
