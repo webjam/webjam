@@ -41,7 +41,13 @@
       %ul
         - @event.previous_event.flickr_photos.featured.each do |fp|
           %li
-            %img{ :title => "#{fp.title} by #{fp.owner}", :src => fp.img_url, :alt => fp.title }
+            %a{:href => fp.url}
+              %img{ :title => "#{fp.title} by #{fp.realname}", :src => fp.img_url, :alt => fp.title }
+            %br
+            Photo by
+            %a{:href => fp.profile_url}<
+              =fp.realname
+            =", license info: #{fp.license_text}"
             
   %p
     So far we have
