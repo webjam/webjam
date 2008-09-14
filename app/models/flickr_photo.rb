@@ -42,9 +42,11 @@ class FlickrPhoto < ActiveRecord::Base
   # Loaded extended info for this image. Optionally takes
   # a hash of license IDs to text, if set will populate that info as well.
   def load_extended_info(license_hash=nil)
+    #image
     response = FlickrPhoto.request("flickr.photos.getInfo", "photo_id" => self.flickrid.to_s)
     self.posted_at = Time.at(REXML::XPath.match(response, "//photo/dates")[0].attributes["posted"].to_i)
     self.username = REXML::XPath.match(response, "//photo/owner")[0].attributes["username"]
+    self.realname = REXML::XPath.match(response, "//photo/owner")[0].attributes["realname"]
     url = ''
     REXML::XPath.match(response, "//urls/url").each do |elem|
       url = elem.get_text.to_s if elem.attributes["type"] == "photopage"
@@ -53,6 +55,10 @@ class FlickrPhoto < ActiveRecord::Base
     self.license_identifier = REXML::XPath.match(response, "//photo")[0].attributes["license"].to_i
     self.license_text = license_hash[self.license_identifier] if license_hash
     self.taken_at = REXML::XPath.match(response, "//photo/dates")[0].attributes["taken"]
+    
+    #user
+    response = FlickrPhoto.request("flickr.people.getInfo", "user_id" => self.owner)
+    self.profile_url = REXML::XPath.match(response, "//person/profileurl")[0].get_text.to_s
   end
   
   private

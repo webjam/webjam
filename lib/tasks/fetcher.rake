@@ -23,7 +23,7 @@ namespace :fetcher do
   task :flickr_extended_info do
     puts "Starting Flickr Extended Info Load."
     license_hash = FlickrPhoto.license_text_hash
-    FlickrPhoto.find(:all, :conditions => "username IS NULL").each do |fp|
+    FlickrPhoto.find(:all, :conditions => "realname IS NULL").each do |fp|
       fp.load_extended_info(license_hash)
       fp.save!
     end
