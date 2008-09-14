@@ -226,7 +226,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		      dl.registration dd p {margin: 0 0 0.6em 0;}
     		        dl.registration dd p strong {display: block; font-size: 1.083em;}
     		        
-    		#content .item .slideshow {height: 370px; overflow:hidden; margin: 0 0 0.4em 0;}
+    		#content .item .slideshow {height: 390px; margin: 0 0 0.4em 0;}
+			    #content .slideshow img {height: 350px; overflow:hidden; margin: 0 0 0.4em 0;}
     		  #content .slideshow ul li {list-style-type: none; margin: 0;}
     		  
     	#sponsors {}
