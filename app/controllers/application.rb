@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   class NotFound < StandardError; end
   
+  include ExceptionNotifiable
+  
   include AuthenticatedSystem
   before_filter :login_from_cookie
 
