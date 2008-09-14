@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080913230937) do
+ActiveRecord::Schema.define(:version => 20080914031036) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(:version => 20080913230937) do
     t.string   "url"
     t.integer  "license_identifier", :limit => 11
     t.string   "license_text"
+    t.string   "realname"
+    t.string   "profile_url"
   end
 
   create_table "identity_urls", :force => true do |t|
