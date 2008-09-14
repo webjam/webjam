@@ -128,10 +128,6 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 		#account-tools li.logout {}
 			#account-tools li.logout form.button-to input {background: #0e0e0e; border: 1px solid #ff5e29; border-bottom: none; color: #fff; cursor: pointer; float: none; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 1em; margin: 0; padding: 0.5em; width: auto;}
 			#account-tools li.logout form.button-to input:hover {background: #ff5e29; border: 1px solid #0e0e0e; border-bottom: none; color: #0e0e0e; cursor: pointer;}
-		
-		#account-tools li.login {}
-		#account-tools li.profile {}
-		#account-tools li.register {}
 		  
 		  #account-tools li a {display: block; padding: 0.2em 1em 0.4em 1em;}
 			#account-tools li a:link,
