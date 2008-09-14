@@ -5,7 +5,7 @@
   %ul
     - event.flickr_photos.featured.each do |fp|
       %li
-        %img{ :title => fp.title, :src => fp.url, :alt => fp.title }
+        %img{ :title => fp.title, :src => fp.img_url, :alt => fp.title }
 
 = event.hype
 -#
