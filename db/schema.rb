@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080914031036) do
+ActiveRecord::Schema.define(:version => 20080914052910) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -178,6 +178,21 @@ ActiveRecord::Schema.define(:version => 20080914031036) do
     t.string   "mugshot_file_name"
     t.string   "mugshot_content_type"
     t.integer  "mugshot_file_size",         :limit => 11
+  end
+
+  create_table "viddler_videos", :force => true do |t|
+    t.integer  "identifier",        :limit => 11
+    t.string   "title"
+    t.string   "username"
+    t.string   "description"
+    t.integer  "length_in_seconds", :limit => 11
+    t.string   "video_url"
+    t.string   "thumbnail_url"
+    t.text     "object_html"
+    t.integer  "event_id",          :limit => 11
+    t.datetime "posted_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

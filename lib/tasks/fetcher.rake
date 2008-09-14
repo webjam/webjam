@@ -5,7 +5,7 @@ require File.expand_path(File.dirname(__FILE__) + "/../../config/environment")
 namespace :fetcher do
   
   desc 'Runs all normal fetch tasks'
-  task :all => [:flickr, :twitter]
+  task :all => [:flickr, :twitter, :viddler]
   
   desc 'Fetches new images from flickr for all events'
   task :flickr do
@@ -27,5 +27,11 @@ namespace :fetcher do
       fp.load_extended_info(license_hash)
       fp.save!
     end
+  end
+  
+  desc 'Fetches new videos from viddler for all events'
+  task :viddler do
+    puts "Starting viddler"
+    Event.find(:all).each {|event| ViddlerVideo.fetch_for_event(event)}
   end
 end

@@ -9,7 +9,8 @@ class ApplicationConfig
               :protected_domains,
               :protection_username,
               :protection_password,
-              :excitement_notification_recipients
+              :excitement_notification_recipients,
+              :viddler_api_key
   
   def initialize
     y = YAML::load(File.open(File.dirname(__FILE__) + '/../config/application.yml'))
@@ -23,5 +24,6 @@ class ApplicationConfig
     @protection_username = y['protection_username']
     @protection_password = y['protection_password']
     @excitement_notification_recipients = y['excitement_notification_recipients']
+    @viddler_api_key = y['viddler_api_key']
   end
 end
