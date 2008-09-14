@@ -25,6 +25,7 @@ class Admin::JamsController < Admin::BaseController
   
   def create
     @jam = @event.jams.build(params[:jam])
+    p @jam
     @jam.save!
     redirect_to [:admin,@event,@jam]
   end

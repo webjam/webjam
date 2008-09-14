@@ -9,8 +9,8 @@
 
   %label
     Proposing user
-    =@jam.user.full_name
-    =f.hidden_field :user_id
+    =@jam.users[0].full_name
+    =f.hidden_field :proposing_user_id, :value => @jam.users[0].id
     
   -if @jam.presentation_proposal
     %label
