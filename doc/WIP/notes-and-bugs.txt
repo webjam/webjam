@@ -14,28 +14,25 @@ TODO immediately:
 
 FAVICON!!!
 Polling
-add sponsors structure to events
+wire up sponsors structure to events
+build default sponsor promo structure
 add content for rsvp
-add name instead of 'owner' to titles in slideshow
 add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
 custom error page
-Adding sponsor links and images (with hover state)
 fix ui profile form flashes
 what you're in for" should should featured images from across all webjams
 add "directions" to "address" events
 remove hacky static address in rsvp email
 make author list for blog posts only consist of admins
-Ensure editing for proposal descriptions works
+tshirt linkage
 
 
 Last: cross-browser testing
 
-Lisa's feedback:
+Lisa's feedback:      (whenver this list gets to zero - show Lisa again!)
 too red, maybe a different highlight colour? Orange?
-use "re-launch" phrasing in copy
-tshirt linkage
 suggests single line only for archive
 show countdown of attendee spots left available
 use active states on tabs
