@@ -458,6 +458,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 		      ul.peeps li span.user-avatar a.url:focus {background: #f03e00; color: #000;}
 		        ul.peeps li span.user-avatar a img {position: static;}
 			      ul.peeps li span.user-avatar a span {display: block; text-align: center;}
+			      ul.peeps li span.user-avatar a span.avatar {min-height: 82px;}
 
 	/* --- =Upcoming events sidebar fo shizznitz--- */
 	#other-content #upcoming-events {border-bottom:none}
