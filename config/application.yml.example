@@ -7,3 +7,4 @@ feed_url: http://feeburner.com
 protected_domains: [edge.webjam.com.au, staging.webjam.com.au]
 protection_username: supersecret
 protection_password: supersecret
+viddler_api_key: YOUR_VIDDLER_API_ACCESS_CODE_HERE # http://wiki.developers.viddler.com/index.php/API_KEY

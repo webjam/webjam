@@ -16,4 +16,4 @@
       = link_to jam.title, admin_event_jam_path(@event,jam)
       .user
         proposed by
-        =jam.user.full_name
+        =jam.users[0].full_name

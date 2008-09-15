@@ -1,7 +1,7 @@
 jQuery.fn.autoshow = function(options) {
 	var settings = {
 		timeout: '3000',
-		type: 'random',
+		type: 'sequence',
 		pause_selector: '.slideshow li img',
 	}
 

@@ -68,7 +68,7 @@ Rails::Initializer.run do |config|
   # config.active_record.schema_format = :sql
 
   # Activate observers that should always be running
-  config.active_record.observers = [:rsvp_observer, :presentation_proposal_observer]
+  config.active_record.observers = [:rsvp_observer, :presentation_proposal_observer, :jam_observer]
 end
 
 Time::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
@@ -77,9 +77,9 @@ Date::DATE_FORMATS[:long_with_day_name] = "%A %B %e, %Y"
 Date::DATE_FORMATS[:dd] = "%d"
 Date::DATE_FORMATS[:mon] = "%b"
 
-# ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy@gmail.com lstoll@lstoll.net dylan.fm@gmail.com)
-# ExceptionNotifier.sender_address = %("Application Error" <app.error@toolmantim.com>)
-# ExceptionNotifier.email_prefix = "[WEBCONSERVE] "
+ExceptionNotifier.exception_recipients = %w(t.lucas@toolmantim.com lachlan.hardy@gmail.com lstoll@lstoll.net dylan.fm@gmail.com)
+ExceptionNotifier.sender_address = %("Application Error" <app.error@toolmantim.com>)
+ExceptionNotifier.email_prefix = "[WEBCONSERVE] "
 
 # we need to set the key as a constant first, so CM list works.
 CAMPAIGN_MONITOR_API_KEY = APPLICATION_CONFIG.campaign_monitor_api_key

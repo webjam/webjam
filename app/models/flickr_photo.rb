@@ -9,11 +9,12 @@ class FlickrPhoto < ActiveRecord::Base
   named_scope :featured, :conditions => {:featured => true}
   named_scope :latest_5, lambda { {:order => "created_at DESC", :limit => 5} }
 
-  ## Build a URL
-  def url
+  ## Build a URL to the image
+  def img_url
     "http://farm#{farm}.static.flickr.com/#{server}/#{flickrid}_#{secret}.jpg"
   end
   
+  # Loads new FlickrPhoto's for the given event
   def self.fetch(event)
     posted_before = Time.at(0) # default to beginning of time, aka. 1970
     latest_photo = event.flickr_photos.find(:first, :order => "posted_before DESC")
@@ -26,7 +27,40 @@ class FlickrPhoto < ActiveRecord::Base
     arguments["sort"] = "date-posted-asc"
     retrieve(event, arguments)
   end
-
+  
+  # returns a hash, keyed by the flickr licence id, containing the text
+  # of the license
+  def self.license_text_hash
+    license_info = Hash.new
+    response = request("flickr.photos.licenses.getInfo")
+    REXML::XPath.match(response, "//licenses/license").each do |elem|
+      license_info[elem.attributes["id"].to_i] = elem.attributes["name"]
+    end
+    license_info
+  end
+  
+  # Loaded extended info for this image. Optionally takes
+  # a hash of license IDs to text, if set will populate that info as well.
+  def load_extended_info(license_hash=nil)
+    #image
+    response = FlickrPhoto.request("flickr.photos.getInfo", "photo_id" => self.flickrid.to_s)
+    self.posted_at = Time.at(REXML::XPath.match(response, "//photo/dates")[0].attributes["posted"].to_i)
+    self.username = REXML::XPath.match(response, "//photo/owner")[0].attributes["username"]
+    self.realname = REXML::XPath.match(response, "//photo/owner")[0].attributes["realname"]
+    url = ''
+    REXML::XPath.match(response, "//urls/url").each do |elem|
+      url = elem.get_text.to_s if elem.attributes["type"] == "photopage"
+    end
+    self.url = url
+    self.license_identifier = REXML::XPath.match(response, "//photo")[0].attributes["license"].to_i
+    self.license_text = license_hash[self.license_identifier] if license_hash
+    self.taken_at = REXML::XPath.match(response, "//photo/dates")[0].attributes["taken"]
+    
+    #user
+    response = FlickrPhoto.request("flickr.people.getInfo", "user_id" => self.owner)
+    self.profile_url = REXML::XPath.match(response, "//person/profileurl")[0].get_text.to_s
+  end
+  
   private
   
   ## search on flickr and add to db.
@@ -44,6 +78,10 @@ class FlickrPhoto < ActiveRecord::Base
     # we will use this latest load date to set the loaded before in the db,
     # to determine where to start the next load.
     latest_load_date = posted_date_for_image(lastphotoid)
+
+    # get a license hash to use to set info.
+    license_hash = license_text_hash
+    
     # now stash them in DB.
     photo_ids = REXML::XPath.match(response, "//photo").collect do |photoelem|
       id = photoelem.attributes['id'].to_i
@@ -56,6 +94,8 @@ class FlickrPhoto < ActiveRecord::Base
       fp.owner = photoelem.attributes['owner']
       fp.posted_before = latest_load_date
       fp.event_id = event.id
+      # populate the extended info on the images
+      fp.load_extended_info(license_hash)
       logger.info("FlickrPhoto::retrieve About to save image #{fp.title} (flickr id: #{fp.flickrid}) for event #{event.name}")
       fp.save!
     end # /attribute::id   a.value

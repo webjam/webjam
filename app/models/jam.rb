@@ -5,6 +5,8 @@ class Jam < ActiveRecord::Base
   
   validates_presence_of :title, :description
   
+  attr_accessor :proposing_user_id
+  
   def setup_from_proposal(proposal)
     self.presentation_proposal = proposal
     self.title                 = proposal.title
