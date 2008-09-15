@@ -1,4 +1,18 @@
 module WebjamStoryFixtures
+  def previous_event
+    Event.create!(
+      :name => "Webjam 7",
+      :tag => "webjam7",
+      :location => "Sydney",
+      :hype => "<p>Buy it.</p>",
+      :timezone => "Sydney",
+      :published_at => Time.now.utc,
+      :map_iframe_url => "http://iframe.com",
+      :map_url => "http://map.com",
+      :proposals_close_at => Time.now.utc - 5.days,
+      :held_at => Time.now.utc - 1.day
+    )
+  end
   def upcoming_event
     Event.create!(
       :name => "Webjam 8",
@@ -9,8 +23,8 @@ module WebjamStoryFixtures
       :published_at => Time.now.utc,
       :map_iframe_url => "http://iframe.com",
       :map_url => "http://map.com",
-      :proposals_close_at => Time.now.utc + 5.days,
-      :held_at => Time.now.utc + 1.day
+      :proposals_close_at => Time.now.utc + 1.days,
+      :held_at => Time.now.utc + 5.days
     )
   end
   def admin_user

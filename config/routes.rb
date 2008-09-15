@@ -21,9 +21,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :comments
   map.resource  :session, :member => { :create => :any }
 
-  map.with_options(:controller => "events", :action => "show", :requirements => {:id => EVENT_TAG}) do |event|
-    event.event ":id"
-    event.formatted_event ":id.:format"
+  map.with_options(:controller => "events") do |events|
+    events.with_options(:action => "show", :requirements => {:id => EVENT_TAG}) do |event|
+      event.event ":id"
+      event.formatted_event ":id.:format"
+    end
+    events.formatted_past_events "past-events.:format", :action => "past_events"
   end
 
   map.with_options(:controller => "rsvps", :requirements => {:event_id => EVENT_TAG}, :path_prefix => ":event_id", :name_prefix => "event_") do |rsvps|
@@ -55,7 +58,10 @@ ActionController::Routing::Routes.draw do |map|
       home.home ''
       home.formatted_home 'home.:format'
     end
-    m.about        'about',          :action => 'about'
+    m.with_options(:action => 'about') do |about|
+      about.about           'about'
+      about.formatted_about 'about.:format'
+    end
     m.contact      'contact',        :action => 'contact'
     m.open_id      'single-sign-on', :action => 'single-sign-on'
     m.contributors 'contributors',   :action => "contributors"

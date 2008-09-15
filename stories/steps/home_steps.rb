@@ -15,11 +15,11 @@ steps_for :home do
   end
   
   When "I view the home page from an iphone" do
-    get home_path, nil, :user_agent => "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3"
+    get home_path, nil, :user_agent => iphone_user_agent
   end
   
   When "I view the home page from an iphone specifying redirect-to-mobile=no" do
-    get home_path("redirect-to-mobile" => "no"), nil, :user_agent => "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3"
+    get home_path("redirect-to-mobile" => "no"), nil, :user_agent => iphone_user_agent
   end
   
   When "I view the mobile version of the home page" do

@@ -3,10 +3,17 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }/
     %meta{ :name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" }/
-    = stylesheet_link_tag "reset", "mobile"
+    = stylesheet_link_tag "reset", "mobile", :cache => true
+    / Routes
+    = javascript_tag "var mobile_home_path = '#{formatted_home_path(:mobile)}'"
+    = javascript_include_tag "jquery-1.2.6-min.js", "franklin", "webjam-mobile", :cache => true
     %title
       = @page_title
   %body
+    - unless @hide_header
+      #header
+        %a.back{:href => @back_path || formatted_home_path(:mobile)}= @back_title || "Home"
+        %span.title= @page_title
     = yield :layout
     %p#footer
       %a.regular-site{:href => @regular_version_path || home_path("redirect-to-mobile" => "no")} Regular site

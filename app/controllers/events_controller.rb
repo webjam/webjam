@@ -8,4 +8,7 @@ class EventsController < ApplicationController
       render :action => "show"
     end
   end
+  def past_events
+    @events = Event.published.past
+  end
 end

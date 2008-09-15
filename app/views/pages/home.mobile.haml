@@ -1,5 +1,6 @@
 - @page_title = "Webjam"
 - @regular_version_path = home_path("redirect-to-mobile" => "no")
+- @hide_header = true
 
 #home-header
   %h1
@@ -26,8 +27,8 @@
 
 %ul
   %li
-    %a.item{:href => "devtodo"} The Format
+    %a.item{:href => formatted_about_path(:mobile)} About
   %li
-    %a.item{:href => "devtodo"} Previous Events
+    %a.item{:href => formatted_past_events(:mobile)} Past Events
   %li
     %a.item{:href => "devtodo"} News Archive
