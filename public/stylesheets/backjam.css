@@ -128,10 +128,6 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 		#account-tools li.logout {}
 			#account-tools li.logout form.button-to input {background: #0e0e0e; border: 1px solid #ff5e29; border-bottom: none; color: #fff; cursor: pointer; float: none; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 1em; margin: 0; padding: 0.5em; width: auto;}
 			#account-tools li.logout form.button-to input:hover {background: #ff5e29; border: 1px solid #0e0e0e; border-bottom: none; color: #0e0e0e; cursor: pointer;}
-		
-		#account-tools li.login {}
-		#account-tools li.profile {}
-		#account-tools li.register {}
 		  
 		  #account-tools li a {display: block; padding: 0.2em 1em 0.4em 1em;}
 			#account-tools li a:link,
@@ -229,28 +225,16 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		#content .item .slideshow {height: 390px; margin: 0 0 0.4em 0;}
 			    #content .slideshow img {height: 350px; overflow:hidden; margin: 0 0 0.4em 0;}
     		  #content .slideshow ul li {list-style-type: none; margin: 0;}
-    		
-    		.item .sponsors {font-size: 0.625em; margin: 0 0 2em 0; position: relative;}
-    		  body.home .item .sponsors {margin: 4em 0 2em 0; padding: 0 0 0 9em;} 
     		  
-    		    #content .item .sponsors li {float: left; list-style-type: none; margin: 0 0 1em 0; width: auto;}
-    		    #content .item .sponsors li.proud {left: 0; position: absolute; top: 1.2em;}
-    		    #content .item .sponsors li.moar {}
-    		 
-    		 body.complete #sponsors .item-details {float: left; margin: 0; width: auto;}
-    		 body.complete #sponsors h2,
-    		 body.complete #sponsors ul.sponsors li {margin: 0;}
-    		    
-    		      .item .sponsors li a {background-position: 0 0; background-repeat: no-repeat; display: block; height: 35px; margin: 0 0 0 1.56em; text-indent: -9999px; width: 95px;}
-    		      .item .sponsors li.moar a {background: #0d0e0e url('/stylesheets/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; font-size: 1.6em; margin: 0.8em 0 0 3.8em; padding: 0 16px 0 0; text-indent: 0; width: auto;}
-    		      
-    		      .item .sponsors a:link,
-    		      .item .sponsors a:visited {}
-    		      .item .sponsors a:hover,
-    		      .item .sponsors a:active,
-    		      .item .sponsors a:focus {background-position: 0 100%;}
-    		      
-    		      .sponsors a.directSMS {background-image: url('/stylesheets/images/sponsors/directSMS.jpg');}
+    	#sponsors {}
+    	  #sponsors .item-details a.details {padding: 0 1em 0 0; right: 0; top: 0.4em; width: auto;}
+    		.sponsors {background: #232323; clear: both; color: #666; margin: 0 0 0.2em 0; padding: 1em 1em 0 1em;}
+    		  .sponsors h3 {float: left; font-size: 1.143em; text-transform: uppercase; margin: 0.6em 1em 0 0; width: 9.5em;}
+    		  .sponsor-logos {overflow: auto;}
+    		    #content .sponsor-logos li {float: left; list-style-type: none; margin: 0; width: auto;}
+    		    .sponsor-logos a {}
+    		      .sponsor-logos li a img {height: 40px; margin: 0 1em 1em 1em; width: 110px;}
+    		      .major .sponsor-logos img {width: 180px;}
     		    
     		    #event-details {}
     		      #content #event-details .item-details {margin: 0;}

@@ -16,22 +16,57 @@
 
   = render :partial => "shared/event_registration_column", :locals => {:event => @event}
  
-.item
+.item#sponsors
   .item-details
-    %h2 Meet our sponsors
-  /  
-    %ul.sponsors
+    %h2 Meet our sponsors 
+    %a.details{ :href => "mailto:welovesponsors@webjam.com.au"} Want your logo here? Get in touch.
+  
+  .sponsors.major
+    %h3 Major Sponsors
+    #ul.sponsor-logos
       %li
-        %a.directSMS{ :href => "#" } DirectSMS
+        %a{:href => "http://adobe.com/", :title => "Webjam 8 is proudly sponsored by Adobe"} 
+          %img{:alt => "Adobe", :src => "/images/sponsors/2vouch.jpg"}
       %li
-        %a.directSMS{ :href => "#" } SegPub
+        %a{:href => "http://some.com/", :title => "Webjam 8 is proudly sponsored by Major Sponsor II"} 
+          %img{:alt => "Major Sponsor II", :src => "/images/sponsors/2vouch.jpg"}
+  .sponsors
+    %h3 Sponsors
+    #ul.sponsor-logos
       %li
-        %a.directSMS{ :href => "#" } iBurst
-  %p
-    %strong Want your logo here? 
-  %p.moar
-    Webjam is a free event for the incredible web community we love and are proud to be a part of. We can't run it without sponsorship. This time we're offering 3 tiers, so even small businesses can show their support at the event.
-    %a{ :href => "mailto:welovesponsors@webjam.com.au"} Get in touch.
+        %a{:href => "http://adobe.com/", :title => "Webjam 8 is proudly sponsored by Adobe"} 
+          %img{:alt => "Adobe", :src => "/images/sponsors/2vouch.jpg"}
+      %li
+        %a{:href => "http://some.com/", :title => "Webjam 8 is proudly sponsored by Major Sponsor II"} 
+          %img{:alt => "Major Sponsor II", :src => "/images/sponsors/2vouch.jpg"}
+      %li
+        %a{:href => "http://adobe.com/", :title => "Webjam 8 is proudly sponsored by Adobe"} 
+          %img{:alt => "Adobe", :src => "/images/sponsors/2vouch.jpg"}
+      %li
+        %a{:href => "http://some.com/", :title => "Webjam 8 is proudly sponsored by Major Sponsor II"} 
+          %img{:alt => "Major Sponsor II", :src => "/images/sponsors/2vouch.jpg"}
+      
+  .sponsors.micro
+    %h3 Microsponsors
+    #ul.sponsor-logos
+      %li
+        %a{:href => "http://adobe.com/", :title => "Webjam 8 is proudly sponsored by Adobe"} 
+          %img{:alt => "Pollenizer", :src => "/images/sponsors/pollenizer.jpg"}
+      %li
+        %a{:href => "http://some.com/", :title => "Webjam 8 is proudly sponsored by Major Sponsor II"} 
+          %img{:alt => "Major Sponsor II", :src => "/images/sponsors/2vouch.jpg"}          
+      %li
+        %a{:href => "http://adobe.com/", :title => "Webjam 8 is proudly sponsored by Adobe"} 
+          %img{:alt => "Adobe", :src => "/images/sponsors/2vouch.jpg"}
+      %li
+        %a{:href => "http://some.com/", :title => "Webjam 8 is proudly sponsored by Major Sponsor II"} 
+          %img{:alt => "Major Sponsor II", :src => "/images/sponsors/2vouch.jpg"}
+      %li
+        %a{:href => "http://adobe.com/", :title => "Webjam 8 is proudly sponsored by Adobe"} 
+          %img{:alt => "Adobe", :src => "/images/sponsors/2vouch.jpg"}
+      %li
+        %a{:href => "http://some.com/", :title => "Webjam 8 is proudly sponsored by Major Sponsor II"} 
+          %img{:alt => "Major Sponsor II", :src => "/images/sponsors/2vouch.jpg"}
 
 .item
   .item-details
