@@ -33,6 +33,7 @@ make author list for blog posts only consist of admins
 tshirt linkage
 remove static presenter/attendee text on past events
 change usernames so that they cannot contain spaces or capitals
+generate Google sitemap
 
 
 Last: cross-browser testing
