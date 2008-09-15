@@ -2,15 +2,14 @@ ActionController::Routing::Routes.draw do |map|
   EVENT_TAG = /webjam\d+/
 
   # super friendly post urls
-  map.posts_with_format 'news.:format', :controller => 'posts', :action => 'index'
-  map.posts 'news', :controller => 'posts', :action => 'index'
-  map.posts_year 'news/:year', 
-                :controller => 'posts', 
-                :action => 'index_by_year',
-                :year => /\d{4}/
-  map.with_options(:controller => 'posts', :action => 'show', :year => /\d{4}/) do |post|
-    post.post           'news/:year/:permalink'
-    post.formatted_post 'news/:year/:permalink.:format'
+  map.with_options(:controller => "posts") do |posts|
+    posts.posts           'news', :action => 'index'
+    posts.formatted_posts 'news.:format', :action => 'index'
+    posts.posts_year      'news/:year',  :action => 'index_by_year', :year => /\d{4}/
+    posts.with_options(:action => 'show', :year => /\d{4}/) do |post|
+      post.post           'news/:year/:permalink'
+      post.formatted_post 'news/:year/:permalink.:format'
+    end
   end
   map.post_comments 'news/:year/:permalink/comments',
                 :controller => 'comments',
@@ -59,7 +58,6 @@ ActionController::Routing::Routes.draw do |map|
       home.formatted_home 'home.:format'
     end
     m.with_options(:action => 'about') do |about|
-      about.about           'about'
       about.formatted_about 'about.:format'
     end
     m.contact      'contact',        :action => 'contact'

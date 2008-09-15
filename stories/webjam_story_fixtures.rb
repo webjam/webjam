@@ -1,5 +1,19 @@
 module WebjamStoryFixtures
-  def previous_event
+  def unpublished_event
+    Event.create!(
+      :name => "Webjam 1",
+      :tag => "webjam1",
+      :location => "Sydney",
+      :hype => "<p>Buy it.</p>",
+      :timezone => "Sydney",
+      :published_at => nil, # not published
+      :map_iframe_url => "http://iframe.com",
+      :map_url => "http://map.com",
+      :proposals_close_at => Time.now.utc - 5.days,
+      :held_at => Time.now.utc - 1.day
+    )
+  end
+  def past_event
     Event.create!(
       :name => "Webjam 7",
       :tag => "webjam7",

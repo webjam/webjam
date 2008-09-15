@@ -22,7 +22,10 @@ class PagesController < ApplicationController
   def contributors
   end
   def about
-    redirect_to home_path, :status => 301
+    respond_to do |wants|
+      wants.html { redirect_to home_path, :status => 301 }
+      wants.mobile
+    end
   end
   
   protected
