@@ -13,7 +13,11 @@ webjam:user=lachlanhardy
 TODO immediately:
 
 FAVICON!!!
+
 Polling
+ - add Ma.gnolia + Delicious polling
+ - Technorati polling? Some other blog service?
+
 wire up sponsors structure to events
 build default sponsor promo structure
 add content for rsvp
@@ -53,9 +57,7 @@ Send unlogged in users to custom login/registration page with explanation about 
 
 BUGS:
 
-Proposals can't be made into jams. Doh!
 form error messages suck
-lame column sizing on Edit profile page
 validate microformats
 
 FF2 on XP:
@@ -71,6 +73,7 @@ Login is apparently not too cool
 TODO later:
 
 make mugshot form layout look good
+lame column sizing on Edit profile page
 tie RSVPs to Proposals? how?
 Build hotted up active version for events!
 Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
@@ -90,9 +93,9 @@ I haven't looked above. I should. Here are some things I've been thinking about:
 	⁃	hcalendar
 	⁃	hatom
 •	RDF
-•	profile page = gross and should not be
-•	valid markup?
-•	valid css?
+•	profile page = gross and should not be (see webjam.ai file for what it should be)
+•	valid markup? (oops. My bad - LH.)
+•	valid css? (we has it!)
 •	Browser testing -- Chrome, IE6, IE7, IE8, FF2, FF3, Opera, Iphone and Saruman's Wizard Crystal Globe
 •	sitemap
 •	custom 404 page
