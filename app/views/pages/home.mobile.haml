@@ -1,7 +1,9 @@
 - @page_title = "Webjam"
 - @regular_version_path = home_path("redirect-to-mobile" => "no")
 
-%p 18 presenters. 3 minutes. You vote.
+#home-header
+  %h1
+    %span Webjam
 
 %h2 Upcoming Events
 
@@ -9,7 +11,7 @@
   - for event in @upcoming_events
     %li
       %a.item{:href => formatted_event_path(event, :mobile)}
-        =h event.name
+        = "#{h event.name}, #{h event.location}"
         %span.in
           in
           = pluralize(event.held_at.to_date - Time.now.to_date, "day")
@@ -18,12 +20,13 @@
 
 %ul.latest-news
   %li
-    %a.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}=h @last_post.title
-    %a.comment-count{:href => formatted_post_path(:year => @last_post.year, :permalink => @last_post.permalink, :anchor => "comments")}= @last_post.comments.length
+    %a.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}
+      =h @last_post.title
+      %span.comment-count= pluralize(@last_post.comments.length, "comment")
 
 %ul
   %li
-    %a.item{:href => "devtodo"} About Webjam
+    %a.item{:href => "devtodo"} The Format
   %li
     %a.item{:href => "devtodo"} Previous Events
   %li
