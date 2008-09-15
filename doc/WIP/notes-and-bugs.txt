@@ -34,6 +34,8 @@ tshirt linkage
 remove static presenter/attendee text on past events
 change usernames so that they cannot contain spaces or capitals
 generate Google sitemap
+set peeps pagination for 48 peeps per page
+fix dumb delete styling for multiple OpenIDs
 
 
 Last: cross-browser testing
