@@ -5,14 +5,26 @@
 
 %h2 Upcoming Events
 
-%ul
+%ul.group
   - for event in @upcoming_events
     %li
-      %a{:href => formatted_event_path(event, :mobile)}=h event.name
+      %a.item{:href => formatted_event_path(event, :mobile)}
+        =h event.name
+        %span.in
+          in
+          = pluralize(event.held_at.to_date - Time.now.to_date, "day")
 
-%h2 Past Events
+%h2 Latest News
+
+%ul.latest-news
+  %li
+    %a.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}=h @last_post.title
+    %a.comment-count{:href => formatted_post_path(@last_post.year, @last_post.permalink, :anchor => "comments")}= @last_post.comments.length
 
 %ul
-  - for event in @past_events
-    %li
-      %a{:href => formatted_event_path(event, :mobile)}=h event.name
+  %li
+    %a.item{:href => "devtodo"} About Webjam
+  %li
+    %a.item{:href => "devtodo"} Previous Events
+  %li
+    %a.item{:href => "devtodo"} News Archive

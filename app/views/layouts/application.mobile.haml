@@ -3,12 +3,10 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }/
     %meta{ :name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" }/
-    = stylesheet_link_tag "iphone"
+    = stylesheet_link_tag "reset", "mobile"
     %title
       = @page_title
   %body
-    #header
-      %a.home{:href => formatted_home_path(:mobile)} Home
     = yield :layout
   %footer
     %p.regular-site

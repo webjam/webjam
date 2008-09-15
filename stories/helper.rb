@@ -17,3 +17,6 @@ Dispatcher.class_eval do
     raise exception
   end
 end
+
+require File.join(File.dirname(__FILE__), "webjam_story_fixtures")
+Spec::Story::World.send :include, WebjamStoryFixtures

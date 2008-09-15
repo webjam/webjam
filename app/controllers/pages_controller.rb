@@ -4,11 +4,15 @@ class PagesController < ApplicationController
       redirect_to formatted_home_path(:mobile)
       return
     end
-    @upcoming_events = Event.published.upcoming(:order => "held_at DESC")
-    @past_events = Event.published.past(:order => "held_at DESC")
     respond_to do |wants|
-      wants.html
-      wants.mobile
+      wants.html do
+        @upcoming_events = Event.published.upcoming(:order => "held_at DESC")
+        @past_events = Event.published.past(:order => "held_at DESC")
+      end
+      wants.mobile do
+        @upcoming_events = Event.published.upcoming(:order => "held_at DESC")
+        @last_post = Post.published.first(:order => "published_at DESC")
+      end
     end
   end
   def contact
