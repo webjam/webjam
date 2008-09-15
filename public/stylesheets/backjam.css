@@ -447,19 +447,17 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			body.contributors {}
 			  body.contributors h2 {margin: 1em 0 0.5em 0;}
 
-  			/* ---- =Peeps ---- */
-			#maincontent ul.peeps,
-			#maincontent ul.peeps li {list-style:none;}
-			
-			  #maincontent ul.peeps li {float: left; margin: 0 0 1em 0; width: auto;}
-			    ul.peeps li span.user-avatar span {display: block;}
-			      ul.peeps li span.user-avatar a img {position: static;}
-			      ul.peeps li span.user-avatar a.url {display: block; margin: 0; padding: 0.75em; text-decoration: none;}
-			      ul.peeps li span.user-avatar a.url:link {}
-			      ul.peeps li span.user-avatar a.url:visited {}
-			      ul.peeps li span.user-avatar a.url:hover,
-			      ul.peeps li span.user-avatar a.url:active,
-			      ul.peeps li span.user-avatar a.url:focus {background: #f03e00; color: #000;}
+  			/* ---- =Peeps ---- */			
+			  #maincontent ul.peeps li {float: left; list-style: none; margin: 0 0 1em 0; width: auto;}
+			    
+			    ul.peeps li span.user-avatar a.url {display: block; margin: 0; padding: 0.75em; text-decoration: none;}
+		      ul.peeps li span.user-avatar a.url:link {}
+		      ul.peeps li span.user-avatar a.url:visited {}
+		      ul.peeps li span.user-avatar a.url:hover,
+		      ul.peeps li span.user-avatar a.url:active,
+		      ul.peeps li span.user-avatar a.url:focus {background: #f03e00; color: #000;}
+		        ul.peeps li span.user-avatar a img {position: static;}
+			      ul.peeps li span.user-avatar a span {display: block; text-align: center;}
 
 	/* --- =Upcoming events sidebar fo shizznitz--- */
 	#other-content #upcoming-events {border-bottom:none}
