@@ -11,6 +11,6 @@
   %ul.peeps
     - for user in @users
       %li
-        = user_link_with_avatar(user)
+        = peeps_user_link_with_avatar(user)
 
   = will_paginate @users
