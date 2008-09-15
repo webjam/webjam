@@ -111,6 +111,8 @@ TOC
 	  
 	/* -- = Generic layout -- */
 	#content .clear-off {clear: both; margin: 3em 0 0.5em 0;}
+	
+	div.pagination {clear: both; margin: 0 0 1em 0; text-align: center;}
 
 
 /* - =Structure - */
@@ -458,8 +460,9 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 		      ul.peeps li span.user-avatar a.url:focus {background: #f03e00; color: #000;}
 		        ul.peeps li span.user-avatar a img {position: static;}
 			      ul.peeps li span.user-avatar a span {display: block; text-align: center;}
-			      ul.peeps li span.user-avatar a span.avatar {min-height: 82px;}
-
+			      ul.peeps li span.user-avatar a span.avatar {min-height: 86px; min-width: 82px;}
+			      
+	
 	/* --- =Upcoming events sidebar fo shizznitz--- */
 	#other-content #upcoming-events {border-bottom:none}
 		#upcoming-events ol {margin-top:-1em}
