@@ -27,6 +27,10 @@ add "directions" to "address" events
 remove hacky static address in rsvp email
 make author list for blog posts only consist of admins
 tshirt linkage
+remove static presenter/attendee text on past events
+fix comment permalinks
+change usernames so that they cannot contain spaces or capitals
+
 
 Last: cross-browser testing
 
