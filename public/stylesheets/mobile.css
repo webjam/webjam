@@ -27,17 +27,22 @@ ul {
 li a.item {
   display: block;
   width: auto;
-  padding: 0.5em;
+  padding: 0.5em 0.6em;
   background-color: #BB0E00;
   color: #fff;
   text-decoration: none;
+  border: 2px solid #000;
+  border-bottom: none;
+  border-top: 1px solid #6B0E00;
 }
 li:first-of-type a.item {
-  -webkit-border-top-left-radius: 5px;
+/*  border-top: 2px solid #000;
+*/  -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
 }
 li:last-of-type a.item {
-  -webkit-border-bottom-left-radius: 5px;
+/*  border-bottom: 2px solid #000;
+*/  -webkit-border-bottom-left-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
 }
 

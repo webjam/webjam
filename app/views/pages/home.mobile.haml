@@ -19,7 +19,7 @@
 %ul.latest-news
   %li
     %a.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}=h @last_post.title
-    %a.comment-count{:href => formatted_post_path(@last_post.year, @last_post.permalink, :anchor => "comments")}= @last_post.comments.length
+    %a.comment-count{:href => formatted_post_path(:year => @last_post.year, :permalink => @last_post.permalink, :anchor => "comments")}= @last_post.comments.length
 
 %ul
   %li
