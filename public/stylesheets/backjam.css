@@ -228,13 +228,16 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		  
     	#sponsors {}
     	  #sponsors .item-details a.details {padding: 0 1em 0 0; right: 0; top: 0.4em; width: auto;}
-    		.sponsors {background: #232323; clear: both; color: #666; margin: 0 0 0.2em 0; padding: 1em 1em 0 1em;}
+    		.sponsors {background: #232323; clear: both; color: #ddd; margin: 0 0 0.2em 0; padding: 1em 1em 0 1em;}
     		  .sponsors h3 {float: left; font-size: 1.143em; text-transform: uppercase; margin: 0.6em 1em 0 0; width: 9.5em;}
     		  .sponsor-logos {overflow: auto;}
     		    #content .sponsor-logos li {float: left; list-style-type: none; margin: 0; width: auto;}
     		    .sponsor-logos a {}
     		      .sponsor-logos li a img {height: 40px; margin: 0 1em 1em 1em; width: 110px;}
-    		      .major .sponsor-logos img {width: 180px;}
+    		      .major .sponsor-logos img {height: auto; width: auto;}
+    		      
+    		      .major h3 {color: #fff;}
+    		      .micro h3 {color: #ccc;}
     		    
     		    #event-details {}
     		      #content #event-details .item-details {margin: 0;}
