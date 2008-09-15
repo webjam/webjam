@@ -41,11 +41,13 @@
             Photo by
             %a{:href => fp.profile_url}<
               =fp.realname
-  %p
-    Wow! 
-    = pluralize(@event.number_of_presenters, "presenter") + "."
-    = pluralize(@event.rsvps.count, "attendee") + "."
-    And a whole lot of awesome geekery.
+  %p Wow! We had 18 presenters and over 190 attendees. Not to mention a whole lot of awesome geekery.
+  /
+    %p
+      Wow! 
+      = pluralize(@event.number_of_presenters, "presenter") + "."
+      = pluralize(@event.rsvps.count, "attendee") + "."
+      And a whole lot of awesome geekery.
   = @event.hype
 
 - unless @event.posts.empty?
