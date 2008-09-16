@@ -39,7 +39,7 @@ TOC
 		a:visited {color: #fff;}
 		a:hover, a:active, a:focus {color: #f03e00; text-decoration: none;}
 		
-		#content a.details {background: #0d0e0e url('/stylesheets/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
+		#content a.details {background: #0d0e0e url('/stylesheets/images/bg-details.gif') no-repeat 100% 8px; color: #f03e00; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
 		
 		/* --- =Headings --- */
 		h1, h2, h3, h4, h5, h6 {font-family: Futura, "Franklin Gothic Medium", Calibri, "URW Gothic L", Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
@@ -182,16 +182,16 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		  
     		  .item .button {text-align: center; text-decoration: none;}
     		  .item .button:link,
-    		  .item .button:visited {background: #ec1c26; color: #fff;}
+    		  .item .button:visited {background: #f03e00; color: #fff;}
     		  .item .button:hover,
     		  #content .item .rsvp input:hover,
     		  .item .button:active,
-    		  .item .button:focus {background: #fff; color: #ec1c26;}
+    		  .item .button:focus {background: #fff; color: #f03e00;}
     		  
     		  #content .item form.button {float: none; left: -0.6em; padding: 0; position: relative;}
     		    #content .item form.button input {cursor: pointer; letter-spacing: 0.1em; padding: 0.1em 0.6em; text-transform: uppercase;}
     		  
-    		  #content .item .rsvp input {background: #ec1c26; color: #fff; border: none; width: 5.8em;}
+    		  #content .item .rsvp input {background: #f03e00; color: #fff; border: none; width: 5.8em;}
     		  
     		  #content .item .login {width: 11em;}
     		  
@@ -291,7 +291,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     	    
       /* ---- =Presentation ---- */
       #title {border-bottom: 1px solid #333; padding: 1px 2em 0.5em 0; text-align: right;}
-        #title p {background: #ec1c26; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
+        #title p {background: #f03e00; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
           #title h1 {background: #0d0e0e; color: #4d4d4d; display: inline;}
           #title h1 strong {background: #0d0e0e; color: #fff;}
       
