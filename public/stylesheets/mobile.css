@@ -19,15 +19,17 @@ p, li {
 h2 {
   color: #555;
   font-size: 1.4em;
-  margin: 0.5em 0 -0.8em 0;
   text-transform: uppercase;
 }
 
 /* Generic group styles */
-ul {
+.group h2 {
+    margin: 0.5em 0 -0.8em 0;
+}
+.group ul {
   margin: 1.8em 0;
 }
-li a.item {
+.group li a.item {
   display: block;
   width: auto;
   padding: 0.5em 0.6em;
@@ -37,12 +39,12 @@ li a.item {
   border: 1px solid #BB0E00;
   border-top: 1px solid #9B0E00;
 }
-li:first-of-type a.item {
+.group li:first-of-type a.item {
   border-top: 1px solid #BB0E00;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
 }
-li:last-of-type a.item {
+.group li:last-of-type a.item {
   -webkit-border-bottom-left-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
 }
