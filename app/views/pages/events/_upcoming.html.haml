@@ -1,8 +1,5 @@
 = render :partial => "shared/event_title", :locals => {:event => event}
 %a.details{ :href => event_path(event) } Details
-  
-.column
-  = event.hype
 
 = render :partial => "shared/event_registration_column", :locals => {:event => event}
 
@@ -16,4 +13,3 @@
       %li
         %a{:href => "http://some.com/", :title => "Webjam 8 is proudly sponsored by Major Sponsor II"} 
           %img{:alt => "Major Sponsor II", :src => "/images/sponsors/2vouch.jpg"}
-

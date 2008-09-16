@@ -10,11 +10,10 @@
   
 .item
   = render :partial => "shared/event_title", :locals => {:event => @event}
-    
-  .column
-    = @event.hype
 
   = render :partial => "shared/event_registration_column", :locals => {:event => @event}
+  
+  = @event.hype
  
 .item#sponsors
   .item-details
