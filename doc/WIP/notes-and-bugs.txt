@@ -33,6 +33,7 @@ tshirt linkage
 remove static presenter/attendee text on past events
 change usernames so that they cannot contain spaces or capitals
 generate Google sitemap
+create proper span/anchor switching for primary-nav
 
 
 Last: cross-browser testing
@@ -40,11 +41,8 @@ Last: cross-browser testing
 
 Lisa's feedback:      (whenever this list gets to zero - show Lisa again!)
 suggests single line only for archive - ?? check on this now we've fixed newline bug
-show countdown of attendee spots left available
-create active state for master nav
 default mugshot looks like an alien...
 promote sponsorship opportunities more
-show current count more prominently on events, home and when logged out
 add info about what owning an account entails - contact from WJ, benefits etc
 why doesn't it remember URL for login?
 Send unlogged in users to custom login/registration page with explanation about why they need to have an account to attend etc
