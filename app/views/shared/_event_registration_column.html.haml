@@ -1,4 +1,14 @@
 .column
+  .numbers
+    - if event.full?
+      %p.full
+        %strong Sold out!
+    - else
+      %p
+        %strong= event.rsvps_left
+        %span spots left
+
+.column
   %dl.registration
     / RSVPs
     - if logged_in? && current_user.rsvp_for(event)

@@ -25,7 +25,6 @@ add summary of things for peeps to do to upcoming event page
 integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
 custom error page
-fix ui profile form flashes
 what you're in for" should show featured images from across all webjams
 add "directions" to "address" events
 remove hacky static address in rsvp email
@@ -40,12 +39,10 @@ Last: cross-browser testing
 
 
 Lisa's feedback:      (whenever this list gets to zero - show Lisa again!)
-suggests single line only for archive
+suggests single line only for archive - ?? check on this now we've fixed newline bug
 show countdown of attendee spots left available
-use active states on tabs
 create active state for master nav
 default mugshot looks like an alien...
-improve profile form submission flash
 promote sponsorship opportunities more
 show current count more prominently on events, home and when logged out
 add info about what owning an account entails - contact from WJ, benefits etc

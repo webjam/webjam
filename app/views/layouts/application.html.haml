@@ -23,7 +23,7 @@
       -#    %a{:href => '/people/'} People
       %ul#account-tools
         - if current_user
-          %li
+          %li.profile
             %a{:href => user_path(current_user)} Your Profile
           %li.logout
             = button_to 'Logout', session_path, :method => :delete 
