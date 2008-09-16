@@ -77,6 +77,9 @@ TOC
 		p.note {background: #0d0e0e; color: #666; font: italic 100 1.25em "Trebuchet MS", Arial, Helvetica, sans-serif;}
 		  p.note a:link,
 		  p.note a:visited {background: #0d0e0e; color: #aaa;}
+		  
+		
+    #content p.notice {background: #232323; color: #fff; font-size: 1.5em; padding: 0.2em 0.4em 0.2em 0.4em;}
 		
 		/* --- =Avatars --- */      
     .user-avatar {position: relative;}
@@ -113,7 +116,7 @@ TOC
 	#content .clear-off {clear: both; margin: 3em 0 0.5em 0;}
 	
 	div.pagination {clear: both; margin: 0 0 1em 0; text-align: center;}
-
+	
 
 /* - =Structure - */
 body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat center center; color: #fff; font: 62.5%/1.3 "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0; padding: 0;}
@@ -426,6 +429,12 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			
 			  body.profile h2,
 			  body.profile h3 {clear: both;}
+			  
+			  body.profile #maincontent ul.identities {margin: 2em 0 0 0;}
+			   body.profile #maincontent ul.identities li {clear: both; float: left; margin: -0.5em 0 0 1em; width: 32em;}
+			      body.profile ul.identities li a {float: left; position: relative; top: -1em; width auto}
+			      body.profile ul.identities li form.button-to {clear: none; float: right;}
+			        body.profile ul.identities li form.button-to input {position: relative; top: -1em; width: auto;}
 			  
 			#profile-menu {float: right; width: 10em;}
 				#profile-menu li {display: inline; list-style-type: none;}

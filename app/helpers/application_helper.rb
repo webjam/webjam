@@ -16,7 +16,7 @@ module ApplicationHelper
   end
   
   def flash_notice
-    %(<div class="notice">#{h flash[:notice]}</div>) if flash[:notice]
+    %(<p class="notice">#{h flash[:notice]}</p>) if flash[:notice]
   end
   def hidden_return_to(anchor=nil)
     hidden_field_tag 'return_to', @request.request_uri + (anchor ? "##{anchor}" : "")
