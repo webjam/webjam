@@ -39,11 +39,11 @@
   .item
     %h2 OpenID URLs
     %p For redundancy and convenience, we're set up so you can add as many OpenIDs as you want. We don't care which one you use, but you need to have at least one here.
-    %ul
+    %ul.identities
       - for identity_url in @identity_urls
         %li
           = link_to h(identity_url.url), identity_url.url
-          = button_to('(DELETE ICON)', identity_url_path(identity_url), :method => 'delete') unless @identity_urls.length == 1
+          = button_to('Remove', identity_url_path(identity_url), :method => 'delete') unless @identity_urls.length == 1
 
     - form_tag create_identity_urls_path do
       %fieldset

@@ -26,7 +26,7 @@ integrate flat presentation page
 Add Viddler player mojo (preferably API shizzle)
 custom error page
 fix ui profile form flashes
-what you're in for" should should featured images from across all webjams
+what you're in for" should show featured images from across all webjams
 add "directions" to "address" events
 remove hacky static address in rsvp email
 make author list for blog posts only consist of admins
@@ -34,7 +34,6 @@ tshirt linkage
 remove static presenter/attendee text on past events
 change usernames so that they cannot contain spaces or capitals
 generate Google sitemap
-fix dumb delete styling for multiple OpenIDs
 
 
 Last: cross-browser testing

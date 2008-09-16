@@ -429,6 +429,12 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			  body.profile h2,
 			  body.profile h3 {clear: both;}
 			  
+			  body.profile #maincontent ul.identities {margin: 2em 0 0 0;}
+			   body.profile #maincontent ul.identities li {clear: both; float: left; margin: -0.5em 0 0 1em; width: 32em;}
+			      body.profile ul.identities li a {float: left; position: relative; top: -1em; width auto}
+			      body.profile ul.identities li form.button-to {clear: none; float: right;}
+			        body.profile ul.identities li form.button-to input {position: relative; top: -1em; width: auto;}
+			  
 			#profile-menu {float: right; width: 10em;}
 				#profile-menu li {display: inline; list-style-type: none;}
 					#profile-menu li a:link,
