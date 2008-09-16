@@ -32,6 +32,9 @@
         = f.text_field :website_url
     %fieldset
       = submit_tag 'Save profile details', :class => "submit"
+  
+  %p
+    %a{:href => user_path(current_user)} View your profile
 
 .column
   .item

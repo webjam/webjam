@@ -24,7 +24,7 @@
       %ul#account-tools
         - if current_user
           %li
-            %a{ :href => user_path(current_user) } Your Profile
+            %a{:href => user_path(current_user)} Your Profile
           %li.logout
             = button_to 'Logout', session_path, :method => :delete 
         - else 
