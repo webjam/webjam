@@ -30,8 +30,9 @@
       ul#proposals li em {padding: 0 0 0 2em;}
       
   ul#rsvps {}
-    ul#rsvps li {}
+    ul#rsvps li {clear: both;}
       ul#rsvps li strong,
       ul#rsvps li span,
-      ul#rsvps li em {display: block; float: left; margin: 0 1em 0 0; width: 9em;}
-      ul#rsvps li em {width: auto;}
+      ul#rsvps li em {display: block; float: left; margin: 0 1em 0 0; width: auto;}
+      ul#rsvps li strong {width: 7em;}
+      ul#rsvps li span {width: 12em;}
