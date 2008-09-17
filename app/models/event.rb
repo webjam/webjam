@@ -6,6 +6,7 @@ class Event < ActiveRecord::Base
   has_many :flickr_photos
   has_many :tweets
   has_many :posts
+  has_many :viddler_videos
 
   validates_presence_of :name, :tag, :held_at, :timezone, :location, :hype, :proposals_close_at, :map_iframe_url, :map_url
   

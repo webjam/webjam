@@ -7,11 +7,17 @@ class FlickrPhoto < ActiveRecord::Base
   has_one :event
   
   named_scope :featured, :conditions => {:featured => true}
-  named_scope :latest_5, lambda { {:order => "created_at DESC", :limit => 5} }
+  named_scope :latest, lambda {|n| {:order => "created_at DESC", :limit => n} }
+  named_scope :latest_5, {:order => "created_at DESC", :limit => 5}
 
   ## Build a URL to the image
-  def img_url
-    "http://farm#{farm}.static.flickr.com/#{server}/#{flickrid}_#{secret}.jpg"
+  def img_url(size="o")
+    size_path = size == "l" ? "" : "_#{size}"
+    "http://farm#{farm}.static.flickr.com/#{server}/#{flickrid}_#{secret}#{size_path}.jpg"
+  end
+  
+  def <=>(other)
+    self.created_at <=> other.created_at
   end
   
   # Loads new FlickrPhoto's for the given event

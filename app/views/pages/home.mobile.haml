@@ -11,7 +11,7 @@
   %ul.group
     - for event in @upcoming_events
       %li
-        %a.item{:href => formatted_event_path(event, :mobile)}
+        %a.button.item{:href => formatted_event_path(event, :mobile)}
           = "#{h event.name}, #{h event.location}"
           %span.in
             in
@@ -21,7 +21,7 @@
   %h2 Last Event
   %ul.group
     %li
-      %a.item{:href => formatted_event_path(@last_event, :mobile)}
+      %a.button.item{:href => formatted_event_path(@last_event, :mobile)}
         = "#{h @last_event.name}, #{h @last_event.location}"
         / %span.in
         /   = pluralize(Time.now.to_date - @last_event.held_at.to_date, "day")
@@ -30,14 +30,14 @@
 %h2 Latest News
 %ul.group.latest-news
   %li
-    %a.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}
+    %a.button.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}
       =h @last_post.title
       %span.comment-count= pluralize(@last_post.comments.length, "comment")
 
 %ul.group
   %li
-    %a.item{:href => formatted_about_path(:mobile)} About
+    %a.button.item{:href => formatted_about_path(:mobile)} About
   %li
-    %a.item{:href => formatted_past_events_path(:mobile)} Past Events
+    %a.button.item{:href => formatted_past_events_path(:mobile)} Past Events
   %li
-    %a.item{:href => formatted_posts_path(:mobile)} News Archive
+    %a.button.item{:href => formatted_posts_path(:mobile)} News Archive

@@ -10,37 +10,50 @@ body {
   -webkit-text-size-adjust: none;
 }
 
-a {
-  color: #BB0E00;
-}
-p, li, dt, dd {
+/* Main content stylings */
+.content p, dt, dd {
   font-size: 1.6em;
 }
-h2 {
-  color: #555;
-  font-size: 1.4em;
-  text-transform: uppercase;
-}
-
-/* Generic content stylings */
 .content p {
   margin: 1em 0;
 }
-h2 {
-    margin: 0.5em 0 -0.8em 0;
+.content ul {
+  margin: 1.8em 0;
+}
+.content a {
+  color: #BB0E00;
+}
+
+.content h2 {
+  color: #666;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  margin: 0.5em 0 -0.8em 0;
+  text-shadow: 1px 1px 2px black;
+}
+
+.content .more {
+  font-size: 1.2em;
+  text-align: right;
+  margin-bottom: 1em;
 }
 
 /* Generic group styles */
-ul.group {
-  margin: 1.8em 0;
-}
-ul.group li a.item {
-  display: block;
-  width: auto;
-  padding: 0.5em 0.6em;
+a.button {
   background-color: #BB0E00;
   color: #fdd;
+  padding: 0.5em 0.6em;
+  text-shadow: 1px 1px 2px black;
+  -webkit-border-radius: 5px;
   text-decoration: none;
+}
+
+ul.group li a.item {
+  font-size: 1.6em;
+  display: block;
+  width: auto;
+  text-decoration: none;
+  -webkit-border-radius: 0px;
   border: 1px solid #BB0E00;
   border-top: 1px solid #9B0E00;
 }
@@ -85,39 +98,7 @@ ul.group li:last-of-type a.item {
   text-transform: uppercase;
 }
 
-/* Footer */
-#footer {
-  text-align: right;
-  padding-bottom: 10px;
-}
-a.regular-site {
-  font-size: 0.75em; /* 12px */
-  background-color: #333;
-  color: #888;
-  -webkit-border-radius: 5px;
-  text-decoration: none;
-  padding: 0.5em 0.75em; 
-  height: 100%;
-}
-
-/* Upcoming */
-li a.item span.in, li a.item span.comment-count {
-  float: right;
-  font-weight: normal;
-  color: #f99;
-}
-
-/* Event page */
-p.where {
-  padding-right: 50px;
-}
-p.where a.map {
-  float: right;
-  margin-top: -2.5em;
-  margin-right: -40px;
-}
-
-/* Home header */
+/* Home page */
 #home-header {
   margin: 0 -10px 0 -10px;
   text-align: center;
@@ -129,4 +110,95 @@ p.where a.map {
 }
 #home-header h1 span {
   display: none;
+}
+li a.item span.in, li a.item span.comment-count {
+  float: right;
+  font-weight: normal;
+  color: #f99;
+}
+
+/* Event page */
+p.where {
+  padding-right: 50px;
+  position: relative;
+}
+p.where a.map {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.photos {
+  margin: 1.8em 0;
+}
+.photos .photo img {
+  width: 100%;
+}
+.photos .photo {
+  position: relative;
+}
+.photos .photo a {
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  text-align: right;
+  opacity: 0.7;
+} 
+ul.tweets li a {
+  display: block;
+  color: #bbb;
+  background-color: #333;
+  padding: 5px 8px;
+  -webkit-border-radius: 5px;
+  font-size: 1.4em;
+  margin: 10px 0;
+  font-weight: normal;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+ul.tweets li a .user {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Footer */
+#footer {
+  text-align: right;
+  padding-bottom: 10px;
+}
+a.regular-site {
+  font-size: 1.2em;
+  background-color: #333;
+  color: #888;
+  -webkit-border-radius: 5px;
+  text-decoration: none;
+  padding: 0.5em 0.75em; 
+  height: 100%;
+  text-shadow: 2px 1px 1px black;
+}
+
+/* Photo navigator */
+.photoNavigator {
+  position: relative;
+}
+.photoNavigator .loadingOverlay {
+  height: 100%;
+  width: 100%;
+  opacity: 0.5em;
+  background-color: #000;
+}
+.photoNavigator .control {
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #f00;
+}
+.photoNavigator .next {
+  top: 45%;
+  right: 10px;
+}
+.photoNavigator .previous {
+  top: 45%;
+  left: 10px;
 }

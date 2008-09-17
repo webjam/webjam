@@ -1,38 +1,74 @@
 - @page_title =h @event.name
 - @regular_version_path = event_path(@event)
 
-.content
-  = @event.hype
+- content_for :javascript_inits do
+  = javascript_tag mobilePhotoNavigatorInitJavascript(".photos", @photos, '/')
 
-  %h2 When?
-  %p.when
-    = @event.local_held_at.to_date.to_s(:long_ordinal) + ", "
-    = "doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
+= @event.hype
 
-  %h2 Where?
-  %p.where
-    = @event.location
-    = @event.address
-    %a.map{:href => @event.map_url}= image_tag "icons/map.gif", :size => "40x40", :alt => "Map"
+%h2 When?
+%p.when
+  = @event.local_held_at.to_date.to_s(:long_ordinal) + ", "
+  = "doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
 
-  %h2 Get Involved!
-  %ul.group
-    %li
-      %a.item{:href => "#"} Register to attend
-    %li
-      %a.item{:href => "#"} Submit a proposal
+%h2 Where?
+%p.where
+  = @event.location
+  = @event.address
+  %a.map{:href => @event.map_url}= image_tag "icons/map.gif", :size => "40x40", :alt => "Map"
 
-- if @previous_event
-  %h2 Previous Event
-  %ul.group
-    %li
-      %a.item{:href => formatted_event_path(@previous_event, :mobile)}=h @previous_event.name
-      
+%h2 Get Involved!
+%ul.group
+  %li
+    %a.button.item{:href => "#"} Register to attend
+  %li
+    %a.button.item{:href => "#"} Submit a proposal
+
+- if @latest_photo
+  %h2
+    - if @photos_from_previous_event
+      = "Photos from #{@previous_event.tag}"
+    - else
+      = "Photos tagged #{@event.tag}"
+  .photos
+    .photo
+      %img{:src => @latest_photo.img_url("m"), :alt => @latest_photo.title}
+      %a.button{:href => @latest_photo.url}
+        =h @latest_photo.title
+        by
+        =h @latest_photo.realname
+        
+- unless @latest_tweets.empty?
+  %h2 Tweets
+  %ul.tweets
+    - for tweet in @latest_tweets
+      %li
+        %a{:href => tweet.url}
+          %span.user{:href => tweet.user_url}= tweet.username
+          %span.body= tweet.body
+  - if @more_tweets
+    .more
+      %a.button{:href => ""} More tweets&hellip;
+  
+- unless @videos.empty?
+  %h2 Videos
+  %ul.videos
+    - for video in @videos
+      %li
+        %a{:href => ""}
+          %img{:src => ""}
+
 - unless @event.posts.empty?
   %h2 Related news
   %ul.group
     - for post in @event.posts
       %li
-        %a.item{:href => formatted_post_path(post.year, post.permalink, :mobile)}
+        %a.button.item{:href => formatted_post_path(post.year, post.permalink, :mobile)}
           =h post.title
           %span.comment-count= pluralize(post.comments.length, "comment")
+
+- if @previous_event
+  %h2 Previous Event
+  %ul.group
+    %li
+      %a.button.item{:href => formatted_event_path(@previous_event, :mobile)}=h @previous_event.name
