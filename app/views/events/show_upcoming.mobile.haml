@@ -1,18 +1,38 @@
 - @page_title =h @event.name
 - @regular_version_path = event_path(@event)
 
-%p
-  \~ 18 presenters,
-  = pluralize(@event.rsvps.count, "attendee") + ","
-  and a whole lot of awesome geekery.
+.content
+  = @event.hype
 
-= @event.hype
+  %h2 When?
+  %p.when
+    = @event.local_held_at.to_date.to_s(:long_ordinal) + ", "
+    = "doors open #{@event.local_held_at.to_datetime.to_s(:time_12hr).downcase}"
 
-%h2 Related news
+  %h2 Where?
+  %p.where
+    = @event.location
+    = @event.address
+    %a.map{:href => @event.map_url}= image_tag "icons/map.gif", :size => "40x40", :alt => "Map"
 
+  %h2 Get Involved!
+  %ul.group
+    %li
+      %a.item{:href => "#"} Register to attend
+    %li
+      %a.item{:href => "#"} Submit a proposal
+
+- if @previous_event
+  %h2 Previous Event
+  %ul.group
+    %li
+      %a.item{:href => formatted_event_path(@previous_event, :mobile)}=h @previous_event.name
+      
 - unless @event.posts.empty?
-  .item.last#related-posts
-    %ul
-      - for post in @event.posts
-        %li
-          %a{:href => formatted_post_path(post.year, post.permalink, :mobile)}= post.title
+  %h2 Related news
+  %ul.group
+    - for post in @event.posts
+      %li
+        %a.item{:href => formatted_post_path(post.year, post.permalink, :mobile)}
+          =h post.title
+          %span.comment-count= pluralize(post.comments.length, "comment")

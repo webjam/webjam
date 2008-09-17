@@ -20,9 +20,17 @@ Story: Viewing the home page
     Then I am not redirected to the mobile page
     And I see the page
 
-  Scenario: viewing the mobile version
+  Scenario: viewing the mobile version with upcoming events
     Given I am not logged in
       And an upcoming event exists
+      And a post exists
+    When I view the mobile version of the home page
+    Then I see the page
+
+  Scenario: viewing the mobile version without an upcoming event
+    Given I am not logged in
+      And no upcoming event exists
+      And a past event exists
       And a post exists
     When I view the mobile version of the home page
     Then I see the page

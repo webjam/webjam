@@ -53,8 +53,12 @@ class Event < ActiveRecord::Base
     jams.to_a.sum(&:number_of_presenters)
   end
   
+  def previous
+    Event.find(:first, :conditions => ["held_at < ?", held_at], :order => "held_at DESC")
+  end
+  
   def previous_event
-    if event = Event.find(:first, :conditions => ["held_at < ?", held_at], :order => "held_at DESC")
+    if event = previous
       return event
     else
       return self

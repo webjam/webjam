@@ -6,9 +6,9 @@
   %h1
     %span Webjam
 
-.group
+- unless @upcoming_events.empty?
   %h2 Upcoming Events
-  %ul
+  %ul.group
     - for event in @upcoming_events
       %li
         %a.item{:href => formatted_event_path(event, :mobile)}
@@ -17,19 +17,27 @@
             in
             = pluralize(event.held_at.to_date - Time.now.to_date, "day")
 
-.group
-  %h2 Latest News
-  %ul.latest-news
+- if @last_event
+  %h2 Last Event
+  %ul.group
     %li
-      %a.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}
-        =h @last_post.title
-        %span.comment-count= pluralize(@last_post.comments.length, "comment")
+      %a.item{:href => formatted_event_path(@last_event, :mobile)}
+        = "#{h @last_event.name}, #{h @last_event.location}"
+        / %span.in
+        /   = pluralize(Time.now.to_date - @last_event.held_at.to_date, "day")
+        /   ago
 
-.group
-  %ul
-    %li
-      %a.item{:href => formatted_about_path(:mobile)} About
-    %li
-      %a.item{:href => formatted_past_events_path(:mobile)} Past Events
-    %li
-      %a.item{:href => formatted_posts_path(:mobile)} News Archive
+%h2 Latest News
+%ul.group.latest-news
+  %li
+    %a.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}
+      =h @last_post.title
+      %span.comment-count= pluralize(@last_post.comments.length, "comment")
+
+%ul.group
+  %li
+    %a.item{:href => formatted_about_path(:mobile)} About
+  %li
+    %a.item{:href => formatted_past_events_path(:mobile)} Past Events
+  %li
+    %a.item{:href => formatted_posts_path(:mobile)} News Archive

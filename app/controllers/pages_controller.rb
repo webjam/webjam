@@ -11,6 +11,9 @@ class PagesController < ApplicationController
       end
       wants.mobile do
         @upcoming_events = Event.published.upcoming(:order => "held_at DESC")
+        if @upcoming_events.empty?
+          @last_event = Event.published.past.first(:order => "held_at DESC")
+        end
         @last_post = Post.published.first(:order => "published_at DESC")
       end
     end
