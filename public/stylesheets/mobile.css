@@ -189,20 +189,26 @@ a.regular-site {
 }
 .photoNavigator .photo {
   z-index: 1;
+  min-height: 180px;
 }
 .photoNavigator .control {
   z-index: 2;
   display: block;
+  width: 30%;
+  height: 100%;
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: #f00;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.photoNavigator .photo a {
+  z-index: 3;
 }
 .photoNavigator .next {
-  top: 40%;
-  right: 10px;
+  background-image: url(images/bg-navigator-next-control.png);
+  right: 0;
 }
 .photoNavigator .previous {
-  top: 40%;
-  left: 10px;
+  background-image: url(images/bg-navigator-prev-control.png);
+  left: 0;
 }
