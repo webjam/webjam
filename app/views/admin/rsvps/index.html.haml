@@ -9,6 +9,7 @@
       %strong
         %a{:href => user_path(rsvp.user)}
           =h rsvp.user.nick_name
-      = "(#{h rsvp.user.full_name})"
+      %span
+        = "(#{h rsvp.user.full_name})"
       %em
         %a{:href => "mailto:#{rsvp.user.email}"}= rsvp.user.email
