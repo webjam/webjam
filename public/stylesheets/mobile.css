@@ -187,18 +187,22 @@ a.regular-site {
   opacity: 0.5em;
   background-color: #000;
 }
+.photoNavigator .photo {
+  z-index: 1;
+}
 .photoNavigator .control {
+  z-index: 2;
   display: block;
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   background-color: #f00;
 }
 .photoNavigator .next {
-  top: 45%;
+  top: 40%;
   right: 10px;
 }
 .photoNavigator .previous {
-  top: 45%;
+  top: 40%;
   left: 10px;
 }
