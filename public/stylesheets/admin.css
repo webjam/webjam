@@ -23,3 +23,9 @@
   #content h1 {clear: both; margin: 1.4em 0 0.5em 0;}
   
   #content input.submit {margin: 0.4em 0 0 0;}
+  
+  
+  ul#proposals {}
+    ul#proposals li {}
+      ul#proposals li em {padding: 0 0 0 2em;}
+      

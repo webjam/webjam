@@ -67,6 +67,7 @@ TOC
       #maincontent ol li {list-style-position: outside; list-style-type: decimal; margin: 0 0 0.5em 1.4em;}  
     
     #maincontent strong {font-weight: 700;}
+    #maincontent em {font-style: italic;}
     
     #content p {font-size: 1.143em; line-height: 1.5; margin: 0 0 1em 0;}
 			

@@ -10,7 +10,7 @@
 %h1
   = @page_title
   
-%ul
+%ul#proposals
   %li
     %strong
       Title:
@@ -24,7 +24,11 @@
   %li
     %strong
       Proposed by:
-    =@proposal.user.full_name
+    %a{:href => user_path(@proposal.user)}=@proposal.user.full_name
+    %em
+      %a{:href => "mailto:#{@proposal.user.email}"}= @proposal.user.email
+      
+    
     
   
     
