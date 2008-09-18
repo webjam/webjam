@@ -57,7 +57,7 @@ promote sponsorship opportunities more
 add info about what owning an account entails - contact from WJ, benefits etc
 why doesn't it remember URL for login?
 Send unlogged in users to custom login/registration page with explanation about why they need to have an account to attend etc
-
+the display of comments , author, comment number are upside down and could be made more readable
 
 BUGS:
 
