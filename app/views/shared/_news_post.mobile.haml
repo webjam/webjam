@@ -1,0 +1,3 @@
+%a.button.item{:href => formatted_post_path(post.year, post.permalink, :mobile)}
+  =h post.title
+  %span.comment-count= pluralize(post.comments.length, "comment")

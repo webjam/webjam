@@ -17,13 +17,15 @@ class EventsController < ApplicationController
             @latest_photo = @photos.first
           end
           @total_tweets = @event.tweets.count
-          @latest_tweets = @event.tweets.latest(8).all
-          @more_tweets = @latest_tweets.length > 5
-          # If theres 8 or more tweets show the last 5 and a more link
-          @latest_tweets = @latest_tweets[0..4] if @more_tweets
-          @videos = @event.viddler_videos
+          @latest_tweets = @event.tweets.latest(5).all
+          @more_tweets = @event.tweets.count > @total_tweets
           render :action => "show_upcoming"
         else
+          @photos = @event.flickr_photos.latest.paginate :page => 1, :order => "created_at DESC"
+          @latest_photo = @photos.first
+          @total_tweets = @event.tweets.count
+          @latest_tweets = @event.tweets.latest(5).all
+          @more_tweets = @event.tweets.count > @total_tweets
           render :action => "show"
         end
       end

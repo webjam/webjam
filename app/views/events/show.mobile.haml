@@ -1,9 +1,34 @@
-- @page_title =h @event.name
+- @page_title = "#{h @event.name} #{h @event.location}"
 - @regular_version_path = event_path(@event)
 
-%p
-  \~ 18 presenters,
-  = pluralize(@event.rsvps.count, "attendee") + ","
-  and a whole lot of awesome geekery.
+- content_for :javascript_inits do
+  = javascript_tag mobilePhotoNavigatorInitJavascript(".photos", @photos, '/')
 
-= @event.hype
+.event-info
+  .hype= @event.hype
+
+- if @latest_photo
+  %h2
+    = "Photos tagged #{@event.tag}"
+  .photos
+    .photo
+      = render :partial => "shared/event_photo", :locals => {:photo => @latest_photo}
+    .more
+      %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos&hellip;
+        
+- unless @latest_tweets.empty?
+  %h2 Tweets
+  %ul.tweets
+    - for tweet in @latest_tweets
+      %li
+        = render :partial => 'shared/tweet', :locals => {:tweet => tweet}
+  - if @more_tweets
+    .more
+      %a.button{:href => formatted_event_tweets_path(@event, :mobile)} More tweets&hellip;
+  
+- unless @event.posts.empty?
+  %h2 News
+  %ul.group
+    - for post in @event.posts
+      %li
+        = render :partial => "shared/news_post", :locals => {:post => post}

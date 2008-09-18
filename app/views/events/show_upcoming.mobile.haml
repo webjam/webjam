@@ -43,15 +43,10 @@
       = "Photos tagged #{@event.tag}"
   .photos
     .photo
-      %img{:src => @latest_photo.img_url("m"), :alt => @latest_photo.title, :class => "photo"}/
-      %a.button{:href => @latest_photo.url}
-        =h @latest_photo.title
-        by
-        =h @latest_photo.realname
+      = render :partial => "shared/event_photo", :locals => {:photo => @latest_photo}
   - unless @photos_from_previous_event
     .more
       %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos&hellip;
-        
         
 - unless @latest_tweets.empty?
   %h2 Tweets
@@ -63,22 +58,12 @@
     .more
       %a.button{:href => formatted_event_tweets_path(@event, :mobile)} More tweets&hellip;
   
-- unless @videos.empty?
-  %h2 Videos
-  %ul.videos
-    - for video in @videos
-      %li
-        %a{:href => ""}
-          %img{:src => ""}
-
 - unless @event.posts.empty?
   %h2 News
   %ul.group
     - for post in @event.posts
       %li
-        %a.button.item{:href => formatted_post_path(post.year, post.permalink, :mobile)}
-          =h post.title
-          %span.comment-count= pluralize(post.comments.length, "comment")
+        = render :partial => "shared/news_post", :locals => {:post => post}
 
 - if @previous_event
   %h2 Previous Event

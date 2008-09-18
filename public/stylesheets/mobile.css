@@ -264,6 +264,7 @@ ul.photo-list li a span {
   display: block;
 }
 ul.photo-list li a .title {
+  padding-right: 30px;
   font-weight: bold;
 }
 ul.photo-list li a .timestamp {
