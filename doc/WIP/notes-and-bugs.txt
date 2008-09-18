@@ -83,6 +83,10 @@ Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
 
 Confirm our website identity with Yahoo! ?? (for better registration)
 Merge registration and login into one process.
+Add parsing for @username string to all user content (http://lachstock.com.au/inc/js/status.js has good regex)
+Comments feed
+
+
 
 
 DYLAN'S TOTO:
