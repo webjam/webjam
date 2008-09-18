@@ -43,10 +43,10 @@
     %p.title There are no comments yet!
 
   - @post.comments.each_with_index do |comment, index|
-    .hentry.comment{:id => "comment-#{comment.id}"}
+    .hentry.comment{:id => "comment-#{index + 1}"}
       .entry-content= sanitize simple_format(comment.body), :tags => %w(strong em a code pre blockquote span q abbr acronym br img ul ol li del), :attributes => %w(href class cite rel rev title src alt)
       %p.comment-details
-        %a.permalink{ :href => "#comment-#{comment.id}"}= index + 1
+        %a.permalink{ :href => "#comment-#{index + 1}"}= index + 1
         = user_link_with_avatar(comment.user, "author")
         wrote
         = time_ago_in_words comment.created_at
