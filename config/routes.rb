@@ -26,6 +26,10 @@ ActionController::Routing::Routes.draw do |map|
       event.formatted_event ":id.:format"
     end
     events.formatted_past_events "past-events.:format", :action => "past_events"
+    events.with_options(:requirements => {:event_id => EVENT_TAG}) do |events|
+      events.formatted_event_tweets ":event_id/tweets.:format", :controller => "tweets", :action => "index", :conditions => {:method => :get}
+      events.formatted_event_photos ":event_id/photos.:format", :controller => "flickr_photos", :action => "index", :conditions => {:method => :get}
+    end
   end
 
   map.with_options(:controller => "rsvps", :requirements => {:event_id => EVENT_TAG}, :path_prefix => ":event_id", :name_prefix => "event_") do |rsvps|

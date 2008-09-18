@@ -1,0 +1,32 @@
+- @page_title = "#{h @event.name} Photos"
+
+%p.pagination-info= page_entries_info @photos
+
+%ul.photo-list
+  - for photo in @photos
+    %li{:id => "photo-#{photo.flickrid}"}
+      %a{:href => photo.url}
+        %img{:src => photo.img_url("s"), :alt => h(photo.title)}
+        %span.details
+          %span.title=h photo.title
+          %span.by
+            by
+            =h photo.realname
+        %span.timestamp
+          =h photo.posted_at.in_time_zone(@event.timezone).to_s(:long)
+
+= will_paginate @photos, :page_links => false
+
+%ul.group
+  %li
+    %a.item.button{:href => formatted_event_path(@event)}
+      Back to
+      =h @event.name
+  %li
+    %a.item.button{:href => "http://m.flickr.com/search/?m=tags&q=#{@event.tag}"}
+      = "#{@event.tag}"
+      tag on m.flickr.com
+  %li
+    %a.item.button{:href => "http://www.flickr.com/photos/tags/#{@event.tag}"}
+      = "#{@event.tag}"
+      tag on flickr.com

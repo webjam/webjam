@@ -6,7 +6,7 @@ body {
   background-color: #222;
   color: #fff;
   font-weight: bold;
-  padding: 10px;
+  padding: 15px;
   -webkit-text-size-adjust: none;
 }
 
@@ -29,7 +29,6 @@ body {
   font-size: 1.4em;
   text-transform: uppercase;
   margin: 0.5em 0 -0.8em 0;
-  text-shadow: 1px 1px 2px black;
 }
 
 .content .more {
@@ -40,10 +39,12 @@ body {
 
 /* Generic group styles */
 a.button {
+  border: 1px solid;
+  border-color: #fB3E30 #6B0E00 #6B0E00 #fB3E30;
   background-color: #BB0E00;
   color: #fdd;
   padding: 0.5em 0.6em;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: #3B0E00 1px 1px 2px;
   -webkit-border-radius: 5px;
   text-decoration: none;
 }
@@ -54,11 +55,12 @@ ul.group li a.item {
   width: auto;
   text-decoration: none;
   -webkit-border-radius: 0px;
-  border: 1px solid #BB0E00;
-  border-top: 1px solid #9B0E00;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #FB0E00 #6B0E00 #6B0E00 #FB0E00;
+  text-shadow: #4B0E00 1px 1px 2px;
 }
 ul.group li:first-of-type a.item {
-  border-top: 1px solid #BB0E00;
   -webkit-border-top-left-radius: 5px;
   -webkit-border-top-right-radius: 5px;
 }
@@ -70,32 +72,38 @@ ul.group li:last-of-type a.item {
 /* Header */
 #header {
   position: relative;
-  margin: -10px -10px 0 -10px;
+  margin: -15px -15px 0 -15px;
   text-align: center;
-  background-color: #BB0E00;
-  color: #611;
-  height: 33px;
+  background: transparent url(../images/mobile-webjam-logo-small.png) no-repeat 15px left;
+  height: 51px;
 }
 #header .back {
-  display: inline;
-}
-#header .back {
-  font-size: 1.4em;
-  position: absolute;
-  top: 9px;
-  left: 10px;
+  display: none;
+  margin-left: 13px;
+  float: left;
 }
 #header .back a {
-  background-color: #8B0E00;
-  color: #fB6E60;
+  background-color: #333;
+  color: #999;
   text-decoration: none;
   padding: 2px 5px;
   text-transform: uppercase;
 }
 #header h1 {
-  padding-top: 8px;
+  color: #fff;
   font-size: 1.6em;
-  text-transform: uppercase;
+  text-align: right;
+  font-weight: normal;
+  padding: 23px 15px 0 0;
+  font-family: "American Typewriter";
+}
+#header a.home {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 120px;
+  height: 40px;
 }
 
 /* Home page */
@@ -118,10 +126,64 @@ li a.item span.in, li a.item span.comment-count {
 }
 
 /* Event page */
-p.where {
-  padding-right: 50px;
-  position: relative;
+.event-info {
+  padding-top: 10px;
 }
+
+dl.when, dl.where {
+  font-size: 0.75em;
+  color: #fff;
+}
+dl.when dt, dl.where dt {
+  height: 40px;
+  width: 40px;
+}
+dl.when dd, dl.where dd {
+  margin-left: 50px;
+  margin-top: -40px;
+  line-height: 1.5em;
+}
+dl.when dd {
+  margin-bottom: 30px;
+}
+dl.when dt {
+  text-align: center;
+  font-family: "American Typewriter";
+}
+dl.where dd {
+  margin-bottom: 20px;
+}
+dl.where dd a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+dl.when dt .month, dl.when dt .day {
+  display: block;
+  text-transform: uppercase;
+}
+dl.when dt .day .ord {
+  font-size: 8px;
+  padding-bottom: 6px;
+}
+dl.when dt .day {
+  border-color: #fff;
+  background-color: #fff;
+  color: #000;
+  line-height: 18px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+}
+dl.when dt .month {
+  margin-top: -1px;
+  border-color: #900;
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  background-color: #900;
+  color: #fff;
+  line-height: 22px;
+}
+
 p.where a.map {
   position: absolute;
   top: 0;
@@ -133,8 +195,15 @@ p.where a.map {
 .photos .photo img {
   width: 100%;
 }
+.photos .photo img.sizer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 .photos .photo {
   position: relative;
+  z-index: 2;
 }
 .photos .photo a {
   font-size: 1.2em;
@@ -142,11 +211,14 @@ p.where a.map {
   bottom: 10px;
   right: 10px;
   text-align: right;
-  opacity: 0.7;
+  opacity: 0.5;
+  background-color: #bbb;
+  color: #000;
+  text-shadow: none;
+  border: none;
 } 
-ul.tweets li a {
-  display: block;
-  color: #bbb;
+ul.tweets li, ul.photo-list li a {
+  color: #ccc;
   background-color: #333;
   padding: 5px 8px;
   -webkit-border-radius: 5px;
@@ -156,9 +228,78 @@ ul.tweets li a {
   line-height: 1.5em;
   text-decoration: none;
 }
-ul.tweets li a .user {
+ul.tweets li a {
   color: #fff;
+}
+ul.tweets li a.user {
   font-weight: bold;
+}
+ul.photo-list li a .timestamp, ul.tweets li .timestamp {
+  font-size: 0.75em;
+  display: block;
+  color: #666;
+  font-weight: bold;
+  text-align: right;
+}
+
+ul.photo-list li {
+  position: relative;
+}
+ul.photo-list li a {
+  background: #333 url(../images/mobile-webjam-photo-zoom.png) no-repeat top right;
+  min-height: 85px;
+  display: block;
+}
+ul.photo-list li img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+ul.photo-list li a .details {
+  position: absolute;
+  top: 10px;
+  left: 95px;
+}
+ul.photo-list li a span {
+  display: block;
+}
+ul.photo-list li a .title {
+  font-weight: bold;
+}
+ul.photo-list li a .timestamp {
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+} 
+
+/* Pagination */
+.pagination {
+  margin: 2em 0;
+}
+.pagination .disabled {
+  color: #666;
+  border: none;
+  background-color: #333;
+  text-shadow: #222 1px 1px 2px;
+}
+.pagination span, .pagination a {
+  font-size: 1.6em;
+  font-weight: bold;
+  border: 1px solid;
+  border-color: #fB3E30 #6B0E00 #6B0E00 #fB3E30;
+  background-color: #BB0E00;
+  color: #fdd;
+  padding: 0.4em 0.6em;
+  text-shadow: #3B0E00 1px 1px 2px;
+  -webkit-border-radius: 5px;
+  text-decoration: none;
+}
+p.pagination-info {
+  text-align: right;
+  font-size: 1.4em;
+  margin-bottom: -0.5em;
+  color: #666;
+  font-weight: normal;
 }
 
 /* Footer */
@@ -172,9 +313,9 @@ a.regular-site {
   color: #888;
   -webkit-border-radius: 5px;
   text-decoration: none;
+  margin-top: 1em;
   padding: 0.5em 0.75em; 
   height: 100%;
-  text-shadow: 2px 1px 1px black;
 }
 
 /* Photo navigator */

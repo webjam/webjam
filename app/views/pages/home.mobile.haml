@@ -14,8 +14,7 @@
         %a.button.item{:href => formatted_event_path(event, :mobile)}
           = "#{h event.name}, #{h event.location}"
           %span.in
-            in
-            = pluralize(event.held_at.to_date - Time.now.to_date, "day")
+            = Time.now.to_date.to_s(:short)
 
 - if @last_event
   %h2 Last Event

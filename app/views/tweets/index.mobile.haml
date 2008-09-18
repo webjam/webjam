@@ -1,0 +1,20 @@
+- @page_title = "#{h @event.name} Tweets"
+
+%p.pagination-info= page_entries_info @tweets
+
+%ul.tweets
+  - for tweet in @tweets
+    %li{:id => "tweet-#{tweet.twitter_identifier}"}
+      = render :partial => 'shared/tweet', :locals => {:tweet => tweet}
+
+= will_paginate @tweets, :page_links => false
+
+%ul.group
+  %li
+    %a.item.button{:href => formatted_event_path(@event)}
+      Back to
+      =h @event.name
+  %li
+    %a.item.button{:href => "http://search.twitter.com/search?q=%23#{@event.tag}"}
+      Twitter search for
+      = "##{@event.tag}"

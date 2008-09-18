@@ -11,8 +11,7 @@
   %body
     - unless @hide_header
       #header
-        .back
-          %a{:href => @back_path || formatted_home_path(:mobile)}= @back_title || "Home"
+        %a.home{:href => home_path} Home
         %h1= @page_title
     .content
       = yield :layout

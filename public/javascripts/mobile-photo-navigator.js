@@ -71,7 +71,7 @@ jQuery.fn.mobilePhotoNavigator = function(photoData, photos_url, current_page, t
     createElement: function() {
       var element = jQuery("<div class='photo'></div>");
 
-      jQuery("<img></img>").attr({
+      jQuery("<img class='photo' />").attr({
         src: "http://farm" + this.farm + ".static.flickr.com/" + this.server + "/" + this.flickrid + "_" + this.secret + "_m.jpg",
         alt: this.title
       }).appendTo(element);
