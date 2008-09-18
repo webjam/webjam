@@ -9,7 +9,7 @@ class EventsController < ApplicationController
       wants.mobile do
         if @event.upcoming?
           @previous_event = @event.previous
-          @photos = @event.flickr_photos.latest.paginate :page => 1, :order => "created_at DESC"
+          @photos = @event.flickr_photos.latest.all :order => "created_at DESC", :limit => 10
           @latest_photo = @photos.first
           if @photos.empty? && @previous_event
             @photos_from_previous_event = true
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
           @more_tweets = @event.tweets.count > @total_tweets
           render :action => "show_upcoming"
         else
-          @photos = @event.flickr_photos.latest.paginate :page => 1, :order => "created_at DESC"
+          @photos = @event.flickr_photos.latest.all :order => "created_at DESC", :limit => 10
           @latest_photo = @photos.first
           @total_tweets = @event.tweets.count
           @latest_tweets = @event.tweets.latest(5).all

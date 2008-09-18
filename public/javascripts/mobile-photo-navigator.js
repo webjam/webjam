@@ -2,7 +2,7 @@
   Called like so:
    $("ul.photos").mobilePhotoNavigator(<JSON>, "/", 1, 10);
 */
-jQuery.fn.mobilePhotoNavigator = function(photoData, photos_url, current_page, total_pages) {
+jQuery.fn.mobilePhotoNavigator = function(photoData) {
   if (!photoData || photoData.length == 0) return;
 
   var PhotoNavigator = function(element, photos) {

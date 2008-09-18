@@ -192,14 +192,11 @@ p.where a.map {
 .photos {
   margin: 1.8em 0;
 }
+.photos .photo {
+  min-height: 200px;
+}
 .photos .photo img {
   width: 100%;
-}
-.photos .photo img.sizer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
 }
 .photos .photo {
   position: relative;
