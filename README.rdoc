@@ -13,6 +13,4 @@ Things we'd love to see contributed:
  * More community stuff
  * General funk.
  
-To be added as a collaborator just ping Lachlan or Tim.
-
-
+To be added as a collaborator just ping Lachlan or Tim, or fork it and build random hotness!
