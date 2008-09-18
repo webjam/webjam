@@ -272,6 +272,10 @@ ul.photo-list li a .timestamp {
   right: 15px;
 } 
 
+#zoomed-photo {
+  margin: auto;
+}
+
 /* Pagination */
 .pagination {
   margin: 2em 0;
