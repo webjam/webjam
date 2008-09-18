@@ -48,8 +48,9 @@
         =h @latest_photo.title
         by
         =h @latest_photo.realname
-  .more
-    %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos&hellip;
+  - unless @photos_from_previous_event
+    .more
+      %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos&hellip;
         
         
 - unless @latest_tweets.empty?
