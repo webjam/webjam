@@ -1,0 +1,7 @@
+- @page_title = "News"
+
+- @posts_by_year_month.keys.sort.reverse.each do |(year, month)|
+  %h2= Time.utc(year, month, 1).strftime("%h %Y")
+  %ul.group
+    - for post in @posts_by_year_month[[year, month]].sort.reverse
+      %li= render :partial => "shared/news_post", :locals => {:post => post}

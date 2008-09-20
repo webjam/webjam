@@ -12,7 +12,15 @@ class PostsController < ApplicationController
   end
   
   def index
-    @posts = Post.published.find_all_for_archive
+    respond_to do |wants|
+      wants.html do
+        @posts = Post.published.find_all_for_archive
+      end
+      wants.mobile do
+        @posts = Post.published.all(:include => :comments)
+        @posts_by_year_month = @posts.group_by {|p| [p.published_at.year, p.published_at.month]}
+      end
+    end
   end
   
   def index_by_year

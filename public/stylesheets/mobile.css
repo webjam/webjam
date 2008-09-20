@@ -88,7 +88,8 @@ ul.group li a.event span.date, ul.group li a.post span.comment-count {
   font-weight: normal;
   color: #f99;
 }
-ul.group li a.post span.title {
+/* If theres a comment count then we need some margin-right */
+ul.group li a.post span.comment-count + ul.group li a.post span.title {
   margin-right: 6em;
 }
 
@@ -120,7 +121,6 @@ ul.group li a.post span.title {
   margin-left: 125px;
   margin-right: 15px;
   padding-top: 23px;
-  font-family: "American Typewriter";
 }
 #header a.home {
   opacity: 0;

@@ -7,8 +7,8 @@
       = @page_title || (raise "No page title")
     = stylesheet_link_tag 'reset', 'backjam'
     = javascript_include_tag 'jquery', 'webjam', 'autoshow', :cache => true
-
     = auto_discovery_link_tag :atom, APPLICATION_CONFIG.feed_url, :title => "Webjam"
+    = stylesheet_link_tag "backjam_mobile", :media => "only screen and (max-device-width: 480px)"
     = yield :head
 
   %body#webjam-com-au{:class => @body_class, :onload => @onload}
