@@ -2,6 +2,13 @@ class PostsController < ApplicationController
   def show
     @post = Post.published.find_by_permalink(params[:permalink])
     raise NotFound unless @post
+    respond_to do |wants|
+      wants.html
+      wants.mobile do
+        @previous_post = Post.published.before(@post).first(:include => :comments)
+        @next_post = Post.published.after(@post).first(:include => :comments)
+      end
+    end
   end
   
   def index

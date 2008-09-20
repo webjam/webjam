@@ -1,18 +1,13 @@
-- @page_title = "About Webjam"
-
-%p 18 presenters with 3 minutes each to show off their hot web work.
-%p You vote for the big winner and they get to take home cool booty.
-%p We have prizes awarded to random voters as well!
-%p Oh, and sometimes there are free drinks too.
+- @page_title = "Past events"
 
 - unless @past_events.empty?
-  %h2 Past Webjams
   %ul.group
     - for event in @past_events.sort.reverse
       %li= render :partial => "shared/event_item", :locals => {:event => event}
 
 - unless @upcoming_events.empty?
-  %h2 Upcoming Events
+  %h2 Upcoming events
   %ul.group
     - for event in @upcoming_events.sort.reverse
       %li= render :partial => "shared/event_item", :locals => {:event => event}
+

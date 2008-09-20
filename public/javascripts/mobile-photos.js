@@ -1,6 +1,8 @@
 $(document).ready(function() {
   $("ul.photo-list li a").click(function() {
-    var bodyHider = $("#bodyHider")
+    // var bodyHider = $("<div class='photoBodyOverlay'></div>");
+    // 
+    // var bodyHider = $("#photo")
     if (bodyHider.length == 0) {
       bodyHider = $("<div id='bodyHider' style='display:none'></div>").click(function() {
         $(this).show();

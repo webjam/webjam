@@ -68,5 +68,4 @@
 - if @previous_event
   %h2 Previous Event
   %ul.group
-    %li
-      %a.button.item{:href => formatted_event_path(@previous_event, :mobile)}=h @previous_event.name
+    %li= render :partial => "shared/event_item", :locals => {:event => @previous_event}

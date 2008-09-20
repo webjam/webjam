@@ -6,15 +6,13 @@ class PagesController < ApplicationController
     end
     respond_to do |wants|
       wants.html do
-        @upcoming_events = Event.published.upcoming(:order => "held_at DESC")
-        @past_events = Event.published.past(:order => "held_at DESC")
+        @upcoming_events = Event.published.upcoming.all
+        @past_events = Event.published.past.all
       end
       wants.mobile do
-        @upcoming_events = Event.published.upcoming(:order => "held_at DESC")
-        if @upcoming_events.empty?
-          @last_event = Event.published.past.first(:order => "held_at DESC")
-        end
-        @last_post = Post.published.first(:order => "published_at DESC")
+        @upcoming_events = Event.published.upcoming.all
+        @last_event = Event.published.past.first(:order => "published_at DESC")
+        @last_post = Post.published.first(:order => "published_at DESC", :include => :comments)
       end
     end
   end
@@ -27,7 +25,10 @@ class PagesController < ApplicationController
   def about
     respond_to do |wants|
       wants.html { redirect_to home_path, :status => 301 }
-      wants.mobile
+      wants.mobile do
+        @upcoming_events = Event.published.upcoming.all
+        @past_events = Event.published.past.all
+      end
     end
   end
   

@@ -6,16 +6,19 @@ body {
   background-color: #222;
   color: #fff;
   font-weight: bold;
-  padding: 15px;
+  padding: 0 15px;
+  height: 100%;
   -webkit-text-size-adjust: none;
 }
 
 /* Main content stylings */
 .content p, dt, dd {
   font-size: 1.6em;
+  font-weight: normal;
 }
 .content p {
-  margin: 1em 0;
+  margin: 0.5em 0;
+  line-height: 1.25em;
 }
 .content ul {
   margin: 1.8em 0;
@@ -28,13 +31,16 @@ body {
   color: #666;
   font-size: 1.4em;
   text-transform: uppercase;
-  margin: 0.5em 0 -0.8em 0;
+  margin: 1em 0 1em 0;
 }
 
 .content .more {
   font-size: 1.2em;
   text-align: right;
   margin-bottom: 1em;
+}
+.content .more + ul.group {
+  margin-top: 3em;
 }
 
 /* Generic group styles */
@@ -49,6 +55,9 @@ a.button {
   text-decoration: none;
 }
 
+.content h2 + ul.group {
+  margin-top: -0.8em;
+}
 ul.group li a.item {
   font-size: 1.6em;
   display: block;
@@ -69,10 +78,24 @@ ul.group li:last-of-type a.item {
   -webkit-border-bottom-right-radius: 5px;
 }
 
+ul.group li a.event, ul.group li a.post {
+  position: relative;
+}
+ul.group li a.event span.date, ul.group li a.post span.comment-count {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-weight: normal;
+  color: #f99;
+}
+ul.group li a.post span.title {
+  margin-right: 6em;
+}
+
 /* Header */
 #header {
   position: relative;
-  margin: -15px -15px 0 -15px;
+  margin: 0 -15px 0 -15px;
   text-align: center;
   background: transparent url(../images/mobile-webjam-logo-small.png) no-repeat 15px left;
   height: 51px;
@@ -94,7 +117,9 @@ ul.group li:last-of-type a.item {
   font-size: 1.6em;
   text-align: right;
   font-weight: normal;
-  padding: 23px 15px 0 0;
+  margin-left: 125px;
+  margin-right: 15px;
+  padding-top: 23px;
   font-family: "American Typewriter";
 }
 #header a.home {
@@ -108,7 +133,7 @@ ul.group li:last-of-type a.item {
 
 /* Home page */
 #home-header {
-  margin: 0 -10px 0 -10px;
+  margin: 30px -10px 0 -10px;
   text-align: center;
 }
 #home-header h1 {
@@ -119,17 +144,8 @@ ul.group li:last-of-type a.item {
 #home-header h1 span {
   display: none;
 }
-li a.item span.in, li a.item span.comment-count {
-  float: right;
-  font-weight: normal;
-  color: #f99;
-}
 
 /* Event page */
-.event-info {
-  padding-top: 10px;
-}
-
 dl.when, dl.where {
   font-size: 0.75em;
   color: #fff;
@@ -202,18 +218,24 @@ p.where a.map {
   position: relative;
   z-index: 2;
 }
-.photos .photo a {
+.photos .photo a.button {
+  padding: 5px 7px;
+  z-index: 5;
   font-size: 1.2em;
   position: absolute;
+  margin-left: 10px;
   bottom: 10px;
   right: 10px;
   text-align: right;
-  opacity: 0.5;
+  opacity: 0.6;
   background-color: #bbb;
   color: #000;
-  text-shadow: none;
+  text-shadow: 0px 0px 2px #fff;
   border: none;
 } 
+.photos .photo a.button .text {
+  opacity: 1;
+}
 ul.tweets li, ul.photo-list li a {
   color: #ccc;
   background-color: #333;
@@ -225,18 +247,27 @@ ul.tweets li, ul.photo-list li a {
   line-height: 1.5em;
   text-decoration: none;
 }
-ul.tweets li a {
-  color: #fff;
+ul.tweets li .body a {
+  color: #ddd;
+  text-decoration: none;
+  background-color: #555;
+  padding: 0 0.2em;
+  -webkit-border-radius: 3px;
 }
-ul.tweets li a.user {
+ul.tweets li .user {
   font-weight: bold;
+  color: #fff;
+  text-decoration: none;
 }
-ul.photo-list li a .timestamp, ul.tweets li .timestamp {
+ul.photo-list li a .timestamp, ul.tweets li a.timestamp {
   font-size: 0.75em;
   display: block;
   color: #666;
   font-weight: bold;
   text-align: right;
+}
+ul.tweets li a.timestamp {
+  text-decoration: none;
 }
 
 ul.photo-list li {
@@ -274,6 +305,43 @@ ul.photo-list li a .timestamp {
   margin: auto;
 }
 
+/* Blog posts */
+.post-body {
+  width: 100%;
+  text-overflow: ellipsis;
+}
+p.post-timestamp {
+  text-align: right;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+  color: #666;
+  font-weight: bold;
+}
+.post-body ul, .post-body ol {
+  font-size: 1.6em;
+  font-weight: normal;
+  margin-left: 2em;
+}
+.post-body ul {
+  list-style: circle;
+}
+.post-body ol {
+  list-style: decimal;
+}
+.post-body ul li, .post-body ol li {
+  margin: 0.5em 0;
+}
+.post-body a {
+  color: #ddd;
+  text-decoration: none;
+  background-color: #444;
+  padding: 0 0.2em;
+  -webkit-border-radius: 3px;
+}
+.post-body h3 {
+  font-size: ;
+}
+
 /* Pagination */
 .pagination {
   margin: 2em 0;
@@ -296,6 +364,7 @@ ul.photo-list li a .timestamp {
   -webkit-border-radius: 5px;
   text-decoration: none;
 }
+
 p.pagination-info {
   text-align: right;
   font-size: 1.4em;
@@ -306,16 +375,15 @@ p.pagination-info {
 
 /* Footer */
 #footer {
-  text-align: right;
-  padding-bottom: 10px;
+  margin-top: 35px;
+  padding-bottom: 30px;
 }
 a.regular-site {
   font-size: 1.2em;
-  background-color: #333;
-  color: #888;
+  background-color: #181818;
+  color: #666;
   -webkit-border-radius: 5px;
   text-decoration: none;
-  margin-top: 1em;
   padding: 0.5em 0.75em; 
   height: 100%;
 }

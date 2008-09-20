@@ -1,75 +1,53 @@
 - @page_title = h(@post.title)
 - @regular_version_path = post_path(@post.year, @post.permalink)
 
-.hentry.item
-  %h1.entry-title
-    =h @post.title
-  %ul.byline
-    %li
-      Posted by
-      = user_link_with_avatar(@post.user, "author")
-      on
-      %span.updated
-        = @post.published_at.to_date.to_s(:long)
-    %li.comments
-      %a{ :href => "#comments" }
-        = pluralize(@post.comments.length, "comment")
+%p.post-timestamp
+  = @post.published_at.to_date.to_s(:long)
 
-  .entry-content
-    = @post.body
+.post-body
+  = @post.body
 
-  %ul.entry-footer
-    %li.post-date
-      Posted
-      %span.published
-        = @post.published_at.to_date.to_s(:long)
-    /
-      <li class="tags"><span>Tagged</span>
-      <ul>
-      <li><a href="#" rel="tag">Sydney</a>,</li>
-      <li><a href="#" rel="tag">winners</a>,</li>
-      <li><a href="#" rel="tag">wrap-up</a>, and</li>
-      <li><a href="#" rel="tag">something else</a></li>
-      </ul>
+%p.by
+  Posted by
+  %strong= @post.user.nick_name
 
-#comments.item.hfeed
-  .item-details
-    %h2 Comments
+-# <li class="tags"><span>Tagged</span>
+-# <ul>
+-# <li><a href="#" rel="tag">Sydney</a>,</li>
+-# <li><a href="#" rel="tag">winners</a>,</li>
+-# <li><a href="#" rel="tag">wrap-up</a>, and</li>
+-# <li><a href="#" rel="tag">something else</a></li>
+-# </ul>
 
-  - if @post.comments.empty?
-    %p.title There are no comments yet!
+%h2 Comments
 
-  - @post.comments.each_with_index do |comment, index|
-    .hentry.comment{:id => "comment-#{comment.id}"}
-      .entry-content= sanitize simple_format(comment.body), :tags => %w(strong em a code pre blockquote span q abbr acronym br img ul ol li del), :attributes => %w(href class cite rel rev title src alt)
-      %p.comment-details
-        %a.permalink{ :href => "comment-#{comment.id}"}= index + 1
-        = user_link_with_avatar(comment.user, "author")
-        / %span.user-avatar.vcard
-        /           %a{ :href => user_path(comment.user) }
-        /             = avatar_image(comment.user, :tiny)
-        /           %a.url{ :href => user_path(comment.user) }<
-        /             %span.fn.nickname=h comment.user.nick_name
-        wrote
-        = time_ago_in_words comment.created_at
-        ago.
-  
-.item.last#comment-form
-  .item-details
-    %h2
-      Add yours
+%ul.comments
+  - for comment in @post.comments
+    %li{:id => "comment-#{comment.id}"}
+      .body= format_comment_body(comment.body)
+      .when= time_ago_in_words comment.created_at
+      .who= user_link_with_avatar(comment.user, "author")
+  - if current_user
+    %li.new
+      - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink) do
+        %fieldset
+          %label{ :for => "new_comment" }
+            = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'new_comment'
+            %span.note (Nice HTML is welcome, but please keep the naughty stuff to yourself!)
+        %fieldset
+          %input{ :type => "submit", :value => "Add comment"}
+    
+%ul.group
   - if !current_user
-    %p
-      = link_to_login_with_return_to_current_page 'Login to leave a comment'
-  - else
-    - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink), :id => 'new-comment' do
-      - if params[:no_body_error]
-        %p.error
-          Don&rsquo;t forget to type something!
-      %fieldset
-        %label{ :for => "new_comment" }
-          %span Comment goes here:
-          = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'new_comment'
-          %span.note (Nice HTML is welcome, but please keep the naughty stuff to yourself!)
-      %fieldset
-        %input.submit{ :type => "submit", :value => "Add comment"}
+    %li
+      %a.item.button{:href => ""} Login to comment
+
+%ul.group
+  - if @next_post
+    %li
+      %a.item.button.post{:href => formatted_post_path(@next_post.year, @next_post.permalink, :mobile)}= "Next: #{h @next_post.title}"
+  - if @previous_post
+    %li
+      %a.item.button.post{:href => formatted_post_path(@previous_post.year, @previous_post.permalink, :mobile)}= "Previous: #{h @previous_post.title}"
+  %li
+    %a.item.button{:href => formatted_posts_path(:mobile)} News archive

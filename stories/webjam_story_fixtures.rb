@@ -42,14 +42,16 @@ module WebjamStoryFixtures
     )
   end
   def admin_user
-    user = User.new(
-      :nick_name => "god",
-      :email => "god@heaven.com",
-      :full_name => "The Big G"
-    )
-    user.admin = true
-    user.save!
-    user
+    @user ||= begin
+      user = User.new(
+        :nick_name => "god",
+        :email => "god@heaven.com",
+        :full_name => "The Big G"
+      )
+      user.admin = true
+      user.save!
+      user
+    end
   end
   def post(user)
     post = user.posts.create!(
@@ -58,5 +60,21 @@ module WebjamStoryFixtures
       :published_at => Time.now.utc,
       :permalink => "some-great-post"
     )
+  end
+  def post_before(post, user)
+    post = post(user)
+    post.update_attribute(:created_at, post.created_at - 1.day)
+    post
+  end
+  def post_after(post, user)
+    post = post(user)
+    post.update_attribute(:created_at, post.created_at + 1.day)
+    post
+  end
+  def comment(post, user)
+    comment = post.comments.build(:body => "Me too!")
+    comment.user = user
+    comment.save!
+    comment
   end
 end

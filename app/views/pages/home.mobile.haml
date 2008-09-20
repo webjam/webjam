@@ -1,37 +1,25 @@
 - @page_title = "Webjam"
 - @regular_version_path = home_path("redirect-to-mobile" => "no")
-- @hide_header = true
 
-#home-header
-  %h1
-    %span Webjam
+- content_for :header do
+  #home-header
+    %h1
+      %span Webjam
 
 - unless @upcoming_events.empty?
-  %h2 Upcoming Events
+  %h2 Upcoming Webjams
   %ul.group
     - for event in @upcoming_events
-      %li
-        %a.button.item{:href => formatted_event_path(event, :mobile)}
-          = "#{h event.name}, #{h event.location}"
-          %span.in
-            = Time.now.to_date.to_s(:short)
+      %li= render :partial => "shared/event_item", :locals => {:event => event}
 
 - if @last_event
   %h2 Last Event
   %ul.group
-    %li
-      %a.button.item{:href => formatted_event_path(@last_event, :mobile)}
-        = "#{h @last_event.name}, #{h @last_event.location}"
-        / %span.in
-        /   = pluralize(Time.now.to_date - @last_event.held_at.to_date, "day")
-        /   ago
+    %li= render :partial => "shared/event_item", :locals => {:event => @last_event}
 
 %h2 Latest News
 %ul.group.latest-news
-  %li
-    %a.button.item{:href => formatted_post_path(@last_post.year, @last_post.permalink)}
-      =h @last_post.title
-      %span.comment-count= pluralize(@last_post.comments.length, "comment")
+  %li= render :partial => "shared/news_post", :locals => {:post => @last_post}
 
 %ul.group
   %li

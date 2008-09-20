@@ -10,7 +10,9 @@
     %title
       = @page_title
   %body
-    - unless @hide_header
+    - if header = yield(:header)
+      = header
+    - else
       #header
         %a.home{:href => formatted_home_path(:mobile)} Home
         %h1= @page_title

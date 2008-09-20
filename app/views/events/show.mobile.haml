@@ -22,8 +22,8 @@
   .photos
     .photo
       = render :partial => "shared/event_photo", :locals => {:photo => @latest_photo}
-    .more
-      %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos&hellip;
+  .more
+    %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos&hellip;
 
 - unless @latest_tweets.empty?
   %h2 Tweets
@@ -41,3 +41,7 @@
     - for post in @event.posts
       %li
         = render :partial => "shared/news_post", :locals => {:post => post}
+
+%ul.group
+  %li
+    %a.item.button{:href => formatted_past_events_path(:mobile)} All past events

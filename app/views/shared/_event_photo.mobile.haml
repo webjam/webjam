@@ -1,5 +1,6 @@
 %img{:src => photo.img_url("m"), :alt => photo.title, :class => "photo"}/
 %a.button{:href => photo.url}
-  =h photo.title
-  by
-  =h photo.realname
+  %span.text
+    =h photo.title
+    by
+    =h photo.realname

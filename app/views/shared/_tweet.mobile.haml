@@ -1,3 +1,3 @@
-%a.user{:href => tweet.url}= tweet.username
+%span.user= tweet.username
 %span.body= format_tweet tweet.body
-%span.timestamp= tweet.posted_at.in_time_zone(@event.timezone).to_s(:long)
+%a.timestamp{:href => tweet.url}= tweet.posted_at.in_time_zone(@event.timezone).to_s(:long) + " »"

@@ -46,6 +46,12 @@ class Event < ActiveRecord::Base
     held_at.in_time_zone(self.timezone)
   end
   
+  def human_held_at
+    self.held_at.to_date.day.ordinalize +
+    " " +
+    self.held_at.to_date.strftime("%b &lsquo;%y")
+  end
+  
   def number
     tag[/(\d+)$/, 1]
   end
@@ -68,5 +74,9 @@ class Event < ActiveRecord::Base
 
   def <=>(other)
     self.held_at <=> other.held_at
+  end
+  
+  def name_with_location
+    "#{self.name}, #{self.location}"
   end
 end
