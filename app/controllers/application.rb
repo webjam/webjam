@@ -74,8 +74,8 @@ class ApplicationController < ActionController::Base
     end
     def mobile_user_agent_patterns
       [
-        /iPhone/,
-        # Blackberry and other such devices
+        /AppleWebKit.*Mobile/,
+        /Android.*AppleWebKit/
       ]
     end
 end
