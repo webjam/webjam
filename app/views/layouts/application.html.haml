@@ -15,12 +15,14 @@
     - if mobile_request?
       #mobile
         %p
-          %a{:href => @mobile_version_path || formatted_home_path(:mobile)} Mobile version
-      / #mobile-hidden
-      /   %p
-      /     %a{:href => formatted_home_path(:mobile)} (mobile icon)
-      /     %a{:href => '#'} (? icon)
-      /   %p.info
+          %a{:href => @mobile_version_path || formatted_home_path(:mobile)}
+            Shiny new mobile?
+            %span.explanation
+              View the mobile version of
+              - if @mobile_version_path
+                this page
+              - else
+                the site
     #page
       %ul.primary-nav
         %li

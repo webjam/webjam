@@ -120,14 +120,21 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 	
 #mobile a {
   display: block;
-  background-color: #bbb;
-  color: #000;
+  color: #fff;
+  margin: 15px;
+  background-color: #222;
   padding: 0.75em 0;
-  font-size: 280%;
+  font-size: 240%;
   text-align: center;
   font-family: Helvetica, "Lucida Grande";
-  text-transform: uppercase;
   font-weight: bold;
+  text-decoration: none;
+  -webkit-border-radius: 20px;
+  border: 2px solid;
+  border-color: #555 #111 #111 #555;
+}
+#mobile a .explanation {
+  color: #bbb;
 }
 	
 #page {font-size: 1.4em; margin: 4em auto 0; position: relative; width: 70em;}

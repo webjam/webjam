@@ -106,7 +106,7 @@ ul.group li a.post span.comment-count + ul.group li a.post span.title {
 /* Header */
 #header {
   position: relative;
-  margin: 0 -15px 10px -15px;
+  margin: 0 -15px 15px -15px;
   text-align: center;
   background: transparent url(../images/mobile-webjam-logo-small.png) no-repeat 15px left;
   height: 56px;
@@ -143,7 +143,7 @@ ul.group li a.post span.comment-count + ul.group li a.post span.title {
 
 /* Home page */
 #home-header {
-  margin: 30px -10px 0 -10px;
+  margin: 30px -15px 0 -15px;
   text-align: center;
 }
 #home-header h1 {
@@ -249,7 +249,7 @@ p.where a.map {
 ul.tweets li, ul.photo-list li a {
   color: #ccc;
   background-color: #333;
-  padding: 5px 8px;
+  padding: 7px 8px;
   -webkit-border-radius: 5px;
   font-size: 1.2em;
   margin: 10px 0;
@@ -270,7 +270,8 @@ ul.tweets li .user {
   text-decoration: none;
 }
 ul.photo-list li a .timestamp, ul.tweets li a.timestamp {
-  font-size: 0.75em;
+  margin-top: 0.5em;
+  font-size: 0.9em;
   display: block;
   color: #666;
   font-weight: bold;
@@ -327,6 +328,11 @@ ul.photo-list li a .spinner {
   width: 100%;
   text-overflow: ellipsis;
 }
+.post-body p, .post-body ul, .post-body ol, .post-body dl {
+  font-weight: normal;
+  font-size: 1.4em;
+  margin: 1em 0;
+}
 p.post-timestamp {
   text-align: right;
   font-size: 1.4em;
@@ -335,8 +341,6 @@ p.post-timestamp {
   font-weight: bold;
 }
 .post-body ul, .post-body ol {
-  font-size: 1.6em;
-  font-weight: normal;
   margin-left: 2em;
 }
 .post-body ul {
@@ -367,7 +371,7 @@ p.post-timestamp {
   color: #666;
   border: none;
   background-color: #333;
-  text-shadow: #222 1px 1px 2px;
+  text-shadow: none; 
 }
 .pagination span, .pagination a {
   font-size: 1.6em;

@@ -27,20 +27,20 @@
       .body= format_comment_body(comment.body)
       .when= time_ago_in_words comment.created_at
       .who= user_link_with_avatar(comment.user, "author")
-  - if current_user
-    %li.new
-      - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink) do
-        %fieldset
-          %label{ :for => "new_comment" }
-            = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'new_comment'
-            %span.note (Nice HTML is welcome, but please keep the naughty stuff to yourself!)
-        %fieldset
-          %input{ :type => "submit", :value => "Add comment"}
+  -# if current_user
+  -#  %li.new
+  -#    - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink) do
+  -#      %fieldset
+  -#        %label{ :for => "new_comment" }
+  -#          = text_area_tag 'comment[body]', nil, :cols => '57', :rows => '4', :id => 'new_comment'
+  -#          %span.note (Nice HTML is welcome, but please keep the naughty stuff to yourself!)
+  -#      %fieldset
+  -#        %input{ :type => "submit", :value => "Add comment"}
     
 %ul.group
-  - if !current_user
-    %li
-      %a.item.button{:href => ""} Login to comment
+  -# if !current_user
+  %li
+    %a.item.button{:href => post_path(@post.year, @post.permalink)} Leave a comment via the regular site
 
 %ul.group
   - if @next_post
