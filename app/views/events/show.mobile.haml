@@ -18,7 +18,7 @@
 
 - if @latest_photo
   %h2
-    = "Photos tagged #{@event.tag}"
+    = "Recent Photos tagged #{@event.tag}"
   .photos
     .photo
       = render :partial => "shared/event_photo", :locals => {:photo => @latest_photo}
