@@ -422,23 +422,25 @@ a.regular-site {
 .photoNavigator .control {
   z-index: 2;
   display: block;
-  width: 30%;
+  width: 50%;
   height: 100%;
   position: absolute;
   top: 0;
   background-repeat: no-repeat;
   background-position: center center;
-  opacity: 0.6;
+  opacity: 1;
 }
 .photoNavigator .photo a {
   z-index: 3;
 }
 .photoNavigator .next {
   background-image: url(images/bg-navigator-next-control.png);
+  background-position-x: 85%;
   right: 0;
 }
 .photoNavigator .previous {
   background-image: url(images/bg-navigator-prev-control.png);
+  background-position-x: 15%;
   left: 0;
 }
 
