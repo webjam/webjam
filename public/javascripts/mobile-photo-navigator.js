@@ -8,29 +8,40 @@ jQuery.fn.mobilePhotoNavigator = function(photoData) {
   var PhotoNavigator = function(element, photos) {
     this.element = $(element);
     this.element.addClass("photoNavigator");
-    this.loadingOverlay = jQuery("<div class='loadingOverlay'></div>").hide().appendTo(this.element);
     this.photos = photos;
     this.currentPhotoIndex = 0;
     
     this.nextPhotoControl = this.addControl(this.nextPhoto, "control next", "Next photo");
     this.previousPhotoControl = this.addControl(this.previousPhoto, "control previous", "Previous photo");
+    this.loaderImageSrc = '/images/ajax-loader.gif';
+    
+    this.preloadLoaderImage();
 
     var navigator = this;
     this.nextPhotoControl.click(function(event) {
       event.preventDefault();
-      navigator.navigateToNextPhoto();
+      navigator.showLoading();
+      navigator.preloadImageAndCall(navigator.nextPhoto().src, function() {
+        navigator.hideLoading();
+        navigator.navigateToNextPhoto();
+      });
     });
     this.previousPhotoControl.click(function(event) {
       event.preventDefault(); 
-      navigator.navigateToPreviousPhoto();
+      navigator.showLoading();
+      navigator.preloadImageAndCall(navigator.previousPhoto().src, function() {
+        navigator.hideLoading();
+        navigator.navigateToPreviousPhoto();
+      });
     });
 
     this.updateControlState();
   };
   
   jQuery.extend(PhotoNavigator.prototype, {
-    showLoadingOverlay: function() { this.loadingOverlay.show(); },
-    hideLoadingOverlay: function() { this.loadingOverlay.hide(); },
+    preloadLoaderImage: function() {
+      (new Image(1,1)).src = this.loaderImageSrc;
+    },
     addControl: function(clickFunction, cssClass, title) {
       return jQuery("<a href='void:(0)'></a>").attr("title", title).addClass(cssClass).appendTo(this.element);
     },
@@ -60,11 +71,19 @@ jQuery.fn.mobilePhotoNavigator = function(photoData) {
       else this.nextPhotoControl.hide();
       if (this.previousPhoto()) this.previousPhotoControl.show();
       else this.previousPhotoControl.hide();
+    },
+    showLoading: function() { this.element.append($("<div class='loadingOverlay'><div class='spinner'/></div>")); },
+    hideLoading: function() { this.element.children(".loadingOverlay").remove(); },
+    preloadImageAndCall: function(src, fn) {
+      var img = new Image(1,1);
+      $(img).load(function() {fn();});
+      img.src = src;
     }
   });
   
   var Photo = function(attributes) {
     jQuery.extend(this, attributes);
+    this.src = "http://farm" + this.farm + ".static.flickr.com/" + this.server + "/" + this.flickrid + "_" + this.secret + "_m.jpg";
   };
   
   jQuery.extend(Photo.prototype, {
@@ -72,7 +91,7 @@ jQuery.fn.mobilePhotoNavigator = function(photoData) {
       var element = jQuery("<div class='photo'></div>");
 
       jQuery("<img class='photo' />").attr({
-        src: "http://farm" + this.farm + ".static.flickr.com/" + this.server + "/" + this.flickrid + "_" + this.secret + "_m.jpg",
+        src: this.src,
         alt: this.title
       }).appendTo(element);
 
