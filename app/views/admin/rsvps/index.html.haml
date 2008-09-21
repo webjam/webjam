@@ -3,9 +3,13 @@
 
 %h1= pluralize(@rsvps.length, "RSVP")
 
-%ul
+%ul#rsvps
   - for rsvp in @rsvps
     %li
-      %a{:href => user_path(rsvp)}
-        =h rsvp.user.nick_name
+      %strong
+        %a{:href => user_path(rsvp.user)}
+          =h rsvp.user.nick_name
+      %span
         = "(#{h rsvp.user.full_name})"
+      %em
+        %a{:href => "mailto:#{rsvp.user.email}"}= rsvp.user.email

@@ -10,55 +10,60 @@ webjam8
 webjam8:pres=2
 webjam:user=lachlanhardy
 
-TODO immediately:
 
-FAVICON!!!
-Polling
-add sponsors structure to events
-add content for rsvp
-add name instead of 'owner' to titles in slideshow
-add summary of things for peeps to do to upcoming event page
+7 DAYS!!!
+TODO by 24th September in priority order:
+
+test SMS voting shizzle - Tim
 integrate flat presentation page
-Add Viddler player mojo (preferably API shizzle)
-custom error page
-Adding sponsor links and images (with hover state)
-fix ui profile form flashes
-what you're in for" should should featured images from across all webjams
+finish polling and layout for past events
+
+So we can run another one:
+wire up sponsors structure to events
 add "directions" to "address" events
 remove hacky static address in rsvp email
+remove static presenter/attendee text on past events
+build default sponsor promo structure
+
+Build hotted up active version for events!
+
+TODO:
+
+FAVICON!!!
+
+cross-browser testing
+
+Polling
+ - add Ma.gnolia + Delicious polling
+ - Technorati polling? Some other blog service?
+
+add content for rsvp
+add summary of things for peeps to do to upcoming event page
+Add Viddler player mojo (preferably API shizzle)
+custom error page
+what you're in for" should show featured images from across all webjams
 make author list for blog posts only consist of admins
-Ensure editing for proposal descriptions works
-
-
-Last: cross-browser testing
-
-Lisa's feedback:
-too red, maybe a different highlight colour? Orange?
-use "re-launch" phrasing in copy
 tshirt linkage
-suggests single line only for archive
-show countdown of attendee spots left available
-use active states on tabs
-create active state for master nav
+change usernames so that they cannot contain spaces or capitals
+generate Google sitemap
+create proper span/anchor switching for primary-nav
+integrate Register and Login into one screen
+fix login to account for Flickr's occasional '77694982@N00' instead of 'alanstairs'
+What happened to exception notifications?
+confirm identity with Yahoo! etc (http://blog.nerdbank.net/2008/06/why-yahoo-says-your-openid-site.html)
+
+Lisa's feedback:    (whenever this list gets to zero - ask Lisa for another expert review!)
+suggests single line only for archive - ?? check on this now we've fixed newline bug
 default mugshot looks like an alien...
-add see your profile link to edit page
-improve profile form submission flash
 promote sponsorship opportunities more
-change jammer/new peep to login/register
-why do I have to create a Webjam account to attend? needs explanation
-change "good-looking" copy
-show current count more prominently on events, home and when logged out
 add info about what owning an account entails - contact from WJ, benefits etc
 why doesn't it remember URL for login?
 Send unlogged in users to custom login/registration page with explanation about why they need to have an account to attend etc
-
+the display of comments , author, comment number are upside down and could be made more readable
 
 BUGS:
 
-Proposals can't be made into jams. Doh!
 form error messages suck
-make reversed hover states for sponsors
-lame column sizing on Edit profile page
 validate microformats
 
 FF2 on XP:
@@ -68,17 +73,22 @@ rogue border at bottom blog post
 
 IE6:
 Top tabs look weird
+Login is apparently not too cool
 
 
 TODO later:
 
 make mugshot form layout look good
+lame column sizing on Edit profile page
 tie RSVPs to Proposals? how?
-Build hotted up active version for events!
 Integrate Upcoming? http://flickr.com/photos/tags/upcoming%3Aevent%3D262836/
 
 Confirm our website identity with Yahoo! ?? (for better registration)
 Merge registration and login into one process.
+Add parsing for @username string to all user content (http://lachstock.com.au/inc/js/status.js has good regex)
+Comments feed
+
+
 
 
 DYLAN'S TOTO:
@@ -92,9 +102,9 @@ I haven't looked above. I should. Here are some things I've been thinking about:
 	⁃	hcalendar
 	⁃	hatom
 •	RDF
-•	profile page = gross and should not be
-•	valid markup?
-•	valid css?
+•	profile page = gross and should not be (see webjam.ai file for what it should be)
+•	valid markup? (oops. My bad - LH.)
+•	valid css? (we has it!)
 •	Browser testing -- Chrome, IE6, IE7, IE8, FF2, FF3, Opera, Iphone and Saruman's Wizard Crystal Globe
 •	sitemap
 •	custom 404 page

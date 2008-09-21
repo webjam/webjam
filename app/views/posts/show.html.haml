@@ -44,16 +44,11 @@
     %p.title There are no comments yet!
 
   - @post.comments.each_with_index do |comment, index|
-    .hentry.comment{:id => "comment-#{comment.id}"}
+    .hentry.comment{:id => "comment-#{index + 1}"}
       .entry-content= format_comment_body(comment.body)
       %p.comment-details
-        %a.permalink{ :href => "comment-#{comment.id}"}= index + 1
+        %a.permalink{ :href => "#comment-#{index + 1}"}= index + 1
         = user_link_with_avatar(comment.user, "author")
-        / %span.user-avatar.vcard
-        /           %a{ :href => user_path(comment.user) }
-        /             = avatar_image(comment.user, :tiny)
-        /           %a.url{ :href => user_path(comment.user) }<
-        /             %span.fn.nickname=h comment.user.nick_name
         wrote
         = time_ago_in_words comment.created_at
         ago.

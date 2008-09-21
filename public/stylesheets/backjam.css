@@ -40,7 +40,7 @@ TOC
 		a:visited {color: #fff;}
 		a:hover, a:active, a:focus {color: #f03e00; text-decoration: none;}
 		
-		#content a.details {background: #0d0e0e url('/stylesheets/images/bg-details.gif') no-repeat 100% 6px; color: #e71d25; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
+		#content a.details {background: #0d0e0e url('/stylesheets/images/bg-details.gif') no-repeat 100% 8px; color: #f03e00; margin: 1.6em 1.6em 0 0; padding: 0 16px 0 0;}
 		
 		/* --- =Headings --- */
 		h1, h2, h3, h4, h5, h6 {font-family: Futura, "Franklin Gothic Medium", Calibri, "URW Gothic L", Helvetica, Arial, sans-serif; font-weight: 300; margin: 0 0 0.5em;}
@@ -68,6 +68,7 @@ TOC
       #maincontent ol li {list-style-position: outside; list-style-type: decimal; margin: 0 0 0.5em 1.4em;}  
     
     #maincontent strong {font-weight: 700;}
+    #maincontent em {font-style: italic;}
     
     #content p {font-size: 1.143em; line-height: 1.5; margin: 0 0 1em 0;}
 			
@@ -78,6 +79,9 @@ TOC
 		p.note {background: #0d0e0e; color: #666; font: italic 100 1.25em "Trebuchet MS", Arial, Helvetica, sans-serif;}
 		  p.note a:link,
 		  p.note a:visited {background: #0d0e0e; color: #aaa;}
+		  
+		
+    #content p.notice {background: #232323; color: #fff; font-size: 1.5em; padding: 0.2em 0.4em 0.2em 0.4em;}
 		
 		/* --- =Avatars --- */      
     .user-avatar {position: relative;}
@@ -112,7 +116,9 @@ TOC
 	  
 	/* -- = Generic layout -- */
 	#content .clear-off {clear: both; margin: 3em 0 0.5em 0;}
-
+	
+	div.pagination {clear: both; margin: 0 0 1em 0; text-align: center;}
+	
 
 /* - =Structure - */
 body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat center center; color: #fff; font: 62.5%/1.3 "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0; padding: 0;}
@@ -139,30 +145,24 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 	
 #page {font-size: 1.4em; margin: 4em auto 0; position: relative; width: 70em;}
 
-	ul.primary-nav {background-color:#373D3F; color: #eee; position:absolute; top:-1.8em; left: 0.1em; display: block; list-style:none; }
+	ul.primary-nav {background:#373d3f; color: #eee; position:absolute; top:-1.8em; left: 0.1em; display: block; list-style:none; }
 		ul.primary-nav li {display:block; float:left; padding: 0.2em 1em 0.4em 1em}
+		  body.home ul.primary-nav li.home a {background:#373d3f; color: #000; text-decoration: none;}
 
 	#account-tools {margin: 0 0 1.5em 0; position: absolute; right: 0; top: -2.3em;}
 		#account-tools li {background: #0e0e0e; float: left; font-size: 0.94em; line-height: 2; margin: 0 1em 0 0; text-align: center;}
 			
 		#account-tools li.logout {}
-			#account-tools li.logout form.button-to input {background: #0e0e0e; border: 1px solid #ff5e29; border-bottom: none; color: #fff; cursor: pointer; float: none; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 1em; margin: 0; padding: 0.5em; width: auto;}
-			#account-tools li.logout form.button-to input:hover {background: #ff5e29; border: 1px solid #0e0e0e; border-bottom: none; color: #0e0e0e; cursor: pointer;}
-		
-		#account-tools li.login {}
-		#account-tools li.profile {}
-		#account-tools li.register {}
+			#account-tools li.logout form.button-to input {background: #0e0e0e; border: 1px solid #f03e00; border-bottom: none; color: #fff; cursor: pointer; float: none; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 1em; margin: 0; padding: 0.5em; width: auto;}
+			#account-tools li.logout form.button-to input:hover {background: #f03e00; border: 1px solid #0e0e0e; border-bottom: none; color: #0e0e0e; cursor: pointer;}
 		  
 		  #account-tools li a {display: block; padding: 0.2em 1em 0.4em 1em;}
 			#account-tools li a:link,
-			#account-tools li a:visited {background: #0e0e0e; border: 1px solid #ff5e29; border-bottom: none;  color: #fff; text-decoration: none;}
+			#account-tools li a:visited {background: #0e0e0e; border: 1px solid #f03e00; border-bottom: none;  color: #fff; text-decoration: none;}
 			#account-tools li a:hover,
 			#account-tools li a:active,
-			#account-tools li a:focus {background: #ff5e29; border: 1px solid #0e0e0e; border-bottom: none;  color: #0e0e0e;}
-				#account-tools li strong {background: transparent; color: #ff5e29; display: block; margin: 0.1em 0 0.1em 0; text-transform: lowercase;}
-				#account-tools li a:hover strong,
-				#account-tools li a:active strong,
-				#account-tools li a:focus strong {color: #0e0e0e;}
+			#account-tools li a:focus,
+			body.profile #account-tools li.profile a {background: #f03e00; border: 1px solid #0e0e0e; border-bottom: none;  color: #0e0e0e;}
 				
         #account-tools li a.user-avatar .vcard img {top: 3px;}
         #account-tools li a.user-avatar .vcard span.fn {margin: 0 0 0 30px;}
@@ -204,16 +204,16 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		  
     		  .item .button {text-align: center; text-decoration: none;}
     		  .item .button:link,
-    		  .item .button:visited {background: #ec1c26; color: #fff;}
+    		  .item .button:visited {background: #f03e00; color: #fff;}
     		  .item .button:hover,
     		  #content .item .rsvp input:hover,
     		  .item .button:active,
-    		  .item .button:focus {background: #fff; color: #ec1c26;}
+    		  .item .button:focus {background: #fff; color: #f03e00;}
     		  
     		  #content .item form.button {float: none; left: -0.6em; padding: 0; position: relative;}
     		    #content .item form.button input {cursor: pointer; letter-spacing: 0.1em; padding: 0.1em 0.6em; text-transform: uppercase;}
     		  
-    		  #content .item .rsvp input {background: #ec1c26; color: #fff; border: none; width: 5.8em;}
+    		  #content .item .rsvp input {background: #f03e00; color: #fff; border: none; width: 5.8em;}
     		  
     		  #content .item .login {width: 11em;}
     		  
@@ -239,6 +239,11 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			div.item-details.vevent h2 a {text-decoration:none}
 			div.item-details.vevent h2 a:active, div.item-details.vevent h2 a:focus, div.item-details.vevent h2 a:hover {color:#ccc}
     		
+    		.numbers {margin: 0 0 1em 0; text-align: center;}
+    		  #content .numbers p {background: #f03e00; color: #000; line-height: 1; margin: 1em auto 0.5em auto;  padding: 0 0 0.2em 0; width: 8em;}
+    		  #content .numbers p.full {padding: 0.5em 0.4em 0.6em 0.4em; width: 18em;}
+    		    .numbers strong {display: block; font-size: 3em;}
+    		
     		  dl.registration {clear: both; margin: 0 0 1em 0; padding: 0 0 0 1em;}
     		    dl.registration dt {font-weight: 300; float: right; margin: 0.2em 0 0 0; width: auto;}
               dl.registration dt form input {width: auto;}
@@ -252,13 +257,14 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		  
     	#sponsors {}
     	  #sponsors .item-details a.details {padding: 0 1em 0 0; right: 0; top: 0.4em; width: auto;}
-    		.sponsors {background: #232323; clear: both; color: #666; margin: 0 0 0.2em 0; padding: 1em 1em 0 1em;}
+    		.sponsors {background: #232323; clear: both; color: #ddd; margin: 0 0 0.2em 0; padding: 1em 1em 0 1em;}
     		  .sponsors h3 {float: left; font-size: 1.143em; text-transform: uppercase; margin: 0.6em 1em 0 0; width: 9.5em;}
     		  .sponsor-logos {overflow: auto;}
     		    #content .sponsor-logos li {float: left; list-style-type: none; margin: 0; width: auto;}
-    		    .sponsor-logos a {}
-    		      .sponsor-logos li a img {height: 40px; margin: 0 1em 1em 1em; width: 110px;}
-    		      .major .sponsor-logos img {width: 180px;}
+    		    .sponsor-logos a {display: block; min-height: 40px; margin: 0 1em 1em 1em; text-align: center; width: 110px;}
+    		      
+    		      .major h3 {color: #fff;}
+    		      .micro h3 {color: #ccc;}
     		    
     		    #event-details {}
     		      #content #event-details .item-details {margin: 0;}
@@ -310,7 +316,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     	    
       /* ---- =Presentation ---- */
       #title {border-bottom: 1px solid #333; padding: 1px 2em 0.5em 0; text-align: right;}
-        #title p {background: #ec1c26; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
+        #title p {background: #f03e00; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
           #title h1 {background: #0d0e0e; color: #4d4d4d; display: inline;}
           #title h1 strong {background: #0d0e0e; color: #fff;}
       
@@ -398,10 +404,10 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 							#content ul.year ul.month li {margin: 0; width: auto;}
 								ul.year ul.month li h3 {float: left; font: 100 1.4em/1.5 "Trebuchet MS", Arial, Helvetica, sans-serif; letter-spacing: 0.1em; margin: 0.2em 0 0 0; text-transform: lowercase; width: auto;}
 									ul.year ul.month li h3 a:link,
-									ul.year ul.month li h3 a:visited {background: #0e0e0e; color: #ff5e29; text-decoration: none;}
+									ul.year ul.month li h3 a:visited {background: #0e0e0e; color: #f03e00; text-decoration: none;}
 										ul.year ul.month li h3 a:hover,
 										ul.year ul.month li h3 a:active,
-										ul.year ul.month li h3 a:focus {background: #0e0e0e; color: #ff5e29; text-decoration: underline;}
+										ul.year ul.month li h3 a:focus {background: #0e0e0e; color: #f03e00; text-decoration: underline;}
 								#content ul.year ul.month li p {float: left; font: 100 1em/1.5 "Trebuchet MS", Arial, Helvetica, sans-serif; margin: 0.75em 0 0 1em; width: auto;}
 								#content ul.month ul.posts {float: left; margin: 0; width: 26em;}
 									#content ul.month ul.posts li {display: inline; float: none; font: 100 1em/1.5 "Trebuchet MS", Arial, Helvetica, sans-serif; padding: 0 0.2em 0 0; text-transform: lowercase;}
@@ -448,6 +454,12 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			  body.profile h2,
 			  body.profile h3 {clear: both;}
 			  
+			  body.profile #maincontent ul.identities {margin: 2em 0 0 0;}
+			   body.profile #maincontent ul.identities li {clear: both; float: left; margin: -0.5em 0 0 1em; width: 32em;}
+			      body.profile ul.identities li a {float: left; position: relative; top: -1em; width auto}
+			      body.profile ul.identities li form.button-to {clear: none; float: right;}
+			        body.profile ul.identities li form.button-to input {position: relative; top: -1em; width: auto;}
+			  
 			#profile-menu {float: right; width: 10em;}
 				#profile-menu li {display: inline; list-style-type: none;}
 					#profile-menu li a:link,
@@ -468,9 +480,20 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			body.contributors {}
 			  body.contributors h2 {margin: 1em 0 0.5em 0;}
 
-  			/* ---- =Peeps ---- */
-			#maincontent ul.peeps, #maincontent ul.peeps li {list-style:none;}
-
+  			/* ---- =Peeps ---- */			
+			  #maincontent ul.peeps li {float: left; height: 110px; list-style: none; margin: 0 0 1em 0; width: 100px;}
+			    
+			    ul.peeps li span.user-avatar a.url {display: block; margin: 0; padding: 0.75em; text-decoration: none;}
+		      ul.peeps li span.user-avatar a.url:link {}
+		      ul.peeps li span.user-avatar a.url:visited {}
+		      ul.peeps li span.user-avatar a.url:hover,
+		      ul.peeps li span.user-avatar a.url:active,
+		      ul.peeps li span.user-avatar a.url:focus {background: #f03e00; color: #000;}
+		        ul.peeps li span.user-avatar a img {position: static;}
+			      ul.peeps li span.user-avatar a span {display: block; line-height: 1; text-align: center;}
+			      ul.peeps li span.user-avatar a span.avatar {min-height: 86px; min-width: 82px;}
+			      
+	
 	/* --- =Upcoming events sidebar fo shizznitz--- */
 	#other-content #upcoming-events {border-bottom:none}
 		#upcoming-events ol {margin-top:-1em}

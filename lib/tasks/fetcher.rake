@@ -34,4 +34,5 @@ namespace :fetcher do
     puts "Starting viddler"
     Event.find(:all).each {|event| ViddlerVideo.fetch_for_event(event)}
   end
+
 end

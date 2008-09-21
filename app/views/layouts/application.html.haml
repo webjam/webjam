@@ -1,8 +1,11 @@
 !!! Strict
-%html{ "xml:lang" => "en-au", :lang => "en-au", :xmlns => "http://www.w3.org/1999/xhtml" }
+%html{"xml:lang" => "en-au", :lang => "en-au", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
-    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
-    %meta{ :content => "IE=EmulateIE7", "http-equiv" => "X-UA-Compatible" }
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "IE=EmulateIE7", "http-equiv" => "X-UA-Compatible"}
+    // Google verify
+    %meta{:content => "T6CuJO7kIpjmny/11NPrF8b31y/tlU3RX02iDh9zN5A=", :name => "verify-v1"}
+
     %title
       = @page_title || (raise "No page title")
     = stylesheet_link_tag 'reset', 'backjam'
@@ -25,24 +28,21 @@
                 the site
     #page
       %ul.primary-nav
-        %li
+        %li.home
           %a{:href => '/', :rel => 'home'} Home
       -#  %li
       -#    %a{:href => '/people/'} People
       %ul#account-tools
         - if current_user
           %li.profile
-            %a.url{ :href => user_path(current_user) }
-              %span.fn.nickname
-                Hi 
-                =h current_user.nick_name
+            %a{:href => user_path(current_user)} Your Profile
           %li.logout
             = button_to 'Logout', session_path, :method => :delete 
         - else 
-          %li.login
-            = link_to "<strong>Jammer?</strong> Login", new_session_path, :title => 'Log in' 
-          %li.register
-            = link_to "<strong>New peep?</strong> Register", new_user_path, :title => 'Register'
+          %li
+            = link_to "Register", new_user_path, :title => 'Register'
+          %li
+            = link_to "Login", new_session_path, :title => 'Log in'
 
       #wrapper
         - if top = yield(:top) 

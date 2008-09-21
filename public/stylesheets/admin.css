@@ -23,3 +23,16 @@
   #content h1 {clear: both; margin: 1.4em 0 0.5em 0;}
   
   #content input.submit {margin: 0.4em 0 0 0;}
+  
+  
+  ul#proposals {}
+    ul#proposals li {}
+      ul#proposals li em {padding: 0 0 0 2em;}
+      
+  ul#rsvps {}
+    ul#rsvps li {clear: both;}
+      ul#rsvps li strong,
+      ul#rsvps li span,
+      ul#rsvps li em {display: block; float: left; margin: 0 1em 0 0; width: auto;}
+      ul#rsvps li strong {width: 7em;}
+      ul#rsvps li span {width: 13em;}
