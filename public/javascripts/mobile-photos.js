@@ -1,21 +1,23 @@
 $(document).ready(function() {
   $("ul.photo-list li a").click(function() {
-    // var bodyHider = $("<div class='photoBodyOverlay'></div>");
-    // 
-    // var bodyHider = $("#photo")
-    if (bodyHider.length == 0) {
-      bodyHider = $("<div id='bodyHider' style='display:none'></div>").click(function() {
-        $(this).show();
-      });
-      $(document.body).wrapInner(bodyHider);
-    } else {
-      bodyHider.hide();
-    }
-    var image = $("<img id='zoomed-photo' src='" + $(this).children("img").attr("src").replace("_s.jpg","_m.jpg") + "' style='width:100%' />").click(function() {
-      $(this).remove();
-      $("#bodyHider").show();
+    var $thumbnailAnchor = $(this);
+    $thumbnailAnchor.addClass("loading");
+
+    var imageSrc = $(this).children("img").attr("src").replace("_s.jpg","_m.jpg");
+    var $image = $("<img/>").attr("src", imageSrc);
+    
+    var $closeLayer = $("<div class='close' style='display:none'/>").click(function() {$(this).parent().remove();});
+    var $imageContainer = $("<div class='zoomedImage'/>").append($closeLayer).append($image);
+    $imageContainer.css('top', window.pageYOffset);
+    $imageContainer.click(function() {$(this).remove();});
+    
+    $image.load(function() {
+      $thumbnailAnchor.removeClass("loading");
+      $closeLayer.show();
     });
-    $(document.body).append(image);
+    
+    $(document.body).append($imageContainer);
+
     return false;
   });
 });
