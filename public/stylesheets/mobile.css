@@ -215,6 +215,11 @@ p.where a.map {
   top: 0;
   right: 0;
 }
+
+ul.group li a.item.button.get-involved {
+  font-size: 1.2em;
+}
+
 .photos {
   margin: 1.8em 0;
 }

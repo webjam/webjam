@@ -31,7 +31,9 @@
 %h2 Get Involved!
 %ul.group
   %li
-    %a.button.item{:href => event_path(@event)} Visit regular site to register or submit a proposal
+    %a.button.item{:href => event_path(@event)} RSVP via the regular website
+  %li
+    %a.button.item{:href => event_path(@event)} Submit a proposal via the regular website
 
 - if @latest_photo
   %h2
@@ -44,7 +46,7 @@
       = render :partial => "shared/event_photo", :locals => {:photo => @latest_photo}
   - unless @photos_from_previous_event
     .more
-      %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos&hellip;
+      %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos
         
 - unless @latest_tweets.empty?
   %h2 Tweets
@@ -54,7 +56,7 @@
         = render :partial => 'shared/tweet', :locals => {:tweet => tweet}
   - if @more_tweets
     .more
-      %a.button{:href => formatted_event_tweets_path(@event, :mobile)} More tweets&hellip;
+      %a.button{:href => formatted_event_tweets_path(@event, :mobile)} More tweets
   
 - unless @event.posts.empty?
   %h2 News
