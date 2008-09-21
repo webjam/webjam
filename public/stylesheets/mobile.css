@@ -30,7 +30,6 @@ body {
 .content h2 {
   color: #666;
   font-size: 1.4em;
-  text-transform: uppercase;
   margin: 1em 0 1em 0;
 }
 
@@ -96,10 +95,10 @@ ul.group li a.post span.comment-count + ul.group li a.post span.title {
 /* Header */
 #header {
   position: relative;
-  margin: 0 -15px 0 -15px;
+  margin: 0 -15px 10px -15px;
   text-align: center;
   background: transparent url(../images/mobile-webjam-logo-small.png) no-repeat 15px left;
-  height: 51px;
+  height: 56px;
 }
 #header .back {
   display: none;

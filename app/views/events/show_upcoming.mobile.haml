@@ -29,11 +29,9 @@
       = @event.local_held_at.to_datetime.to_s(:time_12hr).downcase.sub(/^0/,'')
 
 %h2 Get Involved!
-%ul.group.multi
+%ul.group
   %li
-    %a.button.item{:href => "#"} Register to attend
-  %li
-    %a.button.item{:href => "#"} Submit a proposal
+    %a.button.item{:href => event_path(@event)} Visit regular site to register or submit a proposal
 
 - if @latest_photo
   %h2

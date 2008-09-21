@@ -45,3 +45,9 @@
 %ul.group
   %li
     %a.item.button{:href => formatted_past_events_path(:mobile)} All past events
+
+- if @upcoming_events
+  %h2 Upcoming Events
+  %ul.group
+    - for event in @upcoming_events
+      %li= render :partial => "shared/event_item", :locals => {:event => event}
