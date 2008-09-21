@@ -269,7 +269,7 @@ ul.tweets li .user {
   color: #fff;
   text-decoration: none;
 }
-ul.photo-list li a .timestamp, ul.tweets li a.timestamp {
+ul.photo-list li a .info, ul.tweets li a.timestamp {
   margin-top: 0.5em;
   font-size: 0.9em;
   display: block;
@@ -286,7 +286,7 @@ ul.photo-list li {
 }
 ul.photo-list li a {
   background: #333 url(../images/mobile-webjam-photo-zoom.png) no-repeat top right;
-  min-height: 85px;
+  min-height: 80px;
   display: block;
 }
 ul.photo-list li img {
@@ -309,11 +309,15 @@ ul.photo-list li a .title {
 ul.photo-list li a .by {
   margin-top: 0.5em;
 }
-ul.photo-list li a .timestamp {
+ul.photo-list li a .info {
   position: absolute;
-  bottom: 5px;
-  right: 15px;
+  bottom: 7px;
+  right: 10px;
+  font-weight: normal;
 } 
+ul.photo-list li a .permalink {
+  display: none;
+}
 ul.photo-list li a .spinner {
   top: 30px;
   opacity: 0.5;
@@ -473,17 +477,18 @@ div.zoomedImage .inner img {
 div.zoomedImage .inner div.close {
   z-index: 2;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 7px;
+  right: 6px;
   height: 20px;
   width: 20px;
   background: transparent url(../images/mobile-webjam-photo-close.png) no-repeat top right;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 div.zoomedImage .externalLink {
-  font-size: 1.2em;
+  font-size: 1.1em;
   width: 100%;
   text-align: center;
+  font-weight: normal;
 }
 div.zoomedImage .externalLink a.button {
   display: block;

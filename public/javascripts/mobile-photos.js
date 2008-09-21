@@ -14,7 +14,7 @@ $(document).ready(function() {
     var $imageContainer = $("<div class='zoomedImage'></div>");
     var $closeLayer = $("<div class='close'/>");
     var $imageInner = $("<div class='inner'></div>");
-    var $externalLink = $("<div class='externalLink'><a href='#' class='button'><span class='text'>" + $thumbnailAnchor.find(".title").text() + $thumbnailAnchor.find(".by").text() + "</span>"  + "</a>");
+    var $externalLink = $("<div class='externalLink'><a href='" + $thumbnailAnchor.find(".permalink").text() + "' class='button'><span class='text'>View &lsquo;" + $thumbnailAnchor.find(".title").text() + "&rsquo;" + $thumbnailAnchor.find(".by").text() + "on&nbsp;Flickr</span>"  + "</a>");
     
     $imageInner.append($image).append($closeLayer).append($externalLink);
     $imageContainer.append($imageInner);

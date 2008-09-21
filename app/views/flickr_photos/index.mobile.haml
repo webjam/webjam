@@ -12,8 +12,11 @@
           %span.by
             by
             =h photo.realname
-        %span.timestamp
-          =h photo.posted_at.in_time_zone(@event.timezone).to_s(:long)
+        %span.info
+          %span.permalink
+            =h photo.url
+          %span.timestamp
+            =h photo.posted_at.in_time_zone(@event.timezone).to_s(:long)
 
 = will_paginate @photos, :page_links => false
 
