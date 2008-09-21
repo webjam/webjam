@@ -95,7 +95,7 @@ jQuery.fn.mobilePhotoNavigator = function(photoData) {
         alt: this.title
       }).appendTo(element);
 
-      jQuery("<a class='button'></a>").attr('href', this.url).html(this.title + " by " + this.realname).appendTo(element);
+      jQuery("<span class='info'></a>").html(this.title + " by " + this.realname).appendTo(element);
       
       return element;
     }

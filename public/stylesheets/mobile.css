@@ -228,24 +228,20 @@ p.where a.map {
   position: relative;
   z-index: 2;
 }
-.photos .photo a.button {
+.photos .photo .info {
+  z-index: 3;
   padding: 5px 7px;
-  z-index: 5;
   font-size: 1.2em;
   position: absolute;
   margin-left: 10px;
   bottom: 10px;
   right: 10px;
   text-align: right;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
   opacity: 0.6;
-  background-color: #bbb;
-  color: #000;
-  text-shadow: 0px 0px 2px #fff;
-  border: none;
 } 
-.photos .photo a.button .text {
-  opacity: 1;
-}
 ul.tweets li, ul.photo-list li a {
   color: #ccc;
   background-color: #333;
@@ -321,10 +317,6 @@ ul.photo-list li a .permalink {
 ul.photo-list li a .spinner {
   top: 30px;
   opacity: 0.5;
-}
-
-#zoomed-photo {
-  margin: auto;
 }
 
 /* Blog posts */
@@ -442,9 +434,6 @@ a.regular-site {
   background-position: center center;
   opacity: 1;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-.photoNavigator .photo a {
-  z-index: 3;
 }
 .photoNavigator .next {
   background-image: url(images/bg-navigator-next-control.png);
