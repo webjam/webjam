@@ -75,7 +75,7 @@
         - @event.previous_event.flickr_photos.featured.each do |fp|
           %li
             %a{:href => fp.url}
-              %img{ :title => "#{fp.title} by #{fp.realname}", :src => fp.img_url(""), :alt => fp.title }
+              %img{ :title => "#{fp.title} by #{fp.realname}", :src => fp.img_url("b"), :alt => fp.title }
             %br
             Photo by
             %a{:href => fp.profile_url}<
