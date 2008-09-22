@@ -79,13 +79,18 @@
             Photo by
             %a{:href => fp.profile_url}<
               =fp.realname
-            
-  %p
-    So far we have
-    -# = pluralize(@event.number_of_presenters, "presenter") + " and"
-    = pluralize(@event.rsvps.count, "attendee")
-    but we need more. We need <strong>you</strong>. Hadn't you better
-    %a{ :href => "#" + @event.tag} sign up?
+  - if @event.full?
+    %p
+      We're totally full up with
+      = pluralize(@event.rsvps.count, "attendee") + "."
+      Hopefully, you're one of them!
+  - else
+    %p
+      So far we have
+      -# = pluralize(@event.number_of_presenters, "presenter") + " and"
+      = pluralize(@event.rsvps.count, "attendee")
+      but we need more. We need <strong>you</strong>. Hadn't you better
+      %a{ :href => "#" + @event.tag} sign up?
 
 %div{:class => @event.posts.empty? ? "item last" : "item", :id => "event-details"}
   .item-details
