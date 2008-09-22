@@ -88,7 +88,7 @@ ul.group li a.event span.date, ul.group li a.post span.comment-count {
   color: #f99;
 }
 /* If theres a comment count then we need some margin-right */
-ul.group li a.post span.comment-count + ul.group li a.post span.title {
+ul.group li a.post span.title.with-comments {
   margin-right: 6em;
 }
 
