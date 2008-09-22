@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def new
     @openid_url = params[:openid_url]
-    session[:return_to_path] ||= params[:return_to]
+    session[:return_to] = params[:return_to] if params[:return_to]
   end
 
   def create
@@ -19,12 +19,8 @@ class SessionsController < ApplicationController
         render :action => 'new'
       else
         self.current_user = user_identity_url.user
-        if session[:return_to_path]
-          redirect_to session[:return_to_path]
-          session[:return_to_path] = nil
-        else
-          redirect_to home_path
-        end
+        redirect_back_or_default(home_path)
+        session[:return_to] = nil
       end
     end
   rescue OpenIdAuthentication::InvalidOpenId
