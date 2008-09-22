@@ -27,6 +27,7 @@
       %br/
       Doors open at
       = @event.local_held_at.to_datetime.to_s(:time_12hr).downcase.sub(/^0/,'')
+      (RSVP only)
 
 - if @latest_photo
   %h2
