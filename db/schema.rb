@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080914052910) do
+ActiveRecord::Schema.define(:version => 20080922162724) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20080914052910) do
     t.string   "location"
     t.text     "hype"
     t.datetime "proposals_close_at"
-    t.string   "map_iframe_url"
-    t.string   "map_url"
+    t.text     "map_iframe_url"
+    t.text     "map_url"
     t.string   "campaign_monitor_list_id"
     t.text     "address"
   end
