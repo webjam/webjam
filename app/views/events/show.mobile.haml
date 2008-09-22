@@ -36,9 +36,9 @@
       %a.button{:href => formatted_event_tweets_path(@event, :mobile)} More tweets
 
 - unless @event.posts.empty?
-  %h2 News
+  %h2 Related News
   %ul.group
-    - for post in @event.posts
+    - for post in @event.posts.reverse
       %li
         = render :partial => "shared/news_post", :locals => {:post => post}
 
