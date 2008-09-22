@@ -1,6 +1,6 @@
 !!! Strict
 %html{"xml:lang" => "en-au", :lang => "en-au", :xmlns => "http://www.w3.org/1999/xhtml"}
-  %head
+  %head{:profile => "http://www.w3.org/2005/10/profile"}
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
     %meta{:content => "IE=EmulateIE7", "http-equiv" => "X-UA-Compatible"}
     // Google verify
@@ -10,6 +10,8 @@
       = @page_title || (raise "No page title")
     = stylesheet_link_tag 'reset', 'backjam'
     = javascript_include_tag 'jquery', 'webjam', 'autoshow', :cache => true
+    
+    %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
 
     = auto_discovery_link_tag :atom, APPLICATION_CONFIG.feed_url, :title => "Webjam"
     = yield :head
