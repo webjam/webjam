@@ -19,14 +19,17 @@
 -# <li><a href="#" rel="tag">something else</a></li>
 -# </ul>
 
-%h2 Comments
-
-%ul.comments
-  - for comment in @post.comments
-    %li{:id => "comment-#{comment.id}"}
-      .body= format_comment_body(comment.body)
-      .when= time_ago_in_words comment.created_at
-      .who= user_link_with_avatar(comment.user, "author")
+- unless @post.comments.empty?
+  %h2 Comments
+  %ul#comments
+    - for comment in @post.comments
+      %li{:id => "comment-#{comment.id}"}
+        .body= format_comment_body(comment.body)
+        .info
+          %span.when= time_ago_in_words comment.created_at
+          %span.who
+            ago by
+            =h comment.user.nick_name
   -# if current_user
   -#  %li.new
   -#    - form_tag post_comments_url(:year => @post.year, :permalink => @post.permalink) do
@@ -37,10 +40,10 @@
   -#      %fieldset
   -#        %input{ :type => "submit", :value => "Add comment"}
     
-%ul.group
-  -# if !current_user
-  %li
-    %a.item.button{:href => post_path(@post.year, @post.permalink)} Leave a comment via the regular site
+-# %ul.group
+-#   -# if !current_user
+-#   %li
+-#     %a.item.button{:href => post_path(@post.year, @post.permalink)} Leave a comment via the regular site
 
 %ul.group
   - if @next_post

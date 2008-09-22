@@ -54,7 +54,7 @@ a.button {
   text-decoration: none;
 }
 
-.content h2 + ul.group {
+.content h2 + ul.group, .content h2 + ul#comments {
   margin-top: -0.8em;
 }
 ul.group li a.item {
@@ -247,7 +247,7 @@ ul.group li a.item.button.get-involved {
   text-shadow: 1px 1px 1px #000;
   opacity: 0.6;
 } 
-ul.tweets li, ul.photo-list li a {
+ul.tweets li, ul.photo-list li a, ul#comments li {
   color: #ccc;
   background-color: #333;
   padding: 7px 8px;
@@ -258,7 +258,7 @@ ul.tweets li, ul.photo-list li a {
   line-height: 1.2em;
   text-decoration: none;
 }
-ul.tweets li .body a {
+ul.tweets li .body a, ul#comments li .body a {
   color: #ddd;
   text-decoration: none;
   background-color: #555;
@@ -362,6 +362,14 @@ p.post-timestamp {
 }
 .post-body h3 {
   font-size: ;
+}
+ul#comments li .body p {
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  font-size: 1.2em;
+}
+ul#comments li .info {
+  color: #666;
 }
 
 /* Pagination */
