@@ -28,13 +28,6 @@
       Doors open at
       = @event.local_held_at.to_datetime.to_s(:time_12hr).downcase.sub(/^0/,'')
 
-%h2 Get Involved!
-%ul.group
-  %li
-    %a.button.item{:href => event_path(@event)} RSVP via the regular website
-  %li
-    %a.button.item{:href => event_path(@event)} Submit a proposal via the regular website
-
 - if @latest_photo
   %h2
     - if @photos_from_previous_event
