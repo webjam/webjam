@@ -69,11 +69,15 @@
       %dd
         %p
           %strong Want to present?
-          There&rsquo;s still time.
+          You have 
+          = pluralize(event.proposals_close_at.to_date - Time.now.to_date, "day")
+          left to submit a proposal.
     - else
       %dt
         = link_to "Present", event_presentation_proposal_path(event), :class => "button rsvp"
       %dd
         %p
           %strong Want to present?
-          Submit a proposal!
+          You have 
+          = pluralize(event.proposals_close_at.to_date - Time.now.to_date, "day")
+          left to submit a proposal!

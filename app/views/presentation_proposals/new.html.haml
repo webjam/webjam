@@ -4,11 +4,15 @@
   = render :partial => 'shared/other_content/proposal_help'
 
 .item.last
-  %h2=h @page_title
+  - if @event.proposals_open?
+    %h2=h @page_title
   
-  %p Tell us about your ideal for a 3 minute preso. You&rsquo;ll be able to come back later and edit the proposal from the event page.
+    %p Tell us about your ideal for a 3 minute preso. You&rsquo;ll be able to come back later and edit the proposal from the event page.
 
-  - form_for @proposal, :presentation_proposal, :url => event_presentation_proposal_path do |f|
-    = f.error_messages
-    = render :partial => "form", :locals => {:f => f}
-    = submit_tag 'Submit', :class => 'submit'
+    - form_for @proposal, :presentation_proposal, :url => event_presentation_proposal_path do |f|
+      = f.error_messages
+      = render :partial => "form", :locals => {:f => f}
+      = submit_tag 'Submit', :class => 'submit'
+  - else
+    %h2=h "Presentation proposals for #{h(@event.name)} have closed"
+    %p Unfortunately, you've missed out this time, but please submit your proposal for another Webjam. After all, your work is still cool and we still want to share it with everybody!
