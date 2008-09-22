@@ -27,7 +27,8 @@
 
   - elsif @authentication_error
     %p.error
-      There was an authentication error: <%=h @authentication_error %>
+      There was an authentication error:
+      =h @authentication_error
 
   - form_tag(create_session_path, :id => 'login') do |f|
     %fieldset
