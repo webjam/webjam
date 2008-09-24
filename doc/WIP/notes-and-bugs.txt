@@ -11,7 +11,7 @@ webjam8:pres=2
 webjam:user=lachlanhardy
 
 
-7 DAYS!!!
+0.5 DAYS!!!
 TODO by 24th September in priority order:
 
 test SMS voting shizzle - Tim
@@ -28,8 +28,6 @@ build default sponsor promo structure
 Build hotted up active version for events!
 
 TODO:
-
-FAVICON!!!
 
 cross-browser testing
 
