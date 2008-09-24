@@ -11,7 +11,7 @@ webjam8:pres=2
 webjam:user=lachlanhardy
 
 
-1.5 DAYS!!!
+0.5 DAYS!!!
 TODO by 24th September in priority order:
 
 test SMS voting shizzle - Tim
