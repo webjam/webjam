@@ -5,29 +5,10 @@
 - @mobile_version_path = formatted_event_path(@event, :mobile)
 
 - content_for :other_content do
-  = default_other_content
-
--# content_for :other_content do
--#  %div.item#summary
--#    %p This is some clever text about how cool this event was. This is some clever text about the webjam. This is some clever text about the webjam. This is some clever text about the webjam. 
--#
--#    %h2 Place-getters:
--#    %ol
--#      %li This presentation won
--#      %li This presentation came second
--#      %li This presentation was third
--#
--#    %h2 Presenters:
--#    %ul
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation  
+  = render :partial => 'shared/other_content/wtf'
+  = render :partial => 'shared/other_content/shirt'
+  = render :partial => 'shared/other_content/latest_news'
+  = event_summary(@event)
 
 %div{:class => @event.previous_event.flickr_photos.empty? ? "item last" : "item"}
   = render :partial => "shared/event_title", :locals => {:event => @event}
@@ -125,71 +106,11 @@
         %a{:href => fp.url}
           %img{:alt => fp.title, :height => "75", :src => fp.img_url("s"), :title => "#{fp.title} by #{fp.realname}", :width => "75"}
 
-
--#.item.media#photos
--#  .item-details
--#    %h2 Photos
--#    %p 
--#      Add your photos. Tag them on
--#      %a{ :href => "http://flickr.com/"} Flickr
--#      with &#8220;
--#      %a{ :href => "http://flickr.com/photos/tags/webjam8/" } webjam8
--#      &#8221;
--#  %ul
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}
--#    %li
--#      %a{ :href => "http://flickr.com/photos/misswired/408145144/" }
--#        %img{ :alt => "By misswired", :height => "75", :src => "http://farm1.static.flickr.com/188/408145144_78317398d5_s.jpg", :title => "By misswired", :width => "75"}        
--#
 -#.item.media#videos
 -#  .item-details
 -#    %h2 Videos
 -#    %p 
--#      Add your photos. Tag them on 
+-#      Add your videos. Tag them on 
 -#      %a{ :href => "http://viddler.com/"} Viddler
 -#      with &#8220;
 -#      %a{ :href => "http://flickr.com/photos/tags/webjam8/" } webjam8
