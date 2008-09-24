@@ -4,32 +4,9 @@
 - @event_num = @event.number
 - @mobile_version_path = formatted_event_path(@event, :mobile)
 
-- content_for :other_content do
-  = default_other_content
+= event_summary(@event)
 
--# content_for :other_content do
--#  %div.item#summary
--#    %p This is some clever text about how cool this event was. This is some clever text about the webjam. This is some clever text about the webjam. This is some clever text about the webjam. 
--#
--#    %h2 Place-getters:
--#    %ol
--#      %li This presentation won
--#      %li This presentation came second
--#      %li This presentation was third
--#
--#    %h2 Presenters:
--#    %ul
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation
--#      %li This is a presentation  
-
-%div{:class => @event.posts.empty? ? "item last" : "item"}
+.item
   = render :partial => "shared/event_title", :locals => {:event => @event}
   - unless @event.previous_event.flickr_photos.featured.empty?
     .slideshow
@@ -42,7 +19,9 @@
             Photo by
             %a{:href => fp.profile_url}<
               =fp.realname
-  %p Wow! We had 18 presenters and over 190 attendees. Not to mention a whole lot of awesome geekery.
+
+  /
+    %p Wow! We had 18 presenters and over 190 attendees. Not to mention a whole lot of awesome geekery.
   /
     %p
       Wow! 
@@ -51,61 +30,14 @@
       And a whole lot of awesome geekery.
   = @event.hype
 
+= sponsor_content(@event)
+
 - unless @event.posts.empty?
   .item.last#related-posts
     = render :partial => "related_posts"
 
--#.item#winners
--#  .item-details
--#    %h2 The winners
--#  %dl.first
--#    %dt Dmitry rocks out with Optimus
--#    %dd.img
--#      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
--#    %dd.place
--#      %p
--#        %strong 1st place:
--#        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
--#    %dd.prize
--#      %p
--#        %strong Prizes:
--#        iPod Touch from Whoever, 10 books from Sitepoint. 
--#    %dd
--#      %p 
--#        Dmitry did something really cool with microformats. Dmitry did something really cool with microformats.
--#        %a.details{ :href => "#" } Check it out
--#        
--#  %dl
--#    %dt Dmitry rocks out with Optimus
--#    %dd.img
--#      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
--#    %dd.place
--#      %p
--#        %strong 2nd place:
--#        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
--#    %dd.prize
--#      %p
--#        %strong Prize:
--#        iPod Touch from Binalogue. 
--#    %dd
--#      %p 
--#        %a.details{ :href => "#" } Check it out
--#              
--#  %dl
--#    %dt Dmitry rocks out with Optimus
--#    %dd.img
--#      %img{ :alt => "Image of Dmitry by Charlie Brewer", :height => "", :src => "", :title => "Image of Dmitry by Charlie Brewer", :width => "288"}
--#    %dd.place
--#      %p
--#        %strong 3rd place:
--#        %a{ :href => "/people/dmitrybaranovskiy/"} Dmitry Baranovskiy
--#    %dd.prize
--#      %p
--#        %strong Prize:
--#        5 books from Sitepoint. 
--#    %dd
--#      %p 
--#        %a.details{ :href => "#" } Check it out
+= winners_content(@event)
+
 -#      
 -#
 -#.item.media#photos
