@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080922162724) do
+ActiveRecord::Schema.define(:version => 20080925061820) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -85,6 +85,20 @@ ActiveRecord::Schema.define(:version => 20080922162724) do
     t.datetime "updated_at"
   end
 
+  create_table "mugshots", :force => true do |t|
+    t.integer  "temp_user_id", :limit => 11
+    t.integer  "user_id",      :limit => 11
+    t.integer  "parent_id",    :limit => 11
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size",         :limit => 11
+    t.integer  "width",        :limit => 11
+    t.integer  "height",       :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "open_id_authentication_associations", :force => true do |t|
     t.binary  "server_url"
     t.string  "handle"
@@ -95,9 +109,9 @@ ActiveRecord::Schema.define(:version => 20080922162724) do
   end
 
   create_table "open_id_authentication_nonces", :force => true do |t|
-    t.integer "timestamp",  :limit => 11, :null => false
+    t.integer "timestamp",  :limit => 11,                 :null => false
     t.string  "server_url"
-    t.string  "salt",                     :null => false
+    t.string  "salt",                     :default => "", :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -167,7 +181,7 @@ ActiveRecord::Schema.define(:version => 20080922162724) do
   end
 
   create_table "viddler_videos", :force => true do |t|
-    t.integer  "identifier",        :limit => 11
+    t.string   "identifier"
     t.string   "title"
     t.string   "username"
     t.string   "description"
