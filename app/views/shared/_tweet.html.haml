@@ -1,3 +1,4 @@
-%strong= tweet.username
+%strong
+  %a{:href => "http://twitter.com/#{tweet.username}"}= tweet.username + ":"
 %span= format_tweet tweet.body
-%a.timestamp{:href => tweet.url}= tweet.posted_at.in_time_zone(@event.timezone).to_s(:long) + " »"
+%a.timestamp{:href => tweet.url}= tweet.posted_at.in_time_zone(@event.timezone).to_s(:long)
