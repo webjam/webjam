@@ -313,6 +313,12 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
         	  #videos li {margin: 0 1.16em 1em 0;}
         	  #words li {float: none; font-size: 0.95em; list-style-type: disc; margin: 0 0 0.3em 0.7em;}
         	    #words li a {font-size: 1.053em; margin: 0 0.3em 0 0; text-transform: capitalize;}
+        	    
+      ul.tweets {}
+        ul.tweets li {list-style: none;}
+          ul.tweets li strong {}
+          ul.tweets li span {}
+          ul.tweets li a.timestamp {display: block; text-align: right;}
     	    
       /* ---- =Presentation ---- */
       #title {border-bottom: 1px solid #333; padding: 1px 2em 0.5em 0; text-align: right;}

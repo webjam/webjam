@@ -7,7 +7,17 @@
 - content_for :other_content do
   = render :partial => 'shared/other_content/wtf'
   = render :partial => 'shared/other_content/shirt'
+  - unless @latest_tweets.empty?
+    %h2 Tweets
+    %ul.tweets
+      - for tweet in @latest_tweets
+        %li
+          = render :partial => 'shared/tweet', :locals => {:tweet => tweet}
+    - if @more_tweets
+      .more
+        %a{:href => formatted_event_tweets_path(@event)} More tweets
   = render :partial => 'shared/other_content/latest_news'
+  
   
 .item
   = render :partial => "shared/event_title", :locals => {:event => @event}

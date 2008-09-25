@@ -2,6 +2,9 @@ class EventsController < ApplicationController
   def show
     @event = Event.published.find_by_tag(params[:id])
     raise NotFound unless @event
+    @total_tweets = @event.tweets.count
+    @latest_tweets = @event.tweets.latest(5).all
+    @more_tweets = @event.tweets.count > @total_tweets
     respond_to do |wants|
       wants.html do
         render :action => (@event.upcoming? ? "show_upcoming" : "show")
@@ -16,16 +19,14 @@ class EventsController < ApplicationController
             @photos = @previous_event.flickr_photos.featured.paginate :page => 1, :order => "created_at DESC"
             @latest_photo = @photos.first
           end
-          @total_tweets = @event.tweets.count
-          @latest_tweets = @event.tweets.latest(5).all
-          @more_tweets = @event.tweets.count > @total_tweets
+          
           render :action => "show_upcoming"
         else
           @photos = @event.flickr_photos.latest.all :order => "created_at DESC", :limit => 10
           @latest_photo = @photos.first
-          @total_tweets = @event.tweets.count
-          @latest_tweets = @event.tweets.latest(5).all
-          @more_tweets = @event.tweets.count > @total_tweets
+          # @total_tweets = @event.tweets.count
+          #           @latest_tweets = @event.tweets.latest(5).all
+          #           @more_tweets = @event.tweets.count > @total_tweets
           render :action => "show"
         end
       end
