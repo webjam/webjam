@@ -13,9 +13,7 @@ class ViddlerVideo < ActiveRecord::Base
     # down. this is non optimal, so shoudln't be run too frequently (<5 mins?)
     identifiers = Array.new
     # todo - optimize this with a select if table is too large
-    ViddlerVideo.find_all_by_event_id(event.id) do |video|
-      identifiers << video.identifier
-    end
+    event.viddler_videos.each {|vid| identifiers << vid.identifier}
     
     page = 1
     per_page = 100
@@ -30,7 +28,7 @@ class ViddlerVideo < ActiveRecord::Base
   def self.load_and_store_page_of_videos(event, existing_identifiers, number_per_page, page)
     arguments = Hash.new
     arguments["tag"] = [event.tag]
-    response = request("Viddler.videos.getByTag",arguments)
+    response = request("viddler.videos.getByTag",arguments)
     
     # we use this to track if there are more videos.
     counter = 0
@@ -39,19 +37,20 @@ class ViddlerVideo < ActiveRecord::Base
     photo_ids = REXML::XPath.match(response, "//video_list/video").collect do |elem|
       counter += 1
       identifier = elem.elements['id'].get_text.to_s
-      unless existing_identifiers.index[identifier]
+      unless existing_identifiers.index(identifier)
         vv = ViddlerVideo.new
         vv.identifier = identifier
         vv.username = elem.elements['author'].get_text.to_s
         vv.title = elem.elements['title'].get_text.to_s
         vv.description = elem.elements['description'].get_text.to_s
-        vv.posted_at = Time.at(elem.elements['author'].get_text.to_s.to_i)
+        vv.posted_at = Time.at(elem.elements['upload_time'].get_text.to_s.to_i/1000)
         vv.video_url = elem.elements['url'].get_text.to_s
         vv.thumbnail_url = elem.elements['thumbnail_url'].get_text.to_s
+        vv.length_in_seconds = elem.elements['length_seconds'].get_text.to_s.to_i
         vv.event_id = event.id
         # find the embed code from the oembed API.
         oembed_call_uri = "#{OEMBED_API_BASE}?url=#{vv.video_url}&format=json"
-        ormbed_response = JSON.parse(open(oembed_call_uri).read)
+        oembed_response = JSON.parse(open(oembed_call_uri).read)
         vv.object_html = oembed_response["html"]
         logger.info("VidlerVideo::retrieve About to save video #{vv.title} (viddler id: #{vv.identifier}) for event #{event.name}")
         vv.save!
