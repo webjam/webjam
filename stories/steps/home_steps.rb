@@ -6,6 +6,13 @@ steps_for :home do
     upcoming_event
   end
   
+  Given "no upcoming event exists" do
+  end
+  
+  Given "a past event exists" do
+    past_event
+  end
+  
   Given "a post exists" do
     post(admin_user)
   end
