@@ -26,8 +26,12 @@
   = render :partial => "shared/event_registration_column", :locals => {:event => @event}
   
   = @event.hype
- 
-= sponsor_content(@event)
+
+.item#sponsors
+  .item-details
+    %h2 Meet our sponsors 
+    %a.details{ :href => "mailto:welovesponsors@webjam.com.au"} Want your logo here? Get in touch.
+  = sponsor_content(@event)
 
 .item
   .item-details

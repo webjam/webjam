@@ -40,7 +40,10 @@
       And a whole lot of awesome geekery.
   = @event.hype
 
-= sponsor_content(@event)
+  .item#sponsors
+    .item-details
+      %h2 Meet our sponsors 
+    = sponsor_content(@event)
 
 - unless @event.posts.empty?
   %div{:class => @event.previous_event.flickr_photos.empty? ? "item last" : "item", :id => "related-posts"}

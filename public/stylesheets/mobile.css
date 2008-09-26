@@ -9,6 +9,8 @@ body {
   padding: 0 15px;
   -webkit-text-size-adjust: none;
   height: 100%;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 /* Main content stylings */
@@ -216,10 +218,32 @@ p.where a.map {
   right: 0;
 }
 
-ul.group li a.item.button.get-involved {
-  font-size: 1.2em;
+.sponsors {
+  margin: 10px 0;
+  padding: 8px 10px;
+  border: 1px solid #353535;
+  -webkit-border-radius: 5px;
 }
-
+.sponsors li {
+  display: inline;
+}
+.sponsors h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #666;
+}
+.sponsors a {
+  margin: 0 7px;
+  padding: 3px 0;
+}
+#sponsors .item-details {
+  position: relative;
+}
+#sponsors .details {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}
 .photos {
   margin: 1.8em 0;
 }
