@@ -14,6 +14,8 @@
     = auto_discovery_link_tag :atom, APPLICATION_CONFIG.feed_url, :title => "Webjam"
     = stylesheet_link_tag "backjam_mobile", :media => "only screen and (max-device-width: 480px)"
     = yield :head
+    
+    / Oh hai. Secrets.
 
   %body#webjam-com-au{:class => @body_class, :onload => @onload}
     - if mobile_request?
