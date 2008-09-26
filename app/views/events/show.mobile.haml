@@ -46,9 +46,9 @@
 
 %ul.group
   %li
-    %a.item.button{:href => formatted_past_events_path(:mobile)} All past events
+    %a.item.button{:href => formatted_past_events_path(:mobile)} Past events
 
-- if @upcoming_events
+- unless @upcoming_events.empty?
   %h2 Upcoming Events
   %ul.group
     - for event in @upcoming_events
