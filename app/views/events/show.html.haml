@@ -16,19 +16,19 @@
   = render :partial => 'shared/other_content/latest_news'
   = event_summary(@event)
 
-%div{:class => @event.previous_event.flickr_photos.empty? ? "item last" : "item"}
+.item
   = render :partial => "shared/event_title", :locals => {:event => @event}
-  - unless @event.previous_event.flickr_photos.featured.empty?
+  - unless @photos.empty?
     .slideshow
       %ul
-        - @event.previous_event.flickr_photos.featured.each do |fp|
+        - for photo in @photos
           %li
-            %a{:href => fp.url}
-              %img{ :title => "#{fp.title} by #{fp.realname}", :src => fp.img_url("l"), :alt => fp.title }
+            %a{:href => photo.url}
+              %img{ :title => "#{photo.title} by #{photo.realname}", :src => photo.img_url("l"), :alt => photo.title }
             %br
             Photo by
-            %a{:href => fp.profile_url}<
-              =fp.realname
+            %a{:href => photo.profile_url}<
+              = photo.realname
 
   /
     %p Wow! We had 18 presenters and over 190 attendees. Not to mention a whole lot of awesome geekery.
@@ -46,12 +46,12 @@
     = sponsor_content(@event)
 
 - unless @event.posts.empty?
-  %div{:class => @event.previous_event.flickr_photos.empty? ? "item last" : "item", :id => "related-posts"}
+  %div{:class => @all_photos.empty? ? "item last" : "item", :id => "related-posts"}
     = render :partial => "related_posts"
 
 = winners_content(@event)
 
-- unless @event.previous_event.flickr_photos.empty?
+- unless @all_photos.empty?
   .item.last.media#photos
     .item-details
       %h2 Photos
@@ -62,10 +62,10 @@
         %a{:href => "http://flickr.com/photos/tags/#{@event.tag}/"}= @event.tag
         &#8221;
     %ul
-    - @event.previous_event.flickr_photos.each do |fp|
+    - for photo in @all_photos
       %li
-        %a{:href => fp.url}
-          %img{:alt => fp.title, :height => "75", :src => fp.img_url("s"), :title => "#{fp.title} by #{fp.realname}", :width => "75"}
+        %a{:href => photo.url}
+          %img{:alt => photo.title, :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
 
 -#.item.media#videos
 -#  .item-details
