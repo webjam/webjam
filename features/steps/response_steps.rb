@@ -1,5 +1,5 @@
 Then "I see the page" do
-  response.should be_success
+  response.code.should == "200"
 end
 
 Then "I receive a 404 not found" do
