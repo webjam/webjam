@@ -18,17 +18,17 @@
 
 .item
   = render :partial => "shared/event_title", :locals => {:event => @event}
-  - unless @photos.empty?
+  - unless @featured_photos.empty?
     .slideshow
       %ul
-        - for photo in @photos
+        - for photo in @featured_photos
           %li
             %a{:href => photo.url}
-              %img{ :title => "#{photo.title} by #{photo.realname}", :src => photo.img_url("l"), :alt => photo.title }
+              %img{ :title => "#{h photo.title} by #{h photo.realname}", :src => photo.img_url("l"), :alt => h(photo.title) }
             %br
             Photo by
             %a{:href => photo.profile_url}<
-              = photo.realname
+              =h photo.realname
 
   /
     %p Wow! We had 18 presenters and over 190 attendees. Not to mention a whole lot of awesome geekery.
