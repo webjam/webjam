@@ -1,4 +1,4 @@
-require "../spec_helper"
+require File.dirname(__FILE__) + "/../spec_helper"
 
 describe Post, "before_save" do
   it "calls set_year" do

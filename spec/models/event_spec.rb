@@ -1,4 +1,4 @@
-require "../spec_helper"
+require File.dirname(__FILE__) + "/../spec_helper"
 
 describe Event, "event_email_address" do
   it "returns <tag>@webjam.com.au" do
