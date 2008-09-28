@@ -18,8 +18,8 @@ steps_for :events do
     get event_path(@event)
   end
   
-  When "I view the past events pages from an iphone" do
-    get formatted_past_events_path(:mobile), nil, :user_agent => iphone_user_agent
+  When "I view the mobile past events page" do
+    get formatted_past_events_path(:mobile)
   end
   
   Then "I see the page" do

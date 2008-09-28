@@ -7,10 +7,10 @@ Story: Viewing post pages
   Scenario: viewing a post from an iphone when logged in
     Given a post with next, previous and comments
       And I am logged in
-    When I view the post from my iphone
+    When I view the mobile post page
     Then I see the page
 
   Scenario: viewing a post from an iphone when not logged in
     Given a post with next, previous and comments
-    When I view the post from my iphone
+    When I view the mobile post page
     Then I see the page

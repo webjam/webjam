@@ -14,8 +14,8 @@ steps_for :posts do
     login(admin_user)
   end
   
-  When "I view the post from my iphone" do
-    get formatted_post_path(@post.year, @post.permalink, :mobile), nil, :user_agent => iphone_user_agent
+  When "I view the mobile post page" do
+    get formatted_post_path(@post.year, @post.permalink, :mobile)
   end
   
   Then "I see the page" do

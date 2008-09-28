@@ -7,7 +7,7 @@ Story: Event related things
   Scenario: not logged viewing the past events page from an iphone
     Given I am not logged in
       And a past event exists
-    When I view the past events pages from an iphone
+    When I view the mobile past events page
     Then I see the page
 
   Scenario: not logged viewing the event page for a past event

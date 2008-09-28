@@ -7,8 +7,8 @@ steps_for :about do
     upcoming_event
   end
   
-  When "I view the about page from my iphone" do
-    get formatted_about_path(:mobile), nil, :user_agent => iphone_user_agent
+  When "I view the mobile about page" do
+    get formatted_about_path(:mobile)
   end
   
   Then "I see the page" do
