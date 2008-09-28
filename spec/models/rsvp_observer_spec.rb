@@ -17,6 +17,11 @@ describe RsvpObserver, "#after_save" do
     @observer.should_receive(:subscribe_to_campaign_monitor).with(rsvp)
     @observer.after_create(rsvp)
   end
+  it "calls send_excitement_email_if_required" do
+    rsvp = mock("rsvp")
+    @observer.should_receive(:send_excitement_email_if_required).with(rsvp)
+    @observer.after_create(rsvp)
+  end
 end
 
 describe RsvpObserver, "#after_destroy" do
