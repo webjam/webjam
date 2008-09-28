@@ -2,7 +2,7 @@
 - @regular_version_path = event_path(@event)
 
 - content_for :javascript_inits do
-  = javascript_tag mobilePhotoNavigatorInitJavascript(".photos", @photos)
+  = javascript_tag mobilePhotoNavigatorInitJavascript(".photos", @featured_photos)
 
 .event-info
   .hype= @event.hype
@@ -18,12 +18,12 @@
   = "##{@event.tag}"
   on the end of your tweet.
 
-- if @latest_photo
+- if @featured_photos.first
   %h2
     = "Recent Photos tagged #{@event.tag}"
   .photos
     .photo
-      = render :partial => "shared/event_photo", :locals => {:photo => @latest_photo}
+      = render :partial => "shared/event_photo", :locals => {:photo => @featured_photos.first}
   .more
     %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos
 

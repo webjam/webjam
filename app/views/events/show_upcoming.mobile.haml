@@ -2,7 +2,7 @@
 - @regular_version_path = event_path(@event)
 
 - content_for :javascript_inits do
-  = javascript_tag mobilePhotoNavigatorInitJavascript(".photos", @photos)
+  = javascript_tag mobilePhotoNavigatorInitJavascript(".photos", @featured_photos)
 
 .event-info
   .hype= @event.hype
@@ -29,7 +29,7 @@
       = @event.local_held_at.to_datetime.to_s(:time_12hr).downcase.sub(/^0/,'')
       (RSVP only)
 
-- if @latest_photo
+- if @featured_photos.first
   %h2
     - if @photos_from_previous_event
       = "Photos from #{@previous_event.tag}"
@@ -37,7 +37,8 @@
       = "Photos tagged #{@event.tag}"
   .photos
     .photo
-      = render :partial => "shared/event_photo", :locals => {:photo => @latest_photo}
+      = render :partial => "shared/event_photo", :locals => {:photo => @featured_photos.first}
+
   - unless @photos_from_previous_event
     .more
       %a.button{:href => formatted_event_photos_path(@event, :mobile)} More photos
