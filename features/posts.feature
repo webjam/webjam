@@ -5,8 +5,7 @@ Story: Viewing post pages
   So that I absorb Lachlan's deep insights into man and machine
   
   Scenario: viewing a post from an iphone when logged in
-    Given there is a post with next, previous and comments
-      And I am logged in
+    Given I am logged in
     When I view the mobile post page
     Then I see the page
 

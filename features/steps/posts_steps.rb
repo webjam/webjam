@@ -1,7 +1,10 @@
 Given "I am logged in" do
-  login(admin_user)
+  user = Factory.create(:user)
+  Factory.create(:identity_url, :user => user)
+  login(user)
 end
 
 When "I view the mobile post page" do
-  get formatted_post_path(@post.year, @post.permalink, :mobile)
+  post = Factory.create(:post)
+  get formatted_post_path(post.year, post.permalink, :mobile)
 end

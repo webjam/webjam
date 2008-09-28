@@ -11,7 +11,10 @@ Given "I am naughty" do
 end
 
 When "I view the home page with a tampered cookie" do
-  CGI::Session::CookieStore.class_eval { alias_method_chain :unmarshal, :raise_tampered_with_cookie}
-  lambda { get(home_path) }.should_not raise_error
-  CGI::Session::CookieStore.class_eval { alias_method :unmarshal_without_raise_tampered_with_cookie, :unmarshal}
+  begin
+    CGI::Session::CookieStore.class_eval { alias_method_chain :unmarshal, :raise_tampered_with_cookie}
+    lambda { get(home_path) }.should_not raise_error
+  ensure
+    CGI::Session::CookieStore.class_eval { alias_method :unmarshal_without_raise_tampered_with_cookie, :unmarshal}
+  end
 end

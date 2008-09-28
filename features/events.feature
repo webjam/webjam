@@ -12,18 +12,15 @@ Story: Event related things
 
   Scenario: not logged viewing the event page for a past event
     Given I am not logged in
-      And there is a past event
-    When I view the event page
+    When I view the event page for a past event
     Then I see the page
 
   Scenario: not logged viewing the event page for an upcoming event
     Given I am not logged in
-      And there is an upcoming event
-    When I view the event page
+    When I view the event page for an upcoming event
     Then I see the page
 
   Scenario: trying to view an unpublished event
     Given I am not logged in
-      And there is an unpublished event
-    When I view the event page
+    When I view the event page for an unpublished event
     Then I receive a 404 not found
