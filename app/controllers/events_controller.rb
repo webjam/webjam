@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @total_tweets = @event.tweets.count
     @latest_tweets = @event.tweets.latest(5).all
     @more_tweets = @event.tweets.count > @latest_tweets.length
-    @all_photos = @event.flickr_photos.latest.all(:order => "created_at DESC")
+    @all_photos = @event.flickr_photos.all(:order => "created_at DESC")
     if @event.upcoming?
       @previous_event = @event.previous
       @featured_photos = @event.flickr_photos.featured.all :order => "created_at DESC"
