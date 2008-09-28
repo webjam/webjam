@@ -9,7 +9,7 @@ class EventsController < ApplicationController
     if @event.upcoming?
       @previous_event = @event.previous
       @featured_photos = @event.flickr_photos.featured.all :order => "created_at DESC"
-      if @photos.empty? && @previous_event
+      if @featured_photos.empty? && @previous_event
         @photos_from_previous_event = true
         @featured_photos = @previous_event.flickr_photos.featured.all :order => "created_at DESC"
       end
