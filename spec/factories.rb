@@ -40,4 +40,4 @@ Factory.sequence(:email) {|n| "user#{n}@domain.com"}
 Factory.sequence(:nick_name) {|n| "nick_name_#{n}"}
 Factory.sequence(:permalink) {|n| "permalink_#{n}"}
 Factory.sequence(:event_number) {|n| n}
-Factory.sequence(:identity_url) {|n| "http://openid-provider-#{n}.com"}
+Factory.sequence(:identity_url) {|n| "http://openid-provider-#{n}.com/"}

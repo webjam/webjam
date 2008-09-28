@@ -28,17 +28,17 @@ ActionController::Integration::Session.class_eval do
     "Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3"
   end
   def login(user)
-    $main.Before do
+    begin
       ApplicationController.class_eval do
         def authenticate_with_open_id_with_mocked_result(url, *args)
-          yield OpenIdAuthentication::Result.new(result_code, url)
+          yield OpenIdAuthentication::Result.new(:successful), url
         end
         alias_method_chain :authenticate_with_open_id, :mocked_result
       end
-    end
-    post create_session_path(:openid_url => user.identity_urls.first.url)
-    $main.After do
-      # Undo the alias_method_chain
+      post create_session_path(:openid_url => user.identity_urls.first.url)
+      response.should be_redirect
+    ensure
+      # Undo the alias_method_chain'ing
       ApplicationController.send(:alias_method, :authenticate_with_open_id_without_mocked_result, :authenticate_with_open_id)
     end
   end
