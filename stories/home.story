@@ -20,17 +20,16 @@ Story: Viewing the home page
     Then I am not redirected to the mobile page
     And I see the page
 
-  Scenario: viewing the mobile version with upcoming events
+  Scenario: viewing the mobile version with an upcoming event, a past event and a post
     Given I am not logged in
       And an upcoming event exists
+      And a past event exists
       And a post exists
     When I view the mobile version of the home page
     Then I see the page
 
-  Scenario: viewing the mobile version without an upcoming event
+  Scenario: viewing the mobile version without any events or posts
     Given I am not logged in
-      And no upcoming event exists
-      And a past event exists
-      And a post exists
+      And no events or posts exist
     When I view the mobile version of the home page
     Then I see the page
