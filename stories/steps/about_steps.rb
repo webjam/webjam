@@ -8,7 +8,7 @@ steps_for :about do
   end
   
   When "I view the about page from my iphone" do
-    get home_path, nil, :user_agent => iphone_user_agent
+    get formatted_about_path(:mobile), nil, :user_agent => iphone_user_agent
   end
   
   Then "I see the page" do
