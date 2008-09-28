@@ -67,6 +67,7 @@ ActionController::Routing::Routes.draw do |map|
     m.contact      'contact',        :action => 'contact'
     m.open_id      'single-sign-on', :action => 'single-sign-on'
     m.contributors 'contributors',   :action => "contributors"
+    m.staticpres 'staticpres',   :action => "staticpres"
     # m.vote_vis     'votestream',     :action => "votestream"
   end
   map.namespace :admin do |admin|

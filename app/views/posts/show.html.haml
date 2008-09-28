@@ -45,7 +45,7 @@
 
   - @post.comments.each_with_index do |comment, index|
     .hentry.comment{:id => "comment-#{index + 1}"}
-      .entry-content= format_comment_body(comment.body)
+      .entry-content= format_user_html(comment.body)
       %p.comment-details
         %a.permalink{ :href => "#comment-#{index + 1}"}= index + 1
         = user_link_with_avatar(comment.user, "author")

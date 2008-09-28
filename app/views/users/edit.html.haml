@@ -30,6 +30,10 @@
       %label{ :for => "user_website_url" }
         %span Website URL:
         = f.text_field :website_url
+      %label.description{ :for => "user_description" }
+        %span Describe Yourself:
+        = f.text_area :description, :cols => '57', :rows => '6'
+        %span.note (Nice HTML is welcome, but please keep the naughty stuff to yourself!)
     %fieldset
       = submit_tag 'Save profile details', :class => "submit"
   

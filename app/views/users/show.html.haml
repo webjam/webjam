@@ -2,9 +2,7 @@
 - @body_class = "profile"
 
 %h1
-  %strong
-    = @user.nick_name
-  loves the jam
+  %strong= @user.nick_name
 
 - if @user == current_user
   %ul#profile-menu
@@ -12,6 +10,8 @@
       = link_to '(Edit)', edit_current_user_path
 
 = flash_notice
+
+.description= format_user_html(@user.description)  
 
 %h2 Details
 %dl.vcard{ :id => "hcard-#{h utf8_slugify(@user.nick_name)}" }
@@ -26,6 +26,6 @@
     %dd
       Visit
       = link_to h(@user.website_display_name), @user.website_url, :class => "url", :rel => "me"
-  
+
 /
   <h2>Jams <span class="amp">&amp;</span> Awards</h2>

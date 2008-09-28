@@ -89,7 +89,6 @@ class UsersController < ApplicationController
     @user = current_user
     @user.update_attributes(params[:user])
     @user.save!
-    flash[:notice] = "Your profile details have been updated"
-    redirect_back_or_default edit_current_user_path
+    redirect_back_or_default user_path(@user)
   end
 end
