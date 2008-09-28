@@ -63,12 +63,12 @@ module WebjamStoryFixtures
   end
   def post_before(post, user)
     post = post(user)
-    post.update_attribute(:created_at, post.created_at - 1.day)
+    post.update_attribute(:published_at, post.created_at - 1.day)
     post
   end
   def post_after(post, user)
     post = post(user)
-    post.update_attribute(:created_at, post.created_at + 1.day)
+    post.update_attribute(:published_at, post.created_at + 1.day)
     post
   end
   def comment(post, user)
