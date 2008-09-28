@@ -13,8 +13,6 @@ class ApplicationController < ActionController::Base
   end
   
   protected
-    TLD_LENGTH = 2
-    
     before_filter :protect_da_alpha
     def protect_da_alpha
       if APPLICATION_CONFIG.protected_domains.index(request.host)
@@ -33,7 +31,7 @@ class ApplicationController < ActionController::Base
     
     before_filter :no_www
     def no_www
-     if (bad_subdirs = ["ww", "www"]).any? {|s| [s]==request.subdomains(TLD_LENGTH)}
+     if (bad_subdirs = ["ww", "www"]).any? {|s| [s]==request.subdomains(2)}
         redirect_to :host => request.domain(TLD_LENGTH), :status => 301
        return false
      end
