@@ -38,7 +38,7 @@
       ul#rsvps li span {width: 13em;}
       
   ul.peeps {}
-    #maincontent ul.peeps li {clear: both; width: auto;}
+    #maincontent ul.peeps li {clear: both; height: auto; width: auto;}
       ul.peeps li a,
       ul.peeps li span,
       ul.peeps li strong {display: block; float: left; width: auto;}
