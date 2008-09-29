@@ -1,0 +1,8 @@
+%h1 User list
+%ul.peeps
+  - for user in @users
+    %li
+      %a.url{:href => user_path(user)}
+        = avatar_image(user, :tiny)
+        %span=h user.nick_name
+      %strong=h user.full_name

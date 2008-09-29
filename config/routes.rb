@@ -80,7 +80,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :events do |event|
       event.resources :rsvps, :proposals, :jams
     end
-    admin.resources :posts
+    admin.resources :posts, :users
   end
   map.admin 'admin', :controller => 'admin/home'
   map.legacy_post 'post/:permalink.html', :controller => "posts", :action => "legacy"
