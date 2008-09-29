@@ -318,9 +318,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
         #maincontent #other-content ul.tweets li {list-style: none; margin: 0 0 1em 0;}
           ul.tweets li strong {}
             ul.tweets li strong a {background: #0d0e0e; color: #f03e00; text-decoration: none;}
-          ul.tweets li span {}
-          ul.tweets li a.timestamp {display: block; font-size:  0.7em; text-align: right;}
-    	    
+
       /* ---- =Presentation ---- */
       #title {border-bottom: 1px solid #333; padding: 1px 2em 0.5em 0; text-align: right;}
         #title p {background: #f03e00; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
@@ -526,9 +524,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 						dd.when span.mon {text-transform:uppercase}
 		
 		
-		
 		/* --- =Other Content --- */
-		#other-content {float: left; font: 300 1.143em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; padding: 2em 0 1em 0; width: 20.3em;}
+		#other-content {float: left; font: 300 1em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; padding: 2em 0 1em 0; width: 23em;}
 		
 		  #other-content .item {clear: left; border-bottom: 1px solid #333; margin: 0 0 1.5em 0; padding: 0 1em 1em 1em;}
 		  body.archive #other-content .item:first-child {padding-top:0}
@@ -536,7 +533,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 		  
 		  #other-content .last {border:none;}
 		  
-		  #other-content #summary {font-size: 0.875em;}
+		  #other-content #summary {}
 		    #summary p {margin: 0 0 1em 0;}
 		    #summary h2 {font: 300 1em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; margin: 1em 0 0.1em 0;}
 		    
