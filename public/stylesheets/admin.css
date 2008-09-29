@@ -36,3 +36,13 @@
       ul#rsvps li em {display: block; float: left; margin: 0 1em 0 0; width: auto;}
       ul#rsvps li strong {width: 7em;}
       ul#rsvps li span {width: 13em;}
+      
+  ul.peeps {}
+    #maincontent ul.peeps li {clear: both; width: auto;}
+      ul.peeps li a,
+      ul.peeps li span,
+      ul.peeps li strong {display: block; float: left; width: auto;}
+      
+      ul.peeps li a {width: 14em;}
+        ul.peeps li img {float: left; margin: 0 1em 0 0;}
+
