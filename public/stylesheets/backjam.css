@@ -540,12 +540,14 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 		    #summary p {margin: 0 0 1em 0;}
 		    #summary h2 {font: 300 1em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; margin: 1em 0 0.1em 0;}
 		    
-		    #summary ol {padding: 0 0 0 1.5em;}
+		    #summary ol {margin: 0 0 2em 0;}
 		      #summary ol li {list-style-type: decimal;}
 		        #summary ol li a {}
-		    #summary ul {padding: 0 0 0 1em;}
+		    #summary ul {}
 		      #summary ul li {list-style-type: disc; padding: 0 0 0 0.5em;}
 		        #summary ul li a {}
+		        
+		        #summary li strong {display: block;}
 		  
       /* ---- =WTF ---- */
       #wtf {}
