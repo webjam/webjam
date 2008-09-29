@@ -519,9 +519,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 						dd.when span.mon {text-transform:uppercase}
 		
 		
-		
 		/* --- =Other Content --- */
-		#other-content {float: left; font: 300 1.143em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; padding: 2em 0 1em 0; width: 20.3em;}
+		#other-content {float: left; font: 300 1em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; padding: 2em 0 1em 0; width: 23em;}
 		
 		  #other-content .item {clear: left; border-bottom: 1px solid #333; margin: 0 0 1.5em 0; padding: 0 1em 1em 1em;}
 		  body.archive #other-content .item:first-child {padding-top:0}
@@ -529,7 +528,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 		  
 		  #other-content .last {border:none;}
 		  
-		  #other-content #summary {font-size: 0.875em;}
+		  #other-content #summary {}
 		    #summary p {margin: 0 0 1em 0;}
 		    #summary h2 {font: 300 1em/1.2 "Trebuchet MS", 'Helvetica Neue', Arial, Helvetica, sans-serif; margin: 1em 0 0.1em 0;}
 		    
