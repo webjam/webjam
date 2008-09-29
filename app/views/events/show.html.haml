@@ -5,6 +5,7 @@
 - @mobile_version_path = formatted_event_path(@event, :mobile)
 
 - content_for :other_content do
+  = event_summary(@event)
   - unless @latest_tweets.empty?
     .item
       %h2 Tweets
@@ -14,7 +15,6 @@
             = render :partial => 'shared/tweet', :locals => {:tweet => tweet}
   = render :partial => 'shared/other_content/wtf'
   = render :partial => 'shared/other_content/latest_news'
-  = event_summary(@event)
 
 .item
   = render :partial => "shared/event_title", :locals => {:event => @event}
