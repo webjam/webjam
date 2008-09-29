@@ -1,16 +1,7 @@
 .item#sponsors
   .item-details
     %h2 Meet our sponsors
-  .sponsors.major
-    %h3 Major Sponsors
-    #ul.sponsor-logos
-      %li
-        %a{:href => "http://adobe.com/", :title => "Webjam 8 is proudly sponsored by Adobe"} 
-          %img{:alt => "Adobe", :src => "/images/sponsors/adobe.gif"}
-      /  
-        %li
-          %a{:href => "http://some.com/", :title => "Webjam 8 is proudly sponsored by Major Sponsor II"} 
-            %img{:alt => "Major Sponsor II", :src => "/images/sponsors/2vouch.jpg"}
+  = sponsor_major_content(@event)
   .sponsors
     %h3 Sponsors
     #ul.sponsor-logos
