@@ -13,8 +13,6 @@
         - for tweet in @latest_tweets
           %li
             = render :partial => 'shared/tweet', :locals => {:tweet => tweet}
-  = render :partial => 'shared/other_content/wtf'
-  = render :partial => 'shared/other_content/latest_news'
 
 .item
   = render :partial => "shared/event_title", :locals => {:event => @event}
