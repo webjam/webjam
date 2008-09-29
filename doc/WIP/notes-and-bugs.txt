@@ -25,8 +25,7 @@ Polling
  - add Ma.gnolia + Delicious polling
  - Technorati polling? Some other blog service?
 
-build default sponsor promo structure
-wire up sponsors structure to events
+wire up sponsors structure to db
 add content for rsvp
 add summary of things for peeps to do to upcoming event page
 Add Viddler player mojo (preferably API shizzle)
