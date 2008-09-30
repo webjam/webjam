@@ -76,9 +76,9 @@ TOC
 		
 		.tag {background: #0d0e0e; color: #F03E00; font: italic 100 1em "Trebuchet MS", Arial, Helvetica, sans-serif;}
 		
-		p.note {background: #0d0e0e; color: #666; font: italic 100 1.25em "Trebuchet MS", Arial, Helvetica, sans-serif;}
-		  p.note a:link,
-		  p.note a:visited {background: #0d0e0e; color: #aaa;}
+		.note {background: #0d0e0e; color: #666; font: italic 100 1.25em "Trebuchet MS", Arial, Helvetica, sans-serif;}
+		  .note a:link,
+		  .note a:visited {background: #0d0e0e; color: #aaa;}
 		  
 		
     #content p.notice {background: #232323; color: #fff; font-size: 1.5em; padding: 0.2em 0.4em 0.2em 0.4em;}
@@ -118,6 +118,21 @@ TOC
 	#content .clear-off {clear: both; margin: 3em 0 0.5em 0;}
 	
 	div.pagination {clear: both; margin: 0 0 1em 0; text-align: center;}
+	
+	dl.peep-card {font-size: 0.875em; padding: 0 0 1em 150px; position: relative;}
+    dl.peep-card dt.fn {font-size: 1.1em;}
+    dl.peep-card dd {margin: 0 0 1em 0;}
+    dl.peep-card dd.nickname {font-size: 0.97em;}
+      dl.peep-card dd.nickname a {}
+    dl.peep-card dd.url {margin: 0;}
+      dl.peep-card a {}
+    dl.peep-card dd.img {left: 0; position: absolute; top: 0;}
+      dl.peep-card dd.img img {}
+    dl.peep-card dd.facets {margin: 1em 0 0 0;}
+      dl.peep-card dd.facets ul {}
+        #maincontent dl.peep-card dd.facets ul li {display: inline; margin: 0;}
+          dl.peep-card dd.facets ul li a {}
+    dl.peep-card dd.contact .button {float: none; margin: 1em 0 0 0; width: 100%;}
 	
 
 /* - =Structure - */
@@ -325,23 +340,6 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
         #title p {background: #f03e00; color: #fff; display: inline; font-size: 1.143em; padding: 0.4em 0.8em; left: -0.2em; position: relative; top: -0.4em;}
           #title h1 {background: #0d0e0e; color: #4d4d4d; display: inline;}
           #title h1 strong {background: #0d0e0e; color: #fff;}
-      
-      body.presentation dl.vcard {font-size: 0.875em; padding: 0 0 0 150px; position: relative;}
-        body.presentation dt.fn {}
-          body.presentation span.firstname {} 
-          body.presentation span.lastname {}
-        body.presentation dd {margin: 0 0 1em 0;}
-        body.presentation dd.nickname {}
-          body.presentation dd.nickname a {}
-        body.presentation dd.url {margin: 0;}
-          body.presentation a {}
-        body.presentation dd.img {left: 0; position: absolute; top: 0;}
-          body.presentation dd.img img {}
-        body.presentation dd.facets {margin: 1em 0 0 0;}
-          body.presentation dd.facets ul {}
-            body.presentation dd.facets ul li {display: inline;}
-              body.presentation dd.facets ul li a {}
-        body.presentation dd.contact .button {float: none; margin: 1em 0 0 0; width: 100%;}
          
         body.presentation .item .video {background: #808080; color: #4d4d4d; height: 370px; margin: 0 0 1.45em 0; text-align: center; width: 450px;} /* TODO: add real styles when video player added */       
 			
@@ -452,7 +450,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 
 			/* ---- =Profile ---- */
 			
-			body.profile #content {float: left; padding: 2em; width: 66em;}
+/*      body.profile #content {float: left; padding: 2em; width: 66em;} */
 			  body.profile #content .column {float: left; margin: 1em 0 0 4em; width: 24em;}
 			    body.profile #content .item {border: none; padding: 0 1em 1em 1em;}
 			      body.profile .item form.button-to {margin: 0 0 1em 0;}
