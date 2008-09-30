@@ -25,9 +25,6 @@ Polling
  - add Ma.gnolia + Delicious polling
  - Technorati polling? Some other blog service?
 
-
-The p.comment-details has a larger font-size than the comment.
-
 wire up sponsors structure to db
 add content for rsvp
 add summary of things for peeps to do to upcoming event page
@@ -50,8 +47,8 @@ promote sponsorship opportunities more
 add info about what owning an account entails - contact from WJ, benefits etc
 why doesn't it remember URL for login?
 Send unlogged in users to custom login/registration page with explanation about why they need to have an account to attend etc
-the display of comments , author, comment number are upside down and could be made more readable
 Latest news looks silly against currently latest news article
+
 
 BUGS:
 
