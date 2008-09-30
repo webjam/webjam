@@ -8,32 +8,7 @@
       loves the jam
       
 - content_for :other_content do
-  .item
-    %dl.peep-card.vcard{:id => "hcard-#{h utf8_slugify(@user.nick_name)}"}
-      %dt.fn=h @user.full_name
-      %dd.nickname.note
-        %a{ :href => "/#{h @user.nick_name}" }=h @user.nick_name
-      - unless @user.website_url.blank?
-        %dd.url
-          = link_to h(@user.website_display_name), @user.website_url, :class => "url", :rel => "me"
-      %dd.img
-        - if @user.mugshot?
-          = image_tag @user.mugshot.url(:large), :class => 'photo'
-        - else
-          = avatar_image(@user, :large)
-      %dd.facets
-        %ul
-          %li
-            %a{ :href => "http://twitter.com/dmitrybaranovsk" } twitter
-          %li
-            %a{ :href => "http://flickr.com/dmitrybaranovsk" } flickr
-          %li
-            %a{ :href => "http://github.com/dmitrybaranovsk" } github
-          %li
-            %a{ :href => "http://ma.gnolia.com/dmitrybaranovsk" } ma.gnolia  
-      %dd.contact
-        %a.button{ :href => "#" } Contact
-
+  = render :partial => 'shared/other_content/peep_card'
   = render :partial => 'shared/other_content/shirt'
 
 - if @user == current_user
