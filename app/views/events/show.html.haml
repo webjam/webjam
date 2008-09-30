@@ -40,11 +40,11 @@
 
 = sponsor_content(@event)
 
+= winners_content(@event)
+
 - unless @event.posts.empty?
   %div{:class => @all_photos.empty? ? "item last" : "item", :id => "related-posts"}
     = render :partial => "related_posts"
-
-= winners_content(@event)
 
 - unless @all_photos.empty?
   .item.last.media#photos

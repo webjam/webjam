@@ -199,7 +199,6 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		  .item .button {display: block; float: right; font-size: 1em; font-weight: 100; letter-spacing: 0.1em; padding: 0.18em 0.3em; text-transform: uppercase; width: 5.1em;}
     		  
     		  #content .item a.details {position: absolute; right: 1em; top: 1.2em;}
-    		  #content #winners a.details,
     		  #content .item p a.details {position: static; width: auto;}
     		  
     		  .item .button {text-align: center; text-decoration: none;}
@@ -282,26 +281,28 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
     		        #related-posts ul li {list-style-type: none;}
     		        
     		
-    	body.complete #winners {}
+    	#winners {}
     	  #content #winners .item-details {margin: 0;}
     	    #winners dl {float: left; margin: 0 0.5em 0 0; min-height: 100px; padding: 0 0 0 105px; position: relative; width: 14.3em;}
-    	    #winners dl.first {float: none; margin: 0; min-height: 200px; padding: 0 0 0 315px; width: auto;}
+    	    #winners dl.first {float: none; margin: 0 0 2em 0; min-height: 200px; padding: 0 0 0 315px; width: auto;}
     	    
-    	      #winners dl dt {font-weight: 700;}
+    	      #winners dl dt,
+    	      #winners dl dt a {font-weight: 700;}
     	      #winners dl.first dt {font-size: 1.5em; font-weight: 300;}  
     	      
     	      #winners dd {}
     	      #winners dd.place,
     	      #winners dd.prize {}
     	      #winners dd.place strong,
-    	      #winners dd.prize strong {font-weight: 700;}
-    	      #winners dd.img {background: #ccc; height: 90px; left: 5px; position: absolute; top: 3px; width: 90px;}
+    	      #winners dd.prize strong {font-weight: 300;}
+    	      #winners dd.img {height: 90px; left: 5px; position: absolute; top: 3px; width: 90px;}
     	        #winners dl.first dd.img {height: 176px; top: 5px; width: 300px;}
     	      
+    	        #winners dl dd p {font-size: 1em; line-height: 1.2; margin: 0;}
     	        #winners dl.first dd p {margin: 1em 0 0 0;}
     	        #winners dl.first dd.place p,
     	        #winners dl.first dd.prize p {margin: 0;}
-    		
+
     	.media {}
     	  #content .media .item-details {margin: 0;}
     	    .media .item-details h2 {float: left; margin: 0 1em 0 0; width: auto;}
