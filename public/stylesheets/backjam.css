@@ -375,15 +375,16 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 					.comment {margin: 0 0 1.5em 0;}
             .comment p {margin: 0 1em 1em 1em;}
             
-            #comments .hentry {border: none;}
+            #comments .hentry {border: none; margin: 0 0 1em 0;}
               #comments .hentry .entry-content {background: #181919; color: #fff; padding: 0.6em 1em 0.5em 1em;}
             #comments .hentry .entry-content br {margin: 0 0 0.5em 0;}
             #comments .hentry .entry-content ul br,
             #comments .hentry .entry-content ol br {left: -9999px; position: absolute; top: -9999px;}
             
-            .comment p.comment-details {background: #0d0e0e url('/stylesheets/images/bg-comment-details.gif') no-repeat scroll 1em 0;  color: #fff; line-height: 2.8; margin: 0; padding: 0.4em 0 0 0;}
+            #maincontent .comment p.comment-details {background: #0d0e0e url('/stylesheets/images/bg-comment-details.gif') no-repeat scroll 0 100%;  color: #fff; font-size: 0.857em; line-height: 2.8; margin: 0;}
               p.comment-details a.permalink {float: left; display: block; width: 2em;}
-              p.comment-details .vcard {padding: 0 0 0 30px;}
+              p.comment-details .vcard {padding: 0 0 0 20px;}
+                p.comment-details .vcard img {left: 20px;}
               
           #comment-form {}
            #content #comment-form div.item-details {margin: 0;}
