@@ -26,9 +26,15 @@ ActionController::Routing::Routes.draw do |map|
       event.formatted_event ":id.:format"
     end
     events.formatted_past_events "past-events.:format", :action => "past"
-    events.with_options(:requirements => {:event_id => EVENT_TAG}) do |events|
-      events.formatted_event_tweets ":event_id/tweets.:format", :controller => "tweets", :action => "index", :conditions => {:method => :get}
-      events.formatted_event_photos ":event_id/photos.:format", :controller => "flickr_photos", :action => "index", :conditions => {:method => :get}
+  end
+
+  map.with_options(:requirements => {:event_id => EVENT_TAG}) do |events|
+    events.formatted_event_tweets ":event_id/tweets.:format", :controller => "tweets", :action => "index", :conditions => {:method => :get}
+    events.formatted_event_photos ":event_id/photos.:format", :controller => "flickr_photos", :action => "index", :conditions => {:method => :get}
+    events.with_options(:controller => "presentations") do |presentations|
+      presentations.event_presentations ":event_id/presentations", :action => "index"
+      presentations.event_presentation ":event_id/presentations/:id", :action => "show"
+      presentations.formatted_event_presentation ":event_id/presentations/:id.:format", :action => "show"
     end
   end
 
@@ -67,7 +73,8 @@ ActionController::Routing::Routes.draw do |map|
     m.contact      'contact',        :action => 'contact'
     m.open_id      'single-sign-on', :action => 'single-sign-on'
     m.contributors 'contributors',   :action => "contributors"
-    m.vote_vis     'votestream',     :action => "votestream"
+    m.staticpres 'staticpres',   :action => "staticpres"
+    # m.vote_vis     'votestream',     :action => "votestream"
   end
   map.namespace :admin do |admin|
     admin.resources :events do |event|

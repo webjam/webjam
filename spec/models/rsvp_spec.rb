@@ -1,4 +1,4 @@
-require "../spec_helper"
+require File.dirname(__FILE__) + "/../spec_helper"
 
 describe Rsvp, "event and user uniqueness validation" do
   before do

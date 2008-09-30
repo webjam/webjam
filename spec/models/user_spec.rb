@@ -1,4 +1,4 @@
-require "../spec_helper"
+require File.dirname(__FILE__) + "/../spec_helper"
 
 describe User, "#openid_sreg_fields=" do
   describe "passed nil" do
@@ -53,5 +53,30 @@ end
 describe User, "#to_recipient" do
   it "returns a string formatted \"Full Name\" <email>" do
     User.new(:full_name => "Morris Iemma", :email => "morris@hotmail.com").to_recipient.should == %("Morris Iemma" <morris@hotmail.com>)
+  end
+end
+
+describe User, "website_url=" do
+  it "adds http:// if none specified" do
+    User.new(:website_url => "somewhere.com").website_url.should == "http://somewhere.com"
+  end
+  it "doesn't add http:// if has http:// already" do
+    User.new(:website_url => "http://somewhere.com").website_url.should == "http://somewhere.com"
+  end
+  it "doesn't add http:// if has https:// already" do
+    User.new(:website_url => "https://somewhere.com").website_url.should == "https://somewhere.com"
+  end
+end
+
+describe User, "validations" do
+  it "validates website_url isnt an ftp or javascript url" do
+    %w( ftp://somewhere.com javascript:alert('hello') ).each do |invalid_url|
+      User.new(:website_url => invalid_url).should have(1).error_on(:website_url)
+    end
+  end
+  it "validates if website_url is http or https" do
+    %w( http://somewhere.com https://somewhere.com ).each do |invalid_url|
+      User.new(:website_url => invalid_url).should have(0).errors_on(:website_url)
+    end
   end
 end

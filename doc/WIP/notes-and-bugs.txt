@@ -7,25 +7,15 @@ webjam.com.au/news/2008/wasnt-webjam8-great
 TAGS:
 webjam
 webjam8
-webjam8:pres=2
-webjam:user=lachlanhardy
+webjam8:presentation=2
+webjam:peep=lachlanhardy
 
 
-0.5 DAYS!!!
-TODO by 24th September in priority order:
+TODO - priorities:
 
-test SMS voting shizzle - Tim
 integrate flat presentation page
-finish polling and layout for past events
-
-So we can run another one:
-wire up sponsors structure to events
 add "directions" to "address" events
 remove hacky static address in rsvp email
-remove static presenter/attendee text on past events
-build default sponsor promo structure
-
-Build hotted up active version for events!
 
 TODO:
 
@@ -39,8 +29,7 @@ wire up sponsors structure to db
 add content for rsvp
 add summary of things for peeps to do to upcoming event page
 Add Viddler player mojo (preferably API shizzle)
-custom error page
-what you're in for" should show featured images from across all webjams
+custom error (404 + 500) page
 make author list for blog posts only consist of admins
 tshirt linkage
 change usernames so that they cannot contain spaces or capitals
@@ -87,8 +76,7 @@ Confirm our website identity with Yahoo! ?? (for better registration)
 Merge registration and login into one process.
 Add parsing for @username string to all user content (http://lachstock.com.au/inc/js/status.js has good regex)
 Comments feed
-
-
+Build hotted up active version for events!
 
 
 DYLAN'S TOTO:

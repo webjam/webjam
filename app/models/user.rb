@@ -1,4 +1,9 @@
+require 'uri'
+
 class User < ActiveRecord::Base
+  # From http://www.igvita.com/2006/09/07/validating-url-in-ruby-on-rails/
+  URI_FORMAT = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
+  
   has_many :posts # TODO: DEPENDENT?
   has_many :identity_urls, :dependent => :destroy
   has_many :rsvps
@@ -9,6 +14,7 @@ class User < ActiveRecord::Base
   validates_presence_of :full_name, :nick_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
   validates_uniqueness_of :nick_name
+  validates_format_of :website_url, :with => URI_FORMAT, :allow_nil => true
   
   has_attached_file :mugshot,
                     :styles => { 
@@ -51,6 +57,11 @@ class User < ActiveRecord::Base
     end
   end
   
+  def website_url=(new_website_url)
+    new_website_url = "http://#{new_website_url}" if new_website_url !~ /^https?:\/\//
+    write_attribute(:website_url, new_website_url)
+  end
+  
   def to_param
     nick_name
   end
@@ -79,5 +90,11 @@ class User < ActiveRecord::Base
       "email"    => "email",
       "fullname" => "full_name"
     }[field]
+  end
+  
+  def validate_website_url
+    if self.website_url.strip.not.blank? && self.website_url !~ URI.regexp(['http', 'https'])
+      self.errors.add(:website_url, "is not valid")
+    end
   end
 end

@@ -3,7 +3,7 @@ class Jam < ActiveRecord::Base
   has_and_belongs_to_many :users
   belongs_to :presentation_proposal
   
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :number
   
   attr_accessor :proposing_user_id
   
@@ -19,5 +19,8 @@ class Jam < ActiveRecord::Base
   def number_of_presenters
     read_attribute(:number_of_presenters) ? read_attribute(:number_of_presenters) : users.count
   end
-  
+
+  def to_param
+    self.number
+  end
 end

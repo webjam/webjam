@@ -17,9 +17,10 @@
   %ul.group
     %li= render :partial => "shared/event_item", :locals => {:event => @last_event}
 
-%h2 Latest News
-%ul.group.latest-news
-  %li= render :partial => "shared/news_post", :locals => {:post => @last_post}
+- if @last_post
+  %h2 Latest News
+  %ul.group.latest-news
+    %li= render :partial => "shared/news_post", :locals => {:post => @last_post}
 
 %ul.group
   %li

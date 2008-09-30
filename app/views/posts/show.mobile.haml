@@ -24,7 +24,7 @@
   %ul#comments
     - for comment in @post.comments
       %li{:id => "comment-#{comment.id}"}
-        .body= format_comment_body(comment.body)
+        .body= format_user_html(comment.body)
         .info
           %span.when= time_ago_in_words comment.created_at
           %span.who

@@ -457,6 +457,13 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			    body.profile #content .item {border: none; padding: 0 1em 1em 1em;}
 			      body.profile .item form.button-to {margin: 0 0 1em 0;}
 			        body.profile #content .item p {margin: 1em 0; width: 24em;}
+			        body.profile #content .description {clear:left;}
+			          body.profile #content .description p {margin: 0.5em 0; font-size:1.2em/1.4em;}
+			        
+			      body.profile form label.description {width: 22.3em}
+			      body.profile form label.description span {width: 100%}
+			      body.profile form label.description textarea {width:100%}
+			      body.profile form label.description span.note {margin-left:0}
 			
 			  body.profile h2,
 			  body.profile h3 {clear: both;}

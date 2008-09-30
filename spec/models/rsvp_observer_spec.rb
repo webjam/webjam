@@ -1,10 +1,11 @@
-require "../spec_helper"
+require File.dirname(__FILE__) + "/../spec_helper"
 
 describe RsvpObserver, "#after_save" do
   before do
     @observer = RsvpObserver.instance
     @observer.stub!(:send_thankyou_email)
     @observer.stub!(:subscribe_to_campaign_monitor)
+    @observer.stub!(:send_excitement_email_if_required)
   end
   it "calls send_thankyou_email" do
     rsvp = mock("rsvp")
@@ -14,6 +15,11 @@ describe RsvpObserver, "#after_save" do
   it "calls subscribe_to_campaign_monitor" do
     rsvp = mock("rsvp")
     @observer.should_receive(:subscribe_to_campaign_monitor).with(rsvp)
+    @observer.after_create(rsvp)
+  end
+  it "calls send_excitement_email_if_required" do
+    rsvp = mock("rsvp")
+    @observer.should_receive(:send_excitement_email_if_required).with(rsvp)
     @observer.after_create(rsvp)
   end
 end
@@ -52,6 +58,10 @@ describe RsvpObserver, "#send_thankyou_email" do
     EventRsvpMailer.should_receive(:deliver_rsvp_thankyou).with(rsvp)
     observer.send_thankyou_email(rsvp)
   end
+end
+
+describe RsvpObserver, "#send_excitement_email_if_required" do
+  it("does all sorts of things") { pending }
 end
 
 describe RsvpObserver, "#subscribe_to_campaign_monitor" do
