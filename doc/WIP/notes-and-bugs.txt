@@ -35,6 +35,11 @@ Polling
  - add Ma.gnolia + Delicious polling
  - Technorati polling? Some other blog service?
 
+ Comment form is ginormo monospaced font.. big enough that it could
+ be intentional :)  or is that a mistake?
+ - Likewise, the p.comment-details has a larger font-size than the comment.
+
+wire up sponsors structure to db
 add content for rsvp
 add summary of things for peeps to do to upcoming event page
 Add Viddler player mojo (preferably API shizzle)
