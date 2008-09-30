@@ -1,7 +1,9 @@
 .item#upcoming-events
   %h2 Upcoming Events
   - if @upcoming_events.empty?
-    Nothing coming up!
+    %p 
+      Nothing coming up...
+      %strong yet
   - else
     %ol
       - @upcoming_events.each_with_index do |event, index|
