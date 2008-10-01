@@ -177,7 +177,7 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			#account-tools li a:hover,
 			#account-tools li a:active,
 			#account-tools li a:focus,
-			body.profile #account-tools li.profile a {background: #f03e00; border: 1px solid #0e0e0e; border-bottom: none;  color: #0e0e0e;}
+			body.account #account-tools li.account a {background: #f03e00; border: 1px solid #0e0e0e; border-bottom: none;  color: #0e0e0e;}
 				
         #account-tools li a.user-avatar .vcard img {top: 3px;}
         #account-tools li a.user-avatar .vcard span.fn {margin: 0 0 0 30px;}
@@ -453,25 +453,25 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			body.profile #content .media h2 {float: none;}
 			body.profile #content .media p {line-height: 1.5; margin: 0;}
 			
-     body.edit-profile #content {float: left; padding: 2em; width: 66em;}
-			  body.edit-profile #content .column {float: left; margin: 1em 0 0 4em; width: 24em;}
-			    body.edit-profile #content .item {border: none; padding: 0 1em 1em 1em;}
-			      body.edit-profile .item form.button-to {margin: 0 0 1em 0;}
-			        body.edit-profile #content .item p {margin: 1em 0; width: 24em;}
+     body.account #content {float: left; padding: 2em; width: 66em;}
+			  body.account #content .column {float: left; margin: 1em 0 0 4em; width: 24em;}
+			    body.account #content .item {border: none; padding: 0 1em 1em 1em;}
+			      body.account .item form.button-to {margin: 0 0 1em 0;}
+			        body.account #content .item p {margin: 1em 0; width: 24em;}
 			
-			  body.edit-profile h2,
-			  body.edit-profile h3 {clear: both;}
+			  body.account h2,
+			  body.account h3 {clear: both;}
 			  
-			  body.edit-profile form label.description {width: 22.3em}
-        body.edit-profile form label.description span {width: 100%}
-        body.edit-profile form label.description textarea {width:100%}
-        body.edit-profile form label.description span.note {margin-left:0}
+			  body.account form label.description {width: 22.3em}
+        body.account form label.description span {width: 100%}
+        body.account form label.description textarea {width:100%}
+        body.account form label.description span.note {margin-left:0}
 			  
-			  body.edit-profile #maincontent ul.identities {margin: 2em 0 0 0;}
-			   body.edit-profile #maincontent ul.identities li {clear: both; float: left; margin: -0.5em 0 0 1em; width: 32em;}
-			      body.edit-profile ul.identities li a {float: left; position: relative; top: -1em;}
-			      body.edit-profile ul.identities li form.button-to {clear: none; float: right;}
-			        body.edit-profile ul.identities li form.button-to input {position: relative; top: -1em; width: auto;}
+			  body.account #maincontent ul.identities {margin: 2em 0 0 0;}
+			   body.account #maincontent ul.identities li {clear: both; float: left; margin: -0.5em 0 0 1em; width: 32em;}
+			      body.account ul.identities li a {float: left; position: relative; top: -1em;}
+			      body.account ul.identities li form.button-to {clear: none; float: right;}
+			        body.account ul.identities li form.button-to input {position: relative; top: -1em; width: auto;}
 			  
 			#maincontent #profile-menu {font-size: 0.8em; margin: 3em 0 0 0;}
 				#maincontent #profile-menu li {display: inline; list-style-type: none; margin: 0;}

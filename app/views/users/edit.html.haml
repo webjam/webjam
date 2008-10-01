@@ -1,7 +1,7 @@
-- @page_title = "Edit your profile"
-- @body_class = "edit-profile"
+- @page_title = "Edit your account details"
+- @body_class = "account"
 
-%h1 Edit your profile
+%h1 Edit your account details
 
 = flash_notice
 
@@ -35,7 +35,7 @@
         = f.text_area :description, :cols => '57', :rows => '6'
         %span.note (Nice HTML is welcome, but please keep the naughty stuff to yourself!)
     %fieldset
-      = submit_tag 'Save profile details', :class => "submit"
+      = submit_tag 'Save personal details', :class => "submit"
   
   %p
     %a{:href => user_path(current_user)} View your profile
