@@ -29,3 +29,23 @@
 
 /
   <h2>Jams <span class="amp">&amp;</span> Awards</h2>
+
+- unless @all_photos.empty?
+  .item.last.media#photos
+    .item-details
+      %h2
+        =@user.nick_name
+        in action
+      %p 
+        Add your photos. Tag them on
+        %a{:href => "http://flickr.com/"} Flickr
+        with &#8220;
+        %a{:href => "http://flickr.com/photos/tags/webjam:peep=#{@user.nick_name}/"}= "webjam:peep=" + @user.nick_name
+        &#8221;
+    %ul
+    - for photo in @all_photos
+      %li
+        %a{:href => photo.url}
+          %img{:alt => photo.title, :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
+          
+          
