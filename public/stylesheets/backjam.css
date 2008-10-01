@@ -452,8 +452,6 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			
 			body.profile #content .media h2 {float: none;}
 			body.profile #content .media p {line-height: 1.5; margin: 0;}
-			body.profile #content .description {clear:left;}
-        body.profile #content .description p {margin: 0.5em 0; font-size:1.2em/1.4em;}
 			
      body.edit-profile #content {float: left; padding: 2em; width: 66em;}
 			  body.edit-profile #content .column {float: left; margin: 1em 0 0 4em; width: 24em;}
