@@ -18,7 +18,14 @@
 
 = flash_notice
 
-.description= format_user_html(@user.description)  
+
+- if !@user.description
+  .item
+    %p.note
+      =@user.nick_name
+      has not added a description here, but might later.
+-else
+  .item.description= format_user_html(@user.description)  
 
 /
   <h2>Jams <span class="amp">&amp;</span> Awards</h2>
