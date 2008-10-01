@@ -2,6 +2,8 @@ class Jam < ActiveRecord::Base
   belongs_to :event
   has_and_belongs_to_many :users
   belongs_to :presentation_proposal
+  has_many :viddler_videos
+  has_many :flickr_photos
   
   validates_presence_of :title, :description, :number
   

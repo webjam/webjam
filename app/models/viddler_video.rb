@@ -3,6 +3,10 @@ require "open-uri"
 require "cgi"
 
 class ViddlerVideo < ActiveRecord::Base
+  has_and_belongs_to_many :users
+  belongs_to :event
+  belongs_to :jam
+  
   API_BASE = "http://api.viddler.com/rest/v1/"
   # this will change.. check http://wiki.developers.viddler.com/index.php/OEMBED
   OEMBED_API_BASE = "http://lab.viddler.com/services/oembed/"

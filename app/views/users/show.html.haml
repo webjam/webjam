@@ -1,31 +1,45 @@
 - @page_title = h(@user.nick_name) + " loves Webjam"
 - @body_class = "profile"
 
-%h1
-  %strong= @user.nick_name
-
-- if @user == current_user
-  %ul#profile-menu
-    %li
-      = link_to '(Edit)', edit_current_user_path
+- content_for :full_title do
+  #title
+    %h1
+      %strong= @user.nick_name
+      loves the jam
+      
+- content_for :other_content do
+  = render :partial => 'shared/other_content/peep_card'
+  = render :partial => 'shared/other_content/shirt'
 
 = flash_notice
 
-.description= format_user_html(@user.description)  
-
-%h2 Details
-%dl.vcard{ :id => "hcard-#{h utf8_slugify(@user.nick_name)}" }
-  %dt.fn
-    =h @user.full_name
-  %dd.avatar
-    - if @user.mugshot?
-      = image_tag @user.mugshot.url(:large), :class => 'photo'
-    - else
-      = avatar_image(@user, :large)
-  - unless @user.website_url.blank?
-    %dd
-      Visit
-      = link_to h(@user.website_display_name), @user.website_url, :class => "url", :rel => "me"
+- if !@user.description
+  .item
+    %p.note
+      =@user.nick_name
+      has not added a description here, but might later.
+-else
+  .item.description= format_user_html(@user.description)  
 
 /
   <h2>Jams <span class="amp">&amp;</span> Awards</h2>
+
+- unless @all_photos.empty?
+  .item.last.media#photos
+    .item-details
+      %h2
+        =@user.nick_name
+        in action
+      %p 
+        Add your photos. Tag them on
+        %a{:href => "http://flickr.com/"} Flickr
+        with &#8220;
+        %a{:href => "http://flickr.com/photos/tags/webjam:peep=#{@user.nick_name}/"}= "webjam:peep=" + @user.nick_name
+        &#8221;
+    %ul
+    - for photo in @all_photos
+      %li
+        %a{:href => photo.url}
+          %img{:alt => photo.title, :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
+          
+          

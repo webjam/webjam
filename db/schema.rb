@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080928143332) do
+ActiveRecord::Schema.define(:version => 20081001045449) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20080928143332) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "event_id",           :limit => 11
-    t.datetime "posted_before"
     t.boolean  "featured",                         :default => false
     t.string   "username"
     t.datetime "posted_at"
@@ -57,6 +56,12 @@ ActiveRecord::Schema.define(:version => 20080928143332) do
     t.string   "license_text"
     t.string   "realname"
     t.string   "profile_url"
+    t.integer  "jam_id",             :limit => 11
+  end
+
+  create_table "flickr_photos_users", :id => false, :force => true do |t|
+    t.integer "flickr_photo_id", :limit => 11, :null => false
+    t.integer "user_id",         :limit => 11, :null => false
   end
 
   create_table "identity_urls", :force => true do |t|
@@ -168,6 +173,11 @@ ActiveRecord::Schema.define(:version => 20080928143332) do
     t.text     "description"
   end
 
+  create_table "users_viddler_videos", :id => false, :force => true do |t|
+    t.integer "viddler_video_id", :limit => 11, :null => false
+    t.integer "user_id",          :limit => 11, :null => false
+  end
+
   create_table "viddler_videos", :force => true do |t|
     t.string   "identifier"
     t.string   "title"
@@ -181,6 +191,7 @@ ActiveRecord::Schema.define(:version => 20080928143332) do
     t.datetime "posted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "jam_id",            :limit => 11
   end
 
 end
