@@ -450,29 +450,30 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 
 			/* ---- =Profile ---- */
 			
-/*      body.profile #content {float: left; padding: 2em; width: 66em;} */
-			  body.profile #content .column {float: left; margin: 1em 0 0 4em; width: 24em;}
-			    body.profile #content .item {border: none; padding: 0 1em 1em 1em;}
-			      body.profile #content .media h2 {float: none;}
-			      body.profile .item form.button-to {margin: 0 0 1em 0;}
-			        body.profile #content .item p {margin: 0;}
-			        body.profile #content .item p {margin: 1em 0; width: 24em;}
-			        body.profile #content .description {clear:left;}
-			          body.profile #content .description p {margin: 0.5em 0; font-size:1.2em/1.4em;}
-			        
-			      body.profile form label.description {width: 22.3em}
-			      body.profile form label.description span {width: 100%}
-			      body.profile form label.description textarea {width:100%}
-			      body.profile form label.description span.note {margin-left:0}
+			body.profile #content .media h2 {float: none;}
+			body.profile #content .item p {margin: 0;}
+			body.profile #content .description {clear:left;}
+        body.profile #content .description p {margin: 0.5em 0; font-size:1.2em/1.4em;}
 			
-			  body.profile h2,
-			  body.profile h3 {clear: both;}
+     body.edit-profile #content {float: left; padding: 2em; width: 66em;}
+			  body.edit-profile #content .column {float: left; margin: 1em 0 0 4em; width: 24em;}
+			    body.edit-profile #content .item {border: none; padding: 0 1em 1em 1em;}
+			      body.edit-profile .item form.button-to {margin: 0 0 1em 0;}
+			        body.edit-profile #content .item p {margin: 1em 0; width: 24em;}
+			
+			  body.edit-profile h2,
+			  body.edit-profile h3 {clear: both;}
 			  
-			  body.profile #maincontent ul.identities {margin: 2em 0 0 0;}
-			   body.profile #maincontent ul.identities li {clear: both; float: left; margin: -0.5em 0 0 1em; width: 32em;}
-			      body.profile ul.identities li a {float: left; position: relative; top: -1em; width auto}
-			      body.profile ul.identities li form.button-to {clear: none; float: right;}
-			        body.profile ul.identities li form.button-to input {position: relative; top: -1em; width: auto;}
+			  body.edit-profile form label.description {width: 22.3em}
+        body.edit-profile form label.description span {width: 100%}
+        body.edit-profile form label.description textarea {width:100%}
+        body.edit-profile form label.description span.note {margin-left:0}
+			  
+			  body.edit-profile #maincontent ul.identities {margin: 2em 0 0 0;}
+			   body.edit-profile #maincontent ul.identities li {clear: both; float: left; margin: -0.5em 0 0 1em; width: 32em;}
+			      body.edit-profile ul.identities li a {float: left; position: relative; top: -1em;}
+			      body.edit-profile ul.identities li form.button-to {clear: none; float: right;}
+			        body.edit-profile ul.identities li form.button-to input {position: relative; top: -1em; width: auto;}
 			  
 			#maincontent #profile-menu {font-size: 0.8em; margin: 3em 0 0 0;}
 				#maincontent #profile-menu li {display: inline; list-style-type: none; margin: 0;}
