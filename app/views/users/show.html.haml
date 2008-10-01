@@ -11,13 +11,7 @@
   = render :partial => 'shared/other_content/peep_card'
   = render :partial => 'shared/other_content/shirt'
 
-- if @user == current_user
-  %ul#profile-menu
-    %li
-      = link_to '(Edit)', edit_current_user_path
-
 = flash_notice
-
 
 - if !@user.description
   .item

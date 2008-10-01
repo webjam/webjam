@@ -119,7 +119,7 @@ TOC
 	
 	div.pagination {clear: both; margin: 0 0 1em 0; text-align: center;}
 	
-	dl.peep-card {font-size: 0.875em; padding: 0 0 1em 150px; position: relative;}
+	dl.peep-card {font-size: 0.875em; min-height: 140px; padding: 0 0 1em 150px; position: relative;}
     dl.peep-card dt.fn {font-size: 1.1em;}
     dl.peep-card dd {margin: 0 0 1em 0;}
     dl.peep-card dd.nickname {font-size: 0.97em;}
@@ -474,8 +474,8 @@ body {background: #2a2e2f url('/stylesheets/images/bg-body.gif') no-repeat cente
 			      body.profile ul.identities li form.button-to {clear: none; float: right;}
 			        body.profile ul.identities li form.button-to input {position: relative; top: -1em; width: auto;}
 			  
-			#profile-menu {float: right; width: 10em;}
-				#profile-menu li {display: inline; list-style-type: none;}
+			#maincontent #profile-menu {font-size: 0.8em; margin: 3em 0 0 0;}
+				#maincontent #profile-menu li {display: inline; list-style-type: none; margin: 0;}
 					#profile-menu li a:link,
 					#profile-menu li a:visited {}
 					#profile-menu li a:hover,
