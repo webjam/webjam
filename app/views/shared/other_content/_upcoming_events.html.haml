@@ -8,18 +8,14 @@
     %ol
       - @upcoming_events.each_with_index do |event, index|
         %li{:class => (index == 0) ? "next-event" : (index == @upcoming_events.length-1) ? "last" : nil }
-          %dl.vevent{:id => "#hcalendar-#{event.tag}"}
+          %dl.vevent{:id => "hcalendar-#{event.tag}"}
             %dt
-              %a.url.summary{ :href => event_path(event) }
-                = event.name
-            %dd.location
-              = event.location
+              %a.url.summary{:href => event_path(event)}= event.name
+            %dd.location= event.location
             %dd
-              %a.url{ :href => event_path(event) } Read more&hellip;
+              %a.url{:href => event_path(event) } Read more&hellip;
             %dd.when
-              %abbr.dtstart{ :title => event.local_held_at.to_datetime.to_s(:number) }
-                %a.url{ :href => event_path(event) } 
-                  %strong.dd
-                    = event.local_held_at.to_date.to_s(:dd)
-                  %span.mon
-                    = event.local_held_at.to_date.to_s(:mon)
+              %abbr.dtstart{:title => event.local_held_at.to_datetime.to_s(:number)}
+                %a.url{:href => event_path(event)} 
+                  %strong.dd= event.local_held_at.to_date.to_s(:dd)
+                  %span.mon= event.local_held_at.to_date.to_s(:mon)

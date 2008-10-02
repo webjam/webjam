@@ -1,6 +1,6 @@
 class Admin::EventsController < Admin::BaseController
   def index
-    @events = Event.find(:all, :order => 'created_at DESC')
+    @events = Event.find(:all, :order => 'held_at DESC')
   end
   def new
     @event = Event.new
