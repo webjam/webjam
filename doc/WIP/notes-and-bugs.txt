@@ -30,7 +30,6 @@ Polling
  - Technorati polling? Some other blog service?
 
 wire up sponsors structure to db
-add content for rsvp
 Add Viddler player mojo (preferably API shizzle)
 custom error (404 + 500) page
 make author list for blog posts only consist of admins
