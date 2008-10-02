@@ -4,8 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_nick_name(params[:id])
-    @all_photos = @user.flickr_photos.all(:order => "created_at DESC")
     raise NotFound unless @user
+    @all_photos = @user.flickr_photos.all(:order => "created_at DESC")
   end
   
   def index
