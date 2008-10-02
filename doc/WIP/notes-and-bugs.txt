@@ -1,14 +1,18 @@
 URLS:
 webjam.com.au/webjam8
-webjam.com.au/webjam8/pres-2
+webjam.com.au/webjam8/presentations/2
 webjam.com.au/people/lachlanhardy
 webjam.com.au/news/2008/wasnt-webjam8-great
 
 TAGS:
 webjam
 webjam8
+webjam:event=8
 webjam8:presentation=2
+webjam8:photos=featured
+webjam8:videos=featured
 webjam:peep=lachlanhardy
+
 
 
 TODO - priorities:
