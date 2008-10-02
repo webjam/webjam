@@ -55,10 +55,10 @@
   %h2 Tweets
   %p Webjam loves <a href="http://twitter.com/">Twitter</a> too. You can share your tweets with the rest of the Webjam community by tagging them.
   %p
-    The tag for this event is
-    %span{:class => "tag", :rel => "tag"}= "##{@event.tag}"
+    The tag for this event is simply
+    %span{:class => "tag", :rel => "tag"}= "#{@event.tag}"
 
-.item.last
+.item
   %h2 Tell your friends!
   %p 
     The more people come, the more fun you'll have. You'll meet new people and catch up with old friends and colleagues in the community. If your friends are into what's hot on the web, tell them to 
@@ -67,11 +67,17 @@
     %a{:href => "#{event_presentation_proposal_path(@event)}"} presenting that thing 
     they were showing you last week?
   
-/ .item
-/   %h2 Customise your profile
-/   %p
-/     %a{:href => edit_current_user_path} Customise yo.
-/ 
-/ .item.last
-/   %h2 Get the latest news
-/   %p A link to the blog and RSS feed
+.item
+  %h2 Customise your profile
+  %p
+    %a{:href => edit_current_user_path} Let folks know who you are!
+
+.item.last
+  %h2 Get the latest news
+  %p 
+    Keep up with all the Webjam
+    %a{:href => "/news/"} news
+    by subscribing to
+    %a{:href => "http://feeds.feedburner.com/webjam-news"} our feed.
+  
+  
