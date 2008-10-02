@@ -1,16 +1,15 @@
 #latest.item.last
   %h2
     Latest News
-    %a.feed{ :href => APPLICATION_CONFIG.feed_url, :title => "Subscribe!" } Subscribe!
+    %a.feed{:href => APPLICATION_CONFIG.feed_url, :title => "Subscribe!"} Subscribe!
   - if @latest_post
     %h3
-      %a{ :href => post_path(@latest_post.year, @latest_post.permalink) }
-        = @latest_post.title
+      %a{:href => post_path(@latest_post.year, @latest_post.permalink)}= @latest_post.title
     %p= @latest_post.body[0..100]
     %ul
       %li.first
-        %a{ :href => post_path(@latest_post.year, @latest_post.permalink) } Read more...
+        %a{:href => post_path(@latest_post.year, @latest_post.permalink)} Read more...
       %li
-        %a{ :href => "#{post_path(@latest_post.year, @latest_post.permalink)}#comments" }= "#{@latest_post.comments.size} comments"
+        %a{:href => "#{post_path(@latest_post.year, @latest_post.permalink)}#comments"}= "#{@latest_post.comments.size} comments"
       %li.more
-        %a{ :href => posts_path } News archive
+        %a{:href => posts_path} News archive
