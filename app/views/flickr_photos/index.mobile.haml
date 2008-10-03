@@ -26,10 +26,10 @@
       Back to
       =h @event.name
   %li
-    %a.item.button{:href => "http://m.flickr.com/search/?m=tags&q=#{@event.tag}"}
-      = "#{@event.tag}"
+    %a.item.button{:href => "http://m.flickr.com/search/?m=tags&q=#{@event.tag}", :rel => "tag"}
+      = @event.tag
       tag on m.flickr.com
   %li
-    %a.item.button{:href => "http://www.flickr.com/photos/tags/#{@event.tag}"}
-      = "#{@event.tag}"
+    %a.item.button{:href => "http://www.flickr.com/photos/tags/#{@event.tag}", :rel = "tag"}
+      = @event.tag
       tag on flickr.com

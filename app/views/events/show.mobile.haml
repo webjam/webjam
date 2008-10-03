@@ -12,11 +12,11 @@
 %h2 Upload your content
 %p
   Upload your photos to Flickr and tag them with
-  %span.tag
+  %span.tag{:rel => "tag"}
     = @event.tag
 %p
   For Twitter just include
-  %span.tag
+  %span.tag{:rel => "tag"}
     = "#{@event.tag}"
   somewhere in your tweet.
 

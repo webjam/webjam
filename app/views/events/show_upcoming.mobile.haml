@@ -24,7 +24,7 @@
       %span.month= @event.local_held_at.strftime("%b")
     %dd
       = @event.local_held_at.to_date.to_s(:long)
-      %br/
+      %br
       Doors open at
       = @event.local_held_at.to_datetime.to_s(:time_12hr).downcase.sub(/^0/,'')
       (RSVP only)
