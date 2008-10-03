@@ -39,8 +39,10 @@ generate Google sitemap
 create proper span/anchor switching for primary-nav
 integrate Register and Login into one screen
 fix login to account for Flickr's occasional '77694982@N00' instead of 'alanstairs'
-What happened to exception notifications?
+improve Latest News post body extractor
 confirm identity with Yahoo! etc (http://blog.nerdbank.net/2008/06/why-yahoo-says-your-openid-site.html)
+
+
 
 Lisa's feedback:    (whenever this list gets to zero - ask Lisa for another expert review!)
 suggests single line only for archive - ?? check on this now we've fixed newline bug
