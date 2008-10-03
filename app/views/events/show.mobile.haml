@@ -12,10 +12,12 @@
 %h2 Upload your content
 %p
   Upload your photos to Flickr and tag them with
-  = @event.tag
+  %span.tag
+    = @event.tag
 %p
   For Twitter just include
-  = "#{@event.tag}"
+  %span.tag
+    = "#{@event.tag}"
   somewhere in your tweet.
 
 - if @featured_photos.first
