@@ -6,7 +6,7 @@
     - event.flickr_photos.featured.each do |fp|
       %li
         %a{:href => fp.url}
-          %img{ :title => "#{fp.title} by #{fp.realname}", :src => fp.img_url("l"), :alt => fp.title }
+          %img{:alt => h(photo.title), :src => fp.img_url("l"), :alt => fp.title, :title => "#{fp.title} by #{fp.realname}" }
         %br
         Photo by
         %a{:href => fp.profile_url}<

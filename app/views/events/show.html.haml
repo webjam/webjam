@@ -57,10 +57,10 @@
         %a{:href => "http://flickr.com/photos/tags/#{@event.tag}/"}= @event.tag
         &#8221;
     %ul
-    - for photo in @all_photos
-      %li
-        %a{:href => photo.url}
-          %img{:alt => photo.title, :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
+      - for photo in @all_photos
+        %li
+          %a{:href => photo.url}
+            %img{:alt => h(photo.title), :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
 
 -#.item.media#videos
 -#  .item-details
