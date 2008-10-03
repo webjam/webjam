@@ -5,7 +5,7 @@
   - if @latest_post
     %h3
       %a{:href => post_path(@latest_post.year, @latest_post.permalink)}= @latest_post.title
-    %p= @latest_post.body[0..100]
+    = @latest_post.body[0..100]
     %ul
       %li.first
         %a{:href => post_path(@latest_post.year, @latest_post.permalink)} Read more...
