@@ -38,7 +38,7 @@
         - for photo in @featured_photos
           %li
             %a{:href => photo.url}
-              %img{ :title => "#{h photo.title} by #{h photo.realname}", :src => photo.img_url("l"), :alt => h(photo.title) }
+              %img{ :title => "#{h photo.title} by #{h photo.realname}", :src => photo.img_url("l"), :alt => "#{h photo.title} by #{h photo.realname}" }
             %br
             Photo by
             %a{:href => photo.profile_url}<

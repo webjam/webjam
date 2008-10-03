@@ -6,7 +6,7 @@
   - for photo in @photos
     %li{:id => "photo-#{photo.flickrid}"}
       %a{:href => photo.url}
-        %img{:src => photo.img_url("s"), :alt => h(photo.title)}
+        %img{:src => photo.img_url("s"), :alt => "#{h photo.title} by #{h photo.realname}"}
         %span.details
           %span.title=h photo.title
           %span.by

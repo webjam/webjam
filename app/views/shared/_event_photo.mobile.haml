@@ -1,4 +1,4 @@
-%img{:src => photo.img_url("m"), :alt => photo.title, :class => "photo"}/
+%img{:src => photo.img_url("m"), :alt => "#{h photo.title} by #{h photo.realname}", :class => "photo"}/
 .info
   =h photo.title
   by

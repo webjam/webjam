@@ -11,12 +11,12 @@
 
 %h2 Upload your content
 %p
-  Upload your photos to flickr and tag them with
+  Upload your photos to Flickr and tag them with
   = @event.tag
 %p
-  For twitter just include
-  = "##{@event.tag}"
-  on the end of your tweet.
+  For Twitter just include
+  = "#{@event.tag}"
+  somewhere in your tweet.
 
 - if @featured_photos.first
   %h2

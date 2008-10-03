@@ -40,6 +40,6 @@
     - for photo in @all_photos
       %li
         %a{:href => photo.url}
-          %img{:alt => photo.title, :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
+          %img{:alt => "#{h photo.title} by #{h photo.realname}", :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
           
           
