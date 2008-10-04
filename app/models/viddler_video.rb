@@ -7,6 +7,8 @@ class ViddlerVideo < ActiveRecord::Base
   belongs_to :event
   belongs_to :jam
   
+  named_scope :featured, :conditions => {:featured => true}
+  
   API_BASE = "http://api.viddler.com/rest/v1/"
   
   # Loads new images not in DB
