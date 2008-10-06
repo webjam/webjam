@@ -37,9 +37,9 @@
         %a{:href => "http://flickr.com/photos/tags/webjam:peep=#{@user.nick_name}/", :rel => "tag"}= "webjam:peep=" + @user.nick_name
         &#8221;
     %ul
-    - for photo in @all_photos
-      %li
-        %a{:href => photo.url}
-          %img{:alt => "#{h photo.title} by #{h photo.realname}", :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
+      - for photo in @all_photos
+        %li
+          %a{:href => photo.url}
+            %img{:alt => "#{h photo.title} by #{h photo.realname}", :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
           
           
