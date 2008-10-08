@@ -14,3 +14,9 @@ Story: Updating your account details
     When I update my account details
     Then my account details are updated
     And I am redirected to the account page
+
+  Scenario: updating account details with invalid details
+    Given I am logged in
+    When I update my account details giving invalid details
+    Then my account details aren't updated
+    And I am shown the account edit page
