@@ -75,21 +75,13 @@ class UsersController < ApplicationController
     @identity_urls = @user.identity_urls
   end
 
-  def update
-    render_404 && return if params[:id]
-    @user = current_user
-    @user.attributes = params[:user]
-    @user.save!
-    flash[:notice] = "Looksies... your user profile has been updated"
-    redirect_to user_path(@user)
-  rescue ActiveRecord::RecordInvalid
-    render :action => 'edit'
-  end
-  
   def update_profile_details
     @user = current_user
     @user.update_attributes(params[:user])
     @user.save!
     redirect_back_or_default user_path(@user)
+  rescue ActiveRecord::RecordInvalid
+    edit
+    render :action => 'edit'
   end
 end

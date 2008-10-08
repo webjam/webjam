@@ -14,13 +14,35 @@ When "I update my account details" do
   put update_profile_details_current_user_path(:user => @new_account_details)
 end
 
+When "I update my account details giving invalid details" do
+  @new_account_details = {
+    :nick_name => "",
+    :full_name => "",
+    :email => "",
+    :website_url => "ftp://hellothere.com/"
+  }
+  put update_profile_details_current_user_path(:user => @new_account_details)
+end
+
 Then "my account details are updated" do
   @logged_in_user.reload
-  [:nick_name, :full_name, :email, :website_name, :website_url, :description].each do |attr|
-    @logged_in_user[attr].should == @new_account_details[attr]
+  @new_account_details.each_pair do |attr, new_value|
+    @logged_in_user[attr].should == new_value
+  end
+end
+
+Then "my account details aren't updated" do
+  @logged_in_user.reload
+  @new_account_details.each_pair do |attr, new_value|
+    @logged_in_user[attr].should_not == new_value
   end
 end
 
 Then "I am redirected to the account page" do
   response.should redirect_to(user_path(@logged_in_user))
+end
+
+Then "I am shown the account edit page" do
+  response.should be_success
+  response.should render_template("users/edit")
 end
