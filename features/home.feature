@@ -1,8 +1,7 @@
-Story: Viewing the home page
+Feature: Viewing the home page
 
-  As a visitor
-  I want to visit the home page
-  So that I can see all the cool stuff
+  In order to see all the cool stuff
+  I should be able to visit the home page
   
   Scenario: not logged in
     Given I am not logged in

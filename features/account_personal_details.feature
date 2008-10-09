@@ -1,8 +1,7 @@
-Story: Updating your account details
+Feature: Updating your account details
 
-  As a user
-  I want to edit and update my personal details
-  So that I can show the world how cool I am
+  In order to show the world how cool I am
+  I should be able to edit and update my personal details
   
   Scenario: viewing the account page
     Given I am logged in

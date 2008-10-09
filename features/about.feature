@@ -1,8 +1,7 @@
-Story: Viewing the about page
+Feature: Viewing the about page
 
-  As a visitor
-  I want to visit the about page
-  So that I can read all about Webjam
+  In order to read all about Webjam
+  I should be able to visit the about page
   
   Scenario: about page with past events from an iphone
     Given there is a past event

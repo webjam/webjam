@@ -1,8 +1,7 @@
-Story: Viewing post pages
+Feature: Viewing post pages
 
-  As a visitor
-  I want to visit pages and pages and pages of blog posts
-  So that I absorb Lachlan's deep insights into man and machine
+  In order to absorb Lachlan's deep insights into man and machine
+  I should be able to visit pages and pages and pages of blog posts
   
   Scenario: viewing a post when logged in
     Given I am logged in
