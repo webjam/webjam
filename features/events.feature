@@ -1,8 +1,7 @@
-Story: Event related things
+Feature: Event related things
 
-  As a visitor
-  I want to visit the events pages
-  So that I can see all the cool stuff
+  In order to see all the cool stuff
+  I should be able to visit the events pages
   
   Scenario: not logged viewing the past events page from an iphone
     Given I am not logged in

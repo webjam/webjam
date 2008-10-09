@@ -1,8 +1,7 @@
-Story: Viewing event presentations
+Feature: Viewing event presentations
 
-  As a visitor
-  I want to view the presentations for an event
-  So that I can relive the moments
+  In order to relive the moments
+  I should be able to view the presentations for an event
   
   Scenario: viewing an event's presentations page
     Given I am not logged in
