@@ -7,65 +7,93 @@ class ViddlerVideo < ActiveRecord::Base
   belongs_to :event
   belongs_to :jam
   
-  API_BASE = "http://api.viddler.com/rest/v1/"
-  # this will change.. check http://wiki.developers.viddler.com/index.php/OEMBED
-  OEMBED_API_BASE = "http://lab.viddler.com/services/oembed/"
+  named_scope :featured, :conditions => {:featured => true}
   
-  def self.fetch_for_event(event)
-    # because the API doesn't allow query params, we need to get a list of identifiers 
-    # that are in the DB to check if we already have this video, and pull *all* videos
-    # down. this is non optimal, so shoudln't be run too frequently (<5 mins?)
-    identifiers = Array.new
-    # todo - optimize this with a select if table is too large
-    event.viddler_videos.each {|vid| identifiers << vid.identifier}
-    
-    page = 1
-    per_page = 100
-    while load_and_store_page_of_videos(event, identifiers, per_page, page)
-      page += 1
-    end
+  API_BASE = "http://api.viddler.com/rest/v1/"
+  
+  # Loads new images not in DB
+  def self.fetch_new(event)
+    ids_to_add = viddler_ids_on_viddler(event) - viddler_ids_in_db(event)
+    ids_to_add.each {|id| create_or_update_video(event, id)}
+  end
+  
+  # Updates existing images with tags/assocs etc.
+  def self.update_existing(event)
+    viddler_ids_in_db(event).each {|id| create_or_update_video(event, id)}
   end
   
   private
   
-  # grabs a page of videos and stores them. if there are more pages, returns true.
-  def self.load_and_store_page_of_videos(event, existing_identifiers, number_per_page, page)
-    arguments = Hash.new
-    arguments["tag"] = [event.tag]
-    response = request("viddler.videos.getByTag",arguments)
-    
-    # we use this to track if there are more videos.
+  def self.viddler_ids_in_db(event)
+    ids = Array.new
+    event.viddler_videos.each {|vid| ids << vid.identifier}
+    ids
+  end
+  
+  def self.viddler_ids_on_viddler(event)
+    ids = Array.new
+    page = 1
+    while load_page_of_ids_from_viddler(event, ids, page)
+      page += 1
+    end
+    ids
+  end
+  
+  def self.load_page_of_ids_from_viddler(event, ids, page)
     counter = 0
-    
-    # now stash them in DB.
+    response = request("viddler.videos.getByTag",{"tag" => [event.tag], "per_page" => 100, "page" => page})
     photo_ids = REXML::XPath.match(response, "//video_list/video").collect do |elem|
       counter += 1
-      identifier = elem.elements['id'].get_text.to_s
-      unless existing_identifiers.index(identifier)
-        vv = ViddlerVideo.new
-        vv.identifier = identifier
-        vv.username = elem.elements['author'].get_text.to_s
-        vv.title = elem.elements['title'].get_text.to_s
-        vv.description = elem.elements['description'].get_text.to_s
-        vv.posted_at = Time.at(elem.elements['upload_time'].get_text.to_s.to_i/1000)
-        vv.video_url = elem.elements['url'].get_text.to_s
-        vv.thumbnail_url = elem.elements['thumbnail_url'].get_text.to_s
-        vv.length_in_seconds = elem.elements['length_seconds'].get_text.to_s.to_i
-        vv.event_id = event.id
-        # find the embed code from the oembed API.
-        oembed_call_uri = "#{OEMBED_API_BASE}?url=#{vv.video_url}&format=json"
-        oembed_response = JSON.parse(open(oembed_call_uri).read)
-        vv.object_html = oembed_response["html"]
-        logger.info("VidlerVideo::retrieve About to save video #{vv.title} (viddler id: #{vv.identifier}) for event #{event.name}")
-        vv.save!
+      ids << elem.elements['id'].get_text.to_s
+    end
+    counter == 100 ? true : false
+  end
+  
+  # grabs a page of videos and stores them. if there are more pages, returns true.
+  def self.create_or_update_video(event, viddlerid)
+    vv = ViddlerVideo.find_by_identifier(viddlerid)
+    unless vv
+      vv = ViddlerVideo.new
+      vv.identifier = viddlerid
+    end
+
+    response = request("viddler.videos.getDetails",{"video_id" => viddlerid, "add_embed_code" => 1})
+
+    vv.username = REXML::XPath.match(response, "//video/author")[0].get_text.to_s
+    vv.title = REXML::XPath.match(response, "//video/title")[0].get_text.to_s
+    vv.description = REXML::XPath.match(response, "//video/description")[0].get_text.to_s
+    vv.posted_at = Time.at(REXML::XPath.match(response, "//video/upload_time")[0].get_text.to_s.to_i/1000)
+    vv.video_url = REXML::XPath.match(response, "//video/url")[0].get_text.to_s
+    vv.thumbnail_url = REXML::XPath.match(response, "//video/thumbnail_url")[0].get_text.to_s
+    vv.length_in_seconds = REXML::XPath.match(response, "//video/length_seconds")[0].get_text.to_s.to_i
+    vv.object_html = REXML::Text::unnormalize(REXML::XPath.match(response, "//video/embed_code")[0].get_text.to_s)
+    vv.event_id = event.id
+    
+    # the next section needs some regex love. In fact, it is common with viddler
+    # so should be cleaned up and turned into a module or mixin or something.
+    REXML::XPath.match(response, "//video/tags/global").each do |tagelem|
+      tag = tagelem.get_text.to_s.downcase
+      if tag.split(':')[0] == event.tag.downcase && tag.split(':')[1]
+        # this is one of the webjam8 tags
+        vv.featured = true if tag.split(':')[1].downcase == "videos=featured"
+        if tag.split(':')[1].downcase.index("presentation=")
+          presid = tag.split(':')[1].downcase.split("=")[1].to_i
+          if jam = Jam.find_by_number(presid)
+            vv.jam = jam
+          end
+        end
+      elsif tag.split(':')[0] == "webjam" && tag.split(':')[1]
+        # this is one of the generic tags
+        if tag.split(':')[1].downcase.index("peep=")
+          peep = tag.split(':')[1].downcase.split("=")[1]
+          if user = User.find_by_nick_name(peep)
+            vv.users << user
+          end
+        end
       end
     end
-    
-    if counter == number_per_page
-      return true # may be more videos
-    else
-      return false # no more videos.
-    end
+
+    vv.save
   end
   
   # method for performing a request
