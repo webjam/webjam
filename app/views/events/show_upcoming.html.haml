@@ -16,7 +16,8 @@
             = render :partial => 'shared/tweet', :locals => {:tweet => tweet}
       - if @more_tweets
         .more
-          %a{:href => formatted_event_tweets_path(@event)} More tweets
+          -# %a{:href => formatted_event_tweets_path(@event)} More tweets
+          %a{:href => "http://search.twitter.com/search?q=#{@event.tag}"} More tweets
   = render :partial => 'shared/other_content/latest_news'
   
   
