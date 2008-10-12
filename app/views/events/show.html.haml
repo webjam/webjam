@@ -5,7 +5,20 @@
 - @mobile_version_path = formatted_event_path(@event, :mobile)
 
 - content_for :other_content do
-  = event_summary(@event)
+  - if false # @published_jams.not.empty?
+    .item#summary
+      %p
+        = pluralize("presenter", @published_jams.collect(&:users).uniq.length)
+        delivered
+        = pluralize("amazing presentations", @published_jams.length)
+        at our biggest event ever. They totally smashed it. Check them out!
+
+      - place_getters, non_place_getters = @published_jams.partition {|j| j.place.not.nil?}
+
+      -# Output them here, yo.
+  - else
+    = event_summary(@event)
+
   - unless @latest_tweets.empty?
     .item
       %h2 Tweets

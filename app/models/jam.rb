@@ -6,6 +6,8 @@ class Jam < ActiveRecord::Base
   has_many :viddler_videos
   has_many :flickr_photos
   
+  named_scope :published, :conditions => "published_at IS NOT NULL"
+  
   validates_presence_of :title, :description, :number
   
   attr_accessor :proposing_user_id
