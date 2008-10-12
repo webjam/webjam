@@ -62,31 +62,22 @@
           %a{:href => photo.url}
             %img{:alt => "#{h photo.title} by #{h photo.realname}", :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
 
--#.item.media#videos
--#  .item-details
--#    %h2 Videos
--#    %p 
--#      Add your videos. Tag them on 
--#      %a{ :href => "http://viddler.com/"} Viddler
--#      with &#8220;
--#      %a{ :href => "http://flickr.com/photos/tags/webjam8/" } webjam8
--#      &#8221;
--#  %ul
--#    %li
--#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
--#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
--#    %li
--#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
--#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
--#    %li
--#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
--#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
--#    %li
--#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
--#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
--#    %li
--#      %a{ :href => "http://www.viddler.com/explore/Webjam/videos/22/" }
--#        %img{ :alt => "Webjam Perth Winners by Webjam", :height => "105", :src => "http://cdn-ll-82.viddler.com/e2/thumbnail_1_8d06a7eb.jpg", :title => "Webjam Perth Winners by Webjam", :width => "140"}
+.item.media#videos
+  .item-details
+    %h2 Videos
+    %p 
+      Add your videos. Tag them on 
+      %a{ :href => "http://viddler.com/"} Viddler
+      with &#8220;
+      %a{ :href => "http://flickr.com/photos/tags/#{@event.tag}/" }>= @event.tag
+      &#8221;
+  - if @event.viddler_videos.not.empty?
+    %ul
+      - for video in @event.viddler_videos
+        %li
+          %a{ :href => video.video_url }
+            %img{ :alt => h(video.title), :height => "105", :src => video.thumbnail_url, :title => h(video.title), :width => "140"}
+
 -#
 -#.item.media.last#words
 -#  .item-details
