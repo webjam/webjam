@@ -4,6 +4,7 @@
 - content_for :section_menu do
   %ul.actions
     %li= link_to @event.name, admin_event_path(@event)
+    %li= link_to "New jam", new_admin_event_jam_path(@event)
 
 %h1
   = @page_title
