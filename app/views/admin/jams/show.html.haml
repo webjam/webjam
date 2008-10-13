@@ -17,11 +17,27 @@
   
 %ul
   %li
+    %strong Number:
+    =@jam.number
+
+  %li
     %strong Description:
     =@jam.description
 
   %li
     %strong Proposing user:
-    =@jam.users[0].full_name
+    - if @jam.proposing_user
+      =@jam.proposing_user.full_name
+    - else
+      nil
 
-  
+  %li
+    %strong Users presenting:
+    - if @jam.users.not.empty?
+      %ul
+        - for user in @jam.users
+          %li= link_to h(user.full_name), user_path(user)
+      
+  %li
+    %strong Published at:
+    =@jam.published_at

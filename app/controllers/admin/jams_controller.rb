@@ -11,12 +11,13 @@ class Admin::JamsController < Admin::BaseController
   end
   
   def new
-    @proposal = @event.presentation_proposals.find(params[:proposal_id])
-    raise NotFound unless @proposal
     @jam = @event.jams.build
-    
-    # I want to do this explicitly here (rather than via callback) so that it won't normally be used
-    @jam.setup_from_proposal(@proposal)
+    if params[:proposal_id].not.blank?
+      @proposal = @event.presentation_proposals.find(params[:proposal_id])
+      raise NotFound unless @proposal
+      # I want to do this explicitly here (rather than via callback) so that it won't normally be used
+      @jam.setup_from_proposal(@proposal)
+    end
   end
   
   def edit
@@ -24,8 +25,14 @@ class Admin::JamsController < Admin::BaseController
   end
   
   def create
-    @jam = @event.jams.build(params[:jam])
-    p @jam
+    @jam = @event.jams.build
+    if params[:proposal_id].not.blank?
+      @proposal = @event.presentation_proposals.find(params[:proposal_id])
+      raise NotFound unless @proposal
+      # I want to do this explicitly here (rather than via callback) so that it won't normally be used
+      @jam.setup_from_proposal(@proposal)
+    end
+    @jam.attributes = params[:jam]
     @jam.save!
     redirect_to [:admin,@event,@jam]
   end
@@ -33,10 +40,9 @@ class Admin::JamsController < Admin::BaseController
   def update
     @jam = @event.jams.find(params[:id])
     raise NotFound unless @jam
-    
     @jam.attributes = params[:jam]
+    @jam.user_ids = params[:jam][:user_ids] || []
     @jam.save!
-    
     redirect_to [:admin, @event, @jam]
   end
   

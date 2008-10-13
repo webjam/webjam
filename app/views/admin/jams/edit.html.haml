@@ -12,4 +12,5 @@
   =@jam.title
 
 - form_for [:admin, @event, @jam] do |f|
+  = f.error_messages
   = render :partial => 'form', :locals => {:f => f}
