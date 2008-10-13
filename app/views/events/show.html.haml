@@ -29,7 +29,10 @@
 
 .item
   = render :partial => "shared/event_title", :locals => {:event => @event}
-  - unless @featured_photos.empty?
+  - if @featured_videos.not.empty?
+    - for video in @featured_videos
+      %a.show-media{:href => "http://cdn-ll-static.viddler.com/flash/publisher.swf?key=#{video.identifier}"} Webjam 8 featured video
+  - elsif @featured_photos.not.empty?
     .slideshow
       %ul
         - for photo in @featured_photos
@@ -56,11 +59,11 @@
 = winners_content(@event)
 
 - unless @event.posts.empty?
-  %div{:class => @all_photos.empty? ? "item last" : "item", :id => "related-posts"}
+  %div#related-posts{:class => @all_photos.empty? && @all_videos.empty? ? "item last" : "item"}
     = render :partial => "related_posts"
 
 - unless @all_photos.empty?
-  .item.last.media#photos
+  %div.media#photos{:class => @all_videos.empty? ? "item last" : "item"}
     .item-details
       %h2 Photos
       %p 
@@ -69,27 +72,41 @@
         with &#8220;
         %a{:href => "http://flickr.com/photos/tags/#{@event.tag}/", :rel => "tag"}= @event.tag
         &#8221;
+    - if @featured_photos.not.empty? && @featured_videos.not.empty?
+      .slideshow
+        %ul
+          - for photo in @featured_photos
+            %li
+              %a{:href => photo.url}
+                %img{ :title => "#{h photo.title} by #{h photo.realname}", :src => photo.img_url("l"), :alt => "#{h photo.title} by #{h photo.realname}" }
+              %br
+              Photo by
+              %a{:href => photo.profile_url}<
+                =h photo.realname
+    - if @featured_photos.not.empty? && @featured_videos.not.empty?
+      %h3 More photos&hellip;
     %ul
       - for photo in @all_photos
         %li
           %a{:href => photo.url}
             %img{:alt => "#{h photo.title} by #{h photo.realname}", :height => "75", :src => photo.img_url("s"), :title => "#{photo.title} by #{photo.realname}", :width => "75"}
 
-.item.media#videos
-  .item-details
-    %h2 Videos
-    %p 
-      Add your videos. Tag them on 
-      %a{ :href => "http://viddler.com/"} Viddler
-      with &#8220;
-      %a{ :href => "http://flickr.com/photos/tags/#{@event.tag}/" }>= @event.tag
-      &#8221;
-  - if @event.viddler_videos.not.empty?
-    %ul
-      - for video in @event.viddler_videos
-        %li
-          %a{ :href => video.video_url }
-            %img{ :alt => h(video.title), :height => "105", :src => video.thumbnail_url, :title => h(video.title), :width => "140"}
+- unless @all_videos.empty?
+  .item.last.media#videos
+    .item-details
+      %h2 Videos
+      %p 
+        Add your videos. Tag them on 
+        %a{ :href => "http://viddler.com/"} Viddler
+        with &#8220;
+        %a{ :href => "http://viddler.com/explore/tags/global/#{@event.tag}/" }>= @event.tag
+        &#8221;
+    - if @all_videos.not.empty?
+      %ul
+        - for video in @all_videos
+          %li
+            %a{ :href => video.video_url }
+              %img{ :alt => h(video.title), :height => "105", :src => video.thumbnail_url, :title => h(video.title), :width => "140"}
 
 -#
 -#.item.media.last#words

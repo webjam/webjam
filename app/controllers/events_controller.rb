@@ -6,6 +6,8 @@ class EventsController < ApplicationController
     @latest_tweets = @event.tweets.latest(5).all
     @more_tweets = @event.tweets.count > @latest_tweets.length
     @all_photos = @event.flickr_photos.all(:order => "created_at DESC")
+    @featured_videos = @event.viddler_videos.featured.all :order => "created_at DESC"
+    @all_videos = @event.viddler_videos.all(:order => "jam_id ASC")
     @published_jams = @event.jams.published
     if @event.upcoming?
       @previous_event = @event.previous
