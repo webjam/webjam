@@ -9,7 +9,7 @@
     %title
       = @page_title || (raise "No page title")
     = stylesheet_link_tag 'reset', 'backjam'
-    = javascript_include_tag 'jquery', 'webjam', 'autoshow', :cache => true
+    = javascript_include_tag 'jquery', 'swfobject', 'jquery.media', 'webjam', 'autoshow', :cache => true
     %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}
     = auto_discovery_link_tag :atom, APPLICATION_CONFIG.feed_url, :title => "Webjam"
     = stylesheet_link_tag "backjam_mobile", :media => "only screen and (max-device-width: 480px)"
