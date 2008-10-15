@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def show
-    @event = Event.published.find_by_tag(params[:id])
+    @event = Event.published.find_by_tag(params[:id], :include => {:jams => :presenters})
     raise NotFound unless @event
     @total_tweets = @event.tweets.count
     @latest_tweets = @event.tweets.latest(5).all
@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     @all_photos = @event.flickr_photos.all(:order => "created_at DESC")
     @featured_videos = @event.viddler_videos.featured.all :order => "created_at DESC"
     @all_videos = @event.viddler_videos.all(:order => "jam_id ASC")
-    @published_jams = @event.jams.published
+    @published_jams = @event.jams.published.all(:include => {:presenters => :user})
     if @event.upcoming?
       @previous_event = @event.previous
       @featured_photos = @event.flickr_photos.featured.all :order => "created_at DESC"

@@ -14,7 +14,8 @@
   -@jams.each do |jam|
     %li
       .title
-      = link_to jam.title, admin_event_jam_path(@event,jam)
-      .user
-        proposed by
-        =jam.users[0].full_name
+      = link_to h(jam.title), admin_event_jam_path(@event,jam)
+      - if jam.proposing_user
+        .user
+          proposed by
+          = link_to h(jam.proposing_user.full_name), jam.proposing_user

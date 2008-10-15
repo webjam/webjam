@@ -5,17 +5,28 @@
 - @mobile_version_path = formatted_event_path(@event, :mobile)
 
 - content_for :other_content do
-  - if false # @published_jams.not.empty?
+  - if @published_jams.not.empty?
     .item#summary
       %p
-        = pluralize("presenter", @published_jams.collect(&:users).uniq.length)
+        = pluralize(@published_jams.map(&:number_of_presenters).sum, "presenter")
         delivered
-        = pluralize("amazing presentations", @published_jams.length)
-        at our biggest event ever. They totally smashed it. Check them out!
+        = pluralize(@published_jams.length, "amazing presentation") + "."
+        Check them out!
 
       - place_getters, non_place_getters = @published_jams.partition {|j| j.place.not.nil?}
 
-      -# Output them here, yo.
+      - if place_getters.not.empty?
+        %h2 Place-getters:
+        %ol
+          - for jam in place_getters.sort_by(&:place)
+            %li= render :partial => "jam", :locals => {:jam => jam}
+
+      - if non_place_getters.not.empty?
+        %h2 Presenters:
+        %ul
+          - for jam in non_place_getters.sort_by(&:number)
+            %li= render :partial => "jam", :locals => {:jam => jam}
+            
   - else
     = event_summary(@event)
 
