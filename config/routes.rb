@@ -78,7 +78,10 @@ ActionController::Routing::Routes.draw do |map|
   end
   map.namespace :admin do |admin|
     admin.resources :events do |event|
-      event.resources :rsvps, :proposals, :jams
+      event.resources :rsvps, :proposals
+      event.resources :jams do |jams|
+        jams.resources :presenters
+      end
     end
     admin.resources :posts, :users
   end

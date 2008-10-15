@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081012151751) do
+ActiveRecord::Schema.define(:version => 20081015112927) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -76,16 +76,10 @@ ActiveRecord::Schema.define(:version => 20081012151751) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "number_of_presenters",     :limit => 11
     t.integer  "number",                   :limit => 11
     t.datetime "published_at"
     t.integer  "place",                    :limit => 11
     t.string   "prize"
-  end
-
-  create_table "jams_users", :id => false, :force => true do |t|
-    t.integer "jam_id",  :limit => 11, :null => false
-    t.integer "user_id", :limit => 11, :null => false
   end
 
   create_table "locations", :force => true do |t|
@@ -126,6 +120,15 @@ ActiveRecord::Schema.define(:version => 20081012151751) do
     t.integer  "event_id",    :limit => 11
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "presenters", :force => true do |t|
+    t.integer  "user_id",    :limit => 11
+    t.integer  "jam_id",     :limit => 11
+    t.string   "name"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -8,7 +8,7 @@
     %li
       = link_to "New event", new_admin_event_path
 
-- if @events[0]
+- unless @events.empty?
   %ul
     - for event in @events
       %li

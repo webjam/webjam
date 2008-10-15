@@ -1,10 +1,10 @@
 class Jam < ActiveRecord::Base
   belongs_to :event
-  has_and_belongs_to_many :users
   belongs_to :presentation_proposal
   belongs_to :proposing_user, :class_name => "User"
   has_many :viddler_videos
   has_many :flickr_photos
+  has_many :presenters
   
   named_scope :published, :conditions => "published_at IS NOT NULL"
   
@@ -20,9 +20,8 @@ class Jam < ActiveRecord::Base
     self.users << self.proposing_user
   end
   
-  # if there has been a manual amount sent return it, otherwise it's the number of users.
   def number_of_presenters
-    read_attribute(:number_of_presenters) ? read_attribute(:number_of_presenters) : users.count
+    presenters.length
   end
 
   def to_param

@@ -25,15 +25,18 @@
     %label
       = link_to 'Original proposal', admin_event_proposal_path(@event,@jam.presentation_proposal_id)
       = f.hidden_field :presentation_proposal_id
+
+  %label{:for => "jam_place"}
+    Place
+    = f.text_field :place
+
+  %label{:for => "jam_prize"}
+    Prize
+    = f.text_field :prize
       
   %label{:for => "jam_published_at"}
     Published at
     = f.text_field :published_at
-  
-  %label{:for => "jam_users"}
-    Users Presenting
-    %select{:name=>"jam[user_ids][]", :size=>"5", :multiple=>"multiple"}
-      = options_from_collection_for_select(User.find(:all).sort, "id", "full_name", @jam.user_ids)
   
   %fieldset
     = submit_tag "Save", :class => "submit"
