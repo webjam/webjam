@@ -4,6 +4,7 @@ class Jam < ActiveRecord::Base
   belongs_to :proposing_user, :class_name => "User"
   has_many :viddler_videos
   has_many :flickr_photos
+  has_many :presenters
   
   named_scope :published, :conditions => "published_at IS NOT NULL"
   
