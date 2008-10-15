@@ -20,9 +20,8 @@ class Jam < ActiveRecord::Base
     self.users << self.proposing_user
   end
   
-  # if there has been a manual amount sent return it, otherwise it's the number of users.
   def number_of_presenters
-    read_attribute(:number_of_presenters) ? read_attribute(:number_of_presenters) : users.count
+    presenters.length
   end
 
   def to_param

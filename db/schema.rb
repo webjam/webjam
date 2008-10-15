@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081015100205) do
+ActiveRecord::Schema.define(:version => 20081015112927) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(:version => 20081015100205) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "number_of_presenters",     :limit => 11
     t.integer  "number",                   :limit => 11
     t.datetime "published_at"
     t.integer  "place",                    :limit => 11
