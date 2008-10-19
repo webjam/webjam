@@ -26,3 +26,20 @@ describe Presenter, "protected_attributes" do
     p.user.should be_nil
   end
 end
+
+describe Presenter, "name" do
+  describe "with a user" do
+    it "returns the user's full_name" do
+      p = Presenter.new
+      p.should_receive(:user).twice.and_return(mock("user", :full_name => :user_full_name))
+      p.name.should == :user_full_name
+    end
+  end
+  describe "with no user" do
+    it "returns attributes.name" do
+      p = Presenter.new(:name => "presenter_name")
+      p.should_receive(:user).and_return(nil)
+      p.name.should == "presenter_name"
+    end
+  end
+end
