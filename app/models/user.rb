@@ -3,6 +3,7 @@ require 'uri'
 class User < ActiveRecord::Base
   # From http://www.igvita.com/2006/09/07/validating-url-in-ruby-on-rails/
   URI_FORMAT = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
+  NICK_NAME_FORMAT = /\A[a-zA-Z0-9_-]\Z/
   
   has_many :posts # TODO: DEPENDENT?
   has_many :identity_urls, :dependent => :destroy
@@ -16,6 +17,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :case_sensitive => false
   validates_uniqueness_of :nick_name
   validates_format_of :website_url, :with => URI_FORMAT, :allow_nil => true
+  validates_format_of :nick_name, :with => NICK_NAME_FORMAT, :allow_blank => true, :message => "can only contain the characters a-z, A-Z, 0-9, - and _"
   
   has_attached_file :mugshot,
                     :styles => { 
