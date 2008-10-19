@@ -13,11 +13,12 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :flickr_photos
   has_and_belongs_to_many :viddler_videos
   
-  validates_presence_of :full_name, :nick_name, :email
+  validates_presence_of :full_name, :email
   validates_uniqueness_of :email, :case_sensitive => false
   validates_uniqueness_of :nick_name
   validates_format_of :website_url, :with => URI_FORMAT, :allow_nil => true
-  validates_format_of :nick_name, :with => NICK_NAME_FORMAT, :allow_blank => true, :message => "can only contain the characters a-z, A-Z, 0-9, - and _"
+  validates_format_of :nick_name, :with => NICK_NAME_FORMAT, :allow_nil => true, :message => "can only contain the characters a-z, A-Z, 0-9, - and _"
+  validates_length_of :nick_name, :in => (2..20)
   
   has_attached_file :mugshot,
                     :styles => { 

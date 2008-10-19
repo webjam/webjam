@@ -80,17 +80,27 @@ describe User, "validations" do
     end
   end
   it "validates true if nick_name has only [a-zA-Z0-9-_]" do
-    User.new(:nick_name => 'a').should have(0).errors_on(:nick_name)
     User.new(:nick_name => 'a_b').should have(0).errors_on(:nick_name)
     User.new(:nick_name => 'a-b').should have(0).errors_on(:nick_name)
-    User.new(:nick_name => '1').should have(0).errors_on(:nick_name)
+    User.new(:nick_name => '11').should have(0).errors_on(:nick_name)
   end
   it "validates false if nick_name has non [a-zA-Z0-9-_]" do
-    User.new(:nick_name => '').should have(1).error_on(:nick_name)
-    User.new(:nick_name => ' ').should have(1).error_on(:nick_name)
+    User.new(:nick_name => '  ').should have(1).error_on(:nick_name)
     User.new(:nick_name => 'a b').should have(1).error_on(:nick_name)
     User.new(:nick_name => 'a.b').should have(1).error_on(:nick_name)
     User.new(:nick_name => 'a$').should have(1).error_on(:nick_name)
     User.new(:nick_name => 'a/').should have(1).error_on(:nick_name)
+  end
+  it "validates false if name is less than 2 characters" do
+    User.new(:nick_name => nil).should have(1).error_on(:nick_name)
+    User.new(:nick_name => '').should have(2).error_on(:nick_name)
+    User.new(:nick_name => 'a').should have(1).error_on(:nick_name)
+  end
+  it "validates false if name is greater than 20 characters" do
+    User.new(:nick_name => 'a' * 21).should have(1).error_on(:nick_name)
+  end
+  it "validates true if name is between 2 and 20 characters" do
+    User.new(:nick_name => 'a' * 2).should have(0).errors_on(:nick_name)
+    User.new(:nick_name => 'a' * 20).should have(0).errors_on(:nick_name)
   end
 end
