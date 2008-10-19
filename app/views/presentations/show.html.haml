@@ -7,22 +7,17 @@
 - content_for :other_content do
   .item
     %dl.vcard
-      %dt.fn Dmitry Baranovskiy
-      %dd.nickname
-        %a{ :href => "/dmitrybaranovsk" } dmitrybaranovsk
-      %dd.url 
-        %a{ :href =>"#" } thisisadomain.com
+      %dt.nickname
+        %a{:href => "#"} dmitry
       %dd.img
         %img{ :alt => " ", :height => "140", :src => "/images/default-avatar-largest.gif", :width => "140" }
 
   .item
     %dl.vcard
       %dt.fn
-      %dt.fn Dmitry Baranovskiy
+      %dt.fn Some Non-User Presenter
       %dd.url 
         %a{ :href =>"#" } thisisadomain.com
-      %dd.img
-        %img{ :alt => " ", :height => "140", :src => "/images/default-avatar-largest.gif", :width => "140" }
   
   = render :partial => 'shared/other_content/shirt'
   
