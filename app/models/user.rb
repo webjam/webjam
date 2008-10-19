@@ -3,7 +3,7 @@ require 'uri'
 class User < ActiveRecord::Base
   # From http://www.igvita.com/2006/09/07/validating-url-in-ruby-on-rails/
   URI_FORMAT = /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$)/ix
-  NICK_NAME_FORMAT = /\A[a-zA-Z0-9_-]\Z/
+  NICK_NAME_FORMAT = /\A[a-zA-Z0-9_\-]+\Z/
   
   has_many :posts # TODO: DEPENDENT?
   has_many :identity_urls, :dependent => :destroy

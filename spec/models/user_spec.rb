@@ -79,9 +79,18 @@ describe User, "validations" do
       User.new(:website_url => invalid_url).should have(0).errors_on(:website_url)
     end
   end
-  it "validates nick_name only has [a-zA-Z0-9-_]" do
-    ['', ' ', 'a b', 'a.b', 'a$', 'a/'].each do |invalid_nick_name|
-      User.new(:nick_name => invalid_nick_name).should have(1).error_on(:nick_name)
-    end
+  it "validates true if nick_name has only [a-zA-Z0-9-_]" do
+    User.new(:nick_name => 'a').should have(0).errors_on(:nick_name)
+    User.new(:nick_name => 'a_b').should have(0).errors_on(:nick_name)
+    User.new(:nick_name => 'a-b').should have(0).errors_on(:nick_name)
+    User.new(:nick_name => '1').should have(0).errors_on(:nick_name)
+  end
+  it "validates false if nick_name has non [a-zA-Z0-9-_]" do
+    User.new(:nick_name => '').should have(1).error_on(:nick_name)
+    User.new(:nick_name => ' ').should have(1).error_on(:nick_name)
+    User.new(:nick_name => 'a b').should have(1).error_on(:nick_name)
+    User.new(:nick_name => 'a.b').should have(1).error_on(:nick_name)
+    User.new(:nick_name => 'a$').should have(1).error_on(:nick_name)
+    User.new(:nick_name => 'a/').should have(1).error_on(:nick_name)
   end
 end
