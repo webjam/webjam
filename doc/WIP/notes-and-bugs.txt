@@ -28,13 +28,11 @@ cross-browser testing
 Polling
  - add Ma.gnolia + Delicious polling
  - Technorati polling? Some other blog service?
+ - http://www.google.com/support/faqs/bin/static.py?page=faq_blog_search.html&hl=en
 
 wire up sponsors structure to db
-Add Viddler player mojo (preferably API shizzle)
 custom error (404 + 500) page
-make author list for blog posts only consist of admins
 tshirt linkage
-change usernames so that they cannot contain spaces or capitals
 generate Google sitemap
 create proper span/anchor switching for primary-nav
 integrate Register and Login into one screen
