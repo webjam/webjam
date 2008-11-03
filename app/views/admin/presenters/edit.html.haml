@@ -1,0 +1,8 @@
+%h3 Edit a presenter
+
+- form_for [:admin, @event, @jam, @presenter] do |f|
+  = f.error_messages
+  = render :partial => "form", :locals => {:f => f}
+  = f.submit "Save"
+
+%p= link_to "Cancel", [:admin, @event, @jam]

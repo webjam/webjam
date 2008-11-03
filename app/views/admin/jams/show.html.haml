@@ -32,12 +32,27 @@
       nil
 
   %li
-    %strong Users presenting:
-    - if @jam.users.not.empty?
-      %ul
-        - for user in @jam.users
-          %li= link_to h(user.full_name), user_path(user)
-      
-  %li
     %strong Published at:
     =@jam.published_at
+
+%h2 Presenters
+
+%ul#presenters
+  - for presenter in @jam.presenters
+    %li
+      - if presenter.user
+        %strong User:
+        = link_to presenter.user, user_path(presenter.user)
+      - else
+        %strong Non-user:
+        =h presenter.name
+        =h presenter.url
+      %br/
+      = button_to "edit", edit_admin_event_jam_presenter_path(@event, @jam, presenter), :method => :get
+      = button_to "delete", admin_event_jam_presenter_path(@event, @jam, presenter), :method => :delete
+        
+%h3 Add a presenter
+
+- form_for [:admin, @event, @jam, @jam.presenters.build] do |f|
+  = render :partial => "admin/presenters/form", :locals => {:f => f}
+  = f.submit "Add"

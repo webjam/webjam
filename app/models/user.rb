@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   has_many :rsvps
   has_many :events, :through => :rsvps
   has_many :presentation_proposals
-  has_and_belongs_to_many :jams
   has_and_belongs_to_many :flickr_photos
   has_and_belongs_to_many :viddler_videos
   
