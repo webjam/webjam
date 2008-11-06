@@ -3,7 +3,7 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }/
     %meta{ :name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" }/
-    = stylesheet_link_tag "reset", "mobile", :cache => true
+    = stylesheet_link_tag "reset", "mobile", :cache => "mobile-css"
     = javascript_include_tag "jquery-1.2.6-min.js"
     = javascript_include_tag "mobile-photo-navigator", "mobile-photos", :cache => "mobile-js"
     = yield :javascript_inits
