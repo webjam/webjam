@@ -49,11 +49,20 @@ Factory.define :past_event, :class => Event do |e|
   e.proposals_close_at 7.days.ago
 end
 
+Factory.define :user_presenter, :class => Presenter do |p|
+  p.association :user
+end
+
+Factory.define :non_user_presenter, :class => Presenter do |p|
+  p.name 'Ms Presenter'
+  p.url 'http://mspresenter.com/'
+end
+
 Factory.define :presentation, :class => Jam do |p|
   p.title 'Preso title'
   p.description 'Preso description'
   p.number {Factory.next(:jam_number)}
-  p.users {|u| [u.association(:user)]}
+  p.presenters {|p| [p.association(:user_presenter), p.association(:non_user_presenter)]}
   p.association :event
 end
 

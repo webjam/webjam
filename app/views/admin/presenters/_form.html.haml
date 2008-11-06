@@ -1,0 +1,14 @@
+%label{:for => "presenter_user_id"}
+  User
+  = f.select :user_id, User.all.sort_by(&:full_name).map {|u| [u.full_name, u.id]}, :include_blank => true
+
+%label
+  %em OR
+
+%label{:for => "presenter_name"}
+  Name
+  = f.text_field :name
+
+%label{:for => "presenter_url"}
+  URL
+  = f.text_field :url

@@ -6,7 +6,7 @@ class Admin::JamsController < Admin::BaseController
   end
   
   def show
-    @jam = @event.jams.find(params[:id])
+    @jam = @event.jams.find_by_number(params[:id])
     raise NotFound unless @jam
   end
   
@@ -19,11 +19,7 @@ class Admin::JamsController < Admin::BaseController
       @jam.setup_from_proposal(@proposal)
     end
   end
-  
-  def edit
-    @jam = @event.jams.find(params[:id])
-  end
-  
+
   def create
     @jam = @event.jams.build
     if params[:proposal_id].not.blank?
@@ -35,11 +31,14 @@ class Admin::JamsController < Admin::BaseController
     @jam.attributes = params[:jam]
     @jam.save!
     redirect_to [:admin,@event,@jam]
+  end  
+
+  before_filter :load_jam, :only => %w(edit update destroy)
+
+  def edit
   end
   
   def update
-    @jam = @event.jams.find(params[:id])
-    raise NotFound unless @jam
     @jam.attributes = params[:jam]
     @jam.user_ids = params[:jam][:user_ids] || []
     @jam.save!
@@ -47,7 +46,7 @@ class Admin::JamsController < Admin::BaseController
   end
   
   def destroy
-    @event.jams.find(params[:id]).destroy
+    @jam.destroy
     redirect_to admin_event_jams_path(@event)
   end
 
@@ -55,5 +54,9 @@ class Admin::JamsController < Admin::BaseController
   def load_event
     @event = Event.find_by_tag(params[:event_id])
     raise NotFound unless @event
+  end
+  def load_jam
+    @jam = @event.jams.find_by_number(params[:id])
+    raise NotFound unless @jam
   end
 end

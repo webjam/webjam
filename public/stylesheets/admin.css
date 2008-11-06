@@ -46,3 +46,8 @@
       ul.peeps li a {width: 14em;}
         ul.peeps li img {float: left; margin: 0 1em 0 0;}
 
+  ul#presenters {}
+    ul#presenters li {display:block; clear:both; float:none;}
+      ul#presenters li form.button-to {display:inline; float:none;}
+        ul#presenters li form.button-to div {display:inline;}
+        ul#presenters li form.button-to input {font-size: 0.7em; width: 5em; float:none;}

@@ -1,0 +1,12 @@
+%strong
+  - for presenter in jam.presenters
+    - if presenter.user
+      = link_to h(presenter.user), user_path(presenter.user)
+    - elsif presenter.url.not.blank?
+      = link_to h(presenter.name), presenter.url
+    - else
+      =h presenter.name
+    - if jam.presenters.last != presenter
+      %span.amp &amp;
+
+=h jam.title
