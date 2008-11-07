@@ -1,14 +1,7 @@
 .item#sponsors
   .item-details
     %h2 Meet our sponsors
-    %a.details{ :href => "mailto:welovesponsors@webjam.com.au"} Want your logo here? Get in touch.
   = sponsor_major_content(@event)
-  .sponsors
-    %h3 Sponsors
-    %ul.sponsor-logos
-      %li
-        %a{:href => "mailto:welovesponsors@webjam.com.au", :title => "Email the Webjam team about sponsorship"} 
-          %img{:alt => "Your logo", :src => "/images/sponsors/default-sponsor.gif"}
   .sponsors.micro
     %h3 Microsponsors
     %ul.sponsor-logos
