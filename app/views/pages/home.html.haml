@@ -15,8 +15,8 @@
   .item
     = render :partial => "pages/events/upcoming", :locals => {:event => event}
 
-- @past_events.each_with_index do |event, index|
-  %div{:class => @past_events.last == event ? "item last" : "item"}
+- @past_events.sort.reverse.each_with_index do |event, index|
+  %div{:class => @past_events.sort.reverse.last == event ? "item last" : "item"}
     - if index == 0
       = render :partial => "pages/events/featured_past", :locals => {:event => event}
     - else
