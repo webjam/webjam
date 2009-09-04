@@ -2,7 +2,7 @@
   %dl.peep-card.vcard{:id => "hcard-#{h utf8_slugify(@user.nick_name)}"}
     %dt.fn=h @user.full_name
     %dd.nickname.note
-      %a{ :href => "/#{h @user.nick_name}" }=h @user.nick_name
+      %a{ :href => user_path(@user) }=h @user.nick_name
     - unless @user.website_url.blank?
       %dd.url
         = link_to h(@user.website_display_name), @user.website_url, :class => "url", :rel => "me"
