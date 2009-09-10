@@ -20,9 +20,10 @@ class RsvpsController < ApplicationController
     raise NotFound unless @event
     if @event.full?
       redirect_to event_path(:id => @event, :event_full => true)
+    else
+      current_user.rsvps.create(:event => @event)
+      redirect_to event_rsvp_path(@event)
     end
-    current_user.rsvps.create(:event => @event)
-    redirect_to event_rsvp_path(@event)
   end
   
   def destroy
