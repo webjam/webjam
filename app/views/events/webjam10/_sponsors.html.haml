@@ -1,0 +1,23 @@
+.item#sponsors
+  .item-details
+    %h2 Meet our sponsors
+  = sponsor_major_content(@event)
+  .sponsors
+    %h3 Sponsors
+    %ul.sponsor-logos
+      %li
+        %a{:href => "http://happener.com/", :title => "Webjam 10 is proudly sponsored by Happener"} 
+          %img{:alt => "Happener", :src => "/images/sponsors/happener.gif"}
+      %li
+        %a{:href => "http://anchor.com.au/", :title => "Webjam 10 is proudly sponsored by Anchor"} 
+          %img{:alt => "Anchor", :src => "/images/sponsors/anchor.gif"}
+
+  .sponsors.micro
+    %h3 Microsponsors
+    %ul.sponsor-logos
+      %li
+        %a{:href => "http://doingwords.com/", :title => "Webjam 10 is proudly sponsored by Doing Words"} 
+          %img{:alt => "Doing Words", :src => "/images/sponsors/doing-words.png"}
+      %li
+        %a{:href => "http://meld.com.au/", :title => "Webjam 10 is proudly sponsored by Meld Consulting"} 
+          %img{:alt => "Meld", :src => "/images/sponsors/meld.jpg"}
