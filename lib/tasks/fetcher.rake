@@ -6,6 +6,7 @@ namespace :fetcher do
   
   desc 'Runs all normal fetch tasks'
   task :all_new => [:flickr_new, :viddler_new, :twitter]
+  desc 'Runs all normal update tasks'
   task :all_update => [:flickr_update, :viddler_update]
 
   
