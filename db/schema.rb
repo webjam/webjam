@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081019044317) do
+ActiveRecord::Schema.define(:version => 20091007121451) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id",          :limit => 11
@@ -154,7 +154,7 @@ ActiveRecord::Schema.define(:version => 20081019044317) do
   create_table "tweets", :force => true do |t|
     t.string   "body"
     t.string   "username"
-    t.integer  "twitter_identifier", :limit => 11
+    t.integer  "twitter_identifier", :limit => 20
     t.integer  "event_id",           :limit => 11
     t.datetime "posted_at"
     t.datetime "created_at"
