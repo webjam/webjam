@@ -20,6 +20,9 @@ class PostsController < ApplicationController
         @posts = Post.published.all(:include => :comments)
         @posts_by_year_month = @posts.group_by {|p| [p.published_at.year, p.published_at.month]}
       end
+      wants.atom do
+        @posts = Post.published.find_all_for_archive
+      end
     end
   end
   
