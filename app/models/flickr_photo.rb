@@ -29,9 +29,11 @@ class FlickrPhoto < ActiveRecord::Base
   end
   
   # Updates existing images with tags/assocs etc.
-  def self.update_existing(event)
+  # Optionally specify a time - this will limit us to updating images
+  # added  later than that. Defaults to the beginning of time.
+  def self.update_existing(event, since = DateTime.new(1))
     license_hash = license_text_hash
-    flickr_ids_in_db(event).each {|id| create_or_update_image(event, id, license_hash)}
+    flickr_ids_in_db(event, since).each {|id| create_or_update_image(event, id, license_hash)}
   end
   
   # returns a hash, keyed by the flickr licence id, containing the text
@@ -47,6 +49,7 @@ class FlickrPhoto < ActiveRecord::Base
   
   # Creates or updates and image in an event for the given flickr ID.
   def self.create_or_update_image(event, flickrid, license_hash=nil)
+    
     logger.info "Updating image #{flickrid} in event #{event.name}"
     # load the image, or create a new one
     fp = FlickrPhoto.find_by_flickrid(flickrid)
@@ -137,9 +140,11 @@ class FlickrPhoto < ActiveRecord::Base
     fp.save    
   end
 
-  def self.flickr_ids_in_db(event)
+  def self.flickr_ids_in_db(event,since=DateTime.new(1))
     ids = Array.new
-    event.flickr_photos.each {|fp| ids << fp.flickrid}
+    event.flickr_photos.find(:all, 
+      :conditions => ["created_at > ?", since]).
+      each {|fp| ids << fp.flickrid}
     ids
   end
   

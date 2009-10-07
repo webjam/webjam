@@ -7,7 +7,9 @@ namespace :fetcher do
   desc 'Runs all normal fetch tasks'
   task :all_new => [:flickr_new, :viddler_new, :twitter]
   desc 'Runs all normal update tasks'
-  task :all_update => [:flickr_update, :viddler_update]
+  task :all_update => [:flickr_update_all, :viddler_update]
+  desc 'Runs recent normal update tasks'
+  task :recent_update => [:flickr_update_recent, :viddler_update]
 
   
   desc 'Fetches new images from flickr for all events'
@@ -16,11 +18,21 @@ namespace :fetcher do
     Event.find(:all).each {|event| FlickrPhoto.fetch_new(event)}
   end
   
-  desc 'Updates existing flickr photos.'
-   task :flickr_update do
+  desc 'Update all photos in our system changed in the last month'
+   task :flickr_update_recent do
      puts "Starting Flickr update of images in db"
-     Event.find(:all).each {|event| FlickrPhoto.update_existing(event)}
+     Event.find(:all).each do |event| 
+       FlickrPhoto.update_existing(event, 1.month.ago)
+     end
    end
+   
+   desc 'Update all photos in our system'
+    task :flickr_update_all do
+      puts "Starting Flickr update of images in db"
+      Event.find(:all).each do |event| 
+        FlickrPhoto.update_existing(event)
+      end
+    end
    
   desc 'Fetches new videos from viddler for all events'
   task :viddler_new do
