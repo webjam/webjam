@@ -47,13 +47,23 @@ class FlickrPhoto < ActiveRecord::Base
   
   # Creates or updates and image in an event for the given flickr ID.
   def self.create_or_update_image(event, flickrid, license_hash=nil)
+    logger.info "Updating image #{flickrid} in event #{event.name}"
     # load the image, or create a new one
     fp = FlickrPhoto.find_by_flickrid(flickrid)
     unless fp
       fp = FlickrPhoto.new
       fp.flickrid = flickrid
     end
-    response = FlickrPhoto.request("flickr.photos.getInfo", "photo_id" => flickrid.to_s)
+    begin
+      response = FlickrPhoto.request("flickr.photos.getInfo", 
+                  "photo_id" => flickrid.to_s)
+    rescue FlickrAPIError => e
+      if e.code == FlickrAPIError::INVALID_ID
+        logger.info "Image with flickr id #{flickrid} gone - deleting"
+        fp.destroy
+      end
+      return # regardless, as no updating will happen now.
+    end
     
     # check the tag list for a matching event tag - if it doesn't exist, remove and return
     event_tag_found = false
@@ -165,10 +175,26 @@ class FlickrPhoto < ActiveRecord::Base
     if response.root.attributes["stat"] == "ok" then
       return response
     elsif response.root.attributes["stat"] == "fail" then
-      raise "Flickr API error #{response.elements["rsp/err"].attributes["code"]}: #{response.elements["rsp/err"].attributes["msg"]}"
+      raise FlickrAPIError.new(
+          response.elements["rsp/err"].attributes["code"].to_i,
+          response.elements["rsp/err"].attributes["msg"])
     else
       raise "Request status neither ok nor fail. Tried to fetch #{call_uri}."
     end
   end
   
+end
+
+# Our new custom exception class
+class  FlickrAPIError < RuntimeError
+  attr_reader :code, :message
+  
+  INVALID_ID = 1
+  API_NOT_AVAILABLE = 0
+  
+  def initialize(code, message)
+    super("Flickr API error #{code}: #{message}")
+    @code = code
+    @message = @message
+  end
 end
