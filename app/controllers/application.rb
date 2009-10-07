@@ -60,11 +60,6 @@ class ApplicationController < ActionController::Base
     def render_404
       render :file => "#{RAILS_ROOT}/public/404.html", :status => :not_found
     end
-    
-    def strip_permalinks
-      params[:id] = params[:id].split('-').first if params[:id]
-      true
-    end
 
     helper_method :mobile_request?
     def mobile_request?

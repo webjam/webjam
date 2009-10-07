@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_filter :login_required, :only => %w(edit update update_privacy update_profile_details)
-  before_filter :strip_permalinks
 
   def show
     @user = User.find_by_nick_name(params[:id])
