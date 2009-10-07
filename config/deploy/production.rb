@@ -21,5 +21,5 @@ task :after_update_code, :roles => :app do
   link_mugshots
   install_remote_gems
   set_remote_permissions
-  announce_to_campfire
+  #announce_to_campfire
 end

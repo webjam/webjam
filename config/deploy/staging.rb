@@ -19,5 +19,5 @@ task :after_update_code, :roles => :app do
   install_remote_gems
   set_remote_permissions
   # remote all tables in this database
-  announce_to_campfire
+  #announce_to_campfire
 end
