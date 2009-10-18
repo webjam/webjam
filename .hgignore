@@ -1,0 +1,8 @@
+syntax:glob
+log/*
+public/mugshots
+.DS_Store
+config/database.yml
+previous_failures.txt
+.rsync_cache
+config/application.yml
