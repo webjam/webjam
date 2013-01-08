@@ -5,3 +5,4 @@ config/database.yml
 previous_failures.txt
 .rsync_cache
 config/application.yml
+.bundle/
