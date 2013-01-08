@@ -1,4 +1,4 @@
 source :rubygems
 
-gem "rails", "~> 3.2.11"
+gem "rails", "~> 2.3.15"
 gem 'thin'
