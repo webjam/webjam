@@ -24,5 +24,3 @@ config.action_mailer.raise_delivery_errors = false
 #       end
 #   end
 # end
-
-config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
