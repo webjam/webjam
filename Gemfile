@@ -10,3 +10,7 @@ gem "ruby-openid", "~> 2.2.2"
 gem 'factory_girl', '~> 1.3.3'
 gem 'rack-openid', '~> 1.3.1'
 gem 'xml-simple', :require => 'xmlsimple'
+
+group :test do
+  gem 'cucumber'
+end
