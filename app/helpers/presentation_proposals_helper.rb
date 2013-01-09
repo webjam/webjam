@@ -1,0 +1,2 @@
+module PresentationProposalsHelper
+end
