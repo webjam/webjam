@@ -1,1 +1,1 @@
-web: bundle exec script/server thin -e $RACK_ENV
+web: bundle exec script/server thin -p $PORT
