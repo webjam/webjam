@@ -1,0 +1,2 @@
+module FlickrPhotosHelper
+end

@@ -1,0 +1,2 @@
+module Admin::JamsHelper
+end
