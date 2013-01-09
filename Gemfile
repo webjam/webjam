@@ -11,6 +11,9 @@ gem 'factory_girl', '~> 1.3.3'
 gem 'rack-openid', '~> 1.3.1'
 gem 'xml-simple', :require => 'xmlsimple'
 
+# old rake to try and avoid errors
+gem 'rake', '~> 0.9.6'
+
 group :test do
   gem 'cucumber'
 end
