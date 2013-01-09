@@ -1,0 +1,2 @@
+module MugshotsHelper
+end

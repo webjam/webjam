@@ -1,18 +1,16 @@
 development:
-  adapter: mysql
+  adapter: postgresql
   encoding: utf8
-  database: webjam_development
-  username: root
-  password:
-  socket: 
+  database: webjam_dev
+  host: 127.0.0.1
+  port: 5561
 
 test:
-  adapter: mysql
+  adapter: postgresql
   encoding: utf8
-  database: webjam_development
-  username: root
-  password:
-  socket: 
+  database: webjam_test
+  host: 127.0.0.1
+  port: 5561
 
 production:
     adapter: mysql
@@ -31,7 +29,7 @@ staging:
     port: 3306
     username: webjam_staging
     password: pRehaYe4
-    
+
 edge:
     adapter: mysql
     encoding: utf8

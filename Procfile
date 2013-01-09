@@ -1,0 +1,1 @@
+web: bundle exec script/server thin -e $RACK_ENV
